@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+* {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  background: #e3edf7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container p {
+  font-size: 32px;
+  letter-spacing: 4px;
+  color: #777;
+  margin: -250px 0 100px;
+}
+
+.container input {
+  width: 0;
+  height: 0;
+}
+
+.container input::before {
+  content: "\f011";
+  font-family: "FontAwesome";
+  font-size: 52px;
+  color: #777;
+  height: 160px;
+  width: 160px;
+  background: e3edf7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 8px;
+  transform: translateX(-80px);
+  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+    inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+    -0.5px -0.5px 0px -1px rgba(255, 255, 255, 1),
+    0.5px 0.5px 0px -1px rgba(255, 255, 255, 0.15),
+    0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+}
+
+.container input:checked:before {
+  color: #4fc35d;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.3),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+}

@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #242248;
+}
+
+.container {
+  width: 350px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  color: #3e3e3e;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.top-bar div {
+  display: flex;
+  align-items: center;
+}
+
+.arrow-img {
+  width: 25px;
+}
+.heart-img {
+  width: 20px;
+}
+.dot-img {
+  width: 5px;
+  margin-left: 15px;
+}
+
+.container h1 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.review {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.review img {
+  width: 18px;
+  margin-right: 5px;
+}
+
+.product-img {
+  width: 100%;
+  margin: 20px 0 10px;
+  border-radius: 12px;
+}
+
+.container h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.select-size span {
+  display: inline-block;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  border: 1px solid #777;
+  border-radius: 10px;
+  margin: 10px 2px;
+}
+
+.select-size span:hover {
+  cursor: pointer;
+  background-color: #ff6c78;
+  color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  border: 1px solid #ff6c78;
+}
+
+.select-color span{
+  display: inline-block;
+  margin: 10px 3px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+border-radius: 5px;
+}
+
+.color1{
+  background: #fcb1a0;
+}
+.color2{
+  background: #afc7ff;
+}
+.color3{
+  background: #e4b0fc;
+}
+.color4{
+  background: #ff9fb5;
+}
+.color5{
+  background: #90cad5;
+}
+.color6{
+  background: #abf5cd;
+}
+
+.price{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 0 5px;
+}
+
+.price p{
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.price a{
+  text-decoration: none;
+  background: #333;
+  color: #fff;
+  font-size: 14px;
+  padding: 12px 25px;
+  border-radius: 6px;
+}

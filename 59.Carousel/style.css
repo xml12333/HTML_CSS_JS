@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.carousel {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+.img-container {
+  display: flex;
+  transition: transform 0.3s linear;
+  height: 500px;
+  width: 500px;
+  transform: translateX(0);
+}
+
+/* This is a known problem with CSS resizing. 
+Unless all images have the same proportion, 
+you have no way to do this via CSS. */
+.img {
+  object-fit: cover;
+  width: 500px;
+  height: 500px;
+}

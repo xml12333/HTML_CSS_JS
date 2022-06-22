@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.header {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-1 {
+  flex-basis: 43%;
+  flex-grow: 1;
+  background-image: url(img/background.png);
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+  color: #fff;
+}
+
+.col-2 {
+  flex-basis: 57%;
+  flex-grow: 1;
+  padding: 40px 80px;
+  background-image: url(img/music.png);
+  background-size: contain;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 80px;
+  cursor: pointer;
+}
+.search-icon {
+  width: 25px;
+  cursor: pointer;
+}
+
+.left-text {
+  width: 70%;
+  margin: 180px auto 0;
+}
+
+.left-text h1 {
+  font-size: 50px;
+  font-weight: 500;
+}
+.left-text p {
+  font-size: 12px;
+  line-height: 24px;
+  margin: 30px 0;
+}
+
+.left-text a img {
+  width: 60px;
+  margin-right: 20px;
+}
+
+.left-text a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  margin-top: 30px;
+}
+
+.col-2 ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+}
+
+.col-2 ul li a {
+  display: inline-block;
+  color: #333;
+  text-decoration: none;
+  margin-bottom: 100px;
+}
+
+.btn {
+  border: 3px solid #ff5a5a;
+  padding: 10px 30px;
+}
+
+.right-text {
+  margin-top: 160px;
+}
+
+.right-text h2 {
+  font-size: 50px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.right-text h3 {
+  font-weight: 500;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.right-text p {
+  font-size: 15px;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.right-text a {
+  text-decoration: none;
+  background: #ff5a5a;
+  color: #fff;
+  display: inline-block;
+  font-weight: 300;
+  letter-spacing: 1px;
+  padding: 15px 50px;
+  border-radius: 6px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 10px rgba(255, 90, 90, 0.7);
+  transition: transform 0.5s ease-out;
+}
+
+.right-text a:hover{
+  transform: translateY(-6px);
+}

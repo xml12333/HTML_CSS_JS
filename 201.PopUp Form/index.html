@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>PopUp Form</title>
+  </head>
+  <body>
+    <section class="bg"></section>
+    <h1>
+      Let's <span class="site">introduce </span>
+      <span class="introduce"
+        >our<span
+          class="txt-type"
+          data-wait="3000"
+          data-correct-word="selves."
+          data-words='["welming.", "selves.", "timing.", "soul.", "ground."]'
+        ></span
+      ></span>
+    </h1>
+    <form class="form-container" id="form-containter">
+      <input id="inputfield" type="text" />
+      <button class="btn-ok" type="submit">OK</button>
+    </form>
+    <div class="popup-container" id="popup-container">
+      <div class="popup">
+        <div id="message"></div>
+        <button id="popup-btn-ok">OK</button>
+      </div>
+    </div>
+    <script src="js/typewriter.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

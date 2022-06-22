@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli:wght@300;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #fff5f3;
+  font-family: "Muli", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.box img {
+  width: 50px;
+  display: block;
+  margin-top: -70px;
+  margin-bottom: 10px;
+}
+
+.box {
+  background-color: #fff;
+  padding: 40px 60px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  background-color: #ff3d44;
+  width: 220px;
+  height: 220px;
+  border-radius: 30px;
+  z-index: -1;
+}
+
+.box h2 {
+  margin: 0;
+}
+
+.box p {
+  line-height: 24px;
+}
+.btn {
+  display: inline-block;
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  padding: 10px 15px;
+}
+
+.btn.paypal {
+  background-color: #0070ba;
+  margin-right: 10px;
+}
+.btn.patreon {
+  background-color: #e85b46;
+}

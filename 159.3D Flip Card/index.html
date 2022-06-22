@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>3D Flip Card</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="product">
+        <img src="images/shoes.png" alt="shoes" id="frontImg" />
+        <img src="images/shoes2.png" alt="shoes" id="backImg" />
+        <div class="product-inner" id="product-box">
+          <div class="product-front">
+            <div class="product-top">
+              <h1>Nike</h1>
+            </div>
+            <div class="product-bottom">
+              <p>Nike running shoes</p>
+              <h2>Air Zoom Winflo 6</h2>
+              <h1>125 <span>$</span></h1>
+              <button type="button">Add to Bag</button>
+              <div class="color-select">
+                <div class="select-item" id="front-shoes-1">
+                  <img src="images/shoes-icon.png" alt="shoes-1" />
+                </div>
+                <div class="select-item" id="front-shoes-2">
+                  <img src="images/shoes-icon2.png" alt="shoes-2" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-back">
+            <div class="product-back-container"></div>
+            <div class="product-top product-top2">
+              <h1>Nike</h1>
+            </div>
+            <div class="product-bottom">
+              <p>Nike running shoes</p>
+              <h2>Air Zoom Winflo 6</h2>
+              <h1>125 <span>$</span></h1>
+              <button type="button">Add to Bag</button>
+              <div class="color-select">
+                <div class="select-item" id="back-shoes-1">
+                  <img src="images/shoes-icon.png" alt="shoes-1" />
+                </div>
+                <div class="select-item" id="back-shoes-2">
+                  <img src="images/shoes-icon2.png" alt="shoes-2" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="left-side"></div>
+          <div class="right-side"></div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

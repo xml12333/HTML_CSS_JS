@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #cb021c;
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  margin: 0;
+  transition: background 0.4s ease-in-out;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.hamburger {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  font-size: 3rem;
+}
+.phone {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  font-size: 3rem;
+  transform: rotate(260deg);
+}
+
+.logo {
+  color: #fff;
+  font-size: 1.7rem;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.logo i {
+  font-size: 3rem;
+}
+
+.logo h2 {
+  font-weight: normal;
+  margin: 0;
+}
+
+.logo p {
+  margin: 0;
+  color: #1f1f1f;
+  font-weight: bold;
+}
+
+.carousel-container {
+  overflow: hidden;
+  position: relative;
+  height: 60vh;
+  width: 100vw;
+  margin-top: 10rem;
+}
+
+.carousel {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateX(0);
+  transition: transform 0.4s ease-in-out;
+  display: flex;
+}
+.slide {
+  width: 100vw;
+  text-align: center;
+}
+.slide img {
+  object-fit: cover;
+  width: 400px;
+  height: 400px;
+}
+
+.slide h1 {
+  font-size: 4rem;
+  color: #fff;
+  margin-top: -2rem;
+}
+
+.slide a {
+  background-color: #40020e;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+}
+
+.arrow {
+  background-color: transparent;
+  position: absolute;
+  top: 30%;
+  cursor: pointer;
+  font-size: 5rem;
+  color: black;
+  opacity: 0.5;
+  transform: translateY(-50%);
+  border: 0;
+}
+
+.left-arrow {
+  left: 2rem;
+}
+
+.right-arrow {
+  right: 2rem;
+}

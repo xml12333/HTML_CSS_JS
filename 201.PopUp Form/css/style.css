@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.bg {
+  background: #333;
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: calc(100vw + 60px);
+  height: calc(100vh + 60px);
+  z-index: -1;
+}
+
+h1 {
+  color: #f6f7d7;
+}
+
+.site {
+  color: #ff165d;
+}
+
+.introduce.true {
+  color: #88ff00;
+  text-decoration: underline;
+  transition: all 0.5s ease-out;
+}
+
+.introduce.false {
+  color: #FF9A00;
+  text-decoration: line-through;
+  transition: all 0.5s ease-out;
+}
+
+.form-container {
+  width: 400px;
+  display: flex;
+  position: relative;
+}
+
+.form-container input {
+  border: 2px solid rebeccapurple;
+  font-size: 1rem;
+  padding: 1rem 0;
+  font-weight: 700;
+  width: 100%;
+  color: #ff165d;
+  background: #333;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.form-container input:focus {
+  outline: 0;
+}
+
+.btn-ok {
+  border: 2px solid rebeccapurple;
+  background-color: #333;
+  color: #f6f7d7;
+  padding: 1.25rem 2rem;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.btn-ok:focus {
+  outline: 0;
+}
+.btn-ok:hover {
+  background-color: rgb(85, 41, 129);
+}
+.btn-ok:active {
+  transform: scale(0.98);
+}
+
+.popup-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* display: flex; */
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup {
+  background: #3ec1d3;
+  border-radius: 5px;
+  box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.popup button {
+  cursor: pointer;
+  background-color: #333;
+  color: #f6f7d7;
+  border: 1px solid rebeccapurple;
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.popup button:active {
+  transform: scale(0.98);
+}
+.popup button:focus {
+  outline: 0;
+}

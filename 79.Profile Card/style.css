@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  background: #001a2b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 50px;
+  width: 900px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.profile-img {
+  width: 150px;
+  border-radius: 50%;
+  border: 18px solid #f4eeff;
+}
+
+.info {
+  margin-left: 30px;
+  color: #555;
+  font-weight: 500;
+}
+.info h1 {
+  font-size: 26px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.info ul {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.info ul li {
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+.info ul li img {
+  width: 20px;
+  margin-right: 5px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.links a {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  height: 50px;
+  background: #8749fd;
+  color: #fff;
+  border-radius: 5px;
+  border: 2px solid #8749fd;
+  padding: 10px 30px;
+  margin-right: 20px;
+  font-size: 12px;
+}
+
+.links a img {
+  width: 25px;
+  margin-right: 10px;
+}
+
+.links .msg-btn {
+  background: #fff;
+  color: #8749fd;
+}
+
+.share-icon {
+  width: 40px;
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  background: #f4eeff;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}

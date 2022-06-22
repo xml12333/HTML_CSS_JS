@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+:root {
+  --html-color: #e91e63;
+  --css-color: #cddc39;
+  --javascript-color: #00bcd4;
+  --python-color: #ffeb3b;
+  --react-color: #9c27b0;
+  --html-procent: 86%;
+  --css-procent: 74%;
+  --javascript-procent: 65%;
+  --python-procent: 54%;
+  --react-procent: 49%;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  background-color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.skills h2 {
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-top: 40px;
+  margin-bottom: 5px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.progress-bar {
+  background: #959595;
+  width: 600px;
+  height: 10px;
+  border-radius: 5px;
+}
+
+.progress-bar div {
+  height: 10px;
+  border-radius: 5px;
+  width: 0%;
+}
+
+.progress-bar div span {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: #222;
+  float: right;
+  margin-top: -15px;
+  margin-right: -20px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.html {
+  background: var(--html-color);
+  animation: html 0.7s linear forwards;
+}
+.css {
+  background: var(--css-color);
+  animation: css 0.7s linear forwards;
+}
+.javascript {
+  background: var(--javascript-color);
+  animation: javascript 0.7s linear forwards;
+}
+.python {
+  background: var(--python-color);
+  animation: python 0.7s linear forwards;
+}
+.react {
+  background: var(--react-color);
+  animation: react 0.7s linear forwards;
+}
+
+.html span {
+  border: 1px solid var(--html-color);
+}
+.css span {
+  border: 1px solid var(--css-color);
+}
+.javascript span {
+  border: 1px solid var(--javascript-color);
+}
+.python span {
+  border: 1px solid var(--python-color);
+}
+.react span {
+  border: 1px solid var(--react-color);
+}
+
+@keyframes html{
+  100%{
+    width: var(--html-procent)
+  }
+}
+@keyframes css{
+  100%{
+    width: var(--css-procent)
+  }
+}
+@keyframes javascript {
+  100%{
+    width: var(--javascript-procent)
+  }
+}
+@keyframes python{
+  100%{
+    width: var(--python-procent)
+  }
+}
+@keyframes react{
+  100%{
+    width: var(--react-procent)
+  }
+}

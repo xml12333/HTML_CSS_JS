@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.container{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: background 0.2s linear;
+}
+
+.container.dark{
+  background-color: #292c35;
+}
+
+.container.dark h1{
+  color:#fff;
+}
+
+h1{
+  color: #333;
+  margin-bottom: 30px;
+}
+
+iframe{
+  width: 80%;
+  height: 500px;
+  
+}
+
+.label {
+  background-color: #111;
+  display: flex;
+  height: 26px;
+  width: 50px;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  transform: scale(1.5) ;
+  margin-bottom: 30px;
+}
+
+.fa-moon {
+  color: #f1c40f;
+}
+
+.fa-sun {
+  color: #f39c12;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+
+.ball {
+  width: 22px;
+  height: 22px;
+  background-color: #fff;
+  position: absolute;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  cursor: pointer;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+  transform: translateX(24px);
+}

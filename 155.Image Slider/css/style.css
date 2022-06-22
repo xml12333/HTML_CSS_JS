@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  background: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img-1 {
+  width: 90vw;
+  height: 90vh;
+  background-image: linear-gradient(#777, red);
+  display: block;
+}
+.img-2 {
+  width: 90vw;
+  height: 90vh;
+  background-image: linear-gradient(#777, blue);
+  display: block;
+}
+.img-3 {
+  width: 90vw;
+  height: 90vh;
+  background-image: linear-gradient(#777, green);
+  display: block;
+}
+
+.swiper {
+  width: 80%;
+  height: fit-content;
+}
+
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next {
+  color: #fff;
+}
+.swiper .swiper-pagination-bullet-active {
+  background: #fff;
+}
