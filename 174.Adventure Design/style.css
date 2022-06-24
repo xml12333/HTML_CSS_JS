@@ -1,0 +1,143 @@
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.header {
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url(images/background.png);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+nav {
+  padding: 30px 3%;
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  flex: 1;
+  text-align: right;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 10px 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 17px;
+}
+
+.logo {
+  width: 32px;
+  cursor: pointer;
+}
+
+.menu-icon {
+  width: 35px;
+  cursor: pointer;
+  margin: 0 20px;
+}
+
+.social-media a {
+  text-decoration: none;
+  color: #fff;
+  margin: 0 25px;
+}
+
+.social-media {
+  transform: rotate(90deg) translate(-100%);
+  transform-origin: left;
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+}
+
+.line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 9%;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.row {
+  width: 75%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  margin-top: 8%;
+}
+
+.row span {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+.row span img {
+  width: 15px;
+  margin-right: 15px;
+}
+
+.content span {
+  font-size: 22px;
+}
+
+.content h1 {
+  font-size: 75px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.row span.active {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.row span.active img {
+  width: 30px;
+  margin-left: -10px;
+  margin-right: 10px;
+}
+
+.info {
+  position: relative;
+}
+.info::before {
+  content: "";
+  background: rgba(255, 255, 255, 0.6);
+  height: 100%;
+  width: 2px;
+  position: absolute;
+  top: 5px;
+  left: -30px;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 60px;
+  width: 75%;
+  left: 12.5%;
+}
+
+.arrow img {
+  width: 60px;
+  cursor: pointer;
+}
