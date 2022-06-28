@@ -1,0 +1,131 @@
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(images/bg.jpg);
+  background-position: cover;
+  background-size: center;
+  padding: 0 8%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+.nav-logo img {
+  width: 160px;
+}
+
+.nav-links {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  margin-left: 40px;
+}
+
+.nav-links .btn {
+  background: #fff;
+  color: #000;
+  padding: 8px 30px;
+  border-radius: 4px;
+}
+
+.content {
+  margin-top: 40%;
+  color: #fff;
+}
+
+.content h1 {
+  font-size: 60px;
+}
+
+.search-box {
+  background: #fff;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  padding: 18px 20px;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+.search-box input {
+  background: transparent;
+  width: 600px;
+  border: 0;
+  outline: 0;
+}
+
+.search-box button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.search-box button img {
+  width: 22px;
+}
+
+.arrow {
+  margin-top: 220px;
+}
+
+.arrow img {
+  width: 15px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  box-sizing: content-box;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .search-box input {
+    width: 230px;
+  }
+  .nav-logo {
+    flex-basis: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .nav-links {
+    justify-content: center;
+  }
+  .nav-links a {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .nav-links .btn {
+    background: transparent;
+    color: #fff;
+    padding: 0;
+  }
+  .content h1 {
+    font-size: 30px;
+  }
+  .content {
+    margin-top: 50%;
+  }
+  .search-box{
+    padding: 10px 20px;
+  }
+  .search-box button img{
+    width: 16px;
+  }
+}
