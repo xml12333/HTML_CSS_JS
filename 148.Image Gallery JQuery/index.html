@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/jquery.flipster.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Image Gallery JQuery</title>
+  </head>
+  <body>
+    <div class="hero">
+      <div class="carousel">
+        <ul>
+          <li><img src="img/img1.jpg" alt="img1" /></li>
+          <li><img src="img/img2.jpg" alt="img2" /></li>
+          <li><img src="img/img3.jpg" alt="img3" /></li>
+          <li><img src="img/img4.jpg" alt="img4" /></li>
+          <li><img src="img/img5.jpg" alt="img5" /></li>
+          <li><img src="img/img6.jpg" alt="img6" /></li>
+          <li><img src="img/img7.jpg" alt="img7" /></li>
+        </ul>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/jquery.flipster.min.js"></script>
+    <script>
+      $(".carousel").flipster({
+        style: "carousel",
+        spacing: -0.3,
+      });
+    </script>
+  </body>
+</html>
