@@ -1,0 +1,73 @@
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.hero {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.7)),
+    url(img/background.png);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero h1 {
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-size: 65px;
+  position: absolute;
+  line-height: 85px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.neon-light {
+  width: 15px;
+  height: 500px;
+  background: transparent;
+  border-radius: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 40px 5px #fff, inset 0 0 20px #fff, 0 0 160px 20px #08f,
+    inset 0 0 20px #08f, 0 0 320px 30px #08f, inset 0 0 20px #08f;
+  animation: run 5s linear infinite;
+}
+
+@keyframes run {
+  0%{
+    left:10%;
+    opacity: 0;
+  }
+  2%{
+    left:10%;
+    opacity: 1;
+  }
+  4%{
+    left:10%;
+    opacity: 0;
+  }
+  6%{
+    left:10%;
+    opacity: 1;
+  }
+  8%{
+    left:10%;
+    opacity: 0;
+  }
+  10%{
+    left:10%;
+    opacity: 1;
+  }
+  100%{
+    left:90%;
+    opacity: 1;
+  }
+  
+}
