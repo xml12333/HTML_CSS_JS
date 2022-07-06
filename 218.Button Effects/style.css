@@ -1,0 +1,211 @@
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+h1 {
+  margin-bottom: 50px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: hotpink;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.btn1 {
+  background-image: linear-gradient(to right, hotpink 50%, darkviolet 50%);
+  background-size: 200%;
+  transition: 0.4s ease-out;
+}
+
+.btn1:hover {
+  background-position: right;
+}
+
+.btn2 {
+  position: relative;
+  overflow: hidden;
+}
+.btn2 span {
+  position: relative;
+  z-index: 2;
+}
+
+.btn2::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  width: 0;
+  height: 0;
+  background-color: darkviolet;
+  border-radius: 999px;
+  transition: 0.8s ease-out;
+}
+
+.btn2:hover::after {
+  width: 200%;
+  padding-top: 200%;
+}
+
+.btn3 {
+  position: relative;
+  background-color: transparent;
+  color: lightslategray;
+  border: 3px solid lightslategray;
+  transition: 0.4s ease-out;
+}
+.btn3 span {
+  position: relative;
+  z-index: 2;
+}
+
+.btn3::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  width: calc(100% + 2rem);
+  height: calc(100% + 2rem);
+  border-radius: 0.5rem;
+  border: 3px solid lightslategray;
+  opacity: 0;
+  transition: 0.4s ease-out;
+}
+
+.btn3:hover {
+  color: hotpink;
+  border-color: transparent;
+}
+
+.btn3:hover::after {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  border-color: hotpink;
+}
+
+.btn4 {
+  position: relative;
+  background-color: transparent;
+  color: lightslategray;
+  border: 3px solid lightslategray;
+  transition: 0.4s ease-out;
+}
+.btn4 span {
+  position: relative;
+  z-index: 2;
+}
+
+.btn4::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  width: calc(100% + 2rem);
+  height: calc(100% + 2rem);
+  border-radius: 0.5rem;
+  border: 3px solid lightslategray;
+  opacity: 0;
+  transition: 0.4s ease-out;
+}
+
+.btn4:hover {
+  color: #fff;
+  border-color: transparent;
+}
+
+.btn4:hover::after {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  border-color: hotpink;
+}
+
+.btn4::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  width: 0;
+  height: 0;
+  background-color: hotpink;
+  border-radius: 999px;
+  transition: 0.4s ease-out;
+}
+
+.btn4:hover::before {
+  width: calc(100% + 5px);
+  height: calc(100% + 5px);
+  border-radius: 0.5rem;
+}
+
+.btn5 {
+  position: relative;
+  background-color: transparent;
+  color: lightslategray;
+  border: 3px solid lightslategray;
+  overflow: hidden;
+  transition: 0.4s ease-out;
+}
+.btn5 span {
+  position: relative;
+  z-index: 2;
+}
+
+
+.btn5::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  width: 100%;
+  height: 0;
+  background-color: hotpink;
+  transition: 0.4s ease-out;
+}
+
+.btn5:hover{
+  color:#fff;
+  border-color: transparent;
+}
+
+.btn5:hover::after{
+  height: 100%;
+}

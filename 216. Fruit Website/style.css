@@ -1,0 +1,154 @@
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+.left-col {
+  flex-basis: 50%;
+  background: #fff;
+  position: relative;
+}
+.right-col {
+  flex-basis: 50%;
+  background: #ff7878;
+  position: relative;
+}
+
+.logo {
+  width: 80px;
+  margin: 30px 80px;
+}
+.content-box {
+  width: 290px;
+  position: absolute;
+  top: 170px;
+  left: 80px;
+}
+.rating {
+  width: 90px;
+}
+
+.content-box h1 {
+  font-size: 58px;
+  margin: 15px 0 30px;
+}
+
+.content-box p {
+  font-size: 13px;
+  color: #949494;
+  line-height: 15px;
+  margin-bottom: 80px;
+}
+
+.content-box button {
+  background: #ff7878;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border: 0;
+  padding: 13px 25px;
+  outline: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.content-box button img {
+  width: 25px;
+  margin-left: 20px;
+}
+
+.left-arrow {
+  width: 65px;
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+}
+
+.navbar {
+  width: 80%;
+  margin: 40px auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 7px 15px;
+  border-radius: 20px;
+}
+
+.search-box input {
+  background: transparent;
+  border: 0;
+  outline: none;
+  color: #fff;
+}
+
+::placeholder {
+  color: #fff;
+  font-size: 9px;
+}
+.search-box img {
+  width: 13px;
+  margin-left: 13px;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar ul li {
+  list-style: none;
+  margin-left: 50px;
+}
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul li img {
+  width: 15px;
+  margin-right: 15px;
+}
+
+.more-items {
+  width: 220px;
+  display: block;
+  position: absolute;
+  bottom: -75px;
+  right: 100px;
+}
+
+.more-items img {
+  width: 220px;
+  margin: 10px;
+}
+
+.right-arrow {
+  width: 65px;
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+}
+
+.main-img {
+  width: 550px;
+  position: absolute;
+  top: 50%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+}
