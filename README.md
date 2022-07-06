@@ -2,3 +2,4 @@
 - TraversyMedia
 - FlorinPop
 - EasyTutorials
+- TylerPotts
