@@ -1,0 +1,117 @@
+:root {
+  --primary: hotpink;
+  --grey: #888;
+  --card-width: 320px;
+  --image-width: calc((var(--card-width) / 1.5));
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+main {
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom right, hotpink, pink);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: var(--card-width);
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: 0.4s;
+}
+
+.card .image {
+  position: relative;
+  width: 100%;
+  width: var(--image-width);
+  height: var(--image-width);
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  margin: -8rem auto 1.5rem;
+  padding: 0.25rem;
+  overflow: hidden;
+  background-color: #fff;
+  transform: 0.4s;
+}
+
+.card .image img {
+  width: 100%;
+  border-radius: 50%;
+  border: 3px solid var(--primary);
+  transition: 0.4s;
+}
+
+.card .content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+.card .content p {
+  color: var(--grey);
+  font-size: 1.125rem;
+}
+.card:hover {
+  --card-width: 480px;
+  --image-width: calc(var(--card-width) / 2);
+}
+
+.card:hover .image {
+  margin-top: -4rem;
+  border-radius: 2rem;
+}
+
+.card:hover .image img {
+  border-radius: 2rem;
+}
+
+.card:hover .name {
+  margin-bottom: 1.5rem;
+}
+
+.card:hover .content {
+  max-height: 350px;
+  opacity: 1;
+  overflow: visible;
+}
+
+.card .content .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.card .content .buttons button {
+  appearance: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  display: block;
+  padding: 0.5 1rem;
+  background-color: var(--primary);
+  color: #fff;
+  min-width: 160px;
+  border-radius: 0.5rem;
+  font-size: 1.25rem;
+  margin: 0 0.5rem;
+  transition: 0.4s;
+}
+
+.card .content .buttons button:hover{
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transform: translateY(-0.5rem) scale(1.15);
+}
