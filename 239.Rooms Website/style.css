@@ -1,0 +1,150 @@
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.left-col,
+.right-col {
+  flex-basis: 50%;
+  height: 100vh;
+  position: relative;
+}
+
+.logo {
+  display: block;
+  width: 80px;
+  margin-top: 30px;
+  margin-left: 120px;
+}
+
+.content {
+  max-width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 120px;
+  transform: translateY(-50%);
+}
+
+.content h1 {
+  color: #05a35f;
+  font-size: 60px;
+  line-height: 70px;
+  margin: 25px 0;
+}
+
+.content p {
+  color: #777;
+  font-size: 17px;
+  line-height: 28px;
+  margin-bottom: 50px;
+}
+
+button {
+  width: 200px;
+  border: none;
+  background: #05a35f;
+  box-shadow: 0px 10px 10px 1px rgba(219, 219, 219, 0.5);
+  padding: 25px 0;
+  color: #fff;
+  outline: none;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.slider {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  /* background-image: url(images/pic-1.jpg);
+  background-position: center;
+  background-size: cover; */
+
+}
+
+.slider img {
+  width: 100%;
+}
+
+.slider-content {
+  width: 100%;
+  height: 40%;
+  background: #05a35f;
+  padding-top: 30px;
+  padding-left: 30px;
+}
+.slider-content h2 {
+  font-size: 26px;
+  font-weight: 100;
+  color: #fff;
+}
+
+.slider-content p {
+  color: #bfffdd;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+
+hr {
+  border: none;
+  width: 270px;
+  height: 1px;
+  background: #b5e3cf;
+  margin: 20px 0 30px;
+}
+
+.controller {
+  width: 120px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controller img {
+  width: 45px;
+  cursor: pointer;
+}
+.vertical-line {
+  width: 2px;
+  height: 30px;
+  margin: 10px 20px;
+  border: 1px solid #b5e3cf;
+}
+
+@media only screen and (max-width:800px){
+  .logo{
+    margin: 30px auto;
+  }
+  .left-col, .right-col{
+    flex-basis: 100%;
+    height: calc(100vw);
+  }
+  .content{
+    left: 0;
+    padding: 20px;
+    text-align: center;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+  .content h1{
+    font-size: 34px;
+    line-height: 38px;
+  }
+  .slider{
+    height: auto;
+  }
+  .slider-content{
+    height: auto;
+  }
+}
