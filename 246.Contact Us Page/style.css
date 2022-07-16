@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: linear-gradient(45deg, #7ea8f8, #e14e42);
+}
+.container {
+  width: 80%;
+  margin: 50px auto;
+  height: 100vh;
+  font-size: 14px;
+}
+
+.contact-box {
+  display: flex;
+  background: #fff;
+}
+
+.contact-left {
+  flex-basis: 60%;
+  padding: 40px 60px;
+}
+
+.contact-rigth {
+  flex-basis: 40%;
+  padding: 40px;
+  background: #4c408d;
+  color: #fff;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+.container p {
+  margin-bottom: 40px;
+}
+
+.input-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.input-row .input-group {
+  flex-basis: 45%;
+}
+input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  padding-bottom: 5px;
+}
+
+textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 10px;
+}
+
+label {
+  margin-bottom: 6px;
+  display: block;
+  color: #4c408d;
+}
+
+button {
+  background: #4c408d;
+  width: 100px;
+  border: none;
+  outline: none;
+  color: #fff;
+  height: 35px;
+  margin-top: 20px;
+  box-shadow: 0px 5px 15px 0px rgba(28, 0, 181, 0.3);
+  transition: transform 0.2s ease-out;
+}
+
+button:active{
+  transform: translateY(3px);
+}
+.contact-left h3 {
+  color: #4c408d;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.contact-rigth h3 {
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+tr td:first-child {
+  padding-right: 20px;
+}
+
+tr td {
+  padding-top: 20px;
+}
