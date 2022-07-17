@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+  cursor: none;
+}
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.left-box {
+  flex-basis: 20%;
+  background: #002e52;
+}
+
+.right-box {
+  flex-basis: 80%;
+  position: relative;
+}
+
+.logo {
+  width: 150px;
+  margin: 60px 0;
+}
+
+.wrapper {
+  width: 90%;
+  margin: auto;
+}
+.search-box {
+  display: flex;
+  background: #fff;
+  padding: 10px 7px;
+  border-radius: 20px;
+}
+.search-box img {
+  width: 18px;
+  margin: auto 5px;
+}
+
+.search-box input {
+  width: 80%;
+  border: 0;
+  outline: none;
+  background: transparent;
+  z-index: 2;
+}
+
+.vertical-line {
+  width: 1px;
+  height: 40vh;
+  background: #797979;
+  margin: 30px 0 30px;
+}
+
+.wrapper ul li {
+  list-style: none;
+  margin: 10px 0;
+}
+
+.wrapper ul li a {
+  color: #797979;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+nav {
+  margin-top: 60px;
+  margin-left: 60px;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  list-style: none;
+  margin-right: 70px;
+}
+
+nav ul li a {
+  color: #fff;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.right-box h2 {
+  margin-top: 5%;
+  margin-left: 60px;
+  font-size: 60px;
+  letter-spacing: 3px;
+}
+
+.robot {
+  position: absolute;
+  bottom: 0;
+  right: 6%;
+  height: 93%;
+  z-index: -1;
+}
+
+.robot img {
+  height: 100%;
+}
+
+.robot h1 {
+  position: absolute;
+  top: 100px;
+  right: -30px;
+  font-size: 130px;
+  color: #e2e2e2;
+  opacity: 0.2;
+}
+
+.features {
+  position: absolute;
+  bottom: 17%;
+  right: 10px;
+  color: rgb(223, 151, 17);
+}
+
+.features img {
+  width: 50px;
+  margin-left: 40px;
+}
+
+.features div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.features div:nth-child(2) {
+  margin-left: 35px;
+}
+
+.features div:nth-child(3) {
+  margin-left: 38px;
+}
+
+.circle {
+  width: 180px;
+  height: 180px;
+  border: 40px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  position: absolute;
+  top: 38%;
+  left: -130px;
+}
+
+.pagination ul {
+  display: flex;
+  align-items: flex-end;
+}
+
+.pagination ul li {
+  list-style: none;
+  margin-right: 20px;
+}
+
+.pagination ul li a {
+  text-decoration: none;
+  color: rgb(223, 151, 17);
+  font-size: 12px;
+  padding: 10px;
+  border-bottom: 2px solid #fff;
+}
+
+.pagination {
+  position: absolute;
+  left: 60px;
+  bottom: 5%;
+}
+
+.pagination ul li.active a {
+  font-size: 22px;
+  border-bottom: 5px solid;
+}
+.volume{
+  width: 25px;
+  position: absolute;
+  right: 4%;
+  bottom: 4%;
+}
+
+.small-cursor{
+  height: 10px;
+  width: 10px;
+  background: #3fc9f5;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  display: none;
+}
+
+.large-cursor{
+  height: 40px;
+  width: 40px;
+  border: 2px solid #3fc9f5;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  display: none;
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+}
+a{
+  position: relative;
+  z-index: 2;
+}
