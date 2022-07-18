@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/swiper.css" />
+
+    <title>Slider</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="header">
+        <i class="fa-solid fa-bars"></i>
+        <p>MEET APP</p>
+        <i class="fa-solid fa-bell"></i>
+      </div>
+      <div class="main-text">
+        <h2>OUR TEAM</h2>
+        <small
+          >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat
+          doloremque vitae ut nam rem quae facere sed beatae modi culpa
+          molestias ea praesentium provident, quis quisquam minus? Quia, sequi
+          iusto?</small
+        >
+      </div>
+
+      <!-- Swiper -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="img/person-1.jpg" alt="person-1" />
+            <div class="info">
+              <h3>Jhon Dou</h3>
+              <p>Founder & CEO</p>
+              <a href="#">Contact</a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="img/person-2.jpg" alt="person-2" />
+            <div class="info">
+              <h3>Jhon Dou</h3>
+              <p>Founder & CEO</p>
+              <a href="#">Contact</a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="img/person-3.jpg" alt="person-3" />
+            <div class="info">
+              <h3>Jhon Dou</h3>
+              <p>Founder & CEO</p>
+              <a href="#">Contact</a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="img/person-4.jpg" alt="person-4" />
+            <div class="info">
+              <h3>Jhon Dou</h3>
+              <p>Founder & CEO</p>
+              <a href="#">Contact</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="footer-menu">
+        <i class="fa-solid fa-house"></i>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-regular fa-user"></i>
+        <i class="fas fa-chevron-left"></i>
+      </div>
+    </div>
+
+    <script src="js/swiper.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".swiper-container", {
+        slidesPerView: 1,
+        centeredSlides: true,
+        grabCursor: true,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    </script>
+  </body>
+</html>
