@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #000;
+}
+
+.main {
+  width: 60%;
+  margin: 24% auto;
+  position: relative;
+  display: flex;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 7px;
+  outline: none;
+  border-radius: 3px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  z-index: 3;
+  position: relative;
+}
+
+.selector {
+  height: 104px;
+  width: 48px;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.selectBtn {
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  position: absolute;
+  background: #fff;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  height: 35px;
+  width: 35px;
+  background: rgb(255, 166, 0);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon i {
+  font-size: 17 px;
+}
+
+.selectValue {
+  width: 48px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  background: #ffd200;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 45px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.selectValue::after {
+  content: "";
+  border-top: 17px solid #ffd200;
+  border-left: 24px solid #000;
+  border-right: 24px solid #000;
+  position: absolute;
+  bottom: -14px;
+  left: 0;
+  z-index: 1;
+}
+
+.progressBar {
+  width: 50%;
+  height: 7px;
+  background: #ffd200;
+  border-radius: 3px;
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  left: 0;
+}

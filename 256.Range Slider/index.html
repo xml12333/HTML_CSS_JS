@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Slider Selector</title>
+  </head>
+  <body>
+    <div class="main">
+      <input
+        type="range"
+        min="0"
+        max="100"
+        value="50"
+        id="slider"
+        class="slider"
+      />
+      <div id="selector" class="selector">
+        <div class="selectBtn">
+          <div class="icon">
+            <i class="fa-solid fa-code"></i>
+          </div>
+        </div>
+        <div id="selectValue" class="selectValue"></div>
+      </div>
+      <div id="progressBar" class="progressBar"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
