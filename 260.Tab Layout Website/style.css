@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.hero {
+  width: 80%;
+  height: 100vh;
+  position: relative;
+  margin: 100px auto;
+  overflow: hidden;
+}
+
+.btn-box{
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+.btn-box button{
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  margin-right: 50px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.btn-box .fa-brands{
+  margin-right: 20px;
+}
+.btn-box button:hover .fa-brands{
+  color: #ff7846;
+}
+
+.img-box{
+  width: 550px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50px;
+}
+
+.pic-one{
+  width: 100%;
+}
+.pic-two{
+  width: 100px;
+  position: absolute;
+  left: 15px;
+  bottom: 20px;
+}
+.pic-three{
+  width: 75px;
+  position: absolute;
+  left: 150px;
+  bottom: 70px;
+}
+.pic-four{
+  width: 160px;
+  position: absolute;
+  right: 40px;
+  top: 110px;
+}
+.pic-five{
+  width: 110px;
+  position: absolute;
+  right: 20px;
+  bottom: 0;
+}
+.pic-six{
+  width: 160px;
+  position: absolute;
+  right: 160px;
+  bottom: 35;
+}
+
+.img-one{
+  width: 100%;
+}
+
+.img-two{
+  width: 200px;
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+}
+.img-three{
+  width: 70px;
+  position: absolute;
+  left: 245px;
+  bottom: 55px;
+}
+.img-four{
+  width: 60px;
+  position: absolute;
+  right: 155px;
+  bottom: 95px;
+}
+.img-five{
+  width: 100px;
+  position: absolute;
+  right: 50px;
+  bottom: 20px;
+}
+
+.content{
+  display: flex;
+  justify-content: center;
+  margin: 5% auto;
+  flex-wrap: wrap;
+  align-items: center;
+  position: absolute;
+  transform: translateX(100%);
+  transition: 0.3s;
+}
+
+.content-left{
+  flex-basis: 50%;
+}
+
+.content-right{
+  flex-basis: 50%;
+  text-align: center;
+}
+
+.content-left p{
+  font-size: 13px;
+  padding: 30px 0;
+}
+
+.content-left a{
+  width: 150px;
+  display: block;
+  padding: 8px 5px;
+  border-radius: 20px;
+  text-decoration: none;
+  background-color: #ff7846;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.content1{
+  transform: translateX(0);
+}
+
+.btn1{
+  color:#ff7846
+}
