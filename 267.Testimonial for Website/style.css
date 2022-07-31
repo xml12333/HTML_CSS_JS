@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffe8f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.testimonial {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+}
+.testimonial-text {
+  background: #ff0058;
+  color: #fff;
+  width: 100%;
+  height: 350px;
+  position: relative;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+.user-text {
+  width: 80%;
+  text-align: center;
+  line-height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  transition: opacity 0.5s ease-out;
+}
+.user-text .fas {
+  font-size: 30px;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+.user-text span {
+  display: block;
+  font-size: 13px;
+  margin-top: 70px;
+  font-weight: 500;
+  text-transform: uppercase;
+ 
+}
+
+.testimonial-pic {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user-pic {
+  width: 65px;
+  padding: 5px;
+  border-radius: 50%;
+  margin: 10px;
+  cursor: pointer;
+  transition: width 0.5s ease-out;
+}
+
+.user-text.active-text {
+  display: block;
+}
+
+.user-pic.active-pic {
+  width: 100px;
+  border: 3px solid #ff0058;
+}
