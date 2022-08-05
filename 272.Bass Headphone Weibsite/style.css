@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.hero {
+  height: 100vh;
+  padding: 0 70px;
+  display: flex;
+  align-items: center;
+}
+
+.left-col {
+  flex-basis: 50%;
+  text-align: center;
+}
+
+.product-img {
+  background: #f1f4f9;
+  width: 450px;
+  height: 450px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.headphone {
+  width: 400px;
+  margin-top: 20px;
+  animation: headphone 2s linear infinite;
+}
+.right-col {
+  flex-basis: 50%;
+  padding: 0 30px;
+  font-family: sans-serif;
+}
+
+.right-col h1 {
+  font-size: 42px;
+  font-weight: 900;
+  margin-bottom: 30px;
+}
+.right-col h3 {
+  color: #365895;
+  margin: 30px 0;
+}
+
+.right-col a {
+  width: 100px;
+  padding: 10px 15px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  background: #365895;
+}
+
+.right-col span {
+  color: #365895;
+}
+
+.right-col a span {
+  display: inline-block;
+  margin-right: 7px;
+  color: #fff;
+  animation: arrow 1.5s linear infinite;
+}
+
+@keyframes arrow {
+  0% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(-5px);
+  }
+}
+@keyframes headphone {
+  0% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
+}
+
+.offer {
+  width: 100px;
+  height: 100px;
+  background: #365895;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  animation: offer 2s linear infinite;
+  box-shadow: 0 0 0 20px rgba(0 36 95 /0.2), 0 0 0 40px rgba(0 36 95 /0.2),
+    0 0 0 60px rgba(0 36 95 /0.2);
+    
+}
+@keyframes offer {
+  0%{
+    box-shadow: 0 0 0 00px rgba(0 36 95 /0.2), 0 0 0 20px rgba(0 36 95 /0.2),
+    0 0 0 40px rgba(0 36 95 /0.2);
+  }
+  100%{
+    box-shadow: 0 0 0 20px rgba(0 36 95 /0.2), 0 0 0 40px rgba(0 36 95 /0.2),
+    0 0 0 60px rgba(0 36 95 /0);
+  }
+  
+}
+.offer .offer-text {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.offer-text span {
+  display: inline-block;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.offer-text span:nth-child(1) {
+  font-size: 2rem;
+  margin-bottom: -10px;
+}
+.offer-text span:nth-child(2) {
+  width: 100%;
+  letter-spacing: 3px;
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-style: italic;
+}
