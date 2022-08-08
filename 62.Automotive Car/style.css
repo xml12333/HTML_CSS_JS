@@ -9,7 +9,7 @@ body {
 }
 
 header {
-  background-image: url("car-bg.jpg");
+  background-image: url("img/car-bg.jpg");
   color: #fff;
   min-height: calc(100vh - 102px);
   display: flex;

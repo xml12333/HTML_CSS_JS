@@ -17,7 +17,7 @@ function getData() {
   excerpt.innerHTML =
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore perferendis'
   profile_img.innerHTML =
-    '<img src="123.jpg" alt="" />'
+    '<img src="img/123.jpg" alt="" />'
   name.innerHTML = 'John Doe'
   date.innerHTML = 'Oct 08, 2020'
 

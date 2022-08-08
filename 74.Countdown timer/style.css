@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 body {
-  background-image: url(snow.jpg);
+  background-image: url(img/snow.jpg);
   background-size: cover;
   background-position: center center;
   font-family: "Roboto", sans-serif;
