@@ -284,4 +284,5 @@
 |274| [Nike Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/274.Nike%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/274.Nike%20Website/)| ![Thumbnail](274.Nike%20Website/img/info_thumbnail.jpg)|
 |275| [Profile Card](https://github.com/xml12333/HTML_CSS_JS/tree/main/275.Profile%20Card)| [Demo](https://nikt.com.ua/projects/htmlCssJs/275.Profile%20Card/)| ![Thumbnail](275.Profile%20Card/img/info_thumbnail.jpg)|
 |276| [Charts Google](https://github.com/xml12333/HTML_CSS_JS/tree/main/276.Charts%20Google)| [Demo](https://nikt.com.ua/projects/htmlCssJs/276.Charts%20Google/)| ![Thumbnail](276.Charts%20Google/img/info_thumbnail.jpg)|
+|277| [Image Gallery](https://github.com/xml12333/HTML_CSS_JS/tree/main/277.Image%20Gallery)| [Demo](https://nikt.com.ua/projects/htmlCssJs/277.Image%20Gallery/)| ![Thumbnail](277.Image%20Gallery/img/info_thumbnail.jpg)|
 |300| [CheckiO](https://github.com/xml12333/HTML_CSS_JS/tree/main/300.CheckiO)| [Demo](https://nikt.com.ua/projects/htmlCssJs/300.CheckiO/)| ![Thumbnail](300.CheckiO/img/info_thumbnail.jpg)|
