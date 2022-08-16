@@ -289,4 +289,5 @@
 |278| [Confetti Button](https://github.com/xml12333/HTML_CSS_JS/tree/main/278.Confetti%20Button)| [Demo](https://nikt.com.ua/projects/htmlCssJs/278.Confetti%20Button/)| ![Thumbnail](278.Confetti%20Button/img/info_thumbnail.jpg)|
 |279| [Button Hover](https://github.com/xml12333/HTML_CSS_JS/tree/main/279.Button%20Hover)| [Demo](https://nikt.com.ua/projects/htmlCssJs/279.Button%20Hover/)| ![Thumbnail](279.Button%20Hover/img/info_thumbnail.jpg)|
 |280| [Input Field](https://github.com/xml12333/HTML_CSS_JS/tree/main/280.Input%20Field)| [Demo](https://nikt.com.ua/projects/htmlCssJs/280.Input%20Field/)| ![Thumbnail](280.Input%20Field/img/info_thumbnail.jpg)|
+|281| [Battery Level](https://github.com/xml12333/HTML_CSS_JS/tree/main/281.Battery%20Level)| [Demo](https://nikt.com.ua/projects/htmlCssJs/281.Battery%20Level/)| ![Thumbnail](281.Battery%20Level/img/info_thumbnail.jpg)|
 |300| [CheckiO](https://github.com/xml12333/HTML_CSS_JS/tree/main/300.CheckiO)| [Demo](https://nikt.com.ua/projects/htmlCssJs/300.CheckiO/)| ![Thumbnail](300.CheckiO/img/info_thumbnail.jpg)|
