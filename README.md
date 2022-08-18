@@ -291,4 +291,6 @@
 |280| [Input Field](https://github.com/xml12333/HTML_CSS_JS/tree/main/280.Input%20Field)| [Demo](https://nikt.com.ua/projects/htmlCssJs/280.Input%20Field/)| ![Thumbnail](280.Input%20Field/img/info_thumbnail.jpg)|
 |281| [Battery Level](https://github.com/xml12333/HTML_CSS_JS/tree/main/281.Battery%20Level)| [Demo](https://nikt.com.ua/projects/htmlCssJs/281.Battery%20Level/)| ![Thumbnail](281.Battery%20Level/img/info_thumbnail.jpg)|
 |282| [404 Page](https://github.com/xml12333/HTML_CSS_JS/tree/main/282.404%20Page)| [Demo](https://nikt.com.ua/projects/htmlCssJs/282.404%20Page/)| ![Thumbnail](282.404%20Page/img/info_thumbnail.jpg)|
+|283| [Pomodoro Clock](https://github.com/xml12333/HTML_CSS_JS/tree/main/283.Pomodoro%20Clock)| [Demo](https://nikt.com.ua/projects/htmlCssJs/283.Pomodoro%20Clock/)| ![Thumbnail](283.Pomodoro%20Clock/img/info_thumbnail.jpg)|
+|284| [Sidebar Menu](https://github.com/xml12333/HTML_CSS_JS/tree/main/284.Sidebar%20Menu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/284.Sidebar%20Menu/)| ![Thumbnail](284.Sidebar%20Menu/img/info_thumbnail.jpg)|
 |300| [CheckiO](https://github.com/xml12333/HTML_CSS_JS/tree/main/300.CheckiO)| [Demo](https://nikt.com.ua/projects/htmlCssJs/300.CheckiO/)| ![Thumbnail](300.CheckiO/img/info_thumbnail.jpg)|
