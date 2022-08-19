@@ -293,4 +293,5 @@
 |282| [404 Page](https://github.com/xml12333/HTML_CSS_JS/tree/main/282.404%20Page)| [Demo](https://nikt.com.ua/projects/htmlCssJs/282.404%20Page/)| ![Thumbnail](282.404%20Page/img/info_thumbnail.jpg)|
 |283| [Pomodoro Clock](https://github.com/xml12333/HTML_CSS_JS/tree/main/283.Pomodoro%20Clock)| [Demo](https://nikt.com.ua/projects/htmlCssJs/283.Pomodoro%20Clock/)| ![Thumbnail](283.Pomodoro%20Clock/img/info_thumbnail.jpg)|
 |284| [Sidebar Menu](https://github.com/xml12333/HTML_CSS_JS/tree/main/284.Sidebar%20Menu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/284.Sidebar%20Menu/)| ![Thumbnail](284.Sidebar%20Menu/img/info_thumbnail.jpg)|
+|285| [Image Gallery](https://github.com/xml12333/HTML_CSS_JS/tree/main/285.Image%20Gallery)| [Demo](https://nikt.com.ua/projects/htmlCssJs/285.Image%20Gallery/)| ![Thumbnail](285.Image%20Gallery/img/info_thumbnail.jpg)|
 |300| [CheckiO](https://github.com/xml12333/HTML_CSS_JS/tree/main/300.CheckiO)| [Demo](https://nikt.com.ua/projects/htmlCssJs/300.CheckiO/)| ![Thumbnail](300.CheckiO/img/info_thumbnail.jpg)|
