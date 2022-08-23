@@ -297,4 +297,5 @@
 |286| [Nav Menu](https://github.com/xml12333/HTML_CSS_JS/tree/main/286.Nav%20Menu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/286.Nav%20Menu/)| ![Thumbnail](286.Nav%20Menu/img/info_thumbnail.jpg)|
 |287| [Navbar](https://github.com/xml12333/HTML_CSS_JS/tree/main/287.Navbar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/287.Navbar/)| ![Thumbnail](287.Navbar/img/info_thumbnail.jpg)|
 |288| [Loading Button and Toggle Switch](https://github.com/xml12333/HTML_CSS_JS/tree/main/288.Loading%20Button%20and%20Toggle%20Switch)| [Demo](https://nikt.com.ua/projects/htmlCssJs/288.Loading%20Button%20and%20Toggle%20Switch/)| ![Thumbnail](288.Loading%20Button%20and%20Toggle%20Switch/img/info_thumbnail.jpg)|
+|289| [Show Hide Password](https://github.com/xml12333/HTML_CSS_JS/tree/main/289.Show%20Hide%20Password)| [Demo](https://nikt.com.ua/projects/htmlCssJs/289.Show%20Hide%20Password/)| ![Thumbnail](289.Show%20Hide%20Password/img/info_thumbnail.jpg)|
 |300| [CheckiO](https://github.com/xml12333/HTML_CSS_JS/tree/main/300.CheckiO)| [Demo](https://nikt.com.ua/projects/htmlCssJs/300.CheckiO/)| ![Thumbnail](300.CheckiO/img/info_thumbnail.jpg)|
