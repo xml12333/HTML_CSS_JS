@@ -1,0 +1,219 @@
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap");
+
+/*===== VARIABLES CSS =====*/
+:root {
+  /*========== Colors ==========*/
+  --first-color: #322ff2;
+  --first-color-light: #e3e2fd;
+  --body-color: #fafaff;
+
+  /*========== Font and typography ==========*/
+  --body-font: "Quicksand", sans-serif;
+  --normal-font-size: 1rem;
+}
+
+/*========== BASE ==========*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--body-font);
+  background-color: var(--body-color);
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+}
+
+/*========== ICONS TOOLTIP ==========*/
+.social,
+.social__container,
+.social__content {
+  display: flex;
+}
+
+.social {
+  justify-content: center;
+  align-items: center;
+}
+
+.social__content {
+  position: relative;
+  padding: 0.5rem;
+  margin: 0 1rem;
+  background-color: var(--first-color-light);
+  border-radius: 1rem;
+  box-shadow: -2px -2px 8px #fafaff, 2px 2px 8px rgba(13, 12, 64, 0.2);
+  cursor: pointer;
+}
+
+.social__icon {
+  font-size: 2rem;
+  color: var(--first-color);
+}
+
+.social__tooltip {
+  opacity: 0;
+  position: absolute;
+  padding: 0.5rem 1rem;
+  background-color: var(--first-color);
+  color: var(--first-color-light);
+  font-size: var(--normal-font-size);
+  white-space: nowrap;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  pointer-events: none;
+}
+
+.social__tooltip::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: var(--first-color);
+  border-radius: 3px;
+}
+
+.social__content,
+.social__tooltip,
+.social__icon {
+  transition: 0.3s;
+}
+
+.social__content:hover {
+  background-color: var(--first-color);
+}
+
+.social__content:hover .social__icon {
+  color: var(--first-color-light);
+}
+
+/*========== Tooltip left ==========*/
+.social__tooltip-left {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.social__tooltip-left::after {
+  top: 50%;
+  transform: translate(50%, -50%) rotate(45deg);
+  right: 1px;
+}
+
+.social__content:hover .social__tooltip-left {
+  opacity: 1;
+  left: -1rem;
+}
+
+/*========== Tooltip top ==========*/
+.social__tooltip-top {
+  top: -2.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.social__tooltip-top::after {
+  left: 50%;
+  transform: translate(-50%, 50%) rotate(45deg);
+  bottom: 1px;
+}
+
+.social__content:hover .social__tooltip-top {
+  opacity: 1;
+  top: -3.25rem;
+}
+
+/*========== Tooltip bottom ==========*/
+.social__tooltip-bottom {
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+}
+
+.social__tooltip-bottom::after {
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  top: 1px;
+}
+
+.social__content:hover .social__tooltip-bottom {
+  opacity: 1;
+  bottom: -1rem;
+}
+
+/*========== Tooltip right  ==========*/
+.social__tooltip-right {
+  right: 0;
+  transform: translateX(100%);
+}
+
+.social__tooltip-right::after {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  left: 1px;
+}
+
+.social__content:hover .social__tooltip-right {
+  opacity: 1;
+  right: -1rem;
+}
+/*========== Button  ==========*/
+.skeuo__container {
+  display: grid;
+  place-content: center;
+  width: 300px;
+  height: 200px;
+  border-radius: 8px;
+
+  background: #26272c;
+}
+
+.skeuo__switch {
+  display: none;
+}
+
+.skeuo__button {
+  width: 6rem;
+  background: linear-gradient(90deg, #444650 0%, #101113 100%);
+  padding: 0.75rem 1.25rem 0.75rem 1rem;
+  border-radius: 3rem;
+  box-shadow: inset -2px 0 18px #212227, inset -14px 0 6px #43454f,
+    inset 4px 0 6px #151619;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.skeuo__circle {
+  font-size: 18px;
+  color: #5ccc9d;
+}
+
+.skeuo__line {
+  transform: rotate(90deg);
+  font-size: 22px;
+  color: #9699a6;
+}
+
+/* Button animation effects */
+.skeuo__switch:checked ~ .skeuo__button {
+  background: linear-gradient(90deg, #101113 0%, #444650 100%);
+  box-shadow: inset -2px 0 18px #212227, inset -4px 0 6px #151619,
+    inset 14px 0 6px #43454f;
+  padding: 0.75rem 1rem 0.75rem 1.25rem;
+}
+
+.skeuo__switch:checked ~ .skeuo__button .skeuo__circle {
+  font-size: 20px;
+}
+
+.skeuo__switch:checked ~ .skeuo__button .skeuo__line {
+  font-size: 18px;
+}
