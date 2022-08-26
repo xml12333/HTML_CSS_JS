@@ -300,4 +300,5 @@
 |289| [Show Hide Password](https://github.com/xml12333/HTML_CSS_JS/tree/main/289.Show%20Hide%20Password)| [Demo](https://nikt.com.ua/projects/htmlCssJs/289.Show%20Hide%20Password/)| ![Thumbnail](289.Show%20Hide%20Password/img/info_thumbnail.jpg)|
 |290| [Social Icon and Button](https://github.com/xml12333/HTML_CSS_JS/tree/main/290.Social%20Icon%20and%20Button)| [Demo](https://nikt.com.ua/projects/htmlCssJs/290.Social%20Icon%20and%20Button/)| ![Thumbnail](290.Social%20Icon%20and%20Button/img/info_thumbnail.jpg)|
 |291| [Popup](https://github.com/xml12333/HTML_CSS_JS/tree/main/291.Popup)| [Demo](https://nikt.com.ua/projects/htmlCssJs/291.Popup/)| ![Thumbnail](291.Popup/img/info_thumbnail.jpg)|
+|292| [Navbar](https://github.com/xml12333/HTML_CSS_JS/tree/main/292.Navbar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/292.Navbar/)| ![Thumbnail](292.Navbar/img/info_thumbnail.jpg)|
 |300| [CheckiO](https://github.com/xml12333/HTML_CSS_JS/tree/main/300.CheckiO)| [Demo](https://nikt.com.ua/projects/htmlCssJs/300.CheckiO/)| ![Thumbnail](300.CheckiO/img/info_thumbnail.jpg)|
