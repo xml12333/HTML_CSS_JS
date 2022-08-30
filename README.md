@@ -304,4 +304,5 @@
 |293| [Accordion](https://github.com/xml12333/HTML_CSS_JS/tree/main/293.Accordion)| [Demo](https://nikt.com.ua/projects/htmlCssJs/293.Accordion/)| ![Thumbnail](293.Accordion/img/info_thumbnail.jpg)|
 |294| [Pricing Card](https://github.com/xml12333/HTML_CSS_JS/tree/main/294.Pricing%20Card)| [Demo](https://nikt.com.ua/projects/htmlCssJs/294.Pricing%20Card/)| ![Thumbnail](294.Pricing%20Card/img/info_thumbnail.jpg)|
 |295| [Neon Card](https://github.com/xml12333/HTML_CSS_JS/tree/main/295.Neon%20Card)| [Demo](https://nikt.com.ua/projects/htmlCssJs/295.Neon%20Card/)| ![Thumbnail](295.Neon%20Card/img/info_thumbnail.jpg)|
+|296| [Sidebar](https://github.com/xml12333/HTML_CSS_JS/tree/main/296.Sidebar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/296.Sidebar/)| ![Thumbnail](296.Sidebar/img/info_thumbnail.jpg)|
 |300| [CheckiO](https://github.com/xml12333/HTML_CSS_JS/tree/main/300.CheckiO)| [Demo](https://nikt.com.ua/projects/htmlCssJs/300.CheckiO/)| ![Thumbnail](300.CheckiO/img/info_thumbnail.jpg)|
