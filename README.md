@@ -311,3 +311,4 @@
 |300| [CheckiO](https://github.com/xml12333/HTML_CSS_JS/tree/main/300.CheckiO)| [Demo](https://nikt.com.ua/projects/htmlCssJs/300.CheckiO/)| ![Thumbnail](300.CheckiO/img/info_thumbnail.jpg)|
 |301| [Manage Responsive Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/301.Manage%20Responsive%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/301.Manage%20Responsive%20Website/)| ![Thumbnail](301.Manage%20Responsive%20Website/images/info_thumbnail.jpg)|
 |302| [Resume CV](https://github.com/xml12333/HTML_CSS_JS/tree/main/302.Resume%20CV)| [Demo](https://nikt.com.ua/projects/htmlCssJs/302.Resume%20CV/)| ![Thumbnail](302.Resume%20CV/img/info_thumbnail.jpg)|
+|303| [Coffee](https://github.com/xml12333/HTML_CSS_JS/tree/main/303.Coffee)| [Demo](https://nikt.com.ua/projects/htmlCssJs/303.Coffee/)| ![Thumbnail](303.Coffee/img/info_thumbnail.jpg)|
