@@ -316,3 +316,4 @@
 |305| [Sidebar](https://github.com/xml12333/HTML_CSS_JS/tree/main/305.Sidebar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/305.Sidebar/)| ![Thumbnail](305.Sidebar/img/info_thumbnail.jpg)|
 |306| [MenuBar](https://github.com/xml12333/HTML_CSS_JS/tree/main/306.MenuBar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/306.MenuBar/)| ![Thumbnail](306.MenuBar/img/info_thumbnail.jpg)|
 |307| [Login Form](https://github.com/xml12333/HTML_CSS_JS/tree/main/307.Login%20Form)| [Demo](https://nikt.com.ua/projects/htmlCssJs/307.Login%20Form/)| ![Thumbnail](307.Login%20Form/img/info_thumbnail.jpg)|
+|308| [Parallax Scrolling](https://github.com/xml12333/HTML_CSS_JS/tree/main/308.Parallax%20Scrolling)| [Demo](https://nikt.com.ua/projects/htmlCssJs/308.Parallax%20Scrolling/)| ![Thumbnail](308.Parallax%20Scrolling/img/info_thumbnail.jpg)|
