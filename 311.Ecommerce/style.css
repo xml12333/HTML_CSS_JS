@@ -98,7 +98,7 @@ img {
   padding: 3rem 0;
 }
 
-.sectio-title {
+.section-title {
   font-size: var(--h2-font-size);
   color: var(--dark-color);
   margin: var(--mb-4) 0 var(--mb-1);
@@ -408,5 +408,125 @@ img {
   filter: none;
 }
 /*===== FOOTER =====*/
+.footer {
+  background-color: var(--dark-color);
+  color: var(--white-color);
+}
+.footer__container {
+  row-gap: 1.5rem;
+  margin-bottom: var(--mb-4);
+}
+.footer__title {
+  margin-bottom: var(--mb-1);
+}
+.footer__deal {
+  margin-bottom: var(--mb-2);
+}
 
+.footer__store {
+  width: 100px;
+}
+.footer__link,
+.footer__social {
+  color: var(--dark-color-light);
+}
+
+.footer__link:hover {
+  text-decoration: underline;
+}
+.footer__social {
+  font-size: 1.3rem;
+  margin-right: var(--mb-1);
+}
+
+.footer__copy {
+  border-top: 1px solid var(--dark-color-light);
+  padding-top: 3rem;
+  text-align: center;
+  color: var(--dark-color-light);
+  font-size: var(--small-font-size);
+}
 /* ===== MEDIA QUERIES=====*/
+@media screen and (min-width: 768px) {
+  body {
+    margin: 0;
+  }
+  .section-all {
+    margin-bottom: var(--mb-4);
+  }
+  .nav {
+    height: calc(var(--header-height) + 1rem);
+    justify-content: initial;
+  }
+  .nav__menu {
+    margin-left: auto;
+  }
+
+  .nav__list {
+    display: flex;
+  }
+  .nav__item {
+    margin-left: var(--mb-4);
+    margin-bottom: 0;
+  }
+  .nav__toggle {
+    display: none;
+  }
+
+  .home__container {
+    height: 100vh;
+  }
+  .home__data {
+    padding: 0;
+    height: max-content;
+    align-self: center;
+  }
+  .home__title {
+    line-height: 0.8;
+    letter-spacing: 1.5rem;
+  }
+  .home__img {
+    width: 370px;
+  }
+  .collection__container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+  }
+  .collection__box {
+    padding: 0.5rem 3rem 0;
+  }
+  .collection__img {
+    width: 130px;
+  }
+  .featured__container,
+  .sponsors__container,
+  .footer__container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .offer__data {
+    padding: 5rem 0;
+  }
+  .new__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .newsletter__form {
+    width: 400px;
+    margin: 0 auto;
+  }
+  .footer__container {
+    padding: 2rem 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .bd-grid{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .home__data{
+    padding-left: 7rem;
+  }  
+  .home__img{
+    right: 15%;
+  }
+}
