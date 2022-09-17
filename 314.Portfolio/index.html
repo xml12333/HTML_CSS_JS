@@ -20,7 +20,7 @@
   </head>
   <body>
     <!--===== SCROLL TOP =====-->
-    <a href="" class="scrolltop" id="scroll-top">
+    <a href="#" class="scrolltop" id="scroll-top">
       <i class="bx bx-chevron-up scrolltop__icon"></i>
     </a>
     <!--===== HEADER =====-->
@@ -63,7 +63,7 @@
             <a
               download=""
               href="pdf/Clay-Doe-Cv.pdf"
-              class="button button-light"
+              class="button button-light home__button"
               >Download Cv</a
             >
           </div>
@@ -87,7 +87,7 @@
       <section class="about section bd-container" id="about">
         <span class="section-subtitle">My history</span>
         <h2 class="section-title">About me</h2>
-        <div class="about__cointainer bd-grid">
+        <div class="about__container bd-grid">
           <div class="about__data bd-grid">
             <p class="about__description">
               <span>Hello, I am <br /></span>Freelance frontend developer, I am
@@ -246,28 +246,237 @@
       <!--===== PROJECT IN MIND =====-->
       <section class="project section bd-container">
         <div class="project__container bd-grid">
-            <div class="project__data">
-                <i class="bx bx-chat project__icon"></i>
-                <div>
-                    <h2 class="project__title">Project in mind</h2>
-                    <p class="project__description">Hire me to carry out the following projects.</p>
-                </div>
-                <div>
-                    <a href="#" class="button button-white">Hire me</a>
-                </div>
+          <div class="project__data">
+            <i class="bx bx-chat project__icon"></i>
+            <div>
+              <h2 class="project__title">Project in mind</h2>
+              <p class="project__description">
+                Hire me to carry out the following projects.
+              </p>
             </div>
+            <div>
+              <a href="#" class="button button-white">Hire me</a>
+            </div>
+          </div>
         </div>
       </section>
 
       <!--===== PORTFOLIO =====-->
-
+      <section class="portfolio section bd-container" id="portfolio">
+        <span class="section-subtitle">My recent works</span>
+        <h2 class="section-title">Portfolio</h2>
+        <div class="portfolio__nav">
+          <span class="portfolio__item active-portfolio" data-filter="all"
+            >All</span
+          >
+          <span class="portfolio__item" data-filter=".web">Web</span>
+          <span class="portfolio__item" data-filter=".ux">UI/UX</span>
+          <span class="portfolio__item" data-filter=".app">App</span>
+        </div>
+        <div class="portfolio__container bd-grid">
+          <div class="portfolio__content mix web">
+            <a href="#"
+              ><img src="img/work1.jpg" alt="work" class="portfolio__img"
+            /></a>
+            <div class="portfolio__data">
+              <span class="portfolio__subtitle">Web development</span>
+              <a href="#"
+                ><h2 class="portfolio__title">
+                  New portfolio of work done for a client.
+                </h2></a
+              >
+              <a href="#" class="button button-link">View Details</a>
+            </div>
+          </div>
+          <div class="portfolio__content mix web">
+            <a href="#"
+              ><img src="img/work2.jpg" alt="work" class="portfolio__img"
+            /></a>
+            <div class="portfolio__data">
+              <span class="portfolio__subtitle">Web development</span>
+              <a href="#"
+                ><h2 class="portfolio__title">
+                  New portfolio of work done for a client.
+                </h2></a
+              >
+              <a href="#" class="button button-link">View Details</a>
+            </div>
+          </div>
+          <div class="portfolio__content mix ux">
+            <a href="#"
+              ><img src="img/work3.jpg" alt="work" class="portfolio__img"
+            /></a>
+            <div class="portfolio__data">
+              <span class="portfolio__subtitle">UX design</span>
+              <a href="#"
+                ><h2 class="portfolio__title">
+                  New portfolio of work done for a client.
+                </h2></a
+              >
+              <a href="#" class="button button-link">View Details</a>
+            </div>
+          </div>
+          <div class="portfolio__content mix ux">
+            <a href="#"
+              ><img src="img/work4.jpg" alt="work" class="portfolio__img"
+            /></a>
+            <div class="portfolio__data">
+              <span class="portfolio__subtitle">UX design</span>
+              <a href="#"
+                ><h2 class="portfolio__title">
+                  New portfolio of work done for a client.
+                </h2></a
+              >
+              <a href="#" class="button button-link">View Details</a>
+            </div>
+          </div>
+          <div class="portfolio__content mix app">
+            <a href="#"
+              ><img src="img/work5.jpg" alt="work" class="portfolio__img"
+            /></a>
+            <div class="portfolio__data">
+              <span class="portfolio__subtitle">Mobile app</span>
+              <a href="#"
+                ><h2 class="portfolio__title">
+                  New portfolio of work done for a client.
+                </h2></a
+              >
+              <a href="#" class="button button-link">View Details</a>
+            </div>
+          </div>
+          <div class="portfolio__content mix app">
+            <a href="#"
+              ><img src="img/work6.jpg" alt="work" class="portfolio__img"
+            /></a>
+            <div class="portfolio__data">
+              <span class="portfolio__subtitle">Mobile app</span>
+              <a href="#"
+                ><h2 class="portfolio__title">
+                  New portfolio of work done for a client.
+                </h2></a
+              >
+              <a href="#" class="button button-link">View Details</a>
+            </div>
+          </div>
+        </div>
+      </section>
       <!--===== TESTIMONIAL =====-->
-
+      <section class="testimonial section bd-container">
+        <span class="section-subtitle">My client saying</span>
+        <h2 class="section-title">Testimonial</h2>
+        <div class="testimonial__container swiper-container">
+          <div class="swiper-wrapper">
+            <div class="testimonial__content swiper-slide">
+              <img
+                src="img/testimonial1.jpg"
+                alt="testimonial"
+                class="testimonial__img"
+              />
+              <h3 class="testimonial__title">Nik Holly</h3>
+              <span class="testimonial__client">Clien</span>
+              <p class="testimonial__description">
+                This company does a very good service, offers the best deals and
+                does a good job, I recomend it.
+              </p>
+            </div>
+            <div class="testimonial__content swiper-slide">
+              <img
+                src="img/testimonial2.jpg"
+                alt="testimonial"
+                class="testimonial__img"
+              />
+              <h3 class="testimonial__title">Sara Mill</h3>
+              <span class="testimonial__client">Clien</span>
+              <p class="testimonial__description">
+                This company does a very good service, offers the best deals and
+                does a good job, I recomend it.
+              </p>
+            </div>
+            <div class="testimonial__content swiper-slide">
+              <img
+                src="img/testimonial3.jpg"
+                alt="testimonial"
+                class="testimonial__img"
+              />
+              <h3 class="testimonial__title">Clay Mitchall</h3>
+              <span class="testimonial__client">Clien</span>
+              <p class="testimonial__description">
+                This company does a very good service, offers the best deals and
+                does a good job, I recomend it.
+              </p>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
       <!--===== CONTACTME =====-->
+      <section class="contact section bd-container" id="contact">
+        <span class="section-subtitle">For projects</span>
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact__container bd-grid">
+          <div class="contact__box">
+            <i class="bx bx-home contact__icon"></i>
+              <h3 class="contact__title">Location</h3>
+              <span class="contact__description">#123 Kiev - Ukraine</span>
+            
+          </div>
+          <div class="contact__box">
+            <i class="bx bx-phone contact__icon"></i>
+              <h3 class="contact__title">Phone</h3>
+              <span class="contact__description">999-888-777</span>
+            
+          </div>
+          <div class="contact__box">
+            <i class="bx bx-envelope contact__icon"></i>
+              <h3 class="contact__title">Gmail</h3>
+              <span class="contact__description">test@test.com</span>
+            
+          </div>
+          <div class="contact__box">
+            <i class="bx bx-chat contact__icon">
+              <h3 class="contact__title">Chat</h3>
+              <div>
+                <a href="#" class="contact__social"
+                  ><i class="bx bxl-whatsapp-square"></i
+                ></a>
+                <a href="#" class="contact__social"
+                  ><i class="bx bxl-telegram"></i
+                ></a>
+                <a href="#" class="contact__social"
+                  ><i class="bx bxl-messenger"></i
+                ></a>
+              </div>
+            </i>
+          </div>
+          <form action="" class="contact__form">
+            <div class="contact__inputs">
+              <input type="text" placeholder="Name" class="contact__input">
+              <input type="email" placeholder="Email" class="contact__input">
+            </div>
+            <div class="contact__inputs">
+              <input type="text" placeholder="Project" class="contact__input">
+              <input type="number" placeholder="Number" class="contact__input">
+            </div>
+            <textarea name="" id="" cols="0" rows="7" placeholder="Message" class="contact__input"></textarea>
+            <input type="submit"  value="Send Message" class="button contact__button">
+          </form>
+        </div>
+      </section>
     </main>
 
     <!--===== FOOTER =====-->
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div class="footer__container bd-container">
+        <h1 class="footer__title">Clay Doe</h1>
+        <p class="footer__description">I am Clay Doe and this is my personal website, consult me here</p>
+        <div class="footer__social">
+          <a href="#" class="footer__link"><i class="bx bxl-linkedin"></i></a>
+          <a href="#" class="footer__link"><i class="bx bxl-github"></i></a>
+          <a href="#" class="footer__link"><i class="bx bxl-dribbble"></i></a>
+        </div>
+        <div class="footer__copy">&#169; 2022 All right reserved.</div>
+      </div>
+    </footer>
 
     <!-- ===== MIXITUP FILTER ===== -->
     <script src="js/mixitup.min.js"></script>
