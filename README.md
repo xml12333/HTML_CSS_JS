@@ -323,3 +323,5 @@
 |312| [Portfolio](https://github.com/xml12333/HTML_CSS_JS/tree/main/312.Portfolio)| [Demo](https://nikt.com.ua/projects/htmlCssJs/312.Portfolio/)| ![Thumbnail](312.Portfolio/img/info_thumbnail.jpg)|
 |313| [Ecommerce](https://github.com/xml12333/HTML_CSS_JS/tree/main/313.Ecommerce)| [Demo](https://nikt.com.ua/projects/htmlCssJs/313.Ecommerce/)| ![Thumbnail](313.Ecommerce/img/info_thumbnail.jpg)|
 |314| [Portfolio](https://github.com/xml12333/HTML_CSS_JS/tree/main/314.Portfolio)| [Demo](https://nikt.com.ua/projects/htmlCssJs/314.Portfolio/)| ![Thumbnail](314.Portfolio/img/info_thumbnail.jpg)|
+|315| [Restaurant](https://github.com/xml12333/HTML_CSS_JS/tree/main/315.Restaurant)| [Demo](https://nikt.com.ua/projects/htmlCssJs/315.Restaurant/)| ![Thumbnail](315.Restaurant/img/info_thumbnail.jpg)|
+|316| [Landing Christmas](https://github.com/xml12333/HTML_CSS_JS/tree/main/316.Landing%20Christmas)| [Demo](https://nikt.com.ua/projects/htmlCssJs/316.Landing%20Christmas/)| ![Thumbnail](316.Landing%20Christmas/img/info_thumbnail.jpg)|
