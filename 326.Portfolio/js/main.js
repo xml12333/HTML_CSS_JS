@@ -27,14 +27,46 @@ modalCloses.forEach((modalClose) => {
     });
   });
 });
-/*=============== MIXITUP FILTER PORTFOLIO ===============*/
+/*===== MIXITUP FILTER PORTFOLIO =====*/
+const mixer = mixitup(".work__container", {
+  selectors: {
+    target: ".work__card",
+  },
+  animation: {
+    duration: 400,
+  },
+});
+/* Link active portfolio */
+const linkPortfolio = document.querySelectorAll(".work__item");
 
-
-/* Link active work */ 
-
+function activePortfolio() {
+  if (linkPortfolio) {
+    linkPortfolio.forEach((l) => l.classList.remove("active-work"));
+    this.classList.add("active-work");
+  }
+}
+linkPortfolio.forEach((l) => l.addEventListener("click", activePortfolio));
 
 /*=============== SWIPER TESTIMONIAL ===============*/
+const swiper = new Swiper(".testimonial__container", {
+  spaceBetween: 24,
+  loop: true,
+  grabCursor: true,
 
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    576: {
+      slidesPerView: 2,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 48,
+    },
+  },
+});
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 
