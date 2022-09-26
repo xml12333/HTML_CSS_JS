@@ -1,0 +1,362 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  --first-color: hsl(36, 72%, 48%);
+  --first-color-alt: hsl(36, 72%, 44%);
+  --black-color: hsl(206, 12%, 12%);
+  --card-color: hsl(0, 0%, 90%);
+  --title-color: hsl(206, 12%, 12%);
+  --text-color: hsl(206, 4%, 42%);
+  --text-color-light: hsl(206, 4%, 75%);
+  --body-color: hsl(206, 4%, 97%);
+  --container-color: #fff;
+
+  /*========== Font and typography ==========*/
+  --body-font: "Lato", sans-serif;
+  --biggest-font-size: 2.25rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-bold: 700;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --biggest-font-size: 3.5rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: var(--font-bold);
+}
+
+h1,
+h2,
+h3,
+p {
+  line-height: 140%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1024px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding: 4.5rem 0 2rem;
+}
+
+.section__title {
+  position: relative;
+  font-size: var(--h1-font-size);
+  padding-left: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.section__title::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 3px;
+  height: 20px;
+  background-color: var(--first-color);
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+  width: 100%;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+}
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__logo,
+.nav__toggle {
+  color: #fff;
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  font-weight: var(--font-bold);
+}
+
+.nav__logo-img {
+  width: 0.75rem;
+}
+
+.nav__toggle {
+  display: inline-flex;
+  font-size: 1.15rem;
+  cursor: pointer;
+}
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    position: fixed;
+    background-color: var(--black-color);
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+  }
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  row-gap: 3rem;
+  padding-top: 9rem;
+}
+.nav__link {
+  text-transform: uppercase;
+  color: var(--text-color-light);
+  font-size: var(--h2-font-size);
+  transition: 0.3s;
+}
+
+.nav__link:hover {
+  color: #fff;
+}
+.nav__close {
+  font-size: 2rem;
+  color: #fff;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+/* Show menu */
+.show-menu {
+  right: 0;
+}
+
+/* Change background header */
+.scroll-header{
+  background-color: var(--body-color);
+  box-shadow: 0 1px 4px hsla(0, 4%, 15%,.1);
+}
+.scroll-header .nav__logo,
+.scroll-header .nav__toggle{
+  color: var(--title-color);
+}
+.scroll-header .nav__logo-img{
+  mix-blend-mode: difference;
+}
+/* Active link */
+
+/*=============== HOME ===============*/
+.home {
+  gap: 0;
+}
+.home__container {
+  padding: 7rem 0 2.5rem;
+  background: linear-gradient(
+    160deg,
+    hsla(206, 5%, 24%, 1) -4%,
+    hsla(206, 12%, 12%, 1) 46%
+  );
+}
+.home__content{
+  position: relative;
+}
+.home__title,
+.home__data-title{
+  color: #fff;
+}
+.home__title{
+  font-size: var(--biggest-font-size);
+  margin-bottom: 1.5rem;
+}
+.home__title span{
+  color: var(--first-color);
+}
+
+.home__description{
+  margin-bottom: 2rem;
+}
+.home__data{
+  border-top: 1px solid var(--text-color);
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1.5rem;
+}
+
+.home__data-number{
+  color: var(--first-color);
+  font-size: var(--h1-font-size);
+  margin-bottom: 1.5rem;
+}
+.home__data-title{
+  font-size: var(--h3-font-size);
+  margin-bottom: .5rem;
+}
+.home__scroll{
+  position: absolute;
+  width: 100px;
+  bottom: -7rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  animation: scroll 3s infinite;
+}
+/* Scroll image animate */
+@keyframes scroll {
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-.5rem);
+  }
+  100%{
+    transform: translateY(0);
+  }
+  
+}
+/*=============== BUTTON ===============*/
+.button{
+  display: inline-block;
+  background-color: var(--black-color);
+  color: #fff;
+  padding: 1rem 1.75rem;
+  border-radius: .25rem;
+  font-size: var(--normal-font-size);
+  text-transform: uppercase;
+}
+/*=============== SPECIALTY ===============*/
+.specialty__button{
+  margin-left: 1.25rem;
+}
+.specialty__category{
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: 200px;
+  justify-content: center;
+  row-gap: 2.5rem;
+}
+.specialty__img{
+  width: 60px;
+  margin-bottom: 1rem;
+  transition: .4s;
+}
+
+.specialty__group{
+  text-align: center;
+}
+.specialty__title{
+  font-size: var(--h2-font-size);
+  margin-bottom: .25rem;
+}
+.specialty__group:hover .specialty__img{
+  transform: translateY(-.25rem);
+}
+
+/*=============== PRODUCTS ===============*/
+
+/* Active link products */
+
+/*=============== QUALITY ===============*/
+
+/*=============== LOGOS ===============*/
+
+/*=============== BLOG ===============*/
+
+/*=============== FOOTER ===============*/
+
+/*=============== SCROLL BAR ===============*/
+
+/*=============== SCROLL UP ===============*/
+
+/* Show Scroll Up*/
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+/* For medium devices */
+
+/* For large devices */
+
+/* Alternative code, for larger screens */
+
+/*=============== LOAD ===============*/
+
+/* The size may vary depending 
+on the image of the gif */
