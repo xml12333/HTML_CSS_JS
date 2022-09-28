@@ -20,7 +20,9 @@
   </head>
   <body>
     <!--==================== LOADER ====================-->
-
+    <div class="load" id="load">
+      <img src="img/loadcoffee.gif" alt="load" class="load__gif" />
+    </div>
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
       <nav class="nav container">
@@ -31,7 +33,7 @@
         <div class="nav__menu" id="nav-menu">
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="#home" class="nav__link">Home</a>
+              <a href="#home" class="nav__link active-link">Home</a>
             </li>
             <li class="nav__item">
               <a href="#products" class="nav__link">Products</a>
@@ -95,13 +97,13 @@
             <h2 class="section__title">
               Specialty coffees that make you happy and cheer you up!
             </h2>
-          </div>
-          <div>
-            <a href="#" class="button specialty__button">See more</a>
+            <div>
+              <a href="#" class="button specialty__button">See more</a>
+            </div>
           </div>
         </div>
         <div class="specialty__category">
-          <div class="specialty__group">
+          <div class="specialty__group specialty__line">
             <img
               src="img/specialty1.png"
               alt="specialty"
@@ -112,7 +114,7 @@
               We select the best premium coffee, for a true taste.
             </p>
           </div>
-          <div class="specialty__group">
+          <div class="specialty__group specialty__line">
             <img
               src="img/specialty2.png"
               alt="specialty"
@@ -379,18 +381,19 @@
               </div>
               <div class="blog__data">
                 <h2 class="blog__title">10 Coffee Recommendations</h2>
-                <p class="blog__description">The blogs about coffee will help you a lot about 
-                    how it is prepared, its waiting time, for a good 
-                    quality coffee.</p>
+                <p class="blog__description">
+                  The blogs about coffee will help you a lot about how it is
+                  prepared, its waiting time, for a good quality coffee.
+                </p>
                 <div class="blog__footer">
-                    <div class="blog__reaction">
-                        <i class="bx bx-comment"></i>
-                        <span>12</span>
-                    </div>
-                    <div class="blog__reaction">
-                        <i class="bx bx-show"></i>
-                        <span>76,5K</span>
-                    </div>
+                  <div class="blog__reaction">
+                    <i class="bx bx-comment"></i>
+                    <span>12</span>
+                  </div>
+                  <div class="blog__reaction">
+                    <i class="bx bx-show"></i>
+                    <span>76,5K</span>
+                  </div>
                 </div>
               </div>
             </article>
@@ -403,18 +406,19 @@
               </div>
               <div class="blog__data">
                 <h2 class="blog__title">12 Benefits Of Drinking Coffee</h2>
-                <p class="blog__description">The blogs about coffee will help you a lot about 
-                    how it is prepared, its waiting time, for a good 
-                    quality coffee.</p>
+                <p class="blog__description">
+                  The blogs about coffee will help you a lot about how it is
+                  prepared, its waiting time, for a good quality coffee.
+                </p>
                 <div class="blog__footer">
-                    <div class="blog__reaction">
-                        <i class="bx bx-comment"></i>
-                        <span>45</span>
-                    </div>
-                    <div class="blog__reaction">
-                        <i class="bx bx-show"></i>
-                        <span>356,5K</span>
-                    </div>
+                  <div class="blog__reaction">
+                    <i class="bx bx-comment"></i>
+                    <span>45</span>
+                  </div>
+                  <div class="blog__reaction">
+                    <i class="bx bx-show"></i>
+                    <span>356,5K</span>
+                  </div>
                 </div>
               </div>
             </article>
@@ -425,50 +429,66 @@
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">
-        <div class="footer__container container">
-            <h1 class="footer__title">Coffee.</h1>
-            <div class="footer__content grid">
-                <div class="footer__data">
-                    <p class="footer__description">Subscribe to our newsletter</p>
-                    <div class="footer__newsletter">
-                        <input type="email" placeholder="Your email address" class="footer__input">
-                        <button class="footer__button">
-                            <i class="bx bx-right-arrow-alt"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="footer__data">
-                    <h2 class="footer__subtitle">Address</h2>
-                    <p class="footer__information">9876 Hacienda Av. <br>
-                        Lima, La Libertad 123, Perú
-                    <img src="img/footerflag.png" alt="flag" class="footer__flag"></p>
-                </div>
-                <div class="footer__data">
-                    <h2 class="footer__subtitle">Contact</h2>
-                    <p class="footer__information">+987654321 <br>
-                        coffee@email.com</p>
-                </div>
-                <div class="footer__data">
-                    <h2 class="footer__subtitle">Office</h2>
-                    <p class="footer__information">Monday - Saturday <br>
-                        9AM - 10PM</p>
-                </div>
+      <div class="footer__container container">
+        <h1 class="footer__title">Coffee.</h1>
+        <div class="footer__content grid">
+          <div class="footer__data">
+            <p class="footer__description">Subscribe to our newsletter</p>
+            <div class="footer__newsletter">
+              <input
+                type="email"
+                placeholder="Your email address"
+                class="footer__input"
+              />
+              <button class="footer__button">
+                <i class="bx bx-right-arrow-alt"></i>
+              </button>
             </div>
-            <div class="footer__group">
-                <ul class="footer__social">
-                    <a href="#" class="footer__social-link"><i class="bx bxl-facebook"></i></a>
-                    <a href="#" class="footer__social-link"><i class="bx bxl-instagram"></i></a>
-                    <a href="#" class="footer__social-link"><i class="bx bxl-twitter"></i></a>
-                </ul>
-                <span class="footer__copy">
-                    &#169; All rigths reserved
-                </span>
-            </div>
+          </div>
+          <div class="footer__data">
+            <h2 class="footer__subtitle">Address</h2>
+            <p class="footer__information">
+              9876 Hacienda Av. <br />
+              Lima, La Libertad 123, Perú
+              <img src="img/footerflag.png" alt="flag" class="footer__flag" />
+            </p>
+          </div>
+          <div class="footer__data">
+            <h2 class="footer__subtitle">Contact</h2>
+            <p class="footer__information">
+              +987654321 <br />
+              coffee@email.com
+            </p>
+          </div>
+          <div class="footer__data">
+            <h2 class="footer__subtitle">Office</h2>
+            <p class="footer__information">
+              Monday - Saturday <br />
+              9AM - 10PM
+            </p>
+          </div>
         </div>
+        <div class="footer__group">
+          <ul class="footer__social">
+            <a href="#" class="footer__social-link"
+              ><i class="bx bxl-facebook"></i
+            ></a>
+            <a href="#" class="footer__social-link"
+              ><i class="bx bxl-instagram"></i
+            ></a>
+            <a href="#" class="footer__social-link"
+              ><i class="bx bxl-twitter"></i
+            ></a>
+          </ul>
+          <span class="footer__copy"> &#169; All rigths reserved </span>
+        </div>
+      </div>
     </footer>
 
     <!--========== SCROLL UP ==========-->
-
+    <a href="#" class="scrollup" id="scroll-up">
+      <i class="bx bx-up-arrow-alt"></i>
+    </a>
     <!--=============== MIXITUP FILTER ===============-->
     <script src="js/mixitup.min.js"></script>
 
