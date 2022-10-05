@@ -17,15 +17,15 @@
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
-  --body-font: 'Lora', serif;
+  --body-font: "Lora", serif;
 
   --biggest-font-size: 2.25rem;
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
-  --smaller-font-size: .75rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
 
   /*========== Font weight ==========*/
   --font-regular: 400;
@@ -44,8 +44,8 @@
     --h2-font-size: 1.5rem;
     --h3-font-size: 1.25rem;
     --normal-font-size: 1rem;
-    --small-font-size: .875rem;
-    --smaller-font-size: .813rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
   }
 }
 
@@ -65,10 +65,12 @@ body {
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
-  transition: .4s; /*For animation dark mode*/
+  transition: 0.4s; /*For animation dark mode*/
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: var(--title-color);
   font-weight: var(--font-medium);
 }
@@ -89,15 +91,12 @@ img {
 /*=============== THEME ===============*/
 /*========== Variables Dark theme ==========*/
 
-
 /*========== Button Dark/Light ==========*/
-
 
 /*========== 
     Color changes in some parts of 
     the website, in dark theme 
 ==========*/
-
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
@@ -126,59 +125,220 @@ img {
 }
 
 /*=============== HEADER & NAV ===============*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  z-index: var(--z-fixed);
+  transition: 0.4s;
+}
 
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+@media screen and (max-width: 1023px) {
+  .nav__menu {
+    position: fixed;
+    bottom: 1.5rem;
+    background-color: var(--body-color);
+    box-shadow: 0 4px 12px hsla(220, 18%, 40%, 0.15);
+    width: 90%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 1.25rem 2.8rem;
+    border-radius: 0.5rem;
+  }
+  .nav__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav__link {
+    color: var(--text-color-light);
+    font-weight: var(--font-medium);
+    display: grid;
+    justify-content: center;
+    row-gap: 0.25rem;
+  }
+  .nav__link i {
+    font-size: 1.25rem;
+  }
+  .nav__link span {
+    font-size: 0.688rem;
+  }
+}
 
 /* Change background header */
-
-
+.scroll-header{
+  background-color: var(--body-color);
+  box-shadow: 0 1px 4px hsla(220, 4%, 15%, .1);
+}
 /* Active link */
-
 
 /*=============== HOME ===============*/
 
+.home {
+  background-color: var(--bg-color);
+  overflow: hidden;
+}
+.home__container {
+  padding: 4rem 0 1rem;
+  row-gap: 8.5rem;
+}
+.home__title {
+  font-size: var(--biggest-font-size);
+  font-weight: 400;
+}
+.home__description {
+  color: var(--title-color);
+  margin: 1rem 0 2rem;
+}
 
+.home__title,
+.home__description {
+  line-height: 140%;
+}
+.home__images {
+  position: relative;
+  width: 310px;
+  justify-self: center;
+}
+.home__images img:nth-child(1) {
+  width: 224px;
+  position: absolute;
+  right: -1.5rem;
+  top: -9.5rem;
+}
+.home__images img:nth-child(2) {
+  width: 180px;
+  margin-left: 0.5rem;
+  position: relative;
+}
 /*=============== BUTTON ===============*/
+.button__link {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
 
+.button__link i {
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.button__link:hover i {
+  transform: translateX(0.25rem);
+}
 
 /*=============== NEW ===============*/
+.new__container{
+  row-gap: 2.5rem;
+  padding-bottom: 1.5rem;
+}
+.new__card{
+  justify-self: center;
+}
+.new__img{
+  width: 270px;
+  margin-bottom: 1rem;
+}
+.new__link{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--title-color);
+  padding-right: .75rem;
+}
+.new__link i{
+  font-size: 1.25rem;
+  transition: .3s;
+}
+.new__title{
+  font-size: var(--h2-font-size);
+  margin-bottom: .5rem;
+}
 
-
+.new__subtile{
+  font-size: var(--smaller-font-size);
+  color: var(--text-color);
+}
+.new__link:hover i{
+  transform: translateX(.25rem);
+}
 /*=============== COLLECTION ===============*/
+.collection{
+  background-color: var(--bg-color-light);
+  overflow: hidden;
+}
+.collection__container{
+  position: relative;
+  height: 571px;
+  display: grid;
+  justify-items: center;
+}
+.collection__title{
+  font-size: var(--h1-font-size);
+  margin-bottom: .75rem;
+}
+.collection__explore{
+  display: grid;
+  column-gap: 2rem;
+  position: absolute;
+}
 
-
+.collection__explore:nth-child(2){
+  grid-template-columns: 230px max-content;
+  bottom: 1rem;
+  margin-right: 5rem;
+}
+.collection__explore:nth-child(1){
+  grid-template-columns: max-content 230px;
+  top: 0;
+  margin-left: 5rem;
+}
+.collection__data-men{
+  margin-top: 2.5rem;
+}
+.collection__data-women{
+  align-self: flex-end;
+  margin-bottom: 2.5rem;
+}
 /*=============== PRODUCTS ===============*/
-
 
 /* Swiper class */
 
-
 /*=============== BRANDS ===============*/
-
 
 /*=============== FOOTER ===============*/
 
-
 /*=============== SCROLL BAR ===============*/
-
 
 /*=============== SCROLL UP ===============*/
 
-
 /* Show Scroll Up*/
-
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 
-
 /* For medium devices */
-
 
 /* For large devices */
 
-
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
 
-
 /* For 4K resolutions (3840 x 2160, 4096 x 2160) */
-

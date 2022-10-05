@@ -1,72 +1,177 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!--=============== FAVICON ===============-->
-        <link rel="shortcut icon" href="" type="image/x-icon">
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="" type="image/x-icon" />
 
-        <!--=============== REMIXICONS ===============-->
-        
+    <!--=============== REMIXICONS ===============-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
 
-        <!--=============== SWIPER CSS ===============-->
-        <link rel="stylesheet" href="">
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
 
-        <!--=============== CSS ===============-->
-        <link rel="stylesheet" href="">
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="css/styles.css" />
 
-        <title>Responsive clothing ecommerce</title>
-    </head>
-    <body>
-        <!--==================== HEADER ====================-->
-        <header class="header" id="header">
-            
-        </header>
+    <title>Responsive clothing ecommerce</title>
+  </head>
+  <body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav__logo"> Shop. </a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link">
+                <i class="ri-home-line"></i>
+                <span>Home</span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#new" class="nav__link">
+                <i class="ri-price-tag-3-line"></i>
+                <span>New</span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#collection" class="nav__link">
+                <i class="ri-compass-line"></i>
+                <span>Collection</span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#products" class="nav__link">
+                <i class="ri-t-shirt-line"></i>
+                <span>Products</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- Theme change button -->
+        <i class="ri-moon-line"></i>
+      </nav>
+    </header>
 
-        <!--==================== MAIN ====================-->
-        <main class="main">
-            <!--==================== HOME ====================-->
-            <section class="home section" id="home">
-                
-            </section>
+    <!--==================== MAIN ====================-->
+    <main class="main">
+      <!--==================== HOME ====================-->
+      <section class="home section" id="home">
+        <div class="home__container container grid">
+          <div class="home__data">
+            <div class="h1 home__title">
+              New Clothing <br />
+              Collection
+            </div>
+            <p class="home__description">
+              The new collection of clothing from <br />
+              the best brands this year.
+            </p>
+            <a href="#new" class="button__link"
+              >Explore <i class="ri-arrow-right-line"></i
+            ></a>
+          </div>
+          <div class="home__images">
+            <img src="img/home1.png" alt="home" />
+            <img src="img/home2.png" alt="home" />
+          </div>
+        </div>
+      </section>
 
-            <!--==================== NEW ====================-->
-            <section class="new section" id="new">
-                
-            </section>
+      <!--==================== NEW ====================-->
+      <section class="new section" id="new">
+        <h2 class="section__title">New Categories</h2>
+        <div class="new__container container grid">
+          <article class="new__card">
+            <img src="img/new1.png" alt="new" class="new__img" />
+            <a href="#" class="new__link">
+              <div class="new__data">
+                <h2 class="new__title">Hoodie & Sweatshirt</h2>
+                <span class="new__subtitle">Winter collection</span>
+              </div>
+              <i class="ri-arrow-right-line"></i>
+            </a>
+          </article>
+          <article class="new__card">
+            <img src="img/new2.png" alt="new" class="new__img" />
+            <a href="#" class="new__link">
+              <div class="new__data">
+                <h2 class="new__title">Pants & Jackets</h2>
+                <span class="new__subtitle">Winter collection</span>
+              </div>
+              <i class="ri-arrow-right-line"></i>
+            </a>
+          </article>
+          <article class="new__card">
+            <img src="img/new2.png" alt="new" class="new__img" />
+            <a href="#" class="new__link">
+              <div class="new__data">
+                <h2 class="new__title">Coats & Coat Sets</h2>
+                <span class="new__subtitle">Winter collection</span>
+              </div>
+              <i class="ri-arrow-right-line"></i>
+            </a>
+          </article>
+        </div>
+      </section>
 
-            <!--==================== COLLECTION ====================-->
-            <section class="collection section" id="collection">
-                
-            </section>
+      <!--==================== COLLECTION ====================-->
+      <section class="collection section" id="collection">
+        <div class="collection__container container">
+          <div class="collection__explore">
+            <div class="collection__data-men">
+              <h2 class="collection__title">
+                Men <br />
+                Collection
+              </h2>
 
-            <!--==================== PRODUCTS ====================-->
-            <section class="products section" id="products">
-                
-            </section>
+              <a href="#" class="button__link">
+                Explore Clothes <i class="ri-arrow-right-line"></i>
+              </a>
+            </div>
+            <img src="img/collection1.png" alt="collection" />
+          </div>
+          <div class="collection__explore">
+            <img src="img/collection2.png" alt="collection" />
+            <div class="collection__data-women">
+              <h2 class="collection__title">
+                Women <br />
+                Collection
+              </h2>
 
-            <!--==================== BRANDS ====================-->
-            <section class="brand section">
-                
-            </section>
-        </main>
+              <a href="#" class="button__link">
+                Explore Clothes <i class="ri-arrow-right-line"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <!--==================== FOOTER ====================-->
-        <footer class="footer section">
-            
-        </footer>
+      <!--==================== PRODUCTS ====================-->
+      <section class="products section" id="products"></section>
 
-        <!--========== SCROLL UP ==========-->
+      <!--==================== BRANDS ====================-->
+      <section class="brand section"></section>
+    </main>
 
-        
-        <!--=============== SCROLLREVEAL ===============-->
-        <script src=""></script>
+    <!--==================== FOOTER ====================-->
+    <footer class="footer section"></footer>
 
-        <!--=============== SWIPER JS ===============-->
-        <script src=""></script>
+    <!--========== SCROLL UP ==========-->
 
-        <!--=============== MAIN JS ===============-->
-        <script src=""></script>
-    </body>
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src="js/scrollreveal.min.js"></script>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src="js/swiper-bundle.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="js/main.js"></script>
+  </body>
 </html>
