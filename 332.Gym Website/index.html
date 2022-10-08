@@ -1,74 +1,116 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!--=============== FAVICON ===============-->
-        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
 
-        <!--=============== REMIXICON ===============-->
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!--=============== REMIXICON ===============-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
 
-        <!--=============== CSS ===============-->
-        <link rel="stylesheet" href="assets/css/styles.css">
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="css/styles.css" />
 
-        <title>Responsive gym website</title>
-    </head>
-    <body>
-        <!--==================== HEADER ====================-->
-        <header class="header" id="header">
-            
-        </header>
+    <title>Responsive gym website</title>
+  </head>
+  <body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav__logo">
+          <img src="img/logo-nav.png" alt="logo" /> BEROTOT
+        </a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="#program" class="nav__link">Program</a>
+            </li>
+            <li class="nav__item">
+              <a href="#choose" class="nav__link">Choose Us</a>
+            </li>
+            <li class="nav__item">
+              <a href="#pricing" class="nav__link">Pricing</a>
+            </li>
+            <div class="nav__link">
+              <a href="#footer" class="button nav__button">Register Now</a>
+            </div>
+          </ul>
+          <div class="nav__close" id="nav-close">
+            <i class="ri-close-line"></i>
+          </div>
+        </div>
+        <!-- Toggle button -->
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="ri-menu-line"></i>
+        </div>
+      </nav>
+    </header>
 
-        <!--==================== MAIN ====================-->
-        <main class="main">
-            <!--==================== HOME ====================-->
-            <section class="home section" id="home">
-                
-            </section>
+    <!--==================== MAIN ====================-->
+    <main class="main">
+      <!--==================== HOME ====================-->
+      <section class="home section" id="home">
+        <div class="home__container container grid">
+          <div class="home__data">
+            <h2 class="home__subtitle">MAKE YOUR</h2>
+            <h1 class="home__title">BODY SHAPE</h1>
+            <p class="home__description">
+              In here we will help you to shape and build your ideal body and
+              live your life to the fullest.
+            </p>
+            <a href="#" class="button button__flex"> Get Started <i class="ri-arrow-right-line"></i> </a>
+          </div>
+          <div class="home__images">
+            <img src="img/home-img.png" alt="home img" class="home__img">
+            <div class="home__triangle home__triangle-3"></div>
+            <div class="home__triangle home__triangle-2"></div>
+            <div class="home__triangle home__triangle-1"></div>
+          </div>
+        </div>
+      </section>
 
-            <!--==================== LOGOS ====================-->
-            <section class="logos section">
-                
-            </section>
+      <!--==================== LOGOS ====================-->
+      <section class="logos section">
+        <div class="logos__container container grid">
+            <img src="img/logo1.png" alt="logo img" class="logos__img">
+            <img src="img/logo2.png" alt="logo img" class="logos__img">
+            <img src="img/logo3.png" alt="logo img" class="logos__img">
+            <img src="img/logo4.png" alt="logo img" class="logos__img">
+        </div>
+      </section>
 
-            <!--==================== PROGRAM ====================-->
-            <section class="program section" id="program">
-                
-            </section>
+      <!--==================== PROGRAM ====================-->
+      <section class="program section" id="program"></section>
 
-            <!--==================== CHOOSE US ====================-->
-            <section class="choose section" id="choose">
-                
-            </section>
+      <!--==================== CHOOSE US ====================-->
+      <section class="choose section" id="choose"></section>
 
-            <!--==================== PRICING ====================-->
-            <section class="pricing section" id="pricing">
-                
-            </section>
+      <!--==================== PRICING ====================-->
+      <section class="pricing section" id="pricing"></section>
 
-            <!--==================== CALCULATE ====================-->
-            <section class="calculate section">
-                
-            </section>
-        </main>
+      <!--==================== CALCULATE ====================-->
+      <section class="calculate section"></section>
+    </main>
 
-        <!--==================== FOOTER ====================-->
-        <footer class="footer section" id="footer">
-            
-        </footer>
+    <!--==================== FOOTER ====================-->
+    <footer class="footer section" id="footer"></footer>
 
-        <!--========== SCROLL UP ==========-->
+    <!--========== SCROLL UP ==========-->
 
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src=""></script>
 
-        <!--=============== SCROLLREVEAL ===============-->
-        <script src=""></script>
+    <!--=============== EMAIL JS ===============-->
 
-        <!--=============== EMAIL JS ===============-->
-        
-        
-        <!--=============== MAIN JS ===============-->
-        <script src="assets/js/main.js"></script>
-    </body>
+    <!--=============== MAIN JS ===============-->
+    <script src="js/main.js"></script>
+  </body>
 </html>

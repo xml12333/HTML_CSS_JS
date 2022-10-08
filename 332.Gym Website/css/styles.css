@@ -4,7 +4,7 @@
 /*=============== VARIABLES CSS ===============*/
 :root {
   --header-height: 3.5rem;
-  
+
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
   --first-color: hsl(79, 72%, 55%);
@@ -20,17 +20,17 @@
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
-  --body-font: 'Red Hat Display', sans-serif;
-  --second-font: 'Kaushan Script', cursive;
+  --body-font: "Red Hat Display", sans-serif;
+  --second-font: "Kaushan Script", cursive;
   --biggest-font-size: 2rem;
   --bigger-font-size: 1.5rem;
   --big-font-size: 1.25rem;
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
-  --smaller-font-size: .75rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
 
   /*========== Font weight ==========*/
   --font-bold: 700;
@@ -51,8 +51,8 @@
     --h2-font-size: 1.5rem;
     --h3-font-size: 1.25rem;
     --normal-font-size: 1rem;
-    --small-font-size: .875rem;
-    --smaller-font-size: .813rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
   }
 }
 
@@ -79,7 +79,9 @@ body {
   color: var(--text-color);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: var(--title-color);
   font-weight: var(--font-bold);
 }
@@ -111,12 +113,12 @@ img {
 .section__data {
   display: flex;
   flex-direction: column;
-  row-gap: .75rem;
+  row-gap: 0.75rem;
   text-align: center;
   margin-bottom: 3rem;
 }
 
-.section__title, 
+.section__title,
 .section__title-border {
   font-size: var(--big-font-size);
   letter-spacing: 1.5px;
@@ -133,7 +135,7 @@ img {
 
 .section__titles {
   display: flex;
-  column-gap: .75rem;
+  column-gap: 0.75rem;
   justify-content: center;
 }
 
@@ -160,55 +162,217 @@ img {
 }
 
 /*=============== HEADER & NAV ===============*/
+.header {
+  width: 100%;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  transition: background 0.3s;
+}
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.nav__logo,
+.nav__toggle {
+  color: var(--title-color);
+  display: flex;
+}
+.nav__logo {
+  align-items: center;
+  column-gap: 0.5rem;
+  font-weight: var(--font-bold);
+}
 
+.nav__logo img {
+  width: 1.25rem;
+}
+
+.nav__toggle {
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1023px) {
+  .nav__menu {
+    position: fixed;
+    background-color: hsla(180, 12%, 8%, 0.8);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100%;
+    border-left: 2px solid var(--first-color-gray);
+    transition: right 0.3s;
+  }
+}
+
+.nav__list {
+  padding: 5rem 0 0 3rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+}
+.nav__link {
+  color: var(--title-color);
+  transition: color 0.3s;
+}
+
+.nav__link:hover {
+  color: var(--first-color);
+}
+
+.nav__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--title-color);
+  cursor: pointer;
+}
+
+.nav .nav__button {
+  background-color: var(--title-color);
+  border: none;
+}
 /* Show menu */
-
-
+.show-menu {
+  right: 0;
+}
 /* Change background header */
-
-
+.bg-header {
+  background-color: var(--body-color);
+  box-shadow: 0 4px 8px hsla(180, 12%, 4%, 0.3);
+}
 /* Active link */
 
-
 /*=============== HOME ===============*/
+.home {
+  position: relative;
+  padding-bottom: 0;
+}
+.home__container {
+  padding-top: 4rem;
+  row-gap: 3rem;
+}
 
+.home__data {
+  text-align: center;
+}
 
+.home__subtitle {
+  font-size: var(--bigger-font-size);
+  -webkit-text-stroke: 1px var(--title-color);
+  color: transparent;
+}
+.home__title {
+  font-size: var(--biggest-font-size);
+  font-weight: var(--font-black);
+  margin: 0.5rem 0;
+}
+
+.home__subtitle,
+.home__title {
+  letter-spacing: 1.5px;
+}
+.home__description {
+  margin-bottom: 2.5rem;
+}
+
+.home__triangle {
+  height: 325px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}
+
+.home__triangle-1 {
+  width: 105px;
+  background-color: var(--first-color);
+}
+.home__triangle-2 {
+  width: 205px;
+  background-color: var(--first-color-alt);
+}
+.home__triangle-3 {
+  width: 305px;
+  background-color: var(--first-color-dark);
+}
+
+.home__img {
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 350px;
+  margin: 0 auto;
+}
 /*=============== BUTTON ===============*/
+.button {
+  display: inline-block;
+  background-color: var(--first-color);
+  padding: 18px 32px;
+  border: 2px solid var(--first-color-light);
+  color: var(--title-color-black);
+  font-weight: var(--font-bold);
+  cursor: pointer;
+  transition: background 0.3s;
+}
 
+.button:hover {
+  background-color: var(--first-color-alt);
+}
 
+.button i {
+  font-size: 1.25rem;
+  transition: transform 0.3s;
+}
+
+.button__flex {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 0.5rem;
+}
+
+.button__flex:hover i {
+  transform: translateX(0.25rem);
+}
 /*=============== LOGOS ===============*/
+.logos__container {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  justify-items: center;
+}
 
-
+.logos__img {
+  width: 120px;
+}
 /*=============== PROGRAM ===============*/
-
 
 /*=============== CHOOSE ===============*/
 
-
 /*=============== PRICING ===============*/
-
 
 /*=============== CALCULATE ===============*/
 
-
 /*=============== FOOTER ===============*/
-
 
 /*=============== SCROLL BAR ===============*/
 
-
 /*=============== SCROLL UP ===============*/
 
-
 /* Show Scroll Up*/
-
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 
-
 /* For medium devices */
-
 
 /* For large devices */
