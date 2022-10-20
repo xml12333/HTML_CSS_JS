@@ -240,7 +240,9 @@ img {
 }
 
 /* Active link */
-
+.active-link{
+  color: var(--first-color);
+}
 /*=============== HOME ===============*/
 .home {
   position: relative;
@@ -518,15 +520,180 @@ img {
   right: -8rem;
 }
 /*=============== PARTY ===============*/
+.party {
+  position: relative;
+}
 
+.party__container {
+  row-gap: 5rem;
+}
+.party__container .section__title {
+  margin-bottom: 1rem;
+}
+
+.party__data {
+  text-align: center;
+}
+.party__description {
+  margin-bottom: 2rem;
+}
+.party__images {
+  position: relative;
+  justify-self: center;
+}
+
+.party__img {
+  width: 250px;
+}
+.party__star-1,
+.party__star-2 {
+  width: 50px;
+  position: absolute;
+  transform: rotate(15deg);
+}
+.party__star-1 {
+  top: -3rem;
+  left: -0.5rem;
+  animation: animate-star-1 5s infinite ease-in-out;
+}
+.party__star-2 {
+  right: -1.5rem;
+  bottom: 2rem;
+  animation: animate-star-2 5s infinite ease-in-out;
+}
 /*=============== FOOTER ===============*/
+.footer{
+  position: relative;
+  overflow: hidden;
+}
+.footer__container{
+  row-gap: 4rem;
+}
 
+.footer__logo{
+  display: inline-flex;
+  align-items: center;
+  column-gap: .5rem;
+  color: var(--first-color);
+  font-weight: var(--font-medium);
+  margin-bottom: 1.25rem;
+  transition: color .3s;
+}
+.footer__logo img{
+  width: 20px;
+}
+.footer__logo:hover{
+  color: var(--first-color-alt);
+}
+.footer__description{
+  font-size: var(--small-font-size);
+}
+.footer__content,
+.footer__links{
+  display: grid;
+}
+
+.footer__content{
+  grid-template-columns: repeat(2, max-content);
+  gap: 2.5rem 4.5rem;
+}
+.footer__title{
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 1.5rem;
+}
+
+.footer__links{
+  row-gap: .75rem;
+}
+.footer__link{
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+  transition: color .3s;
+}
+.footer__link:hover{
+  color: var(--first-color);
+}
+.footer__social{
+  display: flex;
+  column-gap: 1.25rem;
+}
+
+.footer__social-link{
+  color: var(--first-color);
+  font-size: 1.25rem;
+  transition: color .3s, transform .3s;
+}
+.footer__social-link:hover{
+  color: var(--first-color-alt);
+  transform: translateY(-.25rem);
+}
+.footer__tree-1,
+.footer__tree-2{
+  width: 150px;
+  position: absolute;
+}
+.footer__tree-1{
+  top: 4rem;
+  right: -1.5rem;
+}
+.footer__tree-2{
+  left: -1.5rem;
+  bottom: -.5rem;
+}
+.footer__copy{
+  position: relative;
+  display: block;
+  margin-top: 8rem;
+  font-size: var(--smaller-font-size);
+  text-align: center;
+  color: var(--text-color-light);
+}
+.footer .shape__small{
+  right: -7rem;
+  top: 15rem;
+}
+
+.footer .shape__big{
+  left: -8rem;
+  bottom: -5rem;
+}
 /*=============== SCROLL BAR ===============*/
-
+::-webkit-scrollbar{
+  width: .6rem;
+  border-radius: .5rem;
+  background-color: hsl(22, 8%, 10%);
+}
+::-webkit-scrollbar-thumb{
+  border-radius: .5rem;
+  background-color: hsl(22, 8%, 15%);
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: hsl(22, 8%, 20%);
+}
 /*=============== SCROLL UP ===============*/
+.scrollup{
+  position: fixed;
+  right: 1rem;
+  bottom: -30%;
+  color: var(--first-color);
+  font-size: 1.1rem;
+  background-color: var(--container-color);
+  box-shadow:  0 4px 8px hsla(22, 10%, 2%, 0.6);
+  padding: .45rem;
+  border-radius: .35rem;
+  display: inline-flex;
+  z-index: var(--z-tooltip);
+  transition: bottom .3s, transform .3s;
+}
 
+.scrollup:hover{
+  transform: translateY(-.25rem);
+}
 /* Show Scroll Up*/
-
+.show-scroll{
+  bottom: 3rem;
+}
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 
