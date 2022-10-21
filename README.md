@@ -342,3 +342,4 @@
 |331| [Clothing Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/331.Clothing%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/331.Clothing%20Website/)| ![Thumbnail](331.Clothing%20Website/img/info_thumbnail.jpg)|
 |332| [Gym Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/332.Gym%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/332.Gym%20Website/)| ![Thumbnail](332.Gym%20Website/img/info_thumbnail.jpg)|
 |333| [Portfolio](https://github.com/xml12333/HTML_CSS_JS/tree/main/333.Portfolio)| [Demo](https://nikt.com.ua/projects/htmlCssJs/333.Portfolio/)| ![Thumbnail](333.Portfolio/img/info_thumbnail.jpg)|
+|334| [Halloween Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/334.Halloween%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/334.Halloween%20Website/)| ![Thumbnail](334.Halloween%20Website/img/info_thumbnail.jpg)|
