@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Shop</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<header class="header">
+		<div class="container">
+			<div class="header__container">
+				<a href="index.html">
+					<img src="images/logo.png" alt="logo" height="45">
+				</a>
+				<div class="header__info">
+					Hi, <a href="login.html" class="header__user" id="headerUser">Log in</a>
+					<div class="header__shop">
+						<a href="login.html" id="headerFavourites">
+							<img src="images/favourite.png" alt="favourite" height="20">
+							<span class="header__shop--count" id="headerFavouritesCount">0</span>
+						</a>
+						<a href="login.html" id="headerShoppingCart">
+							<img src="images/shopping-cart.png" alt="cart" height="20">
+							<span class="header__shop--count" id="headerShoppingCartCount">0</span>
+						</a>
+					</div>
+					<button class="header__logout" id="headerLogout">Log out</button>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<div class="container" id="categoriesContainer">
+			<section class="category" data-name="Boat">
+				<h2>Boat</h2>
+				<div class="category__container">
+					<div class="product">
+						<button class="product__favourite">
+							<img src="images/product__favourite--true.png" alt="favourite" height="20">
+						</button>
+						<img src="images/products/aircraft-carrier.png" class="product__img" alt="Aircraft Carrier" height="80">
+						<p class="product__title">Aircraft Carrier</p>
+						<div class="product__sale">
+							<span class="product__sale--old">$30000</span>
+							<span class="product__sale--percent">-2%</span>
+						</div>
+						<div class="product__info">
+							<span class="product__price">$29400</span>
+						</div>
+						
+					</div>
+
+					<div class="product">
+						<button class="product__favourite">
+							<img src="images/product__favourite.png" alt="favourite" height="20">
+						</button>
+						<img src="images/products/boat.png" class="product__img" alt="Boat" height="80">
+						<p class="product__title">Boat</p>
+						<div class="product__info">
+							<span class="product__price">$700</span>
+						</div>
+					</div>
+					
+					<div class="product">
+						<button class="product__favourite">
+							<img src="images/product__favourite.png" alt="favourite" height="20">
+						</button>
+						<img src="images/products/speed-boat.png" class="product__img" alt="Speed Boat" height="80">
+						<p class="product__title">Speed Boat</p>
+						<div class="product__sale">
+							<span class="product__sale--old">$2000</span>
+							<span class="product__sale--percent">-34%</span>
+						</div>
+						<div class="product__info">
+							<span class="product__price">$1320</span>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<script src="js/script.js" type="module"></script>
+</body>
+</html>

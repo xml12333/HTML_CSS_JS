@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Shop</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<header class="header">
+		<div class="container">
+			<div class="header__container">
+				<a href="index.html">
+					<img src="images/logo.png" alt="logo" height="45">
+				</a>
+				<div class="header__info">
+					Hi, <a href="login.html" class="header__user" id="headerUser">Log in</a>
+					<div class="header__shop">
+						<a href="login.html" id="headerFavourites">
+							<img src="images/favourite.png" alt="favourite" height="20">
+							<span class="header__shop--count" id="headerFavouritesCount">0</span>
+						</a>
+						<a href="login.html" id="headerShoppingCart">
+							<img src="images/shopping-cart.png" alt="cart" height="20">
+							<span class="header__shop--count" id="headerShoppingCartCount">0</span>
+						</a>
+					</div>
+					<button class="header__logout" id="headerLogout">Log out</button>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="container">
+		<div class="columns">
+			<form id="LoginForm" class="userForm">
+				<p class="title">Secure Sign In</h2>
+				<p class="desription">For current customers</p>
+
+				<div class="error">Invalid email address or password.</div>
+
+				<label>
+					<input type="email" placeholder="Email Address" data-name="email" value="ivan@gmail.com" required>
+				</label>
+
+				<label>
+					<input type="password" placeholder="Password" data-name="password" value="123" required>
+				</label>
+
+				<button class="btn">Sign in</button>
+			</form>
+
+			<form id="RegistrationForm" class="userForm">
+				<p class="title">Quick Registration</h2>
+				<p class="desription">For new customers</p>
+
+				<div class="error">Invalid email address or password.</div>
+
+				<label>
+					<input type="text" placeholder="Full name" data-name="name" value="Ivan" required>
+				</label>
+
+				<label>
+					<input type="email" placeholder="Email Address" data-name="email" value="ivan@gmail.com" required>
+				</label>
+
+				<label>
+					<input type="password" placeholder="Password" data-name="password" value="123" required>
+				</label>
+
+				<label>
+					<input type="password" placeholder="Verify Password" data-name="passwordVerify" value="123" required>
+				</label>
+
+				<button class="btn">Create Account</button>
+			</form>
+		</div>
+	</div>
+
+	<script src="js/script.js" type="module"></script>
+</body>
+</html>

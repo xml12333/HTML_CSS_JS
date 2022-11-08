@@ -1,0 +1,75 @@
+.product
+	box-shadow: 0px 2px 2px rgba(0, 8, 29, 0.05),0px 0px 2px rgba(0, 8, 29, 0.06),0px 1px 3px rgba(0, 8, 29, 0.08)
+	width: 18%
+	min-width: 200px
+	background: white
+	border-radius: 3px
+	padding: 13px
+	margin: 0 15px 15px 0
+	position: relative
+	display: flex
+	flex-direction: column
+
+	+for-phone-only
+		width: 100%
+		margin-right: 0
+
+	&__favourite
+		border: none
+		background: none
+		padding: 0
+		position: absolute
+		top: 13px
+		right: 13px
+		cursor: pointer
+
+	&__img
+		margin: 10px auto
+		display: block
+
+	&__title
+		font-weight: bold
+		font-size: 17px
+		margin: 0 0 10px 0
+
+	&__sale
+		display: flex
+		align-items: center
+		margin-bottom: 10px
+
+		&--old
+			text-decoration: line-through
+			color: $color--text--light
+
+		&--percent
+			background: $color--main
+			padding: 3px 8px
+			border-radius: 3px
+			color: white
+			font-size: 10px
+			margin-left: 10px
+			white-space: nowrap
+
+	&__info
+		display: flex
+		align-items: center
+		justify-content: space-between
+		font-size: 18px
+		font-weight: bold
+		margin-top: auto
+
+	&__cart
+		border: none
+		background: $color--active
+		border-radius: 3px
+		padding: 4px 13px 2px 13px
+		cursor: pointer
+		transition: 0.2s
+
+		&--in
+			background: $color--main
+
+		&--ordered
+			background: $color--text--light
+			pointer-events: none
+

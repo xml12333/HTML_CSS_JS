@@ -1,0 +1,76 @@
+.header
+	padding: 5px 0
+	background: $color--main
+	color: white
+
+	&__container
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+	&__info
+		display: flex
+		align-items: center
+
+	&__user
+		color: white
+		border-bottom: 1px dashed white
+		margin-left: 5px
+		margin-top: 1px
+		transition: 0.2s
+		cursor: pointer
+
+		&:hover
+			color: $color--text--active
+			border-color: $color--text--active
+
+	&__shop
+		margin-left: 15px
+		padding-left: 15px
+		border-left: 1px solid white
+		display: flex
+		align-items: center
+
+		a
+			margin-right: 25px
+			cursor: pointer
+			position: relative
+
+			&:last-of-type
+				margin-right: 0
+
+		&--count
+			position: absolute
+			top: -10px
+			right: -15px
+			display: flex
+			align-items: center
+			justify-content: center
+			color: $color--main
+			font-size: 11px
+			width: 20px
+			height: 20px
+			background: white
+			border-radius: 50%
+
+	&__logout
+		margin-left: 25px
+		color: white
+		background: none
+		border: none
+		border-bottom: 1px dashed white
+		padding: 0 0 1px 0
+		margin-top: 1px
+		transition: 0.2s
+		cursor: pointer
+		display: none
+
+		&.active
+			display: block
+
+		&:hover
+			color: $color--text--active
+			border-color: $color--text--active
+
+
+

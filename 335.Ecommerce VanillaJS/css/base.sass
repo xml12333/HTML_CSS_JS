@@ -1,0 +1,114 @@
+$color--main: #4caf50
+$color--active: #eb2335
+$color--active--hover: #d6222e
+$color--text: #444
+$color--text--light: #9e9e9e
+$color--text--active: #f2c373
+$color--bg: #fafafa
+
+$error--bg: #f2dede
+$error--border: #ebccd1
+$error--color: #a94442
+$error--color__active: #c8302d
+
+=for-phone-only
+	@media (max-width: 576px)
+		@content
+=for-tablet-phone
+	@media (max-width: 815px)
+		@content
+=for-desktop-up
+	@media (max-width: 1200px)
+		@content
+
+*
+	box-sizing: border-box
+
+body
+	margin: 0
+	font-family: 'Proxima Nova', Helvetica, Arial, sans-serif
+	font-size: 14px
+	background: $color--bg
+
+a
+	text-decoration: none
+
+.container
+	width: 1200px
+	margin: 0 auto
+	+for-desktop-up
+		width: 90%
+
+.btn
+	background: $color--active
+	color: white
+	border: none
+	border-radius: 50px
+	text-align: center
+	font-weight: bold
+	font-size: 14px
+	padding: 10px 35px
+	cursor: pointer
+	transition: 0.2s
+	
+	&:hover
+		background: $color--active--hover
+
+input
+	display: block
+	width: 100%
+	height: 34px
+	padding: 6px 12px
+	font-family: 'Proxima Nova', Helvetica, Arial, sans-serif
+	font-size: 14px
+	color: $color--text
+	background-color: #fff
+	border: 1px solid $color--text--light
+	border-radius: 4px
+
+	&[type="checkbox"], &[type="radio"]
+		height: 12px
+		width: auto
+
+	&:focus
+		border-color: $color--main
+		outline: 0
+
+		&::placeholder
+			color: transparent
+
+	&::placeholder
+		font-family: 'Proxima Nova', Helvetica, Arial, sans-serif
+		font-size: 12px
+		color: $color--text
+		transition: 0.2s
+
+.columns
+	display: flex
+	justify-content: space-between
+	padding: 35px 0
+	+for-tablet-phone
+		flex-direction: column
+
+	>*
+		width: 50%
+		border-right: 1px solid #dddddd
+		padding: 0 15px
+
+		+for-tablet-phone
+			width: 100%
+			border-right: 0
+			border-bottom: 1px solid #dddddd
+			padding: 15px 0
+
+		&:first-of-type
+			padding-left: 0
+			+for-tablet-phone
+				padding-top: 0
+
+
+		&:last-of-type
+			padding-right: 0
+			border-right: 0
+			+for-tablet-phone
+				border-bottom: none

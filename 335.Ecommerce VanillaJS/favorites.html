@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__container">
+          <a href="index.html">
+            <img src="images/logo.png" alt="logo" height="45" />
+          </a>
+          <div class="header__info">
+            Hi,
+            <a href="login.html" class="header__user" id="headerUser">Log in</a>
+            <div class="header__shop">
+              <a href="login.html" id="headerFavourites">
+                <img src="images/favourite.png" alt="favourite" height="20" />
+                <span class="header__shop--count" id="headerFavouritesCount"
+                  >0</span
+                >
+              </a>
+              <a href="login.html" id="headerShoppingCart">
+                <img src="images/shopping-cart.png" alt="cart" height="20" />
+                <span class="header__shop--count" id="headerShoppingCartCount"
+                  >0</span
+                >
+              </a>
+            </div>
+            <button class="header__logout" id="headerLogout">Log out</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="favourites__container">
+        <div class="table__container">
+          <table class="order__table" id="favouriteTable">
+            <caption>
+              Favourite Items
+            </caption>
+            <thead>
+              <tr>
+                <th>Item Description</th>
+                <th>Price</th>
+                <th>Sale</th>
+                <th>Total</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="item__info">
+                    <img
+                      src="images/products/cabriolet.png"
+                      alt="Cabriolet"
+                      height="100"
+                    />
+                    <div>
+                      <p class="item__info--title">Cabriolet</p>
+                    </div>
+                  </div>
+                </td>
+                <td>$900</td>
+                <td><span class="item__sale">- 25%</span></td>
+                <td>$675</td>
+                <td>
+                  <button class="item__favourite">
+                    <img
+                      src="images/product__favourite--true.png"
+                      alt="favourite"
+                      height="20"
+                    />
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="item__info">
+                    <img
+                      src="images/products/commercial-plane.png"
+                      alt="Commercial Plane"
+                      height="100"
+                    />
+                    <div>
+                      <p class="item__info--title">Commercial Plane</p>
+                    </div>
+                  </div>
+                </td>
+                <td>$1000</td>
+                <td>-</td>
+                <td>$1000</td>
+                <td>
+                  <button class="item__favourite">
+                    <img
+                      src="images/product__favourite--true.png"
+                      alt="favourite"
+                      height="20"
+                    />
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="js/script.js" type="module"></script>
+  </body>
+</html>

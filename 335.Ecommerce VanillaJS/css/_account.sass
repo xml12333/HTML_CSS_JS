@@ -1,0 +1,159 @@
+.table__container
+	width: 100%
+	+for-phone-only
+		overflow-x: scroll
+
+.shoppingCart__container
+	display: flex
+	justify-content: space-between
+	align-items: flex-start
+	padding: 35px 0
+
+	> *
+		&:first-of-type
+			width: 70%
+			margin-right: 15px
+			+for-tablet-phone
+				width: 100%
+				margin: 0 0 15px 0
+		&:last-of-type
+			width: 30%
+			+for-tablet-phone
+				width: 100%
+
+
+	+for-tablet-phone
+		flex-direction: column
+
+.favourites__container
+	padding: 35px 0
+
+.order
+
+	&__table
+		width: 100%
+		border-collapse: collapse
+		font-size: 14px
+
+		caption
+			font-size: 18px
+			font-weight: 600
+			text-align: left
+			padding-bottom: 15px
+			color: $color--main
+
+		tr
+			border-bottom: 1px solid $color--text--light
+			
+			&:last-of-type
+				border-bottom: 0
+
+		td
+			padding: 15px 10px
+			white-space: nowrap
+
+			&:nth-child(n+2)
+				text-align: center
+
+		th
+			background: #dbdbdb
+			font-weight: 400
+			padding: 5px 10px
+
+		.item
+			&__info
+				display: flex
+				align-items: center
+
+				+for-tablet-phone
+					flex-direction: column
+
+				img
+					margin-right: 10px
+
+					+for-tablet-phone
+						height: 50px
+						margin: 0 0 10px 0
+
+				&--title
+					margin: 0
+					font-size: 16px
+					font-weight: 600
+
+					+for-tablet-phone
+						text-align: center
+
+			&__sale
+				background: $color--main
+				padding: 3px 8px
+				border-radius: 3px
+				color: white
+				white-space: nowrap
+
+			&__remove
+				background: none
+				border: none
+				padding: 0
+				margin: 0 auto
+				cursor: pointer
+
+			&__favourite
+				border: none
+				background: none
+				padding: 0
+				cursor: pointer
+				margin-left: 15px
+
+	&__summary
+		padding: 15px
+
+		form
+			margin-bottom: 20px
+
+			&:last-of-type
+				margin-bottom: 0
+
+		table
+			width: 100%
+
+		caption
+			font-size: 18px
+			font-weight: 600
+			text-align: left
+			padding-bottom: 15px
+			color: $color--main
+
+		th, td
+			font-weight: 400
+			font-size: 14px
+			text-align: left
+			padding: 5px 0
+			width: 50%
+
+		td
+			text-align: right
+
+		tfoot
+
+			th, td
+				font-weight: 600
+
+		.btn
+			margin: 15px auto 0 auto
+			display: block
+			cursor: pointer
+
+		&--btns
+			display: flex
+			align-items: flex-start
+			justify-content: space-between
+
+			.btn
+				width: 45%
+				padding: 13px 15px
+
+				&.delete__acc
+					background: $error--border
+					color: $error--color
+
+
