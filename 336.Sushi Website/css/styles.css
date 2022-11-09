@@ -209,7 +209,7 @@ img {
   color: var(--first-color);
 }
 
-.nav__close{
+.nav__close {
   position: absolute;
   top: 1rem;
   right: 1.5rem;
@@ -218,153 +218,308 @@ img {
 }
 
 .nav__img-1,
-.nav__img-2{
+.nav__img-2 {
   position: absolute;
-  opacity: .2;
+  opacity: 0.2;
 }
 
-.nav__img-1{
+.nav__img-1 {
   width: 100px;
   top: 0.75rem;
   left: -2rem;
   transform: rotate(165deg);
 }
-.nav__img-2{
+.nav__img-2 {
   width: 50px;
   right: -1rem;
   bottom: 0;
   transform: rotate(-30deg);
 }
 /* Show menu */
-.show-menu{
+.show-menu {
   top: 0;
 }
 /* Change background header */
-.bg-header{
+.bg-header {
   box-shadow: 0 2px 8px hsla(19, 64%, 24%, 0.1);
 }
 /* Active link */
 
 /*=============== HOME ===============*/
-.home{
+.home {
   position: relative;
 }
-.home__container{
+.home__container {
   row-gap: 3rem;
   padding-top: 2rem;
 }
 
-.home__img{
+.home__img {
   width: 300px;
   justify-self: center;
 }
-.home__data{
+.home__data {
   text-align: center;
 }
-.home__title{
+.home__title {
   font-size: var(--biggest-font-size);
   font-family: var(--title-font);
   margin-bottom: 1rem;
 }
 
-.home__title img{
+.home__title img {
   width: 40px;
 }
-.home__title div{
+.home__title div {
   display: flex;
   align-items: center;
   justify-content: center;
-  column-gap: .5rem;
+  column-gap: 0.5rem;
 }
 
-.home__description{
+.home__description {
   padding: 0 1rem;
   margin-bottom: 2.5rem;
 }
 
 .home__leaf-2,
-.home__leaf-4{
+.home__leaf-4 {
   position: absolute;
-  opacity: .2;
+  opacity: 0.2;
 }
 
-.home__leaf-2{
+.home__leaf-2 {
   width: 80px;
   top: 8rem;
   left: -1rem;
   transform: rotate(90deg);
 }
 
-.home__leaf-4{
+.home__leaf-4 {
   width: 100px;
   right: -2rem;
   bottom: 1rem;
   transform: rotate(-15deg);
 }
 /*=============== BUTTON ===============*/
-.button{
+.button {
   display: inline-flex;
   align-items: center;
-  column-gap: .5rem;
+  column-gap: 0.5rem;
   background-color: var(--first-color);
   padding: 1rem 1.5rem;
   border-radius: 4rem;
   color: #fff;
   font-weight: var(--font-medium);
-  transition: background .3s;
+  transition: background 0.3s;
 }
-.button i{
+.button i {
   font-size: 1.5rem;
-  transition: transform .3s;
+  transition: transform 0.3s;
 }
 
-.button:hover{
+.button:hover {
   background-color: var(--first-color-alt);
 }
-.button:hover i{
-  transform: translateX(.25rem);
+.button:hover i {
+  transform: translateX(0.25rem);
 }
 /*=============== ABOUT ===============*/
-.about{
+.about {
   position: relative;
 }
 
-.about__container{
+.about__container {
   row-gap: 3rem;
 }
 
-.about__data{
+.about__data {
   text-align: center;
 }
 
-.about__title img{
+.about__title img {
   width: 30px;
 }
-.about__title div{
+.about__title div {
   display: flex;
   justify-content: center;
   align-items: center;
-  column-gap: .5rem;
+  column-gap: 0.5rem;
 }
-.about__img{
+.about__img {
   width: 300px;
   justify-self: center;
 }
 
-.about__leaf{
+.about__leaf {
   width: 100px;
-  opacity: .2;
+  opacity: 0.2;
   position: absolute;
   right: -1.5rem;
   bottom: 11rem;
   transform: rotate(-15deg);
 }
 /*=============== POPULAR ===============*/
+.popular__container {
+  padding-top: 4rem;
+  grid-template-columns: 250px;
+  justify-content: center;
+  row-gap: 5.5rem;
+}
 
+.popular__card {
+  position: relative;
+  background-color: var(--container-color);
+  padding: 7rem 2rem 1.5rem;
+  box-shadow: 0 8px 20px hsla(19, 64%, 48%, 0.08);
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.popular__img {
+  width: 220px;
+  position: absolute;
+  inset: 0;
+  top: -2.5rem;
+  margin: 0 auto;
+  transition: transform 0.4s;
+}
+
+.popular__name {
+  font-size: var(--h3-font-size);
+  font-family: var(--title-font);
+  margin-bottom: 0.25rem;
+}
+.popular__description {
+  display: block;
+  font-size: var(--smaller-font-size);
+  margin-bottom: 1rem;
+}
+.popular__price {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+  color: var(--first-color);
+}
+.popular__button {
+  display: flex;
+  background-color: var(--first-color);
+  padding: 6px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 1.25rem;
+  box-shadow: 0 4px 20px hsla(19, 64%, 20%, 0.2);
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.popular__button:hover {
+  background-color: var(--first-color-alt);
+}
+.popular__card:hover .popular__img {
+  transform: translateY(-0.25rem);
+}
 /*=============== RECENTLY ===============*/
+.recently {
+  position: relative;
+}
+.recently__container {
+  row-gap: 4rem;
+}
+.recently__data {
+  position: relative;
+  text-align: center;
+}
+.recently__description {
+  margin-bottom: 2rem;
+}
+.recently__data-img {
+  width: 25px;
+  position: absolute;
+  top: 3.5rem;
+  right: 1.5rem;
+  transform: rotate(30deg);
+}
+.recently__img {
+  width: 300px;
+  justify-self: center;
+}
+
+.recently__leaf-1,
+.recently__leaf-2 {
+  position: absolute;
+  opacity: 0.2;
+}
+.recently__leaf-1 {
+  width: 80px;
+  top: 17rem;
+  left: -1rem;
+  transform: rotate(15deg);
+}
+.recently__leaf-2 {
+  width: 40px;
+  right: -1rem;
+  bottom: 12rem;
+  transform: rotate(-30deg);
+}
 
 /*=============== NEWSLETTER ===============*/
+.newsletter__container {
+  position: relative;
+}
+.newsletter__content {
+  position: relative;
+  background-color: hsl(19, 24%, 15%);
+  border-radius: 2.5rem;
+  padding: 5rem 1rem 3rem;
+  text-align: center;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
 
+.newsletter__img{
+  width: 250px;
+  position: absolute;
+  top: -4.5rem;
+  left: -8rem;
+}
+.newsletter__data .section__title{
+  color: #fff;
+  margin-bottom: 2rem;
+}
+.newsletter__form{
+  background-color: #fff;
+  padding: 5px 5px 5px 16px;
+  border-radius: 4rem;
+  display: flex;
+  column-gap: .5rem;
+}
+
+.newsletter__input,
+.newsletter__button{
+  font-family: var(--body-font);
+  border: none;
+  outline: none;
+}
+.newsletter__input{
+  width: 90%;
+  color: var(--text-color);
+}
+.newsletter__button{
+  cursor: pointer;
+}
+
+.newsletter__spinach{
+  width: 30px;
+  position: absolute;
+  right: 2rem;
+  bottom: -2rem;
+  transform: rotate(45deg);
+}
 /*=============== FOOTER ===============*/
 
 /*=============== SCROLL BAR ===============*/
