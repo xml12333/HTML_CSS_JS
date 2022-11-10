@@ -29,7 +29,7 @@
         <div class="nav__menu" id="nav-menu">
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="#home" class="nav__link">Home</a>
+              <a href="#home" class="nav__link active-link">Home</a>
             </li>
             <li class="nav__item">
               <a href="#about" class="nav__link">About us</a>
@@ -51,7 +51,7 @@
 
         <div class="nav__buttons">
           <!-- Theme change button -->
-          <!-- <i class="ri-moon-line change-theme" id="theme-button"></i> -->
+          <i class="ri-moon-line change-theme" id="theme-button"></i>
           <!-- Toggle button -->
           <div class="nav__toggle" id="nav-toggle">
             <i class="ri-apps-2-line"></i>
@@ -222,20 +222,116 @@
                   placeholder="Enter email"
                   class="newsletter__input"
                 />
-                <button class="button newsletter__button">Subscribe <i class="ri-send-plane-line"></i></button>
+                <button class="button newsletter__button">
+                  Subscribe <i class="ri-send-plane-line"></i>
+                </button>
               </form>
             </div>
           </div>
-          <img src="img/spinach-leaf.png" alt="newsletter img" class="newsletter__spinach">
+          <img
+            src="img/spinach-leaf.png"
+            alt="newsletter img"
+            class="newsletter__spinach"
+          />
         </div>
       </section>
     </main>
 
     <!--==================== FOOTER ====================-->
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div class="footer__container container grid">
+        <div>
+          <a href="#" class="footer__logo">
+            <img src="img/logo.png" alt="logo img" />
+            Sushi
+          </a>
+          <p class="footer__description">
+            Food for the body is not <br />
+            enough. There must be food <br />
+            for the soul.
+          </p>
+        </div>
+        <div class="footer__content">
+          <div>
+            <h3 class="footer__title">Main Menu</h3>
+            <ul class="footer__links">
+              <li>
+                <a href="#" class="footer__link">About</a>
+              </li>
+              <li>
+                <a href="#" class="footer__link">Menus</a>
+              </li>
+              <li>
+                <a href="#" class="footer__link">Offer</a>
+              </li>
+              <li>
+                <a href="#" class="footer__link">Events</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer__title">Information</h3>
+            <ul class="footer__links">
+              <li>
+                <a href="#" class="footer__link">Contact</a>
+              </li>
+              <li>
+                <a href="#" class="footer__link">Order & Returns</a>
+              </li>
+              <li>
+                <a href="#" class="footer__link">Videos</a>
+              </li>
+              <li>
+                <a href="#" class="footer__link">Reservation</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer__title">Address</h3>
+            <ul class="footer__links">
+              <li class="footer__information">
+                <a href="#" class="footer__link">Av. Hacienda 1234 <br>
+                  Lima 4321, Perú </a>
+              </li>
+              <li class="footer__information">
+                9AM - 11PM
+              </li>
+             
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer__title">Social Media</h3>
+           <ul class="footer__social">
+            <a href="#" class="footer__social-link">
+              <i class="ri-facebook-circle-fill"></i>
+            </a>
+            <a href="#" class="footer__social-link">
+              <i class="ri-instagram-fill"></i>
+            </a>
+            <a href="#" class="footer__social-link">
+              <i class="ri-twitter-fill"></i>
+            </a>
+           </ul>
+          </div>
+
+        </div>
+        <img src="img/spring-onion.png" alt="footer img" class="footer__onion">
+        <img src="img/spinach-leaf.png" alt="footer img" class="footer__spinach">
+        <img src="img/leaf-branch-4.png" alt="footer img" class="footer__leaf">
+      </div>
+      <div class="footer__info container">
+        <div class="footer__card">
+          <img src="img/footer-card-1.png" alt="footer image">
+          <img src="img/footer-card-2.png" alt="footer image">
+          <img src="img/footer-card-3.png" alt="footer image">
+          <img src="img/footer-card-4.png" alt="footer image">
+        </div>
+        <span class="footer__copy">&#169; Copyright. All rights reserved</span>
+      </div>
+    </footer>
 
     <!--========== SCROLL UP ==========-->
-
+    <a href="#" class="scrollup" id="scroll-up"><i class="ri-arrow-up-line"></i></a>
     <!--=============== SCROLLREVEAL ===============-->
     <script src=""></script>
 
