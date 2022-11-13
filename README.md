@@ -345,3 +345,4 @@
 |334| [Halloween Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/334.Halloween%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/334.Halloween%20Website/)| ![Thumbnail](334.Halloween%20Website/img/info_thumbnail.jpg)|
 |335| [Ecommerce VanillaJS](https://github.com/xml12333/HTML_CSS_JS/tree/main/335.Ecommerce%20VanillaJS)| [Demo](https://nikt.com.ua/projects/htmlCssJs/335.Ecommerce%20VanillaJS/)| ![Thumbnail](335.Ecommerce%20VanillaJS/images/info_thumbnail.jpg)|
 |336| [Sushi Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/336.Sushi%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/336.Sushi%20Website/)| ![Thumbnail](336.Sushi%20Website/img/info_thumbnail.jpg)|
+|337| [Card Hover](https://github.com/xml12333/HTML_CSS_JS/tree/main/337.Card%20Hover)| [Demo](https://nikt.com.ua/projects/htmlCssJs/337.Card%20Hover/)| ![Thumbnail](337.Card%20Hover/img/info_thumbnail.jpg)|
