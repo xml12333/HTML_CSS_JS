@@ -347,3 +347,4 @@
 |336| [Sushi Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/336.Sushi%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/336.Sushi%20Website/)| ![Thumbnail](336.Sushi%20Website/img/info_thumbnail.jpg)|
 |337| [Card Hover](https://github.com/xml12333/HTML_CSS_JS/tree/main/337.Card%20Hover)| [Demo](https://nikt.com.ua/projects/htmlCssJs/337.Card%20Hover/)| ![Thumbnail](337.Card%20Hover/img/info_thumbnail.jpg)|
 |338| [Loading Dots](https://github.com/xml12333/HTML_CSS_JS/tree/main/338.Loading%20Dots)| [Demo](https://nikt.com.ua/projects/htmlCssJs/338.Loading%20Dots/)| ![Thumbnail](338.Loading%20Dots/img/info_thumbnail.jpg)|
+|339| [Sidebar Menu](https://github.com/xml12333/HTML_CSS_JS/tree/main/339.Sidebar%20Menu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/339.Sidebar%20Menu/)| ![Thumbnail](339.Sidebar%20Menu/img/info_thumbnail.jpg)|
