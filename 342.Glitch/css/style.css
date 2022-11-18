@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+  background: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glitch{
+  position: absolute;
+  font-size: 100px;
+  letter-spacing: 8px;
+  cursor: pointer;
+}
+
+.glitch::before,
+.glitch::after{
+  content: 'GLITCH';
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.glitch:hover::before{
+  animation: glitch 0.3s linear 6;
+  color: #e91e63;
+  z-index: -2;
+}
+
+.glitch:hover::after{
+  animation: glitch 0.3s linear 6 reverse;
+  color: #2196f3;
+  z-index: -1;
+}
+
+@keyframes glitch {
+  0%{
+    top: 0;
+    left: 0;
+  }
+  20%{
+    top: -5px;
+    left: -5px;
+  }
+  40%{
+    top: 5px;
+    left: 5px;
+  }
+  60%{
+    top: -5px;
+    left: 5px;
+  }
+  80%{
+    top: 5px;
+    left: -5px;
+  }
+  
+}
