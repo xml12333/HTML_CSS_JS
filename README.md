@@ -352,3 +352,4 @@
 |341| [Login Form](https://github.com/xml12333/HTML_CSS_JS/tree/main/341.Login%20Form)| [Demo](https://nikt.com.ua/projects/htmlCssJs/341.Login%20Form/)| ![Thumbnail](341.Login%20Form/img/info_thumbnail.jpg)|
 |342| [Glitch](https://github.com/xml12333/HTML_CSS_JS/tree/main/342.Glitch)| [Demo](https://nikt.com.ua/projects/htmlCssJs/342.Glitch/)| ![Thumbnail](342.Glitch/img/info_thumbnail.jpg)|
 |343| [Intersection Observer](https://github.com/xml12333/HTML_CSS_JS/tree/main/343.Intersection%20Observer)| [Demo](https://nikt.com.ua/projects/htmlCssJs/343.Intersection%20Observer/)| ![Thumbnail](343.Intersection%20Observer/img/info_thumbnail.jpg)|
+|344| [Toggle Switch](https://github.com/xml12333/HTML_CSS_JS/tree/main/344.Toggle%20Switch)| [Demo](https://nikt.com.ua/projects/htmlCssJs/344.Toggle%20Switch/)| ![Thumbnail](344.Toggle%20Switch/img/info_thumbnail.jpg)|
