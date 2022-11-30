@@ -355,3 +355,4 @@
 |344| [Toggle Switch](https://github.com/xml12333/HTML_CSS_JS/tree/main/344.Toggle%20Switch)| [Demo](https://nikt.com.ua/projects/htmlCssJs/344.Toggle%20Switch/)| ![Thumbnail](344.Toggle%20Switch/img/info_thumbnail.jpg)|
 |345| [Netflex logo](https://github.com/xml12333/HTML_CSS_JS/tree/main/345.Netflex%20logo)| [Demo](https://nikt.com.ua/projects/htmlCssJs/345.Netflex%20logo/)| ![Thumbnail](345.Netflex%20logo/img/info_thumbnail.jpg)|
 |346| [Button Hover Effect](https://github.com/xml12333/HTML_CSS_JS/tree/main/346.Button%20Hover%20Effect)| [Demo](https://nikt.com.ua/projects/htmlCssJs/346.Button%20Hover%20Effect/)| ![Thumbnail](346.Button%20Hover%20Effect/img/info_thumbnail.jpg)|
+|347| [Liquid Drop Login Page](https://github.com/xml12333/HTML_CSS_JS/tree/main/347.Liquid%20Drop%20Login%20Page)| [Demo](https://nikt.com.ua/projects/htmlCssJs/347.Liquid%20Drop%20Login%20Page/)| ![Thumbnail](347.Liquid%20Drop%20Login%20Page/img/info_thumbnail.jpg)|
