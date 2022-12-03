@@ -358,3 +358,4 @@
 |347| [Liquid Drop Login Page](https://github.com/xml12333/HTML_CSS_JS/tree/main/347.Liquid%20Drop%20Login%20Page)| [Demo](https://nikt.com.ua/projects/htmlCssJs/347.Liquid%20Drop%20Login%20Page/)| ![Thumbnail](347.Liquid%20Drop%20Login%20Page/img/info_thumbnail.jpg)|
 |348| [Product Card](https://github.com/xml12333/HTML_CSS_JS/tree/main/348.Product%20Card)| [Demo](https://nikt.com.ua/projects/htmlCssJs/348.Product%20Card/)| ![Thumbnail](348.Product%20Card/img/info_thumbnail.jpg)|
 |349| [Circular Social Menu](https://github.com/xml12333/HTML_CSS_JS/tree/main/349.Circular%20Social%20Menu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/349.Circular%20Social%20Menu/)| ![Thumbnail](349.Circular%20Social%20Menu/img/info_thumbnail.jpg)|
+|350| [Sidebar Menu](https://github.com/xml12333/HTML_CSS_JS/tree/main/350.Sidebar%20Menu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/350.Sidebar%20Menu/)| ![Thumbnail](350.Sidebar%20Menu/img/info_thumbnail.jpg)|
