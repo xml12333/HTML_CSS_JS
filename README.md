@@ -359,3 +359,4 @@
 |348| [Product Card](https://github.com/xml12333/HTML_CSS_JS/tree/main/348.Product%20Card)| [Demo](https://nikt.com.ua/projects/htmlCssJs/348.Product%20Card/)| ![Thumbnail](348.Product%20Card/img/info_thumbnail.jpg)|
 |349| [Circular Social Menu](https://github.com/xml12333/HTML_CSS_JS/tree/main/349.Circular%20Social%20Menu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/349.Circular%20Social%20Menu/)| ![Thumbnail](349.Circular%20Social%20Menu/img/info_thumbnail.jpg)|
 |350| [Sidebar Menu](https://github.com/xml12333/HTML_CSS_JS/tree/main/350.Sidebar%20Menu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/350.Sidebar%20Menu/)| ![Thumbnail](350.Sidebar%20Menu/img/info_thumbnail.jpg)|
+|351| [Dots NavMenu](https://github.com/xml12333/HTML_CSS_JS/tree/main/351.Dots%20NavMenu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/351.Dots%20NavMenu/)| ![Thumbnail](351.Dots%20NavMenu/img/info_thumbnail.jpg)|
