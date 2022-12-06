@@ -361,3 +361,4 @@
 |350| [Sidebar Menu](https://github.com/xml12333/HTML_CSS_JS/tree/main/350.Sidebar%20Menu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/350.Sidebar%20Menu/)| ![Thumbnail](350.Sidebar%20Menu/img/info_thumbnail.jpg)|
 |351| [Dots NavMenu](https://github.com/xml12333/HTML_CSS_JS/tree/main/351.Dots%20NavMenu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/351.Dots%20NavMenu/)| ![Thumbnail](351.Dots%20NavMenu/img/info_thumbnail.jpg)|
 |352| [Parallax Scrolling](https://github.com/xml12333/HTML_CSS_JS/tree/main/352.Parallax%20Scrolling)| [Demo](https://nikt.com.ua/projects/htmlCssJs/352.Parallax%20Scrolling/)| ![Thumbnail](352.Parallax%20Scrolling/img/info_thumbnail.jpg)|
+|353| [Dropdown Menu](https://github.com/xml12333/HTML_CSS_JS/tree/main/353.Dropdown%20Menu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/353.Dropdown%20Menu/)| ![Thumbnail](353.Dropdown%20Menu/img/info_thumbnail.jpg)|
