@@ -24,15 +24,15 @@
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
-  --smaller-font-size: .75rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
 
   /*========== Font weight ==========*/
   --font-medium: 500;
   --font-semi-bold: 600;
   --font-bold: 700;
-  
+
   /*========== z index ==========*/
   --z-tooltip: 10;
   --z-fixed: 100;
@@ -46,8 +46,8 @@
     --h2-font-size: 1.5rem;
     --h3-font-size: 1.25rem;
     --normal-font-size: 1rem;
-    --small-font-size: .875rem;
-    --smaller-font-size: .813rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
   }
 }
 
@@ -69,7 +69,9 @@ body {
   color: var(--text-color);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: var(--title-color);
   font-weight: var(--font-medium);
 }
@@ -114,33 +116,35 @@ img {
 
 /* Snow animation */
 @keyframes animate-snow-1 {
-  0%, 100% {
-    transform: scale(.5);
+  0%,
+  100% {
+    transform: scale(0.5);
   }
   50% {
     transform: scale(1);
   }
 }
 @keyframes animate-snow-2 {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
-    transform: scale(.5);
+    transform: scale(0.5);
   }
 }
 
 /*=============== HEADER & NAV ===============*/
-.header{
+.header {
   position: fixed;
   width: 100%;
   background-color: transparent;
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
-  transition: background .4s;
+  transition: background 0.4s;
 }
-.nav{
+.nav {
   position: relative;
   height: var(--header-height);
   display: flex;
@@ -149,56 +153,56 @@ img {
 }
 .nav__logo,
 .nav__toggle,
-.nav__close{
+.nav__close {
   display: flex;
   color: var(--white-color);
 }
-.nav__logo img{
+.nav__logo img {
   width: 30px;
   transform: rotate(-10deg);
 }
 
-.nav__logo{
+.nav__logo {
   align-items: center;
-  column-gap: .25rem;
+  column-gap: 0.25rem;
   font-family: var(--second-font);
   font-size: var(--h2-font-size);
 }
 
-.nav__toggle{
+.nav__toggle {
   font-size: 1.25rem;
   cursor: pointer;
 }
 
 @media screen and (max-width: 767px) {
-  .nav__menu{
+  .nav__menu {
     position: fixed;
     top: -100%;
     left: 0;
     background-color: var(--body-color);
     width: 100%;
     padding-block: 3.5rem;
-    transition: top .4s;
+    transition: top 0.4s;
   }
 }
-.nav__list{
+.nav__list {
   display: flex;
   flex-direction: column;
   text-align: center;
   row-gap: 2rem;
 }
 
-.nav__link{
+.nav__link {
   color: var(--white-color);
   font-weight: var(--font-medium);
-  transition: color .4s;
+  transition: color 0.4s;
 }
 
-.nav__link:hover{
+.nav__link:hover {
   color: var(--first-color);
 }
 
-.nav__close{
+.nav__close {
   position: absolute;
   top: 1rem;
   right: 1.5rem;
@@ -207,17 +211,17 @@ img {
 }
 
 .nav__img-1,
-.nav__img-2{
+.nav__img-2 {
   position: absolute;
 }
-.nav__img-1{
+.nav__img-1 {
   width: 40px;
   top: 6rem;
   left: 2.5rem;
   transform: rotate(-15deg);
 }
 
-.nav__img-2{
+.nav__img-2 {
   width: 60px;
   right: 1rem;
   bottom: 2rem;
@@ -225,47 +229,134 @@ img {
 }
 
 /* Show menu */
-.show-menu{
+.show-menu {
   top: 0;
 }
 /* Change background header */
 
-
 /* Active link */
 
-
 /*=============== HOME ===============*/
+.home {
+  position: relative;
+  background: linear-gradient(180deg, hsl(210, 88%, 20%), hsl(210, 70%, 58%));
+  height: 650px;
+  padding-top: 7rem;
+  overflow: hidden;
+}
+.home__title {
+  color: var(--white-color);
+  font-size: var(--biggest-font-size);
+  font-family: var(--second-font);
+  text-align: center;
+  margin-top: 1.5rem;
+}
 
+.home img {
+  position: absolute;
+}
+.home__mountain-1,
+.home__snow {
+  bottom: 0;
+}
 
+.home__village,
+.home__pine,
+.home__moon,
+.home__trineo {
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.home__village {
+  width: 260px;
+  bottom: 1rem;
+}
+
+.home__pine {
+  width: 250px;
+  bottom: 4rem;
+}
+
+.home__mountain-2 {
+  bottom: 3rem;
+}
+.home__mountain-3 {
+  bottom: 6rem;
+}
+
+.home__moon {
+  width: 300px;
+  bottom: 8.5rem;
+}
+
+.home__trineo {
+  width: 250px;
+  bottom: 14.5rem;
+}
 /*=============== ABOUT ===============*/
+.about__container {
+  position: relative;
+  row-gap: 3.5rem;
+}
+.about__data {
+  text-align: center;
+}
 
+.about__description {
+  margin-bottom: 2rem;
+}
+
+.about__img {
+  width: 320px;
+  justify-self: center;
+}
+.about__snow-1,
+.about__snow-2 {
+  width: 50px;
+  position: absolute;
+}
+
+.about__snow-1 {
+  top: 12rem;
+  left: 1.5rem;
+}
+
+.about__snow-2 {
+  right: -0.75rem;
+  bottom: 0.5rem;
+}
 
 /*=============== BUTTON ===============*/
-
+.button {
+  display: inline;
+  background-color: var(--first-color);
+  padding: 1rem 2rem;
+  border-radius: 4rem;
+  color: var(--white-color);
+  font-weight: var(--font-medium);
+  transition: background 0.4s, box-shadow 0.4s;
+}
+.button:hover {
+  background-color: var(--first-color-alt);
+  box-shadow: 0 8px 32px hsla(210, 80%, 54%, 0.7);
+}
 
 /*=============== SEND ===============*/
 
-
 /*=============== CELEBRATE ===============*/
-
 
 /*=============== FOOTER ===============*/
 
-
 /*=============== SCROLL BAR ===============*/
-
 
 /*=============== SCROLL UP ===============*/
 
-
 /* Show Scroll Up */
-
 
 /*=============== BREAKPOINTS ===============*/
 /* For medium devices */
 
-
 /* For large devices */
-
 
 /* For 2K+ resolutions */
