@@ -233,6 +233,9 @@ img {
   top: 0;
 }
 /* Change background header */
+.bg-header{
+  background: var(--body-color);
+}
 
 /* Active link */
 
@@ -320,11 +323,13 @@ img {
 .about__snow-1 {
   top: 12rem;
   left: 1.5rem;
+  animation: var(--animate-snow-1);
 }
 
 .about__snow-2 {
   right: -0.75rem;
   bottom: 0.5rem;
+  animation: var(--animate-snow-2);
 }
 
 /*=============== BUTTON ===============*/
@@ -343,9 +348,81 @@ img {
 }
 
 /*=============== SEND ===============*/
+.send__container{
+  position: relative;
+  grid-template-columns: 200px;
+  justify-content: center;
+  row-gap: 3rem;
+  padding-top: 1.5rem;
+}
+.send__card{
+  text-align: center;
+}
+.send__img{
+  width: 180px;
+  margin-bottom: 0.75rem;
+}
+.send__title{
+  font-size: var(--h3-font-size);
+  margin-bottom: .5rem;
+}
 
+.send__description{
+  font-size: var(--small-font-size);
+  padding-inline: 1.5rem;
+}
+.send__snow-1,
+.send__snow-2,
+.send__snow-3{
+  width: 50px;
+  position: absolute;
+}
+.send__snow-1{
+  left: 0;
+  top: 7rem;
+  animation: var(--animate-snow-1);
+}
+.send__snow-2{
+  top: 23rem;
+  right: 0;
+  animation: var(--animate-snow-2);
+}
+.send__snow-3{
+  bottom: 9rem;
+  left: 0;
+  animation: var(--animate-snow-1);
+}
 /*=============== CELEBRATE ===============*/
+.celebrate__container{
+  position: relative;
+  row-gap: 3.5rem;
+}
+.celebrate__data{
+  text-align: center;
+}
+.celebrate__description{
+  margin-bottom: 2rem;
+}
+.celebrate__img{
+  width: 320px;
+  justify-self: center;
+}
+.celebrate__snow-1,
+.celebrate__snow-2{
+  width: 50px;
+  position: absolute;
+}
 
+.celebrate__snow-1{
+  top: 1.5rem;
+  left: 1.5rem;
+  animation: var(--animate-snow-1);
+}
+.celebrate__snow-2{
+  top: 18rem;
+  right:  0rem;
+  animation: var(--animate-snow-2);
+}
 /*=============== FOOTER ===============*/
 
 /*=============== SCROLL BAR ===============*/
