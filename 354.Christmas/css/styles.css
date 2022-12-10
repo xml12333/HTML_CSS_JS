@@ -238,7 +238,9 @@ img {
 }
 
 /* Active link */
-
+.active-link{
+  color: var(--first-color);
+}
 /*=============== HOME ===============*/
 .home {
   position: relative;
@@ -424,13 +426,96 @@ img {
   animation: var(--animate-snow-2);
 }
 /*=============== FOOTER ===============*/
+.footer{
+  overflow: hidden;
+}
+.footer__container{
+  position: relative;
+  padding-block: 4.5rem 2rem;
+  text-align: center;
+}
+.footer__logo,
+.footer__social-link,
+.footer__copy{
+  color: var(--white-color);
+}
+.footer__logo{
+  display: inline-block;
+  font-size: var(--h2-font-size);
+  font-family: var(--second-font);
+  margin-bottom: 1rem;
+}
+.footer__social{
+  display: flex;
+  justify-content: center;
+  column-gap: 1.5rem;
+}
 
+.footer__social-link{
+  font-size: 1.25rem;
+  transition: color .3s;
+}
+
+.footer__social-link:hover{
+  color: var(--first-color);
+}
+.footer__copy{
+  display: block;
+  margin-top: 2rem;
+  font-size: var(--smaller-font-size);
+}
+.footer__snow-1,
+.footer__snow-2{
+  position: absolute;
+}
+
+.footer__snow-1{
+  width: 50px;
+  top: 4.5rem;
+  left: 0;
+  animation: var(--animate-snow-1);
+}
+
+.footer__snow-2{
+  width: 70px;
+  top: 6.5rem;
+  right: -3rem;
+  animation: var(--animate-snow-2);
+}
 /*=============== SCROLL BAR ===============*/
-
+::-webkit-scrollbar{
+  width: 0.6rem;
+  border-radius: .5rem;
+  background-color: hsl(210,8%,15%);
+}
+::-webkit-scrollbar-thumb{
+  background-color: hsl(210,8%,25%);
+  border-radius: .5rem;
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: hsl(210,8%,35%);
+}
 /*=============== SCROLL UP ===============*/
-
+.scrollup{
+  position: fixed;
+  right: 1rem;
+  bottom: -50%;
+  background-color: var(--white-color);
+  display: inline-flex;
+  padding: 0.45rem;
+  border-radius: .45rem;
+  font-size: 1rem;
+  color: var(--body-color);
+  z-index: var(--z-tooltip);
+  transition: bottom .3s, transform .3s;
+}
+.scrollup:hover{
+  transform: translateY(-.25rem);
+}
 /* Show Scroll Up */
-
+.show-scroll{
+  bottom: 3rem;
+}
 /*=============== BREAKPOINTS ===============*/
 /* For medium devices */
 
