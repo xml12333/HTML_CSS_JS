@@ -366,3 +366,4 @@
 |355| [Isometric Menu](https://github.com/xml12333/HTML_CSS_JS/tree/main/355.Isometric%20Menu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/355.Isometric%20Menu/)| ![Thumbnail](355.Isometric%20Menu/img/info_thumbnail.jpg)|
 |356| [3D Social Media](https://github.com/xml12333/HTML_CSS_JS/tree/main/356.3D%20Social%20Media)| [Demo](https://nikt.com.ua/projects/htmlCssJs/356.3D%20Social%20Media/)| ![Thumbnail](356.3D%20Social%20Media/img/info_thumbnail.jpg)|
 |357| [Card Info](https://github.com/xml12333/HTML_CSS_JS/tree/main/357.Card%20Info)| [Demo](https://nikt.com.ua/projects/htmlCssJs/357.Card%20Info/)| ![Thumbnail](357.Card%20Info/img/info_thumbnail.jpg)|
+|358| [Circular Team](https://github.com/xml12333/HTML_CSS_JS/tree/main/358.Circular%20Team)| [Demo](https://nikt.com.ua/projects/htmlCssJs/358.Circular%20Team/)| ![Thumbnail](358.Circular%20Team/img/info_thumbnail.jpg)|
