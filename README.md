@@ -368,3 +368,4 @@
 |357| [Card Info](https://github.com/xml12333/HTML_CSS_JS/tree/main/357.Card%20Info)| [Demo](https://nikt.com.ua/projects/htmlCssJs/357.Card%20Info/)| ![Thumbnail](357.Card%20Info/img/info_thumbnail.jpg)|
 |358| [Circular Team](https://github.com/xml12333/HTML_CSS_JS/tree/main/358.Circular%20Team)| [Demo](https://nikt.com.ua/projects/htmlCssJs/358.Circular%20Team/)| ![Thumbnail](358.Circular%20Team/img/info_thumbnail.jpg)|
 |359| [Profile Card](https://github.com/xml12333/HTML_CSS_JS/tree/main/359.Profile%20Card)| [Demo](https://nikt.com.ua/projects/htmlCssJs/359.Profile%20Card/)| ![Thumbnail](359.Profile%20Card/img/info_thumbnail.jpg)|
+|360| [Fingerprint Scanner](https://github.com/xml12333/HTML_CSS_JS/tree/main/360.Fingerprint%20Scanner)| [Demo](https://nikt.com.ua/projects/htmlCssJs/360.Fingerprint%20Scanner/)| ![Thumbnail](360.Fingerprint%20Scanner/img/info_thumbnail.jpg)|
