@@ -371,3 +371,4 @@
 |360| [Fingerprint Scanner](https://github.com/xml12333/HTML_CSS_JS/tree/main/360.Fingerprint%20Scanner)| [Demo](https://nikt.com.ua/projects/htmlCssJs/360.Fingerprint%20Scanner/)| ![Thumbnail](360.Fingerprint%20Scanner/img/info_thumbnail.jpg)|
 |361| [Circular Navigation](https://github.com/xml12333/HTML_CSS_JS/tree/main/361.Circular%20Navigation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/361.Circular%20Navigation/)| ![Thumbnail](361.Circular%20Navigation/img/info_thumbnail.jpg)|
 |362| [Icon Hover](https://github.com/xml12333/HTML_CSS_JS/tree/main/362.Icon%20Hover)| [Demo](https://nikt.com.ua/projects/htmlCssJs/362.Icon%20Hover/)| ![Thumbnail](362.Icon%20Hover/img/info_thumbnail.jpg)|
+|363| [Calendar](https://github.com/xml12333/HTML_CSS_JS/tree/main/363.Calendar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/363.Calendar/)| ![Thumbnail](363.Calendar/img/info_thumbnail.jpg)|
