@@ -373,3 +373,4 @@
 |362| [Icon Hover](https://github.com/xml12333/HTML_CSS_JS/tree/main/362.Icon%20Hover)| [Demo](https://nikt.com.ua/projects/htmlCssJs/362.Icon%20Hover/)| ![Thumbnail](362.Icon%20Hover/img/info_thumbnail.jpg)|
 |363| [Calendar](https://github.com/xml12333/HTML_CSS_JS/tree/main/363.Calendar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/363.Calendar/)| ![Thumbnail](363.Calendar/img/info_thumbnail.jpg)|
 |364| [Halloween Parallax](https://github.com/xml12333/HTML_CSS_JS/tree/main/364.Halloween%20Parallax)| [Demo](https://nikt.com.ua/projects/htmlCssJs/364.Halloween%20Parallax/)| ![Thumbnail](364.Halloween%20Parallax/img/info_thumbnail.jpg)|
+|365| [Admin Dashboard](https://github.com/xml12333/HTML_CSS_JS/tree/main/365.Admin%20Dashboard)| [Demo](https://nikt.com.ua/projects/htmlCssJs/365.Admin%20Dashboard/)| ![Thumbnail](365.Admin%20Dashboard/img/info_thumbnail.jpg)|
