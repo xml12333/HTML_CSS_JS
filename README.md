@@ -378,3 +378,4 @@
 |365| [Admin Dashboard](https://github.com/xml12333/HTML_CSS_JS/tree/main/365.Admin%20Dashboard)| [Demo](https://nikt.com.ua/projects/htmlCssJs/365.Admin%20Dashboard/)| ![Thumbnail](365.Admin%20Dashboard/img/info_thumbnail.jpg)|
 |366| [Color-fill Animation](https://github.com/xml12333/HTML_CSS_JS/tree/main/366.Color-fill%20Animation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/366.Color-fill%20Animation/)| ![Thumbnail](366.Color-fill%20Animation/img/info_thumbnail.jpg)|
 |367| [Navigation Menu](https://github.com/xml12333/HTML_CSS_JS/tree/main/367.Navigation%20Menu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/367.Navigation%20Menu/)| ![Thumbnail](367.Navigation%20Menu/img/info_thumbnail.jpg)|
+|368| [Parallax](https://github.com/xml12333/HTML_CSS_JS/tree/main/368.Parallax)| [Demo](https://nikt.com.ua/projects/htmlCssJs/368.Parallax/)| ![Thumbnail](368.Parallax/img/info_thumbnail.jpg)|
