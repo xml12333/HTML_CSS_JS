@@ -19,7 +19,7 @@ const getMeta = (url) =>
   ImageDistortion();
 })();
 
-function ImageDistortion(blockWidth, blockWidth) {
+function ImageDistortion() {
   let container = document.querySelector(".container");
   for (let i = 0; i < 20; i++) {
     for (let x = 0; x < 20; x++) {
