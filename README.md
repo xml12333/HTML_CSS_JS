@@ -382,3 +382,4 @@
 |369| [Abstract Background](https://github.com/xml12333/HTML_CSS_JS/tree/main/369.Abstract%20Background)| [Demo](https://nikt.com.ua/projects/htmlCssJs/369.Abstract%20Background/)| ![Thumbnail](369.Abstract%20Background/img/info_thumbnail.jpg)|
 |370| [Image Distortion](https://github.com/xml12333/HTML_CSS_JS/tree/main/370.Image%20Distortion)| [Demo](https://nikt.com.ua/projects/htmlCssJs/370.Image%20Distortion/)| ![Thumbnail](370.Image%20Distortion/img/info_thumbnail.jpg)|
 |371| [Navbar](https://github.com/xml12333/HTML_CSS_JS/tree/main/371.Navbar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/371.Navbar/)| ![Thumbnail](371.Navbar/img/info_thumbnail.jpg)|
+|372| [Floating Menu](https://github.com/xml12333/HTML_CSS_JS/tree/main/372.Floating%20Menu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/372.Floating%20Menu/)| ![Thumbnail](372.Floating%20Menu/img/info_thumbnail.jpg)|
