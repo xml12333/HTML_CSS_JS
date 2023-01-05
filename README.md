@@ -384,3 +384,4 @@
 |371| [Navbar](https://github.com/xml12333/HTML_CSS_JS/tree/main/371.Navbar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/371.Navbar/)| ![Thumbnail](371.Navbar/img/info_thumbnail.jpg)|
 |372| [Floating Menu](https://github.com/xml12333/HTML_CSS_JS/tree/main/372.Floating%20Menu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/372.Floating%20Menu/)| ![Thumbnail](372.Floating%20Menu/img/info_thumbnail.jpg)|
 |373| [Dropdown Navbar](https://github.com/xml12333/HTML_CSS_JS/tree/main/373.Dropdown%20Navbar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/373.Dropdown%20Navbar/)| ![Thumbnail](373.Dropdown%20Navbar/img/info_thumbnail.jpg)|
+|374| [Calendar](https://github.com/xml12333/HTML_CSS_JS/tree/main/374.Calendar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/374.Calendar/)| ![Thumbnail](374.Calendar/img/info_thumbnail.jpg)|
