@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #095a55;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #fff38e;
+}
+
+.container {
+  position: relative;
+  min-width: 1100px;
+  min-height: 550px;
+  display: flex;
+  z-index: 1000;
+}
+
+.container .contactInfo {
+  position: absolute;
+  top: 40px;
+  width: 350px;
+  height: calc(100% - 80px);
+  background: #095a55;
+  z-index: 1;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+}
+
+.container .contactInfo h2 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+}
+.container .contactInfo ul.info {
+  position: relative;
+  margin: 20px 0;
+}
+.container .contactInfo ul.info li {
+  position: relative;
+  list-style: none;
+  display: flex;
+  margin: 20px 0;
+  cursor: pointer;
+  align-items: flex-start;
+}
+.container .contactInfo ul.info li span:nth-child(1) {
+  width: 30px;
+  min-width: 30px;
+}
+.container .contactInfo ul.info li span:nth-child(1) img {
+  max-width: 100%;
+  filter: invert(1);
+}
+.container .contactInfo ul.info li span:nth-child(2) {
+  color: #fff;
+  margin-left: 10px;
+  font-weight: 300;
+}
+.container .contactForm {
+  position: absolute;
+  padding: 70px 50px;
+  padding-left: 250px;
+  margin-left: 150px;
+  width: calc(100% - 150px);
+  height: 100%;
+  background: #fff;
+  box-shadow: 0 50px 50px rgba(0, 0, 0, 0.25);
+}
