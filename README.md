@@ -388,3 +388,4 @@
 |375| [Noise Generator](https://github.com/xml12333/HTML_CSS_JS/tree/main/375.Noise%20Generator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/375.Noise%20Generator/)| ![Thumbnail](375.Noise%20Generator/img/info_thumbnail.jpg)|
 |376| [Contact Form](https://github.com/xml12333/HTML_CSS_JS/tree/main/376.Contact%20Form)| [Demo](https://nikt.com.ua/projects/htmlCssJs/376.Contact%20Form/)| ![Thumbnail](376.Contact%20Form/img/info_thumbnail.jpg)|
 |377| [Search Bar](https://github.com/xml12333/HTML_CSS_JS/tree/main/377.Search%20Bar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/377.Search%20Bar/)| ![Thumbnail](377.Search%20Bar/img/info_thumbnail.jpg)|
+|378| [Wavy Animation](https://github.com/xml12333/HTML_CSS_JS/tree/main/378.Wavy%20Animation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/378.Wavy%20Animation/)| ![Thumbnail](378.Wavy%20Animation/img/info_thumbnail.jpg)|
