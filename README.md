@@ -390,3 +390,4 @@
 |377| [Search Bar](https://github.com/xml12333/HTML_CSS_JS/tree/main/377.Search%20Bar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/377.Search%20Bar/)| ![Thumbnail](377.Search%20Bar/img/info_thumbnail.jpg)|
 |378| [Wavy Animation](https://github.com/xml12333/HTML_CSS_JS/tree/main/378.Wavy%20Animation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/378.Wavy%20Animation/)| ![Thumbnail](378.Wavy%20Animation/img/info_thumbnail.jpg)|
 |379| [Button Svg Stroke](https://github.com/xml12333/HTML_CSS_JS/tree/main/379.Button%20Svg%20Stroke)| [Demo](https://nikt.com.ua/projects/htmlCssJs/379.Button%20Svg%20Stroke/)| ![Thumbnail](379.Button%20Svg%20Stroke/img/info_thumbnail.jpg)|
+|380| [Service Section](https://github.com/xml12333/HTML_CSS_JS/tree/main/380.Service%20Section)| [Demo](https://nikt.com.ua/projects/htmlCssJs/380.Service%20Section/)| ![Thumbnail](380.Service%20Section/img/info_thumbnail.jpg)|
