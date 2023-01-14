@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #fff;
+}
+
+ul {
+  position: relative;
+}
+
+ul li {
+  list-style: none;
+  text-align: center;
+}
+ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 5px 20px;
+  display: inline-flex;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+ul li:hover a {
+  background: #333;
+  color: var(--clr);
+  font-weight: 500;
+}
+ul:hover > li:not(:hover){
+  opacity: 0;
+}
+ul li a::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 6rem;
+  opacity: 0;
+  color: #222;
+  z-index: -1;
+  font-weight: 400;
+  text-transform: initial;
+  letter-spacing: 500px;
+  transition: letter-spacing 0.5s;
+  font-family: 'Sacramento',cursive;
+}
+
+ul li a:hover::before{
+  content: attr(data-text);
+  opacity: 1;
+  background: var(--clr);
+  width: 250vh;
+  height: 250vh;
+  letter-spacing: 0;
+}
