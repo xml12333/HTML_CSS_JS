@@ -395,3 +395,4 @@
 |382| [Login Form](https://github.com/xml12333/HTML_CSS_JS/tree/main/382.Login%20Form)| [Demo](https://nikt.com.ua/projects/htmlCssJs/382.Login%20Form/)| ![Thumbnail](382.Login%20Form/img/info_thumbnail.jpg)|
 |383| [Navigation Menu](https://github.com/xml12333/HTML_CSS_JS/tree/main/383.Navigation%20Menu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/383.Navigation%20Menu/)| ![Thumbnail](383.Navigation%20Menu/img/info_thumbnail.jpg)|
 |384| [Calendar](https://github.com/xml12333/HTML_CSS_JS/tree/main/384.Calendar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/384.Calendar/)| ![Thumbnail](384.Calendar/img/info_thumbnail.jpg)|
+|385| [Password Generator](https://github.com/xml12333/HTML_CSS_JS/tree/main/385.Password%20Generator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/385.Password%20Generator/)| ![Thumbnail](385.Password%20Generator/img/info_thumbnail.jpg)|
