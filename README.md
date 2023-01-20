@@ -397,3 +397,4 @@
 |384| [Calendar](https://github.com/xml12333/HTML_CSS_JS/tree/main/384.Calendar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/384.Calendar/)| ![Thumbnail](384.Calendar/img/info_thumbnail.jpg)|
 |385| [Password Generator](https://github.com/xml12333/HTML_CSS_JS/tree/main/385.Password%20Generator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/385.Password%20Generator/)| ![Thumbnail](385.Password%20Generator/img/info_thumbnail.jpg)|
 |386| [Loader](https://github.com/xml12333/HTML_CSS_JS/tree/main/386.Loader)| [Demo](https://nikt.com.ua/projects/htmlCssJs/386.Loader/)| ![Thumbnail](386.Loader/img/info_thumbnail.jpg)|
+|387| [Loader](https://github.com/xml12333/HTML_CSS_JS/tree/main/387.Loader)| [Demo](https://nikt.com.ua/projects/htmlCssJs/387.Loader/)| ![Thumbnail](387.Loader/img/info_thumbnail.jpg)|
