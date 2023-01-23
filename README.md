@@ -400,3 +400,4 @@
 |387| [Loader](https://github.com/xml12333/HTML_CSS_JS/tree/main/387.Loader)| [Demo](https://nikt.com.ua/projects/htmlCssJs/387.Loader/)| ![Thumbnail](387.Loader/img/info_thumbnail.jpg)|
 |388| [Loader](https://github.com/xml12333/HTML_CSS_JS/tree/main/388.Loader)| [Demo](https://nikt.com.ua/projects/htmlCssJs/388.Loader/)| ![Thumbnail](388.Loader/img/info_thumbnail.jpg)|
 |389| [Loader](https://github.com/xml12333/HTML_CSS_JS/tree/main/389.Loader)| [Demo](https://nikt.com.ua/projects/htmlCssJs/389.Loader/)| ![Thumbnail](389.Loader/img/info_thumbnail.jpg)|
+|390| [Loader](https://github.com/xml12333/HTML_CSS_JS/tree/main/390.Loader)| [Demo](https://nikt.com.ua/projects/htmlCssJs/390.Loader/)| ![Thumbnail](390.Loader/img/info_thumbnail.jpg)|
