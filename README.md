@@ -402,3 +402,4 @@
 |389| [Loader](https://github.com/xml12333/HTML_CSS_JS/tree/main/389.Loader)| [Demo](https://nikt.com.ua/projects/htmlCssJs/389.Loader/)| ![Thumbnail](389.Loader/img/info_thumbnail.jpg)|
 |390| [Loader](https://github.com/xml12333/HTML_CSS_JS/tree/main/390.Loader)| [Demo](https://nikt.com.ua/projects/htmlCssJs/390.Loader/)| ![Thumbnail](390.Loader/img/info_thumbnail.jpg)|
 |391| [Pagination](https://github.com/xml12333/HTML_CSS_JS/tree/main/391.Pagination)| [Demo](https://nikt.com.ua/projects/htmlCssJs/391.Pagination/)| ![Thumbnail](391.Pagination/img/info_thumbnail.jpg)|
+|392| [Pagination](https://github.com/xml12333/HTML_CSS_JS/tree/main/392.Pagination)| [Demo](https://nikt.com.ua/projects/htmlCssJs/392.Pagination/)| ![Thumbnail](392.Pagination/img/info_thumbnail.jpg)|
