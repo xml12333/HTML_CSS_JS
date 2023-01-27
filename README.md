@@ -404,3 +404,4 @@
 |391| [Pagination](https://github.com/xml12333/HTML_CSS_JS/tree/main/391.Pagination)| [Demo](https://nikt.com.ua/projects/htmlCssJs/391.Pagination/)| ![Thumbnail](391.Pagination/img/info_thumbnail.jpg)|
 |392| [Pagination](https://github.com/xml12333/HTML_CSS_JS/tree/main/392.Pagination)| [Demo](https://nikt.com.ua/projects/htmlCssJs/392.Pagination/)| ![Thumbnail](392.Pagination/img/info_thumbnail.jpg)|
 |393| [Particles Effect](https://github.com/xml12333/HTML_CSS_JS/tree/main/393.Particles%20Effect)| [Demo](https://nikt.com.ua/projects/htmlCssJs/393.Particles%20Effect/)| ![Thumbnail](393.Particles%20Effect/img/info_thumbnail.jpg)|
+|394| [Particles Cursor](https://github.com/xml12333/HTML_CSS_JS/tree/main/394.Particles%20Cursor)| [Demo](https://nikt.com.ua/projects/htmlCssJs/394.Particles%20Cursor/)| ![Thumbnail](394.Particles%20Cursor/img/info_thumbnail.jpg)|
