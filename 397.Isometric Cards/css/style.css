@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  background: #262626;
+  overflow: hidden;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 40%;
+  top: 20%;
+}
+
+ul li {
+  display: block;
+  width: 240px;
+  height: 280px;
+  background: #fff;
+  position: absolute;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  transform-origin: bottom center;
+  transform: rotate(10deg) skew(-30deg);
+  transition: 0.5s;
+}
+ul li span {
+  display: block;
+  color: #ccc;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 280px;
+}
+
+ul li:nth-child(1) {
+  transform: rotate(10deg) skew(-30deg) translate(15px, 15px);
+}
+ul li:nth-child(2) {
+  transform: rotate(10deg) skew(-30deg) translate(0px, 0px);
+}
+ul li:nth-child(3) {
+  transform: rotate(10deg) skew(-30deg) translate(-15px, -15px);
+}
+ul:hover li:nth-child(1) {
+  transform: rotate(5deg) skew(0deg) translate(200px, 0px);
+}
+ul:hover li:nth-child(2) {
+  transform: rotate(0deg) skew(0deg) translate(0px, 0px);
+}
+ul:hover li:nth-child(3) {
+  transform: rotate(-5deg) skew(0deg) translate(-200px, 0px);
+}
+
+ul li:before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 10px;
+  left: 0;
+  bottom: 0;
+  background: #fc2427;
+  transition: 0.5s;
+}
+ul li::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 10px;
+  right: 0;
+  bottom: 0;
+  background: #262626;
+  transition: 0.5s;
+}
+ul li:hover::before {
+  left: 50%;
+}
+ul li:hover::after {
+  right: 50%;
+}
