@@ -1,0 +1,235 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+  --border-section: 56px 56px 0 0;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(12, 32%, 22%);
+  --first-color-alt: hsl(12, 42%, 12%);
+  --first-color-light: hsl(12, 24%, 32%);
+  --second-color: hsl(39, 62%, 65%);
+  --title-color: hsl(12, 12%, 16%);
+  --text-color: hsl(12, 12%, 32%);
+  --text-color-light: hsl(12, 8%, 48%);
+  --white-color: #fff;
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --second-font: "Pacifico", cursive;
+  --biggest-font-size: 2.75rem;
+  --big-font-size: 1.75rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1024px) {
+  :root {
+    --biggest-font-size: 4.5rem;
+    --big-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--white-color);
+  color: var(--text-color);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding-block: 4.5rem 3.5rem;
+}
+
+.section__title {
+  color: var(--title-color);
+  font-size: var(--big-font-size);
+  font-family: var(--second-font);
+  font-weight: var(--font-regular);
+  line-height: 120%;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.main {
+  overflow: hidden; /* For animation ScrollReveal */
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--first-color);
+  z-index: var(--z-fixed);
+  transition: background 0.4s, box-shadow 0.4s;
+}
+
+.header__border {
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(
+    90deg,
+    var(--text-color) 50%,
+    transparent 50%
+  );
+  background-size: 24px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: opacity 0.3s;
+}
+
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav__logo {
+  color: var(--white-color);
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  font-size: var(--h3-font-size);
+  font-family: var(--second-font);
+}
+
+.nav__logo img {
+  width: 28px;
+}
+/* Navigation for mobile devices */
+@media screen and (max-width: 1023px) {
+  .nav__menu {
+    position: fixed;
+    bottom: 0;
+    background: linear-gradient(
+      180deg,
+      var(--first-color) 0%,
+      var(--first-color-alt) 100%
+    );
+    border-radius: 56px 56px 0 0;
+    box-shadow: 0 -2px 12px hsla(12, 32%, 12%, 0.3);
+    width: 100%;
+    padding: 1.25rem 4rem;
+  }
+}
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+}
+.nav__link {
+  color: var(--white-color);
+  font-family: var(--second-font);
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.25rem;
+  transition: color 0.3s;
+}
+.nav__link i {
+  background: linear-gradient(
+    180deg,
+    hsl(39, 62%, 75%) 0%,
+    hsl(39, 62%, 45%) 100%
+  );
+  color: transparent;
+  -webkit-background-clip: text;
+  font-size: 1.5rem;
+}
+
+.nav__link:hover {
+  color: var(--second-color);
+}
+/* Change background header */
+
+/* Active link */
+
+/*=============== HOME ===============*/
+
+/*=============== BUTTON ===============*/
+
+/*=============== PRODUCTS ===============*/
+
+/*=============== ABOUT ===============*/
+
+/*=============== STEPS ===============*/
+
+/*=============== TESTIMONIAL ===============*/
+
+/*=============== FOOTER ===============*/
+
+/*=============== SCROLL BAR ===============*/
+
+/*=============== SCROLL UP ===============*/
+
+/* Show Scroll Up */
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+/* For medium devices */
+
+/* For large devices */
