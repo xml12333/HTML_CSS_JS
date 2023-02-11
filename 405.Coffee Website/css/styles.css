@@ -459,9 +459,146 @@ img {
   opacity: 0.15;
 }
 /*=============== TESTIMONIAL ===============*/
-
+.testimonial{
+  background-color: var(--first-color);
+}
+.testimonial__bg{
+  background-color: var(--white-color);
+  border-radius: var(--border-section);
+}
+.testimonial__container{
+  row-gap: 3rem;
+}
+.testimonial__data{
+  text-align: center;
+}
+.testimonial__name{
+  font-weight: var(--font-medium);
+}
+.testimonial__img{
+  width: 320px;
+  border-radius: 1rem;
+  justify-self: center;;
+}
 /*=============== FOOTER ===============*/
+.footer{
+  background-color: var(--white-color);
+  position: relative;
+}
+.footer__bg{
+  background-color: var(--first-color-alt);
+  border-radius: var(--border-section);
+}
+.footer__container{
+  padding-block: 4rem 7rem;
+  row-gap: 4.5rem;
+  position: relative;
+}
+.footer__data{
+  text-align: center;
+  row-gap: 4.5rem;
+}
+.footer__logo,
+.footer__title,
+.footer__input,
+.footer__description,
+.footer__social-link{
+  color: var(--white-color);
+}
 
+.footer__logo{
+  display: inline-flex;
+  align-items: center;
+  column-gap: .5rem;
+  font-size: var(--h3-font-size);
+  font-family: var(--second-font);
+  margin-bottom: 1rem;
+}
+.footer__logo img{
+  width: 28px;
+}
+
+.footer__title{
+  font-size: var(--big-font-size);
+  font-family: var(--second-font);
+  font-weight: var(--font-regular);
+  line-height: 120%;
+}
+
+.footer__form{
+  row-gap: 1rem;
+}
+
+.footer__input,
+.footer__button{
+  border: none;
+  outline: none;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+}
+.footer__input{
+  width: 100%;
+  background: transparent;
+  border: 2px solid var(--text-color-light);
+  padding: 1.15rem 1.5rem;
+  border-radius: 4rem;
+}
+
+.footer__input::placeholder{
+  color: var(--text-color-light);
+}
+
+.footer__button{
+  padding-block: 1.25rem;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.footer__description{
+  font-size: var(--small-font-size);
+}
+
+.footer__privacy{
+  color: var(--second-color);
+}
+
+.footer__privacy:hover{
+  text-decoration: underline;
+}
+
+.footer__content{
+  row-gap: 2rem;
+}
+
+.footer__social{
+  display: flex;
+  justify-content: center;
+  column-gap: 2rem;
+}
+
+.footer__social-link{
+  font-size: 1.25rem;
+  transition: color .3s
+}
+.footer__social-link:hover{
+  color: var(--second-color);
+}
+.footer__copy{
+  color: var(--text-color-light);
+  font-size: var(--smaller-font-size);
+  text-align: center;
+}
+.footer__bg-img{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+object-position: -172px;
+opacity: .15;
+}
 /*=============== SCROLL BAR ===============*/
 
 /*=============== SCROLL UP ===============*/
@@ -474,3 +611,4 @@ img {
 /* For medium devices */
 
 /* For large devices */
+
