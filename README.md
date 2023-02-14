@@ -415,3 +415,4 @@
 |402| [Button](https://github.com/xml12333/HTML_CSS_JS/tree/main/402.Button)| [Demo](https://nikt.com.ua/projects/htmlCssJs/402.Button/)| ![Thumbnail](402.Button/img/info_thumbnail.jpg)|
 |403| [Button](https://github.com/xml12333/HTML_CSS_JS/tree/main/403.Button)| [Demo](https://nikt.com.ua/projects/htmlCssJs/403.Button/)| ![Thumbnail](403.Button/img/info_thumbnail.jpg)|
 |404| [Checkbox Buttons](https://github.com/xml12333/HTML_CSS_JS/tree/main/404.Checkbox%20Buttons)| [Demo](https://nikt.com.ua/projects/htmlCssJs/404.Checkbox%20Buttons/)| ![Thumbnail](404.Checkbox%20Buttons/img/info_thumbnail.jpg)|
+|405| [Coffee Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/405.Coffee%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/405.Coffee%20Website/)| ![Thumbnail](405.Coffee%20Website/img/info_thumbnail.jpg)|
