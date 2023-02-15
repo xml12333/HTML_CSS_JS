@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: radial-gradient(circle, #333, #000 800px);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.noise {
+  position: relative;
+  width: 287px; height: 36px;
+  border: none;
+  background: none;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+
+  &::after {
+    content: "Button";
+    opacity: var(--op, 1);
+    transition: opacity 0.4s;
+  }
+
+  & > i {
+    position: absolute;
+    left: var(--left, 0);
+    top: 50%;
+    width: 3px; height: 72px;
+    transform: translateY(-50%) scaleY(var(--sy, 0));
+    z-index: -1;
+    transition: transform var(--duration) ease-out;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(#fff, hsl(var(--hue, 0), 75%, 75%));
+      border-radius: 50%;
+      animation: noise var(--duration) infinite ease-in-out alternate;
+      animation-play-state: var(--aps, paused);
+
+      @keyframes noise {
+        0% { transform: scaleY(calc(1 - (var(--size, 0)))); }
+        100% { transform: scaleY(calc(1 + (var(--size, 0)))); }
+      }
+    }
+
+    @for $i from 0 to 72 {
+      &:nth-child(#{$i + 1}) {
+        --left: #{$i * 4}px;
+        --duration: #{random(200) + 200}ms;
+        --size: #{random(1000) / 1000};
+        --hue: #{$i * 5};
+      }
+    }
+  }
+
+  &:hover {
+    --sy: 1;
+    --aps: running;
+    --op: 0;
+  }
+}
