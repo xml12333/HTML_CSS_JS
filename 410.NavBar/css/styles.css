@@ -124,13 +124,52 @@ a {
   opacity: 0;
 }
 /* Navigation for mobile devices */
+@media screen and (max-width: 1118px) {
+  .nav__menu{
+    background-color: var(--body-color);
+    position: absolute;
+    left: 0;
+    top: 2.5rem;
+    width: 100%;
+    height: calc(100vh - 3.5rem);
+    overflow: auto;
+    padding-block: 1.5rem 4rem;
+    pointer-events: none;
+    opacity: 0;
+    transition: top .4s, opacity .3s;
+  }
+  
+}
+.nav__link{
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color .3s;
+}
 
+.nav__link:hover{
+  background-color: var(--first-color-lighten);
+}
 
 /* Show menu */
-
+.show-menu{
+  opacity: 1;
+  top: 3.5rem;
+  pointer-events: initial;
+}
 
 /* Show icon */
-
+.show-icon .nav__toggle-menu{
+  opacity: 0;
+  transform: rotate(90deg);
+}
+.show-icon .nav__toggle-close{
+  opacity: 1;
+  transform: rotate(90deg);
+}
 
 /*=============== DROPDOWN ===============*/
 
