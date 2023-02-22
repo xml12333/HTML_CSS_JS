@@ -420,3 +420,4 @@
 |407| [Image Carousel](https://github.com/xml12333/HTML_CSS_JS/tree/main/407.Image%20Carousel)| [Demo](https://nikt.com.ua/projects/htmlCssJs/407.Image%20Carousel/)| ![Thumbnail](407.Image%20Carousel/img/info_thumbnail.jpg)|
 |408| [3D Card](https://github.com/xml12333/HTML_CSS_JS/tree/main/408.3D%20Card)| [Demo](https://nikt.com.ua/projects/htmlCssJs/408.3D%20Card/)| ![Thumbnail](408.3D%20Card/img/info_thumbnail.jpg)|
 |409| [Loader](https://github.com/xml12333/HTML_CSS_JS/tree/main/409.Loader)| [Demo](https://nikt.com.ua/projects/htmlCssJs/409.Loader/)| ![Thumbnail](409.Loader/img/info_thumbnail.jpg)|
+|410| [NavBar](https://github.com/xml12333/HTML_CSS_JS/tree/main/410.NavBar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/410.NavBar/)| ![Thumbnail](410.NavBar/img/info_thumbnail.jpg)|
