@@ -422,3 +422,4 @@
 |409| [Loader](https://github.com/xml12333/HTML_CSS_JS/tree/main/409.Loader)| [Demo](https://nikt.com.ua/projects/htmlCssJs/409.Loader/)| ![Thumbnail](409.Loader/img/info_thumbnail.jpg)|
 |410| [NavBar](https://github.com/xml12333/HTML_CSS_JS/tree/main/410.NavBar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/410.NavBar/)| ![Thumbnail](410.NavBar/img/info_thumbnail.jpg)|
 |411| [Falling Words](https://github.com/xml12333/HTML_CSS_JS/tree/main/411.Falling%20Words)| [Demo](https://nikt.com.ua/projects/htmlCssJs/411.Falling%20Words/)| ![Thumbnail](411.Falling%20Words/img/info_thumbnail.jpg)|
+|412| [Bank Card](https://github.com/xml12333/HTML_CSS_JS/tree/main/412.Bank%20Card)| [Demo](https://nikt.com.ua/projects/htmlCssJs/412.Bank%20Card/)| ![Thumbnail](412.Bank%20Card/img/info_thumbnail.jpg)|
