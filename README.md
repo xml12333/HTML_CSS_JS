@@ -425,3 +425,4 @@
 |412| [Bank Card](https://github.com/xml12333/HTML_CSS_JS/tree/main/412.Bank%20Card)| [Demo](https://nikt.com.ua/projects/htmlCssJs/412.Bank%20Card/)| ![Thumbnail](412.Bank%20Card/img/info_thumbnail.jpg)|
 |413| [Image Gallery](https://github.com/xml12333/HTML_CSS_JS/tree/main/413.Image%20Gallery)| [Demo](https://nikt.com.ua/projects/htmlCssJs/413.Image%20Gallery/)| ![Thumbnail](413.Image%20Gallery/img/info_thumbnail.jpg)|
 |414| [Passcode](https://github.com/xml12333/HTML_CSS_JS/tree/main/414.Passcode)| [Demo](https://nikt.com.ua/projects/htmlCssJs/414.Passcode/)| ![Thumbnail](414.Passcode/img/info_thumbnail.jpg)|
+|415| [42](https://github.com/xml12333/HTML_CSS_JS/tree/main/415.42)| [Demo](https://nikt.com.ua/projects/htmlCssJs/415.42/)| ![Thumbnail](415.42/img/info_thumbnail.jpg)|
