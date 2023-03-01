@@ -427,3 +427,4 @@
 |414| [Passcode](https://github.com/xml12333/HTML_CSS_JS/tree/main/414.Passcode)| [Demo](https://nikt.com.ua/projects/htmlCssJs/414.Passcode/)| ![Thumbnail](414.Passcode/img/info_thumbnail.jpg)|
 |415| [42](https://github.com/xml12333/HTML_CSS_JS/tree/main/415.42)| [Demo](https://nikt.com.ua/projects/htmlCssJs/415.42/)| ![Thumbnail](415.42/img/info_thumbnail.jpg)|
 |416| [Frozen Display](https://github.com/xml12333/HTML_CSS_JS/tree/main/416.Frozen%20Display)| [Demo](https://nikt.com.ua/projects/htmlCssJs/416.Frozen%20Display/)| ![Thumbnail](416.Frozen%20Display/img/info_thumbnail.jpg)|
+|417| [Sketch](https://github.com/xml12333/HTML_CSS_JS/tree/main/417.Sketch)| [Demo](https://nikt.com.ua/projects/htmlCssJs/417.Sketch/)| ![Thumbnail](417.Sketch/img/info_thumbnail.jpg)|

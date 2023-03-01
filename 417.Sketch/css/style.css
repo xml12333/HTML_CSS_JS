@@ -1,0 +1,26 @@
+html, body {
+  margin: 0;
+  background: #0a1131; 
+  box-sizing: border-box; 
+}
+
+body {
+  padding: 3vmin; 
+  display: grid;
+  max-width: 500px;
+  margin: auto;
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: .5em;
+}
+
+@media screen and (max-width: 400px) {
+  body {
+   grid-template-columns: 1fr; 
+  }
+}
+
+css-doodle {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 5px;
+}

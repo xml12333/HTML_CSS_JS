@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Sketch</title>
+  </head>
+  <body>
+    <css-doodle seed="1676602917230">
+      <style>
+        @grid: 1 / 280px auto 1 / #1b2242;
+        background: @doodle(
+          @grid: 12x1 / 100%;
+          :container { filter: drop-shadow(0 -1px 0 #fff) }
+          clip-path: @shape(rotate: 30);
+          @place: @plot(r: .5; dir: auto -90);
+          @size: 50%;
+          background: @doodle(
+            background: radial-gradient(@m6.@P(#f2cc67,#f38264,#f40034,#5f051f,#75baa8));
+            clip-path: @shape(
+              points: 200;
+              scale: .5;
+              x: (1 + sin(t)) * cos(t);
+              y: -sin(t);
+              frame: 20;
+            );
+          );
+        );
+      </style>
+    </css-doodle>
+    
+    <css-doodle seed="1676548398509">
+      <style>
+        @grid: 12x1 / 280px auto 1 / #1b2242;
+        :container { filter: drop-shadow(0 -1px 0 #fff) }
+        clip-path: @shape(rotate: 30);
+        @place: @plot(r: .5; dir: auto -90);
+        @size: 50%;
+        background: @doodle(
+          background: radial-gradient(@m6.@pd(#f2cc67,#f38264,#f40034,#5f051f,#75baa8));
+          clip-path: @shape(
+            points: 100;
+            scale: .5 .9;
+            x: (1 + sin(t)) * cos(t);
+            y: -sin(t);
+            frame: 18;
+          );
+        );
+      </style>
+    </css-doodle>
+    
+    <css-doodle seed="1676588933268">
+      <style>
+        @grid: 6x1 / 280px auto 1 / #1b2242;
+        :container { filter: drop-shadow(0 -1px 0 #fff) }
+        clip-path: @shape(rotate: 30);
+        @place: @plot(r: .5; dir: auto -90);
+        @size: 50%;
+        background: @doodle(
+          @grid: 1 / 100%;
+          background: radial-gradient(@m8.@P(#f4e04d,#f2ed6f,#cee397,#8db1ab, red));
+          clip-path: @shape(
+            points: 82;
+            scale: .018;
+            frame: 2400;
+            r: 60*abs.sin(3t) - 90;
+          );
+        );
+      </style>
+    </css-doodle>
+    
+    <css-doodle seed="1676589132698">
+      <style>
+        @grid: 6x1 / 280px auto 1 / #1b2242;
+        clip-path: @shape(rotate: @calc(30));
+        :container { filter: drop-shadow(0 -1px 0 #fff) }
+        @place: @plot(r: .5; dir: auto -90);
+        @size: 50%;
+        background: @doodle(
+          @grid: 1 / 100%;
+          background: radial-gradient(@m8.@P(#eeeeee,#59569d,#f25292,#fea096));
+            clip-path: @shape(
+              points: 360;
+              scale: .4;
+              x: sin(t) + tan.sin(4t) + tan.sin(t);
+              y: cos(9t) + tan.cos(3t) + tan.cos(8t);
+              frame: 170;
+            );
+        );
+      </style>
+    </css-doodle>
+    
+    <css-doodle seed="1676557630982">
+      <style>
+        @grid: 6x1 / 280px auto 1 / #1b2242;
+        :container { filter: drop-shadow(0 -1px 0 #fff) }
+        clip-path: @shape(rotate: @calc(30));
+        @place: @plot(r: .5; dir: auto -90);
+        @size: 50%;
+        background: @doodle(
+          background: radial-gradient(@m6.@P(#faeee7,#f54291,#4cd3c2,#0a97b0));
+          clip-path: @shape(
+            points: 120;
+            scale: .225;
+            x: sin(t) + tan.sin(4t) +
+               tan.sin(t);
+            y: cos(9t) + tan.cos(3t) +
+               tan.cos(8t);
+          );
+        );
+      </style>
+    </css-doodle>
+    
+    <css-doodle seed="1676557270558">
+      <style>
+        :doodle {
+          @grid: 6x1 / 280px auto 1 / #1b2242;
+          --bg: @doodle(
+            @grid: 1 / 100%;
+            background: radial-gradient(@m8.@P(#eeeeee,#59569d,#f25292,#fea096));
+              clip-path: @shape(
+                points: 360;
+                scale: .4;
+                x: sin(t) + tan.cos(t) + tan.sin(t);
+                y: cos(17t) + tan.cos(t) + tan.cos(t);
+                frame: 50;
+              );
+          );
+        }
+        :container {
+          filter: drop-shadow(0 -1px 0 #fff);
+        }
+        clip-path: @shape(rotate: @calc(30));
+        @place: @plot(r: .5; dir: auto -90);
+        @size: 50%;
+        :before, :after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          transform: rotateY(@pn(180deg, 0));
+          background: var(--bg);
+        }
+      </style>
+    </css-doodle>
+    
+    <css-doodle seed="1676589227871">
+      <style>
+        :doodle {
+          @grid: 6x1 / 280px auto 1 / #1b2242;
+          --bg: @doodle(
+            @grid: 1 / 100%;
+            background: radial-gradient(@m6.@P(#eeeeee,#59569d,#f25292,#fea096));
+            clip-path: @shape(
+              points: 360;
+              frame: 38;
+              r: abs.sin.tan(sin(1.5t)*1.14);
+              scale: 1.18;
+            );
+          );
+        }
+        :container {
+          filter: drop-shadow(0 -1px 0 #fff);
+        }
+        clip-path: @shape(rotate: 30);
+        @place: @plot(r: .5; dir: auto -90);
+        @size: 50%;
+        :before, :after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          transform: rotateY(@pn(180deg, 0));
+          background: var(--bg);
+        }
+      </style>
+    </css-doodle>
+    
+    
+    <css-doodle seed="1676589833505">
+      <style>
+        @grid: 8x1 / 280px auto 1 / #1b2242 * 22.5deg;
+        :container { filter: drop-shadow(0 -1px 0 #fff); }
+        clip-path: @shape(rotate: @calc(30));
+        @place: @plot(r: .5; dir: auto -90);
+        @size: 46% 42%;
+        background: @doodle(
+          @grid: 1 / 100%;
+          background: radial-gradient(@m8.@p(#faeee7,#f54291,#4cd3c2,#0a97b0));
+          clip-path: @shape(
+            points: 200;
+            scale: .5;
+            r: cos(5t)^2 + sin(5t) + .4;
+            frame: 40;
+          );
+        );
+      </style>
+    </css-doodle>
+    
+    <css-doodle seed="1676586981765">
+      <style>
+        @grid: 8x1 / 280px auto 1 / #1b2242 + 1;
+        clip-path: polygon(50% 0, 100% 100%, 0 100%);
+        position: absolute;
+        left: 35%;
+        top: 50%;
+        transform-origin: 50% -1%;
+        rotate: calc(360deg/@I*@i);
+        @size: calc(80% * @sin(π/8)) auto 0.8284271247461902;
+        background: @doodle(
+          background: radial-gradient(@m5.@pd(#faeee7,#f54291,#4cd3c2,#0a97b0));
+          clip-path: @shape(
+            points: 360;
+            scale: .8;
+            x: sin(t)+tan.sin(4t)+tan.sin(t);
+            y: cos(9t)+tan.cos(3t)+tan.cos(8t);
+            frame: 260;
+          );
+        );
+      </style>
+    </css-doodle>
+    
+    <script src="https://unpkg.com/css-doodle@0.34.1/css-doodle.min.js"></script>
+  </body>
+</html>
