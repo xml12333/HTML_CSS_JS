@@ -1,0 +1,37 @@
+body {
+  overflow: hidden;
+}
+
+main {
+  position: fixed;
+  inset: 50%;
+  transform: translate(-50%, -50%)
+}
+
+div {
+  float: left;
+}
+
+input {
+  position: fixed;
+  inset: 40% 50%;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  max-width: 90%;
+  height: 30px;
+  padding: 5px 10px;
+  border: 0;
+  border-radius: 6px;
+  opacity: 0.7;
+  transition: opacity 0.5s;
+}
+
+input:hover,
+input:focus {
+  opacity: 1;  
+}
+
+a {
+  color: white;
+}
