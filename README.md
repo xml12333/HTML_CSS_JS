@@ -429,3 +429,4 @@
 |416| [Frozen Display](https://github.com/xml12333/HTML_CSS_JS/tree/main/416.Frozen%20Display)| [Demo](https://nikt.com.ua/projects/htmlCssJs/416.Frozen%20Display/)| ![Thumbnail](416.Frozen%20Display/img/info_thumbnail.jpg)|
 |417| [Sketch](https://github.com/xml12333/HTML_CSS_JS/tree/main/417.Sketch)| [Demo](https://nikt.com.ua/projects/htmlCssJs/417.Sketch/)| ![Thumbnail](417.Sketch/img/info_thumbnail.jpg)|
 |418| [Tartan Generator](https://github.com/xml12333/HTML_CSS_JS/tree/main/418.Tartan%20Generator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/418.Tartan%20Generator/)| ![Thumbnail](418.Tartan%20Generator/img/info_thumbnail.jpg)|
+|419| [Ice Cube](https://github.com/xml12333/HTML_CSS_JS/tree/main/419.Ice%20Cube)| [Demo](https://nikt.com.ua/projects/htmlCssJs/419.Ice%20Cube/)| ![Thumbnail](419.Ice%20Cube/img/info_thumbnail.jpg)|
