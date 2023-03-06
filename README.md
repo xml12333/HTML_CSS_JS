@@ -432,3 +432,4 @@
 |419| [Ice Cube](https://github.com/xml12333/HTML_CSS_JS/tree/main/419.Ice%20Cube)| [Demo](https://nikt.com.ua/projects/htmlCssJs/419.Ice%20Cube/)| ![Thumbnail](419.Ice%20Cube/img/info_thumbnail.jpg)|
 |420| [Upload Bubbles](https://github.com/xml12333/HTML_CSS_JS/tree/main/420.Upload%20Bubbles)| [Demo](https://nikt.com.ua/projects/htmlCssJs/420.Upload%20Bubbles/)| ![Thumbnail](420.Upload%20Bubbles/img/info_thumbnail.jpg)|
 |421| [Calendar](https://github.com/xml12333/HTML_CSS_JS/tree/main/421.Calendar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/421.Calendar/)| ![Thumbnail](421.Calendar/img/info_thumbnail.jpg)|
+|422| [Building Generator](https://github.com/xml12333/HTML_CSS_JS/tree/main/422.Building%20Generator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/422.Building%20Generator/)| ![Thumbnail](422.Building%20Generator/img/info_thumbnail.jpg)|

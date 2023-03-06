@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css?family=Rubik:400,700&subset=latin");
+
+$font: "Rubik";
+$textcolor: #fff;
+$alpha: 0.2;
+
+html {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+
+	font: 10px/10px $font;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+svg {
+	//shape-rendering: optimizeSpeed
+}
+
+text {
+	font-size: 1em;
+	font-weight: 700;
+}
+
+#exportAsSvg {
+	position: absolute;
+	bottom: .5rem;
+	right: .5rem;
+	appearance: none;
+	border: 1px #000 solid;
+	border-radius: 2rem;
+	padding: .5rem 1.5rem;
+	cursor: pointer;
+	font: 1rem/2rem $font;
+	font-weight: 700;
+	text-transform: uppercase;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 1s;
+    text-decoration: none;
+    color: #fff;
+	&.visible {
+		opacity: 1;
+		visibility: visible;
+	}
+}
