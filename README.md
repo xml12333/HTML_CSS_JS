@@ -434,3 +434,4 @@
 |421| [Calendar](https://github.com/xml12333/HTML_CSS_JS/tree/main/421.Calendar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/421.Calendar/)| ![Thumbnail](421.Calendar/img/info_thumbnail.jpg)|
 |422| [Building Generator](https://github.com/xml12333/HTML_CSS_JS/tree/main/422.Building%20Generator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/422.Building%20Generator/)| ![Thumbnail](422.Building%20Generator/img/info_thumbnail.jpg)|
 |423| [Button](https://github.com/xml12333/HTML_CSS_JS/tree/main/423.Button)| [Demo](https://nikt.com.ua/projects/htmlCssJs/423.Button/)| ![Thumbnail](423.Button/img/info_thumbnail.jpg)|
+|424| [Sale Banner](https://github.com/xml12333/HTML_CSS_JS/tree/main/424.Sale%20Banner)| [Demo](https://nikt.com.ua/projects/htmlCssJs/424.Sale%20Banner/)| ![Thumbnail](424.Sale%20Banner/img/info_thumbnail.jpg)|
