@@ -437,3 +437,4 @@
 |424| [Sale Banner](https://github.com/xml12333/HTML_CSS_JS/tree/main/424.Sale%20Banner)| [Demo](https://nikt.com.ua/projects/htmlCssJs/424.Sale%20Banner/)| ![Thumbnail](424.Sale%20Banner/img/info_thumbnail.jpg)|
 |425| [Loader](https://github.com/xml12333/HTML_CSS_JS/tree/main/425.Loader)| [Demo](https://nikt.com.ua/projects/htmlCssJs/425.Loader/)| ![Thumbnail](425.Loader/img/info_thumbnail.jpg)|
 |426| [Infinite Scroll](https://github.com/xml12333/HTML_CSS_JS/tree/main/426.Infinite%20Scroll)| [Demo](https://nikt.com.ua/projects/htmlCssJs/426.Infinite%20Scroll/)| ![Thumbnail](426.Infinite%20Scroll/img/info_thumbnail.jpg)|
+|427| [Flower Typer](https://github.com/xml12333/HTML_CSS_JS/tree/main/427.Flower%20Typer)| [Demo](https://nikt.com.ua/projects/htmlCssJs/427.Flower%20Typer/)| ![Thumbnail](427.Flower%20Typer/img/info_thumbnail.jpg)|
