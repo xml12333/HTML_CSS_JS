@@ -439,3 +439,4 @@
 |426| [Infinite Scroll](https://github.com/xml12333/HTML_CSS_JS/tree/main/426.Infinite%20Scroll)| [Demo](https://nikt.com.ua/projects/htmlCssJs/426.Infinite%20Scroll/)| ![Thumbnail](426.Infinite%20Scroll/img/info_thumbnail.jpg)|
 |427| [Flower Typer](https://github.com/xml12333/HTML_CSS_JS/tree/main/427.Flower%20Typer)| [Demo](https://nikt.com.ua/projects/htmlCssJs/427.Flower%20Typer/)| ![Thumbnail](427.Flower%20Typer/img/info_thumbnail.jpg)|
 |428| [Winter Papercut](https://github.com/xml12333/HTML_CSS_JS/tree/main/428.Winter%20Papercut)| [Demo](https://nikt.com.ua/projects/htmlCssJs/428.Winter%20Papercut/)| ![Thumbnail](428.Winter%20Papercut/img/info_thumbnail.jpg)|
+|429| [Date Slider](https://github.com/xml12333/HTML_CSS_JS/tree/main/429.Date%20Slider)| [Demo](https://nikt.com.ua/projects/htmlCssJs/429.Date%20Slider/)| ![Thumbnail](429.Date%20Slider/img/info_thumbnail.jpg)|
