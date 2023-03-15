@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Pangolin&display=swap");
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  height: 500vh;
+  font-family: "Pangolin", cursive;
+  letter-spacing: 0.05em;
+}
+
+h1 {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  letter-spacing: 0.1em;
+}
+
+.svgbox {
+  width: 150px;
+  position: fixed;
+  top: 50%;
+  margin-top: -75px;
+}
+.svgbox--1 {
+  left: 0;
+}
+.svgbox--2 {
+  right: 0;
+}
+
+[data-split] > span {
+  display: inline-block;
+}
