@@ -1,0 +1,172 @@
+@layer props {
+    @property --scale {
+      syntax: '<number>';
+      inherits: true;
+      initial-value: 0;
+    }
+  }
+  
+  :root {
+    --bg-color: hsl(225deg 10% 15%);
+    --user-hue: 100;
+    --hue: calc(265 + var(--user-hue, 0));
+    --loader-color: hsl(calc(var(--hue)*1deg) 80% 50%);
+    --loader-size: 100;
+    --spread: 3.4;
+    --scale: 0;
+    --border-radius: 100%;
+    --loader-ratio: 0.25;
+  }
+  
+  *,*:before,*:after {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  
+  body {
+    background: var(--bg-color);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    
+    /* loader*/
+    & div.loader  {
+      
+      &:nth-child(2) {
+        --loader-size: 100;
+        --spread: 2.5;
+        --border-radius:100% 100% 0% 0%;
+        --hue: calc(310 + var(--user-hue, 0) );
+        --loader-color: hsl(calc(var(--hue)*1deg) 70% 40%);
+      }
+      &:nth-child(3) {
+         --loader-size: 80;
+        --spread: 4;
+        --border-radius: 200%;
+        --hue: calc(110 + var(--user-hue, 0) );
+        --loader-ratio: .6;
+        --loader-color: hsl(calc(var(--hue)*1deg) 70% 30%);
+      }
+      
+      position: relative;
+      transform-origin: center center;
+      width: calc(calc(var(--loader-size) * 3) * 1px);
+      height: calc(calc(var(--loader-size) * 3) * 1px);
+      
+      transform: rotate(30deg);
+      display: grid;
+      place-items: center;
+      transform-style: preserve-3d;
+      perspective: 800px;
+      
+      & span {
+        position: absolute;
+        display: block;
+        width: calc(calc(var(--loader-size)/1.8) * 1px);
+        height: calc(calc(var(--loader-size) * var(--loader-ratio)) * 1px);
+        box-shadow:
+          inset 0 0 1px black, inset 0 1px 15px rgb(0 0 0 / 50%),
+          inset var(--light-shadow-pos) -2px rgb(0 0 0 / 80%),
+          inset var(--dark-shadow-pos) -2px rgb(255 255 255 / 60%);
+        border-radius: var(--border-radius);
+        
+        transform-origin: center bottom;
+        
+        
+        &:before,
+        &:after {
+          display: block;
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 2;
+          background: var(--loader-color);
+          width: 100%;
+          height: 100%;
+          border-radius:var(--border-radius);
+          transform: 
+            scale(calc(var(--scale)*1.1))
+            /*rotateX(calc(calc(var(--scale) * 5) * 15deg))
+            rotateY(calc(calc(var(--scale) * 5) * -15deg))
+            rotateZ(calc(calc(var(--scale) * 5) * 15deg))*/
+            perspective(1px);
+          animation: load 2s ease-out infinite calc(var(--delay)*150ms);
+          transform-origin: center center;
+        }  
+        
+        &:before {
+          --hue: calc(256 + var(--user-hue, --hue));
+          --loader-color: linear-gradient(hsl(calc(var(--hue)*1deg) 80% 50%), hsl(calc(var(--hue)*1deg) 80% 10%));
+          z-index: 3;
+          mix-blend-mode: color-dodge;
+        }
+        
+        &:after {
+           box-shadow:  inset 0 0 1px black,
+          inset var(--light-shadow-pos) rgb(255 255 255 / 60%),
+          inset var(--dark-shadow-pos) rgb(0 0 0 / 60%), 
+          0 0 16px -4px var(--loader-color);
+        }
+        
+        &:nth-child(1) {
+          --light-shadow-pos: 1px 1px 2px;
+          --dark-shadow-pos: -1px -1px 2px;
+          --delay: 1;
+          
+          transform: rotate(30deg) translateY(calc(-30% + calc(calc(var(--loader-size)/ var(--spread))* -1px)));
+        }
+        &:nth-child(2) {
+          --light-shadow-pos: 1px -1px 2px;
+          --dark-shadow-pos: -1px 1px 2px;
+          --delay: 2;
+          
+          
+          transform: rotate(90deg) translateY(calc(-30% + calc(calc(var(--loader-size)/ var(--spread))* -1px)));
+        }
+        &:nth-child(3) {
+          --light-shadow-pos: 0 -1px 2px;
+          --dark-shadow-pos: 0 1px 2px;
+          --delay: 3;
+          transform: rotate(150deg) translateY(calc(-30% + calc(calc(var(--loader-size)/ var(--spread))* -1px)));
+        }
+        &:nth-child(4) {
+          --light-shadow-pos: 0 1px 2px;
+          --dark-shadow-pos: 0 -1px 2px;
+          --delay: 6;
+          transform: rotate(-30deg) translateY(calc(-30% + calc(calc(var(--loader-size)/ var(--spread))* -1px)));
+        }
+        &:nth-child(5) {
+          --light-shadow-pos: -1px 1px 2px;
+          --dark-shadow-pos: 1px -1px 2px;
+          --delay: 5;
+          transform: rotate(-90deg) translateY(calc(-30% + calc(calc(var(--loader-size)/ var(--spread))* -1px)));
+        }
+        &:nth-child(6) {
+          --light-shadow-pos: -1px -1px 2px;
+          --dark-shadow-pos: 1px 1px 2px;
+          --delay: 4;
+          transform: rotate(-150deg) translateY(calc(-30% + calc(calc(var(--loader-size)/ var(--spread))* -1px)));
+        }
+      }
+    }
+  }
+  
+  
+  @keyframes load {
+    from,
+    to{
+      --scale: 0;
+    }
+    
+    50% {
+      --scale: 1;
+    }  
+  }
+  

@@ -443,3 +443,4 @@
 |430| [Gallery](https://github.com/xml12333/HTML_CSS_JS/tree/main/430.Gallery)| [Demo](https://nikt.com.ua/projects/htmlCssJs/430.Gallery/)| ![Thumbnail](430.Gallery/img/info_thumbnail.jpg)|
 |431| [Scroll Down](https://github.com/xml12333/HTML_CSS_JS/tree/main/431.Scroll%20Down)| [Demo](https://nikt.com.ua/projects/htmlCssJs/431.Scroll%20Down/)| ![Thumbnail](431.Scroll%20Down/img/info_thumbnail.jpg)|
 |432| [Lights](https://github.com/xml12333/HTML_CSS_JS/tree/main/432.Lights)| [Demo](https://nikt.com.ua/projects/htmlCssJs/432.Lights/)| ![Thumbnail](432.Lights/img/info_thumbnail.jpg)|
+|433| [Loader](https://github.com/xml12333/HTML_CSS_JS/tree/main/433.Loader)| [Demo](https://nikt.com.ua/projects/htmlCssJs/433.Loader/)| ![Thumbnail](433.Loader/img/info_thumbnail.jpg)|
