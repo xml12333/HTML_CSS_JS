@@ -1,0 +1,219 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.space {
+  height: 10vh;
+}
+
+section {
+  position: relative;
+}
+
+// I know this should probably be a radio, but I started with a button, so I'm keeping it as such.
+button {
+  position: absolute;
+  top: -60px;
+  margin-inline: auto;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+  appearance: none;
+  outline: none;
+  border: none;
+  height: 2rem;
+  width: 4rem;
+  font-size: 0;
+  border-radius: 4rem;
+  background: #aaa;
+  box-shadow: inset 0 2px 6px 2px rgba(0, 0, 0, 0.27);
+
+  .radio {
+    background: #fff;
+    border-radius: 3rem;
+    transition: transform 0.5s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.44);
+    z-index: 2;
+  }
+
+  .radio,
+  .inline,
+  .grid {
+    content: "";
+    position: absolute;
+    height: 2.2rem;
+    width: 2.2rem;
+    top: -0.1rem;
+    left: -0.1rem;
+
+    .dot {
+      background: #666;
+      // box-shadow: inset -1px 2px 2px rgba(0,0,0,.8);
+    }
+    .dot-icon {
+      background: #efefef;
+      // box-shadow: inset -1px 1px 2px rgba(0,0,0,.6);
+    }
+    .dot,
+    .dot-icon {
+      height: 5px;
+      width: 5px;
+      border-radius: 3px;
+      display: inline-block;
+      transition: transform 0.4s ease;
+      margin: calc(50% - 2.5px) -0.5px 0;
+    }
+  }
+
+  .grid {
+    transform: translatex(90%);
+
+    .dot-icon {
+      &:first-child {
+        transform: translatey(-60%) translatex(60%);
+      }
+      &:nth-child(2) {
+        transform: translatey(60%) translatex(-20%);
+      }
+      &:nth-child(3) {
+        transform: translatey(60%) translatex(20%);
+      }
+      &:last-child {
+        transform: translatey(-60%) translatex(-60%);
+      }
+    }
+  }
+
+  .button-icons {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  &.grid-view-on {
+    .radio {
+      transform: translatex(90%);
+
+      .dot {
+        &:first-child {
+          transform: translatey(-60%) translatex(60%);
+        }
+        &:nth-child(2) {
+          transform: translatey(-60%) translatex(100%);
+        }
+        &:nth-child(3) {
+          transform: translatey(60%) translatex(-100%);
+        }
+        &:last-child {
+          transform: translatey(60%) translatex(-60%);
+        }
+      }
+    }
+  }
+}
+
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  max-width: 720px;
+  margin-inline: auto;
+  grid-gap: 1rem;
+
+  &.stack {
+    display: block;
+    max-width: 720px;
+
+    .item-wrapper {
+      display: inline-block;
+      position: relative;
+      width: 12.5%;
+      margin-right: -7.333%;
+      z-index: 1;
+      border-radius: 100%;
+
+      .item {
+        margin: 0;
+        transition: box-shadow 0.2s ease;
+
+        &:hover {
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
+        }
+      }
+    }
+  }
+
+  .item {
+    aspect-ratio: 1 / 1;
+    background: #aaa;
+    box-sizing: content-box;
+    position: relative;
+    border-radius: 100%;
+    overflow: hidden;
+    z-index: 1;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+    &.active-thumb {
+      z-index: 2;
+      transition: none !important;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.modal {
+  cursor: zoom-out;
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0) grayscale(0);
+  pointer-events: none;
+  z-index: 3;
+
+  &.active {
+    display: grid;
+    opacity: 1;
+    pointer-events: all;
+    background-color: rgba(0, 0, 0, 0.69);
+    backdrop-filter: blur(5px) grayscale(100%);
+    transition: background-color 0.2s ease-in, backdrop-filter 0.2s ease;
+  }
+
+  .modal-image {
+    aspect-ratio: 16 / 9;
+    width: 90%;
+    max-width: 1260px;
+    background: #eee;
+    margin: 40px auto;
+    position: relative;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
