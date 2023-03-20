@@ -446,3 +446,4 @@
 |433| [Loader](https://github.com/xml12333/HTML_CSS_JS/tree/main/433.Loader)| [Demo](https://nikt.com.ua/projects/htmlCssJs/433.Loader/)| ![Thumbnail](433.Loader/img/info_thumbnail.jpg)|
 |434| [Loader](https://github.com/xml12333/HTML_CSS_JS/tree/main/434.Loader)| [Demo](https://nikt.com.ua/projects/htmlCssJs/434.Loader/)| ![Thumbnail](434.Loader/img/info_thumbnail.jpg)|
 |435| [Gallery](https://github.com/xml12333/HTML_CSS_JS/tree/main/435.Gallery)| [Demo](https://nikt.com.ua/projects/htmlCssJs/435.Gallery/)| ![Thumbnail](435.Gallery/img/info_thumbnail.jpg)|
+|436| [Scrambling letter](https://github.com/xml12333/HTML_CSS_JS/tree/main/436.Scrambling%20letter)| [Demo](https://nikt.com.ua/projects/htmlCssJs/436.Scrambling%20letter/)| ![Thumbnail](436.Scrambling%20letter/img/info_thumbnail.jpg)|
