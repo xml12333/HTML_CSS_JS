@@ -1,0 +1,31 @@
+body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	font-family: "Roboto", sans-serif;
+}
+.reset {
+	position: fixed;
+	bottom: 15px;
+	right: 15px;
+	opacity: 0.9;
+	padding: 20px;
+	border-radius: 99px;
+	cursor: pointer;
+	border: 2px solid #fff;
+  text-shadow: 0px 0px 2px #000;
+  user-select: none;
+  box-shadow: 0px 4px 8px #000;
+  box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.reset:hover {
+	border: 2px solid gold;
+	opacity: 1;
+  box-shadow: 0px 2px 3px #000;
+}
+.reset:active {
+	border: 3px solid #0ff;
+  box-shadow: 0px 1px 1px #000;
+}
