@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Generative Inkblot</title>
+  </head>
+  <body>
+    <svg id="svgMain" viewBox="0 0 500 500" height="500" width="500" x="0" y="0" >
+      <defs>
+        <filter id="gloop" height="125%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation=15 result="blur" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 50 -20" result="goo" />
+        </filter>
+      </defs>
+      
+      <g id="svgGroup" filter="url(#gloop)"></g>
+    </svg>
+    
+    <svg id="svgRight" viewBox="0 0 500 500" height="500" width="500" x="0" y="0" >
+      <use href="#svgGroup"/>
+    </svg>
+    <script src="js/script.js"></script>
+  </body>
+</html>

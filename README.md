@@ -451,3 +451,4 @@
 |438| [Cultured Ink](https://github.com/xml12333/HTML_CSS_JS/tree/main/438.Cultured%20Ink)| [Demo](https://nikt.com.ua/projects/htmlCssJs/438.Cultured%20Ink/)| ![Thumbnail](438.Cultured%20Ink/img/info_thumbnail.jpg)|
 |439| [Paper Scissors](https://github.com/xml12333/HTML_CSS_JS/tree/main/439.Paper%20Scissors)| [Demo](https://nikt.com.ua/projects/htmlCssJs/439.Paper%20Scissors/)| ![Thumbnail](439.Paper%20Scissors/img/info_thumbnail.jpg)|
 |440| [Line Flower](https://github.com/xml12333/HTML_CSS_JS/tree/main/440.Line%20Flower)| [Demo](https://nikt.com.ua/projects/htmlCssJs/440.Line%20Flower/)| ![Thumbnail](440.Line%20Flower/img/info_thumbnail.jpg)|
+|441| [Generative Inkblot](https://github.com/xml12333/HTML_CSS_JS/tree/main/441.Generative%20Inkblot)| [Demo](https://nikt.com.ua/projects/htmlCssJs/441.Generative%20Inkblot/)| ![Thumbnail](441.Generative%20Inkblot/img/info_thumbnail.jpg)|

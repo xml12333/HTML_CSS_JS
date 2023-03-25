@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content:center; 
+  height: 100vh;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+svg{
+  height: 100vh;
+  min-height: 400px;
+}
+
+#svgRight {
+  transform: scaleX(-1);
+}
+
+/* Before using SMIL, I used CSS animation to fade in the circles. The browser support was spotty, so I changed to SMIL. But for some reason, keeping this CSS animation here but commented out allows the codepen preview snapshot to animate */
+/* 
+circle{
+  animation: fadeIn 200ms;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+} */
