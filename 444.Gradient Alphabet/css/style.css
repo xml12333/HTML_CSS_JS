@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  --unit: 4vmax;
+}
+
+@media screen and (min-width: 500px) {
+  body {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1000px) {
+  body {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+wrapper {
+  position: relative;
+  display: block;
+}
+
+content {
+  display: block;
+  padding: calc(var(--unit) * 2);
+  background-color: currentColor;
+  height: 100%;
+}
+
+content::before {
+  content: "";
+  position: absolute;
+  top: calc((var(--unit) - 1vmax) * 2);
+  left: calc((var(--unit) - 1vmax) * 2);
+  width: calc(100% - (var(--unit) - 1vmax) * 4);
+  height: calc(100% - (var(--unit) - 1vmax) * 4);
+  transform: rotate(var(--rotate));
+  background: radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 5% -3%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 15% -3%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 25% -3%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 35% -3%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 45% -3%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 55% -3%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 65% -3%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 75% -3%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 85% -3%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 95% -3%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 5% 103%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 15% 103%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 25% 103%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 35% 103%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 45% 103%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 55% 103%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 65% 103%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 75% 103%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 85% 103%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 95% 103%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat -3% 3.3333333333%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat -3% 10%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat -3% 16.6666666667%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat -3% 23.3333333333%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat -3% 30%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat -3% 36.6666666667%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat -3% 43.3333333333%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat -3% 50%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat -3% 56.6666666667%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat -3% 63.3333333333%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat -3% 70%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat -3% 76.6666666667%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat -3% 83.3333333333%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat -3% 90%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat -3% 96.6666666667%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 103% 3.3333333333%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 103% 10%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 103% 16.6666666667%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 103% 23.3333333333%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 103% 30%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 103% 36.6666666667%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 103% 43.3333333333%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 103% 50%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 103% 56.6666666667%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 103% 63.3333333333%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 103% 70%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 103% 76.6666666667%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 103% 83.3333333333%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 103% 90%/6% 6%, radial-gradient(circle at 50% 50%, currentColor 50%, transparent calc(50% + 0.5px)) no-repeat 103% 96.6666666667%/6% 6%, linear-gradient(#fff, #fff);
+}
+
+css-doodle {
+  position: relative;
+  z-index: 1;
+}
