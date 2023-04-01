@@ -1,0 +1,53 @@
+body {
+  width: 100vw;
+  overflow: hidden;
+  touch-action: none;
+  font-family: "Raleway", sans-serif;
+}
+
+input[type=range] {
+  position: fixed;
+  bottom: calc(10% + 12.5vh);
+  left: 50%;
+  transform: translateY(-100%);
+  transform: translateX(-50%) rotate(90deg);
+  width: 25vh;
+  margin: 0;
+}
+
+p {
+  position: fixed;
+  bottom: calc(10% - 8vh);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+container {
+  position: fixed;
+  bottom: calc(10% + 25vh);
+  left: 50%;
+  pointer-events: none;
+}
+container > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+@media (max-width: 400px) {
+  input[type=range] {
+    bottom: calc(20% + 12.5vh);
+  }
+  p {
+    bottom: calc(20% - 8vh);
+  }
+  container {
+    bottom: calc(20% + 25vh);
+  }
+}
