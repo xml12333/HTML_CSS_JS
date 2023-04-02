@@ -459,3 +459,4 @@
 |446| [Skewed gradient](https://github.com/xml12333/HTML_CSS_JS/tree/main/446.Skewed%20gradient)| [Demo](https://nikt.com.ua/projects/htmlCssJs/446.Skewed%20gradient/)| ![Thumbnail](446.Skewed%20gradient/img/info_thumbnail.jpg)|
 |447| [Small World](https://github.com/xml12333/HTML_CSS_JS/tree/main/447.Small%20World)| [Demo](https://nikt.com.ua/projects/htmlCssJs/447.Small%20World/)| ![Thumbnail](447.Small%20World/img/info_thumbnail.jpg)|
 |448| [Fireworks of inputs](https://github.com/xml12333/HTML_CSS_JS/tree/main/448.Fireworks%20of%20inputs)| [Demo](https://nikt.com.ua/projects/htmlCssJs/448.Fireworks%20of%20inputs/)| ![Thumbnail](448.Fireworks%20of%20inputs/img/info_thumbnail.jpg)|
+|449| [Acid traces](https://github.com/xml12333/HTML_CSS_JS/tree/main/449.Acid%20traces)| [Demo](https://nikt.com.ua/projects/htmlCssJs/449.Acid%20traces/)| ![Thumbnail](449.Acid%20traces/img/info_thumbnail.jpg)|
