@@ -215,10 +215,97 @@ img {
 
 
 /*=============== HOME ===============*/
+.home__container{
+  row-gap: 2rem;
+  padding-top: 1rem;
+}
 
+.home__data{
+  text-align: center;
+}
 
+.home__title{
+  font-size: var(--bigger-font-size);
+  font-family: var(--second-font);
+  font-weight: var(--font-medium);
+  line-height: 135%;
+  position: relative;
+  width: max-content;
+  margin: 0 auto 1.25rem;
+}
+
+.home__title-box{
+  display: flex;
+  justify-content: center;
+  column-gap: .75rem;
+}
+
+.home__title-box div{
+  background: var(--gradient-color);
+  padding: .25rem .75rem;
+  border-radius: .5rem;
+  color: var(--white-color);
+  transform: rotate(10deg);
+}
+
+.home__title img{
+  position: absolute;
+  width: 50px;
+  left: -1rem;
+  bottom: 1rem;
+}
+
+.home__description{
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.home__description img{
+  position: absolute;
+  width: 16px;
+  right: 4rem;
+  bottom: -1rem;
+}
+
+.home__box{
+  display: flex;
+  justify-content: center;
+  column-gap: 3rem;
+  margin-top: 2rem;
+}
+
+.home__box h3{
+  font-size: var(--big-font-size);
+  font-family: var(--second-font);
+}
+
+.home__box span{
+  font-size: var(--small-font-size);
+}
+.home__img{
+  width: 320px;
+  justify-self: center;
+}
 /*=============== BUTTON ===============*/
+.button{
+  display: inline-flex;
+  align-items: center;
+  column-gap: .25rem;
+  background: var(--gradient-color);
+  padding: 1rem 1.8rem;
+  border-radius: 4rem;
+  color: var(--white-color);
+  font-weight: var(--font-medium);
+}
 
+.button i {
+  font-size: 1.25rem;
+  transition: transform .3s;
+}
+
+.button:hover i {
+  transform: translateX(.25rem);
+}
 
 /*=============== LIST ===============*/
 
