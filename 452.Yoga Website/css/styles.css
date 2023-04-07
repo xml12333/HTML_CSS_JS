@@ -209,8 +209,22 @@ img {
 }
 
 /* Add blur to header */
+.blur-header{
+  background-color: transparent;
+}
 
-
+.blur-header::after{
+  content: '';
+  position: absolute;
+  width: 1000%;
+  height: 100%;
+  background-color: hsla(0,0%,100%,.3);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px); /* For safari */
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 /* Active link */
 
 
@@ -308,7 +322,73 @@ img {
 }
 
 /*=============== LIST ===============*/
+.list__container{
+  row-gap: 3rem;
+}
 
+.list__content,
+.list__blob{
+  display: flex;
+}
+
+.list__content{
+  justify-content: center;
+  align-items: center;
+  column-gap: 1.5rem;
+}
+.list__number{
+  font-size: var(--big-font-size);
+  font-family: var(--second-font);
+  font-weight: var(--font-medium);
+}
+.list__blob{
+  background-color: var(--first-color-light);
+  width: 230px;
+  height: 100px;
+  border-radius: 12.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.list__blob img{
+  width: 180px;
+  transform: translateY(-1rem);
+}
+
+.list__data{
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  row-gap: 5rem;
+}
+.list__description{
+  position: relative;
+}
+
+.list__description img{
+  position: absolute;
+  width: 50px;
+  top: -1.8rem;
+  left: 0;
+}
+
+.list__button{
+  position: relative;
+  padding: 0;
+}
+.list__button,
+.list__button i{
+  background: var(--gradient-color);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.list__button img{
+  position: absolute;
+  max-width: initial;
+  width: 150px;
+  left: -2.8rem;
+}
 
 /*=============== HEALTH ===============*/
 
