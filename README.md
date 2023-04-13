@@ -462,3 +462,4 @@
 |449| [Acid traces](https://github.com/xml12333/HTML_CSS_JS/tree/main/449.Acid%20traces)| [Demo](https://nikt.com.ua/projects/htmlCssJs/449.Acid%20traces/)| ![Thumbnail](449.Acid%20traces/img/info_thumbnail.jpg)|
 |450| [Generative Gradient Blobs](https://github.com/xml12333/HTML_CSS_JS/tree/main/450.Generative%20Gradient%20Blobs)| [Demo](https://nikt.com.ua/projects/htmlCssJs/450.Generative%20Gradient%20Blobs/)| ![Thumbnail](450.Generative%20Gradient%20Blobs/img/info_thumbnail.jpg)|
 |451| [Login form](https://github.com/xml12333/HTML_CSS_JS/tree/main/451.Login%20form)| [Demo](https://nikt.com.ua/projects/htmlCssJs/451.Login%20form/)| ![Thumbnail](451.Login%20form/img/info_thumbnail.jpg)|
+|452| [Yoga Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/452.Yoga%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/452.Yoga%20Website/)| ![Thumbnail](452.Yoga%20Website/img/info_thumbnail.jpg)|
