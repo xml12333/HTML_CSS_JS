@@ -229,7 +229,22 @@ svg {
 }
 
 /* Add blur to header */
+.blur-header{
+background-color: transparent;
+}
 
+.blur-header::after{
+  content: '';
+  position: absolute;
+  width: 1000%;
+  height: 100%;
+  background-color: hsla(0,0%,10%,.3);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px); /* For safari */
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 
 /* Active link */
 
@@ -269,7 +284,7 @@ svg {
 }
 
 .home__description{
-  margin-block: 1rem 1.5re;
+  margin-block: 1rem 1.5rem;
 }
 
 .home__social{
@@ -306,11 +321,44 @@ svg {
   transform: translateX(-120px);
 } */
 /*=============== BUTTON ===============*/
+.button{
+  display: inline-block;
+  background-color: var(--first-color);
+  padding: 1rem 1.75rem;
+  border-radius: .5rem;
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  transition: box-shadow .4s;
+}
 
+.button:hover{
+  box-shadow: 0 8px 24px hsla(var(--hue), 100%, 40%, .25);
+}
 
 /*=============== ABOUT ===============*/
+.about__container{
+  row-gap: 2.5rem;
+}
 
+.about__data{
+  text-align: center;
+}
 
+.about__description{
+  margin-bottom: 2rem;
+}
+
+.about__image{
+  justify-self: center;
+}
+
+.about__blob{
+  width: 320px;
+}
+
+.about__blob path{
+  stroke: var(--first-color);
+}
 /*=============== SKILLS ===============*/
 
 
