@@ -360,11 +360,77 @@ background-color: transparent;
   stroke: var(--first-color);
 }
 /*=============== SKILLS ===============*/
+.skills{
+  background-color: var(--container-color);
+}
 
+.skills__container{
+  padding-bottom: 2rem;
+  row-gap: 3.5rem;
+}
+
+.skills__data{
+  text-align: center;
+}
+
+.skills__description{
+  margin-bottom: 2rem;
+}
+
+.skills__content,
+.skills__group{
+  display: grid;
+}
+
+.skills__content{
+  grid-template-columns: repeat(2,max-content);
+  column-gap: 4rem;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.skills__group{
+  row-gap: 1rem;
+  list-style: decimal-leading-zero;
+}
+
+.skills__item{
+  font-weight: var(--font-medium);
+  color: var(--title-color);
+}
+
+.skills__item::marker{
+  color: var(--first-color);
+}
 
 /*=============== SERVICES ===============*/
+.services__container{
+  row-gap: 2rem;
+  padding-block: 1rem;
+}
 
+.services__card{
+  text-align: center;
+  background-color: var(--container-color);
+  padding: 3rem 1.25rem;
+  border-radius: 1rem;
+  border: 2px solid var(--container-color);
+  transition: border .4s;
+}
 
+.services__icon{
+  display: block;
+  font-size: 4rem;
+  color: var(--first-color);
+  margin-bottom: .75rem;
+}
+.services__title{
+  font-size: var(--h2-font-size);
+  margin-bottom: 1.5rem;
+}
+.services__card:hover{
+  border: 2px solid var(--first-color);
+}
 /*=============== PROJECTS ===============*/
 
 
