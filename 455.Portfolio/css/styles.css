@@ -432,11 +432,115 @@ background-color: transparent;
   border: 2px solid var(--first-color);
 }
 /*=============== PROJECTS ===============*/
+.projects{
+  background-color: var(--container-color);
+}
 
+.projects__container{
+  row-gap: 2rem;
+  justify-content: center;
+  padding-block: 1rem;
+}
 
+.projects__card{
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.projects__img{
+  width: 100%;
+  height: 100%;
+}
+.projects__modal{
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  height: 100%;
+  background:linear-gradient(180deg, hsla(0,0%,0%,0) 0%, hsla(var(--hue),70%,40%,.8) 120%);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px); /*for safari*/
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: bottom .4s;
+}
+
+.projects__subtitle,
+.projects__button{
+  color: var(--title-color);
+  font-size: var(--small-font-size);
+}
+
+.projects__subtitle{
+  display: block;
+  margin-bottom: .25rem;
+}
+
+.projects__title{
+  font-size: var(--h2-font-size);
+  margin-bottom: .75rem;
+}
+
+.projects__button{
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+  font-weight: var(--font-medium);
+}
+
+.projects__button i{
+  font-size: 1.25rem;
+}
+.projects__card:hover .projects__modal{
+  bottom: 0;
+}
 /*=============== CONTACT ===============*/
+.contact__container{
+  padding-top: 1rem;
+}
 
+.contact__form,
+.contact__group{
+  display: grid;
+  row-gap: 1rem;
+}
 
+.contact__form{
+  position: relative;
+}
+
+.contact__input{
+  padding: 1rem 1.25rem;
+  border-radius: .5rem;
+  background-color: var(--container-color);
+  color: var(--title-color);
+}
+
+.contact__input::placeholder{
+  color: var(--text-color);
+}
+
+.contact__form textarea{
+  height: 11rem;
+  resize: none;
+  margin-bottom: 2rem;
+}
+
+.contact__button{
+  justify-self: center;
+  cursor: pointer;
+}
+.contact__message{
+  position: absolute;
+  left: 0;
+  bottom: 4.5rem;
+  font-size: var(--small-font-size);
+  color: var(--title-color);
+}
 /*=============== FOOTER ===============*/
 
 
