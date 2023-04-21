@@ -542,8 +542,53 @@ background-color: transparent;
   color: var(--title-color);
 }
 /*=============== FOOTER ===============*/
+.footer{
+  background-color: var(--container-color);
+  padding-block: 3.5rem 2rem;
+}
+.footer__container{
+  row-gap: 2rem;
+  text-align: center;
+}
 
+.footer__title{
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: .25rem;
+}
 
+.footer__title span{
+  color: var(--first-color);
+}
+
+.footer__education{
+  font-size: var(--normal-font-size);
+}
+
+.footer__social{
+  display: flex;
+  justify-content: center;
+  column-gap: 1.25rem;
+}
+
+.footer__social-link{
+  display: flex;
+  background-color: var(--first-color);
+  padding: .5rem;
+  color: var(--title-color);
+  font-size: 1.5rem;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  transition: transform .4s;
+}
+
+.footer__social-link:hover{
+  transform: translateY(-.25rem);
+}
+
+.footer__copy{
+  font-size: var(--smaller-font-size);
+  margin-top: 2rem;
+}
 /*=============== SCROLL BAR ===============*/
 
 
