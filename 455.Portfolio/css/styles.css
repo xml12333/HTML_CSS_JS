@@ -247,7 +247,9 @@ background-color: transparent;
 }
 
 /* Active link */
-
+.active-link{
+  color: var(--first-color);
+}
 
 /*=============== HOME ===============*/
 .home{
@@ -590,19 +592,108 @@ background-color: transparent;
   margin-top: 2rem;
 }
 /*=============== SCROLL BAR ===============*/
-
-
+::-webkit-scrollbar{
+  width: 0.6rem;
+  border-radius: .5rem;
+  background-color: hsl(228, 12%, 25%);
+}
+::-webkit-scrollbar-thumb{
+  background-color: hsl(228, 8%, 35%);
+  border-radius: .5rem;
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: hsl(228, 8%, 45%);
+}
 /*=============== SCROLL UP ===============*/
+.scrollup{
+  position: fixed;
+  right: 1rem;
+  bottom: -50%;
+  background-color: var(--body-color);
+  padding: 6px;
+  display: inline-flex;
+  border-radius: .25rem;
+  color: var(--first-color);
+  font-size: 1.25rem;
+  box-shadow: 0 4px 12px hsla(228,15%,8%,.4);
+  z-index: var(--z-tooltip);
+  transition: bottom .4s, transform .4s;
+}
 
+.scrollup:hover{
+  transform: translateY(-.25rem);
+}
 
 /* Show Scroll Up */
-
+.show-scroll{
+  bottom: 3rem;
+}
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
+@media screen and (max-width: 320px){
+  .container{
+    margin-inline: 1rem;
+  }
 
+  .skills__content{
+    grid-template-columns: max-content;
+    row-gap: 1rem;
+  }
+  .services__card{
+    padding-block: 1.5rem;
+  }
+}
 
 /* For medium devices */
+@media screen and (min-width: 576px){
+  .home__container,
+  .about__container,
+  .skills__container,
+  .services__container,
+  .projects__container,
+  .contact__container{
+    grid-template-columns: 360px;
+    justify-content: center;
+  }
+}
 
+@media screen and (min-width: 768px){
+  .nav__menu{
+    width: 55%;
+  }
 
+  .home__container,
+  .about__container,
+  .skills__container{
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  .home__data,
+  .about__data,
+  .skills__data,
+  :is(.about__data, .skills__data) :is(.section__subtitle, .section__title){
+    text-align: initial;
+  }
+
+  .home__social{
+    justify-content: initial;
+  }
+
+  .home__blob,
+  .about__blob{
+    width: 400px;
+  }
+
+  .about__data{
+    order: 1;
+  }
+
+  .services__container,
+  .projects__container{
+    grid-template-columns: repeat(2,352px);
+  }
+
+}
 /* For large devices */
