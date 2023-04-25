@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Slider</title>
+  </head>
+  <body>
+    <main>
+  <div class="outer-glow"></div>
+  <div class="circle-line"></div>
+  <div class="inner">
+    <span>
+      <div class="particles-wrapper">
+  <div class="particle particle-1"></div>
+  <div class="particle particle-2"></div>
+  <div class="particle particle-3"></div>
+</div>
+    </span>
+    <input type="range" min=0 max=100 value=0>
+    <output data-value="0">0</output>
+    <div class="halo-inner"></div>
+    <div class="halo-outer">
+    </div>
+  </di>
+</main>
+
+<div id="info-box" data-info-chrome="✅ Rendering perfectly in Chrome" data-info-safari="❌ Rendering broken in Safari" data-info-firefox="❌ Rendering broken in Firefox" data-presentation-width="80vw" data-presentation-height="80vh" data-inspiration="https://dribbble.com/shots/7887362-Black-Magic-Mode"></div>
+<svg>
+  <defs>
+    <filter id="turbulence" x="0" y="0" width="100%" height="100%">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="10"></feGaussianBlur>
+    <feTurbulence id="liquid-filter" numOctaves="31" seed="50" baseFrequency="1.02 0.05"></feTurbulence>
+    <feDisplacementMap xChannelSelector="G" yChannelSelector="B" scale="30" in="SourceGraphic"></feDisplacementMap>
+    <feGaussianBlur stdDeviation="0.8"></feGaussianBlur>
+    <animate xlink:href="#liquid-filter" attributeName="baseFrequency" dur="60s" keyTimes="0;0.5;1" values="0.01 0.06;0.04 0.09;0.02 0.04" repeatCount="indefinite"></animate>
+  </filter>
+  </defs>
+</svg>
+    <script src="js/script.js"></script>
+  </body>
+</html>
