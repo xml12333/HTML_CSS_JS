@@ -467,3 +467,4 @@
 |454| [Pixel Stretch](https://github.com/xml12333/HTML_CSS_JS/tree/main/454.Pixel%20Stretch)| [Demo](https://nikt.com.ua/projects/htmlCssJs/454.Pixel%20Stretch/)| ![Thumbnail](454.Pixel%20Stretch/img/info_thumbnail.jpg)|
 |455| [Portfolio](https://github.com/xml12333/HTML_CSS_JS/tree/main/455.Portfolio)| [Demo](https://nikt.com.ua/projects/htmlCssJs/455.Portfolio/)| ![Thumbnail](455.Portfolio/img/info_thumbnail.jpg)|
 |456| [Slider](https://github.com/xml12333/HTML_CSS_JS/tree/main/456.Slider)| [Demo](https://nikt.com.ua/projects/htmlCssJs/456.Slider/)| ![Thumbnail](456.Slider/img/info_thumbnail.jpg)|
+|457| [Galaxy creature](https://github.com/xml12333/HTML_CSS_JS/tree/main/457.Galaxy%20creature)| [Demo](https://nikt.com.ua/projects/htmlCssJs/457.Galaxy%20creature/)| ![Thumbnail](457.Galaxy%20creature/img/info_thumbnail.jpg)|
