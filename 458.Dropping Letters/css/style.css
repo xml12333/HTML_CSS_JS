@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: #f6f1e6;
+  --drops-color: #231d1c;
+}
+
+body {
+  background: var(--text-color);
+  font-family: Georgia, serif;
+}
+
+.canvas {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.canvas--animated .puddle__letter {
+  animation-play-state: running;
+}
+
+.puddle {
+  position: absolute;
+  display: flex;
+  transform: rotate(var(--r, 0deg)) translate(calc(-50% - var(--x, 0)), calc(-50% - var(--y, 0)));
+  top: 50%;
+  left: 50%;
+  color: var(--text-color);
+  font-size: 6vmin;
+  white-space: pre;
+}
+.puddle__letter {
+  transform: translateY(800px);
+  padding: 0.1em 0.2em;
+  margin: -0.1em -0.2em;
+  will-change: transform;
+  animation: drop 800ms var(--delay) ease-out forwards paused;
+}
+
+.combined-puddles {
+  position: relative;
+  height: 100%;
+  z-index: -1;
+  filter: url(#drops-filter);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.combined-puddles .puddle__letter {
+  border-radius: 50%;
+  color: var(--drops-color);
+  background-color: currentColor;
+}
+.combined-puddles .puddle__letter--t-1 {
+  box-shadow: 0.0282121583em 0.0118448982em 0 0.3846187777em currentColor;
+}
+.combined-puddles .puddle__letter--t-2 {
+  box-shadow: 0.0082070191em 0.004892739em 0 0.1729837897em currentColor;
+}
+.combined-puddles .puddle__letter--t-3 {
+  box-shadow: 0.0084302569em 0.0180476205em 0 0.2952530088em currentColor;
+}
+.combined-puddles .puddle__letter--t-4 {
+  box-shadow: 0.026989691em 0.0078037425em 0 0.1435772894em currentColor;
+}
+.combined-puddles .puddle__letter--t-5 {
+  box-shadow: 0.0049247363em 0.0215659449em 0 0.3169650243em currentColor;
+}
+.combined-puddles .puddle__letter--t-6 {
+  box-shadow: 0.014855328em 0.0032472212em 0 0.3709449545em currentColor;
+}
+.combined-puddles .puddle__letter--t-7 {
+  box-shadow: 0.0281663135em 0.0045968262em 0 0.1534756045em currentColor;
+}
+.combined-puddles .puddle__letter--t-8 {
+  box-shadow: 0.0259993461em 0.0077337876em 0 0.0495955712em currentColor;
+}
+.combined-puddles .puddle__letter--t-9 {
+  box-shadow: 0.0251572557em 0.0136019317em 0 0.3411027657em currentColor;
+}
+.combined-puddles .puddle__letter--t-10 {
+  box-shadow: 0.0206827142em 0.0062889692em 0 0.3276650586em currentColor;
+}
+
+@keyframes drop {
+  0% {
+    transform: translate(0, 100vh);
+  }
+  80% {
+    transform: translate(0, -5px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

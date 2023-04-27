@@ -1,0 +1,69 @@
+@use 'sass:math'
+
+@function randomNum($min, $max)
+  $randomNum: $min + math.random() * $max - $min
+  @return $randomNum
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+:root
+  --text-color: #f6f1e6
+  --drops-color: #231d1c
+
+body
+  background: var(--text-color)
+  font-family: Georgia, serif
+  
+.canvas
+  position: relative
+  height: 100vh
+  overflow: hidden
+  
+  &--animated
+    .puddle__letter
+      animation-play-state: running
+
+.puddle
+  position: absolute
+  display: flex
+  transform: rotate(var(--r, 0deg)) translate(calc(-50% - var(--x, 0)), calc(-50% - var(--y, 0)))
+  top: 50%
+  left: 50%
+  color: var(--text-color)
+  font-size: 6vmin
+  white-space: pre
+
+  &__letter
+    transform: translateY(800px)
+    padding: .1em .2em
+    margin: -.1em -.2em
+    will-change: transform
+    animation: drop 800ms var(--delay) ease-out forwards paused
+
+.combined-puddles
+  position: relative
+  height: 100%
+  z-index: -1
+  filter: url(#drops-filter)
+  user-select: none
+
+  .puddle
+    &__letter
+      border-radius: 50%
+      color: var(--drops-color)
+      background-color: currentColor
+
+      @for $i from 1 through 10
+        &--t-#{$i}
+          box-shadow: #{randomNum(-0.03, 0.03)}em #{randomNum(-0.03, 0.03)}em 0 #{randomNum(0.2, 0.4)}em currentColor
+
+@keyframes drop
+  0%
+    transform: translate(0, 100vh)
+  80%
+    transform: translate(0, -5px)
+  100%
+    transform: translate(0, 0)
