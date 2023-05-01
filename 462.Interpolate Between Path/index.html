@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Interpolate Between Path</title>
+  </head>
+  <body>
+    <svg class="stage" fill="none" stroke="#fff">
+      <path class="path1" d="M0,0"/>
+       <path class="path2" d="M0,0"/>
+      <g class="blended"></g>
+      <rect width="100%" height="100%" fill="rgba(0,0,0,0)" stroke="none"/>
+      <text class="dir" x="80" y="40" text-anchor="middle" stroke="none" fill="#fff">Draw 2 Paths</text>  
+    </svg>
+    <script type="module" src="js/script.js"></script>
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script src="js/MorphSVGPlugin3.js"></script>
+  </body>
+</html>
