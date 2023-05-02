@@ -473,3 +473,4 @@
 |460| [Progress Button](https://github.com/xml12333/HTML_CSS_JS/tree/main/460.Progress%20Button)| [Demo](https://nikt.com.ua/projects/htmlCssJs/460.Progress%20Button/)| ![Thumbnail](460.Progress%20Button/img/info_thumbnail.jpg)|
 |461| [Confetti SVG](https://github.com/xml12333/HTML_CSS_JS/tree/main/461.Confetti%20SVG)| [Demo](https://nikt.com.ua/projects/htmlCssJs/461.Confetti%20SVG/)| ![Thumbnail](461.Confetti%20SVG/img/info_thumbnail.jpg)|
 |462| [Interpolate Between Path](https://github.com/xml12333/HTML_CSS_JS/tree/main/462.Interpolate%20Between%20Path)| [Demo](https://nikt.com.ua/projects/htmlCssJs/462.Interpolate%20Between%20Path/)| ![Thumbnail](462.Interpolate%20Between%20Path/img/info_thumbnail.jpg)|
+|463| [Sibling Gallery](https://github.com/xml12333/HTML_CSS_JS/tree/main/463.Sibling%20Gallery)| [Demo](https://nikt.com.ua/projects/htmlCssJs/463.Sibling%20Gallery/)| ![Thumbnail](463.Sibling%20Gallery/img/info_thumbnail.jpg)|
