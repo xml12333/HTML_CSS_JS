@@ -474,3 +474,4 @@
 |461| [Confetti SVG](https://github.com/xml12333/HTML_CSS_JS/tree/main/461.Confetti%20SVG)| [Demo](https://nikt.com.ua/projects/htmlCssJs/461.Confetti%20SVG/)| ![Thumbnail](461.Confetti%20SVG/img/info_thumbnail.jpg)|
 |462| [Interpolate Between Path](https://github.com/xml12333/HTML_CSS_JS/tree/main/462.Interpolate%20Between%20Path)| [Demo](https://nikt.com.ua/projects/htmlCssJs/462.Interpolate%20Between%20Path/)| ![Thumbnail](462.Interpolate%20Between%20Path/img/info_thumbnail.jpg)|
 |463| [Sibling Gallery](https://github.com/xml12333/HTML_CSS_JS/tree/main/463.Sibling%20Gallery)| [Demo](https://nikt.com.ua/projects/htmlCssJs/463.Sibling%20Gallery/)| ![Thumbnail](463.Sibling%20Gallery/img/info_thumbnail.jpg)|
+|464| [Spider](https://github.com/xml12333/HTML_CSS_JS/tree/main/464.Spider)| [Demo](https://nikt.com.ua/projects/htmlCssJs/464.Spider/)| ![Thumbnail](464.Spider/img/info_thumbnail.jpg)|
