@@ -476,3 +476,4 @@
 |463| [Sibling Gallery](https://github.com/xml12333/HTML_CSS_JS/tree/main/463.Sibling%20Gallery)| [Demo](https://nikt.com.ua/projects/htmlCssJs/463.Sibling%20Gallery/)| ![Thumbnail](463.Sibling%20Gallery/img/info_thumbnail.jpg)|
 |464| [Spider](https://github.com/xml12333/HTML_CSS_JS/tree/main/464.Spider)| [Demo](https://nikt.com.ua/projects/htmlCssJs/464.Spider/)| ![Thumbnail](464.Spider/img/info_thumbnail.jpg)|
 |465| [Remote control](https://github.com/xml12333/HTML_CSS_JS/tree/main/465.Remote%20control)| [Demo](https://nikt.com.ua/projects/htmlCssJs/465.Remote%20control/)| ![Thumbnail](465.Remote%20control/img/info_thumbnail.jpg)|
+|466| [Noisy Cube](https://github.com/xml12333/HTML_CSS_JS/tree/main/466.Noisy%20Cube)| [Demo](https://nikt.com.ua/projects/htmlCssJs/466.Noisy%20Cube/)| ![Thumbnail](466.Noisy%20Cube/img/info_thumbnail.jpg)|

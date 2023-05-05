@@ -1,0 +1,17 @@
+mixin cameras
+  .container
+    - for (i = 0; i < 400; i++)
+      .trigger
+    .monitor
+      .camera.-z
+        .camera.-y
+          .camera.-x
+            block
+
++cameras
+  .cubes
+    - for (i = 0; i < 125; i++)
+      .cube
+        .scale
+          - for (j = 0; j < 6; j++)
+            .panel
