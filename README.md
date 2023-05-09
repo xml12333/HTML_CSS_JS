@@ -480,3 +480,4 @@
 |467| [Toggle Switch](https://github.com/xml12333/HTML_CSS_JS/tree/main/467.Toggle%20Switch)| [Demo](https://nikt.com.ua/projects/htmlCssJs/467.Toggle%20Switch/)| ![Thumbnail](467.Toggle%20Switch/img/info_thumbnail.jpg)|
 |468| [Gradient Card](https://github.com/xml12333/HTML_CSS_JS/tree/main/468.Gradient%20Card)| [Demo](https://nikt.com.ua/projects/htmlCssJs/468.Gradient%20Card/)| ![Thumbnail](468.Gradient%20Card/img/info_thumbnail.jpg)|
 |469| [Range Slider](https://github.com/xml12333/HTML_CSS_JS/tree/main/469.Range%20Slider)| [Demo](https://nikt.com.ua/projects/htmlCssJs/469.Range%20Slider/)| ![Thumbnail](469.Range%20Slider/img/info_thumbnail.jpg)|
+|470| [Image SVG filter](https://github.com/xml12333/HTML_CSS_JS/tree/main/470.Image%20SVG%20filter)| [Demo](https://nikt.com.ua/projects/htmlCssJs/470.Image%20SVG%20filter/)| ![Thumbnail](470.Image%20SVG%20filter/img/info_thumbnail.jpg)|
