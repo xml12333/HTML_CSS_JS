@@ -1,0 +1,42 @@
+:root {
+    --transition: .75s ease;
+  }
+  body {
+    display:grid;
+    place-items:center;
+    min-height:100svh;
+    margin: 0;
+    transition:background-position var(--transition);
+    background:linear-gradient(#5D9CEC 0vh, #2D6BBC 100vh, #111 200vh, #555 300vh) fixed;
+    background-size:auto 300vh;
+    background-position-y:-200vh;
+    &.day {
+      background-position-y:0vh;
+    } 
+    #sunmoon {
+      position:relative;
+      width:clamp(100px, 50vmin, 300px);
+      aspect-ratio:1;
+      border-radius:100%;
+      overflow:hidden;
+      filter:url("#blob");
+      &:before {
+        content:'';
+        position:absolute;
+        top:-20%;
+        left:-30%;
+        width:172%;
+        height:172%;
+        background:#FFF3D8;
+        transition:var(--transition);
+        clip-path: url(#sunmoon_clip);
+      }
+      &.sun {
+        &:before {
+          top:-72%;
+          left:-72%;
+          background:#FFCE54;
+        }
+      }
+    }
+  }

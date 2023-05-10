@@ -481,3 +481,4 @@
 |468| [Gradient Card](https://github.com/xml12333/HTML_CSS_JS/tree/main/468.Gradient%20Card)| [Demo](https://nikt.com.ua/projects/htmlCssJs/468.Gradient%20Card/)| ![Thumbnail](468.Gradient%20Card/img/info_thumbnail.jpg)|
 |469| [Range Slider](https://github.com/xml12333/HTML_CSS_JS/tree/main/469.Range%20Slider)| [Demo](https://nikt.com.ua/projects/htmlCssJs/469.Range%20Slider/)| ![Thumbnail](469.Range%20Slider/img/info_thumbnail.jpg)|
 |470| [Image SVG filter](https://github.com/xml12333/HTML_CSS_JS/tree/main/470.Image%20SVG%20filter)| [Demo](https://nikt.com.ua/projects/htmlCssJs/470.Image%20SVG%20filter/)| ![Thumbnail](470.Image%20SVG%20filter/img/info_thumbnail.jpg)|
+|471| [Moon Sun Clip](https://github.com/xml12333/HTML_CSS_JS/tree/main/471.Moon%20Sun%20Clip)| [Demo](https://nikt.com.ua/projects/htmlCssJs/471.Moon%20Sun%20Clip/)| ![Thumbnail](471.Moon%20Sun%20Clip/img/info_thumbnail.jpg)|
