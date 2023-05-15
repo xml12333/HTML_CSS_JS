@@ -39,7 +39,15 @@ window.addEventListener('scroll', scrollHeader)
 
 
 /*=============== SWIPER POPULAR ===============*/
-
+const poularSwiper = new Swiper('.popular__content',{
+    slidePerView: 'auto',
+    centeredSlides: true,
+    loop: true,
+    navigation:{
+        nextEl : '.swiper-button-next',
+        prevEl : '.swiper-button-prev',
+    }
+})
 
 /*=============== CHOOSE FAQ ===============*/
 
