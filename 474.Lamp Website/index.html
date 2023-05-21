@@ -26,7 +26,7 @@
             <div class="nav__menu" id="nav-menu">
                <ul class="nav__list">
                   <li class="nav__item">
-                     <a href="#home" class="nav__link">Home</a>
+                     <a href="#home" class="nav__link active-link">Home</a>
                   </li>
                   <li class="nav__item">
                      <a href="#popular" class="nav__link">Popular</a>
@@ -41,8 +41,12 @@
                <!-- Close button -->
                <div class="nav__close" id="nav-close"><i class="ri-close-line"></i></div>
             </div>
-            <!-- Toggle button -->
-            <div class="nav__toggle" id="nav-toggle"><i class="ri-menu-line"></i></div>
+            <div class="nav__buttons">
+               <!-- Theme change button -->
+               <i class="ri-moon-line change-theme" id="theme-button"></i>
+               <!-- Toggle button -->
+               <div class="nav__toggle" id="nav-toggle"><i class="ri-menu-line"></i></div>
+            </div>
          </nav>
       </header>
 
@@ -405,7 +409,7 @@
 
       <!--==================== FOOTER ====================-->
       <footer class="footer">
-         <div class="footer__container conteiner grid">
+         <div class="footer__container container grid">
             <div class="footer__content grid">
                <div>
                   <a href="#" class="footer__logo">SUN<span>LIGHT</span></a>
@@ -478,7 +482,7 @@
       </footer>
 
       <!--========== SCROLL UP ==========-->
-
+      <a href="#" class="scrollup" id="scroll-up"><i class="ri-arrow-up-line"></i></a>
 
       <!--=============== SCROLLREVEAL ===============-->
       <script src=""></script>
