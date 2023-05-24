@@ -485,3 +485,4 @@
 |472| [Button Animation](https://github.com/xml12333/HTML_CSS_JS/tree/main/472.Button%20Animation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/472.Button%20Animation/)| ![Thumbnail](472.Button%20Animation/img/info_thumbnail.jpg)|
 |473| [Dashboard UI](https://github.com/xml12333/HTML_CSS_JS/tree/main/473.Dashboard%20UI)| [Demo](https://nikt.com.ua/projects/htmlCssJs/473.Dashboard%20UI/)| ![Thumbnail](473.Dashboard%20UI/img/info_thumbnail.jpg)|
 |474| [Lamp Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/474.Lamp%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/474.Lamp%20Website/)| ![Thumbnail](474.Lamp%20Website/img/info_thumbnail.jpg)|
+|475| [Analog Digital Clock](https://github.com/xml12333/HTML_CSS_JS/tree/main/475.Analog%20Digital%20Clock)| [Demo](https://nikt.com.ua/projects/htmlCssJs/475.Analog%20Digital%20Clock/)| ![Thumbnail](475.Analog%20Digital%20Clock/img/info_thumbnail.jpg)|
