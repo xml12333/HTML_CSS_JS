@@ -488,3 +488,4 @@
 |475| [Analog Digital Clock](https://github.com/xml12333/HTML_CSS_JS/tree/main/475.Analog%20Digital%20Clock)| [Demo](https://nikt.com.ua/projects/htmlCssJs/475.Analog%20Digital%20Clock/)| ![Thumbnail](475.Analog%20Digital%20Clock/img/info_thumbnail.jpg)|
 |476| [Photo Gallery](https://github.com/xml12333/HTML_CSS_JS/tree/main/476.Photo%20Gallery)| [Demo](https://nikt.com.ua/projects/htmlCssJs/476.Photo%20Gallery/)| ![Thumbnail](476.Photo%20Gallery/img/info_thumbnail.jpg)|
 |477| [Sushi Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/477.Sushi%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/477.Sushi%20Website/)| ![Thumbnail](477.Sushi%20Website/img/info_thumbnail.jpg)|
+|478| [Dropdown Menu](https://github.com/xml12333/HTML_CSS_JS/tree/main/478.Dropdown%20Menu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/478.Dropdown%20Menu/)| ![Thumbnail](478.Dropdown%20Menu/img/info_thumbnail.jpg)|
