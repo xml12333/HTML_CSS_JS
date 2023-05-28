@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Polyrhytmic Spiral</title>
+  </head>
+  <body>
+    <div id="control-bar-wrapper">
+      <div id="control-bar">
+        <button id="sound-toggle" class="toggle" type="button" data-toggled="false" onClick="handleSoundToggle()" title="Toggle Pulse">
+          <i class="fa-solid fa-music-slash off"></i>
+          <i class="fa-solid fa-music on"></i>
+        </button>
+      </div>
+    </div>
+    
+    <div id="background-image"></div>
+    
+    <div id="background-filter"></div>
+    
+    <div id="logo">
+      <img src="https://assets.codepen.io/1468070/Hyperplexed+Logo+-+White.png" alt="" />
+    </div>
+    
+    <div id="sound-message">
+      <p>Click anywhere to toggle sound</p>
+    </div>
+    
+    <canvas id="paper"></canvas>
+    <script src="js/script.js"></script>
+  </body>
+</html>
