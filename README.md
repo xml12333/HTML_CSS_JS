@@ -491,3 +491,4 @@
 |478| [Dropdown Menu](https://github.com/xml12333/HTML_CSS_JS/tree/main/478.Dropdown%20Menu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/478.Dropdown%20Menu/)| ![Thumbnail](478.Dropdown%20Menu/img/info_thumbnail.jpg)|
 |479| [Polyrhythmic Spiral](https://github.com/xml12333/HTML_CSS_JS/tree/main/479.Polyrhythmic%20Spiral)| [Demo](https://nikt.com.ua/projects/htmlCssJs/479.Polyrhythmic%20Spiral/)| ![Thumbnail](479.Polyrhythmic%20Spiral/img/info_thumbnail.jpg)|
 |480| [SVG Text Mask](https://github.com/xml12333/HTML_CSS_JS/tree/main/480.SVG%20Text%20Mask)| [Demo](https://nikt.com.ua/projects/htmlCssJs/480.SVG%20Text%20Mask/)| ![Thumbnail](480.SVG%20Text%20Mask/img/info_thumbnail.jpg)|
+|481| [Text Morph](https://github.com/xml12333/HTML_CSS_JS/tree/main/481.Text%20Morph)| [Demo](https://nikt.com.ua/projects/htmlCssJs/481.Text%20Morph/)| ![Thumbnail](481.Text%20Morph/img/info_thumbnail.jpg)|
