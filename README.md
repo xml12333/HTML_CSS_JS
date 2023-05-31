@@ -492,3 +492,4 @@
 |479| [Polyrhythmic Spiral](https://github.com/xml12333/HTML_CSS_JS/tree/main/479.Polyrhythmic%20Spiral)| [Demo](https://nikt.com.ua/projects/htmlCssJs/479.Polyrhythmic%20Spiral/)| ![Thumbnail](479.Polyrhythmic%20Spiral/img/info_thumbnail.jpg)|
 |480| [SVG Text Mask](https://github.com/xml12333/HTML_CSS_JS/tree/main/480.SVG%20Text%20Mask)| [Demo](https://nikt.com.ua/projects/htmlCssJs/480.SVG%20Text%20Mask/)| ![Thumbnail](480.SVG%20Text%20Mask/img/info_thumbnail.jpg)|
 |481| [Text Morph](https://github.com/xml12333/HTML_CSS_JS/tree/main/481.Text%20Morph)| [Demo](https://nikt.com.ua/projects/htmlCssJs/481.Text%20Morph/)| ![Thumbnail](481.Text%20Morph/img/info_thumbnail.jpg)|
+|482| [Resume](https://github.com/xml12333/HTML_CSS_JS/tree/main/482.Resume)| [Demo](https://nikt.com.ua/projects/htmlCssJs/482.Resume/)| ![Thumbnail](482.Resume/img/info_thumbnail.jpg)|
