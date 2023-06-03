@@ -1,0 +1,48 @@
+
+
+@font-face {
+  font-family: "Kablammo";
+  src: url('https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/Kablammo%5BMORF%5D.woff2') format('woff2'),
+       url('https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/Kablammo%5BMORF%5D.ttf') format('truetype');
+}
+
+@keyframes morph {
+  50% {
+    font-variation-settings: "MORF" 60;
+  }
+}
+
+@layer demo {
+  h1 {
+    font-family: "Kablammo";
+    font-variation-settings: "MORF" 0;
+    font-size: 20vw;
+    animation: morph 10s linear infinite;
+    text-align: center;
+    line-height: 1;
+    
+    > span {
+      font-size: 2em;
+    }
+  }
+}
+
+@layer demo.support {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  html {
+    block-size: 100%;
+    color-scheme: dark light;
+  }
+
+  body {
+    min-block-size: 100%;
+    font-family: system-ui, sans-serif;
+
+    display: grid;
+    place-content: center;
+  }
+}
