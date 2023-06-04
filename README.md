@@ -496,3 +496,4 @@
 |483| [Image Animation](https://github.com/xml12333/HTML_CSS_JS/tree/main/483.Image%20Animation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/483.Image%20Animation/)| ![Thumbnail](483.Image%20Animation/img/info_thumbnail.jpg)|
 |484| [Code UI](https://github.com/xml12333/HTML_CSS_JS/tree/main/484.Code%20UI)| [Demo](https://nikt.com.ua/projects/htmlCssJs/484.Code%20UI/)| ![Thumbnail](484.Code%20UI/img/info_thumbnail.jpg)|
 |485| [Flex Text](https://github.com/xml12333/HTML_CSS_JS/tree/main/485.Flex%20Text)| [Demo](https://nikt.com.ua/projects/htmlCssJs/485.Flex%20Text/)| ![Thumbnail](485.Flex%20Text/img/info_thumbnail.jpg)|
+|486| [Meece](https://github.com/xml12333/HTML_CSS_JS/tree/main/486.Meece)| [Demo](https://nikt.com.ua/projects/htmlCssJs/486.Meece/)| ![Thumbnail](486.Meece/img/info_thumbnail.jpg)|
