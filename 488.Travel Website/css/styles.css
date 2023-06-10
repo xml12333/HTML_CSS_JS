@@ -175,11 +175,25 @@ img {
 }
 
 .nav__link{
+  position: relative;
   color: var(--title-color);
   font-family: var(--second-font);
   font-weight: var(--font-medium);
 }
 
+.nav__link::after{
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: var(--title-color);
+  position: absolute;
+  left: 0;
+  bottom: -0.5rem;
+  transition: width .3s;
+}
+.nav__link:hover::after{
+  width: 70%;
+}
 .nav__close{
   position: absolute;
   top: 1rem;
@@ -207,7 +221,9 @@ z-index: -1;
 }
 
 /* Active link */
-
+.active-link::after{
+  width: 70%;
+}
 
 /*=============== HOME ===============*/
 .home{
@@ -477,16 +493,103 @@ z-index: -1;
   transform: scale(1.2);
 }
 /*=============== FOOTER ===============*/
-
-
+.footer{
+  padding-block: 2.5rem;
+  background-color: var(--container-color);
+}
+.footer__content{
+  row-gap: 3.5rem;
+}
+.footer__logo{
+  display: inline-block;
+  color: var(--title-color);
+  font-size: var(--h2-font-size);
+  font-family: var(--second-font);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 1rem;
+}
+.footer__data{
+  grid-template-columns: repeat(2, max-content);
+  gap: 2.5rem 3.5rem;
+}
+.footer__title{
+  font-size: var(--h3-font-size);
+  margin-bottom: 1rem;
+}
+.footer__links{
+  display: grid;
+  row-gap: .75rem;
+}
+.footer__link{
+  color: var(--text-color);
+  transition: color .4s;
+}
+.footer__link:hover{
+  color: var(--title-color);
+}
+.footer__group,
+.footer__social{
+  display: flex;
+}
+.footer__group{
+  margin-top: 5rem;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2rem;
+}
+.footer__social{
+  column-gap: 1.5rem;
+}
+.footer__social-link{
+  color: var(--text-color);
+  font-size: 1.25rem;
+  transition: color .4s, transform .4s;
+}
+.footer__social-link:hover{
+  color: var(--title-color);
+  transform: translateY(-.25rem);
+}
+.footer__copy{
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+  text-align: center;
+}
 /*=============== SCROLL BAR ===============*/
-
+::-webkit-scrollbar{
+  width: .6rem;
+  border-radius: .5rem;
+  background-color: hsl(0, 0%, 10%);
+}
+::-webkit-scrollbar-thumb{
+  border-radius: .5rem;
+  background-color: hsl(0, 0%, 20%);
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: hsl(0, 0%, 30%);
+}
 
 /*=============== SCROLL UP ===============*/
-
-
+.scrollup{
+  position: fixed;
+  right: 1rem;
+  bottom: -50%;
+  background-color: hsla(0,0%,100%, .1);
+  padding: 6px;
+  display: inline-flex;
+  color: var(--title-color);
+  font-size: 1.25rem;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px); /* for safari*/
+  z-index: var(--z-tooltip);
+  transition: bottom .4s, transform .4s;
+}
+.scrollup:hover{
+  transform: translateY(-.25rem);
+}
 /* Show Scroll Up */
-
+.show-scroll{
+  bottom: 3rem;
+}
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
