@@ -498,3 +498,4 @@
 |485| [Flex Text](https://github.com/xml12333/HTML_CSS_JS/tree/main/485.Flex%20Text)| [Demo](https://nikt.com.ua/projects/htmlCssJs/485.Flex%20Text/)| ![Thumbnail](485.Flex%20Text/img/info_thumbnail.jpg)|
 |486| [Meece](https://github.com/xml12333/HTML_CSS_JS/tree/main/486.Meece)| [Demo](https://nikt.com.ua/projects/htmlCssJs/486.Meece/)| ![Thumbnail](486.Meece/img/info_thumbnail.jpg)|
 |487| [SVG Cross-Stitch](https://github.com/xml12333/HTML_CSS_JS/tree/main/487.SVG%20Cross-Stitch)| [Demo](https://nikt.com.ua/projects/htmlCssJs/487.SVG%20Cross-Stitch/)| ![Thumbnail](487.SVG%20Cross-Stitch/img/info_thumbnail.jpg)|
+|488| [Travel Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/488.Travel%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/488.Travel%20Website/)| ![Thumbnail](488.Travel%20Website/img/info_thumbnail.jpg)|
