@@ -1,0 +1,107 @@
+:root {
+  --primary: #166496;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #041827;
+  color: white;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 0;
+  margin: 0;
+}
+line {
+  --deg: 0deg;
+  --h: 135;
+  --s: 10%;
+  --a: 0.2;
+  stroke-width: 2px;
+  stroke: #c2d4e2;
+  transform: rotate(var(--deg));
+  transform-origin: 50% 50%;
+}
+line.line2 {
+  stroke-linecap: round;
+  stroke-width: 16px;
+  stroke: #003657;
+}
+#dragable {
+  --deg: -110.25deg;
+  cursor: grab;
+  user-select: none !important;
+  transform-origin: 50% 50%;
+  transform: rotate(var(--deg));
+  touch-action: none;
+}
+.gradateLineWithText {
+  --deg: 0deg;
+  transform: rotate(var(--deg));
+  transform-origin: 50% 50%;
+}
+.gradateLineWithText line {
+  stroke: #ffc071;
+}
+.gradateLineWithText text {
+  fill: #ffc071;
+  transform: translate(0, 5px);
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-size: x-small;
+}
+main {
+  position: relative;
+  aspect-ratio: 1;
+}
+main svg {
+  display: block;
+  position: relative;
+  z-index: 1000;
+  height: auto;
+  width: min(100rem, 100vh);
+}
+main .lensView {
+  position: absolute;
+  z-index: 0;
+  aspect-ratio: 1;
+  inset: 13%;
+  border-radius: 50%;
+  overflow: hidden;
+  filter: sepia(1);
+}
+main .lensView img {
+  user-select: none !important;
+  aspect-ratio: 1;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+main .lensView img.back {
+  filter: url(#circleBlurBack);
+}
+main .lensView img.front {
+  filter: url(#circleBlurFront);
+}
+.focus {
+  position: absolute;
+  z-index: 10000;
+  aspect-ratio: 1;
+  inset: 5%;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.input-range {
+  position: fixed;
+  left: 0;
+  bottom: 1rem;
+  opacity: 0;
+  z-index: -1000;
+}
+body:has(.input-range:focus) .focus {
+  outline: 2px dashed #ffc071;
+}
