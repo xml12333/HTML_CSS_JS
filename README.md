@@ -502,3 +502,4 @@
 |489| [SVG Displacement](https://github.com/xml12333/HTML_CSS_JS/tree/main/489.SVG%20Displacement)| [Demo](https://nikt.com.ua/projects/htmlCssJs/489.SVG%20Displacement/)| ![Thumbnail](489.SVG%20Displacement/img/info_thumbnail.jpg)|
 |490| [Dropdown Menu](https://github.com/xml12333/HTML_CSS_JS/tree/main/490.Dropdown%20Menu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/490.Dropdown%20Menu/)| ![Thumbnail](490.Dropdown%20Menu/img/info_thumbnail.jpg)|
 |491| [Lens Focus](https://github.com/xml12333/HTML_CSS_JS/tree/main/491.Lens%20Focus)| [Demo](https://nikt.com.ua/projects/htmlCssJs/491.Lens%20Focus/)| ![Thumbnail](491.Lens%20Focus/img/info_thumbnail.jpg)|
+|492| [Space globe](https://github.com/xml12333/HTML_CSS_JS/tree/main/492.Space%20globe)| [Demo](https://nikt.com.ua/projects/htmlCssJs/492.Space%20globe/)| ![Thumbnail](492.Space%20globe/img/info_thumbnail.jpg)|
