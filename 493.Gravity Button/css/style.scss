@@ -1,0 +1,52 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+  background-color: #111;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+}
+
+.gravityButton {
+  display: grid;
+  place-items: center;
+  width: 192px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  // border: 1px dashed #fff2;
+  
+  & > button {
+    font: inherit;
+    width: 64px;
+    aspect-ratio: 1;
+    background: none;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    transform: translate(var(--tx, 0), var(--ty, 0));
+    opacity: var(--opacity, 0.25);
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+    
+    &:hover, &:focus-visible {
+      --_fill: var(--color, #fff);
+    }
+    
+    &:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+      opacity: 1;
+    }
+  }
+}
+
+.buttonIcon {
+  width: 50%;
+  fill: var(--_fill, #fff);
+  transition: fill 0.3s;
+}
