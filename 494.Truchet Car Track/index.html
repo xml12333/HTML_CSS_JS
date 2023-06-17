@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Truchet Car Track</title>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+<!-- VertexShader code here -->
+<script id="vertexShader" type="x-shader/x-vertex">#version 300 es
+precision highp float;
+  in vec4 position;
+
+  void main() {
+    gl_Position = vec4( position );
+  }
+</script>
+
+<!-- FragmentShader code here -->
+<script id="fragmentShader" type="x-shader/x-fragment">#version 300 es
+precision highp float;
+out vec4 fragColor;
+uniform vec2 u_resolution;
+uniform float u_time;
+
+#define R           u_resolution
+#define T           u_time
+#define PI          3.14159265358
+#define PI2         6.28318530718
+
+
+// scale - set in main
+float scale = 4.;
+
+const float tc = .125; //track thickness
+const float trs = .75; //threshold for cross tile
+const float spd = .465;// speed
+
+// car params
+const vec2 bx = vec2(.165,.1);
+const vec2 bt = bx*.25;
+const vec2 bk = vec2(.1,.13);
+  
+//---------------------------------------------------------------
+float n3D(vec3 p){
+    const vec3 s = vec3(113, 57, 27);
+    vec3 ip = floor(p); p -= ip; 
+    vec4 h = vec4(0., s.yz, s.y + s.z) + dot(ip, s);
+    p = p*p*(3. - 2.*p);
+    h = mix(fract(sin(h)*43758.5453), fract(sin(h + s.x)*43758.5453), p.x);
+    h.xy = mix(h.xz, h.yw, p.y);
+    return mix(h.x, h.y, p.z); // Range: [0, 1].
+}
+//---------------------------------------------------------------
+// @iq fbm generator
+float fbm( in vec3 x) {
+    float a = 0.1,b = .5,f = 2.;
+    vec3  d = vec3(0.);
+    for (int i = 0; i < 4; ++i) {      
+        float n = n3D(f*x);
+        a += b*n;
+        b *= 0.5;
+        f *= 1.8;
+    }
+	return a;
+}
+ //---------------------------------------------------------------
+mat2 rot(float a) { return mat2(cos(a),sin(a),-sin(a),cos(a));}
+vec3 hue(float a) { return .55+.45*sin(PI*a*vec3(1,.97,.93)*vec3(0.898,0.204,0.875));}
+float hash21(vec2 a) { return fract(sin(dot(a, vec2(27.609, 47.583)))*43758.5453);}
+
+//@iq sdf
+float box( in vec2 p, in vec2 b ) {
+    vec2 d = abs(p)-b; return length(max(d,0.0)) + min(max(d.x,d.y),0.0);
+}
+
+void main() {
+    if(R.x>1200.) scale = 7.; //up scale on fullscreen
+    vec2 F = gl_FragCoord.xy;
+    vec3 C = vec3(.06,.38,.07);
+    vec3 G = vec3(.38,.29,.06);
+    
+    // set uv
+    vec2 uv = (2.*F-R.xy)/max(R.x,R.y);
+    
+    // scale + move + rotate
+    uv *= scale;
+    uv *= rot(.06*sin(T*.12));
+    uv += vec2(1.3*sin(T*.1),T*.2);
+    
+    // setup px + id and grid uv
+    float px = fwidth(uv.x); 
+    vec2 id = floor(uv);
+    vec2 q = fract(uv)-.5;
+ 
+    // hash and every other check
+    float hs = hash21(id);
+    float ck = mod(id.x+id.y,2.)*2.-1.;
+    if(hs>.5) q.x = -q.x;
+    
+    float pt = fbm(vec3(id.x,0,id.y)*2.45);
+    pt = smoothstep(.5,.8,pt);
+    C = mix(C,G,clamp(pt,0.,1.));
+    C = mix(C,C*vec3(.1,.1,0),hs*.5);
+
+    vec2 uv2 = vec2(length(q-.5),length(q+.5));
+    vec2 p = uv2.x<uv2.y? q-.5 : q+.5;
+
+    // main pattern
+    float d = length(p)-.5;
+    d = abs(d)-tc;
+
+    float d2 = abs(max(abs(q.x),abs(q.y))-.5)-.005;
+    float c = min(length(q.x)-tc,length(q.y)-tc);
+    if (hs>trs) d = c;
+
+    // moving truchet parts
+    vec2 arc = q-sign(q.x+q.y+.001)*.5;
+    float angle = atan(arc.x, arc.y);
+    float ud = length(arc);
+
+    float x = fract(3.*ck*angle/PI+T*spd);
+    float y = (ud/.5)-.5;
+
+    vec2 cid = vec2(floor(ud-(.5-tc))/(2.*tc),floor(3.*ck*angle/PI+T*spd));
+    vec3 K = hue((mod(cid.y,3.)+5.)*25.9);
+
+    // direction operation
+    if(hs<.5 ^^ ck>0.) y=1.-y;
+    
+    vec2 tuv = vec2(x,y);
+    float k = box(tuv-.5,bx)-.015; 
+    float kt= box(abs(tuv-.5)-bk,bt); 
+    float kw= box(tuv-vec2(.45,.5),vec2(.04,.07))-.02; 
+    
+    // cross track changes
+    if (hs>trs) {
+        x = fract(2.*ck*abs(q.x)-T*spd);
+        y = (q.y+.25)*2.;
+        tuv = vec2(x,y);
+        
+        y = fract(2.*ck*(abs(q.y)-.25)+T*spd);
+        x = (q.x+.25)*2.;
+        vec2 duv = vec2(x,y);
+        
+        k = min(box(tuv-.5,bx)-.015,box(duv-.5,bx.yx)-.015);
+        kt= min(box(abs(tuv-.5)-bk,bt),box(abs(duv-.5)-bk.yx,bt.yx));
+        kw= min(box(tuv-vec2(.55,.5),vec2(.04,.07))-.02,
+                box(duv-vec2(.5,.45),vec2(.07,.04))-.02 
+            ); 
+    } 
+    
+    float ct = box(q,vec2(.175))-.04;
+
+    // background tree stuff
+    vec2 iv = floor(uv*8.)+id;
+    vec2 vv = fract(uv*8.)-.5;
+    float xs = fbm(vec3(iv.x,0,iv.y)*.075);
+          xs = smoothstep(.5,.8,xs);
+    float cy = length(vv)-(xs*.35);
+    
+    // lines
+    d2 = smoothstep(px,-px,d2-.001);
+    C = mix(C,vec3(.1,.05,.02),d2);
+
+    // show trees if value is high enough
+    if (xs>.001) {
+        xs = fbm(vec3(iv.x,0,iv.y)*3.);
+        vec3 T = mix(C,G,mod(xs*32.2,1.));
+        C = mix(C,T*.25,smoothstep(.025+px,-px,cy-.1));
+        C = mix(C,T,smoothstep(px,-px,cy));
+    } 
+
+    // track shadow
+    C = mix(C,C*.45,smoothstep(.05+px,-px,d-.035));
+
+    // main path
+    C = mix(C,vec3(0),smoothstep(px,-px,abs(d)-.015));
+    C = mix(C,vec3(.1),smoothstep(px,-px,d));
+
+    // cars
+    C = mix(C,C*.6,smoothstep(.05+px,-px,k-.02));
+    C = mix(C,vec3(0),smoothstep(px,-px,kt-.02));
+    C = mix(C,vec3(0),smoothstep(px,-px,abs(k)-.02));
+    C = mix(C,K,smoothstep(px,-px,k));
+    C = mix(C,C*.7,smoothstep(.04+px,-px,kw-.01));
+    C = mix(C,vec3(.9),smoothstep(px,-px,kw));
+
+    if (hs>trs) {
+        C = mix(C,vec3(0),smoothstep(px,-px,abs(ct)-.015));
+        C = mix(C,C*.45,smoothstep(.05+px,-px,ct-.025));
+        C = mix(C,vec3(.2),smoothstep(px,-px,ct));
+    }
+    
+    C = pow(C,vec3(.4545));
+    fragColor = vec4(C,1.);
+}
+
+</script>
+    <script src="https://jhancock532.github.io/twgl.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -504,3 +504,4 @@
 |491| [Lens Focus](https://github.com/xml12333/HTML_CSS_JS/tree/main/491.Lens%20Focus)| [Demo](https://nikt.com.ua/projects/htmlCssJs/491.Lens%20Focus/)| ![Thumbnail](491.Lens%20Focus/img/info_thumbnail.jpg)|
 |492| [Space globe](https://github.com/xml12333/HTML_CSS_JS/tree/main/492.Space%20globe)| [Demo](https://nikt.com.ua/projects/htmlCssJs/492.Space%20globe/)| ![Thumbnail](492.Space%20globe/img/info_thumbnail.jpg)|
 |493| [Gravity Button](https://github.com/xml12333/HTML_CSS_JS/tree/main/493.Gravity%20Button)| [Demo](https://nikt.com.ua/projects/htmlCssJs/493.Gravity%20Button/)| ![Thumbnail](493.Gravity%20Button/img/info_thumbnail.jpg)|
+|494| [Truchet Car Track](https://github.com/xml12333/HTML_CSS_JS/tree/main/494.Truchet%20Car%20Track)| [Demo](https://nikt.com.ua/projects/htmlCssJs/494.Truchet%20Car%20Track/)| ![Thumbnail](494.Truchet%20Car%20Track/img/info_thumbnail.jpg)|
