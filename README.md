@@ -506,3 +506,4 @@
 |493| [Gravity Button](https://github.com/xml12333/HTML_CSS_JS/tree/main/493.Gravity%20Button)| [Demo](https://nikt.com.ua/projects/htmlCssJs/493.Gravity%20Button/)| ![Thumbnail](493.Gravity%20Button/img/info_thumbnail.jpg)|
 |494| [Truchet Car Track](https://github.com/xml12333/HTML_CSS_JS/tree/main/494.Truchet%20Car%20Track)| [Demo](https://nikt.com.ua/projects/htmlCssJs/494.Truchet%20Car%20Track/)| ![Thumbnail](494.Truchet%20Car%20Track/img/info_thumbnail.jpg)|
 |495| [Turning pages CSS](https://github.com/xml12333/HTML_CSS_JS/tree/main/495.Turning%20pages%20CSS)| [Demo](https://nikt.com.ua/projects/htmlCssJs/495.Turning%20pages%20CSS/)| ![Thumbnail](495.Turning%20pages%20CSS/img/info_thumbnail.jpg)|
+|496| [CSS Flowers](https://github.com/xml12333/HTML_CSS_JS/tree/main/496.CSS%20Flowers)| [Demo](https://nikt.com.ua/projects/htmlCssJs/496.CSS%20Flowers/)| ![Thumbnail](496.CSS%20Flowers/img/info_thumbnail.jpg)|
