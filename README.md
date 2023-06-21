@@ -508,3 +508,4 @@
 |495| [Turning pages CSS](https://github.com/xml12333/HTML_CSS_JS/tree/main/495.Turning%20pages%20CSS)| [Demo](https://nikt.com.ua/projects/htmlCssJs/495.Turning%20pages%20CSS/)| ![Thumbnail](495.Turning%20pages%20CSS/img/info_thumbnail.jpg)|
 |496| [CSS Flowers](https://github.com/xml12333/HTML_CSS_JS/tree/main/496.CSS%20Flowers)| [Demo](https://nikt.com.ua/projects/htmlCssJs/496.CSS%20Flowers/)| ![Thumbnail](496.CSS%20Flowers/img/info_thumbnail.jpg)|
 |497| [Button](https://github.com/xml12333/HTML_CSS_JS/tree/main/497.Button)| [Demo](https://nikt.com.ua/projects/htmlCssJs/497.Button/)| ![Thumbnail](497.Button/img/info_thumbnail.jpg)|
+|498| [Al Inside](https://github.com/xml12333/HTML_CSS_JS/tree/main/498.Al%20Inside)| [Demo](https://nikt.com.ua/projects/htmlCssJs/498.Al%20Inside/)| ![Thumbnail](498.Al%20Inside/img/info_thumbnail.jpg)|
