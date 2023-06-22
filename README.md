@@ -509,3 +509,4 @@
 |496| [CSS Flowers](https://github.com/xml12333/HTML_CSS_JS/tree/main/496.CSS%20Flowers)| [Demo](https://nikt.com.ua/projects/htmlCssJs/496.CSS%20Flowers/)| ![Thumbnail](496.CSS%20Flowers/img/info_thumbnail.jpg)|
 |497| [Button](https://github.com/xml12333/HTML_CSS_JS/tree/main/497.Button)| [Demo](https://nikt.com.ua/projects/htmlCssJs/497.Button/)| ![Thumbnail](497.Button/img/info_thumbnail.jpg)|
 |498| [Al Inside](https://github.com/xml12333/HTML_CSS_JS/tree/main/498.Al%20Inside)| [Demo](https://nikt.com.ua/projects/htmlCssJs/498.Al%20Inside/)| ![Thumbnail](498.Al%20Inside/img/info_thumbnail.jpg)|
+|499| [Emoji Art Maker](https://github.com/xml12333/HTML_CSS_JS/tree/main/499.Emoji%20Art%20Maker)| [Demo](https://nikt.com.ua/projects/htmlCssJs/499.Emoji%20Art%20Maker/)| ![Thumbnail](499.Emoji%20Art%20Maker/img/info_thumbnail.jpg)|
