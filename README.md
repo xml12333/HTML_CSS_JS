@@ -512,3 +512,4 @@
 |499| [Emoji Art Maker](https://github.com/xml12333/HTML_CSS_JS/tree/main/499.Emoji%20Art%20Maker)| [Demo](https://nikt.com.ua/projects/htmlCssJs/499.Emoji%20Art%20Maker/)| ![Thumbnail](499.Emoji%20Art%20Maker/img/info_thumbnail.jpg)|
 |500| [3D Globe](https://github.com/xml12333/HTML_CSS_JS/tree/main/500.3D%20Globe)| [Demo](https://nikt.com.ua/projects/htmlCssJs/500.3D%20Globe/)| ![Thumbnail](500.3D%20Globe/img/info_thumbnail.jpg)|
 |501| [Transrofm CSS](https://github.com/xml12333/HTML_CSS_JS/tree/main/501.Transrofm%20CSS)| [Demo](https://nikt.com.ua/projects/htmlCssJs/501.Transrofm%20CSS/)| ![Thumbnail](501.Transrofm%20CSS/img/info_thumbnail.jpg)|
+|502| [Animated Card](https://github.com/xml12333/HTML_CSS_JS/tree/main/502.Animated%20Card)| [Demo](https://nikt.com.ua/projects/htmlCssJs/502.Animated%20Card/)| ![Thumbnail](502.Animated%20Card/img/info_thumbnail.jpg)|
