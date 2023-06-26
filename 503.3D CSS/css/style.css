@@ -1,0 +1,114 @@
+:root {
+  --duration: 7.25s;  
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+@supports not (min-block-size: 100dvb) {
+  :where(html) {
+    block-size: 100%;
+  }
+}
+
+:where(body) {
+  min-block-size: 100vh;
+  min-block-size: 100dvb;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  perspective: 1000px;
+}
+
+.container {
+  inline-size: 60vmin;
+  aspect-ratio: 400 / 355;
+  position: absolute;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  animation: spin var(--duration) linear infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotateX(18deg);
+  }
+  to {
+    transform: rotateX(18deg) rotateY(360deg);
+  }
+}
+
+.container > * {
+  background-size: 100%;
+  position: absolute;
+}
+.face::after,
+.side::after {
+  content: "";
+  opacity: 0;
+  background-color: white;
+  display: block;
+  position: absolute;
+  inset-inline: 0;
+  inset-block: 0;
+  animation: shine var(--duration) linear infinite;
+}
+@keyframes shine {
+  0% {
+    opacity: 0;
+  }
+  35%, 65% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.face {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.face--front {
+  background-color: rebeccapurple;
+  background-image: url("https://assets.codepen.io/17949/front.png");
+  transform: translateZ(calc(2.5vmin - 1px));
+}
+.face--back {
+  background-color: rebeccapurple;
+  background-image: url("https://assets.codepen.io/17949/back.png");
+  transform: translateZ(calc(-2.5vmin + 1px)) rotateY(180deg);
+}
+.face--back::after {
+  animation-delay: calc(var(--duration) / -2);
+}
+
+.side {
+  inline-size: 5vmin;
+  block-size: 100%;
+}
+.side--start {
+  background-color: rebeccapurple;
+  background-image: url("https://assets.codepen.io/17949/side.png");
+  transform: rotateY(-90deg) translateZ(2.5vmin);
+}
+.side--start::after {
+  animation-delay: calc(var(--duration) / -4 * 3);
+}
+.side--end {
+  background-color: #eeeeee;
+  inset-inline-end: 0;
+  transform: rotateY(90deg) translateZ(2.5vmin);
+}
+.side--end::after {
+  animation-delay: calc(var(--duration) / -4);
+}
+
+.bottom {
+  inline-size: 100%;
+  block-size: 5vmin;
+  background-color: #eeeeee;
+  inset-block-end: 0;
+  transform: rotateX(90deg) translateZ(calc(-2.5vmin + 1px));
+}
