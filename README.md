@@ -514,3 +514,4 @@
 |501| [Transrofm CSS](https://github.com/xml12333/HTML_CSS_JS/tree/main/501.Transrofm%20CSS)| [Demo](https://nikt.com.ua/projects/htmlCssJs/501.Transrofm%20CSS/)| ![Thumbnail](501.Transrofm%20CSS/img/info_thumbnail.jpg)|
 |502| [Animated Card](https://github.com/xml12333/HTML_CSS_JS/tree/main/502.Animated%20Card)| [Demo](https://nikt.com.ua/projects/htmlCssJs/502.Animated%20Card/)| ![Thumbnail](502.Animated%20Card/img/info_thumbnail.jpg)|
 |503| [3D CSS](https://github.com/xml12333/HTML_CSS_JS/tree/main/503.3D%20CSS)| [Demo](https://nikt.com.ua/projects/htmlCssJs/503.3D%20CSS/)| ![Thumbnail](503.3D%20CSS/img/info_thumbnail.jpg)|
+|504| [3D Color Selector](https://github.com/xml12333/HTML_CSS_JS/tree/main/504.3D%20Color%20Selector)| [Demo](https://nikt.com.ua/projects/htmlCssJs/504.3D%20Color%20Selector/)| ![Thumbnail](504.3D%20Color%20Selector/img/info_thumbnail.jpg)|
