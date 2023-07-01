@@ -115,7 +115,33 @@ img {
 }
 
 /*=============== RESUME ===============*/
+.resume__title{
+  font-size: var(--normal-font-size);
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: .25rem;
+}
 
+.resume__title i {
+  font-size: 1.5rem;
+}
+.resume__data {
+  display: grid;
+  row-gap: .5rem;
+  padding-left: 1.5rem;
+  font-size: var(--small-font-size);
+}
+
+.resume__button-link{
+  width: max-content;
+  color: var(--text-color);
+  display: inline-flex;
+  column-gap: .25rem;
+  font-weight: var(--font-semi-bold);
+}
+.resume__button-link:hover{
+  text-decoration: underline;
+}
 /*=============== HEADER & NAV ===============*/
 .header {
   position: fixed;
@@ -262,7 +288,21 @@ img {
   font-weight: var(--font-semi-bold);
 }
 /*=============== SKILLS ===============*/
-
+.skills__content,
+.skills__list{
+  display: grid;
+}
+.skills__content{
+  grid-template-columns: repeat(2, max-content);
+  align-items: baseline;
+  column-gap: 3rem;
+}
+.skills__list{
+  row-gap: 1rem;
+}
+.skills__list li{
+  margin: 0;
+}
 /*=============== EDUCATION ===============*/
 /* To add code or make changes to the section */
 
