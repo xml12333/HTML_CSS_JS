@@ -124,6 +124,7 @@ img {
 
 .resume__title i {
   font-size: 1.5rem;
+  font-weight: initial;
 }
 .resume__data {
   display: grid;
@@ -316,7 +317,30 @@ img {
 /* To add code or make changes to the section */
 
 /*=============== FOOTER ===============*/
-
+.footer{
+  padding-block: 2.5rem 8rem;
+}
+.footer__container{
+  border-top: 2px solid var(--title-color);
+  padding-top: 1.5rem;
+  grid-template-columns: repeat(2, max-content);
+  justify-content: space-between;
+  row-gap: 2.5rem;
+}
+.footer__title{
+  font-size: var(--normal-font-size);
+  margin-bottom: .5rem;
+}
+.footer__info,
+.footer__link{
+  font-size: var(--small-font-size);
+}
+.footer__link{
+  color: var(--text-color);
+}
+.footer__link:hover{
+  text-decoration: underline;
+}
 /*=============== SCROLL BAR ===============*/
 
 /*=============== SCROLL UP ===============*/
