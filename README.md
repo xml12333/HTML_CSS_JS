@@ -516,3 +516,4 @@
 |503| [3D CSS](https://github.com/xml12333/HTML_CSS_JS/tree/main/503.3D%20CSS)| [Demo](https://nikt.com.ua/projects/htmlCssJs/503.3D%20CSS/)| ![Thumbnail](503.3D%20CSS/img/info_thumbnail.jpg)|
 |504| [3D Color Selector](https://github.com/xml12333/HTML_CSS_JS/tree/main/504.3D%20Color%20Selector)| [Demo](https://nikt.com.ua/projects/htmlCssJs/504.3D%20Color%20Selector/)| ![Thumbnail](504.3D%20Color%20Selector/img/info_thumbnail.jpg)|
 |505| [Add Flowers](https://github.com/xml12333/HTML_CSS_JS/tree/main/505.Add%20Flowers)| [Demo](https://nikt.com.ua/projects/htmlCssJs/505.Add%20Flowers/)| ![Thumbnail](505.Add%20Flowers/img/info_thumbnail.jpg)|
+|506| [Resume Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/506.Resume%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/506.Resume%20Website/)| ![Thumbnail](506.Resume%20Website/img/info_thumbnail.jpg)|

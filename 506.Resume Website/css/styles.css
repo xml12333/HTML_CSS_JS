@@ -406,7 +406,128 @@ body.dark-theme{
 }
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-
+@media screen and (max-width: 350px){
+  .container{
+    margin-inline: 1rem;
+  }
+  .nav__menu{
+    padding-inline: 2rem;
+  }
+  .home__star-1{
+    left: 0;
+  }
+  .home__star-2{
+    right: -0.5rem;
+  }
+  .skills__content{
+    grid-template-columns: max-content;
+    row-gap: 1rem;
+  }
+  .footer__container{
+    grid-template-columns: max-content;
+    row-gap: 1.5rem;
+  }
+}
 /* For medium devices */
-
+@media screen and (min-width: 576px){
+  .nav__menu{
+    width: 320px;
+    margin-inline: auto;
+  }
+  .footer__container{
+    grid-template-columns: repeat(3, max-content);
+  }
+  .show-scroll{
+    bottom: 3rem;
+  }
+}
+@media screen and (min-width: 768px){
+  .section{
+    padding-top: 2.5rem;
+  }
+  .section__title{
+    margin: 0 0 2rem;
+  }
+  .resume__main{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .resume__left,
+  .resume__right{
+    padding-inline: 1.5rem;
+  }
+  .header{
+    position: initial;
+  }
+  .nav{
+    margin: 0;
+  }
+  .nav__menu,
+  .scrollup{
+    display: none;
+  }
+  .home{
+    grid-column: 1/3;
+  }
+  .home__container{
+    padding-top: 3rem;
+  }
+  .footer{
+    padding-block: 2.5rem 2rem;
+  }
+}
 /* For large devices */
+@media screen and (min-width: 1024px) {
+  body{
+    background-color: var(--body-color);
+    margin-block: 3rem;
+  }
+  .resume{
+    background-color: var(--container-color);
+    box-shadow: 0 0 48px hsla(40,48%,12%,.2);
+    margin-inline: auto;
+    transition: background .4s;
+  }
+  .resume__main{
+    grid-template-columns: 376px 1fr;
+  }
+  .dark-theme .resume{
+    box-shadow: 0 0 48px hsla(40, 48%, 4%, 0.4);
+  }
+  .nav{
+    height: calc(var(--header-height) + 1.5rem);
+    margin-inline: 1.5rem;
+  }
+  .home__name{
+    margin-bottom: .5rem;
+  }
+  .home__perfil{
+    width: 280px;
+    height: 320px;
+  }
+  .home__img{
+    width: 245px;
+  }
+  .home__star-1,
+  .home__star-2{
+    width: 70px;
+  }
+  .home__star-1{
+    left: -10rem;
+  }
+  .home__star-2{
+    right: -8.5rem;
+    bottom: 2rem;
+  }
+  .home__profession{
+    transform: translateY(-2rem);
+  }
+  .certificates__container,
+  .references__container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer__container{
+    margin-inline: 1.5rem;
+    padding-top: 2rem;
+  }
+}
