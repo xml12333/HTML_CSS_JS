@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+$black: #212121;
+$white: #efefef;
+$pearl: #fff;
+$purple: #e8d1f6;
+$blue: #29639c;
+$green: #00BCD4;
+$pink: #b73b3b;
+
+* {
+  box-sizing: border-box;
+  cursor: none;
+}
+html,
+body {
+  background: $white;
+  color: $black;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  height: 100%;
+}
+::selection {
+  background: $white;
+  color: $black;
+  mix-blend-mode: difference;
+}
+::-moz-selection {
+  background: $white;
+  color: $black;
+}
+h1, h2, h3, h4, h5 {
+  font-weight: 900;
+}
+h1 {
+  font-size: 3em;
+}
+.hero-title {
+  font-size: 8vw;
+  line-height: 1em;
+  font-weight: 900;
+}
+.nav-title {
+  font-size: 4em;
+}
+a {
+  transition: all .25s ease-in-out;
+}
+.white, a.white {
+  color: $white;
+}
+.black {
+  color: $black;
+}
+.pearl, a.pearl {
+  color: $pearl;
+}
+.green, a.green {
+  color: $green;
+}
+.pink {
+  color: $pink;
+}
+.blend {
+  mix-blend-mode: difference !important;
+  color: $white;
+  position: relative;
+  z-index: 2;
+}
+.bg-black {
+  background-color: $black;
+}
+.bg-green {
+  background-color: $green;
+}
+.bg-topographic {
+  background-image: url(https://assets.codepen.io/319606/bg-topographic.svg);
+  background-size: 5000px;
+  opacity: .1;
+  pointer-events: none;
+}
+.custom-cursor {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: $green;
+  transition: transform 350ms ease;
+  transform: translate(-50%, -50%) scale(.3);
+  z-index: 1000;
+}
+.custom-cursor--link {
+  transform: translate(-50%, -50%) scale(1.25);
+}
+.swoosh {
+  background-image: url('https://assets.codepen.io/319606/2023-logo-swoosh.svg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  top: 20px;
+  left: 18px;
+  width: 230px;
+  height: 45px;
+  z-index: 1000;
+  background-position: left;
+}
+.sticky-nav {
+  top: 20px;
+  left: 20px;
+  position: fixed;
+  width: calc(100% - 40px);
+  z-index: 999;
+  
+  &.difference {
+    background-repeat: no-repeat;
+    background-size: contain;
+    mix-blend-mode: difference;
+    // filter: invert(1);
+    
+    #nav-btn {
+      filter: invert(0);
+    }
+  }
+  
+  .logo {
+    width: 220px;
+    height: 45px;
+    background-image: url(https://assets.codepen.io/319606/2023-logo-white.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: left;
+    z-index: 998;
+  }
+  
+  #nav-btn {
+    width: 60px;
+    z-index: 999;
+    filter: invert(1);
+    
+    .icon {
+      position: relative;
+      width: 100%; 
+      height: 100%;
+      fill: none;
+      stroke-width: 8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      // cursor: pointer;
+      stroke: #fff;
+    }
+  }
+  
+}
+
+
+#takeover-nav {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  left: 0;
+  top: -200%;
+  transition: all .5s ease-in-out;
+  z-index: 996;
+  
+  &.shown {
+    top: 0;
+  }
+  
+  .nav-col {
+    min-height: 100vh;
+    
+    a {
+      color: $white;
+      
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+  
+  .nav-contact {
+    
+    .content {
+      max-width: 700px;
+    }
+  }
+  
+  .nav-items {
+    font-size: 2.5em;
+    font-weight: 700;
+  }
+  
+  .contact-items {
+    font-size: 1.25em;
+    font-weight: 700;
+    
+    a:hover {
+      color: $green;
+    }
+  }
+  
+  .social {
+    font-size: .75em;
+    
+    a {
+      color: $green;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}
+
+.gradient-overlay {
+  bottom: 0;
+  height: 50%;
+  background: -moz-linear-gradient(top,  rgba(33,33,33,0) 0%, rgba(33,33,33,1) 50%);
+  background: -webkit-linear-gradient(top,  rgba(33,33,33,0) 0%,rgba(33,33,33,1) 50%);
+  background: linear-gradient(to bottom,  rgba(33,33,33,0) 0%,rgba(33,33,33,1) 50%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00212121', endColorstr='#212121',GradientType=0 );
+  z-index: 1;
+  border-bottom-right-radius: 15vw;
+  pointer-events: none;
+}
+.video-wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-bottom-right-radius: 15vw;
+  pointer-events: none;
+}
+#video-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  background-position: center center;
+  background-size: cover;
+  object-fit: cover;
+  transform: rotate(180deg);
+}
+
+section {
+  min-height: 800px;
+  height: 800px;
+  width: 100%;
+  
+  &.hero {
+    background-color: $black;
+    border-bottom-right-radius: 15vw;
+    position: relative;
+    
+    &:before {
+      content: "";
+      background-color: $black;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 15vw;
+      height: 15vw;
+    }
+    
+    &:after {
+      content: "";
+      background-color: $white;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 15vw;
+      height: 15vw;
+      border-top-left-radius: 15vw;
+    }
+  }
+  
+  &.two {
+    background-color: $white;
+  }
+  
+  &.three {
+    background-color: $purple;
+  }
+  
+  &.four {
+    background-color: $green;
+  }
+  &.five {
+    background-color: $blue;
+  }
+}
+
+
+@media screen and (min-width: 1200px) {
+  .hero {
+    height: 75vh;
+  
+    #video-bg {
+      object-position: 0 5vw;
+    }
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .hero {
+    
+    #video-bg {
+      object-position: 0 15vw;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #takeover-nav {
+    .nav-menu {
+      min-height: 500px;
+      
+      a {
+        color: $black;
+        
+        &:hover {
+          color: $white
+        }
+      }
+    }
+    .nav-contact {
+      min-height: 600px;
+      
+      .nav-title {
+        font-size: 2.5em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  header {
+    .swoosh {
+      width: 165px;
+      height: 35px;
+      top: 10px;
+    }
+    .sticky-nav {
+      top: 10px;
+      
+      .logo {
+        width: 150px;
+        height: 35px;
+      }
+      
+      #nav-btn {
+        width: 40px;
+      }
+    }
+    #takeover-nav {
+      .contact-items {
+        font-size: 1em;
+      }
+    }
+  }
+  .hero {
+    min-height: 600px;
+    height: 600px;
+    
+    .hero-title {
+      font-size: 12vw;
+    }
+    
+    #video-bg {
+      object-position: 0 30vw;
+    }
+  }
+}

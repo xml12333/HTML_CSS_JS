@@ -517,3 +517,4 @@
 |504| [3D Color Selector](https://github.com/xml12333/HTML_CSS_JS/tree/main/504.3D%20Color%20Selector)| [Demo](https://nikt.com.ua/projects/htmlCssJs/504.3D%20Color%20Selector/)| ![Thumbnail](504.3D%20Color%20Selector/img/info_thumbnail.jpg)|
 |505| [Add Flowers](https://github.com/xml12333/HTML_CSS_JS/tree/main/505.Add%20Flowers)| [Demo](https://nikt.com.ua/projects/htmlCssJs/505.Add%20Flowers/)| ![Thumbnail](505.Add%20Flowers/img/info_thumbnail.jpg)|
 |506| [Resume Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/506.Resume%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/506.Resume%20Website/)| ![Thumbnail](506.Resume%20Website/img/info_thumbnail.jpg)|
+|507| [Blend-Mode Sticky Nav-Hero](https://github.com/xml12333/HTML_CSS_JS/tree/main/507.Blend-Mode%20Sticky%20Nav-Hero)| [Demo](https://nikt.com.ua/projects/htmlCssJs/507.Blend-Mode%20Sticky%20Nav-Hero/)| ![Thumbnail](507.Blend-Mode%20Sticky%20Nav-Hero/img/info_thumbnail.jpg)|
