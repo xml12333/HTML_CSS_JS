@@ -1,0 +1,17 @@
+div("id"="overall")
+  
+  div("id"="introContent")
+    
+    h1 Simple Generative Art
+    
+    h2 by Greyson Alder
+    
+    p Uses an HTML preprocessor (Pug) alongside some simple randomised styles (generated and assigned using JS)
+    
+    button("id"="newGenBtn" onClick="generateBlocks()") New Pattern
+    
+  div("id"="grid__container")
+    - n = 0;
+    while n < 100
+      - ++n
+      div(class="grid__item") |
