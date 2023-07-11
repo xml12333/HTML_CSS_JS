@@ -523,3 +523,4 @@
 |510| [3D Text](https://github.com/xml12333/HTML_CSS_JS/tree/main/510.3D%20Text)| [Demo](https://nikt.com.ua/projects/htmlCssJs/510.3D%20Text/)| ![Thumbnail](510.3D%20Text/img/info_thumbnail.jpg)|
 |511| [SVG Grid Pointer Distance](https://github.com/xml12333/HTML_CSS_JS/tree/main/511.SVG%20Grid%20Pointer%20Distance)| [Demo](https://nikt.com.ua/projects/htmlCssJs/511.SVG%20Grid%20Pointer%20Distance/)| ![Thumbnail](511.SVG%20Grid%20Pointer%20Distance/img/info_thumbnail.jpg)|
 |512| [Transitional Color Picker](https://github.com/xml12333/HTML_CSS_JS/tree/main/512.Transitional%20Color%20Picker)| [Demo](https://nikt.com.ua/projects/htmlCssJs/512.Transitional%20Color%20Picker/)| ![Thumbnail](512.Transitional%20Color%20Picker/img/info_thumbnail.jpg)|
+|513| [Sidebar](https://github.com/xml12333/HTML_CSS_JS/tree/main/513.Sidebar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/513.Sidebar/)| ![Thumbnail](513.Sidebar/img/info_thumbnail.jpg)|
