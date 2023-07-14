@@ -526,3 +526,4 @@
 |513| [Sidebar](https://github.com/xml12333/HTML_CSS_JS/tree/main/513.Sidebar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/513.Sidebar/)| ![Thumbnail](513.Sidebar/img/info_thumbnail.jpg)|
 |514| [Coffee](https://github.com/xml12333/HTML_CSS_JS/tree/main/514.Coffee)| [Demo](https://nikt.com.ua/projects/htmlCssJs/514.Coffee/)| ![Thumbnail](514.Coffee/img/info_thumbnail.jpg)|
 |515| [Riveting Refractions](https://github.com/xml12333/HTML_CSS_JS/tree/main/515.Riveting%20Refractions)| [Demo](https://nikt.com.ua/projects/htmlCssJs/515.Riveting%20Refractions/)| ![Thumbnail](515.Riveting%20Refractions/img/info_thumbnail.jpg)|
+|516| [Path Generator](https://github.com/xml12333/HTML_CSS_JS/tree/main/516.Path%20Generator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/516.Path%20Generator/)| ![Thumbnail](516.Path%20Generator/img/info_thumbnail.jpg)|
