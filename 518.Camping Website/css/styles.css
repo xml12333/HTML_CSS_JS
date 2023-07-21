@@ -167,22 +167,194 @@ img {
 }
 
 /* Change background header */
-
+.bg-header{
+  box-shadow: 0 1px 16px hsla(210,55%,24%, .12);
+}
 
 /*=============== HOME ===============*/
-
-
+.home{
+  position: relative;
+}
+.home__container{
+  padding-top: 8rem;
+  height: 100vh;
+}
+.home__content{
+  position: relative;
+  z-index: 2;
+}
+.home__data{
+  display: grid;
+  row-gap: .5rem;
+}
+.home__subtitle{
+  font-size: var(--small-font-size);
+  color: var(--first-color);
+  letter-spacing: 3px;
+}
+.home__title{
+  font-size: var(--biggest-font-size);
+  font-family: var(--second-font);
+  color: var(--title-color);
+}
+.home__description{
+  margin-bottom: 2.5rem;
+}
+.home__button{
+  display: inline-block;
+  background: var(--gradient-color);
+  color: var(--white-color);
+  width: max-content;
+  padding: 1rem 2rem;
+  border-radius: .75rem;
+  box-shadow: 0 24px 32px hsla(210,54%, 24%, .3);
+}
+.home__bird-1,
+.home__bird-2{
+  position: absolute;
+  width: 60px;
+}
+.home__bird-1{
+  bottom: -6rem;
+  rotate: -30deg;
+}
+.home__bird-2{
+  top: 4.5rem;
+  right: 0;
+  rotate: -15deg;
+}
+.home__images{
+  z-index: 1;
+}
+.home__images img{
+  position: absolute;
+  max-width: initial;
+  width: 600px;
+  left: -7rem;
+  bottom: 0;
+}
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-
+@media screen and (max-width: 305px) {
+  .container{
+    margin-inline: 1rem;
+  }
+  .home__title{
+    font-size: 2rem;
+  }
+}
 
 /* For taller devices */
-
+@media screen and (min-width: 376px) and (min-height: 800px) {
+  .home__container{
+    padding-top: 10rem;
+  }
+  .home__images img{
+    width: 700px;
+    left: -12rem;
+  }
+}
 
 /* For medium devices */
-
+@media screen and (min-width: 480px)  {
+  .home__content{
+    max-width: 305px;
+  }
+  .home__bird-2{
+    right: -3rem;
+  }
+  .home__images img{
+    width: initial;
+    left: 0;
+  }
+}
 
 /* For large devices */
+@media screen and (min-width: 1023px)  {
+  .nav{
+    height: calc(var(--header-height) + 2rem);
+    column-gap: 4rem;
+  }
+  .nav__toggle,
+  .nav__close{
+    display: none;
+  }
+  .nav__menu{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav__list{
+    flex-direction: row;
+    column-gap: 5rem;
+  }
+  .nav__buttons{
+    flex-direction: row;
+    column-gap: 3rem;
+  }
+  .nav__logo{
+    width: 48px;
+  }
+  .home__content{
+    max-width: 550px;
+  }
+  .home__data{
+    row-gap: 1rem;
+  }
+  .home__subtitle{
+    font-size: var(--normal-font-size);
+  }
+  .home__description{
+    margin-bottom: 3rem;
+  }
 
+}
+
+@media screen and (min-width: 1120px)  {
+  .container{
+    margin-inline: auto;
+  }
+}
+@media screen and (min-width: 1300px)  {
+  .home__container{
+    height: 950px;
+    padding-top: 10rem;
+  }
+  .home__bird-1,
+  .home__bird-2{
+    width: 80px;
+  }
+  .home__bird-1{
+    bottom: -7rem;
+    left: -7rem;
+  }
+  .home__bird-2{
+    top: 0;
+    right: -6rem;
+  }
+  .home__images img{
+    bottom: -3rem;
+  }
+  ::-webkit-scrollbar{
+    width: 0.6rem;
+    border-radius: .5rem;
+    background-color: hsl(220, 24%, 15%);
+  }
+  
+  ::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: hsl(220, 24%, 25%);
+  }
+}
 
 /* For 2K resolutions (2048 x 1152) */
+@media screen and (min-width: 2048px)  {
+  .container{
+    max-width: 1300px;
+  }
+  .home__container{
+    height: 1200px;
+    padding-top: 15rem;
+  }
+}
