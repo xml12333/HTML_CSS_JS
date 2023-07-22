@@ -529,3 +529,4 @@
 |516| [Path Generator](https://github.com/xml12333/HTML_CSS_JS/tree/main/516.Path%20Generator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/516.Path%20Generator/)| ![Thumbnail](516.Path%20Generator/img/info_thumbnail.jpg)|
 |517| [Fluid cursor webgl](https://github.com/xml12333/HTML_CSS_JS/tree/main/517.Fluid%20cursor%20webgl)| [Demo](https://nikt.com.ua/projects/htmlCssJs/517.Fluid%20cursor%20webgl/)| ![Thumbnail](517.Fluid%20cursor%20webgl/img/info_thumbnail.jpg)|
 |518| [Camping Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/518.Camping%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/518.Camping%20Website/)| ![Thumbnail](518.Camping%20Website/img/info_thumbnail.jpg)|
+|519| [Background Effects](https://github.com/xml12333/HTML_CSS_JS/tree/main/519.Background%20Effects)| [Demo](https://nikt.com.ua/projects/htmlCssJs/519.Background%20Effects/)| ![Thumbnail](519.Background%20Effects/img/info_thumbnail.jpg)|
