@@ -1,0 +1,57 @@
+body {
+    --pixel-number: 400;
+    --pixel-size: 4px;
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+span {
+    background-color: var(--color);
+    opacity: 0;
+    outline: 1px solid var(--color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    translate: 0 0;
+    transition: opacity 0.5s ease-in, translate 0.5s ease-out;
+    height: var(--pixel-size);
+    width: var(--pixel-size);
+}
+
+span.red {
+    --color: #f25022;
+}
+
+span.green {
+    --color: #7fba00;
+}
+
+span.blue {
+    --color: #00a4ef;
+}
+
+span.yellow {
+    --color: #ffb900;
+}
+
+span.animate {
+    opacity: 1;
+    translate: var(--left) var(--top);
+}
+
+.microsoft-logo {
+    display: grid;
+    gap: 6px;
+    grid-template-columns: repeat(2, calc(var(--pixel-size) * 20));
+    grid-template-rows: repeat(2, calc(var(--pixel-size) * 20));
+}
+
+.microsoft-logo > div {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
