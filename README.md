@@ -535,3 +535,4 @@
 |522| [Custom Buttons](https://github.com/xml12333/HTML_CSS_JS/tree/main/522.Custom%20Buttons)| [Demo](https://nikt.com.ua/projects/htmlCssJs/522.Custom%20Buttons/)| ![Thumbnail](522.Custom%20Buttons/img/info_thumbnail.jpg)|
 |523| [Matter JS Physics](https://github.com/xml12333/HTML_CSS_JS/tree/main/523.Matter%20JS%20Physics)| [Demo](https://nikt.com.ua/projects/htmlCssJs/523.Matter%20JS%20Physics/)| ![Thumbnail](523.Matter%20JS%20Physics/img/info_thumbnail.jpg)|
 |524| [Inside an Atom](https://github.com/xml12333/HTML_CSS_JS/tree/main/524.Inside%20an%20Atom)| [Demo](https://nikt.com.ua/projects/htmlCssJs/524.Inside%20an%20Atom/)| ![Thumbnail](524.Inside%20an%20Atom/img/info_thumbnail.jpg)|
+|525| [Decode text animation](https://github.com/xml12333/HTML_CSS_JS/tree/main/525.Decode%20text%20animation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/525.Decode%20text%20animation/)| ![Thumbnail](525.Decode%20text%20animation/img/info_thumbnail.jpg)|
