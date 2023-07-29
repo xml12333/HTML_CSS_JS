@@ -1,0 +1,84 @@
+body {
+  background-color: #c4c5c7;
+  padding: 2rem;
+}
+ol, ol > li {
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box;
+}
+ol {
+  width: min(400px, 100% - 2rem);
+  margin-inline: auto;
+  list-style: none;
+  display: grid;
+  font-family: system-ui, sans-serif;
+  color: white;
+  counter-reset: liCount;
+}
+ol > li {
+  --number-size: 3rem;
+  --padding-inline: 2.5rem;
+  --padding-block: 0.5rem;
+  margin-block: var(--padding-block);
+  padding: var(--padding-block) var(--padding-inline);
+  background-color: var(--accent-color);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-auto-flow: dense;
+  align-items: center;
+  gap: calc(1rem + var(--padding-block));
+  border-radius: 100vmax;
+  box-shadow: 
+    inset 0.15rem 0.15rem hsl(0 0% 0% / .125),
+    inset 0.5rem 0.5rem 1rem hsl(0 0% 0% / .5),
+    inset -0.15rem -0.15rem hsl(0 0% 100% / .75);
+  position: relative;
+  isolation: isolate;
+  counter-increment: liCount;
+}
+ol > li::before {
+  content: counter(liCount);
+  font-size: calc(var(--number-size) / 2);
+  color: var(--accent-color);
+  width: var(--number-size);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 100vmax;
+  background-color: #e6e7e9;
+  box-shadow: 
+    inset 0.05rem 0.05rem hsl(0 0% 100% / .75),
+    0.25rem 0.25rem 0.5rem hsl(0 0% 0% / .5),
+    inset -0.05rem -0.05rem hsl(0 0% 0% / .125);
+}
+ol > li::after{
+  content: "";
+  position: absolute;
+  z-index: -1;
+  --size: calc(var(--number-size) + var(--padding-block) * 4);
+  width: var(--size);
+  aspect-ratio: 1;
+  inset-block-start: calc(var(--padding-block) * -1);
+  --inset-inline: calc(var(--padding-inline) - var(--padding-block) * 2);
+  inset-inline: var(--inset-inline) auto;
+  border-radius: 100vmax;
+  background-color: hsl(0 0% 100% / .125);
+  background-image: 
+    radial-gradient(circle at calc(50% + 1px) calc(50% + 1px), transparent 67.7%, hsl(0 0% 100% / .5) calc(67.7% + 1px)),
+    radial-gradient(circle at top left, hsl(0 0% 100% / .1) 50%, transparent calc(50% + 1px));
+  --backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: var(--backdrop-filter);
+  backdrop-filter: var(--backdrop-filter);
+  box-shadow: 0.25rem 0.25rem 0.5rem hsl(0 0% 0% / 0.125);
+}
+
+ol > li:nth-child(even) {
+  grid-template-columns: 1fr auto;
+}
+ol > li:nth-child(even)::before{
+  grid-column: 2;
+}
+ol > li:nth-child(even)::after{
+  inset-inline: auto var(--inset-inline);
+}
