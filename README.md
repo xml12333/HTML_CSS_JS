@@ -537,4 +537,5 @@
 |524| [Inside an Atom](https://github.com/xml12333/HTML_CSS_JS/tree/main/524.Inside%20an%20Atom)| [Demo](https://nikt.com.ua/projects/htmlCssJs/524.Inside%20an%20Atom/)| ![Thumbnail](524.Inside%20an%20Atom/img/info_thumbnail.jpg)|
 |525| [Decode text animation](https://github.com/xml12333/HTML_CSS_JS/tree/main/525.Decode%20text%20animation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/525.Decode%20text%20animation/)| ![Thumbnail](525.Decode%20text%20animation/img/info_thumbnail.jpg)|
 |526| [Ordered List](https://github.com/xml12333/HTML_CSS_JS/tree/main/526.Ordered%20List)| [Demo](https://nikt.com.ua/projects/htmlCssJs/526.Ordered%20List/)| ![Thumbnail](526.Ordered%20List/img/info_thumbnail.jpg)|
-|526| [Whale Animation](https://github.com/xml12333/HTML_CSS_JS/tree/main/526.Whale%20Animation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/526.Whale%20Animation/)| ![Thumbnail](526.Whale%20Animation/img/info_thumbnail.jpg)|
+|527| [Whale Animation](https://github.com/xml12333/HTML_CSS_JS/tree/main/527.Whale%20Animation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/527.Whale%20Animation/)| ![Thumbnail](527.Whale%20Animation/img/info_thumbnail.jpg)|
+|528| [PixelBurst](https://github.com/xml12333/HTML_CSS_JS/tree/main/528.PixelBurst)| [Demo](https://nikt.com.ua/projects/htmlCssJs/528.PixelBurst/)| ![Thumbnail](528.PixelBurst/img/info_thumbnail.jpg)|
