@@ -1,0 +1,127 @@
+@import "https://unpkg.com/open-props/easings.min.css";
+@import "https://unpkg.com/open-props/animations.min.css";
+
+@layer demo {
+  [id="$demo"] > :nth-child(1 of span) { view-transition-name: n1 }
+  [id="$demo"] > :nth-child(2 of span) { view-transition-name: n2 }
+  [id="$demo"] > :nth-child(3 of span) { view-transition-name: n3 }
+  [id="$demo"] > :nth-child(4 of span) { view-transition-name: n4 }
+  
+  [id="$demo"] > comma { view-transition-name: output-comma }
+  output > sup         { view-transition-name: output-prefix }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    ::view-transition-old(n1),
+    ::view-transition-old(n2),
+    ::view-transition-old(n3),
+    ::view-transition-old(n4),
+    ::view-transition-old(output-comma):only-child {
+      inline-size: fit-content;
+      animation: 
+        var(--animation-fade-out) forwards,
+        var(--animation-slide-out-up) forwards;
+    }
+    
+    ::view-transition-old(n1):only-child,
+    ::view-transition-old(n2):only-child,
+    ::view-transition-old(n3):only-child,
+    ::view-transition-old(n4):only-child {
+      display: none;
+    }
+
+    ::view-transition-new(n1),
+    ::view-transition-new(n2),
+    ::view-transition-new(n3),
+    ::view-transition-new(n4),
+    ::view-transition-new(output-comma):only-child {
+      animation: 
+        var(--animation-fade-out) reverse,
+        var(--animation-slide-in-up);
+    }
+    
+    /* stagger with an increased animation duration */
+    ::view-transition-old(n1), 
+    ::view-transition-new(n1) {
+      animation-duration: .5s;
+    }
+    
+    ::view-transition-old(n2), 
+    ::view-transition-new(n2) {
+      animation-duration: .6s;
+    }
+    
+    ::view-transition-old(n3),
+    ::view-transition-new(n3) {
+      animation-duration: .7s;
+    }
+    
+    ::view-transition-old(n4),
+    ::view-transition-new(n4) {
+      animation-duration: .8s;
+    }
+  }
+}
+
+@layer demo.support {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  html {
+    block-size: 100%;
+    color-scheme: dark light;
+    
+    view-transition-name: none;
+  }
+  
+  ::view-transition {
+    pointer-events: none;
+  }
+
+  body {
+    min-block-size: 100%;
+    font-family: system-ui, sans-serif;
+
+    display: grid;
+    place-content: center;
+    place-items: center;
+  }
+  
+  output {
+    position: relative;
+    font-size: 25vmin;
+    
+    & > sup {
+      font-size: .5ch;
+      opacity: .75;
+      line-height: 2.5;
+      position: absolute;
+      inset-inline-start: -1ch;
+    }
+  }
+  
+  [id="$demo"] {
+    font-variant: tabular-nums;
+    display: flex;
+    gap: .1ch;
+    
+    > span:empty { 
+      display: none;
+    }
+  }
+  
+  fieldset {
+    display: flex;
+    gap: 2ch;
+    border: none;
+  }
+  
+  input[type="number"] {
+    max-inline-size: 8ch;
+  }
+  
+  .no-support {
+    display: none;
+  }
+}
