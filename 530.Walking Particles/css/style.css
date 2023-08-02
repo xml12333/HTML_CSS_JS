@@ -1,0 +1,16 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  width: 500px;
+  height: 500px;
+  max-width: 100vw;
+	max-height: 100vh;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+  border: 2px solid #8DA5B2;
+}

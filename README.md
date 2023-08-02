@@ -540,3 +540,4 @@
 |527| [Whale Animation](https://github.com/xml12333/HTML_CSS_JS/tree/main/527.Whale%20Animation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/527.Whale%20Animation/)| ![Thumbnail](527.Whale%20Animation/img/info_thumbnail.jpg)|
 |528| [PixelBurst](https://github.com/xml12333/HTML_CSS_JS/tree/main/528.PixelBurst)| [Demo](https://nikt.com.ua/projects/htmlCssJs/528.PixelBurst/)| ![Thumbnail](528.PixelBurst/img/info_thumbnail.jpg)|
 |529| [Number Transitions](https://github.com/xml12333/HTML_CSS_JS/tree/main/529.Number%20Transitions)| [Demo](https://nikt.com.ua/projects/htmlCssJs/529.Number%20Transitions/)| ![Thumbnail](529.Number%20Transitions/img/info_thumbnail.jpg)|
+|530| [Walking Particles](https://github.com/xml12333/HTML_CSS_JS/tree/main/530.Walking%20Particles)| [Demo](https://nikt.com.ua/projects/htmlCssJs/530.Walking%20Particles/)| ![Thumbnail](530.Walking%20Particles/img/info_thumbnail.jpg)|
