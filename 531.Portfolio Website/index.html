@@ -1,131 +1,224 @@
 <!DOCTYPE html>
-   <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <!--=============== FAVICON ===============-->
-      <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
 
-      <!--=============== REMIXICONS ===============-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
+    <!--=============== REMIXICONS ===============-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css"
+      crossorigin=""
+    />
 
-      <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="css/styles.css">
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="css/styles.css" />
 
-      <title>Responsive portfolio website Rian </title>
-   </head>
-   <body>
-      <!--==================== HEADER ====================-->
-      <header class="header" id="header">
-         <nav class="nav container">
-            <a href="#" class="nav__logo">
-               <span class="nav__logo-circle">R</span>
-               <span class="nav__logo-name">Rian Lot.</span>
-            </a>
-            <div class="nav__menu" id="nav-menu">
-               <span class="nav__title">Menu</span>
-               <h3 class="nav__name">Rian</h3>
-               <ul class="nav__list">
-                  <li class="nav__item">
-                     <a href="#home" class="nav__link">Home</a>
-                  </li>
-                  <li class="nav__item">
-                     <a href="#about" class="nav__link">About Me</a>
-                  </li>
-                  <li class="nav__item">
-                     <a href="#projects" class="nav__link">Projects</a>
-                  </li>
-                  <li class="nav__item">
-                     <a href="#contact" class="nav__link">Contact Me</a>
-                  </li>
-               </ul>
-               <!-- Close button -->
-               <div class="nav__close" id="nav-close">
-                  <i class="ri-close-line"></i>
-               </div>
+    <title>Responsive portfolio website Rian</title>
+  </head>
+  <body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav__logo">
+          <span class="nav__logo-circle">R</span>
+          <span class="nav__logo-name">Rian Lot.</span>
+        </a>
+        <div class="nav__menu" id="nav-menu">
+          <span class="nav__title">Menu</span>
+          <h3 class="nav__name">Rian</h3>
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="#about" class="nav__link">About Me</a>
+            </li>
+            <li class="nav__item">
+              <a href="#projects" class="nav__link">Projects</a>
+            </li>
+            <li class="nav__item">
+              <a href="#contact" class="nav__link">Contact Me</a>
+            </li>
+          </ul>
+          <!-- Close button -->
+          <div class="nav__close" id="nav-close">
+            <i class="ri-close-line"></i>
+          </div>
+        </div>
+        <div class="nav__buttons">
+          <!-- Toggle button -->
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-menu-4-line"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+      <!--==================== HOME ====================-->
+      <section class="home section" id="home">
+        <div class="home__container container grid">
+          <h1 class="home__name">Rian Lot</h1>
+          <div class="home__perfil">
+            <div class="home__image">
+              <img
+                src="img/home-perfil.jpg"
+                alt="home image"
+                class="home__img"
+              />
+              <div class="home__shadow"></div>
+              <img
+                src="img/curved-arrow.svg"
+                alt="home image"
+                class="home__arrow"
+              />
+              <img
+                src="img/random-lines.svg"
+                alt="home image"
+                class="home__line"
+              />
+              <div class="geometric-box"></div>
             </div>
-            <div class="nav__buttons">
-               <!-- Toggle button -->
-               <div class="nav__toggle" id="nav-toggle">
-                  <i class="ri-menu-4-line"></i>
-               </div>
+            <div class="home__social">
+              <a href="#" class="home__social-link"
+                ><i class="ri-instagram-line"></i
+              ></a>
+              <a href="#" class="home__social-link"
+                ><i class="ri-linkedin-box-line"></i
+              ></a>
+              <a href="#" class="home__social-link"
+                ><i class="ri-github-line"></i
+              ></a>
             </div>
-
-
-         </nav>
-      </header>
-
-      <!--==================== MAIN ====================-->
-      <main class="main">
-         <!--==================== HOME ====================-->
-         <section class="home section" id="home">
-            <div class="home__container container grid">
-               <h1 class="home__name">Rian Lot</h1>
-               <div class="home__perfil">
-                  <div class="home__image">
-                     <img src="img/home-perfil.jpg" alt="home image" class="home__img">
-                     <div class="home__shadow"></div>
-                     <img src="img/curved-arrow.svg" alt="home image" class="home__arrow">
-                     <img src="img/random-lines.svg" alt="home image" class="home__line">
-                     <div class="geometric-box"></div>
-                  </div>
-                  <div class="home__social">
-                     <a href="#" class="home__social-link"><i class="ri-instagram-line"></i></a>
-                     <a href="#" class="home__social-link"><i class="ri-linkedin-box-line"></i></a>
-                     <a href="#" class="home__social-link"><i class="ri-github-line"></i></a>
-                  </div>
-               </div>
-               <div class="home__info">
-                  <div class="home__description"><b>Frontend Developer</b>, with knowledge in web 
-                     development and design, I offer the best 
-                     projects resulting in quality work.</div>
-               </div>
-               <a href="#about" class="home__scroll">
-                  <div class="home__scroll-box">
-                     <i class="ri-arrow-down-s-line"></i>
-                  </div>
-                  <span class="home__scroll-text">Scroll Down</span>
-               </a>
+          </div>
+          <div class="home__info">
+            <div class="home__description">
+              <b>Frontend Developer</b>, with knowledge in web development and
+              design, I offer the best projects resulting in quality work.
             </div>
-         </section>
+          </div>
+          <a href="#about" class="home__scroll">
+            <div class="home__scroll-box">
+              <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <span class="home__scroll-text">Scroll Down</span>
+          </a>
+        </div>
+      </section>
 
-         <!--==================== ABOUT ====================-->
-         <section class="about section" id="about">
-            
-         </section>
+      <!--==================== ABOUT ====================-->
+      <section class="about section" id="about">
+        <div class="about__container container grid">
+          <h2 class="section__title-1">
+            <span>About Me</span>
+          </h2>
+          <div class="about__perfil">
+            <div class="about__image">
+              <img src="img/about-perfil.jpg" alt="image" class="about__img" />
+              <div class="about__shadow"></div>
+              <div class="geometric-box"></div>
+              <img src="img/random-lines.svg" alt="" class="about__line" />
+              <div class="about__box"></div>
+            </div>
+          </div>
+          <div class="about__info">
+            <p class="about__description">
+              Passionate about creating <b>Web Pages</b> with
+              <b>UI/UX User Interface</b>, I have years of experience and many
+              clients are happy with the projects carried out.
+            </p>
+            <ul class="about__list">
+              <li class="about__item">
+                <b>My Skills Are:</b> HTML, CSS, JavaScript, React, Git &
+                GitHub, Bootstrap, Flutter & Figma.
+              </li>
+            </ul>
+            <div class="about__buttons">
+              <a href="#contact" class="button">
+                <i class="ri-send-plane-line"></i> Contact me
+              </a>
+              <a href="#" class="button-ghost">
+                <i class="ri-linkedin-box-line"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-         <!--==================== SERVICES ====================-->
-         <section class="services section">
-            
-         </section>
+      <!--==================== SERVICES ====================-->
+      <section class="services section">
+        <h2 class="section__title-2">
+          <span>Services.</span>
+        </h2>
+        <div class="services__container container grid">
+          <article class="services__card">
+            <div class="services__border"></div>
+            <div class="services__content">
+              <div class="services__icon">
+                <div class="services__box"></div>
+                <i class="ri-layout-4-line"></i>
+              </div>
+              <h2 class="services__title">Web Design</h2>
+              <p class="services__description">
+                Beautiful and elegant designs with interfaces that are
+                intuitive, efficient and pleasant to use for the user.
+              </p>
+            </div>
+          </article>
+          <article class="services__card">
+            <div class="services__border"></div>
+            <div class="services__content">
+              <div class="services__icon">
+                <div class="services__box"></div>
+                <i class="ri-code-box-line"></i>
+              </div>
+              <h2 class="services__title">Development</h2>
+              <p class="services__description">
+                Custom web development tailored to your specifications, designed
+                to provide a flawless user experience.
+              </p>
+            </div>
+          </article>
+          <article class="services__card">
+            <div class="services__border"></div>
+            <div class="services__content">
+              <div class="services__icon">
+                <div class="services__box"></div>
+                <i class="ri-smartphone-line"></i>
+              </div>
+              <h2 class="services__title">Mobile App</h2>
+              <p class="services__description">
+                Design and transform website projects into mobile apps to
+                provide a seamless user experience.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
 
-         <!--==================== PROJECTS ====================-->
-         <section class="projects section" id="projects">
-            
-         </section>
+      <!--==================== PROJECTS ====================-->
+      <section class="projects section" id="projects"></section>
 
-         <!--==================== CONTACT ====================-->
-         <section class="contact section" id="contact">
-            
-         </section>
-      </main>
+      <!--==================== CONTACT ====================-->
+      <section class="contact section" id="contact"></section>
+    </main>
 
-      <!--==================== FOOTER ====================-->
-      <footer class="footer">
-         
-      </footer>
+    <!--==================== FOOTER ====================-->
+    <footer class="footer"></footer>
 
-      <!--========== SCROLL UP ==========-->
-      
+    <!--========== SCROLL UP ==========-->
 
-      <!--=============== SCROLLREVEAL ===============-->
-      <script src=""></script>
-      
-      <!--=============== EMAIL JS ===============-->
-      
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src=""></script>
 
-      <!--=============== MAIN JS ===============-->
-      <script src="js/main.js"></script>
-   </body>
+    <!--=============== EMAIL JS ===============-->
+
+    <!--=============== MAIN JS ===============-->
+    <script src="js/main.js"></script>
+  </body>
 </html>
