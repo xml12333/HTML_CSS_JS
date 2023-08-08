@@ -32,7 +32,7 @@
           <h3 class="nav__name">Rian</h3>
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="#home" class="nav__link">Home</a>
+              <a href="#home" class="nav__link active-link">Home</a>
             </li>
             <li class="nav__item">
               <a href="#about" class="nav__link">About Me</a>
@@ -50,6 +50,8 @@
           </div>
         </div>
         <div class="nav__buttons">
+          <!-- Theam button -->
+          <i class="ri-moon-line change-theme" id="theme-button"></i>
           <!-- Toggle button -->
           <div class="nav__toggle" id="nav-toggle">
             <i class="ri-menu-4-line"></i>
@@ -397,6 +399,7 @@
                   <label for="message" class="contact__label"></label>
                 </div>
               </div>
+              <p class="contact__message" id="contact-message"></p>
               <button type="submit" class="contact__button button">
                 <i class="ri-send-plane-line"></i> Send Message
               </button>
@@ -418,9 +421,15 @@
                 </p>
               </div>
               <div class="contact__social-links">
-                <a href="#" class="contact__social-link"><i class="ri-facebook-circle-line"></i></a>
-                <a href="#" class="contact__social-link"><i class="ri-instagram-line"></i></a>
-                <a href="#" class="contact__social-link"><i class="ri-linkedin-box-line"></i></a>
+                <a href="#" class="contact__social-link"
+                  ><i class="ri-facebook-circle-line"></i
+                ></a>
+                <a href="#" class="contact__social-link"
+                  ><i class="ri-instagram-line"></i
+                ></a>
+                <a href="#" class="contact__social-link"
+                  ><i class="ri-linkedin-box-line"></i
+                ></a>
               </div>
             </div>
           </div>
@@ -429,14 +438,35 @@
     </main>
 
     <!--==================== FOOTER ====================-->
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div class="footer__container container grid">
+        <ul class="footer__links">
+          <li>
+            <a href="#about" class="footer__link">About</a>
+          </li>
+          <li>
+            <a href="#services" class="footer__link">Services</a>
+          </li>
+          <li>
+            <a href="#projects" class="footer__link">Projects</a>
+          </li>
+        </ul>
+        <span class="footer__copy">
+          &#169; All Rights Reserved By
+          <a href="#">Nikolay T.</a>
+        </span>
+      </div>
+    </footer>
 
     <!--========== SCROLL UP ==========-->
-
+    <a href="#" class="scrollup" id="scroll-up"
+      ><i class="ri-arrow-up-s-line"></i
+    ></a>
     <!--=============== SCROLLREVEAL ===============-->
-    <script src=""></script>
+    <script src="js/scrollreveal.min.js"></script>
 
     <!--=============== EMAIL JS ===============-->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <!--=============== MAIN JS ===============-->
     <script src="js/main.js"></script>
