@@ -41,7 +41,9 @@
               <a href="#projects" class="nav__link">Projects</a>
             </li>
             <li class="nav__item">
-              <a href="#contact" class="nav__link">Contact Me</a>
+              <a href="#contact" class="nav__link nav__link-button"
+                >Contact Me</a
+              >
             </li>
           </ul>
           <!-- Close button -->
@@ -103,13 +105,13 @@
               <b>Frontend Developer</b>, with knowledge in web development and
               design, I offer the best projects resulting in quality work.
             </div>
+            <a href="#about" class="home__scroll">
+              <div class="home__scroll-box">
+                <i class="ri-arrow-down-s-line"></i>
+              </div>
+              <span class="home__scroll-text">Scroll Down</span>
+            </a>
           </div>
-          <a href="#about" class="home__scroll">
-            <div class="home__scroll-box">
-              <i class="ri-arrow-down-s-line"></i>
-            </div>
-            <span class="home__scroll-text">Scroll Down</span>
-          </a>
         </div>
       </section>
 
@@ -377,27 +379,27 @@
                     >Email Address</label
                   >
                 </div>
-                <div class="contact__box">
-                  <input
-                    type="text"
-                    name="user_subject"
-                    class="contact__input"
-                    id="subject"
-                    required
-                    placeholder="Subject"
-                  />
-                  <label for="subject" class="contact__label">Subject</label>
-                </div>
-                <div class="contact__box contact__area">
-                  <textarea
-                    name="user__message"
-                    class="contact__input"
-                    id="message"
-                    required
-                    placeholder="Message"
-                  ></textarea>
-                  <label for="message" class="contact__label"></label>
-                </div>
+              </div>
+              <div class="contact__box">
+                <input
+                  type="text"
+                  name="user_subject"
+                  class="contact__input"
+                  id="subject"
+                  required
+                  placeholder="Subject"
+                />
+                <label for="subject" class="contact__label">Subject</label>
+              </div>
+              <div class="contact__box contact__area">
+                <textarea
+                  name="user__message"
+                  class="contact__input"
+                  id="message"
+                  required
+                  placeholder="Message"
+                ></textarea>
+                <label for="message" class="contact__label"></label>
               </div>
               <p class="contact__message" id="contact-message"></p>
               <button type="submit" class="contact__button button">
