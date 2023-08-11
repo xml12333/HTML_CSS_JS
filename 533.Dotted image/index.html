@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Dotted Image</title>
+  </head>
+  <body>
+    <div class="form">
+      <div>
+        <input type="file" id="fileInput" accept="image/jpeg">
+        Select an image 
+        <label for="fileInput" class="fileInput" tabindex="1">Choose file...</label>
+      </div>
+    
+      <div>
+        Linear offset
+        <input type="range" id="linearOffset" min="0.5" max="2" step="0.1" value="1">
+      </div>
+    
+      <div>
+        Radial offset
+        <input type="range" id="radialOffset" min="1" max="20" step="0.1" value="5">
+      </div>    
+    
+      <div>
+        Contrast
+        <input type="range" id="contrast" min="-3" max="3" step="0.1" value="0">
+      </div>
+    
+      <button type="button" id="generate">Generate</button>
+    </div>
+    
+    <canvas></canvas>    
+    
+    <script src="https://assets.codepen.io/1948355/twitterButton-2.1.0.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

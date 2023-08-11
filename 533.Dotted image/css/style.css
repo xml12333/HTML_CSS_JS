@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
+ @import "https://unpkg.com/open-props";
+ *, *::before, *::after {
+	 padding: 0;
+	 margin: 0 auto;
+	 box-sizing: border-box;
+}
+ :root {
+	 --max-width: 420px;
+}
+ body {
+	 font-family: Raleway, sans-serif;
+	 background-color: var(--gray-10);
+	 color: white;
+	 min-height: 100vh;
+	 padding: 3em 1em;
+	 text-align: center;
+}
+ input, button {
+	 font-family: inherit;
+	 font-size: inherit;
+	 color: inherit;
+	 border: none;
+	 background: none;
+}
+ .form {
+	 width: 100%;
+	 max-width: var(--max-width);
+	 text-align: left;
+}
+ .form > div {
+	 margin-bottom: 1.5em;
+}
+ .form #fileInput {
+	 display: none;
+}
+ .form .fileInput {
+	 position: relative;
+	 display: block;
+	 width: 100%;
+	 background-color: var(--indigo-6);
+	 border-radius: 0.5em;
+	 padding: 0.5em 1em;
+	 cursor: pointer;
+	 text-align: center;
+	 transition: background-color 0.3s;
+}
+ .form .fileInput:hover {
+	 background-color: var(--indigo-4);
+}
+ .form .fileInput::after {
+	 content: '.jpg only';
+	 position: absolute;
+	 right: 0;
+	 top: 100%;
+	 font-size: 0.8em;
+}
+ .form [type="range"] {
+	 display: block;
+	 width: 100%;
+	 appearance: none;
+	 background: transparent;
+	 cursor: pointer;
+}
+ .form [type="range"]::-webkit-slider-thumb {
+	 appearance: none;
+	 height: 1.5em;
+	 width: 1.5em;
+	 border-radius: 0.375em;
+	 background: white;
+	 margin-top: 0em;
+}
+ .form [type="range"]::-webkit-slider-runnable-track {
+	 height: 2em;
+	 background-color: var(--indigo-6);
+	 border-radius: 0.5em;
+	 border: 0.25em solid var(--indigo-6);
+	 transition: all 0.3s;
+}
+ .form [type="range"]:hover::-webkit-slider-runnable-track {
+	 background-color: var(--indigo-4);
+	 border-color: var(--indigo-4);
+}
+ .form button {
+	 display: block;
+	 width: 100%;
+	 text-align: center;
+	 background-color: var(--indigo-6);
+	 border-radius: 0.5em;
+	 padding: 1em 1em;
+	 cursor: pointer;
+	 margin-block: 2em;
+	 transition: background-color 0.3s;
+}
+ .form button:hover {
+	 background-color: var(--indigo-4);
+}
+ canvas {
+	 width: 100%;
+	 max-width: var(--max-width);
+	 background-color: #000;
+	 border-radius: 0.5em;
+	 border: 1px solid white;
+}
+ 
