@@ -1,0 +1,57 @@
+body {
+	background-image: url('https://muralsyourway.vtexassets.com/arquivos/ids/236314-825-auto?width=825&height=auto&aspect=true');
+	overflow: hidden;
+}
+
+#target, #ship {
+	position: absolute;
+}
+#target {
+	height: 50px;
+	width: 50px;
+	margin-left: -25px;
+	margin-top: -25px;
+	border: solid 1px orange;
+	z-index: 5;
+}
+#target::before {
+	content: " ";
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 20px;
+	margin-top: -10px;
+	border-left: solid 1px orange;
+}
+
+#target::after {
+	content: " ";
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 20px;
+	margin-left: -10px;
+	border-top: solid 1px orange;
+}
+
+
+#ship {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	margin-left: -50px;
+	margin-top: -50px;
+	z-index: 2;
+}
+#ship::after {
+	content: " ";
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	//transform: rotate(-90deg);
+	background: url('https://cdn.glitch.global/ad5d1847-9240-4c0f-98c6-0d15b899e6aa/ship-3.png?v=1691263704967') no-repeat;
+	background-size: contain;
+	background-position: center;
+}

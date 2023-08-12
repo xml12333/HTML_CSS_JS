@@ -544,3 +544,4 @@
 |531| [Portfolio Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/531.Portfolio%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/531.Portfolio%20Website/)| ![Thumbnail](531.Portfolio%20Website/img/info_thumbnail.jpg)|
 |532| [Card Swiper](https://github.com/xml12333/HTML_CSS_JS/tree/main/532.Card%20Swiper)| [Demo](https://nikt.com.ua/projects/htmlCssJs/532.Card%20Swiper/)| ![Thumbnail](532.Card%20Swiper/img/info_thumbnail.jpg)|
 |533| [Dotted image](https://github.com/xml12333/HTML_CSS_JS/tree/main/533.Dotted%20image)| [Demo](https://nikt.com.ua/projects/htmlCssJs/533.Dotted%20image/)| ![Thumbnail](533.Dotted%20image/img/info_thumbnail.jpg)|
+|534| [Drag drift](https://github.com/xml12333/HTML_CSS_JS/tree/main/534.Drag%20drift)| [Demo](https://nikt.com.ua/projects/htmlCssJs/534.Drag%20drift/)| ![Thumbnail](534.Drag%20drift/img/info_thumbnail.jpg)|
