@@ -545,3 +545,4 @@
 |532| [Card Swiper](https://github.com/xml12333/HTML_CSS_JS/tree/main/532.Card%20Swiper)| [Demo](https://nikt.com.ua/projects/htmlCssJs/532.Card%20Swiper/)| ![Thumbnail](532.Card%20Swiper/img/info_thumbnail.jpg)|
 |533| [Dotted image](https://github.com/xml12333/HTML_CSS_JS/tree/main/533.Dotted%20image)| [Demo](https://nikt.com.ua/projects/htmlCssJs/533.Dotted%20image/)| ![Thumbnail](533.Dotted%20image/img/info_thumbnail.jpg)|
 |534| [Drag drift](https://github.com/xml12333/HTML_CSS_JS/tree/main/534.Drag%20drift)| [Demo](https://nikt.com.ua/projects/htmlCssJs/534.Drag%20drift/)| ![Thumbnail](534.Drag%20drift/img/info_thumbnail.jpg)|
+|535| [Maze](https://github.com/xml12333/HTML_CSS_JS/tree/main/535.Maze)| [Demo](https://nikt.com.ua/projects/htmlCssJs/535.Maze/)| ![Thumbnail](535.Maze/img/info_thumbnail.jpg)|
