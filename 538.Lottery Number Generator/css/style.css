@@ -1,0 +1,70 @@
+*, *::before, *::after { box-sizing: border-box;}
+body {
+  --c: #DDA951;
+  background-color: #000;
+  color: var(--c);
+  display: grid;
+  font-family: ui-sans-setif, system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+  padding: 1ch;
+}
+button {
+  border: 0;
+  border-radius: 3ch;
+  cursor: pointer;
+  font-size: inherit;
+  margin-block: 1ch 2ch;
+  padding: 1.5ch 3ch;
+}
+button, legend, th {
+  background-color: var(--c);
+  color: #000;
+}
+fieldset {
+  margin-block-end: 2ch;
+}
+fieldset, input {
+  border: 1px solid currentColor;
+  border-radius: .25em;
+  color: currentColor;
+}
+form {
+  font-size: small;
+}
+h1 {
+  font-weight: 600;
+  margin-block: 0 .5ch;
+}
+input:focus-visible {
+  outline: 2px solid currentColor;
+}
+fieldset,
+label {
+  display: grid;
+  gap: 1ch;
+}
+legend {
+  border-radius: .25em;
+  padding: .5ch 1.25ch;
+}
+input {
+  background: transparent;
+  padding: 1ch;
+}
+table {
+  border-spacing: 1ch;
+}
+td, th {
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-weight: 400;
+  padding: 1ch;
+}
+@media (min-width: 700px) {
+  body {
+    grid-template-columns: 1fr min-content;
+  }
+  form {
+    inline-size: fit-content;
+  }
+}

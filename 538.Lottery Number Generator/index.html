@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Lottery Number Generator</title>
+  </head>
+  <body>
+    <main>
+      <h1>Lottery Number Generator</h1>
+      <table id="result"></table>
+      <button type="button" id="generate">★ Re-generate ★</button>
+    </main>
+    <form id="app">
+      <fieldset>
+        <legend>Settings</legend>
+        <label>Number of rows
+          <input type="number" name="numberOfRows" value="10" required>
+        </label>
+        <label>Numbers per row
+          <input type="number" name="numbersPerRow" value="5" required>
+        </label>
+        <label aria-label="Start Number">Numbers between
+          <input type="number" name="startNumber" value="1" required>
+        </label>
+        <label aria-label="End Number">And
+          <input type="number" name="endNumber" value="50" required>
+        </label>
+      </fieldset>
+      <fieldset>
+        <label>How many?
+          <input type="number" name="bonusNumbers" value="2" required>
+        </label>
+        <legend>Bonus numbers</legend>
+        <label aria-label="Bonus Start Number">Numbers between
+          <input type="number" name="bonusStart" value="1" required>
+        </label>
+        <label aria-label="Bonus End Number">And
+          <input type="number" name="bonusEnd" value="12" required>
+        </label>
+      </fieldset>
+    </form>
+    <script src="js/script.js"></script>
+  </body>
+</html>

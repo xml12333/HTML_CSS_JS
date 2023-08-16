@@ -548,3 +548,4 @@
 |535| [Maze](https://github.com/xml12333/HTML_CSS_JS/tree/main/535.Maze)| [Demo](https://nikt.com.ua/projects/htmlCssJs/535.Maze/)| ![Thumbnail](535.Maze/img/info_thumbnail.jpg)|
 |536| [Todo List](https://github.com/xml12333/HTML_CSS_JS/tree/main/536.Todo%20List)| [Demo](https://nikt.com.ua/projects/htmlCssJs/536.Todo%20List/)| ![Thumbnail](536.Todo%20List/img/info_thumbnail.jpg)|
 |537| [Card UI](https://github.com/xml12333/HTML_CSS_JS/tree/main/537.Card%20UI)| [Demo](https://nikt.com.ua/projects/htmlCssJs/537.Card%20UI/)| ![Thumbnail](537.Card%20UI/img/info_thumbnail.jpg)|
+|538| [Lottery Number Generator](https://github.com/xml12333/HTML_CSS_JS/tree/main/538.Lottery%20Number%20Generator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/538.Lottery%20Number%20Generator/)| ![Thumbnail](538.Lottery%20Number%20Generator/img/info_thumbnail.jpg)|
