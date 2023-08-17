@@ -1,0 +1,278 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(268, 58%, 48%);
+  --first-color-alt: hsl(268, 28%, 38%);
+  --second-color: hsl(335, 88%, 56%);
+  --second-color-alt: hsl(328, 78%, 38%);
+  --title-color: hsl(0, 0%, 100%);
+  --text-color: hsl(252, 100%, 87%);
+  --body-color: hsl(268, 58%, 22%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", sans-serif;
+  --biggest-font-size: 2rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1152px) {
+  :root {
+    --biggest-font-size: 4rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.main {
+  overflow: hidden; /* For animation */
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--body-color);
+  z-index: var(--z-fixed);
+}
+
+.nav {
+  position: relative;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo,
+.nav__toggle,
+.nav__close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav__logo {
+  color: var(--text-color);
+  column-gap: 0.5rem;
+  font-weight: var(--font-semi-bold);
+}
+.nav__logo i {
+  font-size: 1.25rem;
+  font-weight: initial;
+}
+.nav__toggle,
+.nav__close {
+  background-color: var(--first-color-alt);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+/* Navigation for mobile devices */
+@media screen and (max-width: 1023px) {
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: var(--body-color);
+    width: 80%;
+    height: 100%;
+    box-shadow: 0 0 16px hsla(268, 58%, 4%, 0.2);
+    padding: 6rem 3rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+    transition: right 0.4s;
+  }
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+}
+
+.nav__link {
+  color: var(--text-color);
+  font-weight: var(--font-semi-bold);
+  transition: color 0.4s;
+}
+.nav__link:hover {
+  color: var(--title-color);
+}
+.nav__button {
+  display: inline-block;
+  width: max-content;
+  background-color: var(--body-color);
+  border: 2px solid var(--text-color);
+  padding: 1rem 3rem;
+  border-radius: 4rem;
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+.nav__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 1.5rem;
+}
+/* Show menu */
+.show-menu {
+  right: 0;
+}
+/*=============== HOME ===============*/
+.home {
+  position: relative;
+  height: 100vh;
+}
+.home__container {
+  padding-top: 7rem;
+  display: grid;
+  row-gap: 3rem;
+}
+.home__content {
+  text-align: center;
+}
+.home__subtitle {
+  font-size: var(--small-font-size);
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+.home__title {
+  position: relative;
+  width: max-content;
+  margin: 0 auto 0.75rem;
+  font-size: var(--biggest-font-size);
+  color: var(--title-color);
+}
+.home__title img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.home__title span {
+  position: relative;
+  z-index: 5;
+}
+.home__description {
+  line-height: 150%;
+  margin-bottom: 1.25rem;
+}
+.home__button {
+  display: inline-block;
+  background: linear-gradient(
+    180deg,
+    var(--second-color),
+    var(--second-color-alt)
+  );
+  padding: 1.125rem 3rem;
+  border-radius: 4rem;
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  box-shadow: 0 8px 32px hsla(268, 58%, 4%, 0.3),
+    inset 0 4px 8px hsla(0, 0%, 100%, 0.4);
+}
+.home__images {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 250px;
+}
+.home__images img {
+  position: absolute;
+}
+.home__points {
+  width: 320px;
+  top: -1rem;
+}
+.home__rocket {
+  width: 220px;
+}
+.home__planet-1 {
+  width: 110px;
+  top: 1.25rem;
+  left: 0.75rem;
+}
+.home__planet-2 {
+  width: 70px;
+  right: 0;
+  top: -1.25rem;
+}
+.home__cloud-1,
+.home__cloud-2 {
+  position: absolute;
+  bottom: 0;
+  max-width: initial;
+}
+.home__cloud-2{
+  width: 500px;
+  right: -4rem;
+}
+.home__cloud-1{
+  width: 700px;
+  right: -6rem;
+}
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+/* For taller devices */
+
+/* For medium devices */
+
+/* For large devices */

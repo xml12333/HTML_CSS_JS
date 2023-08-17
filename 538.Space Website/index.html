@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+
+    <!--=============== REMIXICONS ===============-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css"
+      crossorigin=""
+    />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <title>Responsive space website</title>
+  </head>
+  <body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav__logo">
+          <i class="ri-rocket-2-line"></i> Space
+        </a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="#features" class="nav__link">Features</a>
+            </li>
+            <li class="nav__item">
+              <a href="#pricing" class="nav__link">Pricing</a>
+            </li>
+            <li class="nav__item">
+              <a href="#contact" class="nav__link">Contact</a>
+            </li>
+          </ul>
+          <a href="#" class="nav__button">Login</a>
+          <!-- Close button -->
+          <div class="nav__close" id="nav-close">
+            <i class="ri-close-line"></i>
+          </div>
+        </div>
+        <!-- Toggle button -->
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="ri-apps-2-line"></i>
+        </div>
+      </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+      <!--==================== HOME ====================-->
+      <section class="home">
+        <div class="home__container container">
+          <div class="home__content">
+            <h3 class="home__subtitle">NAVIGATE THE UNIVERSE</h3>
+            <h1 class="home__title">
+              <span
+                >Start Exploring <br />
+                Infinite Space</span
+              >
+              <img src="img/line.svg" alt="img" />
+            </h1>
+            <p class="home__description">
+              Start your exploration in space, navigate and discover all the
+              wonders of the universe.
+            </p>
+            <a href="#" class="home__button">Get Started</a>
+          </div>
+          <div class="home__images">
+            <img src="img/points-space.svg" alt="img" class="home__points" />
+            <img src="img/planet.svg" alt="img" class="home__planet-2" />
+            <img src="img/planet.svg   " alt="img" class="home__planet-1" />
+            <img src="img/rocket.svg" alt="img" class="home__rocket" />
+          </div>
+        </div>
+        <img src="img/clouds-1.svg" alt="img" class="home__cloud-1" />
+        <img src="img/clouds-2.svg" alt="img" class="home__cloud-2" />
+      </section>
+    </main>
+
+    <!--=============== GSAP ===============-->
+    <script src="js/gsap.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="js/main.js"></script>
+  </body>
+</html>
