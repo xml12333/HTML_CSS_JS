@@ -260,19 +260,132 @@ img {
   bottom: 0;
   max-width: initial;
 }
-.home__cloud-2{
+.home__cloud-2 {
   width: 500px;
   right: -4rem;
 }
-.home__cloud-1{
+.home__cloud-1 {
   width: 700px;
   right: -6rem;
 }
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
+@media screen and (max-width: 300px) {
+  .container {
+    margin-inline: 1rem;
+  }
+  .home__title {
+    font-size: 1.75rem;
+  }
+}
 
 /* For taller devices */
-
+@media screen and (min-width: 376px) and (min-height: 800px) {
+  .home__container {
+    padding-top: 10rem;
+  }
+}
 /* For medium devices */
+@media screen and (min-width: 576px) {
+  .home__container {
+    grid-template-columns: 400px;
+    justify-content: center;
+  }
+  .nav__menu {
+    width: 60%;
+  }
+  .home__cloud-1 {
+    width: 100%;
+    left: 0;
+  }
+  .home__cloud-2 {
+    width: 80%;
+  }
+}
 
+@media screen and (min-width: 767px) {
+  .home {
+    display: grid;
+    place-content: center;
+  }
+  .home__container {
+    grid-template-columns: repeat(2, 350px);
+    padding-top: 0;
+  }
+  .home__content {
+    text-align: initial;
+  }
+  .home__title {
+    margin-inline: 0;
+  }
+}
 /* For large devices */
+@media screen and (min-width: 1023px) {
+  .nav {
+    height: calc(var(--header-height) + 2rem);
+  }
+  .nav__toggle,
+  .nav__close {
+    display: none;
+  }
+  .nav__menu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    column-gap: 4.5rem;
+  }
+  .nav__list {
+    margin-left: auto;
+    flex-direction: row;
+    column-gap: 4.5rem;
+  }
+}
+@media screen and (min-width: 1152px) {
+  .container {
+    margin-inline: auto;
+  }
+  .home__container {
+    grid-template-columns: 460px 650px;
+    align-items: center;
+    z-index: 5;
+  }
+  .home__subtitle {
+    font-size: var(--normal-font-size);
+    margin-bottom: 0.75rem;
+  }
+  .home__title {
+    letter-spacing: -3px;
+    margin-bottom: 1rem;
+  }
+  .home__title img {
+    width: 250px;
+    right: -0.75rem;
+  }
+  .home__description {
+    font-size: var(--h3-font-size);
+    margin-bottom: 3rem;
+  }
+  .home__images {
+    height: 450px;
+  }
+  .home__points {
+    width: 100%;
+    top: -2rem;
+    right: -1rem;
+  }
+  .home__roket {
+    width: 450px;
+  }
+  .home__planet-1 {
+    width: 210px;
+    left: 5rem;
+  }
+  .home__planet-2 {
+    width: 130px;
+    right: -2rem;
+  }
+  .home__cloud-1,
+  .home__cloud-2 {
+    bottom: -3rem;
+  }
+}
