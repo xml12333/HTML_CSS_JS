@@ -1,0 +1,221 @@
+/*-----------------------------------*\
+  #style.css
+\*-----------------------------------*/
+
+/**
+ * copyright 2023 codewithsadee
+ */
+
+/*-----------------------------------*\
+  #CUSTOM PROPERTY
+\*-----------------------------------*/
+:root {
+  /* COLORS */
+  /* background color */
+  --bg-dark-purple: hsla(260, 62%, 11%, 1);
+  --bg-russian-violet: hsla(259, 61%, 14%, 1);
+  --bg-vivid-violet: hsla(273, 100%, 55%, 1);
+  --bg-sunglow: hsla(43, 100%, 61%, 1);
+  --bg-blue-jeans: hsla(202, 100%, 50%, 1);
+  --bg-white-alpha-10: hsla(0, 0%, 100%, 0.1);
+  /* text color */
+  --text-white: hsla(0, 0%, 100%, 1);
+  --text-black: hsla(0, 0%, 0%, 1);
+  --text-sunglow: hsla(43, 100%, 61%, 1);
+  --text-white-alpha-60: hsla(0, 0%, 100%, 0.6);
+  /* border color */
+  --border-blue-jeans: hsla(202, 100%, 50%, 1);
+  --border-white-alpha-10: hsla(0, 0%, 100%, 0.1);
+
+  /* TYPOGRAPHY */
+  /* font family */
+  --fontFamily-open-sans: "Open Sans", sans-serif;
+  /* font size */
+  --fontSize-1: 4rem;
+  --fontSize-2: 3.2rem;
+  --fontSize-3: 2.4rem;
+  --fontSize-4: 2rem;
+  --fontSize-5: 1.8rem;
+  --fontSize-6: 1.6rem;
+  --fontSize-7: 1.4rem;
+  /* font weight */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semiBold: 600;
+  --weight-bold: 700;
+
+  /* SPACING */
+  --section-spacing: 100px;
+
+  /* SHADOW */
+  --shadow-1: drop-shadow(0 20px 30px hsla(0, 0%, 0%, 0.1));
+  --shadow-2: drop-shadow(0 20px 30px hsla(0, 0%, 0%, 0.2));
+
+  /* BORDER RADIUS */
+  --radius-24: 24px;
+  --radius-40: 40px;
+  --radius-pill: 500px;
+
+  /* TRANSITION */
+  --transition-1: 250ms ease;
+  --transition-2: 500ms ease;
+  --cubic-out: cubic-bezier(0, 1, 0.5, 1);
+}
+
+/*-----------------------------------*\
+  #RESET
+\*-----------------------------------*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a,
+img,
+span,
+button,
+ion-icon {
+  display: block;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  height: auto;
+}
+input,
+button {
+  background: none;
+  border: none;
+  font: inherit;
+}
+input {
+  width: 100%;
+  outline: none;
+}
+button {
+  cursor: pointer;
+}
+ion-icon {
+  pointer-events: none;
+}
+address {
+  font-style: normal;
+}
+html {
+  font-family: var(--fontFamily-open-sans);
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+body {
+  background-color: var(--bg-dark-purple);
+  color: var(--text-white-alpha-60);
+  font-size: var(--fontSize-6);
+  line-height: 1.8;
+}
+body.nav-active {
+  overflow: hidden;
+}
+/*-----------------------------------*\
+  #REUSED STYLE
+\*-----------------------------------*/
+.container {
+  padding-inline: 16px;
+}
+
+/*-----------------------------------*\
+  #HEADER
+\*-----------------------------------*/
+
+.header .btn {
+  display: none;
+}
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-block: 30px;
+  z-index: 4;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .logo img {
+  width: 160px;
+}
+.nav-open-btn {
+  color: var(--text-white);
+  font-size: 3rem;
+}
+.nav-open-btn.active .menu-icon,
+.nav-open-btn .close-icon {
+  display: none;
+}
+.nav-open-btn .menu-icon,
+.nav-open-btn.active .close-icon {
+  display: block;
+}
+.navbar {
+  position: absolute;
+  top: 100%;
+  right: 16px;
+  background-color: var(--bg-vivid-violet);
+  color: var(--text-white);
+  padding: 16px 30px;
+  border-radius: var(--radius-24);
+  opacity: 0;
+  visibility: hidden;
+  transition: 500ms var(--cubic-out);
+  z-index: 1;
+}
+.navbar.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-15px);
+}
+.navbar-list > li:not(:last-child) {
+  margin-block-end: 5px;
+}
+.navbar-link {
+  font-weight: var(--weight-medium);
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+}
+.overlay.active {
+  pointer-events: all;
+}
+
+/*-----------------------------------*\
+  #HERO
+\*-----------------------------------*/
+
+/*-----------------------------------*\
+  #PROCESS
+\*-----------------------------------*/
+
+/*-----------------------------------*\
+  #WORK
+\*-----------------------------------*/
+
+/*-----------------------------------*\
+  #FOOTER
+\*-----------------------------------*/
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*-----------------------------------*/
