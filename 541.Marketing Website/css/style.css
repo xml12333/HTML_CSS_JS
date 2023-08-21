@@ -26,6 +26,7 @@
   /* border color */
   --border-blue-jeans: hsla(202, 100%, 50%, 1);
   --border-white-alpha-10: hsla(0, 0%, 100%, 0.1);
+  --border-white-alpha-20: hsla(0, 0%, 100%, 0.2);
 
   /* TYPOGRAPHY */
   /* font family */
@@ -128,7 +129,55 @@ body.nav-active {
 .container {
   padding-inline: 16px;
 }
-
+.section {
+  padding-block-end: var(--section-spacing);
+}
+.title {
+  color: var(--text-white);
+  line-height: 1.1;
+}
+.h1 {
+  font-style: var(--fontSize-1);
+}
+.h2 {
+  font-size: var(--fontSize-2);
+  font-weight: var(--weight-semiBold);
+}
+.h3 {
+  font-size: var(--fontSize-3);
+  font-weight: var(--weight-regular);
+}
+.btn {
+  height: 62px;
+  padding-inline: 50px;
+  font-weight: var(--weight-semiBold);
+  border-radius: var(--radius-pill);
+  color: var(--text-black);
+  display: grid;
+  place-content: center;
+  max-width: max-content;
+  transition: var(--transition-1);
+}
+.btn-primary {
+  background: var(--bg-sunglow);
+}
+.btn-primary:is(:hover, :focus-visible) {
+  background-color: var(--bg-vivid-violet);
+  color: var(--text-white);
+}
+.w-100 {
+  width: 100%;
+}
+.text-center {
+  text-align: center;
+}
+.section-text {
+  margin-block: 15px 50px;
+}
+.grid-list {
+  display: grid;
+  gap: 50px;
+}
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
@@ -203,11 +252,73 @@ body.nav-active {
 /*-----------------------------------*\
   #HERO
 \*-----------------------------------*/
-
+.hero {
+  padding-block-start: 130px;
+  background-image: url("../img/hero-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.hero .container {
+  display: grid;
+  gap: 30px;
+}
+.hero-text {
+  margin-block: 25px;
+}
+.input-field {
+  height: 62px;
+  padding-inline: 30px;
+  background-color: var(--bg-white-alpha-10);
+  border-radius: var(--radius-pill);
+  color: var(--text-white);
+}
+.input-field::placeholder {
+  color: var(--text-white-alpha-60);
+}
+.input-field:focus {
+  box-shadow: inset 0 0 0 1px var(--border-white-alpha-20);
+}
+.hero .btn {
+  margin-block-start: 15px;
+}
+.hero-banner .w-100 {
+  max-width: max-content;
+}
+.hero .shape {
+  display: none;
+}
 /*-----------------------------------*\
   #PROCESS
 \*-----------------------------------*/
-
+.process-banner {
+  display: none;
+}
+.process {
+  position: relative;
+  z-index: 1;
+}
+.process::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/process-bg.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: cover;
+  pointer-events: none;
+  z-index: -1;
+}
+.process-item .item-icon {
+  margin-inline: auto;
+  filter: var(--shadow-1);
+}
+.process-item .item-title{
+  margin-block: 20px 10px;
+}
 /*-----------------------------------*\
   #WORK
 \*-----------------------------------*/
