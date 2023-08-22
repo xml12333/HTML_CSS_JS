@@ -178,6 +178,17 @@ body.nav-active {
   display: grid;
   gap: 50px;
 }
+.img-holder {
+  aspect-ratio: var(--width) / var(--height);
+  background-color: var(--bg-white-alpha-10);
+  overflow: hidden;
+}
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-2);
+}
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
@@ -316,17 +327,80 @@ body.nav-active {
   margin-inline: auto;
   filter: var(--shadow-1);
 }
-.process-item .item-title{
+.process-item .item-title {
   margin-block: 20px 10px;
 }
 /*-----------------------------------*\
   #WORK
 \*-----------------------------------*/
-
+.works-card .card-banner {
+  border-radius: var(--radius-40);
+  margin-block-end: 20px;
+}
+.works-card:is(:hover, :focus-within) .img-cover {
+  transform: scale(1.1);
+}
+.works-card .card-title {
+  margin-block-end: 12px;
+  transition: var(--transition-1);
+}
+.works-card .card-title:is(:hover, :focus-visible) {
+  color: var(--text-sunglow);
+}
+.works .btn{
+  margin-block-start: 60px;
+  margin-inline: auto;
+}
 /*-----------------------------------*\
   #FOOTER
 \*-----------------------------------*/
-
+.footer{
+  background-color: var(--bg-russian-violet);
+  color: var(--text-white);
+}
+.footer-top{
+  padding-block-start: var(--section-spacing);
+}
+.footer-top .container{
+  display: grid;
+  gap: 50px;
+}
+.footer-text{
+  margin-block: 15px;
+}
+.footer .social-list{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-block-end: 30px;
+}
+.footer .social-link{
+  color: var(--text-sunglow);
+  font-size: 2.2rem;
+}
+.footer .btn{
+  font-size: var(--fontSize-5);
+  padding-inline: 60px;
+}
+.footer-list{
+  display: grid;
+  gap: 15px;
+}
+.footer-bottom{
+  padding-block: 40px;
+  border-block-start: 1px solid var(--border-white-alpha-10);
+}
+.footer-bottom .link{
+  display: inline-block;
+  color: var(--text-sunglow);
+}
+.footer-bottom-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-block-start: 20px;
+}
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
