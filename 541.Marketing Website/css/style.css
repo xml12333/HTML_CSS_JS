@@ -137,7 +137,7 @@ body.nav-active {
   line-height: 1.1;
 }
 .h1 {
-  font-style: var(--fontSize-1);
+  font-size: var(--fontSize-1);
 }
 .h2 {
   font-size: var(--fontSize-2);
@@ -347,54 +347,54 @@ body.nav-active {
 .works-card .card-title:is(:hover, :focus-visible) {
   color: var(--text-sunglow);
 }
-.works .btn{
+.works .btn {
   margin-block-start: 60px;
   margin-inline: auto;
 }
 /*-----------------------------------*\
   #FOOTER
 \*-----------------------------------*/
-.footer{
+.footer {
   background-color: var(--bg-russian-violet);
   color: var(--text-white);
 }
-.footer-top{
+.footer-top {
   padding-block-start: var(--section-spacing);
 }
-.footer-top .container{
+.footer-top .container {
   display: grid;
   gap: 50px;
 }
-.footer-text{
+.footer-text {
   margin-block: 15px;
 }
-.footer .social-list{
+.footer .social-list {
   display: flex;
   align-items: center;
   gap: 20px;
   margin-block-end: 30px;
 }
-.footer .social-link{
+.footer .social-link {
   color: var(--text-sunglow);
   font-size: 2.2rem;
 }
-.footer .btn{
+.footer .btn {
   font-size: var(--fontSize-5);
   padding-inline: 60px;
 }
-.footer-list{
+.footer-list {
   display: grid;
   gap: 15px;
 }
-.footer-bottom{
+.footer-bottom {
   padding-block: 40px;
   border-block-start: 1px solid var(--border-white-alpha-10);
 }
-.footer-bottom .link{
+.footer-bottom .link {
   display: inline-block;
   color: var(--text-sunglow);
 }
-.footer-bottom-list{
+.footer-bottom-list {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -404,3 +404,237 @@ body.nav-active {
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
+/* responsive for large than 575px screen */
+@media screen and (min-width: 575px) {
+  /* reused style */
+  .container {
+    max-width: 500px;
+    width: 100%;
+    margin-inline: auto;
+  }
+  /* header */
+  .header .container {
+    max-width: unset;
+  }
+}
+
+/* responsive for large than 768px screen */
+@media screen and (min-width: 768px) {
+  /* custom property */
+  :root {
+    /* typography */
+    /* font-size */
+    --fontSize-1: 5.5rem;
+    --fontSize-2: 4rem;
+    /* spacing */
+    --section-spacing: 150px;
+  }
+  /* reused style */
+  .container {
+    max-width: 720px;
+  }
+  .section-text {
+    max-width: 500px;
+    margin-inline: auto;
+  }
+  .grid-list {
+    grid-template-columns: 1fr 1fr;
+  }
+  .btn-secondary {
+    color: var(--text-white);
+    height: 52px;
+    border: 2px solid var(--border-blue-jeans);
+    padding-inline: 40px;
+  }
+  .btn-secondary:is(:hover, :focus-visible) {
+    background-color: var(--bg-blue-jeans);
+  }
+  /* header */
+  .header .btn {
+    display: grid;
+    margin-inline: auto 30px;
+  }
+  /* hero */
+  .hero {
+    padding-block: 180px;
+  }
+  .hero-content {
+    max-width: 560px;
+  }
+  .hero .input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .hero .btn {
+    margin-block-start: 0;
+    min-width: max-content;
+  }
+  .hero-banner {
+    position: relative;
+    max-width: 540px;
+    margin-inline: auto;
+  }
+  .hero .shape {
+    display: block;
+    position: absolute;
+    filter: var(--shadow-2);
+  }
+  .hero .shape-1 {
+    width: 13%;
+    top: 350px;
+    left: 80px;
+  }
+  .hero .shape-2 {
+    width: 16%;
+    top: 440px;
+    left: -20px;
+  }
+  .hero .shape-3 {
+    width: 20%;
+    bottom: -20px;
+    left: 80px;
+  }
+  /* footer */
+  .footer-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* responsive for large than 992px screen */
+@media screen and (min-width: 992px) {
+  /* reused style */
+  .container {
+    max-width: 960px;
+    padding-inline: 40px;
+  }
+  body.nav-active {
+    overflow: auto;
+  }
+  /* header */
+  .nav-open-btn,
+  .overlay {
+    display: none;
+  }
+  .header .logo img {
+    width: max-content;
+  }
+  .navbar,
+  .navbar.active {
+    all: unset;
+    margin-inline-start: 80px;
+  }
+  .navbar-list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  .navbar-list > li:not(:last-child) {
+    margin-block-end: 0;
+  }
+  .navbar-link {
+    color: var(--text-white);
+    transition: var(--transition-1);
+  }
+  .navbar-link:is(:hover, :focus-visible) {
+    color: var(--text-white-alpha-60);
+  }
+  .header .btn {
+    margin-inline-end: 0;
+  }
+  /* hero */
+  .hero .container {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  /* process */
+  .process-banner {
+    display: block;
+    max-width: 540px;
+    margin-inline: auto;
+  }
+  .process .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+  }
+  .process-item {
+    text-align: left;
+  }
+  .process-item .item-icon {
+    margin-inline: 0;
+  }
+  .process .grid-list {
+    gap: 30px 40px;
+  }
+  /* work */
+  .works .grid-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  /* footer */
+  .footer-top .container {
+    grid-template-columns: 0.5fr 1fr;
+  }
+  .footer-bottom .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-bottom-list {
+    margin-block-start: 0;
+    gap: 50px;
+  }
+}
+
+/* responsive for large than 1200px screen */
+@media screen and (min-width: 1200px) {
+  /* custom property */
+  :root {
+    /* typography */
+    /* font size */
+    --fontSize-1: 7rem;
+    --fontSize-3: 2.8rem;
+  }
+  /* reused style */
+  .container {
+    max-width: 1140px;
+  }
+  .section-text {
+    max-width: 750px;
+  }
+}
+/* responsive for large than 1400px screen */
+@media screen and (min-width: 1400px) {
+  /* custom property */
+  :root {
+    /* typography */
+    /* font-size */
+    --fontSize-1: 8rem;
+  }
+  /* reused style */
+  .container {
+    max-width: 1350px;
+  }
+  .section-text{
+    margin-block-end: 60px;
+  }
+  /* hero */
+  .hero-text{
+    font-size: 1.8rem;
+    margin-block: 40px;
+  }
+  /* process */
+  .process .wrapper{
+    grid-template-columns: 0.7fr 1fr;
+    gap: 130px;
+  }
+  .process-item .item-icon{
+    width: 80px;
+  }
+  .process-item .item-title{
+    margin-block: 25px 15px;
+  }
+  .process .grid-list{
+    row-gap: 50px;
+  }
+}
