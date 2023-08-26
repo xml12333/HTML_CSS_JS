@@ -225,6 +225,11 @@ body.nav-active {
 .section-title {
   margin-block: 10px;
 }
+.img-holder {
+  aspect-ratio: var(--width) / var(--height);
+  background-color: var(--bg-gainsboro);
+  overflow: hidden;
+}
 /*-----------------------------------*\
   #PRELOADER
 \*-----------------------------------*/
@@ -485,18 +490,98 @@ body.nav-active {
   padding: 25px 20px;
   border-radius: var(--radius-20);
 }
-.service-card .card-title{
-margin-block: 10px 5px;
+.service-card .card-title {
+  margin-block: 10px 5px;
 }
 
 /*-----------------------------------*\
   #DESTINATION
 \*-----------------------------------*/
-
+.desti .section-title {
+  margin-block-end: 40px;
+}
+.desti-list {
+  display: grid;
+  gap: 30px;
+}
+.desti-card .card-banner {
+  position: relative;
+  border-radius: var(--radius-30);
+}
+.desti-card:is(:hover, :focus-within) .img-cover {
+  transform: scale(1.05);
+}
+.desti-card .card-price {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: var(--bg-white);
+  color: var(--text-majorelle-blue);
+  font-weight: var(--weight-bold);
+  font-size: 1.8rem;
+  line-height: 1.45;
+  padding: 5px 15px;
+  border-radius: var(--radius-pill);
+}
+.desti-card .card-title {
+  margin-block: 15px 5px;
+  transition: var(--transition-1);
+}
+.desti-card .card-title:is(:hover, :focus-visible) {
+  color: var(--text-majorelle-blue);
+}
+.desti-card :is(.card-rating, .span) {
+  display: flex;
+  align-items: center;
+}
+.desti-card .card-rating {
+  margin-block-start: 10px;
+  gap: 10px;
+}
+.desti-card .card-rating .span {
+  background-color: var(--bg-sunglow-alpha-10);
+  gap: 5px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+}
+.desti-card .card-rating ion-icon {
+  color: var(--text-sunglow);
+}
+.desti .btn {
+  margin-inline: auto;
+  margin-block-start: 40px;
+}
 /*-----------------------------------*\
   #EXPERIENCE
 \*-----------------------------------*/
-
+.exp .container {
+  display: grid;
+  gap: 50px;
+}
+.exp-banner {
+  position: relative;
+}
+.exp .section-text {
+  margin-block-end: 20px;
+}
+.exp-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-block-start: 15px;
+}
+.exp .item-title {
+  color: var(--text-majorelle-blue);
+  font-size: 3.6rem;
+  font-weight: var(--weight-bold);
+}
+.exp-shape {
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  width: 25%;
+  filter: drop-shadow(var(--shadow-4));
+}
 /*-----------------------------------*\
   #GALLERY
 \*-----------------------------------*/
