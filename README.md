@@ -553,3 +553,4 @@
 |539| [Login Form](https://github.com/xml12333/HTML_CSS_JS/tree/main/539.Login%20Form)| [Demo](https://nikt.com.ua/projects/htmlCssJs/539.Login%20Form/)| ![Thumbnail](539.Login%20Form/img/info_thumbnail.jpg)|
 |540| [Login Form](https://github.com/xml12333/HTML_CSS_JS/tree/main/540.Login%20Form)| [Demo](https://nikt.com.ua/projects/htmlCssJs/540.Login%20Form/)| ![Thumbnail](540.Login%20Form/img/info_thumbnail.jpg)|
 |541| [Marketing Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/541.Marketing%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/541.Marketing%20Website/)| ![Thumbnail](541.Marketing%20Website/img/info_thumbnail.jpg)|
+|542| [Travel Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/542.Travel%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/542.Travel%20Website/)| ![Thumbnail](542.Travel%20Website/img/info_thumbnail.jpg)|
