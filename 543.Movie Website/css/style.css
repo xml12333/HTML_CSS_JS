@@ -1,0 +1,254 @@
+/*-----------------------------------*\
+  #style.css
+\*-----------------------------------*/
+/*-----------------------------------*\
+  #CUSTOM PROPERTY
+\*-----------------------------------*/
+:root {
+  /* colors */
+  --background: hsla(220, 17%, 7%, 1);
+  --banner-background: hsla(250, 6%, 20%, 1);
+  --white-alpha-20: hsla(0, 0%, 100%, 0.2);
+  --on-background: hsla(220, 100%, 95%, 1);
+  --on-surface: hsla(250, 100%, 95%, 1);
+  --on-surface-variant: hsla(250, 1%, 44%, 1);
+  --primary: hsla(349, 100%, 43%, 1);
+  --primary-variant: hsla(349, 69%, 51%, 1);
+  --rating-color: hsla(44, 100%, 49%, 1);
+  --surface: hsla(250, 13%, 11%, 1);
+  --text-color: hsla(250, 2%, 59%, 1);
+  --white: hsla(0, 0%, 100%, 1);
+  /* gradient color */
+  --banner-overlay: 90deg, hsl(220, 17%, 7%) 0%, hsla(220, 17%, 7%, 0.5) 100%;
+  --bottom-overlay: 180deg, hsla(250, 13%, 11%, 0), hsla(250, 13%, 11%, 1);
+
+  /* typography */
+  /* font family */
+  --ff-dm-sans: "DM Sans", sans-serif;
+  /* font size */
+  --fs-heading: 4rem;
+  --fs-title-lg: 2.6rem;
+  --fs-title: 2rem;
+  --fs-body: 1.8rem;
+  --fs-button: 1.5rem;
+  --fs-label: 1.4rem;
+  /* font weight */
+  --weight-bold: 700;
+
+  /* shadow */
+  --shadow-1: 0 1px 4px hsla(0, 0%, 0%, 0.75);
+  --shadow-2: 0 2px 4px hsla(350, 100%, 43%, 0.3);
+  /* border radius */
+  --radius-4: 4px;
+  --radius-8: 8px;
+  --radius-16: 16px;
+  --radius-24: 24px;
+  --radius-36: 36px;
+  /* transition */
+  --transition-short: 250ms ease;
+  --transition-long: 500ms ease;
+}
+/*-----------------------------------*\
+  #RESET
+\*-----------------------------------*/
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a,
+img,
+span,
+iframe,
+button {
+  display: block;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  height: auto;
+}
+input,
+button {
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+}
+input {
+  width: 100%;
+}
+button {
+  text-align: left;
+  cursor: pointer;
+}
+html {
+  font-family: var(--ff-dm-sans);
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+body {
+  background-color: var(--background);
+  color: var(--on-background);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+}
+:focus-visible {
+  outline-color: var(--primary-variant);
+}
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--banner-background);
+  border-radius: var(--radius-8);
+}
+/*-----------------------------------*\
+  #REUSED STYLE
+\*-----------------------------------*/
+.search-wrapper::before {
+  position: absolute;
+  top: 14px;
+  right: 12px;
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--white);
+  border-radius: var(--radius-24);
+  border-inline-end-color: transparent;
+  animation: loading 500ms linear infinite;
+  display: none;
+}
+.search-wrapper.searching::before {
+  display: block;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+/*-----------------------------------*\
+  #HEADER
+\*-----------------------------------*/
+.header {
+  position: relative;
+  padding-block: 24px;
+  padding-inline: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.header .logo {
+  margin-inline-end: auto;
+}
+.search-btn,
+.menu-btn {
+  padding: 12px;
+}
+.search-btn {
+  background-color: var(--banner-background);
+  border-radius: var(--radius-8);
+}
+.search-btn img {
+  opacity: 0.5;
+  transition: var(--transition-short);
+}
+.search-btn:is(:hover, :focus-visible) img {
+  opacity: 1;
+}
+.menu-btn.active .menu,
+.menu-btn .close {
+  display: none;
+}
+.menu-btn .menu,
+.menu-btn.active .close {
+  display: block;
+}
+.search-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background);
+  padding: 24px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1;
+  display: none;
+}
+.search-box.active {
+  display: flex;
+}
+.search-wrapper {
+  position: relative;
+  flex-grow: 1;
+}
+.search-field {
+  background: var(--banner-background);
+  height: 48px;
+  line-height: 48px;
+  padding-inline: 44px 16px;
+  outline: none;
+  border-radius: var(--radius-8);
+  transition: var(--transition-short);
+}
+.search-field::placeholder {
+  color: var(--on-surface-variant);
+}
+.search-field:hover {
+  box-shadow: 0 0 0 2px var(--on-surface-variant);
+}
+.search-field:focus {
+  box-shadow: 0 0 0 2px var(--on-surface);
+  padding-inline-start: 16px;
+}
+.search-wrapper .leading-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 12px;
+  opacity: 0.5;
+  transition: var(--transition-short);
+}
+.search-wrapper:focus-within .leading-icon {
+  opacity: 0;
+}
+/*-----------------------------------*\
+  #SIDEBAR
+\*-----------------------------------*/
+
+/*-----------------------------------*\
+  #HOME PAGE
+\*-----------------------------------*/
+
+/*-----------------------------------*\
+  #DETAIL PAGE
+\*-----------------------------------*/
+
+/*-----------------------------------*\
+  #MOVIE LIST PAGE
+\*-----------------------------------*/
+
+/*-----------------------------------*\
+  #SEARCH MODAL
+\*-----------------------------------*/
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*-----------------------------------*/

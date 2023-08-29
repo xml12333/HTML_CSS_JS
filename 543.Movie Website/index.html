@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- meta tags -->
+    <title>Tvflix</title>
+    <meta name="title" content="Tvflix" />
+    <meta
+      name="description"
+      content="Tvflix is a popular movie app made by codewithsadee."
+    />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./img/favicon.svg" type="image/svg+xml" />
+    <!--Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- custom css link -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- header -->
+    <header class="header">
+      <a href="./index.html" class="logo">
+        <img src="./img/logo.svg" width="140" height="32" alt="Tvflix home" />
+      </a>
+      <div class="search-box" search-box>
+        <div class="search-wrapper" search-wrapper>
+          <input
+            type="text"
+            name="search"
+            aria-label="search movies"
+            placeholder="Search any movies..."
+            class="search-field"
+            autocomplete="off"
+            search-field
+          />
+          <img
+            src="./img/search.png"
+            width="24"
+            height="24"
+            alt="search"
+            class="leading-icon"
+          />
+        </div>
+        <button class="search-btn" search-toggler>
+          <img
+            src="./img/close.png"
+            width="24"
+            height="24"
+            alt="close search box"
+          />
+        </button>
+      </div>
+      <button class="search-btn" search-toggler menu-close>
+        <img
+          src="./img/search.png"
+          width="24"
+          height="24"
+          alt="open search box"
+        />
+      </button>
+      <button class="menu-btn" menu-btn menu-toggler>
+        <img
+          src="./img/menu.png"
+          width="24"
+          height="24"
+          alt="open menu"
+          class="menu"
+        />
+        <img src="./img/menu-close.png" width="24" height="24" alt="close menu" class="close">
+      </button>
+    </header>
+    <script src="js/global.js" defer></script>
+    <script src="js/index.js" type="module"></script>
+  </body>
+</html>
