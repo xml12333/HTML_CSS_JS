@@ -224,14 +224,14 @@ body {
 .title-wrapper {
   margin-block-end: 24px;
 }
-.sidebar-list {
+.slider-list {
   min-width: -20px;
   overflow-x: overlay;
   padding-block-end: 16px;
   margin-block-end: -16px;
 }
 .slider-list::-webkit-scrollbar-thumb {
-  background-color: transparent;
+  /* background-color: transparent; */
 }
 .slider-list:is(:hover, :focus-visible)::-webkit-scrollbar-thum {
   background-color: var(--banner-background);
@@ -533,7 +533,7 @@ body {
   overflow-x: auto;
 }
 .slider-control::-webkit-scrollbar {
-  display: none;
+  /* display: none; */
 }
 .control-inner {
   display: flex;
