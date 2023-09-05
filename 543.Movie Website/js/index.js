@@ -10,7 +10,7 @@ sidebar();
 // home page sections (Top rated, Upcoming, Trending movies)
 const homePageSections = [
   { title: "Upcoming Movies", path: "/movie/upcoming" },
-  { title: "Today's Trending Movies", path: "/trending/movie/week" },
+  { title: "Weekly Trending Movies", path: "/trending/movie/week" },
   { title: "Top Rated Movies", path: "/movie/top_rated" },
 ];
 
@@ -84,7 +84,7 @@ const heroBanner = function ({ results: movieList }) {
         </div>
         <p class="ganre">${genreList.asString(genre_ids)}</p>
         <p class="banner-text">${overview}</p>
-        <a href="./detail.html" class="btn">
+        <a href="./detail.html" class="btn" onclick="getMovieDetail(${id})">
           <img
             src="./img/play_circle.png"
             width="24"
