@@ -127,5 +127,33 @@ fetchDataFromServer(
       movieDetail.querySelector(".slider-inner").appendChild(videoCard);
     }
     pageContent.appendChild(movieDetail);
+
+    fetchDataFromServer(
+      `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${api_key}&page=1`,
+      addSuggestedMovies
+    );
   }
 );
+
+const addSuggestedMovies = function ({ results: movieList }, title) {
+  const movieListElem = document.createElement("section");
+  movieListElem.classList.add("movie-list");
+  movieListElem.ariaLabel = "You May Also Like";
+
+  movieListElem.innerHTML = `
+    <div class="title-wrapper">
+      <h3 class="title-large">You May Also Like</h3>
+    </div>
+    <div class="slider-list">
+      <div class="slider-inner">
+       
+      </div>
+    </div>
+  `;
+  for (const movie of movieList) {
+    // called from movie_card.js
+    const movieCard = createMovieCard(movie);
+    movieListElem.querySelector(".slider-inner").appendChild(movieCard);
+  }
+  pageContent.appendChild(movieListElem);
+};

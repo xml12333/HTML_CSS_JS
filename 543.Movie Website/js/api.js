@@ -1,5 +1,6 @@
 "use strict";
-const api_key = "4bd7fd3984e6e9eb6636a4415dbae0dd",
+import {API_KEY_TMBDB} from "./local_settings.js"
+const api_key = API_KEY_TMBDB,
   imageBaseUrl = "https://image.tmdb.org/t/p/";
 
 // fetch data from a server useng the 'url' and passes
@@ -9,7 +10,8 @@ const api_key = "4bd7fd3984e6e9eb6636a4415dbae0dd",
 const fetchDataFromServer = function (url, callback, optionalParam) {
   fetch(url)
     .then((response) => response.json())
-    .then((data) => callback(data, optionalParam));
+    .then((data) => {
+      callback(data, optionalParam)});
 };
 
 export { imageBaseUrl, api_key, fetchDataFromServer };
