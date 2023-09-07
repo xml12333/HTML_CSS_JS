@@ -2,6 +2,7 @@
 import { api_key, fetchDataFromServer, imageBaseUrl } from "./api.js";
 import { sidebar } from "./sidebar.js";
 import { createMovieCard } from "./movie-card.js";
+import { search } from "./search.js";
 
 const movieId = window.localStorage.getItem("movieId");
 const pageContent = document.querySelector("[page-content]");
@@ -157,3 +158,5 @@ const addSuggestedMovies = function ({ results: movieList }, title) {
   }
   pageContent.appendChild(movieListElem);
 };
+
+search();
