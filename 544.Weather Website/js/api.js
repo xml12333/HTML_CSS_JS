@@ -5,7 +5,7 @@
  * @author Nikolay T.
  */
 "use strict";
-import { apikey } from "./local_settings";
+import { apikey } from "./local_settings.js";
 /**
  * Fetch data from server
  * @param {string} URL API url
