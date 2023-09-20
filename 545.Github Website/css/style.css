@@ -238,12 +238,11 @@ body {
   display: flex;
   flex-direction: column;
   padding-block: var(--header-height) 16px;
-  height: 300vh;
 }
 ::-webkit-scrollbar {
   width: 8px;
 }
-::-webkit-slider-thumb {
+::-webkit-scrollbar-thumb {
   background-color: var(--surface-variant);
   border-radius: var(--radius-pill);
 }
