@@ -310,6 +310,17 @@ body {
 .label-2 {
   font-size: var(--label-2);
 }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
 /*-----------------------------------*\
   #COMPONENTS
 \*-----------------------------------*/
@@ -412,14 +423,117 @@ body {
 }
 
 /* Badge */
+.badge {
+  background-color: var(--surface-variant);
+  color: var(--alpha-60);
+  max-width: max-content;
+  font-size: var(--label-2);
+  font-weight: var(--weight-semiBold);
+  text-transform: uppercase;
+  height: 24px;
+  line-height: 24px;
+  padding-inline: 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--surface-variant-outline);
+}
 
 /* Tab navigation */
+.tab-list {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none; /* for firefox*/
+  border-block-end: 1px solid var(--alpha-5);
+}
+.tab-list::-webkit-scrollbar {
+  display: none;
+}
+.tab-btn {
+  position: relative;
+  height: 48px;
+  padding-inline: 20px;
+  font-size: var(--label-1);
+  margin-block-end: 4px;
+  border-radius: var(--radius-8);
+  opacity: 0.8;
+  flex: 1 0 25%;
+  transition: var(--transition-short);
+}
+.tab-btn:where(:hover, :focus-visible):not(:active) {
+  background-color: var(--alpha-5);
+  opacity: 1;
+}
 
+.tab-btn[aria-selected="true"] {
+  font-weight: var(--weight-medium);
+  opacity: 1;
+}
+.tab-btn[aria-selected="true"]::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--primary);
+  border-radius: var(--radius-pill);
+}
 /* Card */
+.card {
+  --spacing: 16px;
+  background-color: var(--surface);
+  box-ordinal-group: var(--radius-12);
+  overflow: hidden;
+}
+.card :where(.card-body, .card-footer) {
+  padding: var(--spacing);
+}
 
 /* Follower card */
 
 /* Repository card */
+.repo-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.repo-card .card-body {
+  flex-grow: 1;
+}
+.repo-card .card-title {
+  max-width: max-content;
+  padding-inline-end: 76px;
+  transition: var(--transition-short);
+}
+
+.repo-card .card-title:where(:hover, :focus-visible) {
+  color: var(--primary);
+}
+.repo-card .card-text {
+  color: var(--on-surface-variant);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow-y: hidden;
+  -webkit-line-clamp: 2;
+  margin-block-start: 8px;
+}
+.repo-card .badge {
+  position: absolute;
+  top: var(--spacing);
+  right: var(--spacing);
+}
+
+.repo-card .card-footer {
+  background-color: var(--surface-variant);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing);
+}
+.repo-card .meta-item {
+  color: var(--on-surface);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
 
 /* Skeleton */
 .avatar-skeleton {
@@ -605,20 +719,51 @@ body {
 .profile-meta a.meta-text:where(:hover, :focus-visible) {
   color: var(--primary);
 }
-.profile-stats .stats-item{
+.profile-stats .stats-item {
   color: var(--on-surface-variant);
 }
-.profile-stats .body{
+.profile-stats .body {
   color: var(--on-background);
   font-weight: var(--weight-medium);
 }
-.profile .footer{
+.profile .footer {
   display: none;
 }
 /*-----------------------------------*\
   #TAB
 \*-----------------------------------*/
-
+.tab-container .tab-list {
+  margin-inline: -16px;
+  padding-inline: 16px;
+}
+.tab-panel {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-block-start: 16px;
+}
+.tab-panel[hidden] {
+  display: none;
+}
+.tab-panel .card {
+  flex-grow: 1;
+  width: 100%;
+}
+.tab-panel .error-content {
+  width: 100%;
+  padding-block: 96px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tab-panel .error-content .title-1 {
+  color: var(--alpha-50);
+}
+.tab-panel .error-content .text {
+  color: var(--alpha-80);
+}
 /*-----------------------------------*\
   #ERROR
 \*-----------------------------------*/
