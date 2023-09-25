@@ -13,7 +13,7 @@
  */
 export async function fetchData(url, sucessCallback, errorCallback) {
   const response = await fetch(url);
-  if (respoonse.ok) {
+  if (response.ok) {
     const data = await response.json();
     sucessCallback(data);
   } else {
