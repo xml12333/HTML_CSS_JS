@@ -257,14 +257,18 @@ window.updateProfile = function (profileUrl) {
       </ul>
       <ul class="profile-stats">
         <li class="stats-item"><span class="body">${public_repos}</span>Repos</li>
-        <li class="stats-item"><span class="body">${numberToKilo(followers)}</span>Followers</li>
-        <li class="stats-item"><span class="body">${numberToKilo(following)}</span>Following</li>
+        <li class="stats-item"><span class="body">${numberToKilo(
+          followers
+        )}</span>Followers</li>
+        <li class="stats-item"><span class="body">${numberToKilo(
+          following
+        )}</span>Following</li>
       </ul>
       <div class="footer">
         <p class="copyright">&copy; 2023 Nikolay T.</p>
       </div>
     `;
-    updateRepository();
+      updateRepository();
     },
     () => {
       $error.style.display = "grid";
@@ -272,7 +276,7 @@ window.updateProfile = function (profileUrl) {
       $error.innerHTML = `
       <p class="title-1">Oops! :(</p>
       <p class="text">There is no account with this username yet.</p>
-      `
+      `;
     }
   );
 };
@@ -282,4 +286,67 @@ updateProfile(apiUrl);
 /**
  * Repository
  */
-let /** {Array} */ forkedRepos = []
+let /** {Array} */ forkedRepos = [];
+
+const updateRepository = function () {
+  fetchData(`${repoUrl}?sort=created&per_page=12`, function (data) {
+    $repoPanel.innerHTML = `<h2 class="sr-only">Repositories</h2>`;
+    forkedRepos = data.filter((item) => /** {Boolean} */ item.fork);
+    const /** {Array} */ repositories = data.filter((i) => !i.fork);
+    if (repositories.length) {
+      for (const repo of repositories) {
+        const {
+          name,
+          html_url,
+          description,
+          private: isPrivate,
+          language,
+          stargazers_count: stars_count,
+          forks_count,
+        } = repo;
+        const /** {NodeElement} */ $repoCard =
+            document.createElement("article");
+        $repoCard.classList.add("card", "repo-card");
+        $repoCard.innerHTML = ` 
+          <div class="card-body">
+            <a href="${html_url}" target="_blank" class="card-title">
+              <h3 class="title-3">${name}</h3>
+            </a>
+            ${description ? `<p class="card-text">${description}</p>` : ""}
+            <span class="badge">${isPrivate ? "Private" : "Public"}</span>
+          </div>
+          <div class="card-footer">
+          ${
+            language
+              ? `<div class="meta-item">
+              <span class="material-symbols-rounded" aria-hidden="true"
+                >code_blocks</span
+              >
+              <span class="span">${language}</span>
+            </div>`
+              : ""
+          } 
+            <div class="meta-item">
+              <span class="material-symbols-rounded" aria-hidden="true"
+                >star_rate</span
+              >
+              <span class="span">${numberToKilo(stars_count)}</span>
+            </div>
+            <div class="meta-item">
+              <span class="material-symbols-rounded" aria-hidden="true"
+                >family_history</span
+              >
+              <span class="span">${numberToKilo(forks_count)}</span>
+            </div>
+          </div>`;
+        $repoPanel.appendChild($repoCard);
+      }
+    } else{
+      $repoPanel.innerHTML = `
+      <div class="error-content">
+        <p class="title-1">Oops! :(</p>
+        <p class="text">Doesn't have any forked repositories yet.</p>
+      </div>`
+    }
+  });
+};
