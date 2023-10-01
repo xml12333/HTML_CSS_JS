@@ -405,9 +405,107 @@ main {
   display: none;
 }
 /*-----------------------------------*\
+  #MOBILE NAV
+\*-----------------------------------*/
+.mobile-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--mobile-nav-height);
+  background-color: var(--primary-container);
+  color: var(--on-background-variant);
+  padding-block: 12px 16px;
+  z-index: 4;
+  box-shadow: var(--shadow-1);
+}
+.mobile-nav .nav-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+}
+
+.mobile-nav .item-icon {
+  width: 64px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-pill);
+  margin-inline: auto;
+  margin-block-end: 4px;
+  transition: var(--transition-short);
+}
+.mobile-nav .nav-link:where(:hover, :focus-visible) .item-icon {
+  background-color: var(--alpha-10);
+}
+.mobile-nav .nav-link[aria-current="true"] {
+  color: var(--on-background);
+}
+.mobile-nav .nav-link[aria-current="true"] .item-icon {
+  background-color: var(--active-indicator);
+}
+.mobile-nav .nav-link[aria-current="true"] .material-symbols-outlined {
+  font-variation-settings: "FILL" 1;
+}
+/*-----------------------------------*\
   #HERO
 \*-----------------------------------*/
-
+.hero {
+  padding-inline: 16px;
+}
+.banner-card {
+  background-color: var(--image-background);
+  color: var(--white);
+  background-image: url("../img/hero-banner-small.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 480px;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-content: center;
+  text-align: center;
+  padding-inline: 20px;
+  border-radius: var(--radius-8);
+}
+.hero .search-wrapper {
+  position: relative;
+  color: var(--on-background);
+  border-radius: var(--radius-4);
+  max-width: 480px;
+  width: 100%;
+  margin-inline: auto;
+  margin-block: 16px 12px;
+  overflow: hidden;
+}
+.hero .search-wrapper .leading-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+}
+.search-field {
+  height: 56px;
+  background-color: var(--primary-container);
+  padding-inline: 56px;
+  outline: none;
+}
+.search-submit {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  bottom: 4px;
+  width: 48px;
+  display: grid;
+  place-items: center;
+  background-color: var(--primary);
+  color: var(--white);
+  border-radius: var(--radius-4);
+  transition: var(--transition-short);
+}
+.search-submit:where(:hover, :focus-visible):not(:active) {
+  background-color: var(--primary-hover);
+}
 /*-----------------------------------*\
   #TAB
 \*-----------------------------------*/
