@@ -13,7 +13,6 @@ const /** {NodeElement} */ isDark = window.matchMedia(
 if (sessionStorage.getItem("theme")) {
   $HTML.dataset.theme = sessionStorage.getItem("theme");
 } else {
-  console.log(isDark);
   $HTML.dataset.theme = isDark ? "dark" : "light";
 }
 

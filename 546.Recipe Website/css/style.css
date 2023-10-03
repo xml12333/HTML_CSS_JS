@@ -302,6 +302,25 @@ main {
   margin-inline: auto;
   padding-inline: 16px;
 }
+
+.grid-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(172px, 1fr));
+  gap: 12px 8px;
+}
+.img-holder {
+  background-color: var(--image-background);
+  background-image: url("../img/image-placeholder.svg");
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-position: center;
+  overflow: hidden;
+}
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 /*-----------------------------------*\
   #COMPONENTS
 \*-----------------------------------*/
@@ -338,9 +357,108 @@ main {
   border-color: var(--primary);
 }
 /**
+ * Skeleton
+ */
+.skeleton {
+  background-color: var(--on-background);
+  animation: skeleton-loading 500ms linear infinite alternate;
+}
+@keyframes skeleton-loading {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+.skeleton-card .card-banner {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  border-radius: var(--radius-4);
+}
+
+.skeleton-card .card-title {
+  margin-block: 8px;
+  height: 16px;
+  width: 50%;
+}
+.skeleton-card .card-text {
+  height: 12px;
+  width: 80%;
+}
+/**
  * Card
  */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
+.card:not(:has(.skeleton)) {
+  animation: fade-in 500ms var(--transition-timing-function) forwards;
+  transform: translateY(30px);
+  opacity: 0;
+}
+@keyframes fade-in {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.card-media {
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-4);
+}
+.card-body {
+  flex-grow: 1;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+}
+.card-link {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow-y: hidden;
+  transition: var(--transition-short);
+}
+.card-link:where(:hover, :focus-visible) {
+  color: var(--primary);
+}
+.card-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.card :where(.meta-wrapper, .meta-item) {
+  display: flex;
+  align-items: center;
+}
+.card .meta-wrapper {
+  justify-content: space-between;
+}
+.card .meta-item {
+  gap: 8px;
+}
+.card .meta-item .material-symbols-outlined {
+  font-size: 1.8rem;
+}
+.saved .bookmark-add,
+.removed .bookmark {
+  display: none;
+}
+.saved .bookmark {
+  font-variation-settings: "FILL" 1;
+}
 /**
  * Icon Button
  */
@@ -398,10 +516,6 @@ main {
 
 /**
  * Badge
- */
-
-/**
- * Skeleton
  */
 
 /**
@@ -552,6 +666,10 @@ main {
 }
 .tab-panel[hidden] {
   display: none;
+}
+.tab .btn-secondary {
+  max-width: 100%;
+  margin-block-start: 12px;
 }
 
 /*-----------------------------------*\
