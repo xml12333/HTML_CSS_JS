@@ -506,7 +506,16 @@ main {
   background-color: var(--primary-container);
 }
 /* badge button */
-
+.badge-btn {
+  height: 40px;
+  border-radius: var(--radius-pill);
+  background-color: var(--badge-btn);
+  color: var(--on-badge-btn);
+  max-width: max-content;
+  padding-inline: 16px;
+  display: grid;
+  place-items: center;
+}
 /* filter button */
 
 /**
@@ -719,10 +728,42 @@ main {
 /*-----------------------------------*\
   #TAG
 \*-----------------------------------*/
-
+.tag {
+  text-align: center;
+}
+.tag .section-text {
+  max-width: 50ch;
+  margin-inline: auto;
+}
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-block-start: 24px;
+}
 /*-----------------------------------*\
   #FOOTER
 \*-----------------------------------*/
+.footer .logo {
+  display: none;
+}
+.footer {
+  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 12px;
+  border-block-start: 1px solid var(--outline);
+}
+.copyright {
+  opacity: 0.8;
+}
+.footer .edamam img {
+  width: 180px;
+}
 
 /*-----------------------------------*\
   #FILTER BAR
