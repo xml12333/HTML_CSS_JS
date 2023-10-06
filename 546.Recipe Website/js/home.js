@@ -6,6 +6,12 @@
 
 "use strict";
 /**
+ * Import
+ */
+
+import { fetchData } from "./api.js";
+
+/**
  * Home page Search
  */
 
