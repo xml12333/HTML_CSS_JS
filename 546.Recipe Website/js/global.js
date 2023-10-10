@@ -53,11 +53,29 @@ window.saveRecipe = function (element, recipeId) {
       );
       element.classList.toggle("saved");
       element.classList.toggle("removed");
+      showNotification("Added to Recipe book");
     });
     ACCESS_POINT = ROOT;
   } else {
     window.localStorage.removeItem(`cookio-recipe${recipeId}`);
     element.classList.toggle("saved");
     element.classList.toggle("removed");
+    showNotification("Removed to Recipe book");
   }
 };
+
+const /** {NodeElement} */ $snackbarContainer = document.createElement("div");
+$snackbarContainer.classList.add("snackbar-container");
+document.body.appendChild($snackbarContainer);
+
+function showNotification(message) {
+  const /** {NodeElement} */ $snackbar = document.createElement("div");
+  $snackbar.classList.add("snackbar");
+  $snackbar.innerHTML = `
+  <p class="body-medium">${message}</p>
+  `;
+  $snackbarContainer.appendChild($snackbar);
+  $snackbar.addEventListener("animationed", (e) =>
+    $snackbarContainer.removeChild($snackbar)
+  );
+}
