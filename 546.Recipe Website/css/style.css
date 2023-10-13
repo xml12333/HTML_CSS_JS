@@ -1034,6 +1034,21 @@ main {
   }
 }
 
+.load-more{
+  position: relative;
+  margin-block-start: 8px;
+  align-items: center;
+}
+
+.info-text{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: var(--weight-medium);
+  opacity: 0.7;
+}
+
 /*-----------------------------------*\
   #FILTER BAR
 \*-----------------------------------*/
