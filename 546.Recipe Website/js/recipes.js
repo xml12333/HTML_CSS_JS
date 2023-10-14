@@ -84,3 +84,75 @@ $filterSubmit.addEventListener("click", function () {
     ? `./recipes.html?${queries.join("&").replace(/,/g, "=")}`
     : "./recipes.html";
 });
+
+$filterSearch.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") $filterSubmit.click();
+});
+
+$filterClear.addEventListener("click", function () {
+  const /** {NodeList} */ $filterCheckboxes =
+      $filterBar.querySelectorAll("input:checked");
+  $filterCheckboxes?.forEach((elem) => (elem.checked = false));
+  $filterSearch.value &&= "";
+});
+
+const /** {String} */ queryStr = window.location.search.slice(1);
+const /** {Array} */ queries =
+    queryStr && queryStr.split("&").map((i) => i.split("="));
+const /** {NodeElement} */ $filterCount = document.querySelector(
+    "[data-filter-count]"
+  );
+if (queries.length) {
+  $filterCount.style.display = "block";
+  $filterCount.innerHTML = queries.length;
+} else {
+  $filterCount.style.display = "none";
+}
+queryStr &&
+  queryStr.split("&").map((i) => {
+    if (i.split("=")[0] === "q") {
+      $filterBar.querySelector("input[type='search']").value = i
+        .split("=")[1]
+        .replace(/%20/g, " ");
+    } else {
+      $filterBar.querySelector(
+        `[value="${i.split("=")[1].replace(/%20/g, " ")}"]`
+      ).checked = true;
+    }
+  });
+
+const /** {NodeElement} */ $filterBtn =
+    document.querySelector("[data-filter-btn]");
+
+window.addEventListener("scroll", (e) => {
+  $filterBtn.classList[window.scrollY >= 120 ? "add" : "remove"]("active");
+});
+
+/**
+ * Request recipes and render
+ */
+const /** {NodeElement} */ $gridList =
+    document.querySelector("[data-grid-list]");
+const /** {NodeElement} */ $loadMore =
+    document.querySelector("[data-load-more]");
+
+const /** {Array} */ defaultQueries = [
+    ["mealType", "breakfast"],
+    ["mealType", "dinner"],
+    ["mealType", "lunch"],
+    ["mealType", "snack"],
+    ["mealType", "tiatime"],
+    ...cardQueries,
+  ];
+
+$gridList.innerHTML = $skeletonCard.repeat(20);
+const renderRecipe = (data) => {
+  data.hits.map((item, index) => {
+    const {
+      recipe: { image, label: title, totalTime: cookingTime, uri },
+    } = item;
+  });
+};
+
+let /** {Boolean} */ requestedBefore = true;
+fetchData(queries);
