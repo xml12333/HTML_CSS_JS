@@ -1075,57 +1075,70 @@ main {
 .detail-page .removed .unsaved-text {
   display: none;
 }
-.detail-author{
+.detail-author {
   color: var(--on-background-variant);
   margin-block: 16px;
 }
-.detail-author .span{
+.detail-author .span {
   display: inline;
   opacity: 0.8;
 }
-.detail-stats{
+.detail-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
-.detail-stats .stats-item{
+.detail-stats .stats-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
   padding-block: 16px;
 }
-.detail-stats .stats-item:not(:last-child){
+.detail-stats .stats-item:not(:last-child) {
   border-inline-end: 1px solid var(--outline);
 }
-.detail-stats .stats-item .label-medium{
+.detail-stats .stats-item .label-medium {
   text-transform: capitalize;
   opacity: 0.8;
 }
-.detail-page .tag-list{
+.detail-page .tag-list {
   justify-content: flex-start;
   margin-block: 16px 32px;
 }
-.ingr-title{
+.ingr-title {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.ingr-title .label-medium{
+.ingr-title .label-medium {
   opacity: 0.8;
 }
-.ingr-list{
+.ingr-list {
   margin-block-start: 16px;
   border-block-start: 1px solid var(--outline);
   padding-block-start: 8px;
 }
-.ingr-item{
+.ingr-item {
   color: var(--on-background-variant);
   margin-block: 8px;
   list-style-type: disc;
   margin-inline-start: 24px;
 }
 /* Skeleton */
-
+.detail-banner-skeleton {
+  aspect-ratio: 1 / 1;
+}
+.detail-content-skeleton .title-skeleton {
+  height: 32px;
+  width: 50%;
+}
+.detail-content-skeleton .text-skeleton {
+  height: 14px;
+  width: 80%;
+}
+.detail-content-skeleton .filter-chip-skeleton {
+  width: 88px;
+}
 /*-----------------------------------*\
   #SAVED RECIPE PAGE
 \*-----------------------------------*/
