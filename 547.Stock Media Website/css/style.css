@@ -257,90 +257,90 @@ body {
     var(--motion-easing-linear);
   /* opacity: 0; */
 }
-button:disabled{
+button:disabled {
   cursor: default;
   opacity: 0.5;
 }
 /*-----------------------------------*\
   #TYPOGRAPHY
 \*-----------------------------------*/
-.display-large{
+.display-large {
   font-size: var(--fs-display-large);
   font-weight: var(--weight-regular);
   line-height: 64px;
 }
-.display-medium{
+.display-medium {
   font-size: var(--fs-display-medium);
   font-weight: var(--weight-regular);
   line-height: 52px;
 }
-.display-small{
+.display-small {
   font-size: var(--fs-display-small);
   font-weight: var(--weight-regular);
   line-height: 44px;
 }
-.headline-large{
+.headline-large {
   font-size: var(--fs-headline-large);
   font-weight: var(--weight-regular);
   line-height: 40px;
 }
-.headline-medium{
+.headline-medium {
   font-size: var(--fs-headline-medium);
   font-weight: var(--weight-regular);
   line-height: 36px;
 }
-.headline-small{
+.headline-small {
   font-size: var(--fs-headline-small);
   font-weight: var(--weight-regular);
   line-height: 32px;
 }
-.title-large{
+.title-large {
   font-size: var(--fs-title-large);
   font-weight: var(--weight-medium);
   line-height: 28px;
 }
-.title-medium{
+.title-medium {
   font-size: var(--fs-title-medium);
   font-weight: var(--weight-medium);
   line-height: 24px;
 }
-.title-small{
+.title-small {
   font-size: var(--fs-title-small);
   font-weight: var(--weight-medium);
   line-height: 20px;
   letter-spacing: 0.1px;
 }
-.label-large{
+.label-large {
   font-size: var(--fs-label-large);
   font-weight: var(--weight-medium);
   line-height: 20px;
   letter-spacing: 0.1px;
 }
-.label-medium{
+.label-medium {
   font-size: var(--fs-label-medium);
   font-weight: var(--weight-medium);
   line-height: 16px;
   letter-spacing: 0.5px;
 }
-.label-small{
+.label-small {
   font-size: var(--fs-label-small);
   font-weight: var(--weight-medium);
   line-height: 16px;
   letter-spacing: 0.5px;
 }
-.body-large{
+.body-large {
   font-size: var(--fs-body-large);
   font-weight: var(--weight-regular);
   line-height: 24px;
   letter-spacing: 0.5px;
 }
-.body-medium{
+.body-medium {
   font-size: var(--fs-body-medium);
   font-weight: var(--weight-regular);
   line-height: 20px;
   letter-spacing: 0.25px;
 }
-.body-small{
+.body-small {
   font-size: var(--fs-body-small);
   font-weight: var(--weight-regular);
   line-height: 16px;
@@ -349,7 +349,53 @@ button:disabled{
 /*-----------------------------------*\
   #REUSED STYLE
 \*-----------------------------------*/
-
+.material-symbols-outlined {
+  display: block;
+  width: 1em;
+  height: 1em;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+:has(> .state-layer) {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.ripple,
+.state-layer {
+  background-color: var(--state-layer-bg);
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+.state-layer {
+  border-radius: inherit;
+  inset: 0;
+  opacity: 0;
+  transition: var(--motion-duration-short-2) var(--motion-easing-linear);
+}
+:has(> .state-layer):hover > .state-layer {
+  opacity: 0.08;
+}
+:has(> .state-layer):is(:focus, :focus-visible, :active) > .state-layer {
+  opacity: 0.12;
+}
+.ripple {
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  transform-origin: center;
+  border-radius: var(--radius-circle);
+  opacity: 0.12;
+  animation: ripple 800ms var(--motion-easing-standard) forwards;
+}
+@keyframes ripple {
+  0% {
+    scale: 0;
+  }
+  100% {
+    scale: 2.5;
+  }
+}
 /*-----------------------------------*\
   #COMPONENT
 \*-----------------------------------*/
@@ -357,7 +403,33 @@ button:disabled{
 /**
  * Icon button
  */
-
+.icon-btn {
+  color: var(--on-surface-variant);
+  --state-layer-bg: var(--on-surface-variant);
+  min-width: 48px;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-circle);
+  overflow: hidden;
+}
+.icon-btn > .state-layer {
+  inset: 4px;
+}
+.icon-btn > .ripple {
+  width: 40px;
+  height: 40px;
+  animation: icon-button-ripple 200ms var(--motion-easing-standard) forwards;
+}
+@keyframes icon-button-ripple {
+  0% {
+    scale: 0;
+  }
+  100% {
+    scale: 1;
+  }
+}
 /**
  * Segment button
  */
@@ -397,7 +469,33 @@ button:disabled{
 /*-----------------------------------*\
   #TOP APP BAR
 \*-----------------------------------*/
+.top-app-bar {
+  background-color: var(--surface);
+  display: flex;
+  align-items: center;
+  padding-inline: 4px;
+  height: var(--top-app-bar-height);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4;
+  transition: background-color var(--motion-duration-short-2)
+    var(--motion-easing-linear);
+}
+.top-app-bar.active {
+  background-color: var(--surface-container);
+}
+.top-app-bar .logo {
+  margin-inline: 4px auto;
+}
+[data-theme="dark"] .theme-btn .dark-icon,
+[data-theme="light"] .theme-btn .light-icon {
+  display: none;
+}
 
+.search-view-content .divider {
+  margin-inline: 16px;
+}
 /*-----------------------------------*\
   #SCRIM
 \*-----------------------------------*/
