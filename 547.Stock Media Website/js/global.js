@@ -22,3 +22,9 @@ const /** {NodeeList} */ $rippleElems =
     document.querySelectorAll("[data-ripple]");
 
 $rippleElems.forEach(($rippleElems) => ripple($rippleElems));
+
+/**
+ * Filter functionality
+ */
+
+window.filterObj = {};
