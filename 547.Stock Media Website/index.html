@@ -121,8 +121,7 @@
             </button>
           </div>
           <div class="divider"></div>
-          <div class="list" data-search-list>
-          </div>
+          <div class="list" data-search-list></div>
         </div>
       </div>
       <button
@@ -150,8 +149,357 @@
       </button>
     </header>
 
+    <!-- Navigation -->
+    <nav class="navigation" data-navigation>
+      <div class="navigation-header">
+        <button
+          class="icon-btn"
+          aria-label="Close menu"
+          data-ripple
+          data-nav-toggler
+        >
+          <span class="material-symbols-outlined" aria-hidden="true"
+            >arrow_back</span
+          >
+          <div class="state-layer"></div>
+        </button>
+        <a href="./index.html" class="logo">Pixstock</a>
+      </div>
+      <ul class="drawer-list">
+        <li class="drawer-item">
+          <a href="./index.html" class="drawer-link active" data-drawer-link>
+            <span
+              class="material-symbols-outlined leading-icon"
+              aria-hidden="true"
+              >home</span
+            >
+            <span class="label-large">Home</span>
+            <div class="state-layer"></div>
+          </a>
+        </li>
+        <li class="drawer-item">
+          <a
+            href="./pages/photos/photos.html"
+            class="drawer-link"
+            data-drawer-link
+          >
+            <span
+              class="material-symbols-outlined leading-icon"
+              aria-hidden="true"
+              >image</span
+            >
+            <span class="label-large">Photos</span>
+            <div class="state-layer"></div>
+          </a>
+        </li>
+        <li class="drawer-item">
+          <a
+            href="./pages/videos/videos.html"
+            class="drawer-link"
+            data-drawer-link
+          >
+            <span
+              class="material-symbols-outlined leading-icon"
+              aria-hidden="true"
+              >videocam</span
+            >
+            <span class="label-large">Videos</span>
+            <div class="state-layer"></div>
+          </a>
+        </li>
+        <li class="drawer-item">
+          <a
+            href="./pages/collections/collection.html"
+            class="drawer-link"
+            data-drawer-link
+          >
+            <span
+              class="material-symbols-outlined leading-icon"
+              aria-hidden="true"
+              >auto_awesome_mosaic</span
+            >
+            <span class="label-large">Collections</span>
+            <div class="state-layer"></div>
+          </a>
+        </li>
+        <li class="drawer-item">
+          <a
+            href="./pages/favorite/favorite.html"
+            class="drawer-link"
+            data-drawer-link
+          >
+            <span
+              class="material-symbols-outlined leading-icon"
+              aria-hidden="true"
+              >favorite
+            </span>
+            <span class="label-large">Favorite</span>
+            <div class="state-layer"></div>
+          </a>
+        </li>
+      </ul>
+    </nav>
 
-    
+    <!-- Scrim -->
+    <div class="scrim" data-scrim data-nav-toggler></div>
+
+    <main class="main">
+      <article>
+        <!-- Banner -->
+        <section class="banner" aria-label="Banner">
+          <div class="banner-card primary">
+            <div class="card-content">
+              <h3 class="headline-medium card-title">
+                High quality stock photos for free!
+              </h3>
+              <p class="body-large card-text">
+                Explore our exceptional collection of high-quality stock photos.
+              </p>
+              <a
+                href="./pages/photos/photos.html"
+                class="btn btn-primary"
+                data-ripple
+              >
+                <span class="label-large text">Explore Now</span>
+                <div class="state-layer"></div>
+              </a>
+            </div>
+            <div class="card-grid">
+              <div
+                class="card-banner"
+                style="
+                  grid-area: b1;
+                  background-image: url(./img/photo-banner-1.jpg);
+                "
+              ></div>
+              <div
+                class="card-banner"
+                style="
+                  grid-area: b2;
+                  background-image: url(./img/photo-banner-2.jpg);
+                "
+              ></div>
+              <div
+                class="card-banner"
+                style="
+                  grid-area: b3;
+                  background-image: url(./img/photo-banner-3.jpg);
+                "
+              ></div>
+              <div
+                class="card-banner"
+                style="
+                  grid-area: b4;
+                  background-image: url(./img/photo-banner-4.jpg);
+                "
+              ></div>
+              <div
+                class="card-banner"
+                style="
+                  grid-area: b5;
+                  background-image: url(./img/photo-banner-5.jpg);
+                "
+              ></div>
+              <div
+                class="card-banner"
+                style="
+                  grid-area: b6;
+                  background-image: url(./img/photo-banner-6.jpg);
+                "
+              ></div>
+            </div>
+          </div>
+          <div class="banner-card secondary">
+            <div class="card-content">
+              <h3 class="headline-medium card-title">
+                Top rated stock Videos for free!
+              </h3>
+              <p class="body-large card-text">
+                Our curated selection videos is sure to inspire and captivate.
+              </p>
+              <a
+                href="./pages/videos/videos.html"
+                class="btn btn-secondary"
+                data-ripple
+              >
+                <span class="label-large text">Explore Now</span>
+                <div class="state-layer"></div>
+              </a>
+            </div>
+            <div class="card-grid">
+              <div class="card-banner" style="grid-area: b1">
+                <video
+                  class="video"
+                  width="360"
+                  height="420"
+                  loading="lazy"
+                  autoplay
+                  muted
+                  loop
+                >
+                  <source src="./videos/video-banner-1.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div class="card-banner" style="grid-area: b2">
+                <video
+                  class="video"
+                  width="360"
+                  height="640"
+                  loading="lazy"
+                  autoplay
+                  muted
+                  loop
+                >
+                  <source src="./videos/video-banner-2.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div class="card-banner" style="grid-area: b3">
+                <video
+                  class="video"
+                  width="480"
+                  height="360"
+                  loading="lazy"
+                  autoplay
+                  muted
+                  loop
+                >
+                  <source src="./videos/video-banner-3.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div class="card-banner" style="grid-area: b4">
+                <video
+                  class="video"
+                  width="360"
+                  height="640"
+                  loading="lazy"
+                  autoplay
+                  muted
+                  loop
+                >
+                  <source src="./videos/video-banner-4.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div class="card-banner" style="grid-area: b5">
+                <video
+                  class="video"
+                  width="640"
+                  height="360"
+                  loading="lazy"
+                  autoplay
+                  muted
+                  loop
+                >
+                  <source src="./videos/video-banner-5.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div class="card-banner" style="grid-area: b6">
+                <video
+                  class="video"
+                  width="480"
+                  height="360"
+                  loading="lazy"
+                  autoplay
+                  muted
+                  loop
+                >
+                  <source src="./videos/video-banner-6.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </div>
+          <div class="banner-card tertiary">
+            <div class="card-content">
+              <h3 class="headline-medium card-title">
+                Best collections with best medias!
+              </h3>
+              <p class="body-large card-text">
+                Discover a treasure trove of stunning images, captivating
+                videos.
+              </p>
+              <a
+                href="./pages/collections/collection.html"
+                class="btn btn-tertiary"
+                data-ripple
+              >
+                <span class="label-large text">Explore Now</span>
+                <div class="state-layer"></div>
+              </a>
+            </div>
+            <div class="card-grid">
+              <div
+                class="card-banner"
+                style="
+                  grid-area: b1;
+                  background-image: url(./img/collection-banner-1.jpg);
+                "
+              ></div>
+              <div class="card-banner" style="grid-area: b2">
+                <video
+                  class="video"
+                  width="360"
+                  height="420"
+                  loading="lazy"
+                  autoplay
+                  muted
+                  loop
+                >
+                  <source
+                    src="./videos/collection-banner-2.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+              <div
+                class="card-banner"
+                style="
+                  grid-area: b3;
+                  background-image: url(./img/collection-banner-3.jpg);
+                "
+              ></div>
+              <div
+                class="card-banner"
+                style="
+                  grid-area: b4;
+                  background-image: url(./img/collection-banner-4.jpg);
+                "
+              ></div>
+              <div class="card-banner" style="grid-area: b5">
+                <video
+                  class="video"
+                  width="640"
+                  height="360"
+                  loading="lazy"
+                  autoplay
+                  muted
+                  loop
+                >
+                  <source
+                    src="./videos/collection-banner-5.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+              <div class="card-banner" style="grid-area: b6">
+                <video
+                  class="video"
+                  width="640"
+                  height="338"
+                  loading="lazy"
+                  autoplay
+                  muted
+                  loop
+                >
+                  <source
+                    src="./videos/collection-banner-6.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
     <!-- theme js link -->
     <script src="./js/theme.js"></script>
     <!-- custom js -->
