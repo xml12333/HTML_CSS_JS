@@ -24,7 +24,7 @@ const fetchData = async function (url, successCallback) {
   const /** {Object} */ response = await fetch(url, requestOptions);
   if (response.ok) {
     const /** {Object} */ data = await response.json();
-    successCallback();
+    successCallback(data);
   }
 };
 
@@ -42,7 +42,7 @@ export const /** {Object} */ client = {
        * @param {Function} callback Callback function
        */
       search(parameters, callback) {
-        requestUrl = `${root.default}search?${urlEncode(parameters)}`;
+        requestUrl = `${root.default}/search?${urlEncode(parameters)}`;
         fetchData(requestUrl, callback);
       },
 
@@ -52,7 +52,7 @@ export const /** {Object} */ client = {
        * @param {Function} callback Callback function
        */
       curated(parameters, callback) {
-        fetchData(`${root.default}curated?${urlEncode(parameters)}`, callback);
+        fetchData(`${root.default}/curated?${urlEncode(parameters)}`, callback);
       },
 
       /**
@@ -61,7 +61,7 @@ export const /** {Object} */ client = {
        * @param {Function} callback Callback function
        */
       detail(id, callback) {
-        fetchData(`${root.default}photos/${id}`, callback);
+        fetchData(`${root.default}/photos/${id}`, callback);
       },
     },
     videos: {
@@ -71,7 +71,7 @@ export const /** {Object} */ client = {
        * @param {Function} callback Callback function
        */
       search(parameters, callback) {
-        requestUrl = `${root.videos}search?${urlEncode(parameters)}`;
+        requestUrl = `${root.videos}/search?${urlEncode(parameters)}`;
         fetchData(requestUrl, callback);
       },
 
@@ -81,7 +81,7 @@ export const /** {Object} */ client = {
        * @param {Function} callback Callback function
        */
       popular(parameters, callback) {
-        fetchData(`${root.videos}popular?${urlEncode(parameters)}`, callback);
+        fetchData(`${root.videos}/popular?${urlEncode(parameters)}`, callback);
       },
 
       /**
@@ -90,7 +90,7 @@ export const /** {Object} */ client = {
        * @param {Function} callback Callback function
        */
       detail(id, callback) {
-        fetchData(`${root.videos}videos/${id}`, callback);
+        fetchData(`${root.videos}/videos/${id}`, callback);
       },
     },
     collections: {
@@ -100,7 +100,7 @@ export const /** {Object} */ client = {
        * @param {Function} callback Callback function
        */
       featured(parameters, callback) {
-        requestUrl = `${root.default}collections/featured?${urlEncode(
+        requestUrl = `${root.default}/collections/featured?${urlEncode(
           parameters
         )}`;
         fetchData(requestUrl, callback);
