@@ -426,7 +426,7 @@ button:disabled {
   grid-template-columns: repeat(var(--culumn-count), minmax(0, 1fr));
   gap: var(--culumn-gap);
   /* for javascript */
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 .img-cover {
   width: 100%;
@@ -985,7 +985,9 @@ button:disabled {
 /*-----------------------------------*\
   #CURATED PHOTOS & POPULAR VIDEO
 \*-----------------------------------*/
-
+:where(.featured-photo, .popular-videos) .column{
+  margin-block-end: -800px;
+}
 /*-----------------------------------*\
   #COLLECTION
 \*-----------------------------------*/
