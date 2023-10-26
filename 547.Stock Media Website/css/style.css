@@ -469,6 +469,22 @@ button:disabled {
     opacity: 1;
   }
 }
+.card-badge{
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  background-color: var(--light-secondary-container);
+  color: var(--light-on-secondary-container);
+  border-radius: var(--radius-small);
+}
+
+.card-badge .material-symbols-outlined{
+  font-size: 1.8rem;
+}
 /*-----------------------------------*\
   #COMPONENT
 \*-----------------------------------*/
@@ -787,6 +803,9 @@ button:disabled {
   color: var(--light-inverse-primary);
   --state-layer-bg: var(--light-inverse-primary);
 }
+.card.video {
+  background-color: var(--surface-container-highest);
+}
 /**
  * Menu
  */
@@ -985,7 +1004,7 @@ button:disabled {
 /*-----------------------------------*\
   #CURATED PHOTOS & POPULAR VIDEO
 \*-----------------------------------*/
-:where(.featured-photo, .popular-videos) .column{
+:where(.featured-photo, .popular-video) .column {
   margin-block-end: -800px;
 }
 /*-----------------------------------*\

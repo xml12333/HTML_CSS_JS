@@ -508,11 +508,63 @@
             <h2 class="title-large section-title" id="featured-label">
               Featured photos
             </h2>
-            <div class="media-grid" data-photo-grid>
-            </div>
+            <div class="media-grid" data-photo-grid></div>
             <div class="overlay-btn">
               <a
                 href="./pages/photos/photos.html"
+                class="btn btn-primary"
+                data-ripple=""
+              >
+                <span class="label-large text">Explore more</span>
+                <div class="state-layer"></div>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- popular videos -->
+        <section
+          class="section popular-video"
+          aria-labelledby="popular-video-label"
+        >
+          <div class="container">
+            <h2 class="title-large section-title" id="popular-video-label">
+              Popular videos
+            </h2>
+            <div class="media-grid" data-video-grid>
+              <div class="card video grid-item">
+                <div class="card-banner" style="--width: 160; --height: 118">
+                  <video poster="" muted loop class="img-cover" data-video>
+                    <source
+                      src="./videos/video-banner-1.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                </div>
+                <div class="card-content">
+                  <button
+                    class="icon-btn small"
+                    aria-label="Add to favorite"
+                    data-ripple
+                  >
+                    <span
+                      class="material-symbols-outlined leading-icon"
+                      aria-hidden="true"
+                      >favorite</span
+                    >
+                    <div class="state-layer"></div>
+                  </button>
+                </div>
+                <span class="card-badge">
+                  <span class="material-symbols-outlined" aria-hidden="true"
+                    >play_arrow</span
+                  >
+                </span>
+              </div>
+            </div>
+            <div class="overlay-btn">
+              <a
+                href="./pages/videos/videos.html"
                 class="btn btn-primary"
                 data-ripple=""
               >
