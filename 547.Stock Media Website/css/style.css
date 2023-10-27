@@ -469,7 +469,7 @@ button:disabled {
     opacity: 1;
   }
 }
-.card-badge{
+.card-badge {
   position: absolute;
   top: 16px;
   left: 16px;
@@ -482,8 +482,11 @@ button:disabled {
   border-radius: var(--radius-small);
 }
 
-.card-badge .material-symbols-outlined{
+.card-badge .material-symbols-outlined {
   font-size: 1.8rem;
+}
+.color-primary {
+  color: var(--primary);
 }
 /*-----------------------------------*\
   #COMPONENT
@@ -657,6 +660,23 @@ button:disabled {
   font-size: 1.8rem;
   color: var(--on-surface-variant);
 }
+
+.list-item.two-line {
+  justify-content: space-between;
+  padding-inline-end: 12px;
+  height: 72px;
+}
+
+.list-item.two-line .body-large {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.list-item.two-line > .state-layer {
+  pointer-events: all;
+}
+
 /**
  * Navigation
  */
@@ -1010,10 +1030,42 @@ button:disabled {
 /*-----------------------------------*\
   #COLLECTION
 \*-----------------------------------*/
-
+.grid-card .label {
+  color: var(--on-surface-variant);
+}
+.collection-grid .list-item {
+  border-block-end: 1px solid var(--outline-variant);
+}
+.collection .btn {
+  margin-block: 12px;
+  margin-inline: auto;
+}
 /*-----------------------------------*\
   #FOOTER
 \*-----------------------------------*/
+.footer {
+  margin-block-start: 24px;
+  padding-block-end: 16px;
+}
+.footer-card {
+  background-color: var(--surface-container);
+  color: var(--on-surface-variant);
+  padding: 16px;
+  border-radius: var(--radius-large);
+}
+.footer-card .text {
+  line-height: 10px;
+  margin-block: 8px 16px;
+}
+.footer-card :where(span, a) {
+  display: inline-block;
+}
+.footer-card a:not(.logo):hover {
+  text-decoration: underline;
+}
+.footer-card .title {
+  margin-block-end: 4px;
+}
 
 /*-----------------------------------*\
   #PHOTO PAGE
