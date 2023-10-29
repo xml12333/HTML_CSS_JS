@@ -18,8 +18,14 @@ export const updeteUrl = (filterObj, searchType) => {
   setTimeout(() => {
     const /** {String} */ root = window.location.origin;
     const /** {String} */ searchQuery = urlEncode(filterObj);
-    const /** {String} */ loc = window.location.pathname;
-    const /** {String} */ dirName = loc.substring(1, loc.lastIndexOf("/"));
+    const /** {String} */ loc = window.location.pathname.substring(
+        1,
+        window.location.pathname.lastIndexOf("/")
+      );
+    const /** {String} */ dirName = loc.substring(
+        0,
+        loc.indexOf("/") < 0 ? loc.length : loc.indexOf("/")
+      );
     window.location = `${root}/${dirName}/pages/${searchType}/${searchType}.html?${searchQuery}`;
   });
 };
