@@ -14,6 +14,7 @@ import { gridInit, updateGrid } from "../../js/utils/masonry_grid.js";
 import { photoCard } from "../../js/photo_card.js";
 import { updeteUrl } from "../../js/utils/updateUrl.js";
 import { urlDecode } from "../../js/utils/urlDecode.js";
+import { filter } from "../../js/filter.js";
 
 /**
  * Show filter bar if serched anything
@@ -22,6 +23,18 @@ const /** {NodeElement} */ $filterBar =
     document.querySelector("[data-filter-bar]");
 
 $filterBar.style.display = window.location.search ? "flex" : "none";
+
+/**
+ * Init filter
+ */
+const /** {NodeList} */ $filterWrappers =
+    document.querySelectorAll("[data-filter]");
+$filterWrappers.forEach(($filterWrapper) => {
+  filter($filterWrapper, window.filterObj, (newObj) => {
+    window.filterObj = newObj;
+    updeteUrl(newObj, "photos");
+  });
+});
 
 /**
  * Render curated or searched photos

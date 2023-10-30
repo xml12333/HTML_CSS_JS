@@ -255,7 +255,7 @@ body {
   min-height: 100vh;
   transition: opacity var(--motion-duration-medium-2)
     var(--motion-easing-linear);
-  /* opacity: 0; */
+  opacity: 0;
 }
 button:disabled {
   cursor: default;
