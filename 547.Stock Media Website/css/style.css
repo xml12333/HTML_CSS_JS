@@ -617,7 +617,33 @@ button:disabled {
 /**
  * Split btn
  */
-
+.split-btn {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  display: flex;
+  align-items: center;
+  height: 40px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+.split-btn .label {
+  --state-layer-bg: var(--on-primary);
+  padding-inline: 16px;
+  height: inherit;
+  display: grid;
+  place-items: center;
+  border-inline-end: 1px solid var(--outline-variant);
+}
+.split-btn .trailing-icon {
+  --state-layer-bg: var(--on-primary);
+  color: inherit;
+  width: 40px;
+  display: grid;
+  place-items: center;
+}
+.split-btn .material-symbols-outlined{
+  font-size: 1.8rem;
+}
 /**
  * Search view
  */
@@ -957,15 +983,15 @@ button:disabled {
 .filter-chip.selected:hover {
   box-shadow: var(--elevation-1);
 }
-.filter-chip.selected :where(.leading-icon, .close-icon){
+.filter-chip.selected :where(.leading-icon, .close-icon) {
   min-width: min-content;
   width: min-content;
   visibility: visible;
 }
-.filter-chip.selected .arrow-icon{
+.filter-chip.selected .arrow-icon {
   display: none;
 }
-.filter-chip.selected .close-icon{
+.filter-chip.selected .close-icon {
   padding: 8px;
 }
 /*-----------------------------------*\
@@ -1204,10 +1230,10 @@ button:disabled {
 /*-----------------------------------*\
   #PHOTO PAGE
 \*-----------------------------------*/
-.filter-chip:has(.color-field){
+.filter-chip:has(.color-field) {
   position: relative;
 }
-.color-field{
+.color-field {
   position: absolute;
   top: 0;
   left: 0;
@@ -1220,7 +1246,51 @@ button:disabled {
 /*-----------------------------------*\
   #PHOTO DETAIL PAGE
 \*-----------------------------------*/
-
+.detail :is(.main,.footer){
+  margin-inline-start: 0;
+}
+.detail .top-app-bar .icon-btn:first-child{
+  display: grid;
+}
+.detail .top-app-bar .logo{
+  display: block;
+}
+.detail .top-app-bar{
+  left: 0;
+  width: 100%;
+  gap: 4px;
+}
+.detail .menu-wrapper{
+  margin-inline-start: auto;
+}
+.detail .menu-wrapper .menu{
+  transform-origin: top right;
+  left: auto;
+  right: 0;
+}
+.detail-wrapper{
+  height: 588px;
+  display: grid;
+  grid-template-rows: 1fr max-content;
+  place-items: center;
+}
+.detail-banner{
+  max-width: 100%;
+  max-height: 100%;
+  margin-inline: auto;
+  border-radius: var(--radius-large);
+  overflow: hidden;
+  margin-block-end: 8px;
+}
+.detail-wrapper .title-small{
+  text-align: center;
+}
+.detail-wrapper .color-primary{
+  display: inline-block;
+}
+.detail .title-large{
+  margin-block: 32px 16px;
+}
 /*-----------------------------------*\
   #FAVORITE PAGE
 \*-----------------------------------*/
