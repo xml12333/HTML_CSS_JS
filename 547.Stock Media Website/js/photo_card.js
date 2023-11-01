@@ -19,8 +19,14 @@ import { favorite } from "./favorite.js";
 
 export const photoCard = (photo) => {
   const /** {String} */ root = window.location.origin;
-  const /** {String} */ loc = window.location.pathname;
-  const /** {String} */ dirName = loc.substring(1, loc.lastIndexOf("/"));
+  const /** {String} */ loc = window.location.pathname.substring(
+      1,
+      window.location.pathname.lastIndexOf("/")
+    );
+  const /** {String} */ dirName = loc.substring(
+      0,
+      loc.indexOf("/") < 0 ? loc.length : loc.indexOf("/")
+    );
   const {
     alt,
     avg_color: backdropColor,
