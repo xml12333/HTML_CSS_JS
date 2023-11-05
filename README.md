@@ -558,3 +558,4 @@
 |544| [Weather Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/544.Weather%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/544.Weather%20Website/)| ![Thumbnail](544.Weather%20Website/img/info_thumbnail.jpg)|
 |545| [Github Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/545.Github%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/545.Github%20Website/)| ![Thumbnail](545.Github%20Website/img/info_thumbnail.jpg)|
 |546| [Recipe Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/546.Recipe%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/546.Recipe%20Website/)| ![Thumbnail](546.Recipe%20Website/img/info_thumbnail.jpg)|
+|547| [Stock Media Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/547.Stock%20Media%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/547.Stock%20Media%20Website/)| ![Thumbnail](547.Stock%20Media%20Website/img/info_thumbnail.jpg)|
