@@ -1524,6 +1524,11 @@ button:disabled {
 */
 @media screen and (min-width: 1400px) {
   /* Banner */
-  .banner-card {height: 560px;}
-  .banner-card .card-content {padding: 84px;}
+  .banner-card {
+    height: 560px;
+  }
+  .banner-card .card-content {
+    padding: 84px;
+  }
+  
 }
