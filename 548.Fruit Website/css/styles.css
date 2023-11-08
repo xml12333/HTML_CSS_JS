@@ -218,19 +218,19 @@ img {
   filter: var(--filter-img);
   position: absolute;
 }
-.nav__img-1{
+.nav__img-1 {
   width: 150px;
   top: -2.5rem;
   left: -3.5rem;
   rotate: 180deg;
 }
-.nav__img-2{
+.nav__img-2 {
   width: 50px;
   right: 2.5rem;
   bottom: 2.5rem;
 }
 /* Show menu */
-.show-menu{
+.show-menu {
   top: 0;
 }
 /* Add shadow header */
@@ -238,9 +238,59 @@ img {
 /* Active link */
 
 /*=============== HOME ===============*/
+.home {
+  position: relative;
+}
+.home__container {
+  padding-top: 2.5rem;
+  row-gap: 2rem;
+}
+.home__data {
+  position: relative;
+  text-align: center;
+}
+.home__title {
+  font-size: var(--biggest-font-size);
+  font-family: var(--second-font);
+  margin-bottom: 1rem;
+}
+.home__description {
+  margin-bottom: 2rem;
+}
+.home__fruit,
+.home__branch {
+  filter: var(--filter-img);
+  position: absolute;
+}
+.home__fruit {
+  width: 40px;
+  top: 6.75rem;
+  left: 1rem;
+}
+.home__img {
+  width: 320px;
+  justify-self: center;
+  filter: var(--shadow-img);
+}
+.home__branch {
+  width: 120px;
+  right: -3rem;
+  bottom: 15rem;
+}
 
 /*=============== BUTTON ===============*/
-
+.button {
+  display: inline-block;
+  background-color: var(--first-color);
+  padding: 1rem 2rem;
+  border-radius: 4rem;
+  color: var(--white-color);
+  font-weight: var(--font-semi-bold);
+  transition: box-shadow 0.4s;
+}
+.button:hover {
+  box-shadow: 0 8px 24px hsla(140, 40%, 48%, 0.3);
+}
 /*=============== ENJOY ===============*/
 
 /*=============== ABOUT ===============*/
