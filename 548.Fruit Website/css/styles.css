@@ -363,14 +363,76 @@ img {
   justify-self: center;
   filter: var(--shadow-img);
 }
-.about__branch{
+.about__branch {
   width: 120px;
   rotate: 60deg;
   left: -3.5rem;
   bottom: 15rem;
 }
 /*=============== POPULAR ===============*/
-
+.popular__container {
+  padding-top: 6rem;
+  grid-template-columns: 250px;
+  justify-content: center;
+  row-gap: 6rem;
+}
+.popular__card {
+  position: relative;
+  padding-block: 6.25rem 3rem;
+  text-align: center;
+}
+.popular__bg {
+  width: 100%;
+  height: 100%;
+  background-color: var(--container-color);
+  border-radius: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: skewY(4deg);
+  transition: background-color 0.4s;
+}
+.popular__img {
+  width: 150px;
+  position: absolute;
+  top: -4rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto 0.75rem;
+  filter: var(--shadow-img);
+  transition: transform 0.4s;
+}
+.popular__title {
+  font-size: var(--h2-font-size);
+  font-family: var(--second-font);
+  margin-bottom: 0.25rem;
+}
+.popular__subtitle {
+  display: block;
+  font-size: var(--small-font-size);
+  margin-bottom: 0.75rem;
+}
+.popular__price {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi-bold);
+}
+.popular__button {
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+  display: grid;
+  place-items: center;
+  font-size: 1.25rem;
+  font-weight: initial;
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  cursor: pointer;
+}
+.popular__card:hover .popular__img {
+  transform: translateY(-0.3rem);
+}
 /*=============== JOIN ===============*/
 
 /*=============== FOOTER ===============*/
