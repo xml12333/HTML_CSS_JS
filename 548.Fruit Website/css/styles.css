@@ -434,7 +434,76 @@ img {
   transform: translateY(-0.3rem);
 }
 /*=============== JOIN ===============*/
-
+.join__container {
+  position: relative;
+  padding-bottom: 4rem;
+}
+.join__content {
+  position: relative;
+  padding: 2.5rem 1.5rem;
+  row-gap: 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.join__content::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: hsla(0, 0%, 0%, 0.2);
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(8px);
+}
+.join__bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+}
+.join__data,
+.join__form {
+  z-index: 5;
+}
+.join__data .section__title,
+.join__description {
+  color: var(--white-color);
+  text-align: center;
+}
+.join__form {
+  display: grid;
+  row-gap: 0.75rem;
+}
+.join__input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 4rem;
+  background-color: var(--body-color);
+  color: var(--title-color);
+  transition: background-color 0.4s;
+}
+.join__input::placeholder {
+  color: var(--text-color);
+}
+.join__button {
+  cursor: pointer;
+}
+.join__leaf-1,
+.join__leaf-2 {
+  position: absolute;
+  width: 80px;
+}
+.join__leaf-1 {
+  top: -2.5rem;
+  left: 0.75rem;
+  rotate: 135deg;
+}
+.join__leaf-2{
+  right: 1.5rem;
+  bottom: 1rem;
+  rotate: 15deg;
+}
 /*=============== FOOTER ===============*/
 
 /*=============== SCROLL BAR ===============*/
