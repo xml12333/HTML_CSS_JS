@@ -29,7 +29,7 @@
         <div class="nav__menu" id="nav-menu">
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="#home" class="nav__link">Home</a>
+              <a href="#home" class="nav__link active-link">Home</a>
             </li>
             <li class="nav__item">
               <a href="#about" class="nav__link">About Us</a>
@@ -48,9 +48,14 @@
           <img src="img/branch-2.png" alt="" class="nav__img-1" />
           <img src="img/fruit-line-1.png" alt="" class="nav__img-2" />
         </div>
-        <!-- Toggle button -->
-        <div class="nav__toggle" id="nav-toggle">
-          <i class="ri-apps-2-line"></i>
+
+        <div class="nav__buttons">
+          <!-- Theme button -->
+          <i class="ri-moon-line change-theme" id="theme-button"></i>
+          <!-- Toggle button -->
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-apps-2-line"></i>
+          </div>
         </div>
       </nav>
     </header>
@@ -285,7 +290,9 @@
     </footer>
 
     <!--========== SCROLL UP ==========-->
-
+    <a href="#" class="scrollup" id="scroll-up"
+      ><i class="ri-arrow-up-s-line"></i
+    ></a>
     <!--=============== SCROLLREVEAL ===============-->
     <script src=""></script>
 
