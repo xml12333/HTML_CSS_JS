@@ -559,3 +559,4 @@
 |545| [Github Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/545.Github%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/545.Github%20Website/)| ![Thumbnail](545.Github%20Website/img/info_thumbnail.jpg)|
 |546| [Recipe Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/546.Recipe%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/546.Recipe%20Website/)| ![Thumbnail](546.Recipe%20Website/img/info_thumbnail.jpg)|
 |547| [Stock Media Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/547.Stock%20Media%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/547.Stock%20Media%20Website/)| ![Thumbnail](547.Stock%20Media%20Website/img/info_thumbnail.jpg)|
+|548| [Fruit Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/548.Fruit%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/548.Fruit%20Website/)| ![Thumbnail](548.Fruit%20Website/img/info_thumbnail.jpg)|
