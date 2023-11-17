@@ -184,7 +184,18 @@ img {
   top: 0;
 }
 /* Add blur header */
-
+.blur-header::after {
+  content: "";
+  position: absolute;
+  width: 1000%;
+  height: 100%;
+  background-color: hsla(23, 12%, 4%, 0.2);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 /* Active link */
 
 /*=============== HOME ===============*/
@@ -294,6 +305,19 @@ img {
   box-shadow: 0 12px 32px hsla(23, 100%, 50%, 0.12);
 }
 /*=============== ABOUT ===============*/
+.about__container {
+  row-gap: 3.5rem;
+}
+.about__data {
+  text-align: center;
+}
+.about__description {
+  margin-bottom: 2.5rem;
+}
+.about__img {
+  width: 280px;
+  justify-self: center;
+}
 
 /*=============== FAVORITE ===============*/
 
