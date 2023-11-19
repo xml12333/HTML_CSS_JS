@@ -349,9 +349,76 @@ img {
 }
 
 /*=============== MODEL ===============*/
-
+.model__container {
+  padding-top: 2rem;
+  row-gap: 2.5rem;
+}
+.model__content {
+  position: relative;
+  justify-self: center;
+}
+.model__img {
+  width: 280px;
+}
+.model__tolltip-img {
+  width: 60px;
+}
+.model__tooltip-text {
+  background: var(--gradient-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4rem;
+  color: var(--white-color);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  position: absolute;
+  transform: translate(60px, -40px);
+  white-space: nowrap;
+}
+.model__tooltip-1,
+.model__tooltip-2 {
+  transform: scaleX(-1);
+}
+.model__tooltip-1 .model__tooltip-text,
+.model__tooltip-2 .model__tooltip-text {
+  transform: translate(60px, -40px) scaleX(-1);
+}
+.model__tooltip {
+  position: absolute;
+}
+.model__tooltip-1 {
+  top: 5.5rem;
+  left: 5rem;
+}
+.model__tooltip-2 {
+  top: 1rem;
+  right: 1.5rem;
+}
+.model__tooltip-3 {
+  bottom: 1.8rem;
+  left: 3.5rem;
+}
+.model__tooltip-4 {
+  bottom: 7rem;
+  right: 5rem;
+}
+.model__button {
+  justify-self: center;
+}
 /*=============== SPONSOR ===============*/
-
+.sponsor__img {
+  width: 100px;
+  transition: transform 0.4s;
+}
+.sponsor__img:hover {
+  transform: scale(1.1);
+}
+.sponsor__container {
+  padding-block: 0.5rem 4.5rem;
+  grid-template-columns: repeat(2, max-content);
+  justify-content: center;
+  align-items: center;
+  gap: 5rem 4rem;
+}
 /*=============== FOOTER ===============*/
 
 /*=============== SCROLL BAR ===============*/
