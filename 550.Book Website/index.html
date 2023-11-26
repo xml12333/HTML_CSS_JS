@@ -14,7 +14,7 @@
     />
 
     <!--=============== SWIPER CSS ===============-->
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
 
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="css/styles.css" />
@@ -93,20 +93,28 @@
         <div class="login__group grid">
           <div>
             <label for="login-email" class="login__label">Email</label>
-            <input type="email" placeholder="Write your email" id="login-email" class="login__input">
+            <input
+              type="email"
+              placeholder="Write your email"
+              id="login-email"
+              class="login__input"
+            />
           </div>
           <div>
             <label for="login-pass" class="login__label">Password</label>
-            <input type="password" placeholder="Enter your password" id="login-pass" class="login__input">
+            <input
+              type="password"
+              placeholder="Enter your password"
+              id="login-pass"
+              class="login__input"
+            />
           </div>
         </div>
         <div>
           <span class="login__signup">
             You do not have an account? <a href="#">Sign up</a>
           </span>
-          <a href="#" class="login__forgot">
-            You forgot your password
-          </a>
+          <a href="#" class="login__forgot"> You forgot your password </a>
           <button type="submit" class="login__button button">Log In</button>
         </div>
       </form>
@@ -116,7 +124,40 @@
     <!--==================== MAIN ====================-->
     <main class="main">
       <!--==================== HOME ====================-->
-      <section class="home section" id="home"></section>
+      <section class="home section" id="home">
+        <div class="home__container container grid">
+          <div class="home__data">
+            <h1 class="home__title">
+              Browse & <br />
+              Select E-Books
+            </h1>
+            <p class="home__description">
+              Find the best e-books from your favorite writers, explore hundreds
+              of books with all possible categories, take advantage of the 50%
+              discount and much more.
+            </p>
+            <a href="#" class="button">Explore Now</a>
+          </div>
+          <div class="home__images">
+            <div class="home__swiper swiper">
+              <div class="swiper-wrapper">
+                <article class="home__article swiper-slide">
+                  <img src="img/home-book-1.png" alt="img" class="home__img" />
+                </article>
+                <article class="home__article swiper-slide">
+                  <img src="img/home-book-2.png" alt="img" class="home__img" />
+                </article>
+                <article class="home__article swiper-slide">
+                  <img src="img/home-book-3.png" alt="img" class="home__img" />
+                </article>
+                <article class="home__article swiper-slide">
+                  <img src="img/home-book-4.png" alt="img" class="home__img" />
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!--==================== SERVICES ====================-->
       <section class="services section"></section>
@@ -143,10 +184,10 @@
     <!--========== SCROLL UP ==========-->
 
     <!--=============== SCROLLREVEAL ===============-->
-    <script src=""></script>
+    <script src="js/scrollreveal.min.js"></script>
 
     <!--=============== SWIPER JS ===============-->
-    <script src=""></script>
+    <script src="js/swiper-bundle.min.js"></script>
 
     <!--=============== MAIN JS ===============-->
     <script src="js/main.js"></script>
