@@ -40,7 +40,14 @@ if (loginClose) {
   });
 }
 /*=============== ADD SHADOW HEADER ===============*/
-
+const shadowHeader = () => {
+  const header = document.getElementById("header");
+  // When the scroll is greater than 50 viewport height, add the shadow-header class to the header tag
+  this.scrollY >= 50
+    ? header.classList.add("shadow-header")
+    : header.classList.remove("shadow-header");
+};
+window.addEventListener("scroll", shadowHeader);
 /*=============== HOME SWIPER ===============*/
 let swiperHome = new Swiper(".home__swiper", {
   loop: true,
@@ -60,7 +67,23 @@ let swiperHome = new Swiper(".home__swiper", {
   },
 });
 /*=============== FEATURED SWIPER ===============*/
-
+let swiperFeatured = new Swiper(".featured__swiper", {
+  loop: true,
+  spaceBeetween: 16,
+  slidesPerView: "auto",
+  centeredSlides: "auto",
+  grabCursor: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    1220: {
+      slidesPerView: 4,
+      centeredSlides: false,
+    },
+  },
+});
 /*=============== NEW SWIPER ===============*/
 
 /*=============== TESTIMONIAL SWIPER ===============*/
