@@ -467,9 +467,69 @@ img {
 }
 
 /*=============== DISCOUNT ===============*/
-
+.discount__container {
+  row-gap: 3.5rem;
+}
+.discount__data {
+  text-align: center;
+}
+.discount__description {
+  margin-bottom: 2rem;
+}
+.discount__images {
+  display: flex;
+  justify-content: center;
+}
+.discount__img-1,
+.discount__img-2 {
+  width: 170px;
+}
+.discount__img-1 {
+  transform: translateX(1rem) rotate(-10deg);
+}
+.discount__img-2 {
+  transform: translateX(-1rem) rotate(10deg);
+}
 /*=============== NEW ===============*/
-
+.new__card {
+  display: flex;
+  align-items: center;
+  column-gap: 2.5rem;
+  background-color: var(--container-color);
+  padding: 1.5rem 1rem;
+  color: var(--text-color);
+  border: 2px solid var(--border-color);
+  transition: border 0.4s, background-color 0.4s;
+}
+.new__card:hover {
+  border: 2px solid var(--text-color);
+}
+.new__img{
+  width: 100px;
+}
+.new__title{
+  font-size: var(--h2-font-size);
+  margin-bottom: .5rem;
+}
+.new__prices{
+  display: flex;
+  align-items: center;
+  column-gap: .75rem;
+  margin-bottom: .75rem;
+}
+.new__discount{
+  color: var(--title-color);
+}
+.new__price{
+  font-size: var(--small-font-size);
+  text-decoration: line-through;
+}
+.new__stars{
+  color: var(--first-color);
+}
+.new__swiper:nth-child(1){
+  margin-bottom: 2rem;
+}
 /*=============== JOIN ===============*/
 
 /*=============== TESTIMONIAL ===============*/
