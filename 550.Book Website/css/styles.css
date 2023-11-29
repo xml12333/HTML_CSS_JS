@@ -504,36 +504,89 @@ img {
 .new__card:hover {
   border: 2px solid var(--text-color);
 }
-.new__img{
+.new__img {
   width: 100px;
 }
-.new__title{
+.new__title {
   font-size: var(--h2-font-size);
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
-.new__prices{
+.new__prices {
   display: flex;
   align-items: center;
-  column-gap: .75rem;
-  margin-bottom: .75rem;
+  column-gap: 0.75rem;
+  margin-bottom: 0.75rem;
 }
-.new__discount{
+.new__discount {
   color: var(--title-color);
 }
-.new__price{
+.new__price {
   font-size: var(--small-font-size);
   text-decoration: line-through;
 }
-.new__stars{
+.new__stars {
   color: var(--first-color);
 }
-.new__swiper:nth-child(1){
+.new__swiper:nth-child(1) {
   margin-bottom: 2rem;
 }
 /*=============== JOIN ===============*/
+.join {
+  position: relative;
+  padding-block: 3rem;
+}
+.join__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.join__data {
+  position: relative;
+}
+.join__title {
+  color: var(--white-color);
+}
+.join__form {
+  display: grid;
+  row-gap: 1rem;
+}
+.join__input {
+  padding: 1.25rem 1rem;
+  background-color: var(--body-color);
+  color: var(--title-color);
+  transition: background-color 0.4s;
+}
+.join__input::placeholder {
+  color: var(--text-color);
+}
+.join__button {
+  padding-block: 1.25rem;
+  cursor: pointer;
+}
 
 /*=============== TESTIMONIAL ===============*/
-
+.testimonial__card {
+  text-align: center;
+  background-color: var(--container-color);
+  padding: 2rem 3rem 2.5rem;
+  border: 2px solid var(--body-color);
+  transition: border 0.4s, background-color 0.4s;
+}
+.testimonial__img {
+  width: 100px;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+}
+.testimonial__title {
+  font-size: var(--h2-font-size);
+  margin-bottom: .75rem;
+}
+.testimonial__stars{
+  color: var(--first-color);
+}
 /*=============== FOOTER ===============*/
 
 /*=============== SCROLL BAR ===============*/
