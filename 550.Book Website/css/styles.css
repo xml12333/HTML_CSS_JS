@@ -531,7 +531,7 @@ img {
   margin-bottom: 2rem;
 }
 /*=============== JOIN ===============*/
-.join {
+.join__container {
   position: relative;
   padding-block: 3rem;
 }
@@ -587,7 +587,61 @@ img {
 .testimonial__stars{
   color: var(--first-color);
 }
+
 /*=============== FOOTER ===============*/
+.footer{
+  padding-block: 4rem 6rem;
+}
+.footer__container{
+  row-gap: 3rem;
+}
+.footer__logo{
+  display: inline-flex;
+  align-items: center;
+  column-gap: .5rem;
+  color: var(--first-color);
+  font-size: var(--h3-font-size);
+  margin-bottom: 1.25rem;
+}
+.footer__logo i {
+  font-size: 1.25rem;
+}
+.footer__data{
+  grid-template-columns: repeat(2, max-content);
+  gap: 3rem 2rem;
+}
+.footer__title{
+  font-size: var(--h3-font-size);
+  margin-bottom: 1.25rem;
+}
+.footer__links{
+  display: grid;
+  row-gap: .5rem;
+}
+.footer__link{
+  color: var(--text-color);
+  transition: color .4s;
+}
+.footer__link:hover{
+  color: var(--first-color);
+}
+.footer__info{
+  font-size: normal;
+}
+.footer__social{
+  display: flex;
+  column-gap: 1.25rem;
+}
+.footer__social-link{
+  font-size: 1.25rem;
+  color: var(--first-color);
+}
+.footer__copy{
+  display: block;
+  margin-top: 5rem;
+  text-align: center;
+  font-size: var(--small-font-size);
+}
 
 /*=============== SCROLL BAR ===============*/
 
