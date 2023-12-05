@@ -172,7 +172,7 @@ img {
     hsl(var(--hue), 90%, 30%)
   );
 }
-.perfil__img{
+.perfil__img {
   width: 150px;
 }
 .main {
@@ -185,7 +185,7 @@ img {
   width: 100%;
   top: 0;
   left: 0;
-  background-color:transparent;
+  background-color: transparent;
   z-index: var(--z-fixed);
   transition: background-color 0.4s, box-shadow 0.4s;
 }
@@ -252,7 +252,13 @@ img {
   top: 0;
 }
 /* Change background header */
-
+.bg-header {
+  background-color: var(--body-color);
+  box-shadow: 0 2px 16px var(--shadow-color);
+}
+.bg-header :is(.nav__logo, .nav__toggle) {
+  color: var(--title-color);
+}
 /* Header background color of other pages */
 .header-pages {
   background-color: var(--body-color);
@@ -291,36 +297,82 @@ img {
 .home__container {
   padding-block: 1rem 3rem;
 }
-.home__perfil{
+.home__perfil {
   justify-self: center;
 }
-.home__data{
-  row-gap: .75rem;
+.home__data {
+  row-gap: 0.75rem;
   text-align: center;
 }
-.home__name{
+.home__name {
   font-size: var(--biggest-font-size);
 }
-.home__profession{
+.home__profession {
   font-size: var(--h2-font-size);
 }
-.home__social{
+.home__social {
   display: flex;
   justify-content: center;
   column-gap: 1rem;
 }
-.home__social-link{
+.home__social-link {
   font-size: 1.5rem;
   color: var(--title-color);
-  transition: color .4s;
+  transition: color 0.4s;
 }
-.home__social-link:hover{
+.home__social-link:hover {
   color: var(--first-color);
 }
-.home__button{
+.home__button {
   justify-self: center;
 }
 /*=============== ABOUT ===============*/
+.about__page {
+  padding-bottom: 4rem;
+}
+.about__perfil {
+  justify-self: center;
+}
+.about__content {
+  row-gap: 4rem;
+}
+.about__data {
+  row-gap: 2rem;
+}
+.about__info {
+  row-gap: 0.75rem;
+  text-align: center;
+}
+.about__name {
+  font-size: var(--h1-font-size);
+}
+.about__proffession {
+  font-size: var(--h2-font-size);
+}
+.about__description b {
+  color: var(--first-color);
+}
+.about__button {
+  justify-self: center;
+}
+.about__skills-title {
+  font-size: var(--h3-font-size);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.about__skills-img {
+  width: 35px;
+  transition: transform 0.4s;
+}
+.about__skills-img:hover {
+  transform: translateY(-0.5rem);
+}
+.about__skills-content {
+  grid-template-columns: repeat(5, max-content);
+  justify-content: center;
+  align-items: center;
+  gap: 2rem 1.5rem;
+}
 
 /*=============== SERVICES ===============*/
 
