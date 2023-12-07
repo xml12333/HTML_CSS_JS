@@ -19,5 +19,17 @@ modalClose.forEach((modalClose) => {
   });
 });
 /*=============== SWIPER TESTIMONIAL ===============*/
+let swiperTestimonial = new Swiper(".testimonial__swiper", {
+  loop: true,
+  spaceBeetween: 32,
+  grabCursor: true,
 
+  pagination: {
+    el: ".swiper-pagination",
+    dynamicBullets: true,
+    clickable: true,
+  },
+
+
+});
 /*=============== SHOW SCROLL UP ===============*/

@@ -452,16 +452,91 @@ img {
   cursor: pointer;
 }
 /* Active modal */
-.active-modal{
+.active-modal {
   opacity: 1;
   visibility: visible;
 }
 /*=============== WORK ===============*/
-
+.work__container {
+  row-gap: 2rem;
+}
+.work__link {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.work__img {
+  filter: grayscale(1);
+  transition: filter 0.5s, transform 0.5s;
+}
+.work__icon {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  font-size: 2rem;
+  color: var(--first-color);
+  transition: transform 0.4s;
+}
+.work__link:hover .work__img {
+  transform: scale(1.1);
+  filter: none;
+}
+.work__link:hover .work__icon {
+  transform: translate(0.5rem, -0.5rem) rotate(-30deg);
+}
+.work__title {
+  font-size: var(--h2-font-size);
+  margin-bottom: 0.25rem;
+}
+.work__page {
+  padding-bottom: 4rem;
+}
 /*=============== TESTIMONIAL ===============*/
-
+.testimonial__container {
+  position: relative;
+}
+.testimonial__swiper {
+  padding-bottom: 2rem;
+}
+.testimonial__card {
+  background-color: var(--container-color);
+  padding: 2rem 1.25rem 2.5rem 1.25rem;
+  border-inline: 8px solid var(--first-color);
+  box-shadow: 0 12px 24px var(--shadow-color);
+  text-align: center;
+  transition: background-color 0.4s;
+}
+.testimonial__border {
+  width: 100px;
+  height: 100px;
+  border: 6px solid var(--first-color);
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+}
+.testimonial__img {
+  filter: grayscale(1);
+  transition: filter 0.4s;
+}
+.testimonial__name{
+  font-size: var(--h2-font-size);
+  margin-bottom: 0.5rem;
+}
+.testimonial__card:hover .testimonial__img{
+  filter: none;
+}
 /* Swiper class */
-
+.swiper-pagination-bullets.swiper-pagination-horizontal{
+  bottom: -1rem;
+}
+.swiper-pagination-bullet{
+  background-color: var(--first-color-light);
+  opacity: 1;
+}
+.swiper-pagination-bullet-active{
+  background-color: var(--first-color);
+}
 /*=============== CONTACT ===============*/
 
 /*=============== FOOTER ===============*/
