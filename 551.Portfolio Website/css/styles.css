@@ -120,14 +120,44 @@ img {
 }
 
 /*=============== THEME ===============*/
-
+.nav__actions {
+  display: flex;
+  align-items: start;
+  column-gap: 1rem;
+}
+.change-theme {
+  color: var(--white-color);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: color 0.4s;
+}
 /*========== Variables Dark theme ==========*/
-
+body.dark-theme {
+  --title-color: hsl(var(--hue), 24%, 85%);
+  --text-color: hsl(var(--hue), 8%, 70%);
+  --body-color: hsl(var(--hue), 16%, 8%);
+  --container-color: hsl(var(--hue), 16%, 12%);
+  --shadow-color: hsla(var(--hue), 32%, 4%, 0.4);
+}
 /*========== 
 	Color changes in some parts of 
 	the website, in dark theme
 ==========*/
-
+.dark-theme .bg-header {
+  box-shadow: 0 12px 24px var(--shadow-color);
+}
+.dark-theme .services__modal {
+  background-color: hsla(var(--hue), 90%, 8%, 0.2);
+}
+.dark-theme::-webkit-scrollbar {
+  background-color: hsl(var(--hue), 16%, 15%);
+}
+.dark-theme::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--hue), 16%, 25%);
+}
+.dark-theme::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--hue), 16%, 35%);
+}
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1120px;
@@ -256,14 +286,14 @@ img {
   background-color: var(--body-color);
   box-shadow: 0 2px 16px var(--shadow-color);
 }
-.bg-header :is(.nav__logo, .nav__toggle) {
+.bg-header :is(.nav__logo, .nav__toggle, .change-theme) {
   color: var(--title-color);
 }
 /* Header background color of other pages */
 .header-pages {
   background-color: var(--body-color);
 }
-.header-pages :is(.nav__logo, .nav__toggle) {
+.header-pages :is(.nav__logo, .nav__toggle, .change-theme) {
   color: var(--title-color);
 }
 /*=============== BUTTON ===============*/
@@ -519,34 +549,172 @@ img {
   filter: grayscale(1);
   transition: filter 0.4s;
 }
-.testimonial__name{
+.testimonial__name {
   font-size: var(--h2-font-size);
   margin-bottom: 0.5rem;
 }
-.testimonial__card:hover .testimonial__img{
+.testimonial__card:hover .testimonial__img {
   filter: none;
 }
 /* Swiper class */
-.swiper-pagination-bullets.swiper-pagination-horizontal{
+.swiper-pagination-bullets.swiper-pagination-horizontal {
   bottom: -1rem;
 }
-.swiper-pagination-bullet{
+.swiper-pagination-bullet {
   background-color: var(--first-color-light);
   opacity: 1;
 }
-.swiper-pagination-bullet-active{
+.swiper-pagination-bullet-active {
   background-color: var(--first-color);
 }
 /*=============== CONTACT ===============*/
-
+.contact__container {
+  padding-bottom: 4rem;
+}
+.contact__button {
+  justify-self: center;
+}
+.contact__page {
+  padding-block: 1rem 4rem;
+}
+.contact__form {
+  position: relative;
+}
+.contact__box {
+  position: relative;
+  width: 100%;
+  height: 58px;
+}
+.contact__input {
+  width: 100%;
+  height: 100%;
+  background: var(--body-color);
+  border: 3px solid var(--text-color-light);
+  padding: 0.5rem 1.5rem;
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  transition: border-color 0.4s, background-color 0.4s;
+}
+.contact__input:focus {
+  border-color: var(--title-color);
+}
+.contact__input.contact__input:-webkit-autofill {
+  transition: background-color 6000s, color 6000s;
+}
+.contact__label {
+  position: absolute;
+  top: -16px;
+  left: 16px;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+  background-color: var(--body-color);
+  padding: 8px;
+  transition: background-color 0.4s;
+}
+.contact__area {
+  height: 10rem;
+}
+.contact__area textarea {
+  resize: none;
+  padding-top: 1.25rem;
+}
+.contact__send {
+  padding-block: 1.25rem;
+  cursor: pointer;
+}
+.contact__message {
+  position: absolute;
+  bottom: -2rem;
+  left: 0;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+}
 /*=============== FOOTER ===============*/
+.footer {
+  background-color: var(--first-color);
+}
+.footer__container {
+  padding-block: 4rem 2rem;
+  text-align: center;
+  row-gap: 5rem;
+}
+.footer__content {
+  row-gap: 2rem;
+}
+.footer__content a,
+.footer__copy {
+  color: var(--white-color);
+}
+.footer__logo {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-semi-bold);
+  justify-self: center;
+}
+.footer__links,
+.footer__social {
+  display: flex;
+  justify-content: center;
+}
+.footer__links {
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.footer__link {
+  font-weight: var(--font-semi-bold);
+}
+.footer__logo:hover,
+.footer__link:hover {
+  text-decoration: underline;
+}
+.footer__social {
+  column-gap: 1rem;
+}
+.footer__social-link {
+  font-size: 1.5rem;
+  transition: transform 0.4s;
+}
+.footer__social-link:hover {
+  transform: translateY(-0.25rem);
+}
+.footer__copy {
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+}
 
 /*=============== SCROLL BAR ===============*/
-
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: hsl(var(--hue), 20%, 85%);
+}
+::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--hue), 20%, 65%);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--hue), 20%, 55%);
+}
 /*=============== SCROLL UP ===============*/
-
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -50%;
+  background-color: var(--container-color);
+  box-shadow: 0 12px 24px var(--shadow-color);
+  display: inline-flex;
+  padding: 6px;
+  font-size: 1.25rem;
+  color: var(--title-color);
+  z-index: var(--z-tooltip);
+  transition: bottom 0.4s, transform 0.4s, background-color 0.4s;
+}
+.scrollup:hover {
+  transform: translateY(-0.5rem);
+}
 /* Show Scroll Up */
-
+.show-scroll {
+  bottom: 3rem;
+}
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 
