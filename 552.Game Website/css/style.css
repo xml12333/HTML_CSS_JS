@@ -155,7 +155,6 @@ body {
   font-weight: var(--weight-regular);
   line-height: 1.6;
   overflow-x: hidden;
-  height: 300vh;
 }
 
 ::-webkit-scrollbar {
@@ -171,10 +170,93 @@ body {
 /*-----------------------------------*\
   #REUSED STYLE
 \*-----------------------------------*/
-
+.container {
+  padding-inline: 12px;
+}
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
+.header .btn {
+  display: none;
+}
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-oxford-blue);
+  padding: 10px 12px;
+  z-index: 4;
+}
+.header.active {
+  position: fixed;
+  animation: slideUp 1s ease forwards;
+}
+@keyframes slideUp {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-toggle-btn .line {
+  height: 3px;
+  width: 10px;
+  margin-block: 4px;
+  background-color: var(--text-gainsboro);
+  border-radius: 8px;
+  transition: var(--transition-1);
+}
+.nav-toggle-btn .line-2 {
+  width: 20px;
+}
+.nav-toggle-btn .line-3 {
+  margin-inline-start: auto;
+}
+.nav-toggle-btn.active .line-2 {
+  transform: rotate(-45deg);
+}
+.nav-toggle-btn.active .line-1 {
+  transform: rotate(45deg) translate(4px, 1.5px);
+}
+.nav-toggle-btn.active .line-3 {
+  transform: rotate(45deg) translate(-3px, -1px);
+}
+.navbar {
+  position: absolute;
+  top: calc(100% - 1px);
+  right: 12px;
+  left: 12px;
+  background-color: var(--bg-oxford-blue);
+  padding: 0 15px;
+  clip-path: var(--clip-path-1);
+  visibility: hidden;
+  transition: clip-path 500ms var(--cubic-out);
+}
+.navbar.active {
+  clip-path: var(--clip-path-2);
+  visibility: visible;
+}
+
+.navbar-link {
+  padding: 12px 25px;
+  text-transform: uppercase;
+  font-size: var(--fontSize-7);
+  font-weight: var(--weight-semiBold);
+  color: var(--text-white);
+}
+.navbar-item {
+  border-block-start: 1px solid var(--border-space-cadet);
+}
+.navbar-item:last-child {
+  border-block-end: 1px solid var(--border-space-cadet);
+}
 
 /*-----------------------------------*\
   #HERO
