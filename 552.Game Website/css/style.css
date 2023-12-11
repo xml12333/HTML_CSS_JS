@@ -701,3 +701,267 @@ body {
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
+
+/* responsive for large than 575px screen */
+@media screen and (min-width: 575px) {
+  /**
+  * REUSED STYLE
+  */
+  .container {
+    max-width: 540px;
+    width: 100%;
+    margin-inline: auto;
+  }
+  /**
+  * Header
+  */
+  .header .logo img {
+    width: 160px;
+  }
+  /**
+  * Upcoming
+  */
+  .upcoming-card.left .card-meta {
+    left: auto;
+    right: -15%;
+  }
+  .upcoming-card.right .card-meta {
+    left: 25%;
+  }
+  /**
+  *Footer
+  */
+  .footer-top .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* responsive for large than 768px screen */
+@media screen and (min-width: 768px) {
+  /**
+*Custom property
+*/
+  :root {
+    /**
+  *Typography
+  */
+    /* font size */
+    --fontSize-1: 6.5rem;
+    --fontSize-2: 3.2rem;
+  }
+  /**
+  * Reused style
+  */
+  .container {
+    max-width: 720px;
+  }
+  .h1 {
+    line-height: 1;
+  }
+  /**
+  * Hero
+  */
+  .hero .section-subtitle {
+    letter-spacing: 10px;
+  }
+  .hero-banner-bg {
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: scale(1.1);
+    transform-origin: bottom;
+    z-index: -1;
+  }
+  /**
+  * Upcoming
+  */
+  .upcoming-card::before {
+    height: 110px;
+  }
+  .upcoming-card .card-meta {
+    padding-block: 12px;
+    bottom: 20px;
+  }
+  .upcoming-card .card-title {
+    --fontSize-3: 2.8rem;
+  }
+  .upcoming-card.left .card-meta {
+    right: -10%;
+  }
+  .upcoming-card.right .card-meta {
+    left: 20%;
+  }
+  .upcoming-time .time {
+    --fontSize-1: 5rem;
+  }
+  /**
+  * News
+  */
+  .news-list {
+    grid-template-columns: 1fr 1fr;
+  }
+  /**
+  * Custom Cursor
+  */
+  .cursor {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background-color: var(--bg-purple);
+    border-radius: var(--radius-circle);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 6;
+    transition: var(--transition-1);
+    transition-property: opacity, transform;
+  }
+  body:hover .cursor {
+    opacity: 0.5;
+  }
+  body .cursor.hovered {
+    transform: translate(-50%, -50%) scale(1.3);
+    opacity: 0.75;
+  }
+}
+/* responsive for large than 992px screen */
+@media screen and (min-width: 992px) {
+  /**
+  * Custom property
+  */
+  :root {
+    /**
+    * Typography
+    */
+    /* font size */
+    --fontSize-2: 4.5rem;
+    /**
+    * Spacing
+    */
+    --section-spacing: 100px;
+  }
+  /**
+  * Reused Style
+  */
+  .container {
+    max-width: 960px;
+  }
+  .h2 {
+    line-height: 1.1;
+  }
+  /**
+  * Header
+  */
+  .nav-toggle-btn {
+    display: none;
+  }
+  .navbar,
+  .navbar.active {
+    all: unset;
+    display: block;
+  }
+  .navbar-item,
+  .navbar-item:last-child {
+    border: none;
+  }
+  .navbar-list {
+    display: flex;
+  }
+  .header .btn {
+    display: grid;
+    text-align: center;
+  }
+  /**
+  * Hero
+  */
+  .hero-banner-bg {
+    transform: scale(1.2);
+  }
+  /**
+  * Upcoming
+  */
+  .upcoming-item {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 1fr;
+    align-items: center;
+  }
+  .upcoming-time {
+    margin-block: 0;
+  }
+  .upcoming-card .card-meta {
+    left: 50%;
+    bottom: -30px;
+    transform: translateX(-50%);
+  }
+  .upcoming-card.right .card-meta {
+    left: 50%;
+  }
+  /**
+  * News
+  */
+  .news-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  /**
+  * Footer
+  */
+  .footer-top .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* responsive for large than 1200px screen */
+@media screen and (min-width: 1200px) {
+  /**
+  * Reused Style
+  */
+  .container {
+    max-width: 1140px;
+  }
+  .section-text {
+    margin-block-end: 60px;
+  }
+  /**
+  * Hero
+  */
+  .hero {
+    padding-block-start: 250px;
+  }
+  .hero-banner-bg {
+    transform: scale(1.2);
+  }
+  .hero-banner .w-100 {
+    max-width: max-content;
+    margin-inline: auto;
+  }
+  /**
+  * Upcoming
+  */
+  .upcoming-card .card-banner {
+    max-height: 180px;
+    width: auto;
+  }
+  .upcoming-card .card-meta {
+    bottom: 0;
+  }
+  .upcoming-card.right .card-meta {
+    left: 35%;
+  }
+  .upcoming-time .time {
+    --fontSize-1: 6.2rem;
+  }
+  /**
+  * Footer
+  */
+  .footer-tom .container {
+    grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
+  }
+  .footer .logo img {
+    width: 205px;
+  }
+}
