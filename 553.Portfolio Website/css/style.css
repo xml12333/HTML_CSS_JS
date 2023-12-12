@@ -234,6 +234,59 @@ body.nav-active {
     opacity: 0;
   }
 }
+.text-center {
+  text-align: center;
+}
+.has-before,
+.has-after {
+  position: relative;
+  z-index: 1;
+}
+.has-before::before,
+.has-after::after {
+  content: "";
+  position: absolute;
+}
+.img-holder {
+  aspect-ratio: var(--width) / var(--height);
+  overflow: hidden;
+  background-color: var(--bg-jet);
+}
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+[data-tilt] {
+  transition: var(--transition-3);
+}
+.title {
+  color: var(--text-white);
+  font-family: var(--fontFamily-recoleta);
+  font-weight: var(--weight-regular);
+}
+.h1 {
+  font-size: var(--fontSize-2);
+  line-height: 1.2;
+}
+.btn {
+  color: var(--text-white);
+  font-size: var(--fontSize-9);
+  font-weight: var(--weight-medium);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: max-content;
+  height: 56px;
+  padding-inline: 30px;
+}
+.btn::before {
+  background-color: var(--bg-smoky-black);
+}
+.btn ion-icon {
+  font-size: 1.8rem;
+  --ionicon-stroke-width: 50px;
+}
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
@@ -362,7 +415,67 @@ body.nav-active {
 /*-----------------------------------*\
   #HERO
 \*-----------------------------------*/
+.hero {
+  position: relative;
+  padding-block-start: 120px;
+}
+.hero .container {
+  display: grid;
+  gap: 50px;
+}
+.banner-outline {
+  position: relative;
+  max-width: max-content;
+  margin-inline: auto;
+}
+.banner-outline::after {
+  top: 20px;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  outline: 1px solid var(--bg-eerie-black);
+  border-radius: var(--radius-pill);
+}
+.hero-banner {
+  position: relative;
+  border-radius: var(--radius-pill);
 
+}
+.hero-banner::after {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: var(--gradient-1);
+  opacity: 0.7;
+  pointer-events: none;
+}
+.banner-outline .span {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: var(--fontSize-4);
+  min-width: max-content;
+  z-index: 1;
+}
+.hero .btn {
+  margin-block: 20px;
+  margin-inline: auto;
+}
+.hero .shape {
+  position: absolute;
+  max-width: 100%;
+  z-index: -1;
+}
+.hero .shape-1 {
+  top: -60px;
+  left: 120px;
+}
+.hero .shape-2 {
+  top: 280px;
+  left: 0;
+}
 /*-----------------------------------*\
   #SERVICE
 \*-----------------------------------*/
