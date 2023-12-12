@@ -439,7 +439,6 @@ body.nav-active {
 .hero-banner {
   position: relative;
   border-radius: var(--radius-pill);
-
 }
 .hero-banner::after {
   top: 0;
@@ -479,7 +478,44 @@ body.nav-active {
 /*-----------------------------------*\
   #SERVICE
 \*-----------------------------------*/
-
+.service {
+  border-block-start: 1px solid var(--bg-eerie-black);
+  margin-block-start: var(--section-spacing);
+}
+.service .container {
+  padding-inline: 0;
+}
+.service-item {
+  border-block-end: 1px solid var(--bg-eerie-black);
+}
+.service-card {
+  position: relative;
+  padding-block: 45px;
+}
+.service-card .card-icon {
+  max-width: max-content;
+  margin-inline: auto;
+  transition: var(--transition-1);
+}
+.service-card .card-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  color: var(--text-white);
+  font-size: var(--fontSize-5);
+  font-weight: var(--weight-regular);
+  line-height: 1.3;
+  opacity: 0;
+  transition: var(--transition-1);
+}
+.service-card:is(:hover, :focus-visible) .card-title {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+.service-card:is(:hover, :focus-visible) .card-icon {
+  opacity: 0;
+}
 /*-----------------------------------*\
   #ABOUT
 \*-----------------------------------*/
