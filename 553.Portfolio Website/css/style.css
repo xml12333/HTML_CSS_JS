@@ -133,6 +133,7 @@ body {
   font-size: var(--fontSize-8);
   line-height: 1.75;
   overflow: hidden;
+  height: 300vh;
 }
 body.loaded {
   overflow: auto;
@@ -152,7 +153,39 @@ body.nav-active {
 /*-----------------------------------*\
   #REUSED STYLE
 \*-----------------------------------*/
-
+.container {
+  padding-inline: 16px;
+}
+.btn\:hover {
+  position: relative;
+  z-index: 1;
+}
+.btn\:hover::before,
+.btn\:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: var(--transition-1);
+  will-change: transform;
+  pointer-events: none;
+}
+.btn\:hover::after {
+  border: 1px solid var(--bg-white);
+  transform: scale(1.2);
+  opacity: 0;
+}
+.btn\:hover:is(:hover, :focus-visible)::before {
+  transform: scale(0.5);
+  opacity: 0;
+}
+.btn\:hover:is(:hover, :focus-visible)::after {
+  transform: scale(1);
+  opacity: 1;
+}
 /*-----------------------------------*\
   #PRELOADER
 \*-----------------------------------*/
@@ -205,6 +238,127 @@ body.nav-active {
   #HEADER
 \*-----------------------------------*/
 
+.header .btn {
+  display: none;
+}
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-black);
+  padding-block: 20px;
+  z-index: 4;
+}
+.header.active {
+  position: fixed;
+  background-color: var(--bg-jet);
+  padding-block: 10px;
+  animation: slideIn 500ms ease-out forwards;
+}
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-open-btn {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-content: center;
+  gap: 6px;
+}
+.nav-open-btn .line {
+  width: 24px;
+  height: 2px;
+  background-color: var(--bg-black);
+  transition: var(--transition-1);
+}
+.nav-open-btn:is(:hover, :focus-visible) .line {
+  background-color: var(--bg-white);
+}
+.nav-open-btn:is(:hover, :focus-visible) .line-1 {
+  transform: scaleX(0.7);
+}
+
+.nav-open-btn::before {
+  background-color: var(--bg-white);
+}
+.nav-open-btn::after {
+  background-color: var(--bg-black);
+}
+.navbar {
+  position: fixed;
+  background-color: var(--bg-black);
+  top: 0;
+  left: -300px;
+  width: 100%;
+  max-width: 300px;
+  height: 100vh;
+  padding: 25px 20px;
+  visibility: hidden;
+  transition: 250ms var(--cubic-in);
+  z-index: 3;
+}
+.navbar.active {
+  visibility: visible;
+  transform: translateX(300px);
+  transition: 500ms var(--cubic-out);
+}
+.navbar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block-end: 20px;
+  border-block-end: 1px solid var(--bg-smoky-black);
+  margin-block-end: 10px;
+}
+.nav-close-btn {
+  width: 30px;
+  height: 30px;
+  background-color: var(--bg-smoky-black);
+  color: var(--text-white);
+  font-size: 2rem;
+  display: grid;
+  place-items: center;
+}
+.nav-close-btn ion-icon {
+  --ionicon-stroke-width: 50px;
+}
+.navbar-link {
+  padding: 8px;
+  margin-block-start: 4px;
+}
+.navbar-link:is(:hover, :focus-visible) {
+  color: var(--text-white);
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg-black);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+  transition: var(--transition-1);
+}
+.overlay.active {
+  opacity: 0.5;
+  pointer-events: all;
+}
 /*-----------------------------------*\
   #HERO
 \*-----------------------------------*/
