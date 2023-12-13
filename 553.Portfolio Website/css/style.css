@@ -636,10 +636,10 @@ body.nav-active {
 .interview-card .btn:is(:hover, :focus-visible) {
   color: var(--text-white);
 }
-.exhibition-card{
+.exhibition-card {
   position: relative;
 }
-.exhibition-card .card-icon{
+.exhibition-card .card-icon {
   position: absolute;
   top: 30px;
   right: 30px;
@@ -654,15 +654,108 @@ body.nav-active {
 /*-----------------------------------*\
   #CTA
 \*-----------------------------------*/
-
+.cta {
+  border-block: 1px solid var(--bg-eerie-black);
+}
+.cta .section-title::before {
+  content: "";
+  display: block;
+  background-color: var(--bg-white);
+  width: 60px;
+  height: 30px;
+  border-radius: 30px 30px 0 0;
+  margin-inline: auto;
+  margin-block-end: 15px;
+}
+.cta .btn {
+  margin-inline: auto;
+  margin-block-start: 30px;
+}
 /*-----------------------------------*\
   #PROJECT
 \*-----------------------------------*/
-
+.project-card .card-banner::before {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: var(--bg-rich-black-fogra-29);
+  background-image: var(--gradient-2);
+  opacity: 0;
+  transition: var(--transition-1);
+}
+.project-card .card-banner:is(:hover, :focus-visible)::before {
+  opacity: 0.9;
+}
+.project-card .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  min-width: max-content;
+  opacity: 0;
+  transition: var(--transition-2);
+}
+.project-card .card-banner:is(:hover, :focus-visible) .btn {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+.project-card .card-content {
+  padding: 24px 30px 0;
+}
+.project-card .card-subtitle {
+  font-size: var(--fontSize-10);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-block-end: 10px;
+}
+.project-card .card-title {
+  display: inline;
+  background-image: linear-gradient(var(--bg-white), var(--bg-white));
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 0 1px;
+  transition: var(--transition-1);
+}
+.project-card .card-title:is(:hover, :focus-visible) {
+  background-size: 100% 1px;
+}
+.slider-list {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  overflow: auto;
+  scroll-snap-type: inline mandatory;
+  padding-block-end: 5px;
+}
+.slider-list::-webkit-scrollbar {
+  /* display: none; */
+  height: 2px;
+}
+.slider-item {
+  min-width: 100%;
+  scroll-snap-align: start;
+}
 /*-----------------------------------*\
   #TESTIMONIALS
 \*-----------------------------------*/
-
+.testi {
+  border-block: 1px solid var(--bg-eerie-black);
+}
+.testi-content {
+  padding-inline-start: 15px;
+}
+.testi .section-text {
+  text-indent: -15px;
+  line-height: 1.5;
+  margin-block-end: 20px;
+}
+.profile-card .card-banner {
+  display: none;
+}
+.profile-card .card-subtitle {
+  font-size: var(--fontSize-10);
+}
 /*-----------------------------------*\
   #CONTACT
 \*-----------------------------------*/
