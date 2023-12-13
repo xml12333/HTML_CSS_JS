@@ -26,7 +26,7 @@
     <link rel="preload" as="image" href="./img/hero-shape-1.png" />
     <link rel="preload" as="image" href="./img/hero-shape-2.png" />
   </head>
-  <body>
+  <body id="top">
     <!-- preloader -->
     <div class="preloader" data-preloader>
       <span class="line"></span>
@@ -840,8 +840,124 @@
             </div>
           </div>
         </section>
+
+        <!-- contact -->
+        <section class="section contact" aria-label="contact me" id="contact">
+          <div class="container">
+            <h2 class="title h2 section-title">Get In Touch</h2>
+            <div class="contact-content">
+              <form action="./index.html" method="post" class="contact-form">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Full name"
+                  autocomplete="off"
+                  class="input-field"
+                />
+                <input
+                  type="email"
+                  name="email_address"
+                  placeholder="Email address"
+                  autocomplete="off"
+                  class="input-field"
+                  required
+                />
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Phone"
+                  autocomplete="off"
+                  class="input-field"
+                />
+                <textarea
+                  name="message"
+                  placeholder="Enter messages"
+                  class="input-field"
+                  required
+                ></textarea>
+                <button type="submit" class="btn btn:hover">
+                  <span class="span">Get a Quote</span>
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </button>
+              </form>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d898.4329239267093!2d-73.91493787358391!3d40.76299026683699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1671529019371!5m2!1sen!2sbd"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referer-when-downgrade"
+                class="map"
+              ></iframe>
+              <ul class="contact-list">
+                <li class="contact-item">
+                  <div class="item-icon">
+                    <img
+                      src="./img/contact-icon-1.png"
+                      width="50"
+                      height="50"
+                      loading="lazy"
+                      alt="contact icon"
+                    />
+                  </div>
+                  <div>
+                    <span class="title h6">869. 368. 456. 56</span>
+                    <span class="title h6">789 (569) 126 35</span>
+                  </div>
+                </li>
+                <li class="contact-item">
+                  <div class="item-icon">
+                    <img
+                      src="./img/contact-icon-2.png"
+                      width="50"
+                      height="50"
+                      loading="lazy"
+                      alt="contact icon"
+                    />
+                  </div>
+                  <div>
+                    <address class="title h6">
+                      30- 24 Newtown Rd, Queens, NY 11103, USA
+                    </address>
+                  </div>
+                </li>
+                <li class="contact-item">
+                  <div class="item-icon">
+                    <img
+                      src="./img/contact-icon-3.png"
+                      width="50"
+                      height="50"
+                      loading="lazy"
+                      alt="contact icon"
+                    />
+                  </div>
+                  <div>
+                    <span class="title h6">info@drew.com</span>
+                    <span class="title h6">jobs@drew.com</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </article>
     </main>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="copyright">Copyright & Design By Nik T.</div>
+        <a href="#top" class="back-top-btn">
+          <span class="span">Back To Top</span>
+          <ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
+        </a>
+      </div>
+    </footer>
+
+    <!-- custom cursor -->
+    <div class="cursor-dot" data-cursor></div>
+    <div class="cursor-outline" data-cursor></div>
 
     <!-- ionicon link -->
     <script

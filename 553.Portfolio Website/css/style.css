@@ -262,7 +262,9 @@ body.nav-active {
 }
 .section {
   padding-block: var(--section-spacing);
+  overflow-x: hidden;
 }
+
 /*-----------------------------------*\
   #PRELOADER
 \*-----------------------------------*/
@@ -497,7 +499,7 @@ body.nav-active {
   left: 120px;
 }
 .hero .shape-2 {
-  top: 280px;
+  top: 180px;
   left: 0;
 }
 /*-----------------------------------*\
@@ -740,7 +742,7 @@ body.nav-active {
   #TESTIMONIALS
 \*-----------------------------------*/
 .testi {
-  border-block: 1px solid var(--bg-eerie-black);
+  border-block: 1px solid var(--border-eerie-black);
 }
 .testi-content {
   padding-inline-start: 15px;
@@ -759,15 +761,86 @@ body.nav-active {
 /*-----------------------------------*\
   #CONTACT
 \*-----------------------------------*/
-
+.contact .section-title {
+  font-size: var(--fontSize-1);
+  margin-block-end: 25px;
+}
+.contact-content {
+  display: grid;
+  gap: 60px;
+}
+.contact-form .input-field {
+  height: 50px;
+  padding-block: 12px;
+  margin-block-end: 20px;
+  color: var(--text-white);
+  outline: none;
+  border-block-end: 1px solid var(--border-eerie-black);
+  transition: border-color var(--transition-1);
+}
+.contact-form .input-field::placeholder {
+  color: var(--text-light-gray);
+}
+.contact-form .input-field:focus {
+  border-color: var(--bg-light-gray);
+}
+textarea.input-field {
+  min-height: 165px;
+  resize: none;
+}
+.contact-form .btn {
+  margin-block-start: 30px;
+}
+.contact .map {
+  width: 100%;
+  filter: grayscale(1);
+}
+.contact-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+}
+.contact-item:not(:last-child) {
+  padding-block-end: 30px;
+  border-block-end: 1px solid var(--border-eerie-black);
+  margin-block-end: 30px;
+}
 /*-----------------------------------*\
   #FOOTER
 \*-----------------------------------*/
+.footer {
+  border-block-start: 1px solid var(--border-eerie-black);
+}
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.copyright {
+  flex-grow: 1;
+  font-family: var(--fontFamily-recoleta);
+}
 
+.back-top-btn .span {
+  display: none;
+}
+.back-top-btn {
+  color: var(--text-white);
+  padding: 32px 16px;
+  border-inline: 1px solid var(--border-eerie-black);
+}
+.contact-item .title {
+  color: var(--text-light-gray);
+}
 /*-----------------------------------*\
   #CUSTOM CURSOR
 \*-----------------------------------*/
-
+.cursor-dot,
+.cursor-outline {
+  display: none;
+}
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
