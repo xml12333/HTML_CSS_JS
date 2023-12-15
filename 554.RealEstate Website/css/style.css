@@ -229,6 +229,23 @@ body {
   margin-inline: auto;
 }
 
+.section {
+  padding-block-end: 60px;
+}
+.title-wrapper {
+  margin-block-end: 32px;
+}
+.img-holder {
+  aspect-ratio: var(--width) / var(--height);
+  background-color: var(--neutral-80);
+  overflow: hidden;
+}
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /*-----------------------------------*\
   #COMPONENT
 \*-----------------------------------*/
@@ -290,6 +307,100 @@ body {
 .icon-btn:where(:hover, :focus-visible) {
   background-color: var(--neutral-90);
 }
+/**
+* Badge
+*/
+.badge {
+  height: 32px;
+  max-width: max-content;
+  display: grid;
+  place-items: center;
+  padding-inline: 16px;
+  background-color: var(--secondary-100);
+  border-radius: var(--radius-small);
+  box-shadow: var(--shadow-3);
+}
+/**
+* Card
+*/
+.card {
+  border-radius: var(--radius-large);
+  overflow: hidden;
+  box-shadow: var(--shadow-2);
+  transition: var(--transition-duration-quick) var(--transition-easing-quick);
+}
+.card:where(:hover, :focus-within) {
+  box-shadow: var(--shadow-4);
+}
+.card-banner {
+  position: relative;
+}
+.card-banner .img-cover {
+  transition: var(--transition-duration-smooth) var(--transition-easing-quick);
+}
+.card:where(:hover, :focus-within) .img-cover {
+  scale: 1.05;
+  rotate: 2deg;
+}
+.card :where(.badge, .icon-btn) {
+  position: absolute;
+  top: 20px;
+}
+.card .badge {
+  left: 20px;
+}
+.card .icon-btn {
+  right: 20px;
+  opacity: 0;
+  visibility: hidden;
+  scale: 0.8;
+  transition: var(--transition-duration-quick) var(--transition-easing-quick);
+}
+.fav-btn {
+  color: var(--error-100);
+}
+.fav-btn.active .material-symbols-rounded {
+  font-variation-settings: "FILL" 1;
+}
+.card:where(:hover, :focus-within) .icon-btn {
+  scale: 1;
+  opacity: 1;
+  visibility: visible;
+}
+.card-content {
+  padding: 20px 20px 24px;
+}
+.card-title {
+  margin-block: 8px;
+  color: var(--neutral-20);
+  word-spacing: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: var(--transition-duration-quick) var(--transition-easing-quick);
+}
+.card-title:where(:hover, :focus-visible) {
+  color: var(--primary-100);
+}
+.card-text {
+  color: var(--neutral-40);
+}
+.card-meta-list {
+  padding-block-start: 16px;
+  margin-block-start: 16px;
+  border-block-start: 1px solid var(--neutral-90);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.card .meta-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--neutral-20);
+}
+
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
@@ -450,7 +561,7 @@ body {
 .search-btn:where(:active, :focus-visible) {
   background-color: var(--primary-70);
 }
-.hero .bg-pattern{
+.hero .bg-pattern {
   position: absolute;
   top: 50%;
   left: 25%;
@@ -464,7 +575,18 @@ body {
 /*-----------------------------------*\
   #PROPERTY
 \*-----------------------------------*/
-
+.property {
+  padding-block-start: 60px;
+}
+.property .section-text {
+  margin-block: 8px 16px;
+  color: var(--neutral-30);
+}
+.property-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
 /*-----------------------------------*\
   #FEATURE
 \*-----------------------------------*/
