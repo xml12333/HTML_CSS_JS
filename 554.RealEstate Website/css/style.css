@@ -590,7 +590,33 @@ body {
 /*-----------------------------------*\
   #FEATURE
 \*-----------------------------------*/
-
+.feature-banner {
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: var(--radius-extra-large);
+}
+.feature-content {
+  padding: 24px 16px 0;
+}
+.feature-content .feature-text {
+  margin-block: 16px;
+}
+.feature-text .feature-item {
+  color: var(--neutral-30);
+}
+.feature-list {
+  display: grid;
+  gap: 12px;
+}
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.feature-icon {
+  color: var(--primary-100);
+  font-size: 2.2rem;
+}
 /*-----------------------------------*\
   #VIDEO
 \*-----------------------------------*/
