@@ -800,3 +800,73 @@ body {
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
+
+/**
+* responsive for larger than 768px screen
+*/
+@media screen and (min-width: 768px) {
+  /**
+  * Main
+  */
+  .main {
+    padding-inline: var(--spacing-6);
+  }
+}
+/**
+* responsive for larger than 992px screen
+*/
+@media screen and (min-width: 992px) {
+  /**
+  * Base
+  */
+  body {
+    padding-inline-start: var(--sidebar-width);
+  }
+  /**
+  * Reused style
+  */
+  .overlay:not(.modal-overlay) {
+    display: none;
+  }
+  /**
+  * Sidebar
+  */
+  .sidebar {
+    visibility: visible;
+    left: 0;
+    height: 100vh;
+    grid-template-rows: repeat(3, max-content) 1fr max-content;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .sidebar.active {
+    transform: unset;
+  }
+  .sidebar .fab {
+    display: flex;
+  }
+  /**
+  * Main
+  */
+  .main {
+    padding-inline: var(--spacing-10);
+  }
+  .menu-btn,
+  .main .fab{
+    display: none;
+  }
+  
+}
+/**
+* responsive for larger than 1400px screen
+*/
+@media screen and (min-width: 1400px) {
+  /**
+  * Main
+  */
+  .main{
+    max-width: 1480px;
+    width: 100%;
+    margin-inline: auto;
+  }
+}
