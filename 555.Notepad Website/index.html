@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,25 +31,81 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <p class="text-display-large">Hello world</p>
-    <p class="text-display-medium">Hello world</p>
-    <p class="text-display-small">Hello world</p>
+    <header class="sidebar" data-sidebar>
+      <div class="wrapper wrapper-1">
+        <a href="./index.html">
+          <img src="./img/logo-light.svg" alt="Notekeeper" class="logo-light" />
+          <img src="./img/logo-dark.svg" alt="Notekeeper" class="logo-dark" />
+        </a>
+        <button
+          class="menu-btn icon-btn large"
+          aria-label="Close menu"
+          data-sidebar-toggler
+        >
+          <span class="material-symbols-rounded" aria-hidden="true">close</span>
+          <div class="state-layer"></div>
+        </button>
+      </div>
+      <button class="fab" data-note-create-btn>
+        <span class="material-symbols-rounded" aria-hidden="true">add</span>
+        <span class="text-text-label-large">New note</span>
+        <div class="state-layer"></div>
+      </button>
+      <div class="wrapper wrapper-2">
+        <h2 class="text-title-small">NOTEBOOKS</h2>
+        <button
+          class="icon-btn small"
+          data-tooltip="Create new notebook"
+          aria-label="Create new notebook"
+          data-add-notebook
+        >
+          <span class="material-symbols-rounded" aria-hidden="true">add</span>
+          <div class="state-layer"></div>
+        </button>
+      </div>
+      <nav class="nav custom-scrollbar" data-sidebar-list>
+        <div class="nav-item active">
+          <span class="text text-label-large" data-notebook-field>
+            My Notebook
+          </span>
+          <button
+            class="icon-btn small"
+            aria-label="Edit notebook"
+            data-tooltip="Edit notebook"
+            data-edit-btn
+          >
+            <span class="material-symbols-rounded" aria-hidden="true"
+              >edit</span
+            >
+            <div class="state-layer"></div>
+          </button>
+          <button
+            class="icon-btn small"
+            aria-label="Delete notebook"
+            data-tooltip="Delete notebook"
+            data-delete-btn
+          >
+            <span class="material-symbols-rounded" aria-hidden="true"
+              >delete</span
+            >
+            <div class="state-layer"></div>
+          </button>
+          <div class="state-layer"></div>
+        </div>
+      </nav>
+      <div class="cp-info">
+        <span class="text-label-large"
+          >Copyright 2023 <strong>Nik T.</strong></span
+        >
+      </div>
+    </header>
+    <div class="overlay" data-sidebar-overlay data-sidebar-toggler></div>
 
-    <p class="text-headline-large">Hello world</p>
-    <p class="text-headline-medium">Hello world</p>
-    <p class="text-headline-small">Hello world</p>
-
-    <p class="text-title-large">Hello world</p>
-    <p class="text-title-medium">Hello world</p>
-    <p class="text-title-small">Hello world</p>
-
-    <p class="text-body-large">Hello world</p>
-    <p class="text-body-medium">Hello world</p>
-    <p class="text-body-small">Hello world</p>
-    
-    <p class="text-label-large">Hello world</p>
-    <p class="text-label-medium">Hello world</p>
-    <p class="text-label-small">Hello world</p>
+    <main class="main">
+      <div class="header">
+        <div class="wrapper"></div>
+      </div>
+    </main>
     <!-- theme js -->
     <script src="./js/theme.js"></script>
     <!-- custom js link -->
