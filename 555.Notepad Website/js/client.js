@@ -37,5 +37,23 @@ export const client = {
       activeNotebook.call($navItem);
       $notePanelTitle.textContent = notebookData.name;
     },
+    /**
+     * Reads and displays alist of notebooks in the UI.
+     *
+     * @param {Array<Object>} notebookList - list of notebook data to display.
+     */
+    read(notebookList) {
+      notebookList.forEach((notebookData, index) => {
+        const /** {HTMLElement} */ $navItem = NavItem(
+            notebookData.id,
+            notebookData.name
+          );
+        if (index === 0) {
+          activeNotebook.call($navItem);
+          $notePanelTitle.textContent = notebookData.name;
+        }
+        $sidebarList.appendChild($navItem);
+      });
+    },
   },
 };

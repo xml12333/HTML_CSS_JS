@@ -3,6 +3,11 @@
  * Import
  */
 import { Tooltip } from "./Tooltip.js";
+import { activeNotebook } from "../utils.js";
+
+const /** {HTMLElement} */ $notePanelTitle = document.querySelector(
+    "[data-note-panel-title]"
+  );
 
 /**
  * Creates a navigation item representing a notebook. This item displays the notebook's name, allows editing and deletion of the notebook, and handles click events to display its associated notes.
@@ -42,5 +47,14 @@ export const NavItem = function (id, name) {
   const /** {Array<HTMLElement} */ $tooltipElems =
       $navItem.querySelectorAll("[data-tooltip]");
   $tooltipElems.forEach(($elem) => Tooltip($elem));
+
+  /**
+   * Handles the click event on the navigation item. Updates the note panel's title, retrieves the associated notes, and marks the item as active.
+   */
+  $navItem.addEventListener("click", function () {
+    $notePanelTitle.textContent = name;
+    activeNotebook.call(this);
+  });
+
   return $navItem;
 };
