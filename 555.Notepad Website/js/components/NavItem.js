@@ -6,7 +6,7 @@ import { Tooltip } from "./Tooltip.js";
 import { activeNotebook, makeElemEditable } from "../utils.js";
 import { db } from "../db.js";
 import { client } from "../client.js";
-
+import { DeleteConfirmModal } from "./Modal.js";
 const /** {HTMLElement} */ $notePanelTitle = document.querySelector(
     "[data-note-panel-title]"
   );
@@ -80,5 +80,23 @@ export const NavItem = function (id, name) {
       client.notebook.update(id, updateNotebookData);
     }
   });
+
+  /**
+   * Notebook delete functionality
+   */
+  const /** {HTMLElement} */ $navItemDeleteBtn =
+      $navItem.querySelector("[data-delete-btn]");
+  $navItemDeleteBtn.addEventListener("click", function () {
+    const /** {Object} */ modal = DeleteConfirmModal(name);
+    modal.open();
+    modal.onSubmit(function (isConfirm) {
+      if (isConfirm) {
+        db.delete.notebook(id);
+        client.notebook.delete(id);
+      }
+      modal.close();
+    });
+  });
+
   return $navItem;
 };

@@ -73,5 +73,22 @@ export const client = {
       $sidebarList.replaceChild($newNotebook, $oldNotebook);
       activeNotebook.call($newNotebook);
     },
+    /**
+     * Deletes a notebook from the UI
+     *
+     * @param {string} notebookId  - ID of the notebook to delete
+     */
+    delete(notebookId) {
+      const /** {HTMLElement} */ $deletedNotebook = document.querySelector(
+          `[data-notebook="${notebookId}"]`
+        );
+      const /** {HTMLElement | null} */ $activeNavItem =
+          $deletedNotebook.nextElementSibling ??
+          $deletedNotebook.previousElementSibling;
+      if ($activeNavItem) {
+        $activeNavItem.click();
+      }
+      $deletedNotebook.remove();
+    },
   },
 };

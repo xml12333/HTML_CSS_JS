@@ -3,7 +3,7 @@
  * Import module
  */
 
-import { findNotebook, generateID } from "./utils.js";
+import { findNotebook, generateID, findNotebookIndex } from "./utils.js";
 
 // DB Object
 let /** {Object} */ notekeeperDB = {};
@@ -94,6 +94,23 @@ export const db = {
       notebook.name = name;
       writeDB();
       return notebook;
+    },
+  },
+  delete: {
+    /**
+     * Deletes a notebook from the database.
+     *
+     * @function
+     * @param {string} notebookId - The ID of the notebook to delete
+     */
+    notebook(notebookId) {
+      readDB();
+      const /** {Number} */ notebookIndex = findNotebookIndex(
+          notekeeperDB,
+          notebookId
+        );
+      notekeeperDB.notebooks.splice(notebookIndex, 1);
+      writeDB();
     },
   },
 };
