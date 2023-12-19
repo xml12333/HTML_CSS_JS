@@ -3,7 +3,7 @@
  * Import module
  */
 
-import { generateID } from "./utils.js";
+import { findNotebook, generateID } from "./utils.js";
 
 // DB Object
 let /** {Object} */ notekeeperDB = {};
@@ -77,6 +77,23 @@ export const db = {
     notebook() {
       readDB();
       return notekeeperDB.notebooks;
+    },
+  },
+  update: {
+    /**
+     * Updates the name of a notebook in the databesa.
+     *
+     * @function
+     * @param {string} notebookId - The ID of the notebook to update.
+     * @param {string} name - The new name for the notebook.
+     * @returns {Object} The updated notebook object.
+     */
+    notebook(notebookId, name) {
+      readDB();
+      const /** {Object} */ notebook = findNotebook(notekeeperDB, notebookId);
+      notebook.name = name;
+      writeDB();
+      return notebook;
     },
   },
 };

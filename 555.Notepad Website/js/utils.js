@@ -59,10 +59,22 @@ const generateID = function () {
   return new Date().getTime().toString();
 };
 
+/**
+ * Finds a notebook in database by its ID.
+ *
+ * @param {Object} db  - The database containing the notebooks.
+ * @param {string} notebookId - The ID of the notebook to find.
+ * @returns {Object | undefined} The found notebook object, or undefined if not found.
+ */
+const findNotebook = function (db, notebookId) {
+  return db.notebooks.find((notebook) => notebook.id === notebookId);
+};
+
 export {
   addEventOnElements,
   getGreetingMsg,
   activeNotebook,
   makeElemEditable,
   generateID,
+  findNotebook,
 };
