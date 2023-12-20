@@ -106,6 +106,7 @@ export const client = {
     create(noteData) {
       // Append card in notePanel
       const /** {HTMLElement} */ $card = Card(noteData);
+      $notePanel.appendChild($card);
     },
   },
 };

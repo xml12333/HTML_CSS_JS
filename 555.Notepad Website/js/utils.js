@@ -81,6 +81,29 @@ const findNotebookIndex = function (db, notebookId) {
   return db.notebooks.findIndex((item) => item.id === notebookId);
 };
 
+/**
+ * Converts a timestamp in milliseconds to a human-readable relative time string.
+ *
+ * @param {number} miliseconds  - The timestamp in millisecondas to convert.
+ * @returns {string} A string representing the relative time (e.g., "Just now", "5 min ago", "3 hours ago", "2 days ago")
+ */
+const getRelativeTime = function (miliseconds) {
+  const /** {Number} */ currentTime = new Date().getTime();
+
+  const /** {Number} */ minute = Math.floor(
+      (currentTime - miliseconds) / 1000 / 60
+    );
+  const /** {Number} */ hour = Math.floor(minute / 60);
+  const /** {Number} */ day = Math.floor(minute / 24);
+  return minute < 1
+    ? "Just now"
+    : minute < 60
+    ? `${minute} min ago`
+    : hour < 24
+    ? `${hour} hour ago`
+    : `${day} day ago`;
+};
+
 export {
   addEventOnElements,
   getGreetingMsg,
@@ -89,4 +112,5 @@ export {
   generateID,
   findNotebook,
   findNotebookIndex,
+  getRelativeTime,
 };
