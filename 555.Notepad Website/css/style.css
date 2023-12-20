@@ -772,6 +772,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   align-content: flex-start;
+  flex-grow: 1;
   align-items: stretch;
   gap: var(--spacing-2);
 }
@@ -852,10 +853,9 @@ body {
     padding-inline: var(--spacing-10);
   }
   .menu-btn,
-  .main .fab{
+  .main .fab {
     display: none;
   }
-  
 }
 /**
 * responsive for larger than 1400px screen
@@ -864,7 +864,7 @@ body {
   /**
   * Main
   */
-  .main{
+  .main {
     max-width: 1480px;
     width: 100%;
     margin-inline: auto;
