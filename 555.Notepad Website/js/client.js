@@ -5,6 +5,7 @@
  */
 import { NavItem } from "./components/NavItem.js";
 import { activeNotebook } from "./utils.js";
+import { Card } from "./components/Card.js";
 
 const /** {HTMLElement} */ $sidebarList = document.querySelector(
     "[data-sidebar-list]"
@@ -12,6 +13,8 @@ const /** {HTMLElement} */ $sidebarList = document.querySelector(
 const /** {HTMLElement} */ $notePanelTitle = document.querySelector(
     "[data-note-panel-title]"
   );
+const /** {HTMLElement} */ $notePanel =
+    document.querySelector("[data-note-panel]");
 
 /**
  * the client object manages interactions with the user interface (UI) to create, read, update, and delete notebooks and notes.
@@ -87,8 +90,22 @@ export const client = {
           $deletedNotebook.previousElementSibling;
       if ($activeNavItem) {
         $activeNavItem.click();
+      } else {
+        $notePanelTitle.innerHTML = ``;
+        // $notePanel.innerHTML = ''
       }
       $deletedNotebook.remove();
+    },
+  },
+  note: {
+    /**
+     * Creates a new note card in the UI based on provided note data.
+     *
+     * @param {Object} noteData  - Data representing the new note.
+     */
+    create(noteData) {
+      // Append card in notePanel
+      const /** {HTMLElement} */ $card = Card(noteData);
     },
   },
 };
