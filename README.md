@@ -566,3 +566,4 @@
 |552| [Game Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/552.Game%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/552.Game%20Website/)| ![Thumbnail](552.Game%20Website/img/info_thumbnail.jpg)|
 |553| [Portfolio Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/553.Portfolio%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/553.Portfolio%20Website/)| ![Thumbnail](553.Portfolio%20Website/img/info_thumbnail.jpg)|
 |554| [RealEstate Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/554.RealEstate%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/554.RealEstate%20Website/)| ![Thumbnail](554.RealEstate%20Website/img/info_thumbnail.jpg)|
+|555| [Notepad Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/555.Notepad%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/555.Notepad%20Website/)| ![Thumbnail](555.Notepad%20Website/img/info_thumbnail.jpg)|

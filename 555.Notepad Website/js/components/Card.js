@@ -5,7 +5,7 @@
  */
 import { Tooltip } from "./Tooltip.js";
 import { getRelativeTime } from "../utils.js";
-import { NoteModal } from "./Modal.js";
+import { DeleteConfirmModal, NoteModal } from "./Modal.js";
 import { db } from "../db.js";
 import { client } from "../client.js";
 /**
@@ -71,7 +71,21 @@ export const Card = function (noteData) {
    * If the deletion is confirmed, it updates the UI and database to remove the note.
    */
   const /** {HTMLElement} */ $deleteBtn =
-      $card.querySelector("[ data-delete-btn]");
+      $card.querySelector("[data-delete-btn]");
+
+  $deleteBtn.addEventListener("click", function (event) {
+    event.stopImmediatePropagation();
+    const /** {Object} */ modal = DeleteConfirmModal(title);
+    modal.open();
+    modal.onSubmit(function (isConfirm) {
+      if (isConfirm) {
+        const /** {Array} */ existedNotes = db.delete.note(notebookId, id);
+        // Update the client ui to reflect note deletion
+        client.note.delete(id, existedNotes.length);
+      }
+      modal.close();
+    });
+  });
 
   return $card;
 };
