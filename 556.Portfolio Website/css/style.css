@@ -171,6 +171,99 @@ body {
 /*-----------------------------------*\
   #TYPOGRAPHY
 \*-----------------------------------*/
+.display-large {
+  font-family: var(--font-primary);
+  font-size: var(--display-large);
+  font-weight: var(--weight-regular);
+  line-height: 64px;
+  letter-spacing: -0.25px;
+}
+.display-medium {
+  font-family: var(--font-primary);
+  font-size: var(--display-medium);
+  font-weight: var(--weight-regular);
+  line-height: 52px;
+}
+.display-small {
+  font-family: var(--font-primary);
+  font-size: var(--display-small);
+  font-weight: var(--weight-regular);
+  line-height: 44px;
+}
+.headline-large {
+  font-family: var(--font-primary);
+  font-size: var(--headline-large);
+  font-weight: var(--weight-regular);
+  line-height: 40px;
+}
+.headline-medium {
+  font-family: var(--font-primary);
+  font-size: var(--headline-medium);
+  font-weight: var(--weight-regular);
+  line-height: 36px;
+}
+.headline-small {
+  font-family: var(--font-primary);
+  font-size: var(--headline-small);
+  font-weight: var(--weight-regular);
+  line-height: 28px;
+}
+.title-large {
+  font-family: var(--font-primary);
+  font-size: var(--title-large);
+  font-weight: var(--weight-regular);
+  line-height: 28px;
+}
+.title-medium {
+  font-family: var(--font-primary);
+  font-size: var(--title-medium);
+  font-weight: var(--weight-medium);
+  line-height: 24px;
+  letter-spacing: 0.15px;
+}
+.title-small {
+  font-family: var(--font-primary);
+  font-size: var(--title-small);
+  font-weight: var(--weight-medium);
+  line-height: 20px;
+  letter-spacing: 0.1px;
+}
+.body-large {
+  font-size: var(--body-large);
+  font-weight: var(--weight-regular);
+  line-height: 24px;
+  letter-spacing: 0.5px;
+}
+.body-medium {
+  font-size: var(--body-medium);
+  font-weight: var(--weight-regular);
+  line-height: 20px;
+  letter-spacing: 0.25px;
+}
+.body-small {
+  font-size: var(--body-small);
+  font-weight: var(--weight-regular);
+  line-height: 16px;
+  letter-spacing: 0.4px;
+}
+.label-large {
+  font-size: var(--label-large);
+  font-weight: var(--weight-medium);
+  line-height: 20px;
+  letter-spacing: 0.1px;
+}
+.label-medium {
+  font-size: var(--label-medium);
+  font-weight: var(--weight-medium);
+  line-height: 16px;
+  letter-spacing: 0.5px;
+}
+.label-small {
+  font-size: var(--label-small);
+  font-weight: var(--weight-medium);
+  line-height: 16px;
+  letter-spacing: 0.5px;
+}
 
 /*-----------------------------------*\
   #REUSED STYLE
