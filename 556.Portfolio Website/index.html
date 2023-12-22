@@ -29,7 +29,82 @@
   </head>
   <body>
     <!-- top bar -->
-    
+    <header class="topbar">
+      <a href="#" class="logo">
+        <img
+          src="./img/Logo_dark.png"
+          alt="Devfolio"
+          width="145"
+          height="32"
+          class="dark"
+        />
+        <img
+          src="./img/Logo_light.png"
+          alt="Devfolio"
+          width="145"
+          height="32"
+          class="light"
+        />
+      </a>
+      <button class="icon-btn theme-btn" data-theme-btn>
+        <span class="material-symbols-outlined dark" aria-hidden="true">
+          dark_mode
+        </span>
+
+        <span class="material-symbols-outlined light" aria-hidden="true">
+          light_mode
+        </span>
+        <div class="state-layer"></div>
+      </button>
+    </header>
+
+    <main>
+      <article>
+        <!-- hero -->
+        <section class="section hero">
+          <div class="container">
+            <figure
+              class="hero-banner img-holder"
+              style="--width: 240; --height: 240"
+            >
+              <img
+                src="./img/profile.jpg"
+                width="240"
+                height="240"
+                alt="Nik T."
+                class="img-cover"
+              />
+            </figure>
+            <div class="hero-content">
+              <span class="label-large section-subtitle"
+                >Software Engineer</span
+              >
+              <h1 class="display-small">Nik T.</h1>
+              <p class="body-large section-text">
+                Lorem ipsum dolor sit amet consectetur. Quam ut feugiat ut porta
+                morbi lobortis tristique.
+              </p>
+              <div class="btn-wrapper">
+                <a href="mailto:admin@admin.com" class="chip">
+                  <span class="material-symbols-outlined" aria-hidden="true">
+                    mail
+                  </span>
+                  <span class="label-large">admin@admin.com</span>
+                  <div class="state-layer"></div>
+                </a>
+                <a href="tel:+123456790" class="chip">
+                  <span class="material-symbols-outlined" aria-hidden="true">
+                    call
+                  </span>
+                  <span class="label-large">+123456790</span>
+                  <div class="state-layer"></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
 
     <!-- custom js link -->
     <script src="./js/script.js"></script>
