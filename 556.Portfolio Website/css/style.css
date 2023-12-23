@@ -309,6 +309,9 @@ body {
   height: 100%;
   object-fit: cover;
 }
+.tab-content:not(.active) {
+  display: none;
+}
 /*-----------------------------------*\
   #COMPONENT
 \*-----------------------------------*/
@@ -326,6 +329,47 @@ body {
 /**
  * TAB
  */
+.primary-tabs {
+  background-color: var(--background);
+  margin-block-start: 24px;
+  margin-inline: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  border-block-end: 1px solid var(--outline-variant);
+}
+.tab-btn {
+  height: 48px;
+  width: 100%;
+  display: grid;
+  place-content: center;
+  background-color: var(--surface);
+  color: var(--on-surface-variant);
+  --state-layer-bg: var(--on-surface-variant);
+}
+.tab-btn.active {
+  color: var(--primary);
+  --state-layer-bg: var(--primary);
+}
+.tab-text {
+  position: relative;
+  height: 48px;
+  line-height: 48px;
+}
+.tab-text::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background-color: var(--primary);
+  opacity: 0;
+}
+.tab-btn.active .tab-text::after {
+  opacity: 1;
+}
 
 /**
  * CHIP
@@ -350,6 +394,21 @@ body {
 /**
  * CARD
  */
+.card {
+  background-color: var(--surface-container-low);
+  border-radius: var(--radius-medium);
+  padding: 16px;
+  --state-layer-bg: var(--on-surface);
+}
+.card-banner {
+  border-radius: var(--radius-medium);
+}
+.card-content .card-subtitle {
+  color: var(--on-surface-variant);
+}
+.card-title {
+  color: var(--on-surface);
+}
 
 /**
  * INPUT FIELD
@@ -436,16 +495,16 @@ body {
 .about-card .card-title {
   color: var(--on-surface);
 }
-.about-card .card-text{
+.about-card .card-text {
   margin-block: 12px;
   padding-block: 12px;
   border-block: 1px solid var(--outline-variant);
 }
-.about-list{
+.about-list {
   display: grid;
   gap: 12px;
 }
-.list-item{
+.list-item {
   display: flex;
   align-items: center;
   gap: 4px;
@@ -453,7 +512,11 @@ body {
 /*-----------------------------------*\
   #PROJECT
 \*-----------------------------------*/
-
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
 /*-----------------------------------*\
   #RESUME
 \*-----------------------------------*/
