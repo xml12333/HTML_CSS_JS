@@ -416,7 +416,7 @@ body {
   margin-block: 5px 16px;
   color: var(--on-surface-variant);
 }
-.hero .btn-wrapper{
+.hero .btn-wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -425,7 +425,31 @@ body {
 /*-----------------------------------*\
   #ABOUT CARD
 \*-----------------------------------*/
-
+.about-card {
+  background: var(--surface-container-low);
+  color: var(--on-surface-variant);
+  margin-inline: 16px;
+  padding: 16px;
+  margin-block-start: 24px;
+  border-radius: var(--radius-large);
+}
+.about-card .card-title {
+  color: var(--on-surface);
+}
+.about-card .card-text{
+  margin-block: 12px;
+  padding-block: 12px;
+  border-block: 1px solid var(--outline-variant);
+}
+.about-list{
+  display: grid;
+  gap: 12px;
+}
+.list-item{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
 /*-----------------------------------*\
   #PROJECT
 \*-----------------------------------*/
