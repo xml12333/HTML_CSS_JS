@@ -124,7 +124,7 @@
   box-sizing: border-box;
 }
 li {
-  list-style: nonek;
+  list-style: none;
 }
 a,
 img,
@@ -311,6 +311,9 @@ body {
 }
 .tab-content:not(.active) {
   display: none;
+}
+.section-title{
+  margin-block-end: 16px;
 }
 /*-----------------------------------*\
   #COMPONENT
@@ -520,6 +523,38 @@ body {
 /*-----------------------------------*\
   #RESUME
 \*-----------------------------------*/
+.resume-tab .list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-block-end: 28px;
+}
+.resume-card {
+  display: grid;
+  gap: 4px;
+}
+.resume-card .card-subtitle {
+  color: var(--primary);
+}
+.resume-card .card-text {
+  color: var(--on-surface-variant);
+}
+.resume-bottom-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+.resume-bottom-item {
+  background-color: var(--surface-container);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: var(--radius-small);
+}
+.resume-bottom-item .icon {
+  height: 28px;
+}
 
 /*-----------------------------------*\
   #CONTACT
