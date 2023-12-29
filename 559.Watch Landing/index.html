@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+
+    <!--=============== REMIXICONS ===============-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css"
+    />
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <title>Responsive wacthes website</title>
+  </head>
+  <body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav__logo">WATCHES</a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#" class="nav__link">HOME</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">ABOUT</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">FEATURED</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">NEW</a>
+            </li>
+          </ul>
+          <div class="nav__social">
+            <a href="#" class="nav__social-link"
+              ><i class="ri-facebook-circle-line"></i
+            ></a>
+            <a href="#" class="nav__social-link"
+              ><i class="ri-instagram-line"></i
+            ></a>
+            <a href="#" class="nav__social-link"
+              ><i class="ri-twitter-x-line"></i
+            ></a>
+          </div>
+          <!-- close button -->
+          <div class="nav__close" id="nav-close">
+            <i class="ri-close-line"></i>
+          </div>
+        </div>
+        <!-- toggle button -->
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="ri-menu-fill"></i>
+        </div>
+      </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+      <!--==================== HOME ====================-->
+      <section class="home">
+        <div class="home__container container">
+          <div class="home__data">
+            <div class="home__content">
+              <div class="home__stars">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-half-fill"></i>
+              </div>
+              <h1 class="home__title">
+                Baume Custom <br />
+                Timepiece Small <br />
+                Second
+              </h1>
+              <h3 class="home__price">$620</h3>
+            </div>
+            <a href="#" class="home__button">
+              ADD TO CART <i class="ri-arrow-right-s-line"></i>
+            </a>
+          </div>
+          <div class="home__images">
+            <div class="home__swiper swiper">
+              <div class="swiper-wrapper">
+                <article class="home__article swiper-slide">
+                  <img src="./img/watches-1.png" alt="img" class="home__img" />
+                </article>
+                <article class="home__article swiper-slide">
+                  <img src="./img/watches-2.png" alt="img" class="home__img" />
+                </article>
+                <article class="home__article swiper-slide">
+                  <img src="./img/watches-3.png" alt="img" class="home__img" />
+                </article>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="home__info">
+            <img src="./img/watches-border.png" alt="" class="home__info-img" />
+            <div class="home__info-content">
+              <p class="home__info-description">
+                Personalized watches are a job of quality and commitment. Each
+                piece is the result of a work of co-creation of innovation and
+                responsible sensitivity for users.
+              </p>
+              <a href="#" class="home__button-link">LEARN MORE</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--=============== GSAP ===============-->
+    <script src=""></script>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src="./js/swiper-bundle.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="./js/main.js"></script>
+  </body>
+</html>
