@@ -570,3 +570,4 @@
 |556| [Portfolio Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/556.Portfolio%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/556.Portfolio%20Website/)| ![Thumbnail](556.Portfolio%20Website/img/info_thumbnail.jpg)|
 |557| [Christmas Langing](https://github.com/xml12333/HTML_CSS_JS/tree/main/557.Christmas%20Langing)| [Demo](https://nikt.com.ua/projects/htmlCssJs/557.Christmas%20Langing/)| ![Thumbnail](557.Christmas%20Langing/img/info_thumbnail.jpg)|
 |558| [Halloween Landing](https://github.com/xml12333/HTML_CSS_JS/tree/main/558.Halloween%20Landing)| [Demo](https://nikt.com.ua/projects/htmlCssJs/558.Halloween%20Landing/)| ![Thumbnail](558.Halloween%20Landing/img/info_thumbnail.jpg)|
+|559| [Watch Landing](https://github.com/xml12333/HTML_CSS_JS/tree/main/559.Watch%20Landing)| [Demo](https://nikt.com.ua/projects/htmlCssJs/559.Watch%20Landing/)| ![Thumbnail](559.Watch%20Landing/img/info_thumbnail.jpg)|
