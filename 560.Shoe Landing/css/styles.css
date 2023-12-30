@@ -1,0 +1,238 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Syncopate:wght@400;700&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --black-color: hsl(0, 0%, 5%);
+  --black-color-light: hsl(0, 0%, 70%);
+  --white-color: hsl(0, 0%, 100%);
+  --title-color: hsl(0, 0%, 5%);
+  --text-color: hsl(0, 0%, 55%);
+  --body-color: hsl(0, 0%, 96%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --second-font: "Syncopate", sans-serif;
+  --biggest-font-size: 2.5rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-bold: 700;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1152px) {
+  :root {
+    --biggest-font-size: 4.5rem;
+    --h2-font-size: 1.5rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--body-color);
+  z-index: var(--z-fixed);
+}
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__logo img {
+  width: 3rem;
+}
+
+.nav__toggle,
+.nav__close {
+  display: flex;
+  font-size: 1.25rem;
+  color: var(--title-color);
+  cursor: pointer;
+}
+/* Navigation for mobile devices */
+@media screen and (max-width: 1023px) {
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: var(--body-color);
+    box-shadow: -1px 0 16px hsla(0, 0%, 0%, 0.1);
+    width: 80%;
+    height: 100%;
+    padding: 6rem 3rem;
+    transition: right 0.4s;
+  }
+}
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+}
+.nav__link {
+  color: var(--title-color);
+  font-family: var(--second-font);
+}
+.nav__close {
+  position: absolute;
+  top: 1.125rem;
+  right: 1.5rem;
+}
+
+/* Show menu */
+.show-menu {
+  right: 0;
+}
+
+/* Add shadow header */
+
+/*=============== HOME ===============*/
+.home__container {
+  position: relative;
+  display: grid;
+  row-gap: 2rem;
+  padding-block: 8rem 4rem;
+}
+.home__subtitle,
+.home__title,
+.home__button {
+  font-family: var(--second-font);
+  color: var(--title-color);
+}
+.home__subtitle {
+  font-size: var(--h2-font-size);
+  margin-bottom: 0.5rem;
+}
+.home__title {
+  font-size: var(--biggest-font-size);
+  margin-bottom: 1rem;
+}
+.home__description {
+  font-size: var(--small-font-size);
+  margin-bottom: 2rem;
+}
+.home__button {
+  display: inline-block;
+  background-color: var(--white-color);
+  box-shadow: 0 8px 32px hsla(0, 0%, 0%, 0.1);
+  padding: 1rem 3rem;
+  border-radius: 4rem;
+  font-weight: var(--font-bold);
+  transition: box-shadow 0.4s;
+}
+.home__button:hover {
+  box-shadow: 0 8px 32px hsla(0, 0%, 0%, 0.15);
+}
+.home__social {
+  position: absolute;
+  top: 10rem;
+  right: 0;
+  display: grid;
+  row-gap: 1rem;
+}
+.home__social-link {
+  display: inline-flex;
+  font-size: 1.25rem;
+  color: var(--title-color);
+  transition: transform 0.4s;
+}
+.home__social-link:hover {
+  transform: translateY(-0.25rem);
+}
+.home__images {
+  display: grid;
+  position: relative;
+}
+.home__shoe {
+  width: 300px;
+  margin-inline: auto;
+}
+.home__circle {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(180deg, hsl(0, 0%, 100%), hsl(0, 0%, 96%));
+  border-radius: 50%;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+}
+/* Swiper class */
+.swiper {
+  margin-inline: initial;
+}
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: -2rem;
+}
+.swiper-pagination-bullet {
+  width: 1rem;
+  height: 0.25rem;
+  border-radius: 1rem;
+  background-color: var(--black-color-light);
+  opacity: 1;
+  transition: background-color 0.3s, width 0.3s;
+}
+.swiper-pagination-bullet-active {
+  width: 1.25rem;
+  background-color: var(--black-color);
+}
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+  margin: 0 2px;
+}
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+/* For medium devices */
+
+/* For large devices */
