@@ -572,3 +572,4 @@
 |558| [Halloween Landing](https://github.com/xml12333/HTML_CSS_JS/tree/main/558.Halloween%20Landing)| [Demo](https://nikt.com.ua/projects/htmlCssJs/558.Halloween%20Landing/)| ![Thumbnail](558.Halloween%20Landing/img/info_thumbnail.jpg)|
 |559| [Watch Landing](https://github.com/xml12333/HTML_CSS_JS/tree/main/559.Watch%20Landing)| [Demo](https://nikt.com.ua/projects/htmlCssJs/559.Watch%20Landing/)| ![Thumbnail](559.Watch%20Landing/img/info_thumbnail.jpg)|
 |560| [Shoe Landing](https://github.com/xml12333/HTML_CSS_JS/tree/main/560.Shoe%20Landing)| [Demo](https://nikt.com.ua/projects/htmlCssJs/560.Shoe%20Landing/)| ![Thumbnail](560.Shoe%20Landing/img/info_thumbnail.jpg)|
+|561| [Restaurant Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/561.Restaurant%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/561.Restaurant%20Website/)| ![Thumbnail](561.Restaurant%20Website/img/info_thumbnail.jpg)|
