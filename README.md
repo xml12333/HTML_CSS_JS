@@ -579,3 +579,4 @@
 |565| [Agency Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/565.Agency%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/565.Agency%20Website/)| ![Thumbnail](565.Agency%20Website/img/info_thumbnail.jpg)|
 |566| [Portfolio Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/566.Portfolio%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/566.Portfolio%20Website/)| ![Thumbnail](566.Portfolio%20Website/img/info_thumbnail.jpg)|
 |567| [Car Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/567.Car%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/567.Car%20Website/)| ![Thumbnail](567.Car%20Website/img/info_thumbnail.jpg)|
+|568| [Moto Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/568.Moto%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/568.Moto%20Website/)| ![Thumbnail](568.Moto%20Website/img/info_thumbnail.jpg)|
