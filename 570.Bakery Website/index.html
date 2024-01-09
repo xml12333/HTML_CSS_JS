@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+
+    <!--=============== REMIXICONS ===============-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.7.0/remixicon.css"
+    />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <title>Responsive bakery website</title>
+  </head>
+  <body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav__logo">Bakery</a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="#news" class="nav__link">News</a>
+            </li>
+            <li class="nav__item">
+              <a href="#about" class="nav__link">About Us</a>
+            </li>
+            <li class="nav__item">
+              <a href="#favorite" class="nav__link">Favorites</a>
+            </li>
+            <li class="nav__item">
+              <a href="#visit" class="nav__link">Location</a>
+            </li>
+          </ul>
+          <!-- close button -->
+          <div class="nav__close" id="nav-close">
+            <i class="ri-close-line"></i>
+          </div>
+          <img src="./img/bread-4.png" alt="img" class="nav__img-1" />
+          <img src="./img/bread-1.png" alt="img" class="nav__img-2" />
+        </div>
+        <!-- Toggle button -->
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="ri-menu-fill"></i>
+        </div>
+      </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+      <!--==================== HOME ====================-->
+      <section class="home section" id="home">
+        <img src="./img/home-bg.jpg" alt="img" class="home__bg" />
+        <div class="home__shadow"></div>
+        <div class="home__container container grid">
+          <div class="home__data">
+            <h1 class="home__title">
+              Select The Best <br />
+              Quality Breads
+            </h1>
+            <a href="#" class="button">Select Breads</a>
+            <img src="./img/bread-1.png" alt="img" class="home__bread" />
+          </div>
+          <div class="home__image">
+            <img src="./img/home-bread.png" alt="img" class="home__img">
+          </div>
+          <footer class="home__footer">
+            <div class="home__location">
+               <i class="ri-map-pin-line"></i>
+               <span>AV. The Sun #321 <br> Lima Peru</span>
+            </div>
+            <div class="home__social">
+               <a href="#"><i class="ri-facebook-circle-line"></i></a>
+               <a href="#"><i class="ri-instagram-line"></i></a>
+               <a href="#"><i class="ri-youtube-line"></i></a>
+            </div>
+          </footer>
+        </div>
+      </section>
+
+      <!--==================== NEWS ====================-->
+      <section class="new section" id="new"></section>
+
+      <!--==================== ABOUT ====================-->
+      <section class="about section" id="about"></section>
+
+      <!--==================== FAVORITES ====================-->
+      <section class="favorite section" id="favorite"></section>
+
+      <!--==================== VISIT ====================-->
+      <section class="visit section" id="visit"></section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer"></footer>
+
+    <!--========== SCROLL UP ==========-->
+
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src=""></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="./js/main.js"></script>
+  </body>
+</html>
