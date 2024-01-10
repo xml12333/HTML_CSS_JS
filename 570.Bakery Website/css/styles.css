@@ -319,11 +319,103 @@ img {
   background-color: var(--first-color-alt);
 }
 /*=============== NEW ===============*/
-
+.new__container {
+  padding-top: 1.5rem;
+  row-gap: 3.5rem;
+}
+.new__content {
+  row-gap: 2rem;
+}
+.new__card {
+  display: flex;
+  column-gap: 1rem;
+  align-items: center;
+}
+.new__img {
+  width: 150px;
+}
+.new__title {
+  font-size: var(--h2-font-size);
+  font-family: var(--second-font);
+  color: var(--first-color);
+  margin-bottom: 0.5rem;
+}
+.new__description {
+  font-size: var(--small-font-size);
+}
+.new__card:nth-child(2) img {
+  order: -1;
+}
+.new__button {
+  justify-self: center;
+}
 /*=============== ABOUT ===============*/
-
+.about__container {
+  row-gap: 4rem;
+}
+.about__data {
+  position: relative;
+  text-align: center;
+}
+.about__description {
+  margin-bottom: 3rem;
+}
+.about__bread {
+  width: 60px;
+  position: absolute;
+  bottom: 1rem;
+  right: 0;
+}
+.about__img {
+  width: 320px;
+  justify-self: center;
+}
 /*=============== FAVORITES ===============*/
-
+.favorite__container {
+  padding-top: 3.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem 1.5rem;
+}
+.favorite__card {
+  position: relative;
+  background-color: var(--container-color);
+  box-shadow: 0 12px 24px hsla(0, 0%, 0%, 0.3);
+  padding: 6.5rem 1rem 1.25rem;
+  border: 2px solid transparent;
+  transition: border-color 0.4s;
+}
+.favorite__img {
+  width: 120px;
+  position: absolute;
+  top: -2rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.favorite__title {
+  font-size: var(--h2-font-size);
+  font-family: var(--second-font);
+  color: var(--first-color);
+}
+.favorite__subtitle {
+  display: block;
+  margin-bottom: 0.75rem;
+}
+.favorite__price {
+  font-size: var(--normal-font-size);
+  font-family: var(--second-font);
+}
+.favorite__button {
+  padding: 0.25rem;
+  font-size: 1.25rem;
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1rem;
+  cursor: pointer;
+}
+.favorite__card:hover {
+  border-color: var(--first-color);
+}
 /*=============== VISIT ===============*/
 
 /*=============== FOOTER ===============*/
