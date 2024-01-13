@@ -582,3 +582,4 @@
 |568| [Moto Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/568.Moto%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/568.Moto%20Website/)| ![Thumbnail](568.Moto%20Website/img/info_thumbnail.jpg)|
 |569| [Portfolio Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/569.Portfolio%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/569.Portfolio%20Website/)| ![Thumbnail](569.Portfolio%20Website/img/info_thumbnail.jpg)|
 |570| [Bakery Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/570.Bakery%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/570.Bakery%20Website/)| ![Thumbnail](570.Bakery%20Website/img/info_thumbnail.jpg)|
+|571| [Book Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/571.Book%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/571.Book%20Website/)| ![Thumbnail](571.Book%20Website/img/info_thumbnail.jpg)|
