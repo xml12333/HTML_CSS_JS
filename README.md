@@ -585,3 +585,4 @@
 |571| [Book Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/571.Book%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/571.Book%20Website/)| ![Thumbnail](571.Book%20Website/img/info_thumbnail.jpg)|
 |572| [Fly Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/572.Fly%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/572.Fly%20Website/)| ![Thumbnail](572.Fly%20Website/img/info_thumbnail.jpg)|
 |573| [Blog Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/573.Blog%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/573.Blog%20Website/)| ![Thumbnail](573.Blog%20Website/img/info_thumbnail.jpg)|
+|574| [Education Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/574.Education%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/574.Education%20Website/)| ![Thumbnail](574.Education%20Website/img/info_thumbnail.jpg)|
