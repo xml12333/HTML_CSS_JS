@@ -588,3 +588,4 @@
 |574| [Education Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/574.Education%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/574.Education%20Website/)| ![Thumbnail](574.Education%20Website/img/info_thumbnail.jpg)|
 |575| [Ecommerce Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/575.Ecommerce%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/575.Ecommerce%20Website/)| ![Thumbnail](575.Ecommerce%20Website/img/info_thumbnail.jpg)|
 |576| [Ecommerce Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/576.Ecommerce%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/576.Ecommerce%20Website/)| ![Thumbnail](576.Ecommerce%20Website/img/info_thumbnail.jpg)|
+|577| [Fitnes Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/577.Fitnes%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/577.Fitnes%20Website/)| ![Thumbnail](577.Fitnes%20Website/img/info_thumbnail.jpg)|
