@@ -593,3 +593,5 @@
 |579| [WebGL liquid masking](https://github.com/xml12333/HTML_CSS_JS/tree/main/579.WebGL%20liquid%20masking)| [Demo](https://nikt.com.ua/projects/htmlCssJs/579.WebGL%20liquid%20masking/)| ![Thumbnail](579.WebGL%20liquid%20masking/img/info_thumbnail.jpg)|
 |580| [Tube Clock](https://github.com/xml12333/HTML_CSS_JS/tree/main/580.Tube%20Clock)| [Demo](https://nikt.com.ua/projects/htmlCssJs/580.Tube%20Clock/)| ![Thumbnail](580.Tube%20Clock/img/info_thumbnail.jpg)|
 |581| [Food Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/581.Food%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/581.Food%20Website/)| ![Thumbnail](581.Food%20Website/img/info_thumbnail.jpg)|
+|582| [Christmas Tree](https://github.com/xml12333/HTML_CSS_JS/tree/main/582.Christmas%20Tree)| [Demo](https://nikt.com.ua/projects/htmlCssJs/582.Christmas%20Tree/)| ![Thumbnail](582.Christmas%20Tree/img/info_thumbnail.jpg)|
+|583| [Mechanical sunbrust](https://github.com/xml12333/HTML_CSS_JS/tree/main/583.Mechanical%20sunbrust)| [Demo](https://nikt.com.ua/projects/htmlCssJs/583.Mechanical%20sunbrust/)| ![Thumbnail](583.Mechanical%20sunbrust/img/info_thumbnail.jpg)|
