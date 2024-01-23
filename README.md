@@ -599,3 +599,5 @@
 |585| [Dropdown Menu](https://github.com/xml12333/HTML_CSS_JS/tree/main/585.Dropdown%20Menu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/585.Dropdown%20Menu/)| ![Thumbnail](585.Dropdown%20Menu/img/info_thumbnail.jpg)|
 |586| [Infinit Scroll](https://github.com/xml12333/HTML_CSS_JS/tree/main/586.Infinit%20Scroll)| [Demo](https://nikt.com.ua/projects/htmlCssJs/586.Infinit%20Scroll/)| ![Thumbnail](586.Infinit%20Scroll/img/info_thumbnail.jpg)|
 |587| [Transport Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/587.Transport%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/587.Transport%20Website/)| ![Thumbnail](587.Transport%20Website/img/info_thumbnail.jpg)|
+|588| [Balance Slider](https://github.com/xml12333/HTML_CSS_JS/tree/main/588.Balance%20Slider)| [Demo](https://nikt.com.ua/projects/htmlCssJs/588.Balance%20Slider/)| ![Thumbnail](588.Balance%20Slider/img/info_thumbnail.jpg)|
+|589| [SVG Animation](https://github.com/xml12333/HTML_CSS_JS/tree/main/589.SVG%20Animation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/589.SVG%20Animation/)| ![Thumbnail](589.SVG%20Animation/img/info_thumbnail.jpg)|
