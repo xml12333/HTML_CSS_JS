@@ -602,3 +602,5 @@
 |588| [Balance Slider](https://github.com/xml12333/HTML_CSS_JS/tree/main/588.Balance%20Slider)| [Demo](https://nikt.com.ua/projects/htmlCssJs/588.Balance%20Slider/)| ![Thumbnail](588.Balance%20Slider/img/info_thumbnail.jpg)|
 |589| [SVG Animation](https://github.com/xml12333/HTML_CSS_JS/tree/main/589.SVG%20Animation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/589.SVG%20Animation/)| ![Thumbnail](589.SVG%20Animation/img/info_thumbnail.jpg)|
 |590| [Ecommerce Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/590.Ecommerce%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/590.Ecommerce%20Website/)| ![Thumbnail](590.Ecommerce%20Website/img/info_thumbnail.jpg)|
+|591| [Gravity Button](https://github.com/xml12333/HTML_CSS_JS/tree/main/591.Gravity%20Button)| [Demo](https://nikt.com.ua/projects/htmlCssJs/591.Gravity%20Button/)| ![Thumbnail](591.Gravity%20Button/img/info_thumbnail.jpg)|
+|592| [SVG Clock](https://github.com/xml12333/HTML_CSS_JS/tree/main/592.SVG%20Clock)| [Demo](https://nikt.com.ua/projects/htmlCssJs/592.SVG%20Clock/)| ![Thumbnail](592.SVG%20Clock/img/info_thumbnail.jpg)|
