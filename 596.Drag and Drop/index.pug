@@ -1,0 +1,23 @@
+- var people = [{name: 'Cosmo Kramer', position: 'New York Man of Mystery'}, {name: 'George Costanza', position: 'Architect'}, {name: 'Elaine Benes', position: 'Writer'}];
+
+
+#team-members
+	each person in people
+		article.team-member
+			img.team-member-avatar(
+				src=`https://eu.ui-avatars.com/api/?name=${person.name}&size=250`
+				alt="Team Member"
+			)
+			.team-member-name
+				h3 #{person.name}
+				p #{person.position}
+			ul.social-links
+				li
+					a(href="#")
+						i.fa-brands.fa-linkedin
+				li
+					a(href="#")
+						i.fa-brands.fa-x-twitter
+				li
+					a(href="#")
+						i.fa-brands.fa-github

@@ -1,0 +1,99 @@
+:root {
+  --background: #EDEEF7;
+  --gray: #EDEEF7;
+  --white: #ffffff;
+  --poppins: "Poppins", sans-serif;
+  --shadow-opacity: 0.30;
+  --blur: 10px;
+}
+
+body {
+  font-family: var(--poppins), sans-serif;
+  font-size: 1rem;
+  background-image: url("https://images.pexels.com/photos/13574114/pexels-photo-13574114.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load");
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+#team-members {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 550px;
+  margin: auto;
+  padding: 50px;
+  background: rgba(255, 255, 255, 0.25);
+  -webkit-backdrop-filter: blur(var(--blur));
+          backdrop-filter: blur(var(--blur));
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  filter: drop-shadow(0px 20px 10px rgba(0, 0, 0, var(--shadow-opacity)));
+}
+
+.team-member {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  min-height: 60px;
+  padding: 16px;
+  background-color: var(--white);
+  border-radius: 24px;
+  font-size: 16px;
+  z-index: 1;
+}
+.team-member:hover {
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+.team-member-avatar {
+  width: 3.75rem;
+  height: 3.75rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+.team-member-name {
+  display: grid;
+  gap: 0.125rem;
+}
+.team-member-name h3 {
+  font-size: large;
+}
+.team-member-name p {
+  font-size: smaller;
+}
+.team-member-chosen {
+  box-shadow: 8px 8px 32px rgba(0, 0, 0, 0.3);
+}
+.team-member-drag {
+  opacity: 0;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  margin-left: auto;
+  padding: 0;
+  list-style-type: none;
+}
+.social-links i {
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 1.25rem;
+}

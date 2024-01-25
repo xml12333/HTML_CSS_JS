@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: #151515;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.score {
+  position: fixed;
+  zIndex: 10;
+  top: 20px;
+  left: 20px;
+  padding: 10px 5px 10px 15px;
+  background: #fff;
+  color: #000;
+  border-radius: 30px;
+  font-family: sans-serif;
+  text-align: center;
+  height: 50px;
+}
+
+#score {
+  background: #000;
+  border-radius: 20px;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -5px;
+}
+
+#restart {
+  position: fixed;
+  zIndex: 10;
+  top: 20px;
+  right: 20px;
+  padding: 20px 25px;
+  background: #000;
+  color: #fff;
+  border-radius: 30px;
+  font-family: sans-serif;
+  text-align: center;
+  border: none;
+  appearance: none;
+  cursor: pointer;
+}

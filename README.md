@@ -605,3 +605,6 @@
 |591| [Gravity Button](https://github.com/xml12333/HTML_CSS_JS/tree/main/591.Gravity%20Button)| [Demo](https://nikt.com.ua/projects/htmlCssJs/591.Gravity%20Button/)| ![Thumbnail](591.Gravity%20Button/img/info_thumbnail.jpg)|
 |592| [SVG Clock](https://github.com/xml12333/HTML_CSS_JS/tree/main/592.SVG%20Clock)| [Demo](https://nikt.com.ua/projects/htmlCssJs/592.SVG%20Clock/)| ![Thumbnail](592.SVG%20Clock/img/info_thumbnail.jpg)|
 |593| [Podcast Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/593.Podcast%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/593.Podcast%20Website/)| ![Thumbnail](593.Podcast%20Website/img/info_thumbnail.jpg)|
+|594| [Ball Chain Reaction](https://github.com/xml12333/HTML_CSS_JS/tree/main/594.Ball%20Chain%20Reaction)| [Demo](https://nikt.com.ua/projects/htmlCssJs/594.Ball%20Chain%20Reaction/)| ![Thumbnail](594.Ball%20Chain%20Reaction/img/info_thumbnail.jpg)|
+|595| [Spell Caster](https://github.com/xml12333/HTML_CSS_JS/tree/main/595.Spell%20Caster)| [Demo](https://nikt.com.ua/projects/htmlCssJs/595.Spell%20Caster/)| ![Thumbnail](595.Spell%20Caster/img/info_thumbnail.jpg)|
+|596| [Drag and Drop](https://github.com/xml12333/HTML_CSS_JS/tree/main/596.Drag%20and%20Drop)| [Demo](https://nikt.com.ua/projects/htmlCssJs/596.Drag%20and%20Drop/)| ![Thumbnail](596.Drag%20and%20Drop/img/info_thumbnail.jpg)|
