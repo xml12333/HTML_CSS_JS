@@ -604,3 +604,4 @@
 |590| [Ecommerce Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/590.Ecommerce%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/590.Ecommerce%20Website/)| ![Thumbnail](590.Ecommerce%20Website/img/info_thumbnail.jpg)|
 |591| [Gravity Button](https://github.com/xml12333/HTML_CSS_JS/tree/main/591.Gravity%20Button)| [Demo](https://nikt.com.ua/projects/htmlCssJs/591.Gravity%20Button/)| ![Thumbnail](591.Gravity%20Button/img/info_thumbnail.jpg)|
 |592| [SVG Clock](https://github.com/xml12333/HTML_CSS_JS/tree/main/592.SVG%20Clock)| [Demo](https://nikt.com.ua/projects/htmlCssJs/592.SVG%20Clock/)| ![Thumbnail](592.SVG%20Clock/img/info_thumbnail.jpg)|
+|593| [Podcast Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/593.Podcast%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/593.Podcast%20Website/)| ![Thumbnail](593.Podcast%20Website/img/info_thumbnail.jpg)|
