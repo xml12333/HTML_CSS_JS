@@ -609,3 +609,4 @@
 |595| [Spell Caster](https://github.com/xml12333/HTML_CSS_JS/tree/main/595.Spell%20Caster)| [Demo](https://nikt.com.ua/projects/htmlCssJs/595.Spell%20Caster/)| ![Thumbnail](595.Spell%20Caster/img/info_thumbnail.jpg)|
 |596| [Drag and Drop](https://github.com/xml12333/HTML_CSS_JS/tree/main/596.Drag%20and%20Drop)| [Demo](https://nikt.com.ua/projects/htmlCssJs/596.Drag%20and%20Drop/)| ![Thumbnail](596.Drag%20and%20Drop/img/info_thumbnail.jpg)|
 |597| [Steam Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/597.Steam%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/597.Steam%20Website/)| ![Thumbnail](597.Steam%20Website/img/info_thumbnail.jpg)|
+|598| [Landing Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/598.Landing%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/598.Landing%20Website/)| ![Thumbnail](598.Landing%20Website/img/info_thumbnail.jpg)|
