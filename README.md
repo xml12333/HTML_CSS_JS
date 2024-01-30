@@ -612,3 +612,4 @@
 |598| [Landing Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/598.Landing%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/598.Landing%20Website/)| ![Thumbnail](598.Landing%20Website/img/info_thumbnail.jpg)|
 |599| [Agency Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/599.Agency%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/599.Agency%20Website/)| ![Thumbnail](599.Agency%20Website/img/info_thumbnail.jpg)|
 |600| [Education Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/600.Education%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/600.Education%20Website/)| ![Thumbnail](600.Education%20Website/img/info_thumbnail.jpg)|
+|601| [Movie Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/601.Movie%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/601.Movie%20Website/)| ![Thumbnail](601.Movie%20Website/img/info_thumbnail.jpg)|
