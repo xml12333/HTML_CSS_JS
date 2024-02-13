@@ -626,3 +626,4 @@
 |612| [Crypto Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/612.Crypto%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/612.Crypto%20Website/)| ![Thumbnail](612.Crypto%20Website/img/info_thumbnail.jpg)|
 |613| [Agency Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/613.Agency%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/613.Agency%20Website/)| ![Thumbnail](613.Agency%20Website/img/info_thumbnail.jpg)|
 |614| [Agency Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/614.Agency%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/614.Agency%20Website/)| ![Thumbnail](614.Agency%20Website/img/info_thumbnail.jpg)|
+|615| [Barber Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/615.Barber%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/615.Barber%20Website/)| ![Thumbnail](615.Barber%20Website/img/info_thumbnail.jpg)|
