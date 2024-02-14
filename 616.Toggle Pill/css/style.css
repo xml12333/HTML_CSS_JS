@@ -1,0 +1,144 @@
+input:where(.chip[type="checkbox"]) {
+  --color: #6c6;
+  font-size: 1rem;
+  appearance: none;
+  position: relative;
+  border: 1px solid #0004;
+  border-radius: 100em;
+  overflow: clip;
+  margin: 0;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0;
+  
+  &::after {
+    content: attr(value);
+    white-space: pre;
+    line-height: 1;
+    position: relative;
+    padding: 0.5em 1em 0.5em 2em;
+    display: block;
+  }
+  
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 0.75em;
+    aspect-ratio: 1;
+    background: linear-gradient(currentcolor 0 0), linear-gradient(currentcolor 0 0);
+    background-position: -200% -2em, 2em -200%, 50% 50%;
+    background-size: 1em 0.125em, 0.125em 1em;
+    background-repeat: no-repeat;
+    background-color: var(--color);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 1.125em;
+    translate: -50% -50%;
+    rotate: 45deg;
+    transition: width 0.25s, background-position 0.5s;
+  }
+  
+  &.grow, &.bounce {
+    &::before {
+      background-position: 50% 50%, 50% 50%, 50% 50%;
+      background-size: 0 0, 0 0;
+      transition: width 0.25s, background-size 0.5s;
+    }
+  }
+  
+  &.bounce {
+    &::before {
+      transition-timing-function: ease-in-out, cubic-bezier(0.75, 0, 0.5, 2);
+    }
+  }
+  
+  &:checked {
+    &::before {
+      width: 200%;
+      background-position: 50% 50%, 50% 50%, 50% 50%;
+      background-size: 1em 0.125em, 0.125em 1em;
+    }
+  }
+  
+  &:disabled {
+    --color: #eee !important;
+    color: #6c6c6c;
+    border-color: #0001;
+  }
+  
+  &:hover:not(:disabled) {
+    border-color: #000a;
+    background-color: rgb(from var(--color) r g b / 10%);
+    transition: 0.4s;
+  }
+}
+
+@media print {
+  input:where(.chip[type="checkbox"]) {
+    &, &::before, &::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+}
+
+@media (prefers-reduced-motion) {
+  input:where(.chip[type="checkbox"]) {
+    &, &::before, &::after {
+      transition: none !important;
+    }
+  }
+}
+
+/*
+high-contrast styles:
+- all the dots will be highlight color
+- Disabled will be gray
+- No crosses (they are removed as backgrounds)
+*/
+@media (prefers-contrast: more) {
+  input:where(.chip[type="checkbox"]) {
+    &::before {
+      background: highlight;
+    }
+    
+    &:disabled {
+      border-color: gray-text;
+      
+      &::before {
+        background: graytext;
+      }
+      
+      &::after {
+        color: graytext;
+      }
+    }
+  }
+}
+
+
+
+
+/* DEMO - START */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 3em;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
+fieldset {
+  border-color: #0000;
+
+  & legend {
+    color: #666696;
+    font-weight: 500;
+  }
+}
+/* DEMO - END */

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Toggle Pill</title>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Slide Animation (Default)</legend>
+      <input type="checkbox" class="chip" role="switch" value="Pear" aria-label="Pear" />
+      <input type="checkbox" class="chip" role="switch" value="Banana" aria-label="Banana" style="--color: #fd5" checked />
+      <input type="checkbox" class="chip" role="switch" value="Apple" aria-label="Apple" style="--color:#f88" />
+      <input type="checkbox" class="chip" role="switch" value="Peach" aria-label="Peach" style="--color:#fa3" />
+    </fieldset>
+    
+    <fieldset>
+      <legend>Grow Animation</legend>
+      <input type="checkbox" class="chip grow" role="switch" value="Pear" aria-label="Pear" />
+      <input type="checkbox" class="chip grow" role="switch" value="Banana" aria-label="Banana" style="--color: #fd5" />
+      <input type="checkbox" class="chip grow" role="switch" value="Apple" aria-label="Apple" style="--color:#f88" />
+      <input type="checkbox" class="chip grow" role="switch" value="Peach" aria-label="Peach" style="--color:#fa3" checked />
+    </fieldset>
+    
+    <fieldset>
+      <legend>Bounce Animation</legend>
+      <input type="checkbox" class="chip bounce" role="switch" value="Pear" aria-label="Pear"  />
+      <input type="checkbox" class="chip bounce" role="switch" value="Banana" aria-label="Banana" style="--color: #fd5" />
+      <input type="checkbox" class="chip bounce" role="switch" value="Apple" aria-label="Apple" style="--color:#f88" checked />
+      <input type="checkbox" class="chip bounce" role="switch" value="Peach" aria-label="Peach" style="--color:#fa3" />
+    </fieldset>
+    
+    <fieldset>
+      <legend>Disabled Styles</legend>
+      <input type="checkbox" class="chip bounce" role="switch" value="Pear" aria-label="Pear" disabled />
+      <input type="checkbox" class="chip bounce" role="switch" value="Banana" aria-label="Banana" style="--color: #fd5" disabled/>
+      <input type="checkbox" class="chip bounce" role="switch" value="Apple" aria-label="Apple" style="--color:#f88" checked disabled />
+      <input type="checkbox" class="chip bounce" role="switch" value="Peach" aria-label="Peach" style="--color:#fa3" checked disabled />
+    </fieldset>
+    <script src="js/script.js"></script>
+  </body>
+</html>
