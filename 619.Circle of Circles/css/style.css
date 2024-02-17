@@ -1,0 +1,36 @@
+.circle {
+  aspect-ratio: 1;
+  background: #222;
+  border-radius: 50%;
+  container-type: inline-size;
+  display: grid;
+  height: 95vh;
+  margin-inline: auto;
+  place-content: center;
+  & i {
+    background-color: var(--_bg);
+    border-radius: 2cqi;
+    display: block;
+    grid-area: 1 / -1;
+    height: 1px;
+    rotate: var(--_deg);
+    width: 100cqi;
+    &::before {
+      animation: move 4000ms ease-in-out infinite alternate;
+      animation-delay: var(--_del);
+      background-color: var(--_bg);
+      border-radius: 50%;
+      content: "";
+      height: 4cqi;
+      isolation: isolate;
+      left: 0;
+      position: absolute;
+      top: -2cqi;
+      width: 4cqi;
+      z-index: 1;
+    }
+  }
+}
+
+@keyframes move { to { left: 96cqi; } }
+body { margin: 4ch; }
