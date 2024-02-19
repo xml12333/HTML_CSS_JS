@@ -632,3 +632,4 @@
 |618| [Transition](https://github.com/xml12333/HTML_CSS_JS/tree/main/618.Transition)| [Demo](https://nikt.com.ua/projects/htmlCssJs/618.Transition/)| ![Thumbnail](618.Transition/img/info_thumbnail.jpg)|
 |619| [Circle of Circles](https://github.com/xml12333/HTML_CSS_JS/tree/main/619.Circle%20of%20Circles)| [Demo](https://nikt.com.ua/projects/htmlCssJs/619.Circle%20of%20Circles/)| ![Thumbnail](619.Circle%20of%20Circles/img/info_thumbnail.jpg)|
 |620| [Bookmark](https://github.com/xml12333/HTML_CSS_JS/tree/main/620.Bookmark)| [Demo](https://nikt.com.ua/projects/htmlCssJs/620.Bookmark/)| ![Thumbnail](620.Bookmark/img/info_thumbnail.jpg)|
+|621| [Buttons](https://github.com/xml12333/HTML_CSS_JS/tree/main/621.Buttons)| [Demo](https://nikt.com.ua/projects/htmlCssJs/621.Buttons/)| ![Thumbnail](621.Buttons/img/info_thumbnail.jpg)|
