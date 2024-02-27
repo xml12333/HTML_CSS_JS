@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Give+You+Glory&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  background: black;
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: none;
+}
+body {
+  font-family: "Give You Glory", sans-serif;
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  text-align: center;
+  overflow-x: hidden;
+  background: hsl(320deg, 100%, 5%);
+  color: white;
+}
+main {
+  position: relative;
+}
+section {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#msg {
+  padding: 2em 3em;
+  background: radial-gradient(
+    farthest-side,
+    hsl(320deg, 100%, 10%),
+    hsl(320deg, 100%, 10%) 50%,
+    hsl(320deg, 100%, 5%) 100%
+  );
+  /*
+  filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 1));
+*/
+}
+canvas {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  /*
+  filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.2));
+*/
+  pointer-events: none;
+}
