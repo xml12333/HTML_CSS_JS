@@ -635,3 +635,4 @@
 |621| [Buttons](https://github.com/xml12333/HTML_CSS_JS/tree/main/621.Buttons)| [Demo](https://nikt.com.ua/projects/htmlCssJs/621.Buttons/)| ![Thumbnail](621.Buttons/img/info_thumbnail.jpg)|
 |622| [Cactus Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/622.Cactus%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/622.Cactus%20Website/)| ![Thumbnail](622.Cactus%20Website/img/info_thumbnail.jpg)|
 |623| [Focus Animation](https://github.com/xml12333/HTML_CSS_JS/tree/main/623.Focus%20Animation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/623.Focus%20Animation/)| ![Thumbnail](623.Focus%20Animation/img/info_thumbnail.jpg)|
+|624| [Stretched](https://github.com/xml12333/HTML_CSS_JS/tree/main/624.Stretched)| [Demo](https://nikt.com.ua/projects/htmlCssJs/624.Stretched/)| ![Thumbnail](624.Stretched/img/info_thumbnail.jpg)|
