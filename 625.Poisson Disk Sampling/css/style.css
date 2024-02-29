@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Montserrat:wght@200&display=swap');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  background: #fff;
+}
+
+a {
+  color: #666;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+canvas {
+  border: 1px solid #efefef;
+
+  margin-bottom: 1rem;
+}
