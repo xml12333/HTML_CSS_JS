@@ -1,0 +1,20 @@
+body 
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+ background-image: url(https://1.bp.blogspot.com/-Fo3iRt97ZXY/XvSG4EMwi0I/AAAAAAAAVEo/mrApRTcVVRk1m-fX9K-ffNwRUXlHUocdwCLcBGAsYHQ/s1600/h.jpg);
+    background-color: #181828;
+}
+
+*
+{
+  margin:0;
+  padding:0;
+}
+
+#tag-cloud svg rect
+{
+  fill:transparent;
+}
