@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap");
+:root {
+  --primary-color: #fed330;
+  --secondary-ccolor: #ff2525;
+  --white-color: #ffffff;
+  --light-color: #f4f4f4;
+  --grey-color: #979b9d;
+  --dark-color: #171820;
+
+  --trans-back-co: background-color 0.3s, color 0.3s;
+  --trans-co: color 0.3s;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--dark-color);
+  background-color: var(--white-color);
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+ul {
+  list-style: none;
+}
+strong {
+  font-weight: 600;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 500;
+  line-height: normal;
+}
+h1 {
+  font-size: 2.5em;
+}
+h2 {
+  font-size: 2em;
+}
+h3 {
+  font-size: 1.5em;
+}
+h4 {
+  font-size: 1em;
+}
+
+.container {
+  max-width: 1100px;
+  padding: 0 2em;
+  margin: 0 auto;
+}
+
+/*---------------------------
+ * 00. REUSABLE SELECTOR
+ *---------------------------*/
+ .icons a {
+  position: relative;
+  font-size: 1.375em;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  text-align: center;
+ }
+/*---------------------------
+ * 01. HEADER
+ *---------------------------*/
+header {
+  position: relative;
+}
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1000px;
+  background-color: var(--dark-color);
+  z-index: -1;
+}
+
+header :where(nav, .left, .right, ul, .icons) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header :where(.left, ul) {
+  flex-direction: column;
+}
+header nav {
+  padding: 1.5em 0;
+  line-height: 2.5em;
+}
+header nav a {
+  padding: 0 1em;
+  color: var(--white-color);
+  transition: var(--trans-co);
+}
+header nav a:hover{
+  color: var(--primary-color);
+}
+header nav .logo a{
+  font-size: 1.5em;
+  font-weight: 500;
+  padding-left: 0;
+  display: flex;
+  color: var(--primary-color);
+}
+header nav .icart .number{
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 12px;
+  width: 16px;
+  height: 16px;
+  color: var(--primary-color);
+  background-color: #fed33040;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+@media screen and (min-width: 768px) {
+  .mobile-only{
+    display: none;
+  }
+  header :where(.left, ul) {
+    flex-direction: row;
+  }
+  header nav .logo a {
+    margin-right: 2em;
+  }
+}
