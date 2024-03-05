@@ -71,14 +71,14 @@ h4 {
 /*---------------------------
  * 00. REUSABLE SELECTOR
  *---------------------------*/
- .icons a {
+.icons a {
   position: relative;
   font-size: 1.375em;
   width: 40px;
   height: 40px;
   padding: 0;
   text-align: center;
- }
+}
 /*---------------------------
  * 01. HEADER
  *---------------------------*/
@@ -113,17 +113,17 @@ header nav a {
   color: var(--white-color);
   transition: var(--trans-co);
 }
-header nav a:hover{
+header nav a:hover {
   color: var(--primary-color);
 }
-header nav .logo a{
+header nav .logo a {
   font-size: 1.5em;
   font-weight: 500;
   padding-left: 0;
   display: flex;
   color: var(--primary-color);
 }
-header nav .icart .number{
+header nav .icart .number {
   position: absolute;
   top: 0;
   right: 0;
@@ -137,8 +137,64 @@ header nav .icart .number{
   justify-content: center;
   border-radius: 4px;
 }
+/*---------------------------
+ * a. Responsive Menu
+ *---------------------------*/
+
+header nav .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 320px;
+  width: 80%;
+  padding: 2em;
+  background-color: var(--primary-color);
+  z-index: 1000;
+
+  border-radius: 0 50% 50% 0;
+  transform: translateX(-100%);
+  visibility: hidden;
+  transition: transform 0.5s, visibility 0.2s, border-radius 0.5s;
+}
+.menu.show {
+  transform: translateX(0);
+  visibility: inherit;
+  border-radius: 0;
+}
+body.menu-visible {
+  overflow: hidden;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+}
+.menu-visible .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+header nav .menu ul {
+  align-items: flex-start;
+  line-height: 3em;
+}
+header nav .menu ul li a {
+  font-size: 1.5em;
+  color: var(--dark-color);
+}
+header nav .menu ul li a:hover {
+  color: var(--white-color);
+}
+
 @media screen and (min-width: 768px) {
-  .mobile-only{
+  .mobile-only {
     display: none;
   }
   header :where(.left, ul) {
@@ -146,5 +202,20 @@ header nav .icart .number{
   }
   header nav .logo a {
     margin-right: 2em;
+  }
+  header nav .menu {
+    position: relative;
+    padding: 0;
+    max-width: max-content;
+    background-color: transparent;
+    visibility: inherit;
+    transform: none;
+  }
+  header nav .menu ul li a {
+    font-size: inherit;
+    color: var(--white-color);
+  }
+  header nav .menu ul li a:hover {
+    color: var(--primary-color);
   }
 }
