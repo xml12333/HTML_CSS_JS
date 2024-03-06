@@ -19,3 +19,9 @@ document.addEventListener("click", (e) => {
     document.body.classList.remove("menu-visible");
   }
 });
+// Search
+const sTrigger = document.querySelector(".s-trigger");
+const addclass = document.querySelector(".site");
+sTrigger.addEventListener("click", () => {
+  addclass.classList.toggle("showsearch");
+});
