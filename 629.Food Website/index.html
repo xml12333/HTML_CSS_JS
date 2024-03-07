@@ -9,6 +9,10 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <title>Food Website</title>
   </head>
   <body>
@@ -51,12 +55,93 @@
           </div>
         </form>
       </header>
+      <main>
+        <div class="hero">
+          <div class="container">
+            <h1>Don't wait to feel hungry!</h1>
+            <span class="text">Coocked by best chef</span>
+            <div class="slider">
+              <div class="thumb-big swiper">
+                <div class="wrapper swiper-wrapper">
+                  <div class="item swiper-slide">
+                    <div class="main">
+                      <div class="tags link-slide">
+                        <span>Breakfast</span>
+                        <div class="price">$12.99</div>
+                        <a href="#">Order Now!</a>
+                      </div>
+                      <div class="image">
+                        <img src="img/slider/food1.png" alt="img" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item swiper-slide">
+                    <div class="main">
+                      <div class="tags link-slide">
+                        <span>Lunch</span>
+                        <div class="price">$10.99</div>
+                        <a href="#">Order Now!</a>
+                      </div>
+                      <div class="image">
+                        <img src="img/slider/food2.png" alt="img" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item swiper-slide">
+                    <div class="main">
+                      <div class="tags link-slide">
+                        <span>Dinner</span>
+                        <div class="price">$99.99</div>
+                        <a href="#">Order Now!</a>
+                      </div>
+                      <div class="image">
+                        <img src="img/slider/food3.png" alt="img" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+              <div thumbSlider="" class="thumb-nav swiper">
+                <ul class="swiper-wrapper">
+                  <li class="swiper-slide">
+                    <div class="item">
+                      <h4>Breakfast Food <br /><span>half boiled egg</span></h4>
+                      <div class="thumbnail">
+                        <img src="./img/slider/food1.png" alt="img" />
+                      </div>
+                    </div>
+                  </li>
+                  <li class="swiper-slide">
+                    <div class="item">
+                      <h4>Lunch Food <br /><span>boiled beans</span></h4>
+                      <div class="thumbnail">
+                        <img src="./img/slider/food2.png" alt="img" />
+                      </div>
+                    </div>
+                  </li>
+                  <li class="swiper-slide">
+                    <div class="item">
+                      <h4>Dinner Food <br /><span>good to know this</span></h4>
+                      <div class="thumbnail">
+                        <img src="./img/slider/food3.png" alt="img" />
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="bg-primary"></div>
+        </div>
+      </main>
     </div>
     <div class="overlay"></div>
 
     <script>
       document.write(new Date().getFullYear());
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
