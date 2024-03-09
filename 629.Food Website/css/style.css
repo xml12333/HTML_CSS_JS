@@ -477,6 +477,106 @@ main > div {
   transform: rotate(180deg);
   bottom: -300px;
 }
+/*---------------------------
+ * 04. TABBED PRODUCTS
+ *---------------------------*/
+.has-bg {
+  margin-top: 10em;
+}
+.tabbed nav {
+  position: sticky;
+  top: 0;
+  margin-bottom: 2em;
+  background-color: var(--white-color);
+  border-bottom: 1px solid var(--light-color);
+  z-index: 10;
+}
+.tabbed nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1em 0;
+}
+.tabbed nav ul li {
+  margin-right: 10px;
+}
+.tabbed nav a {
+  color: var(--grey-color);
+  transition: var(--trans-co);
+}
+.tabbed nav a:hover {
+  color: var(--dark-color);
+}
+.tabbed .products ul {
+  display: grid;
+  grid-gap: 3em;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+.products .thumbnail {
+  position: relative;
+  height: 200px;
+  border-radius: 10px;
+  margin-bottom: 1em;
+  overflow: hidden;
+}
+.products .thumbnail img {
+  transition: transform 0.3s .1s;
+}
+.products .thumbnail:hover img{
+  transform: scale(1.1) translateY(-10px);
+}
+.products .meta{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.products .meta .cat a {
+  font-size: 0.813em;
+}
+.products .meta :where(.catrate, .buttons){
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.products .meta .catrate i{
+  color: var(--primary-color);
+}
+.products .meta h2{
+  font-size: 1em;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.products .meta h2:hover{
+  text-decoration: underline;
+}
+.products .meta button{
+  font-family: inherit;
+  border: 0;
+  outline: 0;
+  padding: 1em;
+  width: calc(100% - 60px);
+  border-radius: 5px;
+  background-color: var(--light-color);
+  cursor: pointer;
+  transition: var(--trans-back-co);
+}
+.products .meta button:hover{
+  background-color: var(--primary-color);
+}
+.products .meta .like{
+  font-size: 1.25em;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 5px;
+  color: var(--secondary-ccolor);
+  background-color: var(--light-color);
+  transition: var(--trans-back-co);
+}
+.products .meta .like:hover{
+  background-color: var(--dark-color);
+}
 
 @media screen and (min-width: 768px) {
   .mobile-only {
