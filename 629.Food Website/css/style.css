@@ -93,7 +93,9 @@ h4 {
 .bg-primary {
   background-image: url("../img/bg-primary.svg");
 }
-
+.bg-dark {
+  background-image: url("../img/bg-dark.svg");
+}
 .head-brief {
   max-width: 600px;
   text-align: center;
@@ -503,8 +505,15 @@ main > div {
   color: var(--grey-color);
   transition: var(--trans-co);
 }
-.tabbed nav a:hover {
+.tabbed nav a:hover,
+.tabbed nav li.swiper-slide-thumb-active a {
   color: var(--dark-color);
+}
+.tabbed nav li:not(.swiper-slide-thumb-active) a::after {
+  opacity: 0;
+}
+.tabbed nav li a:hover::after {
+  opacity: 1;
 }
 .tabbed .products ul {
   display: grid;
@@ -519,12 +528,12 @@ main > div {
   overflow: hidden;
 }
 .products .thumbnail img {
-  transition: transform 0.3s .1s;
+  transition: transform 0.3s 0.1s;
 }
-.products .thumbnail:hover img{
+.products .thumbnail:hover img {
   transform: scale(1.1) translateY(-10px);
 }
-.products .meta{
+.products .meta {
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -532,25 +541,25 @@ main > div {
 .products .meta .cat a {
   font-size: 0.813em;
 }
-.products .meta :where(.catrate, .buttons){
+.products .meta :where(.catrate, .buttons) {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.products .meta .catrate i{
+.products .meta .catrate i {
   color: var(--primary-color);
 }
-.products .meta h2{
+.products .meta h2 {
   font-size: 1em;
   font-weight: 400;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
-.products .meta h2:hover{
+.products .meta h2:hover {
   text-decoration: underline;
 }
-.products .meta button{
+.products .meta button {
   font-family: inherit;
   border: 0;
   outline: 0;
@@ -561,10 +570,10 @@ main > div {
   cursor: pointer;
   transition: var(--trans-back-co);
 }
-.products .meta button:hover{
+.products .meta button:hover {
   background-color: var(--primary-color);
 }
-.products .meta .like{
+.products .meta .like {
   font-size: 1.25em;
   width: 40px;
   height: 40px;
@@ -574,8 +583,74 @@ main > div {
   background-color: var(--light-color);
   transition: var(--trans-back-co);
 }
-.products .meta .like:hover{
+.products .meta .like:hover {
   background-color: var(--dark-color);
+}
+.tabbed nav ul li {
+  width: fit-content !important;
+}
+/*---------------------------
+ * 05. MASTERIECE
+ *---------------------------*/
+.masterpiece {
+  background-color: var(--dark-color);
+  color: var(--white-color);
+}
+.masterpiece .bg-dark {
+  top: -350px;
+  height: 350px;
+}
+.masterpiece .container {
+  overflow: hidden;
+}
+.masterpiece .item {
+  padding: 5em 0;
+}
+.masterpiece .item .image {
+  margin: 0 auto;
+  height: fit-content;
+  border-radius: 50%;
+}
+.masterpiece .item:nth-child(1) .image {
+  max-width: 300px;
+  box-shadow: inset 0 0 0 4px var(--primary-color),
+    0 0 0 5px var(--primary-color), 0 0 0 30px #fedc5926;
+}
+.masterpiece .item:nth-child(2) .image {
+  filter: drop-shadow(0 30px 23px #000000);
+}
+.masterpiece .item:nth-child(3) .image {
+  max-width: 600px;
+  filter: drop-shadow(0 30px 23px #00000033);
+}
+.masterpiece .item:nth-child(4) .image {
+  max-width: 250px;
+  margin-left: 4em;
+  padding: 5px;
+  box-shadow: inset 0 0 0 5px var(--secondary-ccolor), 0 0 0 10px #ff25254d,
+    0 0 0 25px #ff25252e;
+}
+.masterpiece .item .text {
+  padding: 3em 0 0 5em;
+}
+.masterpiece .item .text h2 {
+  font-weight: 300;
+  width: fit-content;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+  padding: 0.25em 0.5em;
+  border-radius: 10px;
+}
+.masterpiece .item:nth-child(1) .text h2 {
+  color: var(--primary-color);
+  background: #fed3300d;
+}
+.masterpiece .item:nth-child(4) .text h2{
+  color: var(--secondary-ccolor);
+  background-color: #ff25250d;
+}
+.masterpiece .item:nth-child(4) .text p{
+  color: var(--grey-color);
 }
 
 @media screen and (min-width: 768px) {
@@ -602,6 +677,20 @@ main > div {
   }
   header nav .menu ul li a:hover {
     color: var(--primary-color);
+  }
+  .masterpiece .item {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .masterpiece .item > div {
+    flex: 1 0 50%;
+  }
+  .masterpiece .item:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  .masterpiece .item:nth-child(4) {
+    max-width: 80%;
+    margin: 0 auto;
   }
 }
 @media screen and (min-width: 992px) {
