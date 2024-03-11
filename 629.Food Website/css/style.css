@@ -596,7 +596,8 @@ main > div {
   background-color: var(--dark-color);
   color: var(--white-color);
 }
-.masterpiece .bg-dark {
+.masterpiece .bg-dark,
+.formblog .bg-dark {
   top: -350px;
   height: 350px;
 }
@@ -645,12 +646,39 @@ main > div {
   color: var(--primary-color);
   background: #fed3300d;
 }
-.masterpiece .item:nth-child(4) .text h2{
+.masterpiece .item:nth-child(4) .text h2 {
   color: var(--secondary-ccolor);
   background-color: #ff25250d;
 }
-.masterpiece .item:nth-child(4) .text p{
+.masterpiece .item:nth-child(4) .text p {
   color: var(--grey-color);
+}
+
+/*---------------------------
+ * 06. BLOG
+ *---------------------------*/
+.formblog .bg-dark {
+  top: -10em;
+  transform: rotate(180deg);
+}
+
+.formblog .post-list ul {
+  display: grid;
+  grid-gap: 3em;
+  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+}
+.formblog .cat a {
+  padding: 0.5em;
+  color: var(--secondary-ccolor);
+  background-color: #ff25251a;
+  border-radius: 5px;
+}
+.formblog .post-list .date {
+  font-size: 0.813em;
+}
+.formblog .post-list h2{
+  font-size: 1.25em;
+  white-space: normal;
 }
 
 @media screen and (min-width: 768px) {
