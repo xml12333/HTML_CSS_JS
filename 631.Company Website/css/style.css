@@ -66,6 +66,13 @@ nav {
   width: 320px;
   background-color: var(--dark-color);
   z-index: 100;
+  transform: translateX(-100%);
+  visibility: hidden;
+  transition: transform 0.3s, visibility 0.3s;
+}
+.showmenu .menu {
+  transform: translateX(0);
+  visibility: visible;
 }
 .menu ul {
   flex-direction: column;
@@ -86,9 +93,64 @@ nav {
 .menu a {
   transition: color 0.3s;
 }
-.menu a:hover {
+.menu a:hover,
+a.menu-trigger:hover {
   color: var(--main-color);
 }
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--main-color);
+  opacity: 0;
+  z-index: 99;
+  visibility: hidden;
+}
+.showmenu .overlay {
+  opacity: 0.75;
+  visibility: visible;
+}
+/* HEADER: GENERAL BUTTON */
+.button a {
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-block;
+  min-width: 110px;
+  padding: 0 2em;
+  line-height: 42px;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  margin: 0 1em 1em 0;
+  transition: border-radius 0.3s, color 0.3s;
+}
+.button a.light {
+  background-color: var(--main-color);
+  border-bottom-left-radius: 0;
+  box-shadow: rgb(83, 82, 237) 0px 12px 40px -12px;
+}
+.button a.light:hover {
+  border-top-right-radius: 0;
+}
+.button a.dark {
+  border-top-right-radius: 0;
+  border: 2px solid var(--main-color);
+}
+.button a.dark:hover {
+  color: var(--main-color);
+  border-bottom-left-radius: 0;
+  box-shadow: rgb(83, 82, 237) 0px 12px 40px -12px;
+}
+.button a.menu-trigger {
+  font-size: 1.5em;
+  font-weight: 400;
+  margin: 0;
+  padding: 0 16px;
+  min-width: auto;
+  border: 0;
+}
+
 /* 02. HERO */
 /* 03. FEATURES */
 /* 04. BRANDS */
@@ -104,15 +166,20 @@ nav {
   nav {
     justify-content: unset;
   }
-  .menu{
+  .menu {
     position: relative;
     background-color: transparent;
     transform: none;
+    visibility: visible;
   }
-  .menu ul{
+  .menu ul {
     font-size: inherit;
     flex-direction: row;
     line-height: inherit;
     gap: 2.5em;
+  }
+  .button .menu-trigger,
+  .menu .close {
+    display: none;
   }
 }
