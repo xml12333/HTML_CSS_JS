@@ -152,6 +152,139 @@ a.menu-trigger:hover {
 }
 
 /* 02. HERO */
+main > div{
+  padding-bottom: 8em;
+}
+.grid{
+  display: flex;
+  padding-top: 50px;
+}
+.hero{
+  border-bottom: 1px solid #3f3b4a;
+}
+.hero .grid{
+  flex-direction: column-reverse;
+}
+.grid .half{
+  flex: 1 0 50%;
+}
+.grid__text{
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  padding: 7em 0 0 2em;
+  height: 100%;
+}
+:where(.grid, .grid__text) h2{
+  font-size: 3em;
+  font-weight: 800;
+}
+.grid p {
+  color: var(--grey-color);
+}
+.start-meeting{
+  display: flex;
+  margin-top: 3em;
+  align-self: center;
+  text-align: right;
+}
+.start-meeting .button{
+  position: relative;
+  margin-left: 1.5em;
+}
+.start-meeting .button::before{
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  margin-left: -14px;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  transform: scale(1.75);
+  opacity: .15;
+}
+.start-meeting .button a{
+  min-width: auto;
+  font-size: 1.5em;
+  font-weight: 400;
+  margin: 0 0 0 1em;
+  padding: 0.25em;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(135deg);
+  z-index: 1;
+}
+.start-meeting .button a i{
+  transform: rotate(-135deg);
+}
+.hero .hero__image{
+  display: flex;
+  justify-content: space-between;
+  max-width: 320px;
+  margin: auto;
+}
+.hero .hero__image .col{
+  flex: 0 0 calc(33.3333% - 1em);
+  position: relative;
+  z-index: -1;
+}
+.hero .hero__image .col .pic{
+  position: relative;
+  min-height: 250px;
+  background-color: var(--main-color);
+  border-radius: 70px;
+  margin-bottom: 1em;
+  overflow: hidden;
+}
+.hero .hero__image img{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  object-fit: cover;
+  width: 100%;
+}
+.hero .hero__image .left{
+  top: -50px;
+}
+.hero .hero__image .middle{
+  top: -250px;
+  margin-bottom: -250px;
+}
+.hero .hero__image .right{
+  top: 50px;
+}
+.hero .hero__image .left .pic:first-child{
+  height: 350px;
+  background-color: #feca57;
+}
+.hero .hero__image .left .pic:last-child{
+  background-color: #0abde3;
+}
+.hero .hero__image .middle .pic:nth-child(1){
+  background-color: var(--main-color);
+  height: 400px;
+}
+.hero .hero__image .middle .pic:nth-child(2){
+  background-color: #c8d6e5;
+  height: 300px;
+}
+.hero .hero__image .middle .pic:nth-child(3){
+  background-color: #222f3e;
+}
+.hero .hero__image .right .pic:first-child{
+  height: 350px;
+  background-color: #ee5253;
+}
+.hero .hero__image .right .pic:last-child{
+  background-color: #54a0ff;
+  height: 300px;
+
+}
 /* 03. FEATURES */
 /* 04. BRANDS */
 /* 05. ENGAGE */
@@ -181,5 +314,12 @@ a.menu-trigger:hover {
   .button .menu-trigger,
   .menu .close {
     display: none;
+  }
+  .hero .grid{
+    flex-direction: row;
+    padding-top: 0;
+  }
+  .hero .grid .half:last-child{
+    padding-top: 130px;
   }
 }
