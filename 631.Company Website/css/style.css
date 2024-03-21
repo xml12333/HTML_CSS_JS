@@ -309,6 +309,71 @@ main > div {
   margin-bottom: 0.5em;
 }
 /* 04. BRANDS */
+.bg__white{
+  position: relative;
+  background-color: var(--light-color);
+  overflow: hidden;
+}
+.bg__white h2{
+  color: var(--dark-color);
+}
+.brands::before{
+  content: '';
+  position: absolute;
+  left: -60px;
+  top: -60px;
+  width: 400px;
+  height: 200px;
+  background-color: var(--main-color);
+  filter: blur(100px);
+}
+.brands .grid{
+  flex-direction: column;
+  padding: 0;
+}
+.brands .grid__text{
+  margin-bottom: 5em;
+  position: relative;
+}
+.brands ul li{
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 1em 2em;
+  background-color: var(--grey-color);
+  border-radius: 40px;
+  width: 200%;
+}
+.brands ul{
+  transform:  rotate(340deg);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.brands ul li i{
+  font-size: 2em;
+  margin-right: 1em;
+}
+.brands ul li:nth-child(1){
+  background-color: #4285f4;
+  left: 10%;
+}
+.brands ul li:nth-child(2){
+  background-color: #f25022;
+  left: 8%;
+  width: 100%;
+}
+.brands ul li:nth-child(3){
+  background-color: #e50914;
+  left: -6%;
+}
+.brands ul li:nth-child(4){
+  background-color: #3d9ae8;
+  left: 35%;
+}
+.brands ul li:nth-child(5){
+  background-color: #107c10;
+}
 /* 05. ENGAGE */
 /* 06. CTA */
 /* 07. FOOTER */
@@ -337,7 +402,7 @@ main > div {
   .menu .close {
     display: none;
   }
-  .hero .grid {
+  .hero .grid, .brands .grid {
     flex-direction: row;
     padding-top: 0;
   }
