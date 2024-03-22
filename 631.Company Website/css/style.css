@@ -159,7 +159,7 @@ main > div {
   display: flex;
   padding-top: 50px;
 }
-.hero {
+.hero, .engage {
   border-bottom: 1px solid #3f3b4a;
 }
 .hero .grid {
@@ -233,7 +233,8 @@ main > div {
   position: relative;
   z-index: -1;
 }
-.hero .hero__image .col .pic {
+.hero .hero__image .col .pic,
+.testimonials .grid .pic {
   position: relative;
   min-height: 250px;
   background-color: var(--main-color);
@@ -241,7 +242,8 @@ main > div {
   margin-bottom: 1em;
   overflow: hidden;
 }
-.hero .hero__image img {
+.hero .hero__image img,
+.testimonials .grid .pic img {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -375,7 +377,54 @@ main > div {
   background-color: #107c10;
 }
 /* 05. ENGAGE */
-/* 06. CTA */
+.engage .grid{
+  flex-direction: column;
+}
+.engage .image{
+  margin: 0 auto 2em;
+}
+.engage .button{
+  margin-left: 2em;
+  text-align: center;
+}
+/* 06. TESTIMONIALS */
+.testimonials .grid{
+  max-width: 480px;
+  margin: 0 auto;
+  flex-direction: row;
+  gap: 0;
+  padding-left: 0;
+}
+.testimonials .half:first-child{
+  flex: 0 0 90px;
+}
+.testimonials .grid .pic{
+  background-color: #c8d6e5;
+}
+.testimonials .item{
+  padding-left: calc(1em + 3vw);
+}
+.testimonials .item p:first-child{
+  position: relative;
+  font-size: calc(1.5em + 1.5em);
+  color: inherit;
+  line-height: 1.2;
+  margin-bottom: 1em;
+}
+.testimonials .item sup{
+  position: absolute;
+  top: -120px;
+  left: 100px;
+  color: var(--main-color);
+  font-size: 7em;
+  vertical-align: top;
+  font-family: cursive;
+  z-index: -1;
+  opacity: .5;
+}
+.engage .button, .testimonials .item .button{
+  margin-top: 3em;
+}
 /* 07. FOOTER */
 /* 08. ANIMATE */
 
