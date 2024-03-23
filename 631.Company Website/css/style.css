@@ -90,11 +90,13 @@ nav {
   font-size: 1.5em;
   display: flex;
 }
-.menu a {
+.menu a,
+.footer__links a {
   transition: color 0.3s;
 }
 .menu a:hover,
-a.menu-trigger:hover {
+a.menu-trigger:hover,
+.footer__links a:hover {
   color: var(--main-color);
 }
 .overlay {
@@ -159,7 +161,8 @@ main > div {
   display: flex;
   padding-top: 50px;
 }
-.hero, .engage {
+.hero,
+.engage {
   border-bottom: 1px solid #3f3b4a;
 }
 .hero .grid {
@@ -294,33 +297,34 @@ main > div {
   font-size: calc(0.5em + 1vw);
   font-weight: 400;
 }
-.features .grid .half{
+.features .grid .half {
   flex: 100%;
   text-align: center;
   max-width: 280px;
   margin: 0 auto 4em;
 }
-.features .grid .icon{
+.features .grid .icon {
   font-size: 3em;
   color: var(--main-color);
   margin-bottom: 0.75em;
 }
-.features .grid h3{
+.features .grid h3 {
   font-weight: 1.5em;
   font-weight: 600;
   margin-bottom: 0.5em;
 }
 /* 04. BRANDS */
-.bg__white{
+.bg__white {
   position: relative;
   background-color: var(--light-color);
   overflow: hidden;
 }
-.bg__white h2{
+.bg__white h2 {
   color: var(--dark-color);
 }
-.brands::before{
-  content: '';
+.brands::before,
+.cta::before {
+  content: "";
   position: absolute;
   left: -60px;
   top: -60px;
@@ -329,15 +333,15 @@ main > div {
   background-color: var(--main-color);
   filter: blur(100px);
 }
-.brands .grid{
+.brands .grid {
   flex-direction: column;
   padding: 0;
 }
-.brands .grid__text{
+.brands .grid__text {
   margin-bottom: 5em;
   position: relative;
 }
-.brands ul li{
+.brands ul li {
   position: relative;
   display: flex;
   align-items: center;
@@ -346,72 +350,72 @@ main > div {
   border-radius: 40px;
   width: 200%;
 }
-.brands ul{
-  transform:  rotate(340deg);
+.brands ul {
+  transform: rotate(340deg);
   display: flex;
   flex-direction: column;
   gap: 1em;
 }
-.brands ul li i{
+.brands ul li i {
   font-size: 2em;
   margin-right: 1em;
 }
-.brands ul li:nth-child(1){
+.brands ul li:nth-child(1) {
   background-color: #4285f4;
   left: 10%;
 }
-.brands ul li:nth-child(2){
+.brands ul li:nth-child(2) {
   background-color: #f25022;
   left: 8%;
   width: 100%;
 }
-.brands ul li:nth-child(3){
+.brands ul li:nth-child(3) {
   background-color: #e50914;
   left: -6%;
 }
-.brands ul li:nth-child(4){
+.brands ul li:nth-child(4) {
   background-color: #3d9ae8;
   left: 35%;
 }
-.brands ul li:nth-child(5){
+.brands ul li:nth-child(5) {
   background-color: #107c10;
 }
 /* 05. ENGAGE */
-.engage .grid{
+.engage .grid {
   flex-direction: column;
 }
-.engage .image{
+.engage .image {
   margin: 0 auto 2em;
 }
-.engage .button{
+.engage .button {
   margin-left: 2em;
   text-align: center;
 }
 /* 06. TESTIMONIALS */
-.testimonials .grid{
+.testimonials .grid {
   max-width: 480px;
   margin: 0 auto;
   flex-direction: row;
   gap: 0;
   padding-left: 0;
 }
-.testimonials .half:first-child{
+.testimonials .half:first-child {
   flex: 0 0 90px;
 }
-.testimonials .grid .pic{
+.testimonials .grid .pic {
   background-color: #c8d6e5;
 }
-.testimonials .item{
+.testimonials .item {
   padding-left: calc(1em + 3vw);
 }
-.testimonials .item p:first-child{
+.testimonials .item p:first-child {
   position: relative;
   font-size: calc(1.5em + 1.5em);
   color: inherit;
   line-height: 1.2;
   margin-bottom: 1em;
 }
-.testimonials .item sup{
+.testimonials .item sup {
   position: absolute;
   top: -120px;
   left: 100px;
@@ -420,13 +424,63 @@ main > div {
   vertical-align: top;
   font-family: cursive;
   z-index: -1;
-  opacity: .5;
+  opacity: 0.5;
 }
-.engage .button, .testimonials .item .button{
+.engage .button,
+.testimonials .item .button {
   margin-top: 3em;
 }
-/* 07. FOOTER */
-/* 08. ANIMATE */
+/* 07. CTA */
+.cta .grid {
+  gap: 1em;
+}
+.cta .button a.dark {
+  color: var(--main-color);
+}
+.cta::before {
+  top: auto;
+  bottom: -300px;
+  left: auto;
+  right: -60px;
+  height: 400px;
+}
+/* 08. FOOTER */
+footer .grid {
+  flex-direction: column;
+  gap: 2em;
+}
+footer .grid .half:first-child {
+  display: flex;
+  flex-direction: column;
+}
+footer .grid .half:last-child {
+  display: flex;
+}
+.footer__links h3 {
+  margin-bottom: 1em;
+  font-weight: 600;
+}
+.footer__links ul {
+  line-height: 1.8;
+  font-size: 90%;
+}
+.footer__links a {
+  color: var(--grey-color);
+}
+footer .socials ul {
+  display: flex;
+  gap: 1em;
+  font-size: 1.5em;
+}
+footer .copyright{
+  margin: 2em 0;
+  padding: 1em 0;
+  font-size: 80%;
+  color: var(--grey-color);
+  text-align: center;
+  border-top: 1px solid #3f3b4a;
+}
+/* 09. ANIMATE */
 
 @media screen and (min-width: 992px) {
   header {
@@ -451,7 +505,8 @@ main > div {
   .menu .close {
     display: none;
   }
-  .hero .grid, .brands .grid {
+  .hero .grid,
+  .brands .grid {
     flex-direction: row;
     padding-top: 0;
   }
@@ -460,5 +515,19 @@ main > div {
   }
   .features .grid {
     flex-wrap: nowrap;
+  }
+  footer .grid {
+    flex-direction: row;
+    gap: 0;
+  }
+  footer .grid .half:first-child {
+    flex-basis: 60%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  footer .grid .half:last-child {
+    flex-basis: 40%;
+    align-items: flex-end;
+    justify-content: flex-end;
   }
 }
