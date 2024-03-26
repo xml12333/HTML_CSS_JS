@@ -19,6 +19,7 @@
   --transition-transform: transform 0.3s;
 
   --shadow: 0px 10px 20px 0px rgb(0 0 0/20%);
+  --fade: fade-bottom 0.3s cubic-bezier(0.39, 0.0575, 0.0565, 1) both;
 }
 
 html {
@@ -106,6 +107,68 @@ h4 {
   padding: 0 var(--gutter, 15px);
   margin: 0 auto;
 }
+.item-floating {
+  position: absolute;
+  font-size: 10px;
+  font-weight: var(--fw600);
+  top: -8px;
+  right: 0;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+/* -----------------------
+  #GROUPED SELECTOR
+  -----------------------*/
+.item-floating,
+.header-center .branding {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.list-block a {
+  position: relative;
+  font-size: var(--fs14);
+  color: var(--grey-color);
+  padding: 5px 0;
+  display: inline-block;
+  transform: var(--transition-color);
+}
+.list-block a:hover {
+  color: var(--dark-color);
+}
+.list-block a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  background-color: var(--dark-color);
+  left: -15px;
+  top: 50%;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: width 0.3s, height 0.3s;
+}
+.list-block a:hover::before {
+  width: 8px;
+  height: 8px;
+}
+
+@keyframes fade-bottom {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 /* -----------------------
   #HEADER
@@ -123,7 +186,7 @@ h4 {
   flex-grow: 1;
 }
 .header-center nav {
-  display: grid;
+  display: none;
   grid-template-columns: 1fr 1fr;
   gap: 180px;
   max-width: 720px;
@@ -144,9 +207,67 @@ h4 {
   line-height: inherit;
   pointer-events: auto;
 }
+.header-center .menu > ul > li > a {
+  font-size: var(--fs14);
+  font-weight: var(--fw600);
+  text-transform: uppercase;
+  padding: 0 15px;
+  display: flex;
+  gap: 5px;
+}
+.header-right ul {
+  justify-content: flex-end;
+}
+.list-inline a,
+.menu-trigger {
+  position: relative;
+  font-size: 24px;
+  padding: 0 10px;
+  line-height: 1;
+  display: flex;
+  transform: var(--transition-color);
+}
+.list-inline a:hover {
+  color: var(--light-color);
+}
+.header-left .list-inline {
+  display: none;
+}
+:where(.header-left, .header-right) li {
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
 
 @media screen and (min-width: 992px) {
   .menu-trigger {
     display: none;
+  }
+  .header-center nav {
+    display: grid;
+  }
+  .header-left .list-inline {
+    display: block;
+  }
+  /* Sub-menu */
+  nav.menu .sub-menu {
+    position: absolute;
+    top: auto;
+    line-height: initial;
+    background: var(--white-color);
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    display: none;
+    animation: var(--fade);
+  }
+
+  nav.menu li:hover .sub-menu {
+    display: block;
+  }
+  nav.menu .sub-menu {
+    padding: 10px 0;
+  }
+  nav.menu .sub-menu li {
+    padding: 5px 30px;
   }
 }
