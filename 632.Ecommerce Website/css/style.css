@@ -238,6 +238,91 @@ h4 {
   align-items: center;
   height: 80px;
 }
+/* #HEADER: Product */
+
+.dotgrid .wrapper {
+  display: var(--display, grid);
+  --grid-col: 175px;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(var(--grid-col), 100%), 1fr)
+  );
+  gap: var(--gutter, 30px);
+}
+.dotgrid .dot-image {
+  position: relative;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+.dotgrid .dot-image > a,
+.dotgrid .thumbnail.hover,
+.dotgrid .actions,
+.dotgrid .dot-image .label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.dotgrid .dot-image > a {
+  z-index: 1;
+}
+.dotgrid .thumbnail.hover {
+  opacity: 0;
+  transition: opacity 0.75s ease,
+    transform 1.1s cubic-bezier(0.15, 0.75, 0.5, 1) 0s;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+.dotgrid .dot-image:hover .thumbnail.hover {
+  opacity: 1;
+  transform: scale3d(1.1, 1.1, 1.1);
+}
+.dotgrid .actions {
+  z-index: 2;
+  top: auto;
+  bottom: 20px;
+  transform: translate3d(0, 100%, 0);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+.dot-image:hover .actions{
+  opacity: 1;
+  transform: translateZ(0);
+}
+.dotgrid .actions ul,
+.dotgrid .dot-image .label {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.dotgrid .actions ul li a,
+.dotgrid .dot-image .label span {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background-color: var(--white-color);
+  border-radius: 50%;
+  transition: var(--transition-background), var(--transition-color);
+}
+.dotgrid .actions ul li a:hover {
+  background-color: var(--dark-color);
+  color: var(--white-color);
+}
+.dotgrid .dot-image .label{
+  top: auto;
+  bottom: 20px;
+}
+.dotgrid .dot-image .label span{
+  font-size: 12px;
+  font-weight: var(--fw600);
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
 
 @media screen and (min-width: 992px) {
   .menu-trigger {
@@ -250,7 +335,13 @@ h4 {
     display: block;
   }
   /* Sub-menu */
-  nav.menu .sub-menu {
+  nav.menu .sub-mega {
+    left: 0;
+    right: 0;
+    padding: 50px 0;
+    display: block;
+  }
+  nav.menu :where(.sub-menu, .sub-mega) {
     position: absolute;
     top: auto;
     line-height: initial;
@@ -261,7 +352,7 @@ h4 {
     animation: var(--fade);
   }
 
-  nav.menu li:hover .sub-menu {
+  nav.menu li:hover :where(.sub-menu, .sub-mega) {
     display: block;
   }
   nav.menu .sub-menu {
