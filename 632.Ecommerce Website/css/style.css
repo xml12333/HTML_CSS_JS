@@ -103,7 +103,7 @@ h4 {
   #REUSED STYLE
   -----------------------*/
 .container {
-  min-width: var(--mx-width, 1200px);
+  max-width: var(--mx-width, 1200px);
   padding: 0 var(--gutter, 15px);
   margin: 0 auto;
 }
@@ -179,6 +179,26 @@ h4 {
 .dotgrid .product-price .before {
   color: var(--light-color);
 }
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.overlay{
+  background-color: var(--dark-color);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 999;
+  transition: opacity .3s, visibility .3s;
+}
+.overlay.active{
+  opacity: .75;
+  visibility: visible;
+  pointer-events: all;
+}
 /* -----------------------
   #HEADER
   -----------------------*/
@@ -247,8 +267,9 @@ h4 {
   align-items: center;
   height: 80px;
 }
-/* #HEADER: Product */
-
+/* ----------------
+  #HEADER: Product
+-------------------*/
 .dotgrid .wrapper {
   display: var(--display, grid);
   --grid-col: 175px;
@@ -337,6 +358,55 @@ h4 {
 .dotgrid .product-price .before {
   text-decoration: line-through;
 }
+  /* ----------------
+   #HEADER: Search
+  -------------------*/
+.inner-header .search-float{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  height: 80px;
+  background-color: var(--white-color);
+  z-index: 1000;
+  display: none;
+}
+
+form.search {
+  position: relative;
+}
+form.search :where(i){
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+form.search .input{
+  outline: 0;
+  padding: 15px 50px;
+}
+form.search i{
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 100%;
+  cursor: pointer;
+}
+form.search :where(i:last-child){
+  left: auto;
+  right: 0;
+}
+.inner-header .search .input{
+  display: flex;
+  border: 0;
+  height: 80px;
+  font-size: 18px;
+}
+.search-float.active{
+  display: block;
+}
 
 @media screen and (min-width: 992px) {
   .menu-trigger {
@@ -348,7 +418,9 @@ h4 {
   .header-left .list-inline {
     display: block;
   }
-  /* Sub-menu & Mega*/
+  /* ----------------
+   Sub-menu & Mega
+  -------------------*/
   .mega-content {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -363,7 +435,6 @@ h4 {
     left: 0;
     right: 0;
     padding: 50px 0;
-    display: block;
   }
   nav.menu :where(.sub-menu, .sub-mega) {
     position: absolute;
@@ -388,13 +459,13 @@ h4 {
 }
 
 @media screen and (min-width: 1200px) {
-  .container.wide{
-    --mx-width:1720px;
+  .container.wide {
+    --mx-width: 1720px;
     --gutter: 40px;
   }
 }
 @media screen and (min-width: 1400px) {
-  .mega-content{
+  .mega-content {
     grid-template-columns: 1fr 1fr;
   }
 }
