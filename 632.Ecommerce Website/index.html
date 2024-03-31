@@ -9,6 +9,10 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <title>Home Page</title>
   </head>
   <body>
@@ -19,7 +23,11 @@
             <div class="wrap">
               <div class="header-left">
                 <div class="menu-bar">
-                  <a href="#0" class="menu-trigger" trigger-button data-target="mobile-menu"
+                  <a
+                    href="#0"
+                    class="menu-trigger"
+                    trigger-button
+                    data-target="mobile-menu"
                     ><i class="ri-menu-line"></i
                   ></a>
                 </div>
@@ -313,7 +321,71 @@
           </div>
         </div>
       </header>
-      <main></main>
+      <main>
+        <div class="slider">
+          <div class="sliderbox swiper">
+            <div class="wrap swiper-wrapper">
+              <div class="item swiper-slide">
+                <div class="image">
+                  <div class="ob-cover">
+                    <img src="img/slider_01.jpg" alt="img" />
+                  </div>
+                  <div class="title-info">
+                    <div class="container wide">
+                      <div class="wrap">
+                        <span class="price">$39</span>
+                        <h3 class="title">Feel the tosca color</h3>
+                        <div class="button">
+                          <a href="#" class="primary-btn">Shop Now</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item swiper-slide">
+                <div class="image">
+                  <div class="ob-cover">
+                    <img src="img/slider_02.jpg" alt="img" />
+                  </div>
+                  <div class="title-info">
+                    <div class="container wide">
+                      <div class="wrap">
+                        <span class="price">$65</span>
+                        <h3 class="title">Inner world of brown</h3>
+                        <div class="button">
+                          <a href="#" class="primary-btn">Shop Now</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item swiper-slide">
+                <div class="image">
+                  <div class="ob-cover">
+                    <img src="img/slider_03.jpg" alt="img" />
+                  </div>
+                  <div class="title-info">
+                    <div class="container wide">
+                      <div class="wrap">
+                        <span class="price">$95</span>
+                        <h3 class="title">What a mix of colors</h3>
+                        <div class="button">
+                          <a href="#" class="primary-btn">Shop Now</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="custom-pagination">
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </main>
       <footer></footer>
     </div>
     <div class="overlay" data-overlay></div>
@@ -385,6 +457,7 @@
     <!-- <script>
       document.write(new Date().getFullYear());
     </script> -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

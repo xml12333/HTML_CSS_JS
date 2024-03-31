@@ -35,3 +35,15 @@ submenu.forEach((menu) =>
     }
   })
 );
+
+// slider
+const swiper = new Swiper(".sliderbox", {
+  loop: true,
+  effect: "fade",
+  autoHeight: true,
+
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
