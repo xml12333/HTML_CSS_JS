@@ -690,6 +690,36 @@ main > div .heading {
 /* ----------------
   #CAROUSEL
 -------------------*/
+.carousel .inner-wrapper {
+  position: relative;
+}
+.carousel .dotgrid .wrapper {
+  display: flex;
+  grid-template-columns: unset;
+  gap: unset;
+}
+.carousel .nav > div::after {
+  content: none;
+}
+.carousel .nav > div {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--grey-color);
+  border-radius: 50%;
+  color: var(--dark-color);
+  font-size: 20px;
+  -webkit-tap-highlight-color: transparent;
+  transition: var(--transition-background), var(--transition-color),
+    var(--transition-border);
+}
+.carousel .nav > div:hover {
+  color: var(--white-color);
+  background-color: var(--dark-color);
+  border-color: var(--dark-color);
+}
+.carousel .nav .swiper-button-disabled {
+  opacity: 0;
+}
 
 @media screen and (min-width: 992px) {
   .menu-trigger {
@@ -762,6 +792,11 @@ main > div .heading {
     border-color: var(--dark-color);
   }
 }
+@media screen and (max-width: 480px) {
+  .carousel .dotgrid .iterm{
+    width: 270px;
+  }
+}
 
 @media screen and (min-width: 1200px) {
   .container.wide {
@@ -772,5 +807,16 @@ main > div .heading {
 @media screen and (min-width: 1400px) {
   .mega-content {
     grid-template-columns: 1fr 1fr;
+  }
+  .carousel .inner-wrapper {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  .carousel .nav > .swiper-button-next {
+    right: -40px;
+  }
+  .carousel .nav > .swiper-button-prev {
+    left: -40px;
   }
 }
