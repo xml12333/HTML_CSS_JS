@@ -35,6 +35,38 @@ submenu.forEach((menu) =>
     }
   })
 );
+// tabbed
+const trigger = document.querySelectorAll(".tabbed-trigger"),
+  content = document.querySelectorAll(".tabbed > div");
+trigger.forEach((btn) => {
+  btn.addEventListener("click", function () {
+    let dataTarget = this.dataset.id,
+      body = document.querySelector(`#${dataTarget}`);
+    trigger.forEach((b) => b.parentNode.classList.remove("active"));
+    content.forEach((s) => s.classList.remove("active"));
+    this.parentNode.classList.add("active");
+    body.classList.add("active");
+  });
+});
+// sorter
+const sorter = document.querySelector(".sort-list");
+if (sorter) {
+  const sortLi = sorter.querySelectorAll("li");
+  sorter.querySelector(".opt-trigger").addEventListener("click", function () {
+    sorter.querySelector("ul").classList.toggle("show");
+  });
+  sortLi.forEach((item) =>
+    item.addEventListener("click", function () {
+      sortLi.forEach((li) =>
+        li != this ? li.classList.remove("active") : null
+      );
+      this.classList.add("active");
+      sorter.querySelector(".opt-trigger span.value").textContent =
+        this.textContent;
+      sorter.querySelector("ul").classList.toggle("show");
+    })
+  );
+}
 
 // slider
 const swiper = new Swiper(".sliderbox", {

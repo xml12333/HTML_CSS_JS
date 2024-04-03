@@ -721,6 +721,64 @@ main > div .heading {
   opacity: 0;
 }
 
+/* ----------------
+  #BYCATS
+-------------------*/
+.bycats .heading {
+  display: flex;
+  justify-content: center;
+}
+.bycats .heading > span {
+  font-family: var(--second-font);
+  font-size: 32px;
+  margin-right: 20px;
+}
+.bycats .heading > span,
+.opt-trigger {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+.sort-list .wrap {
+  position: relative;
+}
+.sort-list .wrap ul {
+  position: absolute;
+  text-align: left;
+  top: 50px;
+  left: 0;
+  right: 0;
+  background-color: var(--white-color);
+  box-shadow: var(--shadow);
+  z-index: 10;
+  display: none;
+  animation: var(--fade);
+}
+.sort-list .wrap ul.show {
+  display: block;
+}
+.sort-list .wrap ul li a {
+  display: block;
+  padding: 5px 20px;
+  transition: var(--transition-background), var(--transition-color);
+}
+.sort-list .wrap ul li a:hover,
+.sort-list .wrap ul li.active a {
+  background-color: var(--dark-color);
+  color: var(--white-color);
+}
+
+.sort-data{
+  display: none;
+  animation: var(--fade);
+}
+.sort-data.active{
+  display: block;
+}
+
 @media screen and (min-width: 992px) {
   .menu-trigger {
     display: none;
@@ -793,7 +851,7 @@ main > div .heading {
   }
 }
 @media screen and (max-width: 480px) {
-  .carousel .dotgrid .iterm{
+  .carousel .dotgrid .iterm {
     width: 270px;
   }
 }
