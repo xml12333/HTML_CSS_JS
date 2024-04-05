@@ -244,7 +244,7 @@ h4 {
   height: 12px;
 }
 .scrollto .wrapper::-webkit-scrollbar-thumb {
-  --border-color: var(var(--white-color));
+  --border-color: var(--white-color);
   background-color: var(--light-color);
   border: 3px solid var(--border-color);
   border-radius: 20px;
@@ -651,7 +651,7 @@ form.search :where(i:last-child) {
 /* ----------------
   #GUIDE
 -------------------*/
-.page-home main > div:not(.slider) {
+.page-home main > div:not(.slider, .frominsta) {
   padding: 100px 0;
 }
 .guide {
@@ -827,6 +827,45 @@ main > div .heading {
   color: var(--white-color);
   border-color: var(--dark-color);
 }
+.fromblog .button {
+  text-align: center;
+  margin-top: 40px;
+}
+/* ----------------
+  #FROM INSTAGRAM
+-------------------*/
+.frominsta .container.wide {
+  --mx-width: none;
+  --gutter: 0;
+}
+.frominsta .dotgrid .wrapper {
+  background-color: var(--light-color);
+}
+.frominsta img {
+  width: 100%;
+}
+.frominsta .fot-image {
+  margin: 0;
+}
+.frominsta .actions {
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--white-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto;
+  pointer-events: none;
+}
+.frominsta .scrollto .wrapper::-webkit-scrollbar-thumb {
+  --border-color: var(--light-color);
+  background-color: var(--grey-color);
+}
+/* ----------------
+  #FOOTER
+-------------------*/
 
 @media screen and (min-width: 768px) {
   .banner {
@@ -904,10 +943,16 @@ main > div .heading {
   .slider .button a:hover {
     border-color: var(--dark-color);
   }
+  .scrollto .wrapper {
+    --display: grid;
+    padding: 0;
+    overflow: unset;
+    scroll-snap-type: unset;
+    overscroll-behavior-inline: unset;
+  }
   .scrollto .wrapper .item {
     width: unset;
   }
-
 }
 @media screen and (max-width: 480px) {
   .carousel .dotgrid .iterm {
