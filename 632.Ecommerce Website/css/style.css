@@ -457,7 +457,7 @@ form.search :where(.submit, i:last-child) {
   left: auto;
   right: 0;
 }
-form.search .submit{
+form.search .submit {
   border: 0;
   background-color: transparent;
   color: transparent;
@@ -467,18 +467,18 @@ form.search .submit{
   z-index: 1;
   cursor: pointer;
 }
-form :where(input, textarea, select){
+form :where(input, textarea, select) {
   font-size: var(--fs14);
   border: 1px solid var(--light-color);
   outline: 0;
   background-color: transparent;
   padding: 10px 20px;
-  transition: border .3s;
+  transition: border 0.3s;
 }
-form :where(input, textarea, select):focus{
+form :where(input, textarea, select):focus {
   border-color: var(--dark-color);
 }
-form :where(input, textarea, select)::placeholder{
+form :where(input, textarea, select)::placeholder {
   color: var(--grey-color);
 }
 .inner-header .search .input {
@@ -918,11 +918,53 @@ main > div .heading {
   font-size: var(--fs14);
   border: 2px solid var(--dark-color);
 }
-.inner-footer .bottom{
+.inner-footer .bottom {
   padding-top: 40px;
   padding-bottom: 40px;
 }
 
+/* ----------------
+  #PAGE SINGLE
+-------------------*/
+
+/* ------------------------------------------------
+  _____________BREADCRUMB________________
+---------------------------------------------------*/
+.breadcrumb {
+  width: 100%;
+  line-height: initial;
+  padding: 30px 0 50px;
+}
+.breadcrumb ul {
+  justify-content: center;
+}
+.breadcrumb ul li {
+  position: relative;
+  margin-right: 10px;
+}
+.breadcrumb ul li:not(:first-child) {
+  padding-left: 25px;
+}
+.breadcrumb ul li:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNTEycHgiIGlkPSJMYXllcl8xIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgd2lkdGg9IjUxMnB4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cG9seWdvbiBwb2ludHM9IjE2MCwxMTUuNCAxODAuNyw5NiAzNTIsMjU2IDE4MC43LDQxNiAxNjAsMzk2LjcgMzEwLjUsMjU2ICIvPjwvc3ZnPg==");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.breadcrumb ul :where(li, li a){
+  font-size: var(--fs14);
+  padding: 0;
+}
+.breadcrumb ul li:last-child{
+  color: var(--grey-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 @media screen and (min-width: 768px) {
   .banner {
@@ -1010,7 +1052,7 @@ main > div .heading {
   .scrollto .wrapper .item {
     width: unset;
   }
-  .inner-footer .wrap > div{
+  .inner-footer .wrap > div {
     flex-flow: nowrap;
   }
 }
