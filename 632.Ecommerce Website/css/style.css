@@ -955,15 +955,61 @@ main > div .heading {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.breadcrumb ul :where(li, li a){
+.breadcrumb ul :where(li, li a) {
   font-size: var(--fs14);
   padding: 0;
 }
-.breadcrumb ul li:last-child{
+.breadcrumb ul li:last-child {
   color: var(--grey-color);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/* ------------------------------------------------
+  _____________PRODUCT IMAGE________________
+---------------------------------------------------*/
+.product .wrapper {
+  --grid-col: 331px;
+}
+.product .main-image img {
+  width: 100%;
+}
+.product .outer-thumb {
+  display: none;
+}
+.product .outer-thumb .item {
+  height: fit-content;
+  cursor: pointer;
+}
+
+.product .thumb-wrap {
+  position: relative;
+  width: 70px;
+  height: 90px;
+}
+
+@media screen and (min-width: 481px) {
+  .product .wrapper {
+    --gutter: 60px;
+  }
+  .product.dotgrid .image {
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .product .outer-main {
+    width: calc(100% - 85px);
+    height: 100%;
+    margin: 0 0 0 85px;
+  }
+  .product .outer-thumb {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
 
 @media screen and (min-width: 768px) {
