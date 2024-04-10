@@ -1001,9 +1001,56 @@ main > div .heading {
 .product .outer-thumb .item:hover img {
   transform: scale3d(0.85, 0.85, 0.85);
 }
-.product .custom-pagination{
+.product .custom-pagination {
   position: relative;
   height: 50px;
+}
+/* ------------------------------------------------
+  _____________PRODUCT SUMMARY________________
+---------------------------------------------------*/
+.summary .entry {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.summary .product-group {
+  display: flex;
+  justify-content: space-between;
+}
+.summary .product-price {
+  display: flex;
+  align-items: center;
+}
+.summary .product-price .current {
+  font-size: 30px;
+}
+.summary .product-price .wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+}
+.summary .product-price .wrap::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12px;
+  height: 100%;
+  width: 1px;
+  background-color: var(--grey-color);
+  transform: skewX(-25deg);
+}
+.summary .product-price .discount{
+  display: inline-block;
+  width: 44px;
+  font-size: var(--fs14);
+  padding: 5px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  margin-left: -10px;
+  text-align: center;
+  border-radius: 5px;
+  line-height: 1;
 }
 
 @media screen and (min-width: 481px) {
@@ -1029,7 +1076,7 @@ main > div .heading {
     top: 0;
     left: 0;
   }
-  .custom-pagination{
+  .custom-pagination {
     display: none;
   }
 }
