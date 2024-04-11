@@ -1040,7 +1040,7 @@ main > div .heading {
   background-color: var(--grey-color);
   transform: skewX(-25deg);
 }
-.summary .product-price .discount{
+.summary .product-price .discount {
   display: inline-block;
   width: 44px;
   font-size: var(--fs14);
@@ -1051,6 +1051,121 @@ main > div .heading {
   text-align: center;
   border-radius: 5px;
   line-height: 1;
+}
+.summary .product-rating {
+  line-height: initial;
+  text-align: right;
+}
+.summary .product-rating a {
+  font-size: var(--fs14);
+  padding-left: 10px;
+  color: var(--grey-color);
+  text-decoration: dotted;
+  text-decoration-line: underline;
+  white-space: nowrap;
+  transition: var(--transition-color);
+}
+.summary .product-rating a:hover {
+  color: var(--dark-color);
+}
+.summary .wrap:has(button) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.summary button {
+  border-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.summary .wrap > button,
+.summary .qty button {
+  width: 40px;
+  height: 40px;
+  transition: box-shadow 0.3s, var(--transition-border),
+    var(--transition-background), var(--transition-color);
+}
+.summary .product-color button {
+  border-radius: 50%;
+}
+.summary .product-color button.tosca {
+  background-color: #a9cdcc;
+}
+.summary .product-color button.brown {
+  background-color: #966548;
+}
+.summary .product-color button.ocean {
+  background-color: #81b8cc;
+}
+.summary .product-color button.selected,
+.summary .product-color button:hover:not(.selected) {
+  box-shadow: inset 0 0 0 4px var(--white-color);
+}
+.summary .product-size button {
+  font-size: var(--fs14);
+  line-height: 44px;
+  border: 1px solid var(--light-color);
+  border-radius: 5px;
+  background-color: transparent;
+}
+.summary .product-size button.selected {
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  border-color: var(--dark-color);
+}
+.summary .product-size button:hover:not(.selected, [disabled]) {
+  border-color: var(--dark-color);
+}
+.summary .product-size button:disabled {
+  pointer-events: none;
+}
+
+.summary .product-stock .wrap {
+  display: flex;
+  gap: 5px;
+}
+.summary .product-stock .wrap i {
+  color: var(--primary-color);
+  padding-left: 10px;
+}
+.summary .qty {
+  display: flex;
+  font-size: 18px;
+  min-width: 110px;
+  height: 50px;
+  margin: 0 20px 20px 0;
+  background-color: var(--flashwhite-color);
+}
+.summary .qty input {
+  text-align: center;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+}
+.summary .qty button {
+  font-size: 22px;
+  height: 100%;
+  background-color: transparent;
+}
+.summary .qty button:hover {
+  color: var(--grey-color);
+}
+.summary .product-action {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+.summary .product-action .buynow {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.summary .product-action :where(.addcart, .buynow) button{
+  width: 100%;
+  height: 50px;
+  border-color: var(--dark-color);
+  padding: 0;
 }
 
 @media screen and (min-width: 481px) {
