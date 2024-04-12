@@ -1123,7 +1123,8 @@ main > div .heading {
   pointer-events: none;
 }
 
-.summary .product-stock .wrap {
+.summary .product-stock .wrap,
+.summary .product-control a {
   display: flex;
   gap: 5px;
 }
@@ -1161,11 +1162,52 @@ main > div .heading {
   grid-column-start: 1;
   grid-column-end: 3;
 }
-.summary .product-action :where(.addcart, .buynow) button{
+.summary .product-action :where(.addcart, .buynow) button {
   width: 100%;
   height: 50px;
   border-color: var(--dark-color);
   padding: 0;
+}
+.summary .product-action .addchart button {
+  background-color: var(--white-color);
+}
+.summary .product-action .addchart button:hover {
+  background-color: var(--dark-color);
+}
+.summary .product-control ul {
+  align-items: flex-start;
+  flex-flow: wrap;
+  gap: 20px;
+}
+.summary .product-control span {
+  font-size: var(--fs14);
+}
+.summary .product-control a {
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+}
+.summary .product-control ul li:first-child a:hover i {
+  color: var(--red-color);
+}
+.product .summary .shipping{
+  padding-top: 30px;
+  border-top: 1px solid var(--flashwhite-color);
+}
+.product .summary .shipping li{
+  position: relative;
+  padding-left: 35px;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+.product .summary .shipping li i{
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 24px;
+  line-height: 1;
 }
 
 @media screen and (min-width: 481px) {
@@ -1199,6 +1241,12 @@ main > div .heading {
 @media screen and (min-width: 768px) {
   .banner {
     background-size: contain;
+  }
+  .product.dotgrid .image{
+    max-width: 100%;
+    margin: 0;
+    position: sticky;
+    top: 30px;
   }
 }
 
@@ -1312,5 +1360,18 @@ main > div .heading {
   }
   .carousel .nav > .swiper-button-prev {
     left: -40px;
+  }
+  .product .outer-main{
+    width: 100%;
+    margin: 0;
+  }
+  .product .image .outer-thumb{
+    position: absolute;
+    top: 0;
+    left: -100px;
+    height: 100%;
+  }
+  .product.dotgrid .image {
+    overflow: unset;
   }
 }
