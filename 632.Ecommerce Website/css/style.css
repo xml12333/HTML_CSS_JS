@@ -918,7 +918,8 @@ main > div .heading {
   font-size: var(--fs14);
   border: 2px solid var(--dark-color);
 }
-.inner-footer .bottom {
+.inner-footer .bottom,
+.page-single .carousel {
   padding-top: 40px;
   padding-bottom: 40px;
 }
@@ -1030,7 +1031,8 @@ main > div .heading {
   flex-direction: column;
   padding-left: 30px;
 }
-.summary .product-price .wrap::before {
+.summary .product-price .wrap::before,
+.product .head-review span::before {
   content: "";
   position: absolute;
   top: 0;
@@ -1263,6 +1265,11 @@ main > div .heading {
   padding: 50px 0;
   max-width: 980px;
   margin: 0 auto;
+  display: none;
+  animation: var(--fade);
+}
+.product .product-about.active {
+  display: block;
 }
 .product .product-about .text-block {
   padding-bottom: 30px;
@@ -1291,6 +1298,61 @@ main > div .heading {
   text-align: center;
   color: var(--light-color);
 }
+.product .review {
+  max-width: 770px;
+}
+.product .review .head-review {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--light-color);
+}
+.product .review .head-review strong {
+  font-size: 50px;
+}
+.product .review .head-review span {
+  position: relative;
+  padding-left: 20px;
+}
+.product .head-review span::before {
+  height: 50px;
+  top: -30px;
+}
+.product .head-review .primary-btn {
+  border-width: 1px;
+  text-transform: unset;
+  font-weight: 500;
+}
+.product .profile .thumb-name {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.product .profile .image {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  margin-right: 20px;
+  overflow: hidden;
+}
+.product .profile .grouping {
+  line-height: initial;
+}
+.product .profile .name {
+  font-weight: var(--fw600);
+  margin-bottom: 5px;
+}
+.product .profile .date {
+  font-size: 12px;
+  margin-top: 8px;
+}
+.review .profile {
+  padding-bottom: 40px;
+}
+/* ------------------------------------------------
+  _____________POPUP MODAL________
+---------------------------------------------------*/
 
 @media screen and (min-width: 481px) {
   .product .wrapper {
@@ -1317,6 +1379,9 @@ main > div .heading {
   }
   .custom-pagination {
     display: none;
+  }
+  .product .profile .comment {
+    padding-left: 92px;
   }
 }
 
