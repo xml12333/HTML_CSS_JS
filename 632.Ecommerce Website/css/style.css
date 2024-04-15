@@ -212,7 +212,8 @@ h4 {
   color: var(--light-color);
 }
 .overlay,
-.mobile-menu {
+.mobile-menu,
+.data-popup {
   position: fixed;
   top: 0;
   left: 0;
@@ -796,11 +797,13 @@ main > div .heading {
   color: var(--white-color);
 }
 
-.sort-data {
+.sort-data,
+.data-popup {
   display: none;
   animation: var(--fade);
 }
-.sort-data.active {
+.sort-data.active,
+.data-popup.active {
   display: block;
 }
 
@@ -1353,6 +1356,100 @@ main > div .heading {
 /* ------------------------------------------------
   _____________POPUP MODAL________
 ---------------------------------------------------*/
+.data-popup {
+  z-index: 1001;
+  pointer-events: none;
+}
+.data-popup .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.data-popup .data-content {
+  position: relative;
+  background-color: var(--white-color);
+  padding: 40px 20px;
+  width: var(--data-width, 400px);
+  max-width: calc(100vw - 50px);
+  max-height: calc(100vh - 60px);
+  border-radius: 5px;
+  overflow-y: auto;
+  pointer-events: auto;
+}
+.data-popup .close-trigger,
+.data-popup .from span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.data-popup .from {
+  position: relative;
+}
+.data-popup label {
+  font-weight: var(--fw600);
+  font-size: var(--fs14);
+  margin-bottom: 10px;
+  display: block;
+}
+.data-popup .from input {
+  color: var(--dark-color);
+  background-color: var(--light-color);
+  border: 0;
+  padding: 7px 34px 7px 10px;
+  border-radius: 3px;
+  font-size: var(--fs14);
+}
+.data-popup .from span {
+  top: auto;
+  bottom: 0;
+  right: 10px;
+  cursor: pointer;
+  transition: var(--transition-color);
+}
+.data-popup .from span:hover {
+  color: var(--grey-color);
+}
+.data-popup .media-share {
+  margin-top: 20px;
+}
+.data-popup form > div {
+  margin-top: 20px;
+}
+form .button button,
+.d-review .stars label {
+  cursor: pointer;
+}
+.data-popup h3,
+form .button {
+  text-align: center;
+}
+.d-review .data-content {
+  --data-width: 500px;
+}
+.d-review .dotgrid .wrapper {
+  --gutter: 10px;
+}
+.d-review .stars input {
+  display: none;
+}
+.d-review .stars label {
+  font-size: 16px;
+  margin: 0;
+}
+.d-review .stars > input:checked ~ label {
+  color: #ffa502;
+}
+.d-review :where(.rating, .stars) {
+  display: flex;
+  gap: 7px;
+}
+.d-review .stars {
+  flex-direction: row-reverse;
+}
 
 @media screen and (min-width: 481px) {
   .product .wrapper {
