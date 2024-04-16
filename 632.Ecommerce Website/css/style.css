@@ -213,7 +213,8 @@ h4 {
 }
 .overlay,
 .mobile-menu,
-.data-popup {
+.data-popup,
+.cart-menu {
   position: fixed;
   top: 0;
   left: 0;
@@ -494,17 +495,20 @@ form :where(input, textarea, select)::placeholder {
 /* -----------------------
   #HEADER: Mobile menu
   -----------------------*/
-.mobile-menu {
+.mobile-menu,
+.cart-menu {
   z-index: 1001;
   pointer-events: none;
   visibility: hidden;
   opacity: 0;
 }
-.mobile-menu.active {
+.mobile-menu.active,
+.cart-menu.active {
   visibility: visible;
   opacity: 1;
 }
-.mobile-menu .wrap {
+.mobile-menu .wrap,
+.cart-menu .wrap {
   position: relative;
   max-width: calc(100% - 40px);
   width: 360px;
@@ -512,8 +516,13 @@ form :where(input, textarea, select)::placeholder {
   background-color: var(--white-color);
   pointer-events: auto;
 }
+.mobile-menu.active .wrap,
+.cart-menu.active .wrap {
+  transform: translateX(0);
+}
 .mobile-menu .close-trigger,
-.mobile-menu .child-trigger {
+.mobile-menu .child-trigger,
+.cart-menu .close-trigger {
   position: absolute;
   top: 0;
   right: -40px;
@@ -524,7 +533,8 @@ form :where(input, textarea, select)::placeholder {
   align-items: center;
   justify-content: center;
 }
-.mobile-menu .main-menu {
+.mobile-menu .main-menu,
+.cart-menu .cart-list {
   height: 100%;
   padding: 0 20px;
   display: flex;
@@ -1307,7 +1317,7 @@ main > div .heading {
 .product .review .head-review {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin-bottom: 30px;
   border-bottom: 1px solid var(--light-color);
 }
@@ -1450,6 +1460,11 @@ form .button {
 .d-review .stars {
   flex-direction: row-reverse;
 }
+
+/* ------------------------------------------------
+  _____________FLOATING CART________
+---------------------------------------------------*/
+
 
 @media screen and (min-width: 481px) {
   .product .wrapper {
