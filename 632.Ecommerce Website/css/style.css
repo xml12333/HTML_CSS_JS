@@ -1464,6 +1464,104 @@ form .button {
 /* ------------------------------------------------
   _____________FLOATING CART________
 ---------------------------------------------------*/
+.cart-menu .wrap {
+  float: right;
+  --transX: 100%;
+}
+.cart-menu .close-trigger {
+  right: auto;
+  left: -40px;
+}
+.cart-menu .wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.cart-menu .cart-outer > .wrapper{
+  height: 100vh;
+  padding: 0;
+}
+.cart-menu .cart-header {
+  padding: 30px 0;
+}
+.product-list li {
+  margin-bottom: 30px;
+}
+.product-list .grouping {
+  position: relative;
+  float: left;
+  padding-left: 45px;
+}
+.product-list .quantity {
+  position: absolute;
+  left: 0;
+  top: 0;
+  max-width: 30px;
+}
+.product-list .quantity .control {
+  background-color: var(--flashwhite-color);
+  border-radius: 5px;
+}
+.product-list .quantity .control > * {
+  height: 30px;
+  border: 0;
+  outline: 0;
+  text-align: center;
+  background-color: transparent;
+}
+.product-list .quantity button {
+  font-size: 20px;
+  line-height: initial;
+  width: 100%;
+  cursor: pointer;
+}
+.product-list .thumbnail {
+  width: 70px;
+  margin-right: 20px;
+}
+.product-list .variants {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.product-list .variants h4 {
+  line-height: initial;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.product-list .variants > div {
+  font-size: var(--fs14);
+  line-height: 1.4;
+}
+.product-list .variants .item-remove {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.product-list .item-remove {
+  color: var(--red-color);
+  background-color: #ff47571a;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  transition: var(--transition-color), var(--transition-background);
+}
+.product-list .item-remove:hover {
+  color: var(--light-color);
+  background-color: var(--dark-color);
+}
+.cart-menu .cart-footer{
+  margin: 0 -20px;
+  padding: 20px;
+  background-color: var(--flashwhite-color);
+  margin-top: auto;
+}
 
 
 @media screen and (min-width: 481px) {
