@@ -151,8 +151,50 @@ h4 {
 .title {
   font-size: clamp(30px, -0.875em + 8.33vw, var(--fs-max, 40px));
 }
-.grey-color {
+.grey-link {
+  color: inherit;
+  transition: var(--transition-color);
+}
+.grey-color,
+.grey-link:hover {
   color: var(--grey-color);
+}
+input.checker {
+  position: relative;
+  padding: 5px;
+  margin: 0 5px 0 2px;
+  cursor: pointer;
+}
+input.checker::after,
+input.checker::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+input.checker::before {
+  width: 16px;
+  height: 16px;
+  transform: translate(-50%, -50%);
+  background-color: var(--white-color);
+  border: 1px solid var(--grey-color);
+  border-radius: 50%;
+  transition: var(--transition-border);
+}
+input.checker::after {
+  width: 10px;
+  height: 10px;
+  background-color: var(--dark-color);
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  transition: var(--transition-transform);
+}
+input.checker:checked::before {
+  border-color: var(--dark-color);
+}
+input.checker:checked::after {
+  transform: translate(-50%, -50%) scale(1);
 }
 /* -----------------------
   #GROUPED SELECTOR
@@ -1466,7 +1508,8 @@ form .button {
 ---------------------------------------------------*/
 .cart-menu .wrap {
   float: right;
-  --transX: 100%;
+  transform: translateX(100%);
+  transition: var(--transition-transform);
 }
 .cart-menu .close-trigger {
   right: auto;
@@ -1477,7 +1520,7 @@ form .button {
   display: flex;
   flex-direction: column;
 }
-.cart-menu .cart-outer > .wrapper{
+.cart-menu .cart-outer > .wrapper {
   height: 100vh;
   padding: 0;
 }
@@ -1556,13 +1599,84 @@ form .button {
   color: var(--light-color);
   background-color: var(--dark-color);
 }
-.cart-menu .cart-footer{
+.cart-menu .cart-footer {
   margin: 0 -20px;
   padding: 20px;
   background-color: var(--flashwhite-color);
   margin-top: auto;
 }
 
+.cart-footer form {
+  position: relative;
+  margin-bottom: 20px;
+}
+.cart-footer form .input {
+  line-height: 34px;
+  border: 0;
+  border-radius: 7px;
+  background-color: var(--white-color);
+}
+.cart-footer form .submit {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  max-width: 90px;
+  height: 34px;
+  line-height: 1;
+  background-color: var(--grey-color);
+  color: var(--white-color);
+  padding: 0;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: var(--transition-background);
+}
+.cart-footer form .submit:hover {
+  background-color: var(--dark-color);
+}
+.cart-footer .math-pricing ul li {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.cart-footer .math-pricing ul ul {
+  width: 100%;
+}
+.cart-footer .math-pricing ul li span:not(.value),
+.cart-footer .math-pricing ul li label {
+  color: var(--grey-color);
+}
+.cart-footer .math-pricing ul ul span:not(:first-child) {
+  padding-left: 20px;
+}
+.cart-footer .math-pricing .total {
+  font-size: 18px;
+  font-weight: var(--fw600);
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--light-color);
+}
+.cart-footer .button {
+  text-align: center;
+}
+.cart-footer .button .secondary-btn {
+  display: block;
+  margin: 20px 0 10px;
+}
+.cart-footer .button .secondary-btn {
+  background-color: var(--primary-color);
+  border: 0;
+  text-transform: capitalize;
+  line-height: 54px;
+  border-radius: 7px;
+  min-width: 240px;
+}
+.cart-footer .button .secondary-btn:hover {
+  background-color: var(--grey-color);
+  color: var(--white-color);
+}
+.cart-menu .product-list > .wrapper {
+  max-height: 400px;
+}
 
 @media screen and (min-width: 481px) {
   .product .wrapper {
