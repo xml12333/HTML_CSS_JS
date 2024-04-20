@@ -362,7 +362,8 @@ input.checker:checked::after {
 .menu-trigger:hover {
   color: var(--light-color);
 }
-.header-left .list-inline {
+.header-left .list-inline,
+.sidebar .widget input[type="checkbox"] {
   display: none;
 }
 :where(.header-left, .header-right) li {
@@ -1678,6 +1679,80 @@ form .button {
   max-height: 400px;
 }
 
+/*-------------------------------*
+  #CATEGORY PAGE
+*-------------------------------*/
+.sidebar-title {
+  font-size: 26px;
+}
+.sidebar .widget {
+  margin: 20px 0;
+}
+.sidebar label,
+.sidebar .price-range {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.sidebar label span {
+  font-weight: var(--fw600);
+}
+.sidebar label i {
+  font-size: 26px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar .list-block ul {
+  padding-left: 15px;
+  margin-top: 20px;
+  height: 230px;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+}
+input[type="range"]:focus {
+  outline: none;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  background-color: var(--light-color);
+  box-shadow: none;
+  border: 0;
+}
+input[type="range"]::-webkit-slider-thumb {
+  z-index: 2;
+  position: relative;
+  height: 18px;
+  width: 14px;
+  background-color: var(--grey-color);
+  -webkit-appearance: none;
+  margin-top: -7px;
+}
+.sidebar .price-range {
+  font-size: 18px;
+}
+
+.sidebar .widget .accord {
+  padding-right: 15px;
+  min-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.sidebar .widget input:checked ~ div {
+  max-height: 1000px;
+  opacity: 1;
+  visibility: visible;
+}
+
 @media screen and (min-width: 481px) {
   .product .wrapper {
     --gutter: 60px;
@@ -1794,7 +1869,7 @@ form .button {
   .slider .button a:hover {
     border-color: var(--dark-color);
   }
-  .scrollto .wrapper {
+  .scrollto .wrapper:not(.initial) {
     --display: grid;
     padding: 0;
     overflow: unset;
