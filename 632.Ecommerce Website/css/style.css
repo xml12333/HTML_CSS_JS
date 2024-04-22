@@ -256,7 +256,8 @@ input.checker:checked::after {
 .overlay,
 .mobile-menu,
 .data-popup,
-.cart-menu {
+.cart-menu,
+.sidebar {
   position: fixed;
   top: 0;
   left: 0;
@@ -539,33 +540,40 @@ form :where(input, textarea, select)::placeholder {
   #HEADER: Mobile menu
   -----------------------*/
 .mobile-menu,
-.cart-menu {
+.cart-menu,
+.sidebar {
   z-index: 1001;
   pointer-events: none;
   visibility: hidden;
   opacity: 0;
 }
 .mobile-menu.active,
-.cart-menu.active {
+.cart-menu.active,
+.sidebar.active {
   visibility: visible;
   opacity: 1;
 }
 .mobile-menu .wrap,
-.cart-menu .wrap {
+.cart-menu .wrap,
+.sidebar > .wrap {
   position: relative;
   max-width: calc(100% - 40px);
   width: 360px;
   height: 100%;
   background-color: var(--white-color);
   pointer-events: auto;
+  transform: translateX(-100%);
+  transition: var(--transition-transform);
 }
 .mobile-menu.active .wrap,
-.cart-menu.active .wrap {
+.cart-menu.active .wrap,
+.sidebar.active > .wrap {
   transform: translateX(0);
 }
 .mobile-menu .close-trigger,
 .mobile-menu .child-trigger,
-.cart-menu .close-trigger {
+.cart-menu .close-trigger,
+.sidebar .close-trigger {
   position: absolute;
   top: 0;
   right: -40px;
@@ -577,7 +585,8 @@ form :where(input, textarea, select)::placeholder {
   justify-content: center;
 }
 .mobile-menu .main-menu,
-.cart-menu .cart-list {
+.cart-menu .cart-list,
+.sidebar-content {
   height: 100%;
   padding: 0 20px;
   display: flex;
@@ -1689,6 +1698,7 @@ form .button {
 
 .sidebar-title {
   font-size: 26px;
+  padding-top: 100px;
 }
 .sidebar .widget {
   margin: 20px 0;
@@ -1796,9 +1806,37 @@ input[type="range"]::-webkit-slider-thumb {
   opacity: 0.5;
   transition: opacity 0.3s, var(--transition-transform);
 }
-.category-content .sorted > a:hover{
+.category-content .sorted > a:hover {
   transform: scale(1.2);
   opacity: 1;
+}
+.category-content .opt-trigger {
+  gap: 5px;
+  margin-right: 15px;
+  line-height: 1.4;
+}
+.category-content .opt-trigger span {
+  font-size: var(--fs14);
+  font-weight: var(--fw600);
+}
+.category-content .opt-trigger i {
+  font-size: 24px;
+}
+.category-content .sort-list ul {
+  width: 180px;
+}
+.category-content .right .list-inline a {
+  display: flex;
+  padding: 7px;
+  background-color: var(--flashwhite-color);
+  margin-left: 10px;
+  border-radius: 3px;
+}
+.category-content .left span {
+  display: none;
+}
+.category-content .dotgrid .wrapper {
+  --grid-col: 221px;
 }
 
 @media screen and (min-width: 481px) {
@@ -1845,10 +1883,15 @@ input[type="range"]::-webkit-slider-thumb {
   .product nav ul {
     justify-content: center;
   }
+  .category-content .left span {
+    display: block;
+  }
 }
 
 @media screen and (min-width: 992px) {
-  .menu-trigger {
+  .menu-trigge,
+  .sidebar .close-trigger,
+  .category-content .sorter > a {
     display: none;
   }
   .header-center nav {
@@ -1935,6 +1978,14 @@ input[type="range"]::-webkit-slider-thumb {
     display: grid;
     grid-template-columns: 1fr 4fr;
     gap: 60px;
+  }
+  .sidebar-content,
+  .sidebar-title {
+    padding: 0;
+  }
+  .sidebar,
+  .sidebar > .wrap {
+    all: unset;
   }
 }
 @media screen and (max-width: 480px) {
