@@ -16,7 +16,8 @@ for (let i = 0; i < triggerOpen.length; i++) {
   targetEl
     .querySelector("[close-button]")
     .addEventListener("click", function () {
-      overlay.addEventListener("click", openData);
+      // overlay.addEventListener("click", openData);
+      openData();
     });
 }
 

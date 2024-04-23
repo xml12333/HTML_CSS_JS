@@ -1838,6 +1838,10 @@ input[type="range"]::-webkit-slider-thumb {
 .category-content .dotgrid .wrapper {
   --grid-col: 221px;
 }
+/*-------------------------------*
+  #CART PAGE
+*-------------------------------*/
+
 
 @media screen and (min-width: 481px) {
   .product .wrapper {
@@ -1889,10 +1893,10 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 @media screen and (min-width: 992px) {
-  .menu-trigge,
+  .menu-trigger,
   .sidebar .close-trigger,
   .category-content .sorter > a {
-    display: none;
+    display: none!important;
   }
   .header-center nav {
     display: grid;
