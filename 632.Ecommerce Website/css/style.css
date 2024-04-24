@@ -1841,7 +1841,71 @@ input[type="range"]::-webkit-slider-thumb {
 /*-------------------------------*
   #CART PAGE
 *-------------------------------*/
-
+.page-cart .product-list {
+  position: relative;
+}
+.has-bg::before,
+.has-bg::after {
+  /* content: ""; */
+  position: absolute;
+  height: 100%;
+  z-index: -1;
+  /* background-color: var(--flashwhite-color); */
+}
+.has-bg::before {
+  top: auto;
+  left: 0;
+  width: 50%;
+}
+.has-bg::after {
+  top: 0;
+  right: 100%;
+  width: 100%;
+}
+.page-cart .product-list li {
+  display: grid;
+  margin: 0;
+}
+.cart-table .product-list .table-title {
+  font-size: var(--fs14);
+  font-weight: var(--fw600);
+  text-transform: uppercase;
+}
+.cart-table .product-list li .grouping {
+  --grid-col: 75px;
+  padding: 30px 0;
+  align-items: center;
+}
+.cart-table .product-list li .grouping:last-child {
+  border-top: 1px solid var(--flashwhite-color);
+  text-align: center;
+  --gutter: 0;
+}
+.cart-table .product-list .thumbnail {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0;
+}
+.cart-table .product-list .quantity {
+  position: relative;
+  max-width: 100px;
+  margin: 0 auto;
+}
+.cart-table .product-list .control {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0 auto;
+}
+.cart-table .product-list .thumbnail,
+.cart-table .item-remove {
+  margin-left: auto;
+  margin-right: auto;
+}
+.cart-table .product-list :where(.table-title, .price) {
+  display: none;
+}
 
 @media screen and (min-width: 481px) {
   .product .wrapper {
@@ -1890,13 +1954,21 @@ input[type="range"]::-webkit-slider-thumb {
   .category-content .left span {
     display: block;
   }
+  .page-cart .product-list li {
+    grid-template-columns: 1fr 1fr;
+  }
+  .has-bg::before,
+  .has-bg::after {
+    content: "";
+    background-color: var(--flashwhite-color);
+  }
 }
 
 @media screen and (min-width: 992px) {
   .menu-trigger,
   .sidebar .close-trigger,
   .category-content .sorter > a {
-    display: none!important;
+    display: none !important;
   }
   .header-center nav {
     display: grid;
