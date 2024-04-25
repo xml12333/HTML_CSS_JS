@@ -984,7 +984,8 @@ main > div .heading {
   border: 2px solid var(--dark-color);
 }
 .inner-footer .bottom,
-.page-single .carousel {
+.page-single .carousel,
+.cart-total .grouping > div {
   padding-top: 40px;
   padding-bottom: 40px;
 }
@@ -1540,7 +1541,7 @@ form .button {
 .product-list li {
   margin-bottom: 30px;
 }
-.product-list .grouping {
+.product-list li .grouping {
   position: relative;
   float: left;
   padding-left: 45px;
@@ -1862,7 +1863,8 @@ input[type="range"]::-webkit-slider-thumb {
   right: 100%;
   width: 100%;
 }
-.page-cart .product-list li {
+.page-cart .product-list li,
+.page-cart .cart-total .grouping {
   display: grid;
   margin: 0;
 }
@@ -1905,6 +1907,68 @@ input[type="range"]::-webkit-slider-thumb {
 }
 .cart-table .product-list :where(.table-title, .price) {
   display: none;
+}
+.h.cart-total as-bg::before,
+.cart-total .has-bg::after {
+  content: "";
+  background-color: var(--dark-color);
+  width: 100%;
+  bottom: auto;
+  top: 0;
+}
+.cart-total .has-bg::before {
+  right: 100%;
+  left: auto;
+}
+.cart-total .has-bg::after {
+  left: 100%;
+}
+.cart-total .product-list {
+  background-color: var(--dark-color);
+  color: var(--white-color);
+}
+.cart-total .grouping {
+  font-weight: var(--fw600);
+  text-transform: uppercase;
+}
+.cart-total .add-note {
+  text-align: center;
+}
+.cart-total .add-note textarea {
+  max-width: 300px;
+  border-color: transparent;
+  outline: 0;
+  color: var(--white-color);
+  background-color: transparent;
+  text-transform: uppercase;
+  padding: 15px;
+  border-radius: 10px;
+  transition: var(--transition-border);
+}
+.cart-total
+  .add-note
+  :is(textarea:hover, textarea:focus, :not(:placeholder-shown)) {
+  border-color: var(--grey-color);
+}
+.cart-total .add-note textarea:not(:placeholder-shown) {
+  text-transform: capitalize;
+  font-weight: initial;
+}
+.cart-total .sub-total{
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.cart-total .sub-total-price{
+  padding-left: 30px;
+  font-size: 26px;
+}
+.cart-total .sub-terms{
+  font-weight: initial;
+  text-transform: capitalize;
 }
 
 @media screen and (min-width: 481px) {
@@ -1954,7 +2018,8 @@ input[type="range"]::-webkit-slider-thumb {
   .category-content .left span {
     display: block;
   }
-  .page-cart .product-list li {
+  .page-cart .product-list li,
+  .page-cart .cart-total .grouping {
     grid-template-columns: 1fr 1fr;
   }
   .has-bg::before,
