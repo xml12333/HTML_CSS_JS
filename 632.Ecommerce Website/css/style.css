@@ -1673,15 +1673,18 @@ form .button {
   display: block;
   margin: 20px 0 10px;
 }
-.cart-footer .button .secondary-btn {
+.cart-footer .button .secondary-btn,
+.cart-total .button a.secondary-btn {
   background-color: var(--primary-color);
   border: 0;
   text-transform: capitalize;
   line-height: 54px;
   border-radius: 7px;
   min-width: 240px;
+  text-align: center;
 }
-.cart-footer .button .secondary-btn:hover {
+.cart-footer .button .secondary-btn:hover,
+.cart-total .button a.secondary-btn:hover {
   background-color: var(--grey-color);
   color: var(--white-color);
 }
@@ -1954,7 +1957,7 @@ input[type="range"]::-webkit-slider-thumb {
   text-transform: capitalize;
   font-weight: initial;
 }
-.cart-total .sub-total{
+.cart-total .sub-total {
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -1962,11 +1965,11 @@ input[type="range"]::-webkit-slider-thumb {
   max-width: 400px;
   margin: 0 auto;
 }
-.cart-total .sub-total-price{
+.cart-total .sub-total-price {
   padding-left: 30px;
   font-size: 26px;
 }
-.cart-total .sub-terms{
+.cart-total .sub-terms {
   font-weight: initial;
   text-transform: capitalize;
 }
@@ -2015,6 +2018,7 @@ input[type="range"]::-webkit-slider-thumb {
   .product nav ul {
     justify-content: center;
   }
+  .cart-table .product-list :where(.table-title, .price),
   .category-content .left span {
     display: block;
   }
@@ -2026,6 +2030,10 @@ input[type="range"]::-webkit-slider-thumb {
   .has-bg::after {
     content: "";
     background-color: var(--flashwhite-color);
+  }
+  .cart-total .sub-total {
+    padding-left: 10%;
+    margin: 0;
   }
 }
 
