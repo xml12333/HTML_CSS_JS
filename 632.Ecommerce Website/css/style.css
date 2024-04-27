@@ -1867,7 +1867,8 @@ input[type="range"]::-webkit-slider-thumb {
   width: 100%;
 }
 .page-cart .product-list li,
-.page-cart .cart-total .grouping {
+.page-cart .cart-total .grouping,
+.page-checkout .content {
   display: grid;
   margin: 0;
 }
@@ -1886,7 +1887,8 @@ input[type="range"]::-webkit-slider-thumb {
   text-align: center;
   --gutter: 0;
 }
-.cart-table .product-list .thumbnail {
+.cart-table .product-list .thumbnail,
+.checkout-products .product-list .thumbnail {
   position: relative;
   width: 120px;
   height: 120px;
@@ -1974,6 +1976,66 @@ input[type="range"]::-webkit-slider-thumb {
   text-transform: capitalize;
 }
 
+/*-------------------------------*
+  #CHECKOUT PAGE
+*-------------------------------*/
+.checkout-products{
+  position: relative;
+  margin: 0 -15px;
+  padding: 40px 15px 0;
+}
+.page-checkout h2{
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+.page-checkout .checkout-address{
+  padding-bottom: 48px;
+}
+.page-checkout form > div,
+.page-checkout form > div input ~ input{
+  margin-top: 20px;
+}
+.page-checkout form > div label {
+  display: inline-block;
+  margin: 0 0 5px;
+}
+.checkout-products .product-list li{
+  min-height: 120px;
+}
+.checkout-products .product-list .grouping{
+  padding: 0;
+  margin-right: 20px;
+}
+.checkout-products .item-floating{
+  top: -11px;
+  right: -7px;
+  transform: scale(1.5);
+  z-index: 1;
+}
+
+.checkout-products.has-bg::before{
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.checkout-products.has-bg::after{
+  top: 0;
+  left: 100%;
+  width: 100%;
+}
+.checkout-products > div .wrapper{
+  max-width: 400px;
+  line-height: 34px;
+  margin: 0 auto;
+}
+.checkout-products .total-summary{
+  position: relative;
+  padding: 10%;
+  background-color: var(--dark-color);
+  color: var(--white-color);
+}
+
 @media screen and (min-width: 481px) {
   .product .wrapper {
     --gutter: 60px;
@@ -2023,7 +2085,8 @@ input[type="range"]::-webkit-slider-thumb {
     display: block;
   }
   .page-cart .product-list li,
-  .page-cart .cart-total .grouping {
+  .page-cart .cart-total .grouping,
+  .page-checkout .content {
     grid-template-columns: 1fr 1fr;
   }
   .has-bg::before,
@@ -2033,6 +2096,19 @@ input[type="range"]::-webkit-slider-thumb {
   }
   .cart-total .sub-total {
     padding-left: 10%;
+    margin: 0;
+  }
+  .checkout-products{
+    padding: 0;
+    margin: 0;
+  }
+  .checkout-address{
+    padding-right: 10%;
+  }
+  .checkout-products .order-summary{
+    padding: 10% 0 0 10%;
+  }
+  .checkout-products > div .wrapper{
     margin: 0;
   }
 }
