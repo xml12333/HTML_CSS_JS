@@ -155,51 +155,151 @@ img {
   }
 }
 .nav__list,
-.nav__social{
+.nav__social {
   display: flex;
 }
-.nav__list{
+.nav__list {
   flex-direction: column;
   row-gap: 3rem;
 }
-.nav__link{
+.nav__link {
   color: var(--white-color);
   font-size: var(--h2-font-size);
   font-weight: var(--font-semi-bold);
-  transition: color .4s;
+  transition: color 0.4s;
 }
-.nav__link:hover{
+.nav__link:hover {
   color: var(--second-color);
 }
-.nav__close{
+.nav__close {
   position: absolute;
   top: 1.15rem;
   right: 1.5rem;
 }
-.nav__social{
+.nav__social {
   column-gap: 1rem;
   align-self: flex-end;
 }
-.nav__social-link{
+.nav__social-link {
   color: var(--white-color);
   font-size: 1.5rem;
-  transition: color .4s;
+  transition: color 0.4s;
 }
-.nav__social-link:hover{
+.nav__social-link:hover {
   color: var(--second-color);
 }
 /* Show menu */
-.show-menu{
+.show-menu {
   left: 0;
 }
 /* Shadow header */
-
+.shadow-header {
+  box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.15);
+}
 /* Active link */
 
 /*=============== HOME ===============*/
-
+.home__container {
+  padding-top: 1.5rem;
+  justify-content: center;
+  row-gap: 4rem;
+}
+.home__data {
+  position: relative;
+  text-align: center;
+}
+.home__title {
+  font: var(--font-regular) var(--biggest-font-size) var(--second-font);
+  line-height: 100%;
+  margin-bottom: 1rem;
+  text-shadow: var(--shadow-text);
+}
+.home__meat {
+  width: 40px;
+  position: absolute;
+  top: 9rem;
+  right: 0;
+  opacity: 0.5;
+}
+.home__description {
+  margin-bottom: 2.5rem;
+}
+.home__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
+}
+.home__images {
+  position: relative;
+  display: grid;
+  place-items: center;
+  justify-self: center;
+}
+.home__circle {
+  width: 320px;
+  height: 320px;
+  background-color: var(--first-color-darken);
+  border-radius: 50%;
+  box-shadow: inset var(--shadow-circle);
+  display: grid;
+  place-items: center;
+}
+.home__subcircle {
+  width: 250px;
+  height: 250px;
+  background-color: var(--second-color);
+  border-radius: 50%;
+  box-shadow: inset var(--shadow-circle);
+}
+.home__images .home__img {
+  width: 250px;
+  rotate: 10deg;
+  filter: var(--shadow-img);
+  position: absolute;
+}
+.home__images img {
+  width: 60px;
+  filter: var(--shadow-img);
+  position: absolute;
+}
+.home__chips-1 {
+  right: -0.5rem;
+}
+.home__chips-2 {
+  bottom: -0.75rem;
+  right: 0.5rem;
+}
+.home__chips-3 {
+  top: 0.25rem;
+  left: -0.5rem;
+}
+.home__tomato-1 {
+  top: -1.5rem;
+  right: 2.5rem;
+}
+.home__tomato-2 {
+  left: 3.5rem;
+  bottom: -1.5rem;
+}
+.home__leaf {
+  left: -0.75rem;
+}
 /*=============== BUTTON ===============*/
-
+.button {
+  background-color: var(--second-color);
+  color: var(--second-color-dark);
+  font-weight: var(--font-semi-bold);
+  padding: 0.75rem 2rem;
+  border-radius: 4rem;
+  box-shadow: inset var(--shadow-button);
+}
+.button__ghost {
+  background-color: transparent;
+  box-shadow: none;
+  border: 3px solid var(--second-color);
+  color: var(--second-color);
+}
 /*=============== FAVORITES ===============*/
 
 /* Swiper class */
