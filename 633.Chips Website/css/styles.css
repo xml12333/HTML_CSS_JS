@@ -365,9 +365,56 @@ img {
   scale: 1;
 }
 /*=============== CARE ===============*/
-
+.care {
+  background-color: var(--first-color-dark);
+}
+.care__container {
+  row-gap: 3rem;
+  padding-block: 1rem 2rem;
+}
+.care__list {
+  display: grid;
+  row-gap: 1.25rem;
+}
+.care__item {
+  display: flex;
+  column-gap: 0.75rem;
+  align-items: center;
+}
+.care__item i {
+  font-size: 1.5rem;
+  color: var(--second-color);
+}
+.care__img {
+  width: 320px;
+  filter: var(--shadow-img);
+  justify-self: center;
+}
 /*=============== BANNER ===============*/
-
+.banner {
+  padding-top: 3rem;
+}
+.banner__container {
+  background-color: var(--second-color);
+  padding: 1rem 1.5rem;
+}
+.banner__list {
+  display: flex;
+  justify-content: center;
+  column-gap: 1.5rem;
+}
+.banner__item {
+  color: var(--second-color-dark);
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+.banner__item i {
+  font-size: 1.5rem;
+}
+.banner__item span {
+  font: var(--small-font-size) var(--second-font);
+}
 /*=============== PRODUCTS ===============*/
 
 /*=============== CONTACT ===============*/
