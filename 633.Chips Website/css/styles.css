@@ -197,7 +197,7 @@ img {
   box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.15);
 }
 /* Active link */
-.active-link{
+.active-link {
   color: var(--second-color);
 }
 /*=============== HOME ===============*/
@@ -611,16 +611,202 @@ img {
   z-index: var(--z-tooltip);
   transition: bottom 0.4s, transform 0.4s;
 }
-.scrollup:hover{
-  transform: translateY(-.5rem);
+.scrollup:hover {
+  transform: translateY(-0.5rem);
 }
 /* Show Scroll Up */
-.show-scroll{
-bottom: 3rem;
+.show-scroll {
+  bottom: 3rem;
 }
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
+@media screen and (max-width: 340px) {
+  .container {
+    margin-inline: 1rem;
+  }
+  .section__title {
+    font-size: var(--h2-font-size);
+  }
+  .home__title {
+    font-size: 3rem;
+  }
+  .home__buttons {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+  .home__circle {
+    width: 250px;
+    height: 250px;
+  }
+  .home__subcircle {
+    width: 200px;
+    height: 200px;
+  }
+  .home__images .home__img {
+    width: 200px;
+  }
+  .products__content {
+    grid-template-columns: 160px;
+    justify-content: center;
+  }
+  .footer__content {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 1.5rem;
+  }
+  .footer__copy {
+    grid-column: 1;
+  }
+}
 
 /* For medium devices */
-
+@media screen and (min-width: 540px) {
+  .home__container,
+  .favorites__container,
+  .care__container {
+    grid-template-columns: 370px;
+    justify-content: center;
+  }
+  .favorites__swiper {
+    max-width: 600px;
+    overflow-x: clip;
+    justify-self: center;
+  }
+  .products__content {
+    grid-template-columns: repeat(2, 160px);
+    justify-content: center;
+  }
+  .contact {
+    display: grid;
+    grid-template-columns: 450px;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  .products__content {
+    grid-template-columns: repeat(3, 160px);
+  }
+  .contact {
+    grid-template-columns: 550px;
+  }
+  .footer__content {
+    grid-template-columns: repeat(3, max-content);
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer__copy {
+    grid-column: initial;
+  }
+  .footer__link:nth-child(2) {
+    order: 1;
+  }
+}
 /* For large devices */
+@media screen and (min-width: 1150px) {
+  .container {
+    margin-inline: auto;
+  }
+  .section {
+    padding-block: 7rem 2rem;
+  }
+  .section__title {
+    margin-bottom: 2rem;
+  }
+  .nav {
+    height: calc(var(--header-height) + 2rem);
+  }
+  .nav__toggle,
+  .nav__close{
+    display: none;
+  }
+  .nav__link{
+    font-size: var(--normal-font-size);
+  }
+  .nav__menu{
+    display: flex;
+    column-gap: 3rem;
+    align-items: center;
+  }
+  .nav__list{
+    flex-direction: row;
+    column-gap: 4rem;
+  }
+  .home__container{
+    grid-template-columns: 420px 585px;
+    align-items: center;
+    column-gap: 6rem;
+    padding-top: 5rem;
+  }
+  .home__data{
+    text-align: initial;
+  }
+  .home__title{
+    margin-bottom: 1.5rem;
+  }
+  .home__description{
+    margin-bottom: 4rem;
+  }
+  .home__buttons{
+    justify-content: initial;
+    column-gap: 1.5rem;
+  }
+  .home__meat{
+    width: 80px;
+    top: 13rem;
+  }
+  .home__circle{
+    width: 550px;
+    height: 550px;
+  }
+  .home__subcircle{
+    width: 430px;
+    height: 430px;
+  }
+  .home__images .home__img{
+    width: 400px;
+  }
+  .home__images img{
+    width: 95px;
+  }
+  .favorites__container{
+    grid-template-columns: 520px;
+    row-gap: 4rem;
+  }
+  .favorites__cheese-1,
+  .favorites__cheese-2{
+    width: 80px;
+  }
+  .favorites__cheese-1{
+    right: -18rem;
+  }
+  .favorites__cheese-2{
+    left: -18rem;
+  }
+  .favorites__swiper{
+    max-width: 1000px;
+  }
+  .favorites__article,
+  .favorites__img{
+    width: 320px;
+  }
+  .favorites__leaf-1,
+  .favorites__leaf-2{
+    width: 110px;
+  }
+  .care__container{
+    grid-template-columns: 500px 410px;
+    column-gap: 6rem;
+    align-items: center;
+    padding-block: 4rem;
+  }
+  .care__img{
+    width: 550px;
+    order: -1;
+  }
+  .care__item{
+    column-gap: 1rem;
+  }
+  .care__item i {
+    font-size: 2rem;
+  }
+}
