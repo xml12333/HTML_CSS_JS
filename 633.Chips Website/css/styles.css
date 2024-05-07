@@ -809,4 +809,121 @@ img {
   .care__item i {
     font-size: 2rem;
   }
+  .banner{
+    padding-top: 4rem;
+  }
+  .banner__list{
+    column-gap: 6.5rem;
+  }
+  .banner__item{
+    column-gap: 1rem;
+  }
+  .banner__item i {
+    font-size: 4.5rem;
+  }
+  .banner__item span{
+    font-size: var(--h1-font-size);
+  }
+  .products__container{
+    padding-top: 7.5rem;
+  }
+  .products__content{
+    grid-template-columns: repeat(3, 250px);
+    gap: 10rem 4rem;
+  }
+  .products__card{
+    padding: 11rem 2rem 2rem;
+    border-radius: 1.5rem;
+  }
+  .products__img{
+    width: 170px;
+    top: -5rem;
+  }
+  .products__subtitle{
+    font-size: var(--normal-font-size);
+  }
+  .products__price{
+    font-size: var(--h3-font-size);
+  }
+  .products__button{
+    right: 2rem;
+    bottom: 2rem;
+    padding: 6px;
+    font-size: 1.5rem;
+    border-radius: .5rem;
+  }
+  .products__crab,
+  .products__hamburger,
+  .products__cheese{
+    width: 80px;
+  }
+  .products__crab{
+    top: 2rem;
+  }
+  .products__hamburger{
+    top: 30rem;
+    right: 3rem;
+  }
+  .products__cheese{
+    left: 4rem;
+    margin: initial;
+  }
+  .contact{
+    display: block;
+  }
+  .contact__container{
+    border: 4rem;
+  }
+  .contact__content{
+    grid-template: 330px / 360px 320px;
+    justify-content: center;
+    align-items: flex-start;
+    column-gap: 10rem;
+    padding-top: 2rem;
+  }
+  .contact__data{
+    text-align: initial;
+    grid-template: max-content / repeat(2, max-content);
+    gap: 3rem 2rem;
+  }
+  .contact__title{
+    margin-bottom: .75rem;
+  }
+  .contact__social{
+    justify-content: initial;
+  }
+  .contact__img{
+    width: 320px;
+    transform: translateY(-6rem);
+  }
+  .contact__shrimp,
+  .contact__crab,
+  .contact__meat{
+    width: 80px;
+  }
+  .contact__shrimp{
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 20rem;
+  }
+  .contact__crab{
+    top: 5rem;
+    left: 4rem;
+  }
+  .contact__meat{
+    right: initial;
+    left: 12rem;
+    bottom: -1rem;
+  }
+  .footer{
+    padding-block: 5rem 3rem;
+  }
+  .footer__container{
+    row-gap: 3rem;
+  }
+  .scrollup{
+    right: 3rem;
+  }
+
 }
