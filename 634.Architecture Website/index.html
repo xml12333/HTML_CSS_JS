@@ -1,70 +1,145 @@
 <!DOCTYPE html>
-   <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <!--=============== FAVICON ===============-->
-      <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
 
-      <!--=============== REMIXICONS ===============-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    <!--=============== REMIXICONS ===============-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+    />
 
-      <!--=============== SWIPER CSS ===============-->
-      <link rel="stylesheet" href="">
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="" />
 
-      <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="./css/styles.css">
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="./css/styles.css" />
 
-      <title>Responsive architecture website</title>
-   </head>
-   <body>
-      <!--==================== HEADER ====================-->
-      <header class="header" id="header">
-         <nav class="nav container">
-            <a href="#" class="nav__logo">Architecture</a>
-            <div class="nav__menu" id="nav-menu">
-               <ul class="nav__list">
-                  <li>
-                     <a href="#" class="nav__link">Home</a>
-                  </li>
-                  <li>
-                     <a href="#" class="nav__link">Projects</a>
-                  </li>
-                  <li>
-                     <a href="#" class="nav__link">News</a>
-                  </li>
-                  <li>
-                     <a href="#" class="nav__link">Store</a>
-                  </li>
-                  <li>
-                     <a href="#" class="nav__link">Contact</a>
-                  </li>
-               </ul>
-               <!-- Close button -->
-               <div class="nav__close" id="nav-close">
-                  <i class="ri-close-large-line"></i>
-               </div>
-            </div>
-            <!-- Toggle button -->
-            <div class="nav__toggle" id="nav-toggle">
-               <i class="ri-menu-line"></i>
-            </div>
-         </nav>
-      </header>
+    <title>Responsive architecture website</title>
+  </head>
+  <body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav__logo">Architecture</a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li>
+              <a href="#" class="nav__link">Home</a>
+            </li>
+            <li>
+              <a href="#" class="nav__link">Projects</a>
+            </li>
+            <li>
+              <a href="#" class="nav__link">News</a>
+            </li>
+            <li>
+              <a href="#" class="nav__link">Store</a>
+            </li>
+            <li>
+              <a href="#" class="nav__link">Contact</a>
+            </li>
+          </ul>
+          <!-- Close button -->
+          <div class="nav__close" id="nav-close">
+            <i class="ri-close-large-line"></i>
+          </div>
+        </div>
+        <!-- Toggle button -->
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="ri-menu-line"></i>
+        </div>
+      </nav>
+    </header>
 
-      <!--==================== MAIN ====================-->
-      <main class="main">
-         <!--==================== HOME ====================-->
-         <section class="home">
-            
-         </section>
-      </main>
+    <!--==================== MAIN ====================-->
+    <main class="main">
+      <!--==================== HOME ====================-->
+      <section class="home">
+        <div class="home__swiper">
+          <div>
+            <article class="home__article">
+              <div class="home__data container">
+                <h3 class="home__subtitle">Architecture</h3>
+                <h1 class="home__title">
+                  Relaxing Steep <br />
+                  Lake House
+                </h1>
+                <a href="#" class="home__button"
+                  >See Project <i class="ri-arrow-right-s-line"></i
+                ></a>
+              </div>
+              <img src="./img/home-1.jpg" alt="" class="home__img" />
+              <div class="home__shadow"></div>
+            </article>
+            <article class="home__article">
+              <div class="home__data container">
+                <h3 class="home__subtitle">Architecture</h3>
+                <h1 class="home__title">
+                  Luxury House <br />
+                  In The Forest
+                </h1>
+                <a href="#" class="home__button"
+                  >See Project <i class="ri-arrow-right-s-line"></i
+                ></a>
+              </div>
+              <img src="./img/home-2.jpg" alt="" class="home__img" />
+              <div class="home__shadow"></div>
+            </article>
+            <article class="home__article">
+              <div class="home__data container">
+                <h3 class="home__subtitle">Architecture</h3>
+                <h1 class="home__title">
+                  Modern House <br />
+                  On The Rock
+                </h1>
+                <a href="#" class="home__button"
+                  >See Project <i class="ri-arrow-right-s-line"></i
+                ></a>
+              </div>
+              <img src="./img/home-3.jpg" alt="" class="home__img" />
+              <div class="home__shadow"></div>
+            </article>
+            <article class="home__article">
+              <div class="home__data container">
+                <h3 class="home__subtitle">Architecture</h3>
+                <h1 class="home__title">
+                  Luxury <br />
+                  Curved House
+                </h1>
+                <a href="#" class="home__button"
+                  >See Project <i class="ri-arrow-right-s-line"></i
+                ></a>
+              </div>
+              <img src="./img/home-4.jpg" alt="" class="home__img" />
+              <div class="home__shadow"></div>
+            </article>
+          </div>
+        </div>
+        <div class="home__content">
+          <div class="home__social">
+            <a href="#" class="home__social-link"
+              ><i class="ri-facebook-circle-line"></i
+            ></a>
+            <a href="#" class="home__social-link">
+              <i class="ri-instagram-line"></i>
+            </a>
+            <a href="#" class="home__social-link">
+              <i class="ri-twitter-x-line"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
 
-      <!--=============== SWIPER JS ===============-->
-      <script src="./js/swiper-bundle.min.js"></script>
+    <!--=============== SWIPER JS ===============-->
+    <script src="./js/swiper-bundle.min.js"></script>
 
-      <!--=============== MAIN JS ===============-->
-      <script src="./js/main.js"></script>
-   </body>
+    <!--=============== MAIN JS ===============-->
+    <script src="./js/main.js"></script>
+  </body>
 </html>

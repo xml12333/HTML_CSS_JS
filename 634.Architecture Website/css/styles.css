@@ -139,7 +139,74 @@ img {
   right: 0;
 }
 /*=============== HOME ===============*/
-
+.home__swiper {
+  position: relative;
+  z-index: var(--z-tooltip);
+}
+.home__article {
+  position: relative;
+  padding-top: 13rem;
+  width: 100%;
+  height: 100vh;
+}
+.home__img,
+.home__shadow,
+.home__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.home__img {
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+.home__shadow {
+  background-color: hsla(0, 0%, 0%, 0.05);
+  z-index: -1;
+}
+.home__data {
+  text-align: center;
+}
+.home__subtitle {
+  font-size: var(--h3-font-size);
+  margin-bottom: 0.5rem;
+}
+.home__title {
+  font-size: var(--biggest-font-size);
+  margin-bottom: 2.5rem;
+  font-weight: var(--font-bold);
+}
+.home__button {
+  color: var(--white-color);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.5rem;
+  font-weight: var(--font-semi-bold);
+}
+.home__button i {
+  font-size: 1.5rem;
+  font-weight: initial;
+  transition: transform 0.4s;
+}
+.home__button:hover i {
+  transform: translateX(0.5rem);
+}
+.home__social{
+  position: absolute;
+  z-index: var(--z-tooltip);
+  left: 1.5rem;
+  bottom: 4rem;
+  display: grid;
+  row-gap: 1.5rem;
+}
+.home__social-link{
+  color: var(--white-color);
+  font-size: 1.5rem;
+}
 /* Swiper class */
 
 /*=============== BREAKPOINTS ===============*/
