@@ -318,9 +318,15 @@ img {
   }
 }
 /* For 2K resolutions (2048 x 1152) */
-@media screen and (min-width: 2048px){
-.container,
-.home__content{
-  max-width: 1550px;
-}
+@media screen and (min-width: 2048px) {
+  .container,
+  .home__content {
+    max-width: 1550px;
+  }
+  .home__swiper,
+  .home__content,
+  .home__img,
+  .home__shadow {
+    max-height: 1000px;
+  }
 }
