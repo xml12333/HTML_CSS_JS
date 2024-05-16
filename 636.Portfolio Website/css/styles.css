@@ -313,7 +313,41 @@ img {
 /*=============== BUTTON ===============*/
 
 /*=============== WORKS ===============*/
-
+.work {
+  background-color: var(--container-color);
+}
+.work__card {
+  background-color: var(--first-color);
+}
+.work__link {
+  display: block;
+  position: relative;
+  background-color: var(--body-color);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  color: var(--text-color);
+  transition: transform 0.4s;
+}
+.work__title {
+  font-size: var(--h3-font-size);
+  margin-bottom: 0.75rem;
+}
+.work__description {
+  margin-bottom: 1.5rem;
+}
+.work__link i {
+  position: absolute;
+  top: 1.8rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--first-color-light);
+  transition: transform 0.4s;
+}
+.work__link:hover {
+  transform: translateY(-0.35rem);
+}
+.work__link:hover i {
+  transform: translateX(0.5rem);
+}
 /*=============== INFO ===============*/
 
 /* ABOUT */
