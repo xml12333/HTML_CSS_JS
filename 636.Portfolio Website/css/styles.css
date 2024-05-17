@@ -311,7 +311,18 @@ img {
 /* Animate scroll icon */
 
 /*=============== BUTTON ===============*/
-
+.button {
+  display: inline-flex;
+  justify-content: center;
+  background-color: var(--first-color);
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1.25rem 2rem;
+  transition: background-color 0.4s;
+}
+.button:hover {
+  background-color: var(--first-color-alt);
+}
 /*=============== WORKS ===============*/
 .work {
   background-color: var(--container-color);
@@ -349,13 +360,88 @@ img {
   transform: translateX(0.5rem);
 }
 /*=============== INFO ===============*/
-
+.info__container {
+  row-gap: 3rem;
+}
+.info__title {
+  position: relative;
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}
+.info__title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.5rem;
+  width: 20px;
+  height: 2px;
+  background-color: var(--text-color);
+}
 /* ABOUT */
-
+.about {
+  row-gap: 3rem;
+}
+.about__description {
+  margin-bottom: 2rem;
+}
+.about__description b {
+  color: var(--first-color-light);
+}
+.about__img {
+  width: 250px;
+  justify-self: center;
+  mask-image: linear-gradient(
+    to bottom,
+    hsla(var(--hue), 40%, 16%) 60%,
+    transparent 100%
+  );
+}
+.about__button {
+  width: 100%;
+}
 /* EXPERIENCE */
+.experience__content {
+  row-gap: 2rem;
+}
+.experience__data {
+  row-gap: 1rem;
+}
+.experience__company {
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-bold);
+}
+.experience__profession {
+  font-size: var(--h3-font-size);
+  margin-bottom: 0.25rem;
+}
+.experience__data {
+  display: block;
+  font-size: var(--small-font-size);
+  margin-bottom: 0.75rem;
+}
 
 /* SKILLS */
-
+.skills__img {
+  width: 35px;
+  margin-bottom: 0.5rem;
+}
+.skills__name {
+  font-size: var(--small-font-size);
+}
+.skills__content {
+  grid-template-columns: repeat(3, max-content);
+  justify-content: space-around;
+  align-items: flex-end;
+}
+.skills__box {
+  display: grid;
+  place-items: center;
+  transition: transform 0.4s;
+}
+.skills__box:hover {
+  transform: translateY(-0.25rem);
+}
 /*=============== SERVICES ===============*/
 
 /*=============== CONTACT ===============*/
