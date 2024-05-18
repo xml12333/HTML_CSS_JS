@@ -443,7 +443,22 @@ img {
   transform: translateY(-0.25rem);
 }
 /*=============== SERVICES ===============*/
-
+.services{
+  background-color: var(--container-color);
+}
+.services__container{
+  row-gap: 2rem;
+}
+.services__icon{
+  display: block;
+  color: var(--first-color-light);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.services__title{
+  font-size: var(--h3-font-size);
+  margin-bottom: .75rem;
+}
 /*=============== CONTACT ===============*/
 
 /*=============== FOOTER ===============*/
