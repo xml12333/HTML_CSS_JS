@@ -199,7 +199,11 @@
                 <span class="skills__name">CSS</span>
               </div>
               <div class="skills__box">
-                <img src="./img/info-javascript.svg" alt="img" class="skills__img" />
+                <img
+                  src="./img/info-javascript.svg"
+                  alt="img"
+                  class="skills__img"
+                />
                 <span class="skills__name">JavaScript</span>
               </div>
               <div class="skills__box">
@@ -215,7 +219,11 @@
                 <span class="skills__name">GitHub</span>
               </div>
               <div class="skills__box">
-                <img src="./img/info-tailwind-css.svg" alt="img" class="skills__img" />
+                <img
+                  src="./img/info-tailwind-css.svg"
+                  alt="img"
+                  class="skills__img"
+                />
                 <span class="skills__name">Tailwind CSS</span>
               </div>
               <div class="skills__box">
@@ -238,32 +246,80 @@
           <article class="services__card">
             <i class="ri-code-box-line services__icon"></i>
             <h3 class="services__title">Web Development</h3>
-            <div class="services__description">Short description of the service offered to users 
-              to obtain a personalized project.</div>
+            <div class="services__description">
+              Short description of the service offered to users to obtain a
+              personalized project.
+            </div>
           </article>
           <article class="services__card">
             <i class="ri-pencil-ruler-2-line service__icon"></i>
             <h3 class="services__title">Web Design</h3>
-            <div class="services__description">Short description of the service offered to users 
-              to obtain a personalized project.</div>
+            <div class="services__description">
+              Short description of the service offered to users to obtain a
+              personalized project.
+            </div>
           </article>
           <article class="services__card">
             <i class="ri-layout-2-line service__icon"></i>
             <h3 class="services__title">Responsive Web Design</h3>
-            <div class="services__description">Short description of the service offered to users 
-              to obtain a personalized project.</div>
+            <div class="services__description">
+              Short description of the service offered to users to obtain a
+              personalized project.
+            </div>
           </article>
           <article class="services__card">
             <i class="ri-seo-line services__icon"></i>
             <h3 class="services__title">Seo (Web Pages)</h3>
-            <div class="services__description">Short description of the service offered to users 
-              to obtain a personalized project.</div>
+            <div class="services__description">
+              Short description of the service offered to users to obtain a
+              personalized project.
+            </div>
           </article>
         </div>
       </section>
 
       <!--==================== CONTACT ====================-->
-      <section class="contact section" id="contact"></section>
+      <section class="contact section" id="contact">
+        <h2 class="section__title">CONTACT ME</h2>
+        <div class="contact__container container grid">
+          <form action="" class="contact__form grid" id="contact-form">
+            <div class="contact__group grid">
+              <input
+                type="text"
+                name="Names"
+                placeholder=""
+                required
+                class="contact__input"
+              />
+              <input
+                type="email"
+                name="Email"
+                placeholder=""
+                required
+                class="contact__input"
+              />
+            </div>
+            <textarea
+              name=""
+              placeholder="Message"
+              required
+              class="contact__input contact__area"
+            ></textarea>
+            <button type="submit" class="button contact__button">
+              Send Message
+            </button>
+            <p class="contact__message" id="contact-message"></p>
+          </form>
+          <div class="contact__social grid">
+            <a href="#" class="contact__social-link"><i class="ri-facebook-circle-line"></i>
+            <span>Facebook</span></a>
+            <a href="#" class="contact__social-link"><i class="ri-instagram-line"></i>
+            <span>Instagram</span></a>
+            <a href="#" class="contact__social-link"><i class="ri-linkedin-box-line"></i>
+            <span>LinkedIn</span></a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!--==================== FOOTER ====================-->
