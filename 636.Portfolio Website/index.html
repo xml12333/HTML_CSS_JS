@@ -25,7 +25,7 @@
         <a href="#" class="nav__logo">Tailor</a>
         <div class="nav__menu" id="nav-menu">
           <ul class="nav__list">
-            <li><a href="#home" class="nav__link">Home</a></li>
+            <li><a href="#home" class="nav__link active-link">Home</a></li>
             <li><a href="#work" class="nav__link">Work</a></li>
             <li><a href="#info" class="nav__link">My Info</a></li>
             <li><a href="#services" class="nav__link">Services</a></li>
@@ -311,27 +311,44 @@
             <p class="contact__message" id="contact-message"></p>
           </form>
           <div class="contact__social grid">
-            <a href="#" class="contact__social-link"><i class="ri-facebook-circle-line"></i>
-            <span>Facebook</span></a>
-            <a href="#" class="contact__social-link"><i class="ri-instagram-line"></i>
-            <span>Instagram</span></a>
-            <a href="#" class="contact__social-link"><i class="ri-linkedin-box-line"></i>
-            <span>LinkedIn</span></a>
+            <a href="#" class="contact__social-link"
+              ><i class="ri-facebook-circle-line"></i> <span>Facebook</span></a
+            >
+            <a href="#" class="contact__social-link"
+              ><i class="ri-instagram-line"></i> <span>Instagram</span></a
+            >
+            <a href="#" class="contact__social-link"
+              ><i class="ri-linkedin-box-line"></i> <span>LinkedIn</span></a
+            >
           </div>
         </div>
       </section>
     </main>
 
     <!--==================== FOOTER ====================-->
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div class="footer__container container grid">
+        <ul class="footer__links">
+          <li><a href="#home" class="footer__link">Home</a></li>
+          <li><a href="#work" class="footer__link">Work</a></li>
+          <li><a href="#info" class="footer__link">Info</a></li>
+        </ul>
+        <spna class="footer__copy">&#169; All Rights Reserved By Nik T.</spna>
+      </div>
+    </footer>
 
     <!--========== SCROLL UP ==========-->
-
+    <a href="#" class="scrollup" id="scroll-up"
+      ><i class="ri-arrow-up-line"></i
+    ></a>
     <!--=============== SCROLLREVEAL ===============-->
     <script src=""></script>
 
     <!--=============== EMAIL JS ===============-->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
 
     <!--=============== MAIN JS ===============-->
     <script src="./js/main.js"></script>
