@@ -649,3 +649,4 @@
 |635| [Warp Speed](https://github.com/xml12333/HTML_CSS_JS/tree/main/635.Warp%20Speed)| [Demo](https://nikt.com.ua/projects/htmlCssJs/635.Warp%20Speed/)| ![Thumbnail](635.Warp%20Speed/img/info_thumbnail.jpg)|
 |636| [Portfolio Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/636.Portfolio%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/636.Portfolio%20Website/)| ![Thumbnail](636.Portfolio%20Website/img/info_thumbnail.jpg)|
 |637| [Responsive Card](https://github.com/xml12333/HTML_CSS_JS/tree/main/637.Responsive%20Card)| [Demo](https://nikt.com.ua/projects/htmlCssJs/637.Responsive%20Card/)| ![Thumbnail](637.Responsive%20Card/img/info_thumbnail.jpg)|
+|638| [OnOff Plugs](https://github.com/xml12333/HTML_CSS_JS/tree/main/638.OnOff%20Plugs)| [Demo](https://nikt.com.ua/projects/htmlCssJs/638.OnOff%20Plugs/)| ![Thumbnail](638.OnOff%20Plugs/img/info_thumbnail.jpg)|

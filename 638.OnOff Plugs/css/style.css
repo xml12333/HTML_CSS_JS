@@ -1,0 +1,464 @@
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --hue: 223;
+  --bg: #1c1717;
+  --fg: #e8e3e3;
+  --primary: #f20d0d;
+  --primary2: #f76e6e;
+  --primary2-t: rgba(247, 110, 110, 0);
+  --border: #544545;
+  --border-hover: #8c7373;
+  --trans-dur: 0.3s;
+  --trans-timing: cubic-bezier(0.65, 0, 0.35, 1);
+  font-size: calc(14px + (70 - 14) * (100vw - 280px) / (3840 - 280));
+}
+body, button {
+  color: var(--fg);
+  font: 1em/1.5 sans-serif;
+  transition: background-color calc(var(--trans-dur) * 0.5) steps(1, end), box-shadow var(--trans-dur) var(--trans-timing), color calc(var(--trans-dur) * 0.5) steps(1, end);
+}
+body {
+  background-color: var(--bg);
+  display: flex;
+  height: 100vh;
+}
+.plugs {
+  background-color: transparent;
+  border-radius: 0.375em;
+  box-shadow: 0 0 0 0.0625em var(--border), 0 0 0 0.25em var(--primary2-t);
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  outline: transparent;
+  position: relative;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.plugs:hover {
+  box-shadow: 0 0 0 0.0625em var(--border-hover), 0 0 0 0.25em var(--primary2-t);
+}
+.plugs:focus-visible {
+  box-shadow: 0 0 0 0.0625em var(--primary), 0 0 0 0.25em var(--primary2);
+}
+.plugs__img {
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 16em;
+  height: auto;
+}
+.plugs__img-left, .plugs__img-left-seg, .plugs__img-left-head, .plugs__img-right, .plugs__img-right-seg, .plugs__img-right-head, .plugs__img-prong, .plugs__img-spark-1-x, .plugs__img-spark-1-y, .plugs__img-spark-2-x, .plugs__img-spark-2-y, .plugs__img-spark-3-x, .plugs__img-spark-3-y {
+  animation-duration: calc(var(--trans-dur) * 3);
+  animation-timing-function: var(--trans-timing);
+}
+.plugs__img-left-head, .plugs__img-right-head {
+  transform-origin: 2px 0;
+}
+.plugs__img-left {
+  transform: translate(13px, 10px) rotate(0);
+}
+.plugs__img-right {
+  transform: translate(57px, 10px) rotate(0);
+}
+.plugs__img-prong {
+  stroke-dashoffset: 0;
+}
+.plugs__img-spark-1-x, .plugs__img-spark-2-x, .plugs__img-spark-3-x {
+  animation-timing-function: linear;
+}
+.plugs__img-spark-1-y, .plugs__img-spark-2-y, .plugs__img-spark-3-y {
+  animation-timing-function: cubic-bezier(0.35, 1, 0.65, 1);
+}
+.plugs[aria-pressed="false"] .plugs__img-left {
+  animation-name: left-swing-tail-off;
+}
+.plugs[aria-pressed="false"] .plugs__img-left-seg {
+  animation-name: left-swing-seg-off;
+}
+.plugs[aria-pressed="false"] .plugs__img-left-seg--flip {
+  animation-name: left-swing-seg-off-2;
+}
+.plugs[aria-pressed="false"] .plugs__img-left-head {
+  animation-name: left-swing-head-off;
+}
+.plugs[aria-pressed="false"] .plugs__img-right {
+  animation-name: right-swing-tail-off;
+}
+.plugs[aria-pressed="false"] .plugs__img-right-seg {
+  animation-name: right-swing-seg-off;
+}
+.plugs[aria-pressed="false"] .plugs__img-right-seg--flip {
+  animation-name: right-swing-seg-off-2;
+}
+.plugs[aria-pressed="false"] .plugs__img-right-head {
+  animation-name: right-swing-head-off;
+}
+.plugs[aria-pressed="false"] .plugs__img-prong {
+  animation-name: prongs-off;
+  animation-timing-function: cubic-bezier(0.35, 0, 0.65, 0);
+}
+.plugs[aria-pressed="false"] .plugs__img-spark-1-x {
+  animation-name: spark-1-x;
+}
+.plugs[aria-pressed="false"] .plugs__img-spark-1-y {
+  animation-name: spark-1-y;
+}
+.plugs[aria-pressed="false"] .plugs__img-spark-2-x {
+  animation-name: spark-2-x;
+}
+.plugs[aria-pressed="false"] .plugs__img-spark-2-y {
+  animation-name: spark-2-y;
+}
+.plugs[aria-pressed="false"] .plugs__img-spark-3-x {
+  animation-name: spark-3-x;
+}
+.plugs[aria-pressed="false"] .plugs__img-spark-3-y {
+  animation-name: spark-3-y;
+}
+.plugs[aria-pressed="true"] .plugs__img-left {
+  animation-name: left-swing-tail-on;
+  transform: translate(13px, 10px) rotate(-90deg);
+}
+.plugs[aria-pressed="true"] .plugs__img-left-seg {
+  animation-name: left-swing-seg-on;
+}
+.plugs[aria-pressed="true"] .plugs__img-left-seg--flip {
+  animation-name: right-swing-seg-on;
+}
+.plugs[aria-pressed="true"] .plugs__img-left-head {
+  animation-name: left-swing-head-on;
+}
+.plugs[aria-pressed="true"] .plugs__img-right {
+  animation-name: right-swing-tail-on;
+  transform: translate(57px, 10px) rotate(90deg);
+}
+.plugs[aria-pressed="true"] .plugs__img-right-seg {
+  animation-name: right-swing-seg-on;
+}
+.plugs[aria-pressed="true"] .plugs__img-right-seg--flip {
+  animation-name: left-swing-seg-on;
+}
+.plugs[aria-pressed="true"] .plugs__img-right-head {
+  animation-name: right-swing-head-on;
+}
+.plugs[aria-pressed="true"] .plugs__img-prong {
+  animation-name: prongs-on;
+  animation-timing-function: cubic-bezier(0.35, 1, 0.65, 1);
+  stroke-dashoffset: 2;
+}
+.plugs__label {
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+/* Dark theme */
+[data-dark="false"] {
+  --bg: #e8e3e3;
+  --fg: #1c1717;
+  --border: #baabab;
+}
+[data-dark="false"] body, [data-dark="false"] button {
+  transition-duration: calc(var(--trans-dur) * 2.25), var(--trans-dur), calc(var(--trans-dur) * 2.25);
+}
+/* Animations */
+@keyframes prongs-off {
+  from {
+    stroke-dashoffset: 2;
+ }
+  17.5%, to {
+    stroke-dashoffset: 0;
+ }
+}
+@keyframes left-swing-tail-off {
+  from {
+    transform: translate(13px, 10px) rotate(-90deg);
+ }
+  25% {
+    transform: translate(13px, 10px) rotate(-32deg);
+ }
+  50% {
+    transform: translate(13px, 10px) rotate(2deg);
+ }
+  75% {
+    transform: translate(13px, 10px) rotate(-1deg);
+ }
+  to {
+    transform: translate(13px, 10px) rotate(0);
+ }
+}
+@keyframes left-swing-seg-off {
+  from {
+    transform: translate(0, 1px) rotate(0);
+ }
+  25% {
+    transform: translate(0, 1px) rotate(-10deg);
+ }
+  50% {
+    transform: translate(0, 1px) rotate(2deg);
+ }
+  75% {
+    transform: translate(0, 1px) rotate(-1deg);
+ }
+  to {
+    transform: translate(0, 1px) rotate(0);
+ }
+}
+@keyframes left-swing-seg-off-2 {
+  from {
+    transform: translate(0, 1px) rotate(0);
+ }
+  25% {
+    transform: translate(0, 1px) rotate(10deg);
+ }
+  50% {
+    transform: translate(0, 1px) rotate(2deg);
+ }
+  75% {
+    transform: translate(0, 1px) rotate(-1deg);
+ }
+  to {
+    transform: translate(0, 1px) rotate(0);
+ }
+}
+@keyframes left-swing-head-off {
+  from {
+    transform: translate(-2.5px, 1px) rotate(0);
+ }
+  25% {
+    transform: translate(-2.5px, 1px) rotate(-10deg);
+ }
+  50% {
+    transform: translate(-2.5px, 1px) rotate(2deg);
+ }
+  75% {
+    transform: translate(-2.5px, 1px) rotate(-1deg);
+ }
+  to {
+    transform: translate(-2.5px, 1px) rotate(0);
+ }
+}
+@keyframes right-swing-tail-off {
+  from {
+    transform: translate(57px, 10px) rotate(90deg);
+ }
+  25% {
+    transform: translate(57px, 10px) rotate(32deg);
+ }
+  50% {
+    transform: translate(57px, 10px) rotate(-2deg);
+ }
+  75% {
+    transform: translate(57px, 10px) rotate(1deg);
+ }
+  to {
+    transform: translate(57px, 10px) rotate(0);
+ }
+}
+@keyframes right-swing-seg-off {
+  from {
+    transform: translate(0, 1px) rotate(0);
+ }
+  25% {
+    transform: translate(0, 1px) rotate(10deg);
+ }
+  50% {
+    transform: translate(0, 1px) rotate(-2deg);
+ }
+  75% {
+    transform: translate(0, 1px) rotate(1deg);
+ }
+  to {
+    transform: translate(0, 1px) rotate(0);
+ }
+}
+@keyframes right-swing-seg-off-2 {
+  from {
+    transform: translate(0, 1px) rotate(0);
+ }
+  25% {
+    transform: translate(0, 1px) rotate(-10deg);
+ }
+  50% {
+    transform: translate(0, 1px) rotate(-2deg);
+ }
+  75% {
+    transform: translate(0, 1px) rotate(1deg);
+ }
+  to {
+    transform: translate(0, 1px) rotate(0);
+ }
+}
+@keyframes right-swing-head-off {
+  from {
+    transform: translate(-2.5px, 1px) rotate(0);
+ }
+  25% {
+    transform: translate(-2.5px, 1px) rotate(10deg);
+ }
+  50% {
+    transform: translate(-2.5px, 1px) rotate(-2deg);
+ }
+  75% {
+    transform: translate(-2.5px, 1px) rotate(1deg);
+ }
+  to {
+    transform: translate(-2.5px, 1px) rotate(0);
+ }
+}
+@keyframes prongs-on {
+  from, 70% {
+    stroke-dashoffset: 0;
+ }
+  90%, to {
+    stroke-dashoffset: 2;
+ }
+}
+@keyframes left-swing-tail-on {
+  from {
+    transform: translate(13px, 10px) rotate(0);
+ }
+  50% {
+    transform: translate(13px, 10px) rotate(-32deg);
+ }
+  to {
+    transform: translate(13px, 10px) rotate(-90deg);
+ }
+}
+@keyframes left-swing-seg-on {
+  from {
+    transform: translate(0, 1px) rotate(0);
+ }
+  50% {
+    transform: translate(0, 1px) rotate(-10deg);
+ }
+  to {
+    transform: translate(0, 1px) rotate(0);
+ }
+}
+@keyframes left-swing-head-on {
+  from {
+    transform: translate(-2.5px, 1px) rotate(0);
+ }
+  50% {
+    transform: translate(-2.5px, 1px) rotate(-10deg);
+ }
+  to {
+    transform: translate(-2.5px, 1px) rotate(0);
+ }
+}
+@keyframes right-swing-tail-on {
+  from {
+    transform: translate(57px, 10px) rotate(0);
+ }
+  50% {
+    transform: translate(57px, 10px) rotate(32deg);
+ }
+  to {
+    transform: translate(57px, 10px) rotate(90deg);
+ }
+}
+@keyframes right-swing-seg-on {
+  from {
+    transform: translate(0, 1px) rotate(0);
+ }
+  50% {
+    transform: translate(0, 1px) rotate(10deg);
+ }
+  to {
+    transform: translate(0, 1px) rotate(0);
+ }
+}
+@keyframes right-swing-head-on {
+  from {
+    transform: translate(-2.5px, 1px) rotate(0);
+ }
+  50% {
+    transform: translate(-2.5px, 1px) rotate(10deg);
+ }
+  to {
+    transform: translate(-2.5px, 1px) rotate(0);
+ }
+}
+@keyframes spark-1-x {
+  from, 12.5% {
+    r: 1px;
+    transform: translate(0, 0);
+ }
+  37.5%, to {
+    r: 0;
+    transform: translate(-10px, 0);
+ }
+}
+@keyframes spark-1-y {
+  from {
+    animation-timing-function: steps(1, end);
+    transform: translate(0, 0);
+    visibility: hidden;
+ }
+  12.5% {
+    animation-timing-function: linear;
+    transform: translate(0, 0);
+    visibility: visible;
+ }
+  37.5%, to {
+    transform: translate(0, -9px);
+ }
+}
+@keyframes spark-2-x {
+  from, 12.5% {
+    r: 1px;
+    transform: translate(0, 0);
+ }
+  37.5%, to {
+    r: 0;
+    transform: translate(4px, 0);
+ }
+}
+@keyframes spark-2-y {
+  from {
+    animation-timing-function: steps(1, end);
+    transform: translate(0, 0);
+    visibility: hidden;
+ }
+  12.5% {
+    animation-timing-function: linear;
+    transform: translate(0, 0);
+    visibility: visible;
+ }
+  37.5%, to {
+    transform: translate(0, -8px);
+ }
+}
+@keyframes spark-3-x {
+  from, 12.5% {
+    r: 1px;
+    transform: translate(0, 0);
+ }
+  37.5%, to {
+    r: 0;
+    transform: translate(-1px, 0);
+ }
+}
+@keyframes spark-3-y {
+  from {
+    animation-timing-function: steps(1, end);
+    transform: translate(0, 0);
+    visibility: hidden;
+ }
+  12.5% {
+    animation-timing-function: linear;
+    transform: translate(0, 0);
+    visibility: visible;
+ }
+  37.5%, to {
+    transform: translate(0, 8px);
+ }
+}
