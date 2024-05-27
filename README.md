@@ -651,3 +651,4 @@
 |637| [Responsive Card](https://github.com/xml12333/HTML_CSS_JS/tree/main/637.Responsive%20Card)| [Demo](https://nikt.com.ua/projects/htmlCssJs/637.Responsive%20Card/)| ![Thumbnail](637.Responsive%20Card/img/info_thumbnail.jpg)|
 |638| [OnOff Plugs](https://github.com/xml12333/HTML_CSS_JS/tree/main/638.OnOff%20Plugs)| [Demo](https://nikt.com.ua/projects/htmlCssJs/638.OnOff%20Plugs/)| ![Thumbnail](638.OnOff%20Plugs/img/info_thumbnail.jpg)|
 |639| [CSS Navigation](https://github.com/xml12333/HTML_CSS_JS/tree/main/639.CSS%20Navigation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/639.CSS%20Navigation/)| ![Thumbnail](639.CSS%20Navigation/img/info_thumbnail.jpg)|
+|640| [AI Button](https://github.com/xml12333/HTML_CSS_JS/tree/main/640.AI%20Button)| [Demo](https://nikt.com.ua/projects/htmlCssJs/640.AI%20Button/)| ![Thumbnail](640.AI%20Button/img/info_thumbnail.jpg)|
