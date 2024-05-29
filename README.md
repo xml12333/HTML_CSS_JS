@@ -653,3 +653,4 @@
 |639| [CSS Navigation](https://github.com/xml12333/HTML_CSS_JS/tree/main/639.CSS%20Navigation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/639.CSS%20Navigation/)| ![Thumbnail](639.CSS%20Navigation/img/info_thumbnail.jpg)|
 |640| [AI Button](https://github.com/xml12333/HTML_CSS_JS/tree/main/640.AI%20Button)| [Demo](https://nikt.com.ua/projects/htmlCssJs/640.AI%20Button/)| ![Thumbnail](640.AI%20Button/img/info_thumbnail.jpg)|
 |641| [Life evolves](https://github.com/xml12333/HTML_CSS_JS/tree/main/641.Life%20evolves)| [Demo](https://nikt.com.ua/projects/htmlCssJs/641.Life%20evolves/)| ![Thumbnail](641.Life%20evolves/img/info_thumbnail.jpg)|
+|642| [Firefly Button](https://github.com/xml12333/HTML_CSS_JS/tree/main/642.Firefly%20Button)| [Demo](https://nikt.com.ua/projects/htmlCssJs/642.Firefly%20Button/)| ![Thumbnail](642.Firefly%20Button/img/info_thumbnail.jpg)|
