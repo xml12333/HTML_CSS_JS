@@ -136,6 +136,9 @@ img {
   top: 0;
 }
 /* Add shadow header */
+.shadow-header {
+  box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.1);
+}
 
 /*=============== HOME ===============*/
 .home__container {
@@ -192,6 +195,7 @@ img {
   border-radius: 38% 62% 66% 34%/60% 41% 59% 40%;
   top: -2rem;
   left: -4rem;
+  animation: blob-1 4s linear infinite;
 }
 .home__img-1 {
   width: 100px;
@@ -204,6 +208,7 @@ img {
   border-radius: 59% 41% 19% 81%/34% 72% 28% 66%;
   top: -8rem;
   right: -8.5rem;
+  animation: blob-2 4s linear infinite;
 }
 .home__img-2 {
   width: 120px;
@@ -216,6 +221,7 @@ img {
   border-radius: 57% 43% 40% 60%/49% 34% 66% 51%;
   left: -5rem;
   bottom: -4.5rem;
+  animation: blob-3 4s linear infinite;
 }
 .home__img-3 {
   width: 100px;
@@ -228,6 +234,7 @@ img {
   border-radius: 78% 22% 20% 80%/53% 46% 54% 47%;
   right: -9rem;
   bottom: -4rem;
+  animation: blob-4 4s linear infinite;
 }
 .home__img-4 {
   width: 200px;
@@ -244,7 +251,54 @@ img {
   z-index: -1;
 }
 /* Animate blobs */
-
+@keyframes blob-1 {
+  0%,
+  100% {
+    border-radius: 38% 62% 66% 34%/60% 41% 59% 40%;
+  }
+  33% {
+    border-radius: 59% 41% 55% 45%/64% 22% 78% 36%;
+  }
+  66% {
+    border-radius: 59% 41% 35% 65%/46% 67% 33% 54%;
+  }
+}
+@keyframes blob-2 {
+  0%,
+  100% {
+    border-radius: 59% 41% 19% 81%/34% 72% 28% 66%;
+  }
+  33% {
+    border-radius: 78% 22% 20% 80%/53% 46% 54% 47%;
+  }
+  66% {
+    border-radius: 57% 43% 40% 60%/49% 34% 66% 51%;
+  }
+}
+@keyframes blob-3 {
+  0%,
+  100% {
+    border-radius: 57% 43% 40% 60%/49% 34% 66% 51%;
+  }
+  33% {
+    border-radius: 51% 49% 30% 70%/37% 63% 37% 63%;
+  }
+  66% {
+    border-radius: 51% 49% 28% 72%/77% 75% 25% 23%;
+  }
+}
+@keyframes blob-4 {
+  0%,
+  100% {
+    border-radius: 78% 22% 20% 80%/53% 46% 54% 47%;
+  }
+  33% {
+    border-radius: 65% 35% 42% 58%/64% 28% 72% 36%;
+  }
+  66% {
+    border-radius: 32% 68% 46% 54%/29% 22% 78% 71%;
+  }
+}
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 

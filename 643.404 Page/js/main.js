@@ -30,12 +30,12 @@ const linkAction = () =>{
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
 /*=============== ADD SHADOW HEADER ===============*/
-const scrollHeader = () =>{
+const shadowHeader = () =>{
     const header = document.getElementById('header')
     // When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag
-    this.scrollY >= 50 ? header.classList.add('scroll-header') 
-                       : header.classList.remove('scroll-header')
+    this.scrollY >= 50 ? header.classList.add('shadow-header') 
+                       : header.classList.remove('shadow-header')
 }
-window.addEventListener('scroll', scrollHeader)
+window.addEventListener('scroll', shadowHeader)
 
 /*=============== GSAP ANIMATION ===============*/
