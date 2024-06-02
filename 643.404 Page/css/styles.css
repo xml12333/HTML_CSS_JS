@@ -301,9 +301,128 @@ img {
 }
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-
+@media screen and (max-width: 320px) {
+  .container {
+    margin-inline: 1rem;
+  }
+  .home__container {
+    grid-template-rows: max-content 265px;
+  }
+  .home__images [class*="home__blob"],
+  .home__img-5 {
+    scale: 0.7;
+  }
+  .home__title {
+    font-size: 2rem;
+  }
+  .home__description {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 400px) and (max-height: 650px) {
+  .home__container {
+    height: initial;
+  }
+}
+@media screen and (min-width: 400px) and (max-height: 700px) {
+  .home__container {
+    height: initial;
+  }
+}
 /* For medium devices */
+@media screen and (min-width: 540px) {
+  .home__container {
+    grid-template-columns: 400px;
+    justify-content: center;
+  }
+}
 
 /* For large devices */
+@media screen and (min-width: 1150px) {
+  .container {
+    margin-inline: auto;
+  }
+  .nav {
+    height: calc(var(--header-height) + 2rem);
+  }
+  .nav__toggle,
+  .nav__close {
+    display: none;
+  }
+  .nav__list {
+    flex-direction: row;
+    column-gap: 4rem;
+  }
+  .home__container {
+    grid-template-columns: 1fr;
+    padding-top: 10rem;
+  }
+  .home__subtitle {
+    font-size: var(--big-font-size);
+  }
+  .home__title {
+    -webkit-text-stroke-width: 8px;
+    filter: drop-shadow(-8px 8px 0 var(--black-color));
+  }
+  .home__description {
+    width: 480px;
+    margin: 0 auto 3.5rem;
+  }
+  .home__blob-1 {
+    width: 220px;
+    height: 260px;
+    top: -20rem;
+    left: -1rem;
+  }
+  .home__img-1 {
+    width: 180px;
+  }
+  .home__blob-2 {
+    width: 360px;
+    height: 355px;
+    top: -27rem;
+  }
+  .home__img-2 {
+    width: 280px;
+  }
+  .home__blob-3 {
+    width: 500px;
+    height: 485px;
+    bottom: -11rem;
+  }
+  .home__img-3 {
+    width: 250px;
+    top: 3rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+  }
+  .home__blob-4 {
+    width: 500px;
+    height: 485px;
+    right: -7rem;
+    bottom: -12rem;
+  }
+  .home__img-4 {
+    width: 450px;
+    left: -2rem;
+    bottom: 3rem;
+  }
+  .home__img-5 {
+    width: 250px;
+    right: 0;
+    top: 9rem;
+  }
+}
 
 /* For taller devices */
+@media screen and (min-width: 390px) and (min-height: 900px) {
+  .home__container {
+    padding-top: 10rem;
+  }
+}
+@media screen and (min-width: 800px) and (min-height: 1200px) {
+  .home__container {
+    padding-top: 15rem;
+  }
+}
