@@ -1,0 +1,81 @@
+body {
+  background-color: #1c1c1c;
+  font-family: system-ui, sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:root {
+  --bg: #1c1c1c;
+  --text-height: 300px;
+}
+
+.sparkle {
+  width: 600px;
+  height: var(--text-height);
+  font-size: 50px;
+  text-align: center;
+  line-height: var(--text-height);
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  z-index: 100;
+  position: relative;
+  text-shadow: 0px 0px 10px black;
+}
+
+
+.star {
+  --star-size: 50px;
+  --star-life: 5s;
+  
+  --start-left: 0px;
+  --start-top: 0px;
+  
+  --end-left: 0px;
+  --end-top: 0px;
+  
+  --star-color: #f1c40f;
+  
+  width: var(--star-size);
+  height: var(--star-size);
+  left: var(--end-left);
+  top: var(--end-top);
+  background: var(--star-color);
+  position: absolute;
+  mix-blend-mode: lighten;
+  animation: slide var(--star-life) ease-in forwards;
+}
+
+.star:after {
+  display: block;
+  content: "";
+  width: var(--star-size);
+  height: var(--star-size);
+  background-color: var(--bg);
+  border-radius: 100%;
+  position: relative;
+  top: calc(var(--star-size) / 2 * -1);
+  left: calc(var(--star-size) / 2 * -1);
+  box-shadow: var(--star-size) var(--star-size) var(--bg),
+    var(--star-size) 0px var(--bg),
+    0px var(--star-size) var(--bg);
+}
+
+@keyframes slide {
+  0%{
+    left: var(--start-left);
+    top: var(--start-top);
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+  100%{
+    left: var(--end-left);
+    top: var(--end-top);
+    transform: rotate(calc(180deg * var(--star-life-num))) scale(0.5);
+    opacity: 1;
+  }
+}
