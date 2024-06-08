@@ -1,0 +1,44 @@
+html {
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+}
+body {
+  margin: 0;
+}
+canvas {
+  position: absolute;
+  vertical-align: top;
+  width: 100vmin;
+  height: 100vmin;
+  inset: 0;
+  margin: auto;
+}
+.ctrl {
+  position: absolute;
+  z-index: 1;
+}
+input[type="number"] {
+  width: 4em;
+  filter: invert(1);
+}
+@-webkit-keyframes rot {
+  to {
+    rotate: 1turn;
+  }
+}
+@keyframes rot {
+  to {
+    rotate: 1turn;
+  }
+}
+@-webkit-keyframes hue {
+  to {
+    filter: hue-rotate(1turn);
+  }
+}
+@keyframes hue {
+  to {
+    filter: hue-rotate(1turn);
+  }
+}
