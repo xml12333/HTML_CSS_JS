@@ -660,3 +660,4 @@
 |646| [Sparkle Text](https://github.com/xml12333/HTML_CSS_JS/tree/main/646.Sparkle%20Text)| [Demo](https://nikt.com.ua/projects/htmlCssJs/646.Sparkle%20Text/)| ![Thumbnail](646.Sparkle%20Text/img/info_thumbnail.jpg)|
 |647| [Letterfall](https://github.com/xml12333/HTML_CSS_JS/tree/main/647.Letterfall)| [Demo](https://nikt.com.ua/projects/htmlCssJs/647.Letterfall/)| ![Thumbnail](647.Letterfall/img/info_thumbnail.jpg)|
 |648| [Fractal leaves](https://github.com/xml12333/HTML_CSS_JS/tree/main/648.Fractal%20leaves)| [Demo](https://nikt.com.ua/projects/htmlCssJs/648.Fractal%20leaves/)| ![Thumbnail](648.Fractal%20leaves/img/info_thumbnail.jpg)|
+|649| [Card Mouse Hover](https://github.com/xml12333/HTML_CSS_JS/tree/main/649.Card%20Mouse%20Hover)| [Demo](https://nikt.com.ua/projects/htmlCssJs/649.Card%20Mouse%20Hover/)| ![Thumbnail](649.Card%20Mouse%20Hover/img/info_thumbnail.jpg)|
