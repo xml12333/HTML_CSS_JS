@@ -663,3 +663,4 @@
 |649| [Card Mouse Hover](https://github.com/xml12333/HTML_CSS_JS/tree/main/649.Card%20Mouse%20Hover)| [Demo](https://nikt.com.ua/projects/htmlCssJs/649.Card%20Mouse%20Hover/)| ![Thumbnail](649.Card%20Mouse%20Hover/img/info_thumbnail.jpg)|
 |650| [Wave animation](https://github.com/xml12333/HTML_CSS_JS/tree/main/650.Wave%20animation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/650.Wave%20animation/)| ![Thumbnail](650.Wave%20animation/img/info_thumbnail.jpg)|
 |651| [Loading](https://github.com/xml12333/HTML_CSS_JS/tree/main/651.Loading)| [Demo](https://nikt.com.ua/projects/htmlCssJs/651.Loading/)| ![Thumbnail](651.Loading/img/info_thumbnail.jpg)|
+|652| [Fire Transition](https://github.com/xml12333/HTML_CSS_JS/tree/main/652.Fire%20Transition)| [Demo](https://nikt.com.ua/projects/htmlCssJs/652.Fire%20Transition/)| ![Thumbnail](652.Fire%20Transition/img/info_thumbnail.jpg)|
