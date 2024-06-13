@@ -1,0 +1,43 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  position: relative;
+  
+  i {
+    position: absolute;
+    left: -30px; top: -30px;
+    width: 200px; height: 200px;
+    border-radius: 100px 100px 0 100px;
+    transform-origin: 30px 30px;
+    mix-blend-mode: plus-lighter;
+    box-shadow: 25px 25px 5px var(--color) inset, 5px 5px 50px var(--color);
+    animation: i var(--duration) var(--delay) infinite linear;
+    
+    @keyframes i {
+      to { rotate: 1turn; }
+    }
+    
+    &:nth-child(odd) { animation-direction: reverse; }
+    
+    $d: 5;
+    @for $i from 0 to 36 {
+      &:nth-child(#{$i + 1}) {
+        $d: $d + random(1000) / 1000 + 0.5;
+        --color: hsl(#{$i * 1} 100% 50% / 0.25);
+        --delay: #{random(1000) / -100}s;
+        --duration: #{$d}s;
+      }
+    }
+  }
+}
