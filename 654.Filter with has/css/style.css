@@ -1,0 +1,140 @@
+/*
+ * Use :has() to filter items by category using
+ * checkboxes. No JS required!
+ */
+section:has([name="snacks"]:checked) article:has([data-category="snacks"]) {
+	display: block;
+}
+
+section:has([name="naps"]:checked) article:has([data-category="naps"]) {
+	display: block;
+}
+
+section:has([name="computers"]:checked)
+	article:has([data-category="computers"]) {
+	display: block;
+}
+
+article {
+	/* color code by category */
+	--hue: 0;
+
+	&:has([data-category="snacks"]) {
+		--hue: 233.35;
+	}
+
+	&:has([data-category="computers"]) {
+		--hue: 91.24;
+	}
+
+	&:has([data-category="naps"]) {
+		--hue: 334.61;
+	}
+
+	& img {
+		border: 1px solid oklch(93% 0.1 var(--hue));
+	}
+
+	& .categories {
+		background: oklch(96% 0.05 var(--hue));
+		border: 1px solid oklch(93% 0.1 var(--hue));
+		color: oklch(35% 0.104 var(--hue));
+	}
+}
+
+/*
+ * general layout stuff that’s not the cool thing I
+ * wanted to show off
+ */
+
+:root {
+	background: oklch(99.75% 0.03 146.51);
+	font-family: system-ui;
+	line-height: 1.45;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+section {
+	block-size: 90cqw;
+	display: grid;
+	gap: 1.5rem;
+	grid-template-columns: repeat(3, min(200px, 33% - 1.5rem));
+	margin: 2rem auto 5rem;
+	place-content: start center;
+}
+
+form {
+	align-items: baseline;
+	background: oklch(99.62% 0.01 146.51);
+	border: 1px solid oklch(99.62% 0.2 146.51);
+	border-radius: 0.25rem;
+	color: oklch(30% 0.3 146.51);
+	display: flex;
+	gap: 1rem;
+	grid-column: 1 / span 3;
+	margin-block-end: 1rem;
+	justify-content: center;
+	padding: 1rem;
+
+	& p {
+		line-height: 1;
+		margin: 0;
+	}
+}
+
+label,
+input {
+	color: inherit;
+	font-size: 1rem;
+	line-height: 1;
+	margin: 0;
+	padding: 0;
+}
+
+input {
+	block-size: 1rem;
+	inline-size: 1rem;
+	position: relative;
+	inset-block-start: 0.125rem;
+}
+
+article {
+	container-type: inline-size;
+	display: none;
+	margin: 0;
+
+	& img {
+		aspect-ratio: 16 / 9;
+		border-radius: 0.25rem;
+		display: block;
+		inline-size: 100%;
+		object-fit: cover;
+	}
+
+	& h2 {
+		color: oklch(25% 0.104 146.51);
+		font-size: clamp(0.75rem, 9cqw, 1rem);
+		font-weight: 300;
+		letter-spacing: 0.1em;
+		line-height: 1.1;
+		margin: clamp(0.125rem, 2cqw, 0.375rem) 0;
+	}
+
+	& .categories {
+		border-radius: 0.25rem;
+		display: inline-block;
+		font-size: clamp(0.4rem, 5.5cqw, 0.625rem);
+		letter-spacing: 0.15em;
+		line-height: 1;
+		margin: 0;
+		padding: clamp(0.125rem, 2cqw, 0.25rem);
+		font-variant: small-caps;
+	}
+
+	& .categories::after {
+		content: attr(data-category);
+	}
+}
