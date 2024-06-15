@@ -1,0 +1,129 @@
+@import "normalize.css";
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 20px;
+}
+
+body {
+	display: grid;
+	place-items: center;
+	min-height: 100vh;
+	background: hsl(0 0% 2%);
+	color: hsl(0 0% 100%);
+}
+
+canvas {
+	background: hsl(0 0% 0%);
+	position: absolute;
+	width: 16rem;
+	aspect-ratio: 1;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+  border-radius: 6px;
+}
+
+.canvas-container {
+	position: absolute;
+	inset: 0;
+	container-type: size;
+}
+
+button {
+	border-radius: 6px;
+	padding: 2rem 4rem;
+	background: transparent;
+	position: relative;
+	font-size: 20px;
+	scale: 1;
+	cursor: pointer;
+	border: 0;
+}
+
+.canvas-wrap {
+	height: 100%;
+	border: 1px solid hsl(0 0% 100% / 0.65);
+	width: 100%;
+	display: inline-block;
+	transition: width 0.2s, height 0.2s;
+	overflow: hidden;
+	left: 50%;
+	top: 50%;
+	translate: -50% -50%;
+	position: relative;
+	border-radius: 6px;
+}
+
+
+button:is(:hover, :focus-visible):not([disabled]) {
+	--active: 1;
+}
+
+button[disabled] .canvas-wrap {
+	width: 16rem;
+	height: 16rem;
+}
+
+button .canvas-wrap::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: hsl(0 0% 100% / 0.025);
+	opacity: var(--active, 0);
+}
+
+button > span:not(.canvas-container) {
+	z-index: 5;
+	font-family: "JetBrains Mono", monospace;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: white;
+	letter-spacing: 8px;
+	/* Hide the text	*/
+	opacity: 0;
+	text-indent: 8px;
+}
+
+
+.bear-link {
+	color: currentColor;
+	position: fixed;
+	bottom: 1rem;
+	left: 1rem;
+	width: 48px;
+	aspect-ratio: 1;
+	display: grid;
+	place-items: center;
+	opacity: 0.8;
+}
+
+:where(.x-link, .bear-link):is(:hover, :focus-visible) {
+	opacity: 1;
+}
+.bear-link svg {
+	width: 75%;
+}
+
+
+body::before {
+	--line: hsl(0 0% 95% / 0.15);
+	--size: 60px;
+	content: "";
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	background:
+		linear-gradient(90deg, var(--line) 1px, transparent 1px var(--size)) 50% 50% / var(--size) var(--size),
+		linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% / var(--size) var(--size);
+	-webkit-mask: linear-gradient(-15deg, transparent 30%, white);
+	        mask: linear-gradient(-15deg, transparent 30%, white);
+	top: 0;
+	z-index: -1;
+	transform: translate3d(0, 0, -100vmin);
+}
