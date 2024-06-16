@@ -667,3 +667,4 @@
 |653| [Fire Flower](https://github.com/xml12333/HTML_CSS_JS/tree/main/653.Fire%20Flower)| [Demo](https://nikt.com.ua/projects/htmlCssJs/653.Fire%20Flower/)| ![Thumbnail](653.Fire%20Flower/img/info_thumbnail.jpg)|
 |654| [Filter with has](https://github.com/xml12333/HTML_CSS_JS/tree/main/654.Filter%20with%20has)| [Demo](https://nikt.com.ua/projects/htmlCssJs/654.Filter%20with%20has/)| ![Thumbnail](654.Filter%20with%20has/img/info_thumbnail.jpg)|
 |655| [Matrix button](https://github.com/xml12333/HTML_CSS_JS/tree/main/655.Matrix%20button)| [Demo](https://nikt.com.ua/projects/htmlCssJs/655.Matrix%20button/)| ![Thumbnail](655.Matrix%20button/img/info_thumbnail.jpg)|
+|656| [Hexagon Grid](https://github.com/xml12333/HTML_CSS_JS/tree/main/656.Hexagon%20Grid)| [Demo](https://nikt.com.ua/projects/htmlCssJs/656.Hexagon%20Grid/)| ![Thumbnail](656.Hexagon%20Grid/img/info_thumbnail.jpg)|
