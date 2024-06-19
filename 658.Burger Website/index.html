@@ -1,90 +1,133 @@
 <!DOCTYPE html>
-   <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <!--=============== FAVICON ===============-->
-      <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
 
-      <!--=============== REMIXICONS ===============-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    <!--=============== REMIXICONS ===============-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+    />
 
-      <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="./css/styles.css">
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="./css/styles.css" />
 
-      <title>Responsive burger website</title>
-   </head>
-   <body>
-      <!--==================== HEADER ====================-->
-      <header class="header" id="header">
-         <nav class="nav container">
-            <a href="#" class="nav__logo">
-               <div>
-                  <img src="./img/logo-burger.svg" alt="img">
-               </div>
-               Burger
-            </a>
-            <div class="nav__menu" id="nav-menu">
-               <ul class="nav__list">
-                  <li><a href="#home" class="nav__link">Home</a></li>
-                  <li><a href="#recipe" class="nav__link">Recipe</a></li>
-                  <li><a href="#popular" class="nav__link">Popular</a></li>
-                  <li><a href="#delivery" class="nav__link">Delivery</a></li>
-                  <li><a href="#contact" class="nav__link">Contact</a></li>
-               </ul>
-               <!-- Close button -->
-                <div class="nav__close" id="nav-close">
-                  <i class="ri-close-large-line"></i>
-                </div>
-            </div>
-            <!-- Toggle button -->
-             <div class="nav__toggle" id="nav-toggle">
-               <i class="ri-apps-2-fill"></i>
-             </div>
-         </nav>
-      </header>
+    <title>Responsive burger website</title>
+  </head>
+  <body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav__logo">
+          <div>
+            <img src="./img/logo-burger.svg" alt="img" />
+          </div>
+          Burger
+        </a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li><a href="#home" class="nav__link">Home</a></li>
+            <li><a href="#recipe" class="nav__link">Recipe</a></li>
+            <li><a href="#popular" class="nav__link">Popular</a></li>
+            <li><a href="#delivery" class="nav__link">Delivery</a></li>
+            <li><a href="#contact" class="nav__link">Contact</a></li>
+          </ul>
+          <!-- Close button -->
+          <div class="nav__close" id="nav-close">
+            <i class="ri-close-large-line"></i>
+          </div>
+        </div>
+        <!-- Toggle button -->
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="ri-apps-2-fill"></i>
+        </div>
+      </nav>
+    </header>
 
-      <!--==================== MAIN ====================-->
-      <main class="main">
-         <!--==================== HOME ====================-->
-         <section class="home section" id="home">
-            
-         </section>
+    <!--==================== MAIN ====================-->
+    <main class="main">
+      <!--==================== HOME ====================-->
+      <section class="home section" id="home">
+        <div class="home__container container grid">
+          <div class="home__data">
+            <h1 class="home__title">
+              Love Every <br />
+              Burger
+            </h1>
+            <p class="home__description">
+              We serve the best burgers on the planet, paving the way for
+              cooking and preparing hot, delicious burgers.
+            </p>
+            <a href="#popular" class="button">Bite Now</a>
+            <img
+              src="./img/sticker-potatoes.svg"
+              alt="img"
+              class="home__sticker"
+            />
+          </div>
+          <div class="home__images">
+            <img src="./img/home-burger.png" alt="img" class="home__burger" />
+            <img src="./img/home-dish.png" alt="img" class="home__dish" />
+            <img
+              src="./img/home-potato.png"
+              alt="img"
+              class="home__ingredient home__popato-1"
+            />
+            <img
+              src="./img/home-potato.png"
+              alt="img"
+              class="home__ingredient home__popato-2"
+            />
+            <img
+              src="./img/home-tomato.png"
+              alt="img"
+              class="home__ingredient home__tomato-1"
+            />
+            <img
+              src="./img/home-tomato.png"
+              alt="img"
+              class="home__ingredient home__tomato-2"
+            />
+            <img
+              src="./img/home-lettuce.png"
+              alt="img"
+              class="home__ingredient home__lettuce-1"
+            />
+            <img
+              src="./img/home-lettuce.png"
+              alt="img"
+              class="home__ingredient home__lettuce-2"
+            />
+          </div>
+        </div>
+      </section>
 
-         <!--==================== RECIPE ====================-->
-         <section class="recipe section" id="recipe">
-            
-         </section>
+      <!--==================== RECIPE ====================-->
+      <section class="recipe section" id="recipe"></section>
 
-         <!--==================== POPULAR ====================-->
-         <section class="popular section" id="popular">
-            
-         </section>
+      <!--==================== POPULAR ====================-->
+      <section class="popular section" id="popular"></section>
 
-         <!--==================== DELIVERY ====================-->
-         <section class="delivery section" id="delivery">
-            
-         </section>
+      <!--==================== DELIVERY ====================-->
+      <section class="delivery section" id="delivery"></section>
 
-         <!--==================== CONTACT ====================-->
-         <section class="contact section" id="contact">
-            
-         </section>
-      </main>
+      <!--==================== CONTACT ====================-->
+      <section class="contact section" id="contact"></section>
+    </main>
 
-      <!--==================== FOOTER ====================-->
-      <footer class="footer">
+    <!--==================== FOOTER ====================-->
+    <footer class="footer"></footer>
 
-      </footer>
+    <!--========== SCROLL UP ==========-->
 
-      <!--========== SCROLL UP ==========-->
-      
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src=""></script>
 
-      <!--=============== SCROLLREVEAL ===============-->
-      <script src=""></script>
-
-      <!--=============== MAIN JS ===============-->
-      <script src="./js/main.js"></script>
-   </body>
+    <!--=============== MAIN JS ===============-->
+    <script src="./js/main.js"></script>
+  </body>
 </html>
