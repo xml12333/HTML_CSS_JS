@@ -306,7 +306,59 @@ img {
 }
 
 /*=============== RECIPE ===============*/
-
+.recipe {
+  overflow: hidden;
+}
+.recipe__container {
+  grid-template-columns: 0.5fr 1fr;
+  column-gap: 1rem;
+  padding-bottom: 2rem;
+}
+.recipe__image {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.recipe__img {
+  position: absolute;
+  max-width: initial;
+  width: 200px;
+  left: -6rem;
+  filter: var(--shadow-big-img);
+}
+.recipe__data {
+  display: grid;
+  row-gap: 2rem;
+}
+.recipe__card {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+.recipe__box {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  background-color: var(--first-color);
+  border: 3px solid var(--container-color);
+  border-radius: 0.75rem;
+  display: grid;
+  place-items: center;
+}
+.recipe__box img {
+  width: 50px;
+  filter: var(--shadow-small-img);
+}
+.recipe__title {
+  font-size: var(--normal-font-size);
+  margin-bottom: 0.5rem;
+}
+.recipe__description {
+  font-size: var(--small-font-size);
+}
+.recipe__card:nth-child(even) .recipe__box {
+  order: 1;
+}
 /*=============== POPULAR ===============*/
 
 /*=============== DELIVERY ===============*/
