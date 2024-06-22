@@ -360,22 +360,22 @@ img {
   order: 1;
 }
 /*=============== POPULAR ===============*/
-.popular{
+.popular {
   background-color: var(--body-color);
 }
-.popular__container{
+.popular__container {
   padding-block: 2rem;
   grid-template-columns: repeat(2, 1fr);
   gap: 3.5rem 1.5rem;
 }
-.popular__card{
+.popular__card {
   position: relative;
   background-color: var(--first-color);
-  padding: 6rem .75rem 1rem;
+  padding: 6rem 0.75rem 1rem;
   border-radius: 1rem;
   border: 4px solid var(--container-color);
 }
-.popular__img{
+.popular__img {
   position: absolute;
   top: -2rem;
   left: 0;
@@ -383,39 +383,129 @@ img {
   width: 120px;
   margin: 0 auto;
   filter: var(--shadow-small-img);
-  transition: transform .4s;
+  transition: transform 0.4s;
 }
-.popular__title{
+.popular__title {
   font-size: var(--normal-font-size);
-  margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
 }
-.popular__price{
+.popular__price {
   color: var(--title-color);
   font-family: var(--second-font);
   font-size: var(--h2-font-size);
 }
-.popular__button{
+.popular__button {
   position: absolute;
-  right: .75rem;
+  right: 0.75rem;
   bottom: 1rem;
   outline: none;
   border: none;
   background-color: var(--second-color);
   color: var(--white-color);
   padding: 6px;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   font-size: 1.25rem;
   display: inline-flex;
   cursor: pointer;
 }
-.popular__card:hover .popular__img{
-  transform: translateY(-.5rem);
+.popular__card:hover .popular__img {
+  transform: translateY(-0.5rem);
 }
 
 /*=============== DELIVERY ===============*/
-
+.delivery__container {
+  row-gap: 2.5rem;
+}
+.delivery__data {
+  position: relative;
+  text-align: center;
+}
+.delivery__container .section__title {
+  margin-bottom: 1rem;
+}
+.delivery__description {
+  margin-bottom: 2rem;
+}
+.delivery__sticker {
+  width: 30px;
+  rotate: 15deg;
+  position: absolute;
+  right: 1rem;
+  bottom: 1.5rem;
+  opacity: 0.5;
+}
+.delivery__img {
+  width: 320px;
+  justify-self: center;
+  filter: var(--shadow-big-img);
+}
 /*=============== CONTACT ===============*/
-
+.contact__container {
+  position: relative;
+  background-color: var(--second-color);
+  padding-top: 3.5rem;
+  border-radius: 3rem;
+  overflow: hidden;
+}
+.contact__content {
+  row-gap: 3rem;
+}
+.contact__container .section__title,
+.contact__title,
+.contact__info {
+  color: var(--white-color);
+}
+.contact__data {
+  text-align: center;
+  row-gap: 2rem;
+}
+.contact__title {
+  font-size: var(--h2-font-size);
+  margin-bottom: 0.75rem;
+}
+.contact__social {
+  display: flex;
+  justify-content: center;
+  column-gap: 1rem;
+}
+.contact__social a {
+  width: 32px;
+  height: 32px;
+  background-color: var(--first-color);
+  color: var(--second-color);
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  display: grid;
+  place-items: center;
+  transition: transform 0.4s;
+}
+.contact__social a:hover {
+  transform: translateY(-0.25rem);
+}
+.contact__info {
+  font-style: normal;
+}
+.contact__image {
+  justify-self: center;
+}
+.contact__img {
+  width: 280px;
+}
+.contact__sticker-1,
+.contact__sticker-2 {
+  position: absolute;
+  opacity: 0.5;
+}
+.contact__sticker-1 {
+  width: 40px;
+  top: 6.5rem;
+  left: 1.5rem;
+}
+.contact__sticker-2 {
+  width: 30px;
+  right: 3rem;
+  bottom: 12rem;
+}
 /*=============== FOOTER ===============*/
 
 /*=============== SCROLL BAR ===============*/
