@@ -589,7 +589,80 @@ img {
 }
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
+@media screen and (max-width: 330px) {
+  .container {
+    margin-inline: 1rem;
+  }
+  .home__title {
+    font-size: 2.5rem;
+  }
+  .home__burger {
+    width: 210px;
+  }
+  .home__dish {
+    width: 250px;
+    bottom: -2rem;
+  }
+  .recipe__container {
+    column-gap: 5rem;
+  }
+  .recipe__img {
+    left: -8rem;
+  }
+  .popular__container {
+    grid-template-columns: 160px;
+    justify-content: center;
+  }
+  .footer__social {
+    grid-column: 1;
+  }
+  .footer__content {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
 
 /* For medium devices */
-
+@media screen and (min-width: 540px) {
+  .home__container,
+  .delivery__container {
+    grid-template-columns: 360px;
+    justify-content: center;
+  }
+  .recipe__img {
+    position: initial;
+  }
+  .recipe__container {
+    grid-template-columns: 200px 230px;
+    justify-content: center;
+    column-gap: 3rem;
+  }
+  .popular__container {
+    grid-template-columns: repeat(2, 160px);
+    justify-content: center;
+  }
+  .contact {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  .popular__container {
+    grid-template-columns: repeat(3, 160px);
+  }
+  .footer__social {
+    grid-column: initial;
+  }
+  .footer__content {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+  }
+  .footer__link:nth-child(1){
+    justify-self: start;
+  }
+  .footer__link:nth-child(2){
+    order: 2;
+    justify-self: end;
+  }
+}
 /* For large devices */
