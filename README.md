@@ -672,3 +672,4 @@
 |658| [Burger Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/658.Burger%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/658.Burger%20Website/)| ![Thumbnail](658.Burger%20Website/img/info_thumbnail.jpg)|
 |659| [Product Card](https://github.com/xml12333/HTML_CSS_JS/tree/main/659.Product%20Card)| [Demo](https://nikt.com.ua/projects/htmlCssJs/659.Product%20Card/)| ![Thumbnail](659.Product%20Card/img/info_thumbnail.jpg)|
 |670| [Step Indicator](https://github.com/xml12333/HTML_CSS_JS/tree/main/670.Step%20Indicator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/670.Step%20Indicator/)| ![Thumbnail](670.Step%20Indicator/img/info_thumbnail.jpg)|
+|671| [Bouncy Menu](https://github.com/xml12333/HTML_CSS_JS/tree/main/671.Bouncy%20Menu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/671.Bouncy%20Menu/)| ![Thumbnail](671.Bouncy%20Menu/img/info_thumbnail.jpg)|
