@@ -1,0 +1,273 @@
+@property --angle2 {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+@property --angle3 {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 40;
+}
+
+*, *::before, *::after {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  background-color: #111;
+  color: #fff;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  margin: 0 auto;
+  perspective: 800px;
+  
+  *:not(:empty) {
+    transform-style: preserve-3d;
+  }
+}
+
+.scene {
+  --sceneAngleX: -10;
+  --sceneAngleY: -30;
+  --angle1: 0;
+  
+  --lampColor: #dde;
+  --lightColorBase: #ff0;
+  --lightColorBeam: #ff0;
+  --stopAnimation: true;
+  
+  position: relative;
+  pointer-events: none;
+  transform: rotateX(calc(var(--sceneAngleX) * 1deg)) rotateY(calc(var(--sceneAngleY) * 1deg));
+  -webkit-animation: var(--stopAnimation, angle2 3s infinite ease-in-out);
+          animation: var(--stopAnimation, angle2 3s infinite ease-in-out);
+
+  * {
+    position: absolute;
+  }
+}
+
+@-webkit-keyframes angle2 {
+  0%, 100% { --angle2: 0; --angle3: 40; }
+  15% { --angle2: -20; -webkit-animation-timing-function: ease-in; animation-timing-function: ease-in; }
+  25% { --angle2: 20; }
+  75% { --angle2: 0; --angle3: 40; -webkit-animation-timing-function: ease-out; animation-timing-function: ease-out; }
+  80% { --angle2: -10; }
+  90% { --angle3: 50; }
+}
+
+@keyframes angle2 {
+  0%, 100% { --angle2: 0; --angle3: 40; }
+  15% { --angle2: -20; -webkit-animation-timing-function: ease-in; animation-timing-function: ease-in; }
+  25% { --angle2: 20; }
+  75% { --angle2: 0; --angle3: 40; -webkit-animation-timing-function: ease-out; animation-timing-function: ease-out; }
+  80% { --angle2: -10; }
+  90% { --angle3: 50; }
+}
+
+.lamp {
+  transform: translate(-6em, 12em);
+  -webkit-animation: var(--stopAnimation, lampJump 1.5s infinite ease-out alternate);
+          animation: var(--stopAnimation, lampJump 1.5s infinite ease-out alternate);
+}
+
+@-webkit-keyframes lampJump {
+  0%, 50% { transform: translate(-6em, 12em);}
+  100% { transform: translate(-6em, 6em);}
+}
+
+@keyframes lampJump {
+  0%, 50% { transform: translate(-6em, 12em);}
+  100% { transform: translate(-6em, 6em);}
+}
+
+
+.base {
+  transform: translateY(1.8em);
+  
+  div {
+    inset: -0.5em -1.5em;
+    background-color: var(--lampColor);
+    transform: rotateY(calc(var(--ix) * 30deg)) translateZ(5.5em);
+    transform-style: preserve-3d;
+    box-shadow: 0 0 0.5em #000 inset;
+   
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%; height: 5.7em;
+      background-color: var(--lampColor);
+      background-image: radial-gradient(circle at 50% 100%, #000a, #0000 100%);
+      transform: rotateX(-100deg);
+      transform-origin: top;
+      -webkit-clip-path: polygon(0 0, 100% 0, 50% 100%);
+              clip-path: polygon(0 0, 100% 0, 50% 100%);
+      box-shadow: 0 0 0.5em #000 inset;
+    }
+  }
+}
+
+.s {
+  left: 0em; bottom: 100%;
+  width: 1em;
+  transform-origin: bottom;
+}
+
+.s1 {
+  left: -0.5em; bottom: 0;
+  height: 2em;
+}
+
+.s2 {
+  height: 4em;
+  transform: rotateZ(calc(var(--angle1) * 1deg + var(--angle2) * -1deg + 60deg));
+}
+
+.s3 {
+  height: 8em;
+  transform: rotateZ(calc(var(--angle1) * 1deg + var(--angle2) * 1deg - 30deg));
+}
+
+.s4 {
+  height: 8em;
+  transform: rotateZ(calc(var(--angle2) * 2deg - 90deg));
+}
+
+.s5 {
+  height: 4em;
+  transform: rotateZ(calc(var(--angle2) * -2deg + 90deg));
+}
+
+.s6 {
+  height: 6em;
+  transform: rotateZ(calc(var(--angle2) * -3deg + 60deg));
+}
+
+.s7 {
+  height: 4em;
+  transform: rotateZ(calc(var(--angle2) * -2deg + 30deg));
+}
+
+.s8 {
+  height: 6em;
+  transform: rotateZ(calc(var(--angle2) * -1deg + 30deg));
+}
+
+.s9 {
+  height: 4em;
+  transform: rotateZ(calc(var(--angle2) * 1deg + -30deg));
+}
+
+.s10 {
+  height: 4em;
+  transform: rotateZ(calc(var(--angle2) * 1deg + 30deg));
+}
+
+.s11 {
+  height: 1.5em;
+  transform: rotateZ(calc(var(--angle3) * 1deg + var(--angle2) * 1deg + 45deg));
+}
+
+.d {
+  inset: -0.5em 0;
+  transform: translateZ(calc(var(--offset) * 1.2));
+}
+
+i {
+  background-color: var(--lampColor);
+  box-shadow: 0 0 0.5em #000 inset;
+  
+  &:nth-child(1) {
+    inset: 0;
+    transform: translateZ(0.25em);
+    background-image:
+      radial-gradient(circle at 50% 0.5em, #000 0.15em, transparent 0),
+      radial-gradient(circle at 50% calc(100% - 0.5em), #000 0.15em, transparent 0);
+  }
+  &:nth-child(2) {
+    inset: 0 0.25em;
+    transform: rotateY(90deg) translateZ(0.5em);
+  }
+  &:nth-child(3) {
+    inset: 0;
+    transform: rotateY(180deg) translateZ(0.25em);
+    background-image:
+      radial-gradient(circle at 50% 0.5em, #000 0.15em, transparent 0),
+      radial-gradient(circle at 50% calc(100% - 0.5em), #000 0.15em, transparent 0);
+  }
+  &:nth-child(4) {
+    inset: 0 0.25em;
+    transform: rotateY(270deg) translateZ(0.5em);
+  }
+  &:nth-child(5) {
+    width: 100%; height: 0.5em;
+    left: 0; top: -0.25em;
+    transform: rotateX(90deg);
+  }
+  &:nth-child(6) {
+    width: 100%; height: 0.5em;
+    left: 0; bottom: -0.25em;
+    transform: rotateX(90deg);
+  }
+}
+
+.head {
+  left: 0; top: 0;
+  
+  div {
+    transform-origin: bottom;
+    background-color: var(--lampColor);
+    box-shadow: 0 0 0.5em #000 inset;
+  }
+  
+  > div {
+    left: 0; bottom: 0.25em;
+    width: 1em; height: 2em;
+    transform: rotateY(calc(var(--ix) * 30deg)) rotateX(70deg);
+
+    > div {
+      left: 0; bottom: 100%;
+      width: 1em; height: 1em;
+      transform: rotateX(-70deg);
+
+      > div {
+        left: -0.75em; bottom: 100%;
+        width: 2.5em; height: 6em;
+        transform: rotateX(27deg);
+        -webkit-clip-path: polygon(0 0, 100% 0, 1.75em 100%, 0.75em 100%);
+                clip-path: polygon(0 0, 100% 0, 1.75em 100%, 0.75em 100%);
+        background-image: linear-gradient(#0000, 80%, #0004);
+      }
+    }
+  }
+}
+
+.light {
+  left: 0; top: 0;
+  
+  div {
+    left: 0; bottom: 0.5em;
+    width: 1em; height: 4em;
+    transform: rotateY(calc(var(--ix) * 15deg)) rotateX(90deg);
+    background-color: var(--lightColorBase);
+    transform-style: preserve-3d;
+      
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      left: -2.2em; top: 50%;
+      width: 5.4em; height: 40em; 
+      background-image: linear-gradient(var(--lightColorBeam), #ff00);
+      transform: rotateZ(var(--rz, 0)) translateY(-2em) rotateX(117deg);
+      transform-origin: top;
+      -webkit-clip-path: polygon(calc(50% - 0.25em) 0, calc(50% + 0.25em) 0, 100% 100%, 0 100%);
+              clip-path: polygon(calc(50% - 0.25em) 0, calc(50% + 0.25em) 0, 100% 100%, 0 100%);
+    }
+    &::after {
+      --rz: 180deg;
+    }
+  }
+}
