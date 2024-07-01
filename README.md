@@ -674,3 +674,4 @@
 |670| [Step Indicator](https://github.com/xml12333/HTML_CSS_JS/tree/main/670.Step%20Indicator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/670.Step%20Indicator/)| ![Thumbnail](670.Step%20Indicator/img/info_thumbnail.jpg)|
 |671| [Bouncy Menu](https://github.com/xml12333/HTML_CSS_JS/tree/main/671.Bouncy%20Menu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/671.Bouncy%20Menu/)| ![Thumbnail](671.Bouncy%20Menu/img/info_thumbnail.jpg)|
 |672| [Pixar Lamp](https://github.com/xml12333/HTML_CSS_JS/tree/main/672.Pixar%20Lamp)| [Demo](https://nikt.com.ua/projects/htmlCssJs/672.Pixar%20Lamp/)| ![Thumbnail](672.Pixar%20Lamp/img/info_thumbnail.jpg)|
+|673| [Gooey Button](https://github.com/xml12333/HTML_CSS_JS/tree/main/673.Gooey%20Button)| [Demo](https://nikt.com.ua/projects/htmlCssJs/673.Gooey%20Button/)| ![Thumbnail](673.Gooey%20Button/img/info_thumbnail.jpg)|

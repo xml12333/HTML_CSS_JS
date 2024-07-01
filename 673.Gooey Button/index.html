@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gooey SVG Filter Button</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://codepen.io/simeydotme/pen/JjVgPVg/cf6bd78bc35895cfde263b6098003c0b.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <main id="app" class="dark">
+      <header>
+      </header>
+
+      <div>
+        <button type="button">Gooey Button</button>
+      </div>
+      <p></p>
+    </main>
+
+    <svg width="0" height="0" style="position: absolute">
+      <filter id="goo" x="-50%" y="-50%" width="200%" height="200%">
+        <feComponentTransfer>
+          <feFuncA type="discrete" tableValues="0 1"></feFuncA>
+        </feComponentTransfer>
+        <feGaussianBlur stdDeviation="5"></feGaussianBlur>
+        <feComponentTransfer>
+          <feFuncA type="table" tableValues="-5 11"></feFuncA>
+        </feComponentTransfer>
+      </filter>
+    </svg>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
