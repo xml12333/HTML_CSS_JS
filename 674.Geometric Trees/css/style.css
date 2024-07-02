@@ -1,0 +1,2420 @@
+/*____________________________________________________________
+
+# Auxiliary styles
+# Container
+	## Menu
+	## Burger
+	## Seedling
+	## Sepal
+	## Linden
+	## Pine
+	## Palm
+	## Fir
+	## Rose
+	## Willow
+	## Sunflower
+	## Bell
+	## Poplar
+
+____________________________________________________________*/
+/*____________________________________________________________
+# Auxiliary styles
+____________________________________________________________*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1eee2;
+}
+
+._bg_black {
+  background-color: #000;
+}
+
+._bg_red {
+  background-color: #de162a;
+}
+
+/*____________________________________________________________
+# Container
+____________________________________________________________*/
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f1eee2;
+  transition: 1s;
+}
+.container._seedling .seedling {
+  display: block;
+}
+.container._sepal .sepal {
+  display: block;
+}
+.container._linden .linden {
+  display: block;
+}
+.container._pine .pine {
+  display: block;
+}
+.container._palm .palm {
+  display: block;
+}
+.container._fir .fir {
+  display: block;
+}
+.container._rose .rose {
+  display: block;
+}
+.container._willow .willow {
+  display: block;
+}
+.container._sunflower .sunflower {
+  display: block;
+}
+.container._bell .bell {
+  display: block;
+}
+.container._poplar .poplar {
+  display: block;
+}
+.container .seedling,
+.container .sepal,
+.container .linden,
+.container .pine,
+.container .palm,
+.container .fir,
+.container .rose,
+.container .willow,
+.container .sunflower,
+.container .bell,
+.container .poplar {
+  display: none;
+}
+.container.popup {
+  transform: scale(0.9);
+}
+
+/*____________________________________________________________
+## Menu
+____________________________________________________________*/
+.menu {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: -130%;
+  background-color: #f1eee2;
+  transition: 1s;
+  z-index: 10;
+}
+.menu.popup {
+  top: 0;
+  transition-delay: 0.2s;
+}
+.menu .menu__item {
+  float: left;
+  width: 25%;
+  height: 33.333333333%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.menu .menu__item:hover {
+  transform: scale(0.9);
+}
+.menu .menu__item.active {
+  background-color: #e0dabf;
+}
+.menu .menu__item._seedling {
+  background-image: url(https://rawcdn.githack.com/Kerthin/trees-templateSait/803681865fc0778a90cc3f4b0c21e872773a87a7/dist/image/trees/seedling.png);
+}
+.menu .menu__item._sepal {
+  background-image: url(https://rawcdn.githack.com/Kerthin/trees-templateSait/803681865fc0778a90cc3f4b0c21e872773a87a7/dist/image/trees/sepal.png);
+}
+.menu .menu__item._linden {
+  background-image: url(https://rawcdn.githack.com/Kerthin/trees-templateSait/803681865fc0778a90cc3f4b0c21e872773a87a7/dist/image/trees/linden.png);
+}
+.menu .menu__item._pine {
+  background-image: url(https://rawcdn.githack.com/Kerthin/trees-templateSait/803681865fc0778a90cc3f4b0c21e872773a87a7/dist/image/trees/pine.png);
+}
+.menu .menu__item._palm {
+  background-image: url(https://rawcdn.githack.com/Kerthin/trees-templateSait/803681865fc0778a90cc3f4b0c21e872773a87a7/dist/image/trees/palm.png);
+}
+.menu .menu__item._fir {
+  background-image: url(https://rawcdn.githack.com/Kerthin/trees-templateSait/803681865fc0778a90cc3f4b0c21e872773a87a7/dist/image/trees/fir.png);
+}
+.menu .menu__item._rose {
+  background-image: url(https://rawcdn.githack.com/Kerthin/trees-templateSait/803681865fc0778a90cc3f4b0c21e872773a87a7/dist/image/trees/rose.png);
+}
+.menu .menu__item._willow {
+  background-image: url(https://rawcdn.githack.com/Kerthin/trees-templateSait/803681865fc0778a90cc3f4b0c21e872773a87a7/dist/image/trees/willow.png);
+}
+.menu .menu__item._sunflower {
+  background-image: url(https://rawcdn.githack.com/Kerthin/trees-templateSait/803681865fc0778a90cc3f4b0c21e872773a87a7/dist/image/trees/sunflower.png);
+}
+.menu .menu__item._bell {
+  background-image: url(https://rawcdn.githack.com/Kerthin/trees-templateSait/803681865fc0778a90cc3f4b0c21e872773a87a7/dist/image/trees/bell.png);
+}
+.menu .menu__item._poplar {
+  background-image: url(https://rawcdn.githack.com/Kerthin/trees-templateSait/803681865fc0778a90cc3f4b0c21e872773a87a7/dist/image/trees/poplar.png);
+}
+
+/*____________________________________________________________
+## Burger
+____________________________________________________________*/
+.burger {
+  position: absolute;
+  right: 5px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 11;
+}
+.burger .burger__input {
+  display: none;
+  outline: none;
+}
+.burger .burger__input.checked + .strokeWrap ._first,
+.burger .burger__input.checked + .strokeWrap ._third {
+  --length: 22.627416998;
+  --offset: -94.1149185097;
+}
+.burger .burger__input.checked + .strokeWrap ._second {
+  --length: 0;
+  --offset: -50;
+}
+.burger .strokeWrap__stroke {
+  fill: none;
+  stroke: #000;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  --length: 24;
+  --offset: -38;
+  stroke-dasharray: var(--length) var(--total-length);
+  stroke-dashoffset: var(--offset);
+  transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.burger .strokeWrap__stroke._first, .burger .strokeWrap__stroke._third {
+  --total-length: 126.64183044433594;
+}
+.burger .strokeWrap__stroke._second {
+  --total-length: 70;
+}
+
+/*____________________________________________________________
+## Seedling
+____________________________________________________________*/
+.seedling {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 470px;
+  height: 816px;
+  overflow: hidden;
+}
+.seedling .rod {
+  position: relative;
+  margin: 0 auto;
+  width: 4px;
+  height: 100%;
+  background-color: #000;
+}
+.seedling .rod .basis {
+  position: absolute;
+  height: 324px;
+  bottom: 54px;
+  border: 2px #000;
+  z-index: 2;
+}
+.seedling .rod ._bs_dash {
+  border-style: dashed;
+}
+.seedling .rod ._bs_dot {
+  border-style: dotted;
+}
+.seedling .rod ._bs_solid {
+  border-style: solid;
+}
+.seedling .rod .legs {
+  position: absolute;
+  bottom: -35px;
+  left: -34px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 4px solid #000;
+}
+.seedling .rod .circle {
+  position: absolute;
+  border-radius: 50%;
+}
+.seedling .rod ._bCircle {
+  left: -20.5px;
+  width: 43px;
+  height: 43px;
+}
+.seedling .rod ._xl {
+  left: -26.5px;
+  width: 55px;
+  height: 55px;
+}
+.seedling .rod ._xl_margin {
+  bottom: 446px;
+}
+.seedling .rod ._left {
+  border-right: 0;
+}
+.seedling .rod ._right {
+  border-left: 0;
+}
+.seedling .rod ._left_1 {
+  width: 50px;
+  left: -50px;
+  border-bottom-left-radius: 105px 100%;
+  border-top-left-radius: 105px 100%;
+}
+.seedling .rod ._right_1 {
+  width: 50px;
+  right: -50px;
+  border-bottom-right-radius: 105px 100%;
+  border-top-right-radius: 105px 100%;
+}
+.seedling .rod ._left_2 {
+  width: 60px;
+  left: -60px;
+  border-bottom-left-radius: 125px 100%;
+  border-top-left-radius: 125px 100%;
+}
+.seedling .rod ._right_2 {
+  width: 60px;
+  right: -60px;
+  border-bottom-right-radius: 125px 100%;
+  border-top-right-radius: 125px 100%;
+}
+.seedling .rod ._left_3 {
+  width: 70px;
+  left: -70px;
+  border-bottom-left-radius: 145px 100%;
+  border-top-left-radius: 145px 100%;
+}
+.seedling .rod ._right_3 {
+  width: 70px;
+  right: -70px;
+  border-bottom-right-radius: 145px 100%;
+  border-top-right-radius: 145px 100%;
+}
+.seedling .rod ._left_4 {
+  width: 80px;
+  left: -80px;
+  border-bottom-left-radius: 165px 100%;
+  border-top-left-radius: 165px 100%;
+}
+.seedling .rod ._right_4 {
+  width: 80px;
+  right: -80px;
+  border-bottom-right-radius: 165px 100%;
+  border-top-right-radius: 165px 100%;
+}
+.seedling .rod ._left_5 {
+  width: 90px;
+  left: -90px;
+  border-bottom-left-radius: 185px 100%;
+  border-top-left-radius: 185px 100%;
+}
+.seedling .rod ._right_5 {
+  width: 90px;
+  right: -90px;
+  border-bottom-right-radius: 185px 100%;
+  border-top-right-radius: 185px 100%;
+}
+.seedling .rod ._left_6 {
+  width: 100px;
+  left: -100px;
+  border-bottom-left-radius: 205px 100%;
+  border-top-left-radius: 205px 100%;
+}
+.seedling .rod ._right_6 {
+  width: 100px;
+  right: -100px;
+  border-bottom-right-radius: 205px 100%;
+  border-top-right-radius: 205px 100%;
+}
+.seedling .rod ._left_7 {
+  width: 110px;
+  left: -110px;
+  border-bottom-left-radius: 225px 100%;
+  border-top-left-radius: 225px 100%;
+}
+.seedling .rod ._right_7 {
+  width: 110px;
+  right: -110px;
+  border-bottom-right-radius: 225px 100%;
+  border-top-right-radius: 225px 100%;
+}
+.seedling .rod ._left_8 {
+  width: 120px;
+  left: -120px;
+  border-bottom-left-radius: 245px 100%;
+  border-top-left-radius: 245px 100%;
+}
+.seedling .rod ._right_8 {
+  width: 120px;
+  right: -120px;
+  border-bottom-right-radius: 245px 100%;
+  border-top-right-radius: 245px 100%;
+}
+.seedling .rod ._xl_arc {
+  left: -8.5px;
+  width: 48px;
+  height: 48px;
+  bottom: 536px;
+}
+.seedling .rod ._lg_arc {
+  left: 23px;
+  width: 40px;
+  height: 40px;
+  bottom: 616px;
+}
+.seedling .rod ._xm_arc {
+  left: 60px;
+  width: 34px;
+  height: 34px;
+  bottom: 683px;
+}
+.seedling .rod ._md_arc {
+  left: 104px;
+  width: 26px;
+  height: 26px;
+  bottom: 735px;
+}
+.seedling .rod ._sm_arc {
+  left: 153px;
+  width: 19px;
+  height: 19px;
+  bottom: 770px;
+}
+.seedling .rod ._xs_arc {
+  left: 209px;
+  width: 12px;
+  height: 12px;
+  bottom: 787px;
+}
+.seedling .rod ._lg_rod {
+  left: -14px;
+  width: 32px;
+  height: 32px;
+  bottom: 592px;
+}
+.seedling .rod ._md_rod {
+  left: -12.5px;
+  width: 27px;
+  height: 27px;
+  bottom: 673px;
+}
+.seedling .rod ._sm_rod {
+  left: -9px;
+  width: 22px;
+  height: 22px;
+  bottom: 736px;
+}
+.seedling .rod ._xs_rod {
+  left: -7px;
+  width: 18px;
+  height: 18px;
+  bottom: px;
+}
+.seedling .rod ._b_circle_margin_1 {
+  bottom: 286.25px;
+}
+.seedling .rod ._b_circle_margin_2 {
+  bottom: 195.5px;
+}
+.seedling .rod ._b_circle_margin_3 {
+  bottom: 102.75px;
+}
+.seedling .arc {
+  position: absolute;
+  left: -46px;
+  top: 300px;
+  width: 778px;
+  height: 220px;
+  border-bottom-left-radius: 400px 230px;
+  border-bottom-right-radius: 400px 230px;
+  border: 4px solid #000;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  transform: rotate(90deg);
+}
+
+@media screen and (orientation: landscape) and (max-height: 846px) {
+  .seedling {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 682px) {
+  .seedling {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 520px) {
+  .seedling {
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 356px) {
+  .seedling {
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+}
+@media screen and (max-width: 500px) {
+  .seedling {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+@media screen and (max-width: 375px) {
+  .seedling {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+@media screen and (max-width: 320px) {
+  .seedling {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+}
+/*____________________________________________________________
+## Sepal
+____________________________________________________________*/
+.sepal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 207px;
+  height: 818px;
+}
+.sepal .rod {
+  position: relative;
+  margin: 0 auto;
+  width: 4px;
+  height: 100%;
+  background-color: #000;
+}
+.sepal .rod .arc {
+  position: absolute;
+  top: -160px;
+  left: -170px;
+  width: 340px;
+  height: 340px;
+  border: 4px solid #000;
+  border-radius: 50%;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  transform: rotate(45deg);
+}
+.sepal .rod .arc .arc__circle {
+  position: absolute;
+  top: 24px;
+  right: 35px;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background-color: #de162a;
+}
+.sepal .rod .brunch {
+  position: absolute;
+  left: -54px;
+  bottom: 182px;
+  width: 108px;
+  height: 114px;
+  border: 4px solid #000;
+  border-top-color: transparent;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+.sepal .rod .cup {
+  position: absolute;
+  border-radius: 50%;
+  width: 105px;
+  height: 105px;
+  background-color: #000;
+  z-index: 1;
+}
+.sepal .rod .cup._center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.sepal .rod .cup._left {
+  right: 1px;
+}
+.sepal .rod .cup._l1 {
+  bottom: 586px;
+}
+.sepal .rod .cup._l2 {
+  bottom: 469px;
+}
+.sepal .rod .cup._l3 {
+  bottom: 352px;
+}
+.sepal .rod .cup._l4 {
+  bottom: 235px;
+}
+.sepal .rod .cup._r1 {
+  bottom: 526px;
+}
+.sepal .rod .cup._r2 {
+  bottom: 409px;
+}
+.sepal .rod .cup._r3 {
+  bottom: 292px;
+}
+.sepal .rod .cup .kernel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background-color: #de162a;
+}
+
+@media screen and (orientation: landscape) and (max-height: 846px) {
+  .sepal {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 682px) {
+  .sepal {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 520px) {
+  .sepal {
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 356px) {
+  .sepal {
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+}
+@media screen and (max-width: 414px) {
+  .sepal {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+@media screen and (max-width: 375px) {
+  .sepal {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+@media screen and (max-width: 320px) {
+  .sepal {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+}
+/*____________________________________________________________
+## Linden
+____________________________________________________________*/
+.linden {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 356px;
+  height: 884px;
+}
+.linden .leftRod {
+  position: absolute;
+  bottom: 0;
+  left: 160px;
+  width: 4px;
+  height: 380px;
+  background-color: #000;
+}
+.linden .leftRod .leftRod__leftBruch {
+  position: absolute;
+  top: -80px;
+  right: 0;
+  width: 56px;
+  height: 80px;
+  border: 4px solid #000;
+  border-top: 0;
+  border-right: 0;
+}
+.linden .leftRod .leftRod__leftBruch ._cmlb {
+  top: -46px;
+  left: -25px;
+}
+.linden .centerRod {
+  position: absolute;
+  bottom: 0;
+  left: 175px;
+  width: 4px;
+  height: 797px;
+  background-color: #000;
+}
+.linden .centerRod .bottomArc {
+  position: absolute;
+  bottom: 437px;
+  right: -85px;
+  width: 240px;
+  height: 70px;
+  border: 4px solid #000;
+  border-top: 0;
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: 70px;
+}
+.linden .centerRod .bottomArc .bottomArc__rightBranch {
+  position: absolute;
+  top: -95px;
+  right: -4px;
+  width: 4px;
+  height: 95px;
+  background-color: #000;
+}
+.linden .centerRod .bottomArc .bottomArc__rightBranch ._position_2 {
+  top: -101px;
+  left: -85px;
+}
+.linden .centerRod .bottomArc ._position_1 {
+  bottom: 42px;
+  left: -28px;
+}
+.linden .centerRod .topArc {
+  position: absolute;
+  bottom: 488px;
+  left: 4px;
+  width: 145px;
+  height: 4px;
+  background-color: #000;
+}
+.linden .centerRod .topArc .topArc__leftBranch {
+  position: absolute;
+  bottom: 0;
+  left: -75px;
+  width: 150px;
+  height: 150px;
+  border: 4px solid #000;
+  border-radius: 50%;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  transform: rotate(45deg);
+}
+.linden .centerRod .topArc ._position_3 {
+  bottom: 0;
+  right: -32px;
+}
+.linden .centerRod .topArc ._position_4 {
+  bottom: 75px;
+  left: -125px;
+}
+.linden .centerRod ._position_5 {
+  top: -87px;
+  left: -60px;
+}
+.linden .centerRod ._position_5 .basisBrunch {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 50%;
+  background-color: #000;
+}
+.linden .rightRod {
+  position: absolute;
+  bottom: 0;
+  left: 192px;
+  width: 4px;
+  height: 362px;
+  background-color: #000;
+}
+.linden .rightRod .rightRod__rightBruch {
+  position: absolute;
+  top: -169px;
+  width: 32px;
+  height: 169px;
+  border: 4px solid #000;
+  border-top: 0;
+  border-left: 0;
+}
+.linden .rightRod .rightRod__rightBruch ._cmrb {
+  top: -46px;
+  right: -25px;
+}
+.linden .circle {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+}
+.linden .circle._center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.linden .crown {
+  position: absolute;
+  border-radius: 100px;
+}
+.linden .crown._sm {
+  width: 62px;
+  height: 108px;
+}
+.linden .crown._md {
+  width: 101px;
+  height: 178px;
+}
+.linden .crown._lg {
+  width: 124px;
+  height: 218px;
+}
+.linden .crown._md_horizontal {
+  width: 178px;
+  height: 101px;
+}
+
+@media screen and (orientation: landscape) and (max-height: 914px) {
+  .linden {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 737px) {
+  .linden {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 550px) {
+  .linden {
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 406px) {
+  .linden {
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+}
+@media screen and (max-width: 500px) {
+  .linden {
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+}
+@media screen and (max-width: 375px) {
+  .linden {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+@media screen and (max-width: 320px) {
+  .linden {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+}
+/*____________________________________________________________
+## Pipe
+____________________________________________________________*/
+.pine {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 456px;
+  height: 884px;
+}
+.pine .leftRod {
+  position: absolute;
+  bottom: 0;
+  left: 262px;
+  width: 19px;
+  height: 410px;
+  border: 4px solid #000;
+  border-top-left-radius: 70px;
+  border-bottom: 0;
+  border-right: 0;
+}
+.pine .leftRod .leftRod__rightBrunch {
+  position: absolute;
+  top: -41px;
+  right: -101px;
+  width: 101px;
+  height: 41px;
+  border: 4px solid #000;
+  border-bottom-right-radius: 70px;
+  border-top: 0;
+  border-left: 0;
+}
+.pine .leftRod .leftRod__rightBrunch ._position_1 {
+  top: -77px;
+  left: 23px;
+}
+.pine .centerRod {
+  position: absolute;
+  left: 277px;
+  width: 4px;
+  height: 100%;
+  background-color: #000;
+}
+.pine .centerRod .centerRod__bottomLeftBrunch {
+  position: absolute;
+  bottom: 473px;
+  right: 0;
+  width: 90px;
+  height: 47px;
+  border: 4px solid #000;
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: px;
+  border-top: 0;
+  border-left: borderLeft;
+  border-right: borderRight;
+}
+.pine .centerRod .centerRod__bottomLeftBrunch ._position_3 {
+  top: -61px;
+  left: -63px;
+  right: px;
+}
+.pine .centerRod .centerRod__bottomRightBrunch {
+  position: absolute;
+  bottom: 558px;
+  width: 95px;
+  height: 40px;
+  border: 4px solid #000;
+  border-bottom-left-radius: px;
+  border-bottom-right-radius: 70px;
+  border-top: 0;
+  border-left: borderLeft;
+  border-right: borderRight;
+}
+.pine .centerRod .centerRod__bottomRightBrunch ._position_4 {
+  top: -61px;
+  left: px;
+  right: -63px;
+}
+.pine .centerRod .centerRod__topLeftBrunch {
+  position: absolute;
+  bottom: 609px;
+  right: 0;
+  width: 83px;
+  height: 47px;
+  border: 4px solid #000;
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: px;
+  border-top: 0;
+  border-left: borderLeft;
+  border-right: borderRight;
+}
+.pine .centerRod .centerRod__topLeftBrunch ._position_5 {
+  top: -50px;
+  left: -51px;
+  right: px;
+}
+.pine .centerRod .centerRod__topRightBrunch {
+  position: absolute;
+  bottom: 690px;
+  width: 88px;
+  height: 39px;
+  border: 4px solid #000;
+  border-bottom-left-radius: px;
+  border-bottom-right-radius: 70px;
+  border-top: 0;
+  border-left: borderLeft;
+  border-right: borderRight;
+}
+.pine .centerRod .centerRod__topRightBrunch ._position_6 {
+  top: -50px;
+  left: px;
+  right: -51px;
+}
+.pine .centerRod ._position_7 {
+  bottom: 791px;
+  left: -37px;
+}
+.pine .rightRod {
+  position: absolute;
+  bottom: 0;
+  left: 262px;
+  width: 40px;
+  height: 327px;
+  border: 4px solid #000;
+  border-top-right-radius: 70px;
+  border-bottom: 0;
+  border-left: 0;
+}
+.pine .rightRod .rightRod__leftBrunch {
+  position: absolute;
+  top: -47px;
+  left: -84px;
+  width: 84px;
+  height: 47px;
+  border: 4px solid #000;
+  border-bottom-left-radius: 70px;
+  border-top: 0;
+  border-right: 0;
+}
+.pine .rightRod .rightRod__leftBrunch ._position_2 {
+  top: -77px;
+  right: 6px;
+}
+.pine .rightRod .rightRod__leftBrunch .crown__leftBrunch {
+  position: absolute;
+  top: 0;
+  left: -104px;
+  width: 104px;
+  height: 4px;
+}
+.pine .circle {
+  position: absolute;
+  top: -22px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+}
+.pine .crown {
+  position: absolute;
+  border-radius: 0 0 50% 50%/0 0 100% 100%;
+}
+.pine .crown .basisBrunch {
+  position: absolute;
+  width: 4px;
+  height: 50%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+}
+.pine .crown .centerBrunch {
+  position: absolute;
+  top: -53px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 53px;
+  background-color: #000;
+}
+.pine .crown .centerBrunch .centerBrunch__leftBrunch {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 166px;
+  height: 4px;
+}
+.pine .crown._lg {
+  width: 152px;
+  height: 77px;
+}
+.pine .crown._lg .kernel {
+  width: 76px;
+}
+.pine .crown._md {
+  width: 122px;
+  height: 61px;
+}
+.pine .crown._md .kernel {
+  width: 61px;
+}
+.pine .crown._sm {
+  width: 98px;
+  height: 50px;
+}
+.pine .crown._sm .kernel {
+  width: 49px;
+}
+.pine .crown._xs {
+  width: 78px;
+  height: 40px;
+}
+.pine .crown._xs .kernel {
+  width: 39px;
+}
+.pine .crown .kernel {
+  margin: 0 auto;
+  height: 50%;
+  border-radius: 0 0 50% 50%/0 0 100% 100%;
+}
+
+@media screen and (orientation: landscape) and (max-height: 914px) {
+  .pine {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 737px) {
+  .pine {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 550px) {
+  .pine {
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 406px) {
+  .pine {
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+}
+@media screen and (max-width: 500px) {
+  .pine {
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+}
+@media screen and (max-width: 375px) {
+  .pine {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+@media screen and (max-width: 320px) {
+  .pine {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+}
+/*____________________________________________________________
+## Palm
+____________________________________________________________*/
+.palm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 610px;
+  height: 893px;
+}
+.palm .rod {
+  position: absolute;
+  bottom: 0;
+  width: 4px;
+  background-color: #000;
+}
+.palm .rod._sm {
+  left: 498px;
+  height: 535px;
+}
+.palm .rod._xl {
+  left: 458px;
+  height: 848px;
+}
+.palm .rod._xm {
+  left: 404px;
+  height: 680px;
+}
+.palm .rod._xs {
+  left: 362px;
+  height: 436px;
+}
+.palm .rod._md {
+  left: 290px;
+  height: 592px;
+}
+.palm .rod._lg {
+  left: 240px;
+  height: 776px;
+}
+.palm .rod .crown {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 0 0 50% 50%/0 0 100% 100%;
+  background-color: #000;
+}
+.palm .rod .crown._xs {
+  width: 194px;
+  height: 35px;
+}
+.palm .rod .crown._sm {
+  width: 218px;
+  height: 40px;
+}
+.palm .rod .crown._md {
+  width: 254px;
+  height: 45px;
+}
+.palm .rod .crown._xm {
+  width: 248px;
+  height: 44px;
+}
+.palm .rod .crown._lg {
+  width: 263px;
+  height: 46px;
+}
+.palm .rod .crown._xl {
+  width: 292px;
+  height: 52px;
+}
+.palm .rod .crown._cup {
+  width: 118px;
+  height: 59px;
+}
+.palm .rod .crown .kernel {
+  position: absolute;
+  top: -46px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.palm .rod .crown .arc {
+  position: absolute;
+  top: -85px;
+  height: 100px;
+  border: 4px solid;
+}
+.palm .rod .crown .arc._lg {
+  width: 59px;
+}
+.palm .rod .crown .arc._lg._left {
+  left: 0;
+  border-bottom-left-radius: 100px;
+  border-top: 0;
+  border-right: 0;
+}
+.palm .rod .crown .arc._lg._right {
+  right: 0;
+  border-bottom-right-radius: 100px;
+  border-top: 0;
+  border-left: 0;
+}
+.palm .rod .crown .arc._sm {
+  width: 24px;
+}
+.palm .rod .crown .arc._sm._left {
+  left: 35px;
+  border-bottom-left-radius: 100px;
+  border-top: 0;
+  border-right: 0;
+}
+.palm .rod .crown .arc._sm._right {
+  right: 35px;
+  border-bottom-right-radius: 100px;
+  border-top: 0;
+  border-left: 0;
+}
+.palm .rod .crown .arc._lg._left .arc__circle, .palm .rod .crown .arc._sm._left .arc__circle {
+  left: -15px;
+}
+.palm .rod .crown .arc._lg._right .arc__circle, .palm .rod .crown .arc._sm._right .arc__circle {
+  right: -15px;
+}
+.palm .rod .crown .arc .arc__circle {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+.palm .rod .leftBrunch {
+  position: absolute;
+  bottom: 286px;
+  right: 4px;
+  width: 170px;
+  height: 4px;
+  background-color: #000;
+}
+.palm .rod .leftBrunch .wave {
+  position: absolute;
+  bottom: 0;
+  width: 50px;
+  height: 29px;
+  border: 4px solid #000;
+}
+.palm .rod .leftBrunch .wave._left {
+  left: -50px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-right: 0;
+}
+.palm .rod .leftBrunch .wave._right {
+  right: -50px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-left: 0;
+}
+.palm .rod .leftBrunch .wave._top {
+  top: -29px;
+}
+.palm .rod .leftBrunch .wave .wave__topBrunch {
+  position: absolute;
+  bottom: 21px;
+  right: 0;
+  width: 4px;
+  height: 131px;
+  background-color: #000;
+}
+
+@media screen and (orientation: landscape) and (max-height: 924px) {
+  .palm {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 747px) {
+  .palm {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 560px) {
+  .palm {
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 416px) {
+  .palm {
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+}
+@media screen and (max-width: 640px) {
+  .palm {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+@media screen and (max-width: 518px) {
+  .palm {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+@media screen and (max-width: 375px) {
+  .palm {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+}
+@media screen and (max-width: 320px) {
+  .palm {
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+}
+/*____________________________________________________________
+## Fir
+____________________________________________________________*/
+.fir {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 554px;
+  height: 850px;
+}
+.fir .centerRod {
+  position: absolute;
+  left: 290px;
+  width: 4px;
+  height: 804px;
+  background-color: #000;
+}
+.fir .centerRod .sideRods {
+  position: absolute;
+  top: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 368px;
+  height: 663px;
+  border: 4px solid #000;
+  border-bottom-right-radius: 280px;
+  border-top: 0;
+}
+.fir .centerRod .centerRod__basis {
+  position: absolute;
+  top: 662px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+}
+.fir .centerRod .angleLeftRod {
+  position: absolute;
+  top: 690px;
+  right: 0;
+  width: 110px;
+  height: 90px;
+  border: 4px solid #000;
+  border-top: 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 70px;
+}
+.fir .centerRod .angleLeftRod .angleLeftRod__leftBtunch {
+  position: absolute;
+  top: -74px;
+  left: -4px;
+  width: 4px;
+  height: 74px;
+  background-color: #000;
+}
+.fir .centerRod .angleRightRod {
+  position: absolute;
+  top: 690px;
+  width: 100px;
+  height: 40px;
+  border: 4px solid #000;
+  border-top: 0;
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: 20px;
+}
+.fir .centerRod .angleRightRod .angleLeftRod__rightBtunch {
+  position: absolute;
+  top: -620px;
+  right: -4px;
+  width: 4px;
+  height: 620px;
+  background-color: #000;
+}
+.fir .centerRod .kernel {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.fir .centerRod .kernel._centered {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.fir .centerRod .kernel._bottom {
+  bottom: -19px;
+}
+.fir .centerRod .kernel._bottomR {
+  bottom: -19px;
+  left: -19px;
+}
+.fir .centerRod .roots {
+  position: absolute;
+  bottom: -280px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  height: 280px;
+  border: 4px solid #000;
+  border-radius: 50%;
+  border-top-color: #000;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+.fir .sideRods__crownsWrap {
+  position: absolute;
+  height: 554px;
+  width: 222px;
+}
+.fir .sideRods__crownsWrap._centerCW {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.fir .sideRods__crownsWrap._leftCW {
+  left: -2px;
+  transform: translateX(-50%);
+}
+.fir .sideRods__crownsWrap._rightCW {
+  top: 5px;
+  right: -2px;
+  transform: translateX(50%);
+}
+.fir .crown {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 0 0 50% 50%/0 0 100% 100%;
+  background-color: #000;
+}
+.fir .crown._margin_rightCW {
+  left: 0%;
+  transform: translate(0%);
+}
+.fir .crown._1 {
+  top: 18px;
+  width: 34px;
+  height: 8px;
+}
+.fir .crown._2 {
+  top: 66px;
+  width: 61px;
+  height: 11px;
+}
+.fir .crown._3 {
+  top: 116px;
+  width: 71px;
+  height: 13px;
+}
+.fir .crown._4 {
+  top: 165px;
+  width: 84px;
+  height: 15px;
+}
+.fir .crown._5 {
+  top: 214px;
+  width: 100px;
+  height: 18px;
+}
+.fir .crown._6 {
+  top: 256px;
+  width: 116px;
+  height: 21px;
+}
+.fir .crown._7 {
+  top: 304px;
+  width: 136px;
+  height: 25px;
+}
+.fir .crown._8 {
+  top: 357px;
+  width: 160px;
+  height: 28px;
+}
+.fir .crown._9 {
+  top: 426px;
+  width: 190px;
+  height: 34px;
+}
+.fir .crown._10 {
+  top: 514px;
+  width: 222px;
+  height: 40px;
+}
+.fir .crown._1._margin_rightB {
+  top: calc(18px + 50px);
+}
+.fir .crown._2._margin_rightB {
+  top: calc(66px + 50px);
+}
+.fir .crown._3._margin_rightB {
+  top: calc(116px + 50px);
+}
+.fir .crown._9._margin_rightCW {
+  left: 1px;
+}
+.fir .crown._10._margin_rightCW {
+  left: -55px;
+}
+.fir .constellation {
+  position: absolute;
+  top: -50px;
+  right: -20px;
+  width: 126px;
+  height: 95px;
+}
+.fir .constellation .line {
+  position: relative;
+  margin-top: 45.5px;
+  width: 126px;
+  height: 4px;
+  background-color: #000;
+}
+.fir .constellation .line .star {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+.fir .constellation .line .star._small {
+  width: 18px;
+  height: 18px;
+}
+.fir .constellation .line .star._big {
+  left: 25px;
+  width: 37px;
+  height: 37px;
+}
+.fir .constellation .moon {
+  position: absolute;
+  top: 0;
+  right: 44px;
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  box-shadow: 20px 20px 0 0 #000;
+  transform: rotate(-45deg);
+}
+
+@media screen and (orientation: landscape) and (max-height: 930px) {
+  .fir {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 748px) {
+  .fir {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 570px) {
+  .fir {
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 390px) {
+  .fir {
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+}
+@media screen and (max-width: 600px) {
+  .fir {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+@media screen and (max-width: 480px) {
+  .fir {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+@media screen and (max-width: 375px) {
+  .fir {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+}
+@media screen and (max-width: 320px) {
+  .fir {
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+}
+/*____________________________________________________________
+## Rose
+____________________________________________________________*/
+.rose {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 165px;
+  height: 812px;
+}
+.rose .rod {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background-color: #000;
+}
+.rose .rod .pollen {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background-color: #de162a;
+  z-index: 2;
+}
+.rose .rod .bud {
+  position: absolute;
+  top: 46px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 165px;
+  height: 82px;
+  border-radius: 0 0 50% 50%/0 0 100% 100%;
+  background-color: #000;
+}
+.rose .rod .pad {
+  position: absolute;
+  width: 18px;
+  height: 98px;
+  background-color: #000;
+}
+.rose .rod .pad._left {
+  right: 0;
+  border-bottom-left-radius: 40px 100%;
+  border-top-left-radius: 40px 100%;
+}
+.rose .rod .pad._right {
+  border-bottom-right-radius: 40px 100%;
+  border-top-right-radius: 40px 100%;
+}
+.rose .rod .pad._position_1 {
+  top: 126px;
+}
+.rose .rod .pad._position_2 {
+  top: 224px;
+}
+.rose .rod .pad._position_3 {
+  top: 322px;
+}
+.rose .rod .pad._position_4 {
+  top: 420px;
+}
+.rose .rod .pad._position_5 {
+  top: 518px;
+}
+.rose .rod .pad .pad__brunch {
+  position: absolute;
+  width: 35px;
+  height: 52px;
+  border: 4px solid #000;
+  border-top: 0;
+}
+.rose .rod .pad .pad__brunch._left {
+  left: -35px;
+  border-right: 0;
+  border-bottom-left-radius: 40px;
+}
+.rose .rod .pad .pad__brunch._left .brunchCircle {
+  left: -13px;
+}
+.rose .rod .pad .pad__brunch._right {
+  right: -35px;
+  border-left: 0;
+}
+.rose .rod .pad .pad__brunch._right .brunchCircle {
+  right: -13px;
+}
+.rose .rod .pad .pad__brunch .brunchCircle {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: #de162a;
+}
+
+@media screen and (orientation: landscape) and (max-height: 846px) {
+  .rose {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 682px) {
+  .rose {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 520px) {
+  .rose {
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 356px) {
+  .rose {
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+}
+@media screen and (max-width: 460px) {
+  .rose {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+@media screen and (max-width: 375px) {
+  .rose {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+@media screen and (max-width: 320px) {
+  .rose {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+}
+/*____________________________________________________________
+## Willow
+____________________________________________________________*/
+.willow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 366px;
+  height: 842px;
+}
+.willow .rod {
+  position: absolute;
+  bottom: 0;
+  left: 198px;
+  width: 4px;
+  height: 420px;
+  background-color: #000;
+}
+.willow .rod .rod__leftBrunch {
+  position: absolute;
+  bottom: 238px;
+  right: 0;
+  width: 132px;
+  height: 4px;
+  background-color: #000;
+}
+.willow .rod .rod__rightBrunch {
+  position: absolute;
+  bottom: 110px;
+  width: 96px;
+  height: 4px;
+  background-color: #000;
+}
+.willow .rod .trunk {
+  position: absolute;
+  width: 4px;
+  height: 424px;
+  background-color: #000;
+}
+.willow .rod .trunk._top {
+  top: -100%;
+}
+.willow .rod .trunk._left {
+  bottom: 0;
+  left: 0;
+}
+.willow .rod .trunk._right {
+  bottom: 0;
+  right: 0;
+}
+.willow .rod .trunk .trunk__tail {
+  position: absolute;
+  width: 22px;
+  height: 4px;
+  background-color: #000;
+}
+.willow .rod .trunk .trunk__tail._left {
+  right: 0;
+}
+.willow .rod .trunk .trunk__crownsWrap {
+  position: absolute;
+  width: 72px;
+  height: 316px;
+}
+.willow .rod .trunk .trunk__crownsWrap._left {
+  top: 45px;
+  right: 0;
+}
+.willow .rod .trunk .trunk__crownsWrap._left .crown {
+  right: 0;
+  border-radius: 0 0 50% 50%/0 0 100% 100%;
+}
+.willow .rod .trunk .trunk__crownsWrap._right {
+  top: 33px;
+}
+.willow .rod .trunk .trunk__crownsWrap._right .crown {
+  border-radius: 50% 50% 0 0/100% 100% 0 0;
+}
+.willow .rod .trunk .trunk__crownsWrap._right .crown._3 {
+  top: 46px;
+}
+.willow .rod .trunk .trunk__crownsWrap._right .crown._4 {
+  top: 73px;
+}
+.willow .rod .trunk .trunk__crownsWrap._right .crown._5 {
+  top: 102px;
+}
+.willow .rod .trunk .trunk__crownsWrap._right .crown._6 {
+  top: 132px;
+}
+.willow .rod .trunk .trunk__crownsWrap._right .crown._7 {
+  top: 169px;
+}
+.willow .rod .trunk .trunk__crownsWrap._right .crown._8 {
+  top: 207px;
+}
+.willow .rod .trunk .trunk__crownsWrap._right .crown._9 {
+  top: 249px;
+}
+.willow .rod .trunk .trunk__crownsWrap._right .crown._10 {
+  top: 285px;
+}
+.willow .rod .trunk .trunk__crownsWrap .crown {
+  position: absolute;
+  background-color: #000;
+}
+.willow .rod .trunk .trunk__crownsWrap .crown._1 {
+  top: px;
+  width: 40px;
+  height: 12px;
+}
+.willow .rod .trunk .trunk__crownsWrap .crown._2 {
+  top: 23px;
+  width: 44px;
+  height: 12px;
+}
+.willow .rod .trunk .trunk__crownsWrap .crown._3 {
+  top: 48px;
+  width: 47px;
+  height: 14px;
+}
+.willow .rod .trunk .trunk__crownsWrap .crown._4 {
+  top: 75px;
+  width: 50px;
+  height: 14px;
+}
+.willow .rod .trunk .trunk__crownsWrap .crown._5 {
+  top: 105px;
+  width: 54px;
+  height: 15px;
+}
+.willow .rod .trunk .trunk__crownsWrap .crown._6 {
+  top: 137px;
+  width: 57px;
+  height: 17px;
+}
+.willow .rod .trunk .trunk__crownsWrap .crown._7 {
+  top: 174px;
+  width: 61px;
+  height: 17px;
+}
+.willow .rod .trunk .trunk__crownsWrap .crown._8 {
+  top: 214px;
+  width: 64px;
+  height: 19px;
+}
+.willow .rod .trunk .trunk__crownsWrap .crown._9 {
+  top: 256px;
+  width: 68px;
+  height: 19px;
+}
+.willow .rod .trunk .trunk__crownsWrap .crown._10 {
+  top: 294px;
+  width: 72px;
+  height: 21px;
+}
+.willow .rod .trunk .trunk__basis {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #de162a;
+}
+
+@media screen and (orientation: landscape) and (max-height: 876px) {
+  .willow {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 712px) {
+  .willow {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 550px) {
+  .willow {
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 386px) {
+  .willow {
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+}
+@media screen and (max-width: 500px) {
+  .willow {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+@media screen and (max-width: 375px) {
+  .willow {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+@media screen and (max-width: 320px) {
+  .willow {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+}
+/*____________________________________________________________
+## Sunflower
+____________________________________________________________*/
+.sunflower {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 326px;
+  height: 642px;
+}
+.sunflower .rod {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background-color: #000;
+}
+.sunflower .rod .halo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background-color: #000;
+}
+.sunflower .rod .halo .head {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 118px;
+  height: 118px;
+  border-radius: 50%;
+  background-color: #de162a;
+}
+.sunflower .rod .brunch {
+  position: absolute;
+  top: 300px;
+  width: 183px;
+  height: 4px;
+  background-color: #000;
+}
+.sunflower .rod .brunch._left {
+  left: -116px;
+}
+.sunflower .rod .brunch._right {
+  left: -63px;
+}
+.sunflower .rod .brunch._position_1 {
+  top: 270px;
+}
+.sunflower .rod .brunch._position_2 {
+  top: 358px;
+}
+.sunflower .rod .brunch._position_3 {
+  top: 446px;
+}
+.sunflower .rod .brunch .sheet {
+  position: absolute;
+  bottom: 0;
+  width: 90px;
+  height: 67px;
+  background: #000;
+  border-radius: 50% 100px 0 80px;
+}
+.sunflower .rod .brunch .sheet._left {
+  left: -45px;
+  border-radius: 50% 100px 0 80px;
+}
+.sunflower .rod .brunch .sheet._right {
+  right: -45px;
+  border-radius: 100px 50% 80px 0;
+}
+
+@media screen and (orientation: landscape) and (max-height: 672px) {
+  .sunflower {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 534px) {
+  .sunflower {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 415px) {
+  .sunflower {
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 287px) {
+  .sunflower {
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+}
+@media screen and (max-width: 500px) {
+  .sunflower {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+@media screen and (max-width: 375px) {
+  .sunflower {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+@media screen and (max-width: 320px) {
+  .sunflower {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+}
+/*____________________________________________________________
+## Bell
+____________________________________________________________*/
+.bell {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 218px;
+  height: 866px;
+}
+.bell .crown {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 134px;
+  height: 24px;
+  border-radius: 0 0 50% 50%/0 0 100% 100%;
+  background-color: #000;
+}
+.bell .crown._position_1 {
+  top: 138px;
+}
+.bell .crown._position_2 {
+  top: 208px;
+}
+.bell .crown._position_3 {
+  top: 278px;
+}
+.bell .crown._position_4 {
+  top: 348px;
+}
+.bell .crown._position_5 {
+  top: 418px;
+}
+.bell .crown._position_6 {
+  top: 488px;
+}
+.bell .crown._position_7 {
+  top: 558px;
+}
+.bell .crown._position_8 {
+  top: 628px;
+}
+.bell .crown._position_9 {
+  top: 698px;
+}
+.bell .crown .crown__rod {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 30px;
+  background-color: #000;
+}
+.bell .crown .crown__rod .arc {
+  position: absolute;
+  top: -40px;
+  width: 98px;
+  height: 44px;
+  border: 4px solid #000;
+  border-top: 0;
+}
+.bell .crown .crown__rod .arc._left {
+  right: 0;
+  border-bottom-left-radius: 50px;
+  border-right: 0;
+}
+.bell .crown .crown__rod .arc._left .tongue {
+  left: -16px;
+}
+.bell .crown .crown__rod .arc._right {
+  border-bottom-right-radius: 50px;
+  border-left: 0;
+}
+.bell .crown .crown__rod .arc._right .tongue {
+  right: -16px;
+}
+.bell .crown .crown__rod .arc .arc__rightBrunch {
+  width: 94px;
+  height: 4px;
+  background-color: #000;
+}
+.bell .crown .crown__rod .arc .arc__rightBrunch .tongue {
+  left: 74px;
+}
+.bell .crown .crown__rod .arc .arc__circleBrunch {
+  position: absolute;
+  top: -124px;
+  width: 98px;
+  height: 124px;
+  border: 4px solid #000;
+  border-top-right-radius: 100px;
+  border-bottom: 0;
+  border-left: 0;
+}
+.bell .crown .crown__rod .arc .arc__circleBrunch .tongue {
+  left: -16px;
+}
+.bell .crown .crown__rod .arc .tongue {
+  position: absolute;
+  top: -15px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+.bell .crown .crown__leg {
+  position: absolute;
+  bottom: -144px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 144px;
+  background-color: #000;
+}
+
+@media screen and (orientation: landscape) and (max-height: 900px) {
+  .bell {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 722px) {
+  .bell {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 550px) {
+  .bell {
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 376px) {
+  .bell {
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+}
+@media screen and (max-width: 500px) {
+  .bell {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+@media screen and (max-width: 375px) {
+  .bell {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+@media screen and (max-width: 320px) {
+  .bell {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+}
+/*____________________________________________________________
+## Poplar
+____________________________________________________________*/
+.poplar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 289px;
+  height: 851px;
+}
+.poplar .rod {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background-color: #000;
+}
+.poplar .rod .circle {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #000;
+}
+.poplar .rod .circle._center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.poplar .rod .circle._center_v {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.poplar .rod .circle._bottom {
+  bottom: 118px;
+}
+.poplar .rod .circle._left {
+  left: -12px;
+}
+.poplar .rod .circle._right {
+  right: -12px;
+}
+.poplar .rod .rod__arc {
+  position: absolute;
+  left: -61px;
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  border: 4px solid #000;
+  transform: rotate(45deg);
+}
+.poplar .rod .rod__arc._top {
+  top: 10px;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+}
+.poplar .rod .rod__arc._bottom {
+  bottom: 128px;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+.poplar .rod .rod__basis {
+  position: absolute;
+  top: 326px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #de162a;
+}
+.poplar .rod .rod__basis .brunch {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 41px;
+  height: 4px;
+  background-color: #000;
+}
+.poplar .rod .rod__basis .brunch._left {
+  left: -41px;
+}
+.poplar .rod .rod__basis .brunch._right {
+  right: -41px;
+}
+.poplar .rod .rod__basis .brunch .brunch__trunk {
+  position: absolute;
+  width: 4px;
+  height: 62px;
+  background-color: #000;
+}
+.poplar .rod .rod__basis .brunch .brunch__trunk._top {
+  bottom: 0;
+}
+.poplar .rod .rod__basis .brunch .brunch__trunk._right {
+  right: 0;
+}
+.poplar .crownsWrap {
+  position: absolute;
+  width: 121px;
+  height: 239px;
+}
+.poplar .crownsWrap._top {
+  top: 72px;
+}
+.poplar .crownsWrap._bottom {
+  bottom: 181px;
+}
+.poplar .crownsWrap._left .crown {
+  right: 0;
+}
+.poplar .crownsWrap._right {
+  right: 0;
+}
+.poplar .crownsWrap .crown {
+  position: absolute;
+  border-radius: 0 0 50% 50%/0 0 100% 100%;
+  background-color: #000;
+}
+.poplar .crownsWrap .crown._size_1 {
+  width: 74px;
+  height: 13px;
+}
+.poplar .crownsWrap .crown._size_2 {
+  width: 80px;
+  height: 14px;
+}
+.poplar .crownsWrap .crown._size_3 {
+  width: 87px;
+  height: 16px;
+}
+.poplar .crownsWrap .crown._size_4 {
+  width: 94px;
+  height: 17px;
+}
+.poplar .crownsWrap .crown._size_5 {
+  width: 100px;
+  height: 18px;
+}
+.poplar .crownsWrap .crown._size_6 {
+  width: 107px;
+  height: 19px;
+}
+.poplar .crownsWrap .crown._size_7 {
+  width: 114px;
+  height: 20px;
+}
+.poplar .crownsWrap .crown._size_8 {
+  width: 121px;
+  height: 22px;
+}
+.poplar .crownsWrap .crown._position_2 {
+  top: 31px;
+}
+.poplar .crownsWrap .crown._position_3 {
+  top: 62px;
+}
+.poplar .crownsWrap .crown._position_4 {
+  top: 93px;
+}
+.poplar .crownsWrap .crown._position_5 {
+  top: 124px;
+}
+.poplar .crownsWrap .crown._position_6 {
+  top: 155px;
+}
+.poplar .crownsWrap .crown._position_7 {
+  top: 186px;
+}
+.poplar .crownsWrap .crown._position_8 {
+  top: 217px;
+}
+
+@media screen and (orientation: landscape) and (max-height: 881px) {
+  .poplar {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 710px) {
+  .poplar {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 540px) {
+  .poplar {
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 370px) {
+  .poplar {
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+}
+@media screen and (max-width: 500px) {
+  .poplar {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+@media screen and (max-width: 375px) {
+  .poplar {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+@media screen and (max-width: 320px) {
+  .poplar {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+}
+/*____________________________________________________________
+# Social links
+____________________________________________________________*/
+.social {
+  position: fixed;
+  bottom: 0;
+  left: 30px;
+}
+
+.socialList {
+  list-style: none;
+}
+.socialList:after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 1px;
+  height: 40px;
+  background: #749064;
+}
+
+.socialList__item {
+  margin-bottom: 10px;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s;
+}
+.socialList__item:hover {
+  transform: translateY(-3px);
+}
+.socialList__item:hover .socialList__icon {
+  stroke: #7dcbd8;
+}
+
+.socialList__icon {
+  fill: none;
+  stroke: #749064;
+}

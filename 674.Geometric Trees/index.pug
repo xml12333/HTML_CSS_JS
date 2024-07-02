@@ -1,0 +1,314 @@
+//- Container
+.container._fir
+	//-- Menu
+	.menu
+		.menu__item._seedling
+		.menu__item._sepal
+		.menu__item._linden
+		.menu__item._pine
+		.menu__item._palm
+		.menu__item._fir
+		.menu__item._rose
+		.menu__item._willow
+		.menu__item._sunflower
+		.menu__item._bell
+		.menu__item._poplar
+	//-- Burger
+	label.burger
+		input.burger__input(type='checkbox')
+		svg.strokeWrap(viewBox="30 30 40 40" xmlns='http://www.w3.org/2000/svg')
+			path.strokeWrap__stroke._first(d='M0 40h62c13 0 6 28-4 18L35 35')
+			path.strokeWrap__stroke._second(d='M0 50h70')
+			path.strokeWrap__stroke._third(d='M0 60h62c13 0 6-28-4-18L35 65')
+	//-- Seedling
+	.seedling
+		.rod
+			.circle._xl._bg_black._xl_margin
+			.circle._lg_rod._bg_black
+			.circle._md_rod._bg_black
+			.circle._sm_rod._bg_black
+			.circle._xs_rod._bg_red
+			.circle._xl_arc._bg_black
+			.circle._lg_arc._bg_black
+			.circle._xm_arc._bg_black
+			.circle._md_arc._bg_black
+			.circle._sm_arc._bg_black
+			.circle._xs_arc._bg_black
+			mixin numberBasisMix(numberSizeBasis, borderStyle)
+				.basis._left._bs_dash(class=`_left_${numberSizeBasis} _bs_${borderStyle}`)
+				.basis._right._bs_dot(class=`_right_${numberSizeBasis}`)
+			+numberBasisMix('1')
+			+numberBasisMix('2')
+			+numberBasisMix('3')
+			+numberBasisMix('4')
+			+numberBasisMix('5')
+			+numberBasisMix('6', 'solid')
+			+numberBasisMix('7', 'solid')
+			+numberBasisMix('8', 'solid')
+			.circle._bCircle._bg_red._b_circle_margin_1
+			.circle._bCircle._bg_black._b_circle_margin_2
+			.circle._bCircle._bg_black._b_circle_margin_3
+			.legs
+		.arc
+	//-- Sepal
+	.sepal
+		.rod
+			.arc
+				.arc__circle
+			.cup._center
+			.cup._left._l1
+				.kernel
+			.cup._left._l2
+				.kernel
+			.cup._left._l3
+				.kernel
+			.cup._left._l4
+				.kernel
+			.cup._r1
+			.cup._r2
+			.cup._r3
+			.brunch
+	//-- Linden
+	.linden
+		.leftRod
+			.leftRod__leftBruch
+				.circle._bg_black._cmlb
+		.centerRod
+			.bottomArc
+				.bottomArc__rightBranch
+					.crown._md_horizontal._bg_black._position_2
+						.circle._bg_red._center
+				.crown._sm._bg_red._position_1
+			.topArc
+				.topArc__leftBranch
+				.crown._sm._bg_black._position_3
+				.crown._md._bg_black._position_4
+					.circle._bg_red._center
+			.crown._lg._bg_red._position_5
+				.circle._bg_black._center
+				.basisBrunch
+		.rightRod
+			.rightRod__rightBruch
+				.circle._bg_red._cmrb
+	//-- Pine
+	.pine
+		.leftRod
+			.leftRod__rightBrunch
+				.crown._lg._bg_red._position_1
+					.kernel._bg_black
+					.basisBrunch
+		.centerRod
+			.centerRod__bottomLeftBrunch
+				.crown._md._bg_red._position_3
+					.kernel._bg_black
+					.basisBrunch
+			.centerRod__bottomRightBrunch
+				.crown._md._bg_black._position_4
+					.kernel._bg_red
+			.centerRod__topLeftBrunch
+				.crown._sm._bg_black._position_5
+					.kernel._bg_red
+					.centerBrunch
+						.centerBrunch__leftBrunch._bg_black
+							.circle._bg_red
+			.centerRod__topRightBrunch
+				.crown._sm._bg_red._position_6
+					.kernel._bg_black
+					.centerBrunch
+					.basisBrunch
+			.crown._xs._bg_black._position_7
+					.kernel._bg_red
+					.basisBrunch
+		.rightRod
+			.rightRod__leftBrunch
+				.crown._lg._bg_black._position_2
+					.kernel._bg_red
+					.crown__leftBrunch._bg_black
+						.circle._bg_black
+	//-- Palm
+	.palm
+		mixin palmRodMix(sizeName, kernelColor)
+			.rod(class=`_${sizeName}`)
+				.crown(class=`_${sizeName}`)
+					.kernel(class=`_bg_${kernelColor}`)
+		+palmRodMix('sm', 'red')
+		+palmRodMix('xl', 'black')
+		+palmRodMix('xm', 'red')
+		+palmRodMix('xs', 'black')
+		+palmRodMix('md', 'black')
+		.rod._lg
+			.crown._lg
+				.kernel._bg_red
+			.leftBrunch
+				.wave._left
+					.wave._right._top
+						.wave._left._top
+							.wave._right._top
+								.wave._left._top
+									.wave__topBrunch
+										.crown._cup
+											mixin arcMix(sizeName, side, circleColor)
+												.arc(class=`_${sizeName} _${side}`)
+													.arc__circle(class=`_bg_${circleColor}`)
+											+arcMix('lg', 'left', 'red')
+											+arcMix('sm', 'left', 'black')
+											+arcMix('sm', 'right', 'red')
+											+arcMix('lg', 'right', 'black')
+	//-- Fir
+	mixin crownsMix(side)
+		.crown._1
+		.crown._2
+		.crown._3
+		.crown._4
+		.crown._5
+		.crown._6
+		.crown._7
+		.crown._8
+		.crown._9(class=`_margin_${side}CW`)
+		.crown._10(class=`_margin_${side}CW`)
+	.fir
+		.centerRod
+			.sideRods__crownsWrap._centerCW
+				+crownsMix('')
+			.sideRods
+				.kernel._bottomR._bg_black
+				.sideRods__crownsWrap._leftCW
+					+crownsMix('')
+				.sideRods__crownsWrap._rightCW
+					+crownsMix('right')
+			.angleLeftRod
+				.angleLeftRod__leftBtunch
+					.kernel._centered._bg_red
+			.angleRightRod
+				.angleLeftRod__rightBtunch
+					.kernel._centered._bg_red
+					.crown._1._margin_rightB
+					.crown._2._margin_rightB
+					.crown._3._margin_rightB
+			.centerRod__basis._bg_red
+			.kernel._bottom._centered._bg_black
+			.roots
+		.constellation
+			.line
+				.star._small._bg_red
+				.star._big._bg_black
+			.moon
+	//-- Rose
+	.rose
+		.rod
+			.pollen
+			.bud
+			mixin padsMix(padSide, positionNumber, brunchSide)
+				.pad(class=`_${padSide} _position_${positionNumber}`)
+					.pad__brunch(class=`_${brunchSide}`)
+						.brunchCircle
+			+padsMix('left', '1', 'right')
+			+padsMix('right', '2', 'left')
+			+padsMix('left', '3', 'right')
+			+padsMix('right', '4', 'left')
+			+padsMix('left', '5', 'right')
+	//-- Willow
+	mixin trunksMix(trunkSide, tailSide)
+		.trunk(class=`_${trunkSide}`)
+			.trunk__tail(class=`_${tailSide}`)
+			.trunk__basis
+			.trunk__crownsWrap._left
+				.crown._1
+				.crown._2
+				.crown._3
+				.crown._4
+				.crown._5
+				.crown._6
+				.crown._7
+				.crown._8
+				.crown._9
+				.crown._10
+			.trunk__crownsWrap._right
+				.crown._1
+				.crown._2
+				.crown._3
+				.crown._4
+				.crown._5
+				.crown._6
+				.crown._7
+				.crown._8
+				.crown._9
+				.crown._10
+	.willow
+		.rod
+			+trunksMix('top', 'left')
+			.rod__leftBrunch
+				+trunksMix('left', '')
+			.rod__rightBrunch
+				+trunksMix('right', '')
+	//-- Sunflower
+	.sunflower
+		.rod
+			.halo
+				.head
+			mixin brunchsMix(brunchSide, positionNumber)
+				.brunch(class=`_${brunchSide} _position_${positionNumber}`)
+					.sheet._left
+					.sheet._right
+			+brunchsMix('left', '1')
+			+brunchsMix('right', '2')
+			+brunchsMix('left', '3')
+	//-- Bell
+	.bell
+		.crown._position_1
+			.crown__rod
+				.arc._left
+					.tongue._bg_red
+					.arc__rightBrunch
+						.tongue._bg_black
+		.crown._position_2
+			.crown__rod
+				.arc._right
+					.tongue._bg_black
+					.arc__circleBrunch
+						.tongue._bg_red
+		mixin crownsMix(number, arcSide)
+			.crown(class=`_position_${number}`)
+				.crown__rod
+					.arc(class=`_${arcSide}`)
+						.tongue._bg_red
+		+crownsMix('3', 'left')
+		+crownsMix('4', 'right')
+		+crownsMix('5', 'left')
+		+crownsMix('6', 'right')
+		+crownsMix('7', 'left')
+		+crownsMix('8', 'right')
+		.crown._position_9
+			.crown__rod
+				.arc._left
+					.tongue._bg_red
+			.crown__leg
+	//-- Poplar
+	.poplar
+		.rod
+			.circle._center
+			.circle._bottom._center
+			.rod__arc._top
+			.rod__arc._bottom
+			.rod__basis
+				.brunch._left
+					.circle._left._center_v
+					.brunch__trunk
+				.brunch._right
+					.circle._right._center_v
+					.brunch__trunk._top._right
+		mixin crownsWrapMix(vSide, hSide, s1, s2, s3, s4, s5, s6, s7, s8)
+			.crownsWrap(class=`_${vSide} _${hSide}`)
+				.crown(class=`_size_${s1}`)
+				.crown._position_2(class=`_size_${s2}`)
+				.crown._position_3(class=`_size_${s3}`)
+				.crown._position_4(class=`_size_${s4}`)
+				.crown._position_5(class=`_size_${s5}`)
+				.crown._position_6(class=`_size_${s6}`)
+				.crown._position_7(class=`_size_${s7}`)
+				.crown._position_8(class=`_size_${s8}`)
+		+crownsWrapMix('top', 'left', 1, 2, 3, 4, 5, 6, 7, 8)
+		+crownsWrapMix('top', 'right', 1, 2, 3, 4, 5, 6, 7, 8)
+		+crownsWrapMix('bottom', 'left', 8, 7, 6, 5, 4, 3, 2, 1)
+		+crownsWrapMix('bottom', 'right',  8, 7, 6, 5, 4, 3, 2, 1)
+		
