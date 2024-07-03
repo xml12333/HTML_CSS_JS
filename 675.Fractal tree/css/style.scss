@@ -1,0 +1,216 @@
+@layer tokens {
+  :root {
+    --color-primary: #ee75d2;
+    --color-secondary: #75d8ee;
+    --color-surface: #010101;
+    --tree-position-y-offset: 0%; // 🕹️ play with this value, e.g. 40% ✨
+    animation: expand-collapse 20s 6s linear infinite;
+  }
+}
+
+@layer demo {
+  @property --angle {
+    syntax: "<angle>";
+    initial-value: 16deg;
+    inherits: true;
+  }
+
+  .tree {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    inset: 0;
+    position: absolute;
+    opacity: calc(var(--count) - var(--index));
+
+    &:nth-child(2) {
+      transform: rotate3d(0, 0, 1, 90deg);
+    }
+
+    &:nth-child(3) {
+      transform: rotate3d(0, 0, 1, 180deg);
+    }
+
+    &:nth-child(4) {
+      transform: rotate3d(0, 0, 1, 270deg);
+    }
+  }
+
+  .node {
+    --max-width: 0.8vmin;
+    --max-height: 6vmin;
+    height: var(--max-height);
+    //height: calc(var(--max-height) - (var(--max-height) / var(--max-level)) * var(--level));
+    width: calc(
+      var(--max-width) - (var(--max-width) / var(--max-level)) * var(--level)
+    );
+    background: color-mix(
+      in oklch,
+      var(--color-primary),
+      var(--color-secondary) calc(100% / var(--max-level) * var(--level))
+    );
+    display: flex;
+    position: absolute;
+    border-radius: 1vmin;
+    --delay: calc(0.5s * var(--level));
+    animation: expand 2s var(--delay) linear forwards;
+    transform: scaleY(0);
+    translate: 0 var(--tree-position-y-offset, 0);
+
+    > .node {
+      --y: -100%;
+      translate: 0 var(--y);
+      transform-origin: bottom;
+
+      &:first-child {
+        rotate: calc(-1 * var(--angle));
+      }
+
+      &:last-child {
+        rotate: var(--angle);
+      }
+    }
+  }
+
+  @keyframes expand {
+    from {
+      transform: scaleY(0);
+    }
+
+    to {
+      transform: scaleY(1);
+    }
+  }
+
+  @keyframes expand-collapse {
+    from {
+      --angle: 16deg;
+    }
+
+    8% {
+      --angle: 45deg;
+    }
+    10% {
+      --angle: 45deg;
+    }
+    12% {
+      --angle: 45deg;
+    }
+
+    18% {
+      --angle: 60deg;
+    }
+    20% {
+      --angle: 60deg;
+    }
+    22% {
+      --angle: 60deg;
+    }
+
+    28% {
+      --angle: 90deg;
+    }
+    30% {
+      --angle: 90deg;
+    }
+    32% {
+      --angle: 90deg;
+    }
+
+    36% {
+      --angle: 120deg;
+    }
+
+    40% {
+      --angle: 120deg;
+    }
+    44% {
+      --angle: 120deg;
+    }
+
+    48% {
+      --angle: 90deg;
+    }
+
+    50% {
+      --angle: 90deg;
+    }
+
+    52% {
+      --angle: 90deg;
+    }
+
+    58% {
+      --angle: 60deg;
+    }
+
+    60% {
+      --angle: 60deg;
+    }
+    62% {
+      --angle: 60deg;
+    }
+
+    68% {
+      --angle: 45deg;
+    }
+
+    70% {
+      --angle: 45deg;
+    }
+
+    72% {
+      --angle: 45deg;
+    }
+
+    78% {
+      --angle: 6deg;
+    }
+    80% {
+      --angle: 6deg;
+    }
+    82% {
+      --angle: 6deg;
+    }
+
+    98% {
+      --angle: 16deg;
+    }
+    to {
+      --angle: 16deg;
+    }
+  }
+}
+
+@layer global {
+  body {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: conic-gradient(
+      var(--color-surface),
+      color-mix(in oklch, var(--color-surface), black 80%),
+      var(--color-surface)
+    );
+    color: var(--color-primary);
+    position: relative;
+    overflow: clip;
+    margin: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+// center at bottom
+a.labs-follow-me {
+  left: 2rem;
+  right: 2rem;
+  bottom: 1rem;
+  top: unset;
+  text-align: center;
+  backdrop-filter: blur(1rem);
+}

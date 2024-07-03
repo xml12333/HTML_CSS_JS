@@ -676,3 +676,4 @@
 |672| [Pixar Lamp](https://github.com/xml12333/HTML_CSS_JS/tree/main/672.Pixar%20Lamp)| [Demo](https://nikt.com.ua/projects/htmlCssJs/672.Pixar%20Lamp/)| ![Thumbnail](672.Pixar%20Lamp/img/info_thumbnail.jpg)|
 |673| [Gooey Button](https://github.com/xml12333/HTML_CSS_JS/tree/main/673.Gooey%20Button)| [Demo](https://nikt.com.ua/projects/htmlCssJs/673.Gooey%20Button/)| ![Thumbnail](673.Gooey%20Button/img/info_thumbnail.jpg)|
 |674| [Geometric Trees](https://github.com/xml12333/HTML_CSS_JS/tree/main/674.Geometric%20Trees)| [Demo](https://nikt.com.ua/projects/htmlCssJs/674.Geometric%20Trees/)| ![Thumbnail](674.Geometric%20Trees/img/info_thumbnail.jpg)|
+|675| [Fractal tree](https://github.com/xml12333/HTML_CSS_JS/tree/main/675.Fractal%20tree)| [Demo](https://nikt.com.ua/projects/htmlCssJs/675.Fractal%20tree/)| ![Thumbnail](675.Fractal%20tree/img/info_thumbnail.jpg)|

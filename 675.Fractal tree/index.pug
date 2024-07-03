@@ -1,0 +1,14 @@
+- maxLevels = 10; // 🕹️ play with this value
+mixin node(level)
+  if level + 1 < maxLevels
+    - var childLevel = level + 1;
+    .node(style='--level: ' + level)
+      +node(childLevel)
+    .node(style='--level: ' + level)
+      +node(childLevel)
+- var i = 0;
+while i < 4
+  - i++;
+  .tree(style='--max-level: ' + maxLevels + ';--index: ' + (i - 1))
+    .node(style="--level: 0")
+      +node(1)
