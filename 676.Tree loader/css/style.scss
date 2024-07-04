@@ -1,0 +1,120 @@
+$bounce-delay: 0.15s;
+$bounce-duration: 0.8s;
+$bounce-scale-up: 1.2;
+$bounce-scale-down: 0.9;
+$translate-up: -10%;
+$translate-down: 1%;
+
+path {
+  animation: bounce $bounce-duration infinite;
+  transform-origin: bottom;
+}
+
+.example2 path {
+  animation: bob $bounce-duration infinite;
+  transform-origin: bottom;
+}
+
+.example3 path {
+  animation: wiggle $bounce-duration infinite;
+  transform-origin: bottom;
+}
+
+@for $i from 1 through 4 {
+  #tree#{$i} {
+    animation-delay: $i * $bounce-delay
+  }
+}
+
+@keyframes bob {
+  0% {
+    transform: translateY(0)
+  }
+  10% {
+    transform: translateY($translate-up)
+  }
+  30% {
+    transform: translateY($translate-down)
+  }
+  40% {
+    transform: translateY(1)
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scaleY(1)
+  }
+  10% {
+    transform: scaleY($bounce-scale-up)
+  }
+  30% {
+    transform: scaleY($bounce-scale-down)
+  }
+  40% {
+    transform: scaleY(1)
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    transform: skew(0deg)
+  }
+  7% {
+    transform: skew(6deg)
+  }
+  17% {
+    transform: skew(-4.5deg)
+  }
+  27% {
+    transform: skew(3.3deg)
+  }
+  37% {
+    transform: skew(-2deg)
+  }
+  41% {
+    transform: skew(0deg)
+  }
+}
+
+body {
+  text-align: center;
+  background: #f0f0eb;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+#messages {
+  font-family: sans-serif;
+  display: flex;
+  width: 400px;
+  overflow: hidden;
+  position: relative;
+  height: 1.5em;
+  margin-top: -20px;
+  color: #275243;
+  font-size: 20px;
+  
+  p {
+    white-space: nowrap;
+    margin: 0;
+    line-height: 1.5;
+    min-width: 400px;
+    text-align: center;
+    position: absolute;
+    right: 200%;
+    transition: right 1s ease-in-out;
+  }
+  
+  p:last-child {
+    right: -200%;
+  }
+  
+  p:nth-last-child(2) {
+    right: 0;
+  }
+}
