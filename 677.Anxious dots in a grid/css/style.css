@@ -1,0 +1,26 @@
+/*
+global
+*/
+*, *::before, *::after {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		box-sizing: border-box;
+}
+
+*:focus {
+		outline: none;
+}
+
+body {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;
+		background: radial-gradient(#333333, #000000);
+		overflow: hidden;
+}
+
+canvas {
+		touch-action: none;
+}

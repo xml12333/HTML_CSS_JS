@@ -678,3 +678,4 @@
 |674| [Geometric Trees](https://github.com/xml12333/HTML_CSS_JS/tree/main/674.Geometric%20Trees)| [Demo](https://nikt.com.ua/projects/htmlCssJs/674.Geometric%20Trees/)| ![Thumbnail](674.Geometric%20Trees/img/info_thumbnail.jpg)|
 |675| [Fractal tree](https://github.com/xml12333/HTML_CSS_JS/tree/main/675.Fractal%20tree)| [Demo](https://nikt.com.ua/projects/htmlCssJs/675.Fractal%20tree/)| ![Thumbnail](675.Fractal%20tree/img/info_thumbnail.jpg)|
 |676| [Tree loader](https://github.com/xml12333/HTML_CSS_JS/tree/main/676.Tree%20loader)| [Demo](https://nikt.com.ua/projects/htmlCssJs/676.Tree%20loader/)| ![Thumbnail](676.Tree%20loader/img/info_thumbnail.jpg)|
+|677| [Anxious dots in a grid](https://github.com/xml12333/HTML_CSS_JS/tree/main/677.Anxious%20dots%20in%20a%20grid)| [Demo](https://nikt.com.ua/projects/htmlCssJs/677.Anxious%20dots%20in%20a%20grid/)| ![Thumbnail](677.Anxious%20dots%20in%20a%20grid/img/info_thumbnail.jpg)|
