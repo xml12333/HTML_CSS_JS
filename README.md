@@ -683,3 +683,4 @@
 |678| [Interactive world map](https://github.com/xml12333/HTML_CSS_JS/tree/main/678.Interactive%20world%20map)| [Demo](https://nikt.com.ua/projects/htmlCssJs/678.Interactive%20world%20map/)| ![Thumbnail](678.Interactive%20world%20map/img/info_thumbnail.jpg)|
 |679| [Scroll Drive](https://github.com/xml12333/HTML_CSS_JS/tree/main/679.Scroll%20Drive)| [Demo](https://nikt.com.ua/projects/htmlCssJs/679.Scroll%20Drive/)| ![Thumbnail](679.Scroll%20Drive/img/info_thumbnail.jpg)|
 |680| [Toast Notifications](https://github.com/xml12333/HTML_CSS_JS/tree/main/680.Toast%20Notifications)| [Demo](https://nikt.com.ua/projects/htmlCssJs/680.Toast%20Notifications/)| ![Thumbnail](680.Toast%20Notifications/img/info_thumbnail.jpg)|
+|681| [ Beach Toggle](https://github.com/xml12333/HTML_CSS_JS/tree/main/681.%20Beach%20Toggle)| [Demo](https://nikt.com.ua/projects/htmlCssJs/681.%20Beach%20Toggle/)| ![Thumbnail](681.%20Beach%20Toggle/img/info_thumbnail.jpg)|
