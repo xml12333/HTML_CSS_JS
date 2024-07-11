@@ -97,7 +97,7 @@ img {
   width: 100%;
   top: 0;
   left: 0;
-  background-color: var(--orange-color);
+  background-color: transparent;
   z-index: var(--z-fixed);
 }
 .nav {
@@ -146,13 +146,122 @@ img {
   right: 1.5rem;
 }
 /* Show menu */
-.show-menu{
+.show-menu {
   right: 0;
 }
 /* Add blur header */
 
 /*=============== HOME ===============*/
+.home__article {
+  position: relative;
+  padding-top: 12rem;
+  width: 100%;
+  height: 100vh;
+}
+.home__panel-1 {
+  width: 100%;
+  height: 40%;
+  background-color: var(--color-car);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.home__panel-2 {
+  width: 100%;
+  height: 60%;
+  background-color: var(--black-color);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.home__content {
+  position: relative;
+  height: 100%;
+  display: grid;
+  align-content: space-between;
+  z-index: 1;
+}
+.home__data {
+  position: relative;
+}
+.home__titles {
+  width: max-content;
+  margin-inline: auto;
+}
+.home__subtitle {
+  font-size: var(--big-font-size);
+  font-family: var(--second-font);
+}
+.home__title {
+  font-size: var(--biggest-font-size);
+}
+.home__img {
+  max-width: initial;
+  width: 400px;
+  position: absolute;
+  left: 0;
+  bottom: -7.5rem;
+}
+.home__info {
+  padding-bottom: 3rem;
+  text-align: center;
+  display: grid;
+  row-gap: 2rem;
+}
+.home__specs {
+  display: flex;
+  justify-content: center;
+  column-gap: 1.5rem;
+  font-weight: var(--font-semi-bold);
+  color: var(--color-car);
+}
+.home__button {
+  display: inline-flex;
+  justify-self: center;
+  align-items: center;
+  column-gap: 0.5rem;
+  border: 2px solid var(--color-car);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4rem;
+  color: var(--color-car);
+}
+.home__button span {
+  font-weight: var(--font-semi-bold);
+}
+.home__button i {
+  font-size: 1.5rem;
+  transition: transform 0.4s;
+}
+.home__button:hover i {
+  transform: translateX(0.5rem);
+}
+.home__interaction{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.home__social{
+  position: absolute;
+  top: 4rem;
+  left: 1.5rem;
+  display: grid;
+  justify-items: center;
+  row-gap: .75rem;
+  z-index: 10;
+}
+.home__social-link{
+  font-size: 1.25rem;
+  color: var(--black-color);
+}
+.home__social-border{
+  width: 2px;
+  height: 88px;
+  background-color: var(--white-color);
+  margin-bottom: .75rem;
 
+}
 /* Swiper class */
 
 /* Swiper animation */
