@@ -14,7 +14,7 @@
     />
 
     <!--=============== SWIPER CSS===============-->
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
 
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="./css/styles.css" />
@@ -51,8 +51,8 @@
       <!--==================== HOME ====================-->
       <section class="home">
         <div class="home__swiper">
-          <div>
-            <article class="home__article car__orange">
+          <div class="swiper-wrapper">
+            <article class="home__article car__orange swiper-slide">
               <div class="home__panel-1"></div>
               <div class="home__panel-2"></div>
               <div class="home__content container">
@@ -78,7 +78,7 @@
                 </div>
               </div>
             </article>
-            <article class="home__article car__green">
+            <article class="home__article car__green swiper-slide">
               <div class="home__panel-1"></div>
               <div class="home__panel-2"></div>
               <div class="home__content container">
@@ -104,7 +104,7 @@
                 </div>
               </div>
             </article>
-            <article class="home__article car__blue">
+            <article class="home__article car__blue swiper-slide">
               <div class="home__panel-1"></div>
               <div class="home__panel-2"></div>
               <div class="home__content container">
@@ -145,6 +145,8 @@
               ><i class="ri-facebook-circle-line"></i
             ></a>
           </div>
+          <!-- Pagination -->
+          <div class="swiper-pagination"></div>
         </div>
       </section>
     </main>

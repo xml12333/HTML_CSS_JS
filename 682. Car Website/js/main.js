@@ -29,11 +29,25 @@ const linkAction = () => {
 };
 navLink.forEach((n) => n.addEventListener("click", linkAction));
 
-
 /*=============== SWIPER CAR ===============*/
-
+const swiperHome = new Swiper(".home__swiper", {
+  speed: 1200,
+  effect: "fade",
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    renderBullet: (index, className) => {
+      return (
+        '<span class="' +
+        className +
+        '">' +
+        String(index + 1).padStart(2, "0") +
+        "</span>"
+      );
+    },
+  },
+});
 
 /*=============== GSAP ANIMATION ===============*/
-
 
 /*=============== ADD BLUR HEADER ===============*/
