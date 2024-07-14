@@ -684,3 +684,4 @@
 |679| [Scroll Drive](https://github.com/xml12333/HTML_CSS_JS/tree/main/679.Scroll%20Drive)| [Demo](https://nikt.com.ua/projects/htmlCssJs/679.Scroll%20Drive/)| ![Thumbnail](679.Scroll%20Drive/img/info_thumbnail.jpg)|
 |680| [Toast Notifications](https://github.com/xml12333/HTML_CSS_JS/tree/main/680.Toast%20Notifications)| [Demo](https://nikt.com.ua/projects/htmlCssJs/680.Toast%20Notifications/)| ![Thumbnail](680.Toast%20Notifications/img/info_thumbnail.jpg)|
 |681| [ Beach Toggle](https://github.com/xml12333/HTML_CSS_JS/tree/main/681.%20Beach%20Toggle)| [Demo](https://nikt.com.ua/projects/htmlCssJs/681.%20Beach%20Toggle/)| ![Thumbnail](681.%20Beach%20Toggle/img/info_thumbnail.jpg)|
+|682| [ Car Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/682.%20Car%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/682.%20Car%20Website/)| ![Thumbnail](682.%20Car%20Website/img/info_thumbnail.jpg)|

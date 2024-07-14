@@ -49,6 +49,11 @@ const swiperHome = new Swiper(".home__swiper", {
 });
 
 /*=============== GSAP ANIMATION ===============*/
+gsap.from(".home__panel-1", { y: -1000, duration: 2 });
+gsap.from(".home__panel-2", { y: 1000, duration: 2 });
+gsap.from(".home__image", { x: 1000, duration: 2 });
+gsap.from(".home__titles", { x: 100, opacity: 0, delay: 2 });
+gsap.from(".home__title", { y: 100, opacity: 0, delay: 2.1 });
 
 /*=============== ADD BLUR HEADER ===============*/
 const blurHeader = () => {
