@@ -686,3 +686,4 @@
 |681| [ Beach Toggle](https://github.com/xml12333/HTML_CSS_JS/tree/main/681.%20Beach%20Toggle)| [Demo](https://nikt.com.ua/projects/htmlCssJs/681.%20Beach%20Toggle/)| ![Thumbnail](681.%20Beach%20Toggle/img/info_thumbnail.jpg)|
 |682| [ Car Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/682.%20Car%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/682.%20Car%20Website/)| ![Thumbnail](682.%20Car%20Website/img/info_thumbnail.jpg)|
 |683| [Relaxing View](https://github.com/xml12333/HTML_CSS_JS/tree/main/683.Relaxing%20View)| [Demo](https://nikt.com.ua/projects/htmlCssJs/683.Relaxing%20View/)| ![Thumbnail](683.Relaxing%20View/img/info_thumbnail.jpg)|
+|684| [Fire 2D](https://github.com/xml12333/HTML_CSS_JS/tree/main/684.Fire%202D)| [Demo](https://nikt.com.ua/projects/htmlCssJs/684.Fire%202D/)| ![Thumbnail](684.Fire%202D/img/info_thumbnail.jpg)|
