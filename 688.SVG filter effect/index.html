@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title> No image dusty SVG filter effect</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<svg width="0" height="0">
+  <filter id="back" color-interpolation-filters="sRGB">
+    <feTurbulence baseFrequency=".0371 .0713" result="one"></feTurbulence>
+    <feTurbulence baseFrequency=".173 .317"></feTurbulence>
+    <feDisplacementMap in="one" scale="25" xChannelSelector="R"></feDisplacementMap>
+    <feDiffuseLighting lighting-color="#4a7997" result="textured">
+      <feDistantLight azimuth="90" elevation="50"></feDistantLight>
+    </feDiffuseLighting>
+    <feColorMatrix in="SourceGraphic" values="0 0 0 0 .5 
+		                      0 0 0 0 .5
+													0 0 0 0 .5
+													1 0 0 0 0" result="baseline"></feColorMatrix>
+    <feComposite in="textured" operator="in"></feComposite>
+    <feDropShadow dx="0" dy="2"></feDropShadow>
+    <feBlend in2="textured" result="textline"></feBlend>
+    <feGaussianBlur in="baseline" stdDeviation="1"></feGaussianBlur>
+    <feOffset dy="1"></feOffset>
+    <feComposite in="baseline" operator="out"></feComposite>
+    <feBlend in2="textline" mode="screen" result="stripe"></feBlend>
+    <feColorMatrix in="SourceGraphic" values="0 0 0 0 .5 
+		                      0 0 0 0 .85
+													0 0 0 0 .95
+													0 1 0 0 0"></feColorMatrix>
+    <feBlend in2="stripe" mode="overlay"></feBlend>
+  </filter>
+  <filter id="extruded" color-interpolation-filters="sRGB" x="-50%" y="-50%" width="200%" height="200%">
+    <feColorMatrix values="0 0 0 0 .01 
+		                      0 0 0 0 .085 
+													0 0 0 0 .14 
+													0 1 0 0 0" result="basegrad"></feColorMatrix>
+    <feTurbulence type="fractalNoise" baseFrequency=".5713"></feTurbulence>
+    <feDisplacementMap in="basegrad" scale="64" xChannelSelector="R" result="mixtgrad"></feDisplacementMap>
+    <feComponentTransfer result="narrgrad">
+      <feFuncA type="table" tableValues="-.5 1.5"></feFuncA>
+    </feComponentTransfer>
+    <feComponentTransfer result="easegrad">
+      <feFuncA type="gamma" exponent="1.35"></feFuncA>
+    </feComponentTransfer>
+    <feColorMatrix in="SourceGraphic" values="0 0 0 0 0 
+		                      0 0 0 0 .375 
+													0 0 0 0 .515 
+													0 0 1 0 0" result="basetext"></feColorMatrix>
+    <feComposite in="easegrad" operator="in"></feComposite>
+    <feBlend in2="basetext" result="gradtext"></feBlend>
+    <feComposite in2="gradtext" operator="in"></feComposite>
+    <feBlend in2="gradtext" result="mixttext"></feBlend>
+    <feOffset dx="2" dy="2"></feOffset>
+    <feGaussianBlur stdDeviation="1"></feGaussianBlur>
+    <feComponentTransfer>
+      <feFuncA type="linear" slope=".8"></feFuncA>
+    </feComponentTransfer>
+    <feComposite in="mixttext" operator="out"></feComposite>
+    <feBlend in2="mixttext" mode="screen"></feBlend>
+    <feDropShadow result="middtext"></feDropShadow>
+    <feColorMatrix in="SourceGraphic" values="0 0 0 0 1 
+		                      0 0 0 0 1 
+													0 0 0 0 1 
+													1 0 0 0 0" result="baseline"></feColorMatrix>
+    <feConvolveMatrix order="16" divisor="1" kernelMatrix="1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1"></feConvolveMatrix>
+    <feOffset dx="8" dy="8"></feOffset>
+    <feColorMatrix values="0 0 0 0 .85 
+		                      0 0 0 0 .68 
+													0 0 0 0 .26 
+													0 0 0 1 0" result="extrbase"></feColorMatrix>
+    <feComposite in="easegrad" operator="in"></feComposite>
+    <feColorMatrix values="0 0 0 0 .48 
+		                      0 0 0 0 .13 
+													0 0 0 0 .13 
+													0 0 0 1 0"></feColorMatrix>
+    <feBlend in2="extrbase" result="extrgrad"></feBlend>
+    <feDropShadow in="baseline" dx="0" dy="0" stdDeviation="8" flood-color="#fffc"></feDropShadow>
+    <feComposite in2="extrgrad" operator="in"></feComposite>
+    <feBlend in2="extrgrad" mode="screen"></feBlend>
+    <feBlend in="middtext"></feBlend>
+    <feDropShadow dx="32" dy="32" stdDeviation="32" flood-color="#000c"></feDropShadow>
+  </filter>
+</svg>
+<div contenteditable="true">dusty</div>
+<!-- partial -->
+  <script  src="./js/script.js"></script>
+
+</body>
+</html>

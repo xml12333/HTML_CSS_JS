@@ -1,0 +1,1 @@
+/* absolutely no JS, absolutely no images other than CSS gradients; all textures are generated b SVG filters */

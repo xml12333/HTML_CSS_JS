@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+html, body { display: grid }
+
+html { min-height: 100% }
+
+body {
+	margin: 0;
+	
+	&::before {
+		grid-area: 1/ 1;
+		background: 
+			linear-gradient(#f00 4px, #0000 0) 0/ 1% 1em, 
+			radial-gradient(circle closest-side, #0f0, #000);
+		background-blend-mode: lighten;
+		filter: url(#back);
+		content: ''
+	}
+}
+
+svg[height='0'] { position: fixed }
+
+div {
+	grid-area: 1/ 1;
+	place-self: center;
+	position: relative;
+	padding: 0 .25em;
+	color: #00f;
+	-webkit-text-stroke: .05em #f00;
+	paint-order: stroke fill;
+	font: 700 3em/ 1.625 courgette, cursive;
+	font-size: clamp(3em, 30vmin, 25em);
+	text-align: center;
+	text-transform: capitalize;
+	isolation: isolate;
+	filter: url(#extruded);
+	
+	&::after {
+		position: absolute;
+		inset: 0;
+		background: 
+			linear-gradient(#000, #0f0) 0 0/ 1% 1lh;
+		mix-blend-mode: lighten;
+		pointer-events: none;
+		content: ''
+	}
+}
