@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Neural life 12</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+<div id="container"></div>
+
+<div class="controls">
+  <input type="file" id="audioFileInput" accept="audio/*" />
+  <label for="audioFileInput">Select Audio</label>
+  <button id="resetButton">Reset Simulation</button>
+  <button id="saveWeightsButton">Save Weights</button>
+  <input type="file" id="loadWeightsInput" style="display: none;" />
+  <label for="loadWeightsInput">Load Weights</label>
+  <button id="toggleDebugButton">Toggle Debug</button>
+</div>
+
+<div id="debugPanel">
+  <div id="debugInfo"></div>
+</div>
+  <script  src="./js/script.js"></script>
+
+</body>
+</html>

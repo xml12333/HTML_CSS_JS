@@ -1,0 +1,138 @@
+@import url(https://fonts.googleapis.com/css?family=VT323);
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: "VT323";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: black;
+  flex-direction: column;
+}
+
+#container {
+  display: grid;
+  color: #0f0;
+  flex: 1;
+  width: 100%;
+}
+
+.controls {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+#audioFileInput {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+label[for="audioFileInput"],
+label[for="loadWeightsInput"],
+button {
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0;
+  font-family: "VT323";
+}
+
+label[for="audioFileInput"]:hover,
+label[for="loadWeightsInput"]:hover,
+button:hover {
+  color: #0f0;
+}
+
+#debugPanel {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: max-content;
+  background: rgba(0, 0, 0, 0.1);
+  color: #0f0;
+  border-radius: 10px;
+  padding: 10px;
+  display: none;
+  backdrop-filter: blur(5px);
+  overflow-y: auto;
+  max-height: 90vh;
+  
+  p {
+    margin: 2px;
+  }
+}
+
+#debugInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.agentType {
+  margin-bottom: 10px;
+}
+
+.agentType p {
+  margin: 2px 0;
+}
+
+.barContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+
+.barChart {
+  width: 100%;
+  height: 20px;
+  background: transparent;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.bar {
+  height: 100%;
+}
+
+.predator .bar {
+  background: #FF4000;
+}
+
+.prey .bar {
+  background: #00BFFF;
+}
+
+.normal .bar {
+  background: #4F4F4F;
+}
+
+.super-predator .bar {
+  background: #FF1493;
+}
+
+.scavenger .bar {
+  background: #8B4513;
+}
+
+.explorer .bar {
+  background: #32CD32;
+}
+
+.builder .bar {
+  background: #FFD700;
+}
+
+.healer .bar {
+  background: #EE82EE;
+}

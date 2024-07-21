@@ -691,3 +691,4 @@
 |686| [Cell Particle Life](https://github.com/xml12333/HTML_CSS_JS/tree/main/686.Cell%20Particle%20Life)| [Demo](https://nikt.com.ua/projects/htmlCssJs/686.Cell%20Particle%20Life/)| ![Thumbnail](686.Cell%20Particle%20Life/img/info_thumbnail.jpg)|
 |687| [Device Loading](https://github.com/xml12333/HTML_CSS_JS/tree/main/687.Device%20Loading)| [Demo](https://nikt.com.ua/projects/htmlCssJs/687.Device%20Loading/)| ![Thumbnail](687.Device%20Loading/img/info_thumbnail.jpg)|
 |688| [SVG filter effect](https://github.com/xml12333/HTML_CSS_JS/tree/main/688.SVG%20filter%20effect)| [Demo](https://nikt.com.ua/projects/htmlCssJs/688.SVG%20filter%20effect/)| ![Thumbnail](688.SVG%20filter%20effect/img/info_thumbnail.jpg)|
+|689| [Neural Lifi](https://github.com/xml12333/HTML_CSS_JS/tree/main/689.Neural%20Lifi)| [Demo](https://nikt.com.ua/projects/htmlCssJs/689.Neural%20Lifi/)| ![Thumbnail](689.Neural%20Lifi/img/info_thumbnail.jpg)|
