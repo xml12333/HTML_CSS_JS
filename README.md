@@ -693,3 +693,4 @@
 |688| [SVG filter effect](https://github.com/xml12333/HTML_CSS_JS/tree/main/688.SVG%20filter%20effect)| [Demo](https://nikt.com.ua/projects/htmlCssJs/688.SVG%20filter%20effect/)| ![Thumbnail](688.SVG%20filter%20effect/img/info_thumbnail.jpg)|
 |689| [Neural Lifi](https://github.com/xml12333/HTML_CSS_JS/tree/main/689.Neural%20Lifi)| [Demo](https://nikt.com.ua/projects/htmlCssJs/689.Neural%20Lifi/)| ![Thumbnail](689.Neural%20Lifi/img/info_thumbnail.jpg)|
 |690| [Cube Effect Slider](https://github.com/xml12333/HTML_CSS_JS/tree/main/690.Cube%20Effect%20Slider)| [Demo](https://nikt.com.ua/projects/htmlCssJs/690.Cube%20Effect%20Slider/)| ![Thumbnail](690.Cube%20Effect%20Slider/img/info_thumbnail.jpg)|
+|691| [Notification Messages](https://github.com/xml12333/HTML_CSS_JS/tree/main/691.Notification%20Messages)| [Demo](https://nikt.com.ua/projects/htmlCssJs/691.Notification%20Messages/)| ![Thumbnail](691.Notification%20Messages/img/info_thumbnail.jpg)|
