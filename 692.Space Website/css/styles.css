@@ -230,9 +230,78 @@ img {
 /* Active link */
 
 /*=============== HOME ===============*/
-
+.home {
+  position: relative;
+}
+.home__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.home__container {
+  position: relative;
+  row-gap: 3rem;
+  padding-top: 3rem;
+}
+.home__data {
+  position: relative;
+  text-align: center;
+}
+.home__title span {
+  display: block;
+}
+.home__title {
+  font-size: var(--biggest-font-size);
+  font-family: var(--second-font);
+  font-weight: initial;
+  margin-bottom: 1.5rem;
+}
+.home__title span:nth-child(1) {
+  background-color: var(--third-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.home__title span:nth-child(3) {
+  background-color: var(--second-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.home__ovni {
+  width: 50px;
+  position: absolute;
+  top: 4rem;
+  right: -1rem;
+  transform: rotateY(180deg);
+}
+.home__img {
+  width: 320px;
+  justify-self: center;
+}
 /*=============== BUTTON ===============*/
-
+.button {
+  display: inline-flex;
+  justify-content: center;
+  background: var(--first-gradient);
+  color: var(--white-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1rem 2rem;
+  transition: box-shadow 0.4s;
+}
+.button:hover {
+  box-shadow: 0 8px 32px hsla(243, 100%, 54%, 0.4);
+}
+.button__yellow {
+  background-color: var(--third-gradient);
+}
+.button__yellow:hover {
+  box-shadow: 0 8px 32px hsla(25, 96%, 55%, 0.4);
+}
 /*=============== TRAVEL ===============*/
 
 /* Swiper class */
