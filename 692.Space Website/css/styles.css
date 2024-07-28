@@ -308,7 +308,7 @@ img {
   box-shadow: 0 8px 32px hsla(243, 100%, 54%, 0.4);
 }
 .button__yellow {
-  background-color: var(--third-gradient);
+  background: var(--third-gradient);
 }
 .button__yellow:hover {
   box-shadow: 0 8px 32px hsla(25, 96%, 55%, 0.4);
@@ -437,9 +437,58 @@ img {
   justify-self: center;
 }
 /*=============== HISTORY ===============*/
-
+.history {
+  position: relative;
+}
+.history__container {
+  position: relative;
+  row-gap: 2.5rem;
+  grid-template-columns: 265px;
+  justify-content: center;
+}
+.history__card {
+  text-align: center;
+}
+.history__img {
+  width: 150px;
+  margin: 0 auto 0.75rem;
+}
+.history__description span {
+  color: var(--first-color);
+  font-weight: var(--font-semi-bold);
+}
+.history__planet-1,
+.history__planet-2 {
+  position: absolute;
+}
+.history__planet-1 {
+  width: 250px;
+  top: 10rem;
+  left: -8rem;
+}
+.history__planet-2 {
+  width: 150px;
+  right: -5rem;
+  bottom: 6rem;
+}
 /*=============== CONTACT ===============*/
-
+.contact__container {
+  padding-bottom: 2rem;
+}
+.contact__form {
+  display: grid;
+  row-gap: 1rem;
+}
+.contact__input {
+  width: 100%;
+  background-color: var(--body-color);
+  border: 2px solid var(--border-color);
+  padding: 1rem;
+  color: var(--white-color);
+}
+.contact__form button {
+  cursor: pointer;
+}
 /*=============== FOOTER ===============*/
 
 /*=============== SCROLL BAR ===============*/
