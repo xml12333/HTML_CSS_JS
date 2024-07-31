@@ -586,7 +586,198 @@ img {
 }
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
+@media screen and (max-width: 340px) {
+  .container {
+    margin-inline: 1rem;
+  }
+  .home__title {
+    font-size: 2.5rem;
+  }
+  .travel__container {
+    padding-inline: 1rem;
+  }
+  .explore__info {
+    flex-direction: column;
+    row-gap: 1rem;
+    text-align: center;
+  }
+}
 
 /* For medium devices */
+@media screen and (min-width: 540px) {
+  .home__containe,
+  .explore__container {
+    grid-template-columns: 350px;
+    justify-content: center;
+  }
+  .travel__card {
+    width: 265px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .home__container,
+  .explore__container {
+    grid-template-columns: repeat(2, 350px);
+    align-items: center;
+  }
+  .home__data,
+  .explore_-data .section__title,
+  .explore__description {
+    text-align: initial;
+  }
+  .explore__info {
+    justify-content: initial;
+  }
+  .explore__img {
+    order: -1;
+  }
+  .history__container {
+    grid-template-columns: repeat(2, 265px);
+  }
+  .contact__form {
+    width: 600px;
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    column-gap: 1rem;
+    border: 2px solid var(--border-color);
+    padding: 1rem 1rem 1rem 1.5rem;
+  }
+  .contact__input {
+    border: none;
+    padding: 0;
+  }
+}
 
 /* For large devices */
+@media screen and (min-width: 1150px) {
+  .container {
+    margin-inline: auto;
+  }
+  .section {
+    padding-block: 7rem 2rem;
+  }
+  .section__title {
+    margin-bottom: 3rem;
+  }
+  .nav {
+    height: calc(var(--header-height) + 2rem);
+  }
+  .nav__logo img {
+    width: 3rem;
+  }
+  .nav__toggle,
+  .nav__close {
+    font-size: 2rem;
+  }
+  .nav__menu {
+    width: 40%;
+    padding: 10rem 4.5rem 0;
+  }
+  .nav__list {
+    row-gap: 3.5rem;
+  }
+  .nav__close {
+    top: 1.7rem;
+  }
+  .nav__img {
+    width: 400px;
+    right: -4rem;
+  }
+  .home__container {
+    grid-template-columns: 540px 550px;
+    column-gap: 2rem;
+  }
+  .home__title {
+    margin-bottom: 3rem;
+  }
+  .home__ovni {
+    width: 100px;
+    top: 10rem;
+    right: 1.5rem;
+  }
+  .home__img {
+    width: 550px;
+  }
+  .travel__lines {
+    width: 800px;
+  }
+  .travel__container {
+    padding: 3.5rem 3.5rem 7.5rem;
+  }
+  .travel__container .section__title {
+    text-align: initial;
+  }
+  .travel__swiper {
+    max-width: 980px;
+  }
+  .travel__card {
+    padding-top: 11rem;
+  }
+  .travel__img {
+    width: 200px;
+  }
+  .travel__info {
+    margin-bottom: 1.5rem;
+  }
+  .travel__description {
+    font-size: var(--normal-font-size);
+  }
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 3rem;
+  }
+  .explore__container {
+    grid-template-columns: 550px 480px;
+    column-gap: 2rem;
+  }
+  .explore__img {
+    width: 550px;
+  }
+  .explore__data .section__title {
+    margin-bottom: 1.5rem;
+  }
+  .explore__description {
+    margin-bottom: 3rem;
+  }
+  .explore__planet {
+    width: 100px;
+    right: -4rem;
+  }
+  .history__container {
+    grid-template-columns: repeat(3, 265px);
+    column-gap: 5rem;
+  }
+  .history__img {
+    width: 200px;
+    margin-bottom: 1rem;
+  }
+  .history__planet-1 {
+    width: 500px;
+    left: -15rem;
+  }
+  .history__planet-2 {
+    width: 300px;
+    right: -8rem;
+    bottom: 10rem;
+  }
+  .footer__container {
+    padding-block: 4rem 3rem;
+  }
+  .footer__links {
+    column-gap: 4rem;
+  }
+  .footer__social {
+    column-gap: 1.5rem;
+  }
+  .footer__planet-1 {
+    width: 400px;
+    bottom: -12rem;
+  }
+  .footer__planet-2 {
+    width: 150px;
+  }
+  .scrollup {
+    right: 3rem;
+  }
+}
