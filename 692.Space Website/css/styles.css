@@ -274,13 +274,13 @@ img {
   margin-bottom: 1.5rem;
 }
 .home__title span:nth-child(1) {
-  background-color: var(--third-gradient);
+  background: var(--third-gradient);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
 .home__title span:nth-child(3) {
-  background-color: var(--second-gradient);
+  background: var(--second-gradient);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;

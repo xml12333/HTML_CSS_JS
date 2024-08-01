@@ -94,3 +94,21 @@ const scrollActive = () => {
 window.addEventListener("scroll", scrollActive);
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+const sr = ScrollReveal({
+  origin: "top",
+  distance: "80px",
+  duration: 2500,
+  delay: 300,
+  //reset: true, //Animations repeat
+});
+sr.reveal(".home__data, .travel__swiper, .contact__container");
+sr.reveal(".home__img", { origin: "bottom" });
+sr.reveal(".home__ovni", { delay: 800 });
+sr.reveal(".explore__img", { origin: "left" });
+sr.reveal(".explore__data", { origin: "right" });
+sr.reveal(".explore__planet", { origin: "right", delay: 800 });
+sr.reveal(".history__card", { interval: 100 });
+sr.reveal(".history__planet-1", { origin: "left", delay: 1000 });
+sr.reveal(".history__planet-2", { origin: "right", delay: 1200 });
+sr.reveal(".footer__planet-1", { origin: "bottom", delay: 600 });
+sr.reveal(".footer__planet-2", { delay: 800 });
