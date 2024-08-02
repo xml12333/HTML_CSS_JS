@@ -695,3 +695,4 @@
 |690| [Cube Effect Slider](https://github.com/xml12333/HTML_CSS_JS/tree/main/690.Cube%20Effect%20Slider)| [Demo](https://nikt.com.ua/projects/htmlCssJs/690.Cube%20Effect%20Slider/)| ![Thumbnail](690.Cube%20Effect%20Slider/img/info_thumbnail.jpg)|
 |691| [Notification Messages](https://github.com/xml12333/HTML_CSS_JS/tree/main/691.Notification%20Messages)| [Demo](https://nikt.com.ua/projects/htmlCssJs/691.Notification%20Messages/)| ![Thumbnail](691.Notification%20Messages/img/info_thumbnail.jpg)|
 |692| [Space Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/692.Space%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/692.Space%20Website/)| ![Thumbnail](692.Space%20Website/img/info_thumbnail.jpg)|
+|693| [Bottom NavBar](https://github.com/xml12333/HTML_CSS_JS/tree/main/693.Bottom%20NavBar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/693.Bottom%20NavBar/)| ![Thumbnail](693.Bottom%20NavBar/img/info_thumbnail.jpg)|
