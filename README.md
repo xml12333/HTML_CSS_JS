@@ -696,3 +696,4 @@
 |691| [Notification Messages](https://github.com/xml12333/HTML_CSS_JS/tree/main/691.Notification%20Messages)| [Demo](https://nikt.com.ua/projects/htmlCssJs/691.Notification%20Messages/)| ![Thumbnail](691.Notification%20Messages/img/info_thumbnail.jpg)|
 |692| [Space Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/692.Space%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/692.Space%20Website/)| ![Thumbnail](692.Space%20Website/img/info_thumbnail.jpg)|
 |693| [Bottom NavBar](https://github.com/xml12333/HTML_CSS_JS/tree/main/693.Bottom%20NavBar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/693.Bottom%20NavBar/)| ![Thumbnail](693.Bottom%20NavBar/img/info_thumbnail.jpg)|
+|694| [Lots Notifications](https://github.com/xml12333/HTML_CSS_JS/tree/main/694.Lots%20Notifications)| [Demo](https://nikt.com.ua/projects/htmlCssJs/694.Lots%20Notifications/)| ![Thumbnail](694.Lots%20Notifications/img/info_thumbnail.jpg)|
