@@ -697,3 +697,4 @@
 |692| [Space Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/692.Space%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/692.Space%20Website/)| ![Thumbnail](692.Space%20Website/img/info_thumbnail.jpg)|
 |693| [Bottom NavBar](https://github.com/xml12333/HTML_CSS_JS/tree/main/693.Bottom%20NavBar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/693.Bottom%20NavBar/)| ![Thumbnail](693.Bottom%20NavBar/img/info_thumbnail.jpg)|
 |694| [Lots Notifications](https://github.com/xml12333/HTML_CSS_JS/tree/main/694.Lots%20Notifications)| [Demo](https://nikt.com.ua/projects/htmlCssJs/694.Lots%20Notifications/)| ![Thumbnail](694.Lots%20Notifications/img/info_thumbnail.jpg)|
+|695| [Moon Notification](https://github.com/xml12333/HTML_CSS_JS/tree/main/695.Moon%20Notification)| [Demo](https://nikt.com.ua/projects/htmlCssJs/695.Moon%20Notification/)| ![Thumbnail](695.Moon%20Notification/img/info_thumbnail.jpg)|
