@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Perspective</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<textarea id="codeEditor" class="editor" spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" oninput="render()"></textarea>
+<pre id="error"></pre>
+<div id="indicator"></div>
+<div id="controls">
+  <div class="controls">
+    <input id="btnToggleView" class="icon" type="checkbox" name="toggleView" onclick="toggleView()">
+    <input id="btnToggleResolution" class="icon" type="checkbox" name="toggleResolution" onchange="toggleResolution()">
+    <input id="btnReset" class="icon" type="checkbox" name="reset" onclick="reset()">
+  </div>
+</div>
+<script type="x-shader/x-fragment">#version 300 es
+/*********
+* made by Matthias Hurrle (@atzedent)
+*/ 
+precision highp float;
+out vec4 O;
+uniform vec2 resolution;
+uniform float time;
+#define FC gl_FragCoord.xy
+#define R resolution
+#define T (.5*time)
+#define S smoothstep
+#define N normalize
+#define rot(a) mat2(cos((a)-vec4(0,11,33,0)))
+vec3 palette(float k) {
+	vec3
+	a=vec3(.5),
+	b=vec3(.5),
+	c=vec3(1),
+	d=vec3(0,.1,.2);
+	return a+b*cos(6.28318*(c*k+d));
+}
+void cam(inout vec3 p) {
+	p.xy*=rot(T*.25);
+}
+float box(vec3 p, float s) {
+	p=abs(p)-1.;
+	return length(max(p,.0))+min(.0,max(max(p.x,p.y),p.z));
+}
+float tor(vec3 p, vec2 s) {
+	vec2 c=vec2(length(p.xy)-s.x,p.z);
+	return length(c)-s.y;
+}
+float glow=.0;
+vec4 map(vec3 p) {
+	float t=T*.25, pt=10.;
+	const float k=8.;
+	p.xy*=rot(-p.z*.01);
+	vec3 id=floor(p/k);
+	p=mod(p,k)-k*.5;
+	p.xy*=rot(t);
+	float d=box(p,1.), b=tor(p+vec3(0,0,.8),vec2(.7,.05));
+	d=max(d,-b);
+	glow+=.05/(.05+b*b*80.);
+	return vec4(d,id);
+}
+vec3 norm(vec3 p) {
+	float h=1e-3; vec2 k=vec2(-1,1);
+	return N(
+		k.xyy*map(p+k.xyy*h).x+
+		k.yxy*map(p+k.yxy*h).x+
+		k.yyx*map(p+k.yyx*h).x+
+		k.xxx*map(p+k.xxx*h).x
+	);
+}
+vec3 dir(vec2 uv, vec3 p, vec3 t, float z) {
+	vec3 up=vec3(0,1,0),
+	f=N(p-t),
+	r=N(cross(up,f)),
+	u=cross(f,r),
+	c=f*z,
+	i=c+uv.x*r+uv.y*u,
+	d=N(i);
+	return d;
+}
+void main(void) {
+	float t=T*.25, tt=mod(T,50.)*25.;
+	vec2 uv=(FC-.5*R)/min(R.x,R.y);
+	vec3 col=vec3(0),
+	p=vec3(3.*sin(T*.2),0,tt),
+	rd=dir(uv,p,vec3(3.*sin(T*.1),0,-tt),exp(cos(floor(t)+pow(S(.0,1.,fract(t)),10.))));
+	cam(p); cam(rd);
+	const float steps=90., maxd=6.;
+	float bnz=.0, dd=.0;
+	for (float i=.0; i<steps; i++) {
+		vec4 d=map(p);
+		if (abs(d.x)<1e-3) {
+			if (bnz++>.0) break;
+			vec3 n=norm(p), r=reflect(rd,n),
+			lp=vec3(0,0,-1), l=N(lp);
+			col=mix(col,vec3(clamp(dot(l,n),.0,1.)),d.x);
+			col=mix(col,palette(.5+.5*sin(d.y+d.z+d.w)),.3);
+			rd=r;
+			d.x=6e-3;
+		}
+		if (d.x>maxd) break;
+		p+=rd*d.x;
+		dd+=d.x;
+	}
+	col=mix(vec3(1),sqrt(col),max(.0,dd/100.));
+	col+=vec3(.95,.4,.8)*glow;
+	O=vec4(col,1);
+}</script>
+<!-- partial -->
+  <script  src="./js/script.js"></script>
+
+</body>
+</html>
