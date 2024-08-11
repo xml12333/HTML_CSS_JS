@@ -147,6 +147,18 @@ img {
   top: 0;
 }
 /* Add blur header */
+.blur-header::after {
+  content: "";
+  position: absolute;
+  width: 1000%;
+  height: 100%;
+  background-color: hsla(353, 98%, 90%, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 
 /*=============== HOME ===============*/
 .home {
@@ -218,11 +230,100 @@ img {
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-
+@media screen and (max-width: 320px) {
+  .container {
+    margin-inline: 1rem;
+  }
+  .home__title {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 350px) and (max-height: 680px) {
+  .home__container {
+    height: 700px;
+  }
+}
 /* For medium devices */
+@media screen and (min-width: 576px) {
+  .home__data {
+    max-width: 380px;
+    margin-inline: auto;
+  }
+  .home__images img {
+    width: initial;
+    right: 0;
+  }
+}
 
 /* For large devices */
+@media screen and (min-width: 1150px) {
+  .container {
+    margin-inline: auto;
+  }
+  .nav {
+    height: calc(var(--header-height) + 2rem);
+  }
+  .nav__toggle,
+  .nav__close {
+    display: none;
+  }
+  .nav__list {
+    flex-direction: row;
+    column-gap: 4rem;
+  }
+  .home__container {
+    height: 960px;
+  }
+  .home__data {
+    max-width: 610px;
+    text-align: initial;
+    margin: 0;
+  }
+  .home__description {
+    padding-right: 8rem;
+    margin-bottom: 3rem;
+  }
+  .home__lantern-1,
+  .home__lantern-2 {
+    width: 80px;
+  }
+  .home__lantern-1 {
+    top: 6.5rem;
+    right: 4rem;
+  }
+  .home__lantern-2 {
+    left: initial;
+    right: 14rem;
+    bottom: -3.5rem;
+  }
+  ::-webkit-scrollbar {
+    width: 0.6rem;
+    background-color: hsl(353, 12%, 10%);
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: hsl(353, 12%, 25%);
+  }
+}
 
 /* For 2K resolutions (2048 x 1152) */
-
+@media screen and (min-width: 2048px) and (min-height: 1100px) {
+  .container {
+    max-width: 1300px;
+  }
+  .home__container {
+    height: 100vh;
+    display: grid;
+  }
+  .home__data {
+    align-self: center;
+  }
+}
 /* For taller devices */
+@media screen and (max-width: 1150px) and (min-height: 900px) {
+  .home__container {
+    display: grid;
+  }
+  .home__data {
+    align-self: center;
+  }
+}

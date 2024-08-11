@@ -32,13 +32,13 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 
 
 /*=============== ADD BLUR HEADER ===============*/
-const scrollHeader = () =>{
+const blurHeader = () =>{
     const header = document.getElementById('header')
     // When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag
-    this.scrollY >= 50 ? header.classList.add('scroll-header') 
-                       : header.classList.remove('scroll-header')
+    this.scrollY >= 50 ? header.classList.add('blur-header') 
+                       : header.classList.remove('blur-header')
 }
-window.addEventListener('scroll', scrollHeader)
+window.addEventListener('scroll', blurHeader)
 
 /*=============== GSAP ANIMATION ===============*/
 
