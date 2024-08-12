@@ -227,7 +227,16 @@ img {
   filter: saturate(1.3);
 }
 /* Sakura petals */
-
+.sakura-petals{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 10000;
+  pointer-events: none;
+}
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 @media screen and (max-width: 320px) {
