@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Danfo&display=swap");
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  background: #799df1;
+	cursor: crosshair;
+}
+
+img {
+	max-width: 90vw;
+	max-height: calc(95vh - 1.5rem);
+	margin-bottom: 2rem;
+  filter: url(#3d);
+}
+
+.footer {
+	position: absolute;
+	bottom: 0; 
+	left: 0;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	font-family: sans-serif;
+	font-weight: 700;
+	color: white;
+	text-transform: uppercase;
+}
+
+.text,
+.buttons {
+	padding: 0.5rem;
+}
+
+button {
+	margin: 0 0.2rem;
+	border: none;
+	color: white;
+	background-color: #000038;
+	border-radius: 1rem;
+	cursor: pointer;
+}
+
+.button-active {
+	color: #000038;
+	background-color: white;
+	outline: 2px solid white;
+}
