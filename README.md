@@ -704,3 +704,4 @@
 |699| [General Path-finding](https://github.com/xml12333/HTML_CSS_JS/tree/main/699.General%20Path-finding)| [Demo](https://nikt.com.ua/projects/htmlCssJs/699.General%20Path-finding/)| ![Thumbnail](699.General%20Path-finding/img/info_thumbnail.jpg)|
 |700| [Temple Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/700.Temple%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/700.Temple%20Website/)| ![Thumbnail](700.Temple%20Website/img/info_thumbnail.jpg)|
 |701| [Trippy SVG Filter](https://github.com/xml12333/HTML_CSS_JS/tree/main/701.Trippy%20SVG%20Filter)| [Demo](https://nikt.com.ua/projects/htmlCssJs/701.Trippy%20SVG%20Filter/)| ![Thumbnail](701.Trippy%20SVG%20Filter/img/info_thumbnail.jpg)|
+|702| [Dancing Tree](https://github.com/xml12333/HTML_CSS_JS/tree/main/702.Dancing%20Tree)| [Demo](https://nikt.com.ua/projects/htmlCssJs/702.Dancing%20Tree/)| ![Thumbnail](702.Dancing%20Tree/img/info_thumbnail.jpg)|
