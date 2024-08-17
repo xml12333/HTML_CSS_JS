@@ -707,3 +707,4 @@
 |702| [Dancing Tree](https://github.com/xml12333/HTML_CSS_JS/tree/main/702.Dancing%20Tree)| [Demo](https://nikt.com.ua/projects/htmlCssJs/702.Dancing%20Tree/)| ![Thumbnail](702.Dancing%20Tree/img/info_thumbnail.jpg)|
 |703| [Cosmic Dreams](https://github.com/xml12333/HTML_CSS_JS/tree/main/703.Cosmic%20Dreams)| [Demo](https://nikt.com.ua/projects/htmlCssJs/703.Cosmic%20Dreams/)| ![Thumbnail](703.Cosmic%20Dreams/img/info_thumbnail.jpg)|
 |704| [Frostapalooza](https://github.com/xml12333/HTML_CSS_JS/tree/main/704.Frostapalooza)| [Demo](https://nikt.com.ua/projects/htmlCssJs/704.Frostapalooza/)| ![Thumbnail](704.Frostapalooza/img/info_thumbnail.jpg)|
+|705| [Dynamic Content](https://github.com/xml12333/HTML_CSS_JS/tree/main/705.Dynamic%20Content)| [Demo](https://nikt.com.ua/projects/htmlCssJs/705.Dynamic%20Content/)| ![Thumbnail](705.Dynamic%20Content/img/info_thumbnail.jpg)|
