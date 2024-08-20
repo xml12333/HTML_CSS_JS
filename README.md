@@ -710,3 +710,4 @@
 |705| [Dynamic Content](https://github.com/xml12333/HTML_CSS_JS/tree/main/705.Dynamic%20Content)| [Demo](https://nikt.com.ua/projects/htmlCssJs/705.Dynamic%20Content/)| ![Thumbnail](705.Dynamic%20Content/img/info_thumbnail.jpg)|
 |706| [Flight slider](https://github.com/xml12333/HTML_CSS_JS/tree/main/706.Flight%20slider)| [Demo](https://nikt.com.ua/projects/htmlCssJs/706.Flight%20slider/)| ![Thumbnail](706.Flight%20slider/img/info_thumbnail.jpg)|
 |707| [WebGL Blackhole](https://github.com/xml12333/HTML_CSS_JS/tree/main/707.WebGL%20Blackhole)| [Demo](https://nikt.com.ua/projects/htmlCssJs/707.WebGL%20Blackhole/)| ![Thumbnail](707.WebGL%20Blackhole/img/info_thumbnail.jpg)|
+|708| [Petit stars](https://github.com/xml12333/HTML_CSS_JS/tree/main/708.Petit%20stars)| [Demo](https://nikt.com.ua/projects/htmlCssJs/708.Petit%20stars/)| ![Thumbnail](708.Petit%20stars/img/info_thumbnail.jpg)|

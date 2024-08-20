@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Petit stars</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <svg viewBox="0 0 500 500" id="svg">
+      <defs>
+        <linearGradient id="myGradient" gradientTransform="rotate(90)">
+          <stop offset="5%" stop-color="#1e3d71" />
+          <stop offset="95%" stop-color="#142c55" />
+        </linearGradient>
+      </defs>
+      <rect
+        x="0"
+        y="0"
+        width="100%"
+        height="100%"
+        fill="url('#myGradient')"
+      ></rect>
+    </svg>
+    <script src="./js/poisson-disk-sampling.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
