@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Scatter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+<svg width="0" height="0">
+	<filter id="noise" color-interpolation-filters="sRGB">
+		<feTurbulence type="fractalNoise" baseFrequency=".8" />
+		<feColorMatrix type="saturate" values="0" />
+		<feComponentTransfer>
+			<feFuncR type="discrete" tableValues=".8 1" />
+			<feFuncG type="discrete" tableValues=".8 1" />
+			<feFuncB type="discrete" tableValues=".8 1" />
+		</feComponentTransfer>
+		<feBlend in="SourceGraphic" mode="multiply" />
+	</filter>
+
+	<filter id="offset" color-interpolation-filters="sRGB">
+		<!-- Base drawing (green channel) into each color for future layering -->
+		<feColorMatrix result="src-r" in="SourceGraphic" values="
+			0 1 0 0 0
+			0 0 0 0 0
+			0 0 0 0 0
+			0 0 0 1 0
+		" />
+		<feColorMatrix result="src-g" in="SourceGraphic" values="
+			0 0 0 0 0
+			0 1 0 0 0
+			0 0 0 0 0
+			0 0 0 1 0
+		" />
+		<feColorMatrix result="src-b" in="SourceGraphic" values="
+			0 0 0 0 0
+			0 0 0 0 0
+			0 1 0 0 0
+			0 0 0 1 0
+		" />
+		
+		<!-- Create noise, scaled by the red channel -->
+		<feColorMatrix result="amount" in="SourceGraphic" values="
+			1 0 0 0 0
+			1 0 0 0 0
+			1 0 0 0 0
+			0 0 0 1 0
+		" />
+		<feTurbulence type="fractalNoise" baseFrequency=".5" />
+		<feComponentTransfer>
+			<feFuncA type="discrete" tableValues="1" />
+		</feComponentTransfer>
+		<feComposite result="noise" in2="amount" operator="arithmetic" k1="1" k3="-.5" k4=".5" />
+		
+		<!-- Pixelate the noise -->
+		<feFlood x="0" y="0" width="1" height="1" />
+		<feComposite width="8" height="8" />
+		<feTile />
+		<feComposite in="noise" operator="in" />
+		<feMorphology result="d" operator="dilate" radius="4" />
+
+		<!-- Apply effect and layer results -->
+		<feDisplacementMap result="o-r" in="src-r" in2="d" scale="256" yChannelSelector="R" xChannelSelector="G" />
+		<feDisplacementMap result="o-g" in="src-g" in2="d" scale="256" yChannelSelector="G" xChannelSelector="B" />
+		<feDisplacementMap result="o-b" in="src-b" in2="d" scale="256" yChannelSelector="B" xChannelSelector="R" />
+		<feComposite in2="o-g" operator="lighter" />
+		<feComposite in2="o-r" operator="lighter" />
+	</filter>
+</svg>
+
+<div id="container"></div>
+  <script  src="./js/script.js"></script>
+
+</body>
+</html>

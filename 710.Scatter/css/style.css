@@ -1,0 +1,82 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	overflow: hidden;
+	background: #0d2558;
+	&::before {
+		content: '';
+		position: fixed;
+		inset: 0;
+		filter: url('#noise');
+		background: 
+			radial-gradient(farthest-side at right top, #5e187b, #0000) top right / 60% 60% no-repeat,
+			radial-gradient(farthest-side at left center, #025143, #0000) left 25% / 50% 130% no-repeat,
+			radial-gradient(farthest-side at center bottom, #af64065c, #0000) 130% bottom / 45% 70% no-repeat,
+			#0d2558;
+	}
+}
+
+svg[width="0"][height="0"] { position: fixed; }
+
+@property --t {
+	syntax: '<number>';
+	initial-value: 0;
+	inherits: true;
+}
+@keyframes time { 90%, to { --t: 1; } }
+
+#container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+	--dot-size: 8px;
+	--line-size: clamp(4 * var(--dot-size), round(90vmin / 6, 4 * var(--dot-size)), 16 * var(--dot-size));
+	width: clamp(
+		2.5 * var(--line-size),
+		round(down, 90vmin - var(--line-size) / 2, 2 * var(--line-size)) + var(--line-size) / 2,
+		8.5 * var(--line-size)
+	);
+	aspect-ratio: 1;
+	border-radius: 5%;
+	overflow: hidden;
+	background: #000;
+	opacity: 0.7;
+	backdrop-filter: blur(8px);
+	z-index: 1;
+	box-shadow: 0 8px 16px #000a;
+	animation: time 5s linear infinite;
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+
+		--w: 25%;
+		--p: (50% - (1 - clamp(0, var(--t) / .8, 1)) * (50% + var(--w)));
+
+		--r-from: .4;
+		--r-time: ((clamp(var(--r-from), var(--t), 1) - var(--r-from)) / (1 - var(--r-from)));
+		--r-time-eased: pow(1 - pow(1 - var(--r-time), 3), 2);
+		--r: calc(100% - var(--r-time-eased) * 125%);
+
+		--g1: #f000 calc(var(--p) - var(--w)), #f00 calc(var(--p)), #f000 calc(var(--p) + var(--w));
+		--g2: #f000 calc(100% - var(--p) - var(--w)), #f00 calc(100% - var(--p)), #f000 calc(100% - var(--p) + var(--w));
+
+		background:
+			radial-gradient(circle at center, #fff calc(var(--r)), #0ff calc(var(--r) + 25%)),
+			linear-gradient(to right, var(--g1)),
+			linear-gradient(to right, var(--g2)),
+			linear-gradient(to bottom, var(--g1)),
+			linear-gradient(to bottom, var(--g2)),
+			linear-gradient(to right, #000 50%, #0000 50%) calc(50% + .25 * var(--dot-size)) center / var(--dot-size) 100%,
+			linear-gradient(to bottom, #000 50%, #0000 50%) center calc(50% + .25 * var(--dot-size)) / 100% var(--dot-size),
+			linear-gradient(to right, #0f00 50%, #0f0 50%) calc(50% + .25 * var(--line-size)) center / var(--line-size) 100%,
+			linear-gradient(to bottom, #0f00 50%, #0f0 50%) center calc(50% + .25 * var(--line-size)) / 100% var(--line-size),
+			#000;
+		background-blend-mode: darken, lighten, lighten, lighten, lighten, normal, normal, normal, normal, normal;
+		filter: url('#offset');
+	}
+}
