@@ -1,0 +1,254 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(18, 95%, 55%);
+  --second-color: hsl(42, 98%, 52%);
+  --first-gradient: linear-gradient(
+    90deg,
+    hsl(18, 95%, 55%),
+    hsl(18, 98%, 64%)
+  );
+  --title-color: hsl(255, 12%, 12%);
+  --text-color: hsl(225, 12%, 24%);
+  --text-color-light: hsl(255, 4%, 70%);
+  --body-color: hsl(0, 0%, 100%);
+  --container-color: hsl(0, 0%, 100%);
+  --white-color: hsl(0, 0%, 100%);
+  --black-color: hsl(255, 20%, 10%);
+  --gray-border: hsl(255, 6%, 90%);
+  --black-border: hsl(255, 10%, 20%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", sans-serif;
+  --big-font-size: 2.25rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --big-font-size: 3.5rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding-block: 5rem 1rem;
+}
+.section__title,
+.section__subtitle {
+  text-align: center;
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-bold);
+  margin-bottom: 1.5rem;
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--second-color);
+  margin-bottom: 0.5rem;
+}
+
+.main {
+  overflow: hidden;
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--black-color);
+  z-index: var(--z-fixed);
+}
+.nav {
+  position: relative;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__logo {
+  display: flex;
+  align-items: center;
+  column-gap: 0.25rem;
+}
+.nav__logo span {
+  color: var(--white-color);
+  font-weight: var(--font-semi-bold);
+  transition: color 0.4s;
+}
+.nav__logo i {
+  color: var(--first-color);
+  font-size: 1.5rem;
+}
+.nav__toggle,
+.nav__close {
+  font-size: 1.5rem;
+  color: var(--white-color);
+  cursor: pointer;
+  transition: color 0.4s;
+}
+
+/* Navigation for mobile devices */
+@media screen and (max-width: 1150px) {
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: var(--black-color);
+    width: 80%;
+    height: 100%;
+    padding: 7.5rem 3.5rem 0;
+    border-left: 2px solid var(--black-border);
+    transition: right 0.4s;
+  }
+}
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4rem;
+}
+.nav__link {
+  color: var(--text-color-light);
+  font-weight: var(--font-semi-bold);
+  transition: color 0.4s;
+}
+.nav__link:hover {
+  color: var(--first-color);
+}
+.nav__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+}
+/* Show menu */
+.show-menu {
+  right: 0;
+}
+
+/* Change background header */
+
+/* Active link */
+
+/*=============== HOME ===============*/
+
+/*=============== BUTTON ===============*/
+.button {
+  display: inline-flex;
+  background: var(--first-gradient);
+  color: var(--white-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1rem 2rem;
+  transition: box-shadow 0.4s;
+}
+.button:hover {
+  box-shadow: 0 8px 32px hsla(18, 95%, 55%, 0.3);
+  color: var(--white-color);
+}
+/*=============== ABOUT ===============*/
+
+/*=============== SERVICES ===============*/
+
+/* Swiper class */
+
+/*=============== PROJECTS ===============*/
+
+/*=============== CONTACT ===============*/
+
+/*=============== FOOTER ===============*/
+
+/*=============== SCROLL BAR ===============*/
+
+/*=============== SCROLL UP ===============*/
+
+/* Show Scroll Up */
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+/* For medium devices */
+
+/* For large devices */
