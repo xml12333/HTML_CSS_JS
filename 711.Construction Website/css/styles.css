@@ -140,8 +140,9 @@ img {
   width: 100%;
   top: 0;
   left: 0;
-  background-color: var(--black-color);
+  background-color: transparent;
   z-index: var(--z-fixed);
+  transition: background-color 0.4s;
 }
 .nav {
   position: relative;
@@ -210,7 +211,14 @@ img {
 }
 
 /* Change background header */
-
+.bg-header {
+  background-color: var(--body-color);
+  box-shadow: 0 4px 16px hsla(255, 90%, 8%, 0.1);
+}
+.bg-header .nav__logo span,
+.bg-header .nav__toggle {
+  color: var(--title-color);
+}
 /* Active link */
 
 /*=============== HOME ===============*/
@@ -245,37 +253,37 @@ img {
   align-items: center;
   gap: 1rem;
 }
-.home__info{
+.home__info {
   display: flex;
   justify-content: center;
   column-gap: 4.5rem;
 }
-.home__info-title{
+.home__info-title {
   color: var(--second-color);
   font-size: var(--big-font-size);
   font-weight: var(--font-bold);
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
-.home__info-description{
+.home__info-description {
   font-size: var(--small-font-size);
   color: var(--white-color);
 }
-.home__images{
+.home__images {
   position: relative;
   justify-self: center;
 }
-.home__img-1{
+.home__img-1 {
   width: 250px;
   margin-left: 3.5rem;
 }
-.home__img-2{
+.home__img-2 {
   width: 150px;
   border: 5px solid var(--black-color);
   position: absolute;
   left: 0;
   bottom: -3.5rem;
 }
-.home__lines{
+.home__lines {
   position: absolute;
   top: 0;
   left: 0;
@@ -314,7 +322,46 @@ img {
   transform: translateX(0.25rem);
 }
 /*=============== ABOUT ===============*/
-
+.about__container {
+  row-gap: 8rem;
+}
+.about__data {
+  text-align: center;
+}
+.about__description {
+  margin-bottom: 2rem;
+}
+.about__list {
+  text-align: initial;
+  grid-template-columns: repeat(2, 130px);
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.about__list-item {
+  display: flex;
+  column-gap: 0.5rem;
+  color: var(--title-color);
+}
+.about__list-item i {
+  font-size: 1.25rem;
+  color: var(--first-color);
+}
+.about__images {
+  position: relative;
+  justify-self: center;
+}
+.about__img-1 {
+  width: 200px;
+  border: 5px solid var(--body-color);
+  position: absolute;
+  top: -5rem;
+  left: 6rem;
+}
+.about__img-2{
+  width: 250px;
+  margin-right: 2.5rem;
+}
 /*=============== SERVICES ===============*/
 
 /* Swiper class */
