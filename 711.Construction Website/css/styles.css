@@ -471,7 +471,60 @@ img {
   margin-bottom: 1.5rem;
 }
 /*=============== CONTACT ===============*/
-
+.contact__container {
+  row-gap: 3rem;
+  padding-block: 1.5rem 3rem;
+}
+.contact__img {
+  width: 320px;
+  justify-self: center;
+}
+.contact__data {
+  grid-template-columns: 230px;
+  justify-content: center;
+  row-gap: 1.5rem;
+}
+.contact__card {
+  background-color: var(--container-color);
+  border: 2px solid var(--gray-border);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  transition: border-color 0.4s;
+}
+.contact__card:hover {
+  border-color: var(--first-color);
+}
+.contact__icon {
+  width: 48px;
+  height: 48px;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  margin: 0 auto 1.25rem;
+}
+.contact__title {
+  font-size: var(--h2-font-size);
+  margin-bottom: 0.5rem;
+}
+.contact__info {
+  font-style: normal;
+}
+.contact__social {
+  display: flex;
+  justify-content: center;
+  column-gap: 1rem;
+}
+.contact__social-link {
+  font-size: 1.5rem;
+  color: var(--first-color);
+  transition: transform 0.4s;
+}
+.contact__social-link:hover {
+  transform: translateY(-0.25rem);
+}
 /*=============== FOOTER ===============*/
 
 /*=============== SCROLL BAR ===============*/
