@@ -84,5 +84,5 @@ const scrollUp = () => {
     : scrollUp.classList.remove("show-scroll");
 };
 window.addEventListener("scroll", scrollUp);
-
+scrollUp();
 /*=============== SCROLL REVEAL ANIMATION ===============*/
