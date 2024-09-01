@@ -713,3 +713,4 @@
 |708| [Petit stars](https://github.com/xml12333/HTML_CSS_JS/tree/main/708.Petit%20stars)| [Demo](https://nikt.com.ua/projects/htmlCssJs/708.Petit%20stars/)| ![Thumbnail](708.Petit%20stars/img/info_thumbnail.jpg)|
 |709| [Inside The Grid](https://github.com/xml12333/HTML_CSS_JS/tree/main/709.Inside%20The%20Grid)| [Demo](https://nikt.com.ua/projects/htmlCssJs/709.Inside%20The%20Grid/)| ![Thumbnail](709.Inside%20The%20Grid/img/info_thumbnail.jpg)|
 |710| [Scatter](https://github.com/xml12333/HTML_CSS_JS/tree/main/710.Scatter)| [Demo](https://nikt.com.ua/projects/htmlCssJs/710.Scatter/)| ![Thumbnail](710.Scatter/img/info_thumbnail.jpg)|
+|711| [Construction Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/711.Construction%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/711.Construction%20Website/)| ![Thumbnail](711.Construction%20Website/img/info_thumbnail.jpg)|

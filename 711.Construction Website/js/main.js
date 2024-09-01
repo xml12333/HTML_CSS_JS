@@ -86,3 +86,17 @@ const scrollUp = () => {
 window.addEventListener("scroll", scrollUp);
 scrollUp();
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+const sr = ScrollReveal({
+  origin: "top",
+  distance: "100px",
+  duration: 2500,
+  delay: 400,
+  // reset: true, // Animations repeat
+});
+sr.reveal(
+  ".home__content, .services__data, .services__swiper, .footer__container"
+);
+sr.reveal(".home__images", { origin: "bottom", delay: 1000 });
+sr.reveal(".about__images, .contact__img", { origin: "left" });
+sr.reveal(".about__data, .contact__data", { origin: "right" });
+sr.reveal(".projects__card", { interval: 100 });
