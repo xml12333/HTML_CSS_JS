@@ -1,0 +1,91 @@
+html {
+	width: 100%;
+	height: 100%;
+	background: #222;
+	color: white;
+}
+body {
+	font-family: Raleway, sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.fancy-wipe {
+	margin: 0;
+	font-weight: 900;
+	font-size: 6rem;
+	position: relative;
+	--duration: 2.5s;
+	--easing: cubic-bezier(0.45, 0, 0.55, 1);
+	--colors: linear-gradient(
+		90deg,
+		#fff89a,
+		#cdf2ca,
+		#a2cdcd,
+		#d1e8e4,
+		#cab8ff,
+		#ff7878,
+		#ffc898
+	);
+}
+
+.text {
+	display: block;
+	padding: 2rem;
+	color: white;
+	animation: wipe-in var(--duration) infinite var(--easing);
+	mask: linear-gradient(to right, white, white 45%, black, 55%, black);
+  	mask-composite: exclude;
+	mask-mode: luminance;
+	mask-size: 300% 100%;
+	mask-position: 100% 0px;
+}
+
+.wipe-in {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	padding: 2rem;
+	background-image: var(--colors);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: wipe-in var(--duration) infinite var(--easing);
+	mask: linear-gradient(to right, black, black 45%, white 50%, black 52.5%, black);
+  	mask-composite: exclude;
+	mask-mode: luminance;
+	mask-size: 300% 100%;
+	mask-position: 100% 0px;
+}
+
+.blur-in {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	padding: 2rem;
+	background-image: var(--colors);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: wipe-in var(--duration) infinite var(--easing);
+	mask: linear-gradient(to right, black, black 45%, white 52.5%, black 55%, black);
+  	mask-composite: exclude;
+	mask-mode: luminance;
+	mask-size: 300% 100%;
+	mask-position: 100% 0px;
+	filter: blur(10px);
+}
+
+@keyframes wipe-in {
+	100% {
+		mask-position: 0px 0px;
+	}
+}
