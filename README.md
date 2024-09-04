@@ -716,3 +716,4 @@
 |711| [Construction Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/711.Construction%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/711.Construction%20Website/)| ![Thumbnail](711.Construction%20Website/img/info_thumbnail.jpg)|
 |712| [Fancy Wipe](https://github.com/xml12333/HTML_CSS_JS/tree/main/712.Fancy%20Wipe)| [Demo](https://nikt.com.ua/projects/htmlCssJs/712.Fancy%20Wipe/)| ![Thumbnail](712.Fancy%20Wipe/img/info_thumbnail.jpg)|
 |713| [Parallax Css](https://github.com/xml12333/HTML_CSS_JS/tree/main/713.Parallax%20Css)| [Demo](https://nikt.com.ua/projects/htmlCssJs/713.Parallax%20Css/)| ![Thumbnail](713.Parallax%20Css/img/info_thumbnail.jpg)|
+|714| [Responsive Sidebar](https://github.com/xml12333/HTML_CSS_JS/tree/main/714.Responsive%20Sidebar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/714.Responsive%20Sidebar/)| ![Thumbnail](714.Responsive%20Sidebar/img/info_thumbnail.jpg)|
