@@ -1,0 +1,82 @@
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: black;
+	font-family: neue-haas-grotesk-display, "Helvetica Neue", Helvetica, sans-serif;
+	font-weight: 600;
+	font-style: normal;
+    font-size: 21px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-display: block;
+}
+
+.container {
+	position: relative;
+	width: 716px;
+    height: 1008px;
+	visibility: hidden;
+    background: red;
+    cursor: pointer;
+    // overflow: hidden;
+}
+
+.jam {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 716px;
+    height: 1008;
+    fill: red;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    width: 716px;
+    height: 100%;
+    text-align: right;
+    padding: 82px 40px;
+    
+    p {
+        margin: 0 0 48px;
+        letter-spacing: 0.5px;
+        line-height: 1.3;
+    }
+    
+    span {
+        display: block;
+    }
+}
+
+.band {
+    color: black;
+    font-family: neue-haas-grotesk-display, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    margin: 0 0 51px;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+}
+.guests {
+    align-self: flex-end;
+    position: absolute;
+    right: 40px;
+    bottom: 24px;
+}
