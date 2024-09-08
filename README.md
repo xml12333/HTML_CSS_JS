@@ -720,3 +720,4 @@
 |715| [Jam](https://github.com/xml12333/HTML_CSS_JS/tree/main/715.Jam)| [Demo](https://nikt.com.ua/projects/htmlCssJs/715.Jam/)| ![Thumbnail](715.Jam/img/info_thumbnail.jpg)|
 |716| [Meta Balls Debug](https://github.com/xml12333/HTML_CSS_JS/tree/main/716.Meta%20Balls%20Debug)| [Demo](https://nikt.com.ua/projects/htmlCssJs/716.Meta%20Balls%20Debug/)| ![Thumbnail](716.Meta%20Balls%20Debug/img/info_thumbnail.jpg)|
 |717| [Virtual Ant Farm](https://github.com/xml12333/HTML_CSS_JS/tree/main/717.Virtual%20Ant%20Farm)| [Demo](https://nikt.com.ua/projects/htmlCssJs/717.Virtual%20Ant%20Farm/)| ![Thumbnail](717.Virtual%20Ant%20Farm/img/info_thumbnail.jpg)|
+|728| [Generative art](https://github.com/xml12333/HTML_CSS_JS/tree/main/728.Generative%20art)| [Demo](https://nikt.com.ua/projects/htmlCssJs/728.Generative%20art/)| ![Thumbnail](728.Generative%20art/img/info_thumbnail.jpg)|
