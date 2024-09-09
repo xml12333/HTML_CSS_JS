@@ -1,0 +1,29 @@
+body {
+  background: black;
+}
+
+p {
+  font-size: 1rem;
+   background: url(https://i.pinimg.com/originals/ec/9b/3c/ec9b3c771ef244c692ebecfc9593f991.gif);
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  
+  }
+
+
+/*
+	CENTERED CONTAINER
+*/
+.centered_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  height: 100vh;
+  width: 100vw;
+  
+  overflow: hidden;
+}
