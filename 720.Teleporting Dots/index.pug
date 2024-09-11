@@ -1,0 +1,41 @@
+- let sectors = 24;
+- let lines = 4;
+- let size = 32;
+- let viewBox = "0 0 " + size + " " + size;
+- let sizePx = size + "px";
+- let center = size / 2;
+- let centerCoords = center + "," + center;
+
+svg.pl(
+	viewBox=viewBox
+	width=sizePx
+	height=sizePx
+)
+	g(
+		stroke="currentcolor"
+		stroke-linecap="round"
+		stroke-width="1"
+		stroke-dasharray="5 8"
+	)
+		- let sector = 0;
+		while sector < sectors
+			- let angle = -360 / sectors * sector;
+			- let rotate = "rotate(" + angle + "," + centerCoords + ")";
+			- ++sector;
+
+			g.pl__lines(
+				transform=rotate
+			)
+				g.pl__line-wobble(
+					transform="translate(0,6.5)"
+				)
+					- let ln = 0;
+					while ln < lines
+						- ln++;
+
+						line.pl__line(
+							x1="16"
+							y1="16"
+							x2="16"
+							y2="23"
+						)

@@ -1,0 +1,229 @@
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --hue: 223;
+  --bg: hsl(var(--hue),90%,90%);
+  --fg: hsl(var(--hue),90%,10%);
+  --line1: hsl(193, 90%, 35%);
+  --line2: hsl(203, 90%, 40%);
+  --line3: hsl(213, 90%, 45%);
+  --line4: hsl(var(--hue),90%,50%);
+  --trans-dur: 0.3s;
+  font-size: calc(14px + (30 - 14) * (100vw - 280px) / (3840 - 280));
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  display: flex;
+  font: 1em/1.5 sans-serif;
+  height: 100vh;
+  transition: background-color var(--trans-dur), color var(--trans-dur);
+}
+
+.pl {
+  --dur: 4s;
+  display: block;
+  margin: auto;
+  width: 15em;
+  height: auto;
+}
+.pl__line, .pl__line-wobble {
+  animation-duration: var(--dur);
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+}
+.pl__line {
+  animation-name: line-move;
+  animation-timing-function: cubic-bezier(0.33, 1, 0.67, 1);
+  stroke: var(--line1);
+  transition: stroke var(--trans-dur);
+}
+.pl__line:nth-child(2) {
+  stroke: var(--line2);
+}
+.pl__line:nth-child(3) {
+  stroke: var(--line3);
+}
+.pl__line:nth-child(4) {
+  stroke: var(--line4);
+}
+.pl__line-wobble {
+  animation-name: line-wobble;
+}
+.pl__lines:nth-child(8n) .pl__line:nth-child(1) {
+  animation-delay: calc(var(--dur) * -0.0725);
+}
+.pl__lines:nth-child(8n) .pl__line:nth-child(2) {
+  animation-delay: calc(var(--dur) * -0.0575);
+}
+.pl__lines:nth-child(8n) .pl__line:nth-child(3) {
+  animation-delay: calc(var(--dur) * -0.0425);
+}
+.pl__lines:nth-child(8n) .pl__line:nth-child(4) {
+  animation-delay: calc(var(--dur) * -0.0275);
+}
+.pl__lines:nth-child(8n) .pl__line-wobble {
+  animation-delay: calc(var(--dur) * -0.0275);
+}
+.pl__lines:nth-child(8n+1) .pl__line:nth-child(1) {
+  animation-delay: calc(var(--dur) * -0.7153);
+}
+.pl__lines:nth-child(8n+1) .pl__line:nth-child(2) {
+  animation-delay: calc(var(--dur) * -0.7003);
+}
+.pl__lines:nth-child(8n+1) .pl__line:nth-child(3) {
+  animation-delay: calc(var(--dur) * -0.6853);
+}
+.pl__lines:nth-child(8n+1) .pl__line:nth-child(4) {
+  animation-delay: calc(var(--dur) * -0.6703);
+}
+.pl__lines:nth-child(8n+1) .pl__line-wobble {
+  animation-delay: calc(var(--dur) * -0.6703);
+}
+.pl__lines:nth-child(8n+2) .pl__line:nth-child(1) {
+  animation-delay: calc(var(--dur) * -0.296);
+}
+.pl__lines:nth-child(8n+2) .pl__line:nth-child(2) {
+  animation-delay: calc(var(--dur) * -0.281);
+}
+.pl__lines:nth-child(8n+2) .pl__line:nth-child(3) {
+  animation-delay: calc(var(--dur) * -0.266);
+}
+.pl__lines:nth-child(8n+2) .pl__line:nth-child(4) {
+  animation-delay: calc(var(--dur) * -0.251);
+}
+.pl__lines:nth-child(8n+2) .pl__line-wobble {
+  animation-delay: calc(var(--dur) * -0.251);
+}
+.pl__lines:nth-child(8n+3) .pl__line:nth-child(1) {
+  animation-delay: calc(var(--dur) * -0.9624);
+}
+.pl__lines:nth-child(8n+3) .pl__line:nth-child(2) {
+  animation-delay: calc(var(--dur) * -0.9474);
+}
+.pl__lines:nth-child(8n+3) .pl__line:nth-child(3) {
+  animation-delay: calc(var(--dur) * -0.9324);
+}
+.pl__lines:nth-child(8n+3) .pl__line:nth-child(4) {
+  animation-delay: calc(var(--dur) * -0.9174);
+}
+.pl__lines:nth-child(8n+3) .pl__line-wobble {
+  animation-delay: calc(var(--dur) * -0.9174);
+}
+.pl__lines:nth-child(8n+4) .pl__line:nth-child(1) {
+  animation-delay: calc(var(--dur) * -0.5395);
+}
+.pl__lines:nth-child(8n+4) .pl__line:nth-child(2) {
+  animation-delay: calc(var(--dur) * -0.5245);
+}
+.pl__lines:nth-child(8n+4) .pl__line:nth-child(3) {
+  animation-delay: calc(var(--dur) * -0.5095);
+}
+.pl__lines:nth-child(8n+4) .pl__line:nth-child(4) {
+  animation-delay: calc(var(--dur) * -0.4945);
+}
+.pl__lines:nth-child(8n+4) .pl__line-wobble {
+  animation-delay: calc(var(--dur) * -0.4945);
+}
+.pl__lines:nth-child(8n+5) .pl__line:nth-child(1) {
+  animation-delay: calc(var(--dur) * -1.1949);
+}
+.pl__lines:nth-child(8n+5) .pl__line:nth-child(2) {
+  animation-delay: calc(var(--dur) * -1.1799);
+}
+.pl__lines:nth-child(8n+5) .pl__line:nth-child(3) {
+  animation-delay: calc(var(--dur) * -1.1649);
+}
+.pl__lines:nth-child(8n+5) .pl__line:nth-child(4) {
+  animation-delay: calc(var(--dur) * -1.1499);
+}
+.pl__lines:nth-child(8n+5) .pl__line-wobble {
+  animation-delay: calc(var(--dur) * -1.1499);
+}
+.pl__lines:nth-child(8n+6) .pl__line:nth-child(1) {
+  animation-delay: calc(var(--dur) * -0.7853);
+}
+.pl__lines:nth-child(8n+6) .pl__line:nth-child(2) {
+  animation-delay: calc(var(--dur) * -0.7703);
+}
+.pl__lines:nth-child(8n+6) .pl__line:nth-child(3) {
+  animation-delay: calc(var(--dur) * -0.7553);
+}
+.pl__lines:nth-child(8n+6) .pl__line:nth-child(4) {
+  animation-delay: calc(var(--dur) * -0.7403);
+}
+.pl__lines:nth-child(8n+6) .pl__line-wobble {
+  animation-delay: calc(var(--dur) * -0.7403);
+}
+.pl__lines:nth-child(8n+7) .pl__line:nth-child(1) {
+  animation-delay: calc(var(--dur) * -1.4035);
+}
+.pl__lines:nth-child(8n+7) .pl__line:nth-child(2) {
+  animation-delay: calc(var(--dur) * -1.3885);
+}
+.pl__lines:nth-child(8n+7) .pl__line:nth-child(3) {
+  animation-delay: calc(var(--dur) * -1.3735);
+}
+.pl__lines:nth-child(8n+7) .pl__line:nth-child(4) {
+  animation-delay: calc(var(--dur) * -1.3585);
+}
+.pl__lines:nth-child(8n+7) .pl__line-wobble {
+  animation-delay: calc(var(--dur) * -1.3585);
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: hsl(var(--hue),90%,10%);
+    --fg: hsl(var(--hue),90%,90%);
+  }
+}
+/* Animations */
+@keyframes line-move {
+  from, 35%, to {
+    stroke-dashoffset: -6.99px;
+  }
+  50%, 85% {
+    stroke-dashoffset: 4.99px;
+  }
+}
+@keyframes line-wobble {
+  from, to {
+    stroke-width: 1px;
+    transform: translate(0, 6.5px);
+  }
+  25% {
+    stroke-width: 1.5px;
+    transform: translate(0, 6.5px);
+  }
+  31.25% {
+    stroke-width: 1px;
+    transform: translate(0, 7px);
+  }
+  37.5% {
+    stroke-width: 1.5px;
+    transform: translate(0, 5px);
+  }
+  50% {
+    stroke-width: 1px;
+    transform: translate(0, 6.5px);
+  }
+  75% {
+    stroke-width: 1.5px;
+    transform: translate(0, 6.5px);
+  }
+  81.25% {
+    stroke-width: 1px;
+    transform: translate(0, 6px);
+  }
+  87.5% {
+    stroke-width: 1.5px;
+    transform: translate(0, 8px);
+  }
+}
