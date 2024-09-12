@@ -723,4 +723,5 @@
 |718| [Text Background](https://github.com/xml12333/HTML_CSS_JS/tree/main/718.Text%20Background)| [Demo](https://nikt.com.ua/projects/htmlCssJs/718.Text%20Background/)| ![Thumbnail](718.Text%20Background/img/info_thumbnail.jpg)|
 |719| [Geocentric Universe](https://github.com/xml12333/HTML_CSS_JS/tree/main/719.Geocentric%20Universe)| [Demo](https://nikt.com.ua/projects/htmlCssJs/719.Geocentric%20Universe/)| ![Thumbnail](719.Geocentric%20Universe/img/info_thumbnail.jpg)|
 |720| [Teleporting Dots](https://github.com/xml12333/HTML_CSS_JS/tree/main/720.Teleporting%20Dots)| [Demo](https://nikt.com.ua/projects/htmlCssJs/720.Teleporting%20Dots/)| ![Thumbnail](720.Teleporting%20Dots/img/info_thumbnail.jpg)|
+|721| [Periodic Table](https://github.com/xml12333/HTML_CSS_JS/tree/main/721.Periodic%20Table)| [Demo](https://nikt.com.ua/projects/htmlCssJs/721.Periodic%20Table/)| ![Thumbnail](721.Periodic%20Table/img/info_thumbnail.jpg)|
 |728| [Generative art](https://github.com/xml12333/HTML_CSS_JS/tree/main/728.Generative%20art)| [Demo](https://nikt.com.ua/projects/htmlCssJs/728.Generative%20art/)| ![Thumbnail](728.Generative%20art/img/info_thumbnail.jpg)|
