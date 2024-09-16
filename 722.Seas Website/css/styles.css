@@ -149,7 +149,10 @@ img {
 }
 
 /* Add shadow header */
-
+.shadow-header {
+  background-color: var(--body-color);
+  box-shadow: 0 2px 16px hsla(40, 24%, 4%, 0.1);
+}
 /*=============== HOME ===============*/
 .home {
   position: relative;
@@ -305,7 +308,114 @@ img {
 }
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-
+@media screen and (max-width: 300px) {
+  .container {
+    margin-inline: 1rem;
+  }
+  .home__title {
+    font-size: 3rem;
+  }
+  .home__title span {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (min-width: 350px) and (max-height: 680px) {
+  .home__container {
+    height: 750px;
+  }
+  .home__images div {
+    width: 100%;
+  }
+}
 /* For medium devices */
+@media screen and (min-width: 576px) {
+  .home__images div {
+    width: 100%;
+  }
+  .home__ship {
+    width: 400px;
+  }
+}
 
 /* For large devices */
+@media screen and (min-width: 1150px) {
+  .container {
+    margin-inline: auto;
+  }
+  .nav {
+    height: calc(var(--header-height) + 2rem);
+  }
+  .nav__toggle,
+  .nav__close {
+    display: none;
+  }
+  .nav__list {
+    flex-direction: row;
+    column-gap: 4.5rem;
+  }
+  .home__container {
+    /* height: 860px; Comment for full screen */
+    padding-top: 11.5rem;
+  }
+  .home__title {
+    margin-bottom: 3rem;
+  }
+  .home__button,
+  .home__button:after {
+    border-width: 4px;
+  }
+  .home__button::after {
+    bottom: -12px;
+  }
+  .home__cloud-1,
+  .home__cloud-2 {
+    width: 250px;
+  }
+  .home__cloud-2 {
+    top: 20rem;
+  }
+  .home__images div {
+    height: 375px;
+    background-size: 100vw 100%;
+  }
+  .home__waves-1 {
+    bottom: -2.5rem;
+  }
+  .home__waves-2 {
+    bottom: -2rem;
+  }
+  .home__waves-3 {
+    bottom: 5rem;
+  }
+  .home__ship {
+    width: 630px;
+    left: 30rem;
+  }
+  /* Animated waves desktop */
+  @keyframes waves-1 {
+    0% {
+      background-position-x: 100vw;
+    }
+    100% {
+      background-position-x: 0;
+    }
+  }
+  @keyframes waves-2 {
+    0% {
+      background-position-x: 0;
+    }
+    100% {
+      background-position-x: 100vw;
+    }
+  }
+}
+
+@media screen and (min-width: 1150px) and (min-height: 1000px) {
+  .home__container {
+    display: grid;
+    height: 100vh;
+  }
+  .home__data {
+    align-self: center;
+  }
+}
