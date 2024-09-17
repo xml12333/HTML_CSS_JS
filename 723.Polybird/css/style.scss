@@ -1,0 +1,16 @@
+html {
+	height: 100%;
+	display: flex;
+}
+
+body {
+	position: relative;
+	margin: auto;
+	background: #efefef;
+}
+
+.bird {
+	width: 50vw;
+	min-width: 20em;
+	max-width: 45em;
+}
