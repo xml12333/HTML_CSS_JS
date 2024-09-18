@@ -726,4 +726,5 @@
 |721| [Periodic Table](https://github.com/xml12333/HTML_CSS_JS/tree/main/721.Periodic%20Table)| [Demo](https://nikt.com.ua/projects/htmlCssJs/721.Periodic%20Table/)| ![Thumbnail](721.Periodic%20Table/img/info_thumbnail.jpg)|
 |722| [Seas Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/722.Seas%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/722.Seas%20Website/)| ![Thumbnail](722.Seas%20Website/img/info_thumbnail.jpg)|
 |723| [Polybird](https://github.com/xml12333/HTML_CSS_JS/tree/main/723.Polybird)| [Demo](https://nikt.com.ua/projects/htmlCssJs/723.Polybird/)| ![Thumbnail](723.Polybird/img/info_thumbnail.jpg)|
+|724| [Sapphire morph](https://github.com/xml12333/HTML_CSS_JS/tree/main/724.Sapphire%20morph)| [Demo](https://nikt.com.ua/projects/htmlCssJs/724.Sapphire%20morph/)| ![Thumbnail](724.Sapphire%20morph/img/info_thumbnail.jpg)|
 |728| [Generative art](https://github.com/xml12333/HTML_CSS_JS/tree/main/728.Generative%20art)| [Demo](https://nikt.com.ua/projects/htmlCssJs/728.Generative%20art/)| ![Thumbnail](728.Generative%20art/img/info_thumbnail.jpg)|
