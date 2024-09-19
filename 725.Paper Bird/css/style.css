@@ -1,0 +1,323 @@
+body {
+  background: #eef;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#sky {
+  margin-top: -60px;
+  perspective: 400px;
+  filter: drop-shadow(0px 150px 10px rgba(0, 0, 0, 0.2));
+}
+@-moz-document url-prefix() {
+  #sky {
+    filter: none;
+  }
+}
+#sky div {
+  transform-style: preserve-3d;
+}
+#sky .bird {
+  -webkit-animation: fly 10000ms linear infinite;
+          animation: fly 10000ms linear infinite;
+}
+#sky .bird .wind {
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  height: 200px;
+  margin-left: -2px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+#sky .bird .wind:nth-child(1) {
+  transform: translate3d(160px, -54px, -93px) rotateY(90deg);
+}
+#sky .bird .wind:nth-child(1)::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 300px;
+  background: rgba(100, 200, 31, 0.3);
+  border-radius: 999px;
+  transform: translateY(-300px);
+  -webkit-animation: wind 2123ms 3918ms linear infinite;
+          animation: wind 2123ms 3918ms linear infinite;
+}
+#sky .bird .wind:nth-child(2) {
+  transform: translate3d(8px, -136px, 33px) rotateY(90deg);
+}
+#sky .bird .wind:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 300px;
+  background: rgba(100, 200, 254, 0.3);
+  border-radius: 999px;
+  transform: translateY(-300px);
+  -webkit-animation: wind 2808ms 1538ms linear infinite;
+          animation: wind 2808ms 1538ms linear infinite;
+}
+#sky .bird .wind:nth-child(3) {
+  transform: translate3d(-13px, -78px, 65px) rotateY(90deg);
+}
+#sky .bird .wind:nth-child(3)::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 300px;
+  background: rgba(100, 200, 141, 0.3);
+  border-radius: 999px;
+  transform: translateY(-300px);
+  -webkit-animation: wind 1824ms 3883ms linear infinite;
+          animation: wind 1824ms 3883ms linear infinite;
+}
+#sky .bird .wind:nth-child(4) {
+  transform: translate3d(-5px, 117px, -15px) rotateY(90deg);
+}
+#sky .bird .wind:nth-child(4)::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 300px;
+  background: rgba(100, 200, 183, 0.3);
+  border-radius: 999px;
+  transform: translateY(-300px);
+  -webkit-animation: wind 2004ms 3096ms linear infinite;
+          animation: wind 2004ms 3096ms linear infinite;
+}
+#sky .bird .wind:nth-child(5) {
+  transform: translate3d(22px, 54px, -17px) rotateY(90deg);
+}
+#sky .bird .wind:nth-child(5)::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 300px;
+  background: rgba(100, 200, 81, 0.3);
+  border-radius: 999px;
+  transform: translateY(-300px);
+  -webkit-animation: wind 1945ms 2019ms linear infinite;
+          animation: wind 1945ms 2019ms linear infinite;
+}
+#sky .bird .wind:nth-child(6) {
+  transform: translate3d(-167px, -67px, -48px) rotateY(90deg);
+}
+#sky .bird .wind:nth-child(6)::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 300px;
+  background: rgba(100, 200, 142, 0.3);
+  border-radius: 999px;
+  transform: translateY(-300px);
+  -webkit-animation: wind 1321ms 1924ms linear infinite;
+          animation: wind 1321ms 1924ms linear infinite;
+}
+#sky .bird .wind:nth-child(7) {
+  transform: translate3d(151px, -8px, -54px) rotateY(90deg);
+}
+#sky .bird .wind:nth-child(7)::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 300px;
+  background: rgba(100, 200, 249, 0.3);
+  border-radius: 999px;
+  transform: translateY(-300px);
+  -webkit-animation: wind 2870ms 3888ms linear infinite;
+          animation: wind 2870ms 3888ms linear infinite;
+}
+#sky .bird .wind:nth-child(8) {
+  transform: translate3d(-25px, -18px, 77px) rotateY(90deg);
+}
+#sky .bird .wind:nth-child(8)::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 300px;
+  background: rgba(100, 200, 221, 0.3);
+  border-radius: 999px;
+  transform: translateY(-300px);
+  -webkit-animation: wind 2566ms 1231ms linear infinite;
+          animation: wind 2566ms 1231ms linear infinite;
+}
+#sky .bird .wind:nth-child(9) {
+  transform: translate3d(79px, -90px, -49px) rotateY(90deg);
+}
+#sky .bird .wind:nth-child(9)::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 300px;
+  background: rgba(100, 200, 155, 0.3);
+  border-radius: 999px;
+  transform: translateY(-300px);
+  -webkit-animation: wind 2317ms 4242ms linear infinite;
+          animation: wind 2317ms 4242ms linear infinite;
+}
+#sky .bird .wind:nth-child(10) {
+  transform: translate3d(53px, 59px, -65px) rotateY(90deg);
+}
+#sky .bird .wind:nth-child(10)::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 300px;
+  background: rgba(100, 200, 176, 0.3);
+  border-radius: 999px;
+  transform: translateY(-300px);
+  -webkit-animation: wind 1006ms 3395ms linear infinite;
+          animation: wind 1006ms 3395ms linear infinite;
+}
+#sky .bird .wind:nth-child(11) {
+  transform: translate3d(29px, -88px, -31px) rotateY(90deg);
+}
+#sky .bird .wind:nth-child(11)::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 300px;
+  background: rgba(100, 200, 95, 0.3);
+  border-radius: 999px;
+  transform: translateY(-300px);
+  -webkit-animation: wind 1998ms 2516ms linear infinite;
+          animation: wind 1998ms 2516ms linear infinite;
+}
+#sky .bird_body {
+  position: relative;
+  width: 30px;
+  height: 40px;
+  background: #91a0e6;
+}
+#sky .bird_head {
+  position: absolute;
+  top: -30px;
+  border-right: 15px solid transparent;
+  border-bottom: 30px solid #84bfd8;
+  border-left: 15px solid transparent;
+  transform-origin: 50% 100%;
+  transform: rotateX(-20deg);
+}
+#sky .bird_wing_left {
+  position: absolute;
+  left: -30px;
+  height: 30px;
+  border-right: 30px solid #75a7db;
+  border-bottom: 10px solid transparent;
+  transform-origin: 100% 0;
+  -webkit-animation: wingLeft 1000ms cubic-bezier(0.36, 0.1, 0.16, 1) infinite alternate;
+          animation: wingLeft 1000ms cubic-bezier(0.36, 0.1, 0.16, 1) infinite alternate;
+}
+#sky .bird_wing_left_top {
+  position: absolute;
+  left: -30px;
+  border-right: 30px solid #9cc8ce;
+  border-bottom: 30px solid transparent;
+  transform-origin: 100% 0;
+  -webkit-animation: wingLeft 1000ms cubic-bezier(0.545, 0.08, 0.52, 0.975) infinite alternate;
+          animation: wingLeft 1000ms cubic-bezier(0.545, 0.08, 0.52, 0.975) infinite alternate;
+}
+#sky .bird_wing_right {
+  position: absolute;
+  left: 30px;
+  height: 30px;
+  border-left: 30px solid #baaafb;
+  border-bottom: 10px solid transparent;
+  transform-origin: 0 0;
+  -webkit-animation: wingRight 1000ms cubic-bezier(0.36, 0.1, 0.16, 1) infinite alternate;
+          animation: wingRight 1000ms cubic-bezier(0.36, 0.1, 0.16, 1) infinite alternate;
+}
+#sky .bird_wing_right_top {
+  position: absolute;
+  border-left: 30px solid #c08df0;
+  border-bottom: 30px solid transparent;
+  transform-origin: 0 0;
+  -webkit-animation: wingRight 1000ms cubic-bezier(0.545, 0.08, 0.52, 0.975) infinite alternate;
+          animation: wingRight 1000ms cubic-bezier(0.545, 0.08, 0.52, 0.975) infinite alternate;
+}
+#sky .bird_tail_left {
+  position: absolute;
+  top: 40px;
+  border-right: 30px solid transparent;
+  border-top: 40px solid #71b1d2;
+  transform-origin: 50% 0;
+  transform: rotateX(-20deg);
+}
+#sky .bird_tail_right {
+  position: absolute;
+  top: 40px;
+  border-left: 30px solid transparent;
+  border-top: 40px solid #b2adf6;
+  transform-origin: 50% 0;
+  transform: rotateX(-20deg);
+}
+
+@-webkit-keyframes fly {
+  0% {
+    transform: rotateX(-120deg) rotateZ(0deg) rotateX(10deg);
+  }
+  100% {
+    transform: rotateX(-120deg) rotateZ(360deg) rotateX(10deg);
+  }
+}
+
+@keyframes fly {
+  0% {
+    transform: rotateX(-120deg) rotateZ(0deg) rotateX(10deg);
+  }
+  100% {
+    transform: rotateX(-120deg) rotateZ(360deg) rotateX(10deg);
+  }
+}
+@-webkit-keyframes wingLeft {
+  0% {
+    transform: rotateY(-40deg);
+  }
+  100% {
+    transform: rotateY(40deg);
+  }
+}
+@keyframes wingLeft {
+  0% {
+    transform: rotateY(-40deg);
+  }
+  100% {
+    transform: rotateY(40deg);
+  }
+}
+@-webkit-keyframes wingRight {
+  0% {
+    transform: rotateY(40deg);
+  }
+  100% {
+    transform: rotateY(-40deg);
+  }
+}
+@keyframes wingRight {
+  0% {
+    transform: rotateY(40deg);
+  }
+  100% {
+    transform: rotateY(-40deg);
+  }
+}
+@-webkit-keyframes wind {
+  0% {
+    transform: translateY(-300px);
+  }
+  100% {
+    transform: translateY(200px);
+  }
+}
+@keyframes wind {
+  0% {
+    transform: translateY(-300px);
+  }
+  100% {
+    transform: translateY(200px);
+  }
+}
