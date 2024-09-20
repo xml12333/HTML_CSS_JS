@@ -728,4 +728,5 @@
 |723| [Polybird](https://github.com/xml12333/HTML_CSS_JS/tree/main/723.Polybird)| [Demo](https://nikt.com.ua/projects/htmlCssJs/723.Polybird/)| ![Thumbnail](723.Polybird/img/info_thumbnail.jpg)|
 |724| [Sapphire morph](https://github.com/xml12333/HTML_CSS_JS/tree/main/724.Sapphire%20morph)| [Demo](https://nikt.com.ua/projects/htmlCssJs/724.Sapphire%20morph/)| ![Thumbnail](724.Sapphire%20morph/img/info_thumbnail.jpg)|
 |725| [Paper Bird](https://github.com/xml12333/HTML_CSS_JS/tree/main/725.Paper%20Bird)| [Demo](https://nikt.com.ua/projects/htmlCssJs/725.Paper%20Bird/)| ![Thumbnail](725.Paper%20Bird/img/info_thumbnail.jpg)|
+|726| [Triangles](https://github.com/xml12333/HTML_CSS_JS/tree/main/726.Triangles)| [Demo](https://nikt.com.ua/projects/htmlCssJs/726.Triangles/)| ![Thumbnail](726.Triangles/img/info_thumbnail.jpg)|
 |728| [Generative art](https://github.com/xml12333/HTML_CSS_JS/tree/main/728.Generative%20art)| [Demo](https://nikt.com.ua/projects/htmlCssJs/728.Generative%20art/)| ![Thumbnail](728.Generative%20art/img/info_thumbnail.jpg)|
