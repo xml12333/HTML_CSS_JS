@@ -1,0 +1,110 @@
+$panelSize: 200;
+$angle: 30deg;
+
+@function getHeight() {
+  $temp1: sqrt(pow($panelSize, 2) + pow($panelSize, 2));
+  $temp2: $panelSize / 2 / cos(45deg);
+  
+  // Not working...
+  // @return sqrt(pow($temp2, 2) + pow($temp1 / 2, 2));
+  
+  @return 200;
+}
+
+body {
+  background: #000;
+  height: 100vh;
+  perspective: 1000px;
+  overflow: hidden;
+}
+#ui {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  perspective: 500px;
+  transform: translate3d(-$panelSize / 2 + 0px, -$panelSize + 0px, 0);
+    
+  .crystal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform-origin: $panelSize / 2 + 0px $panelSize + 0px;
+    animation: rotate 5000ms ease-in-out infinite alternate;
+    
+    &_panel {
+      animation: light 1000ms cubic-bezier(0.545, 0.080, 0.520, 0.975) infinite;
+    }
+    &_panel.top {
+      position: absolute;
+      border-bottom: $panelSize + 0px double rgba(50, 50, 255, 0.5);
+      border-left: $panelSize / 2 + 0px solid transparent;
+      border-right: $panelSize / 2 + 0px solid transparent;
+      transform-origin: 50% 100%;
+      transform-style: preserve-3d;
+    
+      &.front {
+        border-bottom-color: rgba(50, 50, 255, 0.1);
+        transform: translate3d(0, 0, $panelSize / 2 + 0px) rotateX($angle);
+      }
+      &.back {
+        border-bottom-color: rgba(50, 50, 255, 0.2);
+        transform: translate3d(0, 0, -$panelSize / 2 + 0px) rotateX(-$angle);
+      }
+      &.left {
+        border-bottom-color: rgba(50, 50, 255, 0.3);
+        transform: translate3d(-$panelSize / 2 + 0px, 0, 0) rotateZ($angle) rotateY(-90deg);
+      }
+      &.right {
+        border-bottom-color: rgba(50, 50, 255, 0.4);
+        transform: translate3d($panelSize / 2 + 0px, 0, 0) rotateZ(-$angle) rotateY(-90deg);
+      }
+    }
+    &_panel.bottom {
+      position: absolute;
+      border-top: $panelSize + 0px double rgba(50, 50, 255, 0.5);
+      border-left: $panelSize / 2 + 0px solid transparent;
+      border-right: $panelSize / 2 + 0px solid transparent;
+      transform-origin: 50% 0%;
+      transform-style: preserve-3d;
+      
+      &.front {
+        border-top-color: rgba(50, 50, 255, 0.5);
+        transform: translate3d(0, getHeight() + 0px, $panelSize / 2 + 0px) rotateX(-$angle);
+      }
+      &.back {
+        border-top-color: rgba(50, 50, 255, 0.4);
+        transform: translate3d(0, getHeight() + 0px, -$panelSize / 2 + 0px) rotateX($angle);
+      }
+      &.left {
+        border-top-color: rgba(50, 50, 255, 0.3);
+        transform: translate3d(-$panelSize / 2 + 0px, getHeight() + 0px, 0) rotateZ(-$angle) rotateY(-90deg);
+      }
+      &.right {
+        border-top-color: rgba(50, 50, 255, 0.2);
+        transform: translate3d($panelSize / 2 + 0px, getHeight() + 0px, 0) rotateZ($angle) rotateY(-90deg);
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateX(30deg) rotateY(-60deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(-40deg) rotateY(-400deg) rotateZ(0deg);
+  }
+}
+
+@keyframes light {
+  0% {
+    filter: drop-shadow(0px 0px 20px rgba(200, 200, 255, 0)) blur(0px);
+  }
+  30% {
+    filter: drop-shadow(0px 10px 20px rgba(200, 200, 255, 0.7)) blur(1px) hue-rotate(-10deg);
+  }
+  100% {
+    filter: drop-shadow(0px -100px 30px rgba(200, 200, 255, 0)) blur(0px);
+  }
+}
