@@ -734,3 +734,4 @@
 |729| [List delete](https://github.com/xml12333/HTML_CSS_JS/tree/main/729.List%20delete)| [Demo](https://nikt.com.ua/projects/htmlCssJs/729.List%20delete/)| ![Thumbnail](729.List%20delete/img/info_thumbnail.jpg)|
 |730| [Generated Background](https://github.com/xml12333/HTML_CSS_JS/tree/main/730.Generated%20Background)| [Demo](https://nikt.com.ua/projects/htmlCssJs/730.Generated%20Background/)| ![Thumbnail](730.Generated%20Background/img/info_thumbnail.jpg)|
 |731| [Keyboard Hero](https://github.com/xml12333/HTML_CSS_JS/tree/main/731.Keyboard%20Hero)| [Demo](https://nikt.com.ua/projects/htmlCssJs/731.Keyboard%20Hero/)| ![Thumbnail](731.Keyboard%20Hero/img/info_thumbnail.jpg)|
+|732| [Toggles](https://github.com/xml12333/HTML_CSS_JS/tree/main/732.Toggles)| [Demo](https://nikt.com.ua/projects/htmlCssJs/732.Toggles/)| ![Thumbnail](732.Toggles/img/info_thumbnail.jpg)|
