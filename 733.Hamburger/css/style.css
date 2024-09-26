@@ -1,0 +1,87 @@
+#container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.box {
+  width: 33.3333%;
+  height: 50%;
+  float: left;
+}
+
+.icon {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+	width: 100%; 
+  height: 100%;
+	fill: none;
+	stroke-width: 6;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+  cursor: pointer;
+}
+
+
+
+/******** PALETTES ********/
+
+
+/*** Faint Grays ***/
+
+/* #b1 { background: #FFFFFF; }
+#b2 { background: #F8F8F8; }
+#b3 { background: #EFEFEF; }
+#b4 { background: #E8E8E8; }
+#b5 { background: #DFDFDF; }
+#b6 { background: #D8D8D8; }
+.icon { stroke: #000000; opacity: .65; } */
+
+
+/*** Peach ***/
+
+#b1 { background: #fc5c65; }
+#b2 { background: #fd9644; }
+#b3 { background: #fed330; }
+#b4 { background: #eb3b5a; }
+#b5 { background: #fa8231; }
+#b6 { background: #f7b731; }
+.icon { stroke: #FFFFFF; opacity: .95; }
+
+
+/*** Lime ***/
+
+/* #b1 { background: #76F5A7; }
+#b2 { background: #93E87B; }
+#b3 { background: #DFE87B; }
+#b4 { background: #87FF94; }
+#b5 { background: #D1FF93; }
+#b6 { background: #FFF687; }
+.icon { stroke: #FFFFFF; opacity: 1; } */
+
+
+/*** Rainbow & Whites ***/
+
+/* #b1 { background: #f1c40f; }
+#b2 { background: #1fe0ba; }
+#b3 { background: #3ebb2a; }
+#b4 { background: #2980b9; }
+#b5 { background: #e74c3c; }
+#b6 { background: #8e44ad; }
+.icon { stroke: #FFFFFF; opacity: .9; } */
+
+
+/*** Rainbow & Darks ***/
+
+/* #b1 { background: #f1c40f; }
+#b2 { background: #1fe0ba; }
+#b3 { background: #3ebb2a; }
+#b4 { background: #2980b9; }
+#b5 { background: #e74c3c; }
+#b6 { background: #8e44ad; }
+.icon { stroke: #000000; opacity: .5; } */
