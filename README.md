@@ -736,3 +736,4 @@
 |731| [Keyboard Hero](https://github.com/xml12333/HTML_CSS_JS/tree/main/731.Keyboard%20Hero)| [Demo](https://nikt.com.ua/projects/htmlCssJs/731.Keyboard%20Hero/)| ![Thumbnail](731.Keyboard%20Hero/img/info_thumbnail.jpg)|
 |732| [Toggles](https://github.com/xml12333/HTML_CSS_JS/tree/main/732.Toggles)| [Demo](https://nikt.com.ua/projects/htmlCssJs/732.Toggles/)| ![Thumbnail](732.Toggles/img/info_thumbnail.jpg)|
 |733| [Hamburger](https://github.com/xml12333/HTML_CSS_JS/tree/main/733.Hamburger)| [Demo](https://nikt.com.ua/projects/htmlCssJs/733.Hamburger/)| ![Thumbnail](733.Hamburger/img/info_thumbnail.jpg)|
+|734| [Toggle Buttons](https://github.com/xml12333/HTML_CSS_JS/tree/main/734.Toggle%20Buttons)| [Demo](https://nikt.com.ua/projects/htmlCssJs/734.Toggle%20Buttons/)| ![Thumbnail](734.Toggle%20Buttons/img/info_thumbnail.jpg)|
