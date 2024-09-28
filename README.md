@@ -737,3 +737,4 @@
 |732| [Toggles](https://github.com/xml12333/HTML_CSS_JS/tree/main/732.Toggles)| [Demo](https://nikt.com.ua/projects/htmlCssJs/732.Toggles/)| ![Thumbnail](732.Toggles/img/info_thumbnail.jpg)|
 |733| [Hamburger](https://github.com/xml12333/HTML_CSS_JS/tree/main/733.Hamburger)| [Demo](https://nikt.com.ua/projects/htmlCssJs/733.Hamburger/)| ![Thumbnail](733.Hamburger/img/info_thumbnail.jpg)|
 |734| [Toggle Buttons](https://github.com/xml12333/HTML_CSS_JS/tree/main/734.Toggle%20Buttons)| [Demo](https://nikt.com.ua/projects/htmlCssJs/734.Toggle%20Buttons/)| ![Thumbnail](734.Toggle%20Buttons/img/info_thumbnail.jpg)|
+|735| [Spinners](https://github.com/xml12333/HTML_CSS_JS/tree/main/735.Spinners)| [Demo](https://nikt.com.ua/projects/htmlCssJs/735.Spinners/)| ![Thumbnail](735.Spinners/img/info_thumbnail.jpg)|

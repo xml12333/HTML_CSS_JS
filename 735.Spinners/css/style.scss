@@ -1,0 +1,217 @@
+// TYPOGRAPHY
+@import url('https://fonts.googleapis.com/css?family=Source+Serif+Pro');
+$font-family: 'Source Serif Pro', serif;
+
+// COLORS
+$white: #fff;
+$black: #000;
+$back: dodgerblue; // Change the color if you want
+
+// GENERAL
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+body{
+  display: flex;
+  flex-wrap: wrap;
+  font-family: $font-family;
+  font-size: 16px;
+  background: $back;
+  // Spinner count reference
+  counter-reset: spinnerCount; 
+}
+.cell{
+  width: 25%;
+  .wrapper{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 10rem;
+    margin: 1rem 1rem 0;
+    padding-top: 2.2rem;
+    background: rgba($white, .2);  
+    &::after{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 0.2rem;
+      text-align: center;
+      background: rgba($white, .25);
+      /* Increment the section counter */
+      counter-increment: spinnerCount;
+      /* Display the counter on pseudo-elements */
+      content: counter(spinnerCount);
+    }
+  }
+}
+
+
+// SPINNERS STYLES
+.spinner{
+  // Common styles
+  width: 4rem;
+  height: 4rem;
+  // Individual styles
+  &.spinner1{
+    border: 3px solid rgba($white, .25);
+    border-top-color: rgba($black, .5);
+    border-radius: 50%;
+    animation: rotation .8s ease infinite;
+  }
+  &.spinner2{
+    border: 3px solid transparent;
+    border-top-color: rgba($black, .5);
+    border-bottom-color: rgba($black, .5);
+    border-radius: 50%;
+    animation: rotation .8s ease infinite;
+  }
+  &.spinner3{
+    border-top: 3px solid rgba($black, .5);
+    border-right: 3px solid transparent;
+    border-radius: 50%;
+    animation: rotation .8s linear infinite;
+  }
+  &.spinner4{
+    background: rgba($black, .5);
+    animation: flip 1.2s ease infinite;
+  }
+  &.spinner5{
+    margin-top: 2rem; // just for centering the demo
+    overflow: hidden;
+    position: relative;
+    height: .5rem;
+    background: rgba($white, .25);
+    &::before{
+      content: '';
+      position: absolute;
+      left: -130%;
+      width: 100%;
+      height: 100%;
+      background: rgba($black, .5);
+      animation: progress 4s linear infinite;
+    }
+    
+  }
+  &.spinner6{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    background: $white;
+    border-radius: 50%;
+    animation: pulse 1s ease-in-out infinite;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  &.spinner7{
+    position: relative;
+    &::before, &::after{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(0);
+    }
+    &::before{
+      background: $white;
+      animation: pulse2 2s ease-in-out infinite;
+    }
+    &::after{
+      background: $white;
+      animation: pulse2 2s 1s ease-in-out infinite;
+    }
+  }
+  &.spinner8{
+    position: relative;
+    perspective: 200px;
+    &::before{
+      display: block;
+      content: '';
+      width: 50%;
+      height: 50%;
+      background: rgba($black, .5);
+      animation: 2s flipWalker ease infinite;
+    }
+  }
+}
+
+
+// ANIMATIONS
+@keyframes rotation{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes flip{
+  0%{
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  }
+  50%{
+    transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+  }
+  100%{
+    transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+  }
+}
+
+@keyframes progress{
+  0%{
+    left: -130%;
+    background: rgba($black, .5);
+  }
+  50%{
+    left: 130%;
+    background: rgba($black, .5);
+  }
+  51%{
+    background: rgba($white, .5);
+  }
+  100%{
+    background: rgba($white, .5);
+  }
+}
+
+@keyframes pulse{
+  0%{
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  100%{
+    transform: translate(-50%, -50%) scale(1.0);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse2{
+  0%, 100%{
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  50%{
+    transform: translate(-50%, -50%) scale(1.0);
+    opacity: 0;
+  }
+}
+
+@keyframes flipWalker{
+  0%{
+    transform: translate(0, 0) rotateX(0) rotateY(0);
+  }
+  25%{
+    transform: translate(100%, 0) rotateX(0) rotateY(180deg);
+  }
+  50%{
+    transform: translate(100%, 100%) rotateX(-180deg) rotateY(180deg);
+  }
+  75%{
+    transform: translate(0, 100%) rotateX(-180deg) rotateY(360deg);
+  }
+  100%{
+    transform:  translate(0, 0) rotateX(0) rotateY(360deg);
+  }
+}
