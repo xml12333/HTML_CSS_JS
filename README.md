@@ -740,3 +740,4 @@
 |733| [Hamburger](https://github.com/xml12333/HTML_CSS_JS/tree/main/733.Hamburger)| [Demo](https://nikt.com.ua/projects/htmlCssJs/733.Hamburger/)|
 |734| [Toggle Buttons](https://github.com/xml12333/HTML_CSS_JS/tree/main/734.Toggle%20Buttons)| [Demo](https://nikt.com.ua/projects/htmlCssJs/734.Toggle%20Buttons/)|
 |735| [Spinners](https://github.com/xml12333/HTML_CSS_JS/tree/main/735.Spinners)| [Demo](https://nikt.com.ua/projects/htmlCssJs/735.Spinners/)|
+|736| [Color Steps Separation](https://github.com/xml12333/HTML_CSS_JS/tree/main/736.Color%20Steps%20Separation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/736.Color%20Steps%20Separation/)|
