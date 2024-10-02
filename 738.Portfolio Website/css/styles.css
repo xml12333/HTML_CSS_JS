@@ -180,7 +180,42 @@ img {
 
 /*=============== HOME ===============*/
 /*===== PERFIL =====*/
-
+.perfil {
+  position: relative;
+  background: var(--conic-gradient);
+  height: 415px;
+  border-radius: 2rem;
+  padding: 1rem;
+  display: grid;
+  overflow: hidden;
+}
+.perfil__img {
+  width: 250px;
+  position: absolute;
+  justify-self: center;
+  align-self: flex-end;
+}
+.perfil__data {
+  align-self: flex-end;
+  background-color: hsla(0, 0%, 1%, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 1.5rem 1rem;
+  border-radius: 1.5rem;
+  border: 2px solid hsla(0, 0%, 100%, 0.5);
+}
+.perfil__name {
+  font: var(--font-regular) var(--biggest-font-size) var(--second-font);
+  margin-bottom: 1rem;
+}
+.perfil__buttons {
+  display: grid;
+  column-gap: 0.5rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+.perfil__buttons .button {
+  padding: 0.75rem 0;
+}
 /*===== INFO =====*/
 
 /*===== ABOUT =====*/
@@ -188,7 +223,22 @@ img {
 /*===== SKILLS =====*/
 
 /*=============== BUTTON ===============*/
-
+.button {
+  display: inline-flex;
+  justify-content: center;
+  background-color: var(--first-color);
+  color: var(--white-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1.25rem 2.5rem;
+  border-radius: 4rem;
+  transition: background-color 0.4s;
+}
+.button__black {
+  background-color: var(--black-color);
+}
+.button:hover {
+  background-color: var(--first-color-alt);
+}
 /*=============== PROJECTS ===============*/
 
 /*=============== SERVICES ===============*/
