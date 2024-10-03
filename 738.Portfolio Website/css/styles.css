@@ -217,7 +217,46 @@ img {
   padding: 0.75rem 0;
 }
 /*===== INFO =====*/
-
+.info {
+  background-color: var(--container-color);
+  padding: 2rem 1.5rem;
+  border-radius: 2rem;
+}
+.info__circle {
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--first-color);
+  border-radius: 50%;
+}
+.info__name {
+  font: var(--font-regular) var(--h1-font-size) var(--second-font);
+}
+.info__data{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: .5rem;
+}
+.info__image{
+  background: var(--conic-gradient);
+  height: 180px;
+  border-radius: 2rem;
+  display: grid;
+  margin-block: 1.5rem;
+  overflow: hidden;
+}
+.info__img{
+  width: 140px;
+  justify-self: center;
+  align-self: flex-end;
+}
+.info__description{
+  font-size: var(--small-font-size);
+  margin-bottom: 2rem;
+}
+.info .button{
+  width: 100%;
+}
 /*===== ABOUT =====*/
 
 /*===== SKILLS =====*/
