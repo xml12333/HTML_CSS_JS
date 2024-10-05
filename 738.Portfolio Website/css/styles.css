@@ -218,7 +218,8 @@ img {
 }
 /*===== INFO =====*/
 .info,
-.about {
+.about,
+.skills {
   background-color: var(--container-color);
   padding: 2rem 1.5rem;
   border-radius: 2rem;
@@ -305,7 +306,26 @@ img {
   width: 100%;
 }
 /*===== SKILLS =====*/
-
+.skills__title{
+  font-size: var(--h2-font-size);
+}
+.skills__item{
+  width: 1.5rem;
+  transition: transform .4s;
+}
+.skills__item:hover{
+  transform: translateY(-.25rem);
+}
+.skills__items{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  margin-block: 1.5rem;
+}
+.skills__description{
+  font-size: var(--small-font-size);
+}
 /*=============== BUTTON ===============*/
 .button {
   display: inline-flex;
