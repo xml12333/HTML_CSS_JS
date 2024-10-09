@@ -440,35 +440,68 @@ img {
   transform: translate(0.25rem, -0.25rem);
 }
 /*=============== EXPERIENCE ===============*/
-.experience__container{
+.experience__container {
   row-gap: 2rem;
 }
-.experience__card{
+.experience__card {
   display: grid;
   row-gap: 1rem;
 }
-.experience__company{
+.experience__company {
   font-size: var(--h2-font-size);
 }
-.experience__data{
+.experience__data {
   background-color: var(--container-color);
   padding: 1.5rem;
   border-radius: 1.5rem;
 }
-.experience__profession{
+.experience__profession {
   font-size: var(--h3-font-size);
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
-.experience__date{
+.experience__date {
   display: block;
   font-size: var(--smaller-font-size);
   margin-bottom: 1rem;
 }
-.experience_description{
+.experience_description {
   color: var(--text-color);
 }
 /*=============== CONTACT ===============*/
-
+.contact__group,
+.contact__form {
+  gap: 1rem;
+}
+.contact__form {
+  position: relative;
+}
+.contact__input {
+  background-color: var(--container-color);
+  padding: 1.25rem;
+  border-radius: 4rem;
+  color: var(--white-color);
+}
+.contact__input::placeholder {
+  color: var(--text-color);
+}
+.contact__input:autofill {
+  transition: background-color 6000s, color 6000s;
+}
+.contact__area {
+  height: 10rem;
+  border-radius: 1.5rem;
+  resize: none;
+}
+.contact__button{
+  margin-top: 1.5rem;
+  cursor: pointer;
+}
+.contact__message{
+  position: absolute;
+  left: 0;
+  bottom: 4.5rem;
+  font-size: var(--smaller-font-size);
+}
 /*=============== FOOTER ===============*/
 
 /*=============== SCROLL BAR ===============*/
