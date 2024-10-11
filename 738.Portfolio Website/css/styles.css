@@ -492,18 +492,67 @@ img {
   border-radius: 1.5rem;
   resize: none;
 }
-.contact__button{
+.contact__button {
   margin-top: 1.5rem;
   cursor: pointer;
 }
-.contact__message{
+.contact__message {
   position: absolute;
   left: 0;
   bottom: 4.5rem;
   font-size: var(--smaller-font-size);
 }
 /*=============== FOOTER ===============*/
-
+.footer {
+  padding-block: 2rem 8rem;
+}
+.footer__container {
+  row-gap: 2.5rem;
+}
+.footer__logo {
+  color: var(--white-color);
+  font: var(--font-regular) var(--biggest-font-size) var(--second-font);
+  justify-self: center;
+}
+.footer__links {
+  display: flex;
+  justify-content: center;
+  column-gap: 2rem;
+}
+.footer__link {
+  color: var(--white-color);
+  transition: color 0.4s;
+}
+.footer__link:hover {
+  color: var(--text-color);
+}
+.footer__social {
+  display: flex;
+  justify-content: center;
+  column-gap: 1.5rem;
+}
+.footer__social-link {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--first-color);
+  color: var(--white-color);
+  font-size: 1.5rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: background-color 0.4s, color 0.4s;
+}
+.footer__social-link:hover {
+  background-color: var(--white-color);
+  color: var(--black-color);
+}
+.footer__copy {
+  display: block;
+  margin-top: 4.5rem;
+  text-align: center;
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+}
 /*=============== SCROLL BAR ===============*/
 
 /*=============== SCROLL UP ===============*/
