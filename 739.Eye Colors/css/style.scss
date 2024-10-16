@@ -1,0 +1,200 @@
+$radius: 45vmin;
+$size: $radius * 2;
+$length: 50;
+$side: radius-to-side($radius, $length);
+$ratio: 0.125;
+$space: $side * $ratio;
+$color: var(--fill);
+$background: var(--background);
+$time: $length / 4 * 1s;
+
+$size-box: $size * 1;
+$size-chart: $size * 1;
+$size-cover: $size * 1.1;
+$size-eye: $size-chart * 0.5;
+$size-sun: $size-chart * 0.125;
+$size-ray: $size-sun * 0.25;
+
+$percent: 100 / $length;
+$angle: $percent / 100 * 360deg;
+$theta: 360deg / ($length / 2);
+
+$animation-state: if(true, running, paused);
+$animation: rotate $time infinite linear $animation-state;
+
+// @include crosshair();
+
+:root {
+	@include cssVariables($length: $length);
+}
+
+.scene,
+.box,
+.chart,
+.lines,
+.line,
+.cover,
+.eye,
+.tracker,
+.scale,
+.sun,
+.rays,
+.ray {
+	@extend %flex-3D;
+	position: absolute;
+}
+
+.box {
+	width: $size-box;
+	height: $size-box;
+	pointer-events: all;
+	transition: transform 1s ease-in-out;
+
+	* {
+		pointer-events: none;
+	}
+	.tracker,
+	.scale {
+		transition: transform 0.15s linear;
+	}
+
+	&:hover {
+		.lines {
+			background: var(--hover);
+		}
+	}
+
+	&.active {
+		.scale {
+			transform: scale(1.15);
+		}
+	}
+}
+
+.chart {
+	@include pseudos;
+
+	width: $size-chart;
+	height: $size-chart;
+
+	&::after {
+		position: absolute;
+		width: $size-cover / 2;
+		height: $size-cover;
+		right: 50%;
+		transform-origin: 100% center;
+		background: var(--background);
+		animation: $animation;
+	}
+}
+
+.lines {
+	height: 100%;
+	width: 100%;
+	background: var(--fill);
+	border-radius: 50%;
+	transform: rotatez(-$angle / 2);
+	transition: background 1s ease-in-out;
+}
+
+.line {
+	width: $space;
+	height: 101%;
+	background: var(--background);
+
+	@for $i from 0 to $length {
+		$index: $i + 1;
+
+		&:nth-child(#{$index}) {
+			transform: rotatez($angle * $index);
+		}
+	}
+}
+
+.eye {
+	width: $size-eye;
+	height: $size-eye;
+	background: $background;
+	border-radius: 100% 0;
+	border: $size-eye * 0.025 solid var(--stroke);
+	transform: rotatez(45deg);
+}
+
+.sun {
+	@include pseudos;
+
+	// transform: scale(6);
+	animation: $animation;
+
+	&,
+	&::after,
+	&::before {
+		height: $size-sun;
+		width: $size-sun;
+		position: absolute;
+		border-radius: 50%;
+	}
+
+	&::before {
+		transform: scale(0.9);
+		background: linear-gradient(
+			to left,
+			var(--background) 0% 50%,
+			var(--fill) 50% 100%
+		);
+	}
+
+	&::after {
+		content: "";
+		border: calc(#{$size-sun * phi() * 0.05}) solid var(--fill);
+		border-left-color: var(--background);
+		border-top-color: var(--background);
+		transform: rotatez(-45deg);
+	}
+}
+
+.ray {
+	$distance: calc((0.95 * #{$size-sun} / 2 + #{$size-ray} / 2));
+
+	position: absolute;
+	height: $size-ray;
+	width: $size-ray * 0.35;
+	border-bottom-left-radius: 50%;
+	border-bottom-right-radius: 50%;
+	background: var(--background);
+	border: $size-ray * 0.1 solid var(--fill);
+
+	&:nth-child(n + 2):nth-child(-n + #{floor($length / 4)}) {
+		background: var(--fill);
+	}
+
+	&:nth-child(1) {
+		background: linear-gradient(
+			to right,
+			var(--fill) 0% 50%,
+			var(--background) 50% 100%
+		);
+	}
+
+	&:nth-child(#{floor($length / 4) + 1}) {
+		background: linear-gradient(
+			to left,
+			var(--fill) 0% 50%,
+			var(--background) 50% 100%
+		);
+	}
+
+	@for $i from 0 to $length / 2 {
+		$index: $i + 1;
+
+		&:nth-child(#{$index}) {
+			transform: rotatez($i * $theta) translatey($distance);
+		}
+	}
+}
+
+@keyframes rotate {
+	to {
+		transform: rotatez(1turn);
+	}
+}
