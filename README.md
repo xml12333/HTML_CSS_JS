@@ -745,3 +745,4 @@
 |738| [Portfolio Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/738.Portfolio%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/738.Portfolio%20Website/)|
 |739| [Eye Colors](https://github.com/xml12333/HTML_CSS_JS/tree/main/739.Eye%20Colors)| [Demo](https://nikt.com.ua/projects/htmlCssJs/739.Eye%20Colors/)|
 |740| [Login Form](https://github.com/xml12333/HTML_CSS_JS/tree/main/740.Login%20Form)| [Demo](https://nikt.com.ua/projects/htmlCssJs/740.Login%20Form/)|
+|741| [Frigile Text](https://github.com/xml12333/HTML_CSS_JS/tree/main/741.Frigile%20Text)| [Demo](https://nikt.com.ua/projects/htmlCssJs/741.Frigile%20Text/)|
