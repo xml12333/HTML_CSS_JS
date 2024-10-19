@@ -746,3 +746,4 @@
 |739| [Eye Colors](https://github.com/xml12333/HTML_CSS_JS/tree/main/739.Eye%20Colors)| [Demo](https://nikt.com.ua/projects/htmlCssJs/739.Eye%20Colors/)|
 |740| [Login Form](https://github.com/xml12333/HTML_CSS_JS/tree/main/740.Login%20Form)| [Demo](https://nikt.com.ua/projects/htmlCssJs/740.Login%20Form/)|
 |741| [Frigile Text](https://github.com/xml12333/HTML_CSS_JS/tree/main/741.Frigile%20Text)| [Demo](https://nikt.com.ua/projects/htmlCssJs/741.Frigile%20Text/)|
+|742| [Straggered Animations](https://github.com/xml12333/HTML_CSS_JS/tree/main/742.Straggered%20Animations)| [Demo](https://nikt.com.ua/projects/htmlCssJs/742.Straggered%20Animations/)|
