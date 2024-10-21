@@ -1,0 +1,9 @@
+span, li {
+  font-size: 14pt;
+}
+textarea {
+  min-height: 5em;
+}
+code {
+  cursor: pointer;
+}

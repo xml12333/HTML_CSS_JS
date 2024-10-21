@@ -748,3 +748,4 @@
 |741| [Frigile Text](https://github.com/xml12333/HTML_CSS_JS/tree/main/741.Frigile%20Text)| [Demo](https://nikt.com.ua/projects/htmlCssJs/741.Frigile%20Text/)|
 |742| [Straggered Animations](https://github.com/xml12333/HTML_CSS_JS/tree/main/742.Straggered%20Animations)| [Demo](https://nikt.com.ua/projects/htmlCssJs/742.Straggered%20Animations/)|
 |743| [Wobble Checkboxes](https://github.com/xml12333/HTML_CSS_JS/tree/main/743.Wobble%20Checkboxes)| [Demo](https://nikt.com.ua/projects/htmlCssJs/743.Wobble%20Checkboxes/)|
+|744| [Name Combinations](https://github.com/xml12333/HTML_CSS_JS/tree/main/744.Name%20Combinations)| [Demo](https://nikt.com.ua/projects/htmlCssJs/744.Name%20Combinations/)|
