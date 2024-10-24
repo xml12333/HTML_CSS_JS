@@ -14,7 +14,7 @@
     />
 
     <!--=============== ATROPOS CSS ===============-->
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="./css/atropos.min.css" />
 
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="./css/styles.css" />
@@ -61,16 +61,32 @@
             </p>
             <a href="#" class="home__button">Send Pumpkins</a>
           </div>
-          <div class="home__images">
-            <img src="./img/pumpkin-1.png" alt="img" class="home__img-1">
-            <img src="./img/pumpkin-2.png" alt="img" class="home__img-2">
+          <div class="home__images atropos">
+            <div class="atropos-scale">
+              <div class="atropos-rotate">
+                <div class="atropos-inner">
+                  <img
+                    src="./img/pumpkin-1.png"
+                    alt="img"
+                    data-atropos-offset="10"
+                    class="home__img-1"
+                  />
+                  <img
+                    src="./img/pumpkin-2.png"
+                    alt="img"
+                    data-atropos-offset="10"
+                    class="home__img-2"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
     <!--=============== ATROPOS JS ===============-->
-    <script src=""></script>
+    <script src="./js/atropos.min.js"></script>
 
     <!--=============== MAIN JS ===============-->
     <script src="./js/main.js"></script>
