@@ -750,3 +750,4 @@
 |743| [Wobble Checkboxes](https://github.com/xml12333/HTML_CSS_JS/tree/main/743.Wobble%20Checkboxes)| [Demo](https://nikt.com.ua/projects/htmlCssJs/743.Wobble%20Checkboxes/)|
 |744| [Name Combinations](https://github.com/xml12333/HTML_CSS_JS/tree/main/744.Name%20Combinations)| [Demo](https://nikt.com.ua/projects/htmlCssJs/744.Name%20Combinations/)|
 |745| [Halloween Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/745.Halloween%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/745.Halloween%20Website/)|
+|746| [Stars Background](https://github.com/xml12333/HTML_CSS_JS/tree/main/746.Stars%20Background)| [Demo](https://nikt.com.ua/projects/htmlCssJs/746.Stars%20Background/)|

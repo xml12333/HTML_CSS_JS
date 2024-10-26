@@ -1,0 +1,98 @@
+// Creating actual animation to move
+@-webkit-keyframes STAR-MOVES {
+  from {
+    background-position: 10% 10%;
+  }
+  to {
+    background-position: 1500% 500%;
+  }
+}
+
+//animation to fade midground
+@keyframes fadeMidground {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+//animation to fade foreground
+@keyframes fadeForeground {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+#background {
+  // Set background
+  background: black url(https://bit.ly/3CCAaMH);
+
+  // Center background image
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  //Place primary img last behind all images
+  z-index: 100;
+
+  // animation
+  -webkit-animation-name: STAR-MOVES;
+
+  // Increase the value to slow the animation
+  -webkit-animation-duration: 400s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+}
+
+#midground {
+  background: url(https://bit.ly/3vtcaor);
+  opacity: 0.2;
+  // Center midground image
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+
+  // setting animation
+  -webkit-animation-name: STAR-MOVES;
+  -webkit-animation-duration: 2000s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+
+  //Transition to change opacity
+  transition: opacity 3s;
+  animation: fadeMidground 3s alternate infinite;
+}
+
+#foreground {
+  //Set background, set opacity
+  background: url(https://earthsky.org/upl/2018/11/pleiades-seven-sisters-nov2019-e1572962425736.jpg);
+  opacity: 0.1;
+
+  // Center foreground image
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 300;
+
+  // Animation
+  -webkit-animation-name: STAR-MOVES;
+  -webkit-animation-duration: 1000s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+
+  //fade animation
+  //transition: opacity 4s;
+  //animation: fadeForeground 4s alternate infinite;
+}
