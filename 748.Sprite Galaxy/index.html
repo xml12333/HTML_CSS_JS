@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sprite Galaxy</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <script type="x-shader/x-vertex" id="vertexshader">
+      #define loops 10.0
+      attribute float age;
+      attribute vec3 velocity;
+      attribute vec3 anim;
+      attribute float frame;
+      varying vec2 spritePos;
+      varying vec4 fogColor;
+      void main() {
+      	vec3 pos = velocity * age;
+      	vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
+      	float size = 16.0;
+      	gl_PointSize = size * (256.0 / -mvPosition.z);
+      	gl_Position = projectionMatrix * mvPosition;
+      	spritePos = vec2(mod(frame, 32.0), floor(frame / 32.0));
+      	float dist = length(vec3(pos.xz, 0));
+      	float fogStrength = 1.0 - pow(1.0 - (dist / 3000.0), 3.0);
+      	fogColor = vec4(0.0, 0.0, 0.0, fogStrength);
+      }
+    </script>
+    <script type="x-shader/x-fragment" id="fragmentshader">
+      #define CUTOFF 0.5
+      #define ATLAS_RES vec2(16.0 / 512.0, 16.0 / 512.0);
+      uniform sampler2D texture;
+      varying vec2 spritePos;
+
+      varying vec4 fogColor;
+      void main() {
+      	vec2 coord = (gl_PointCoord + spritePos) * ATLAS_RES;
+      	vec4 color = texture2D(texture, coord);
+      	gl_FragColor = vec4(mix(color.rgb, fogColor.rgb, fogColor.a), color.a);
+      	if(color.a <= 0.5) discard;
+      }
+    </script>
+    <!-- partial -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r77/three.min.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r77/examples/js/controls/OrbitControls.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
