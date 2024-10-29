@@ -753,3 +753,4 @@
 |746| [Stars Background](https://github.com/xml12333/HTML_CSS_JS/tree/main/746.Stars%20Background)| [Demo](https://nikt.com.ua/projects/htmlCssJs/746.Stars%20Background/)|
 |747| [Moon](https://github.com/xml12333/HTML_CSS_JS/tree/main/747.Moon)| [Demo](https://nikt.com.ua/projects/htmlCssJs/747.Moon/)|
 |748| [Sprite Galaxy](https://github.com/xml12333/HTML_CSS_JS/tree/main/748.Sprite%20Galaxy)| [Demo](https://nikt.com.ua/projects/htmlCssJs/748.Sprite%20Galaxy/)|
+|749| [Gravitational Channeling](https://github.com/xml12333/HTML_CSS_JS/tree/main/749.Gravitational%20Channeling)| [Demo](https://nikt.com.ua/projects/htmlCssJs/749.Gravitational%20Channeling/)|
