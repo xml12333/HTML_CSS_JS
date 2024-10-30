@@ -1,0 +1,15 @@
+html, body{
+    margin:0;
+    padding:0;
+    background-color:hsl(195, 100%, 7%);
+}
+
+#canvas{
+    margin:0 auto;
+    display:block;
+    filter:url('#shadowed-goo');
+}
+
+svg{
+  display:none;
+}
