@@ -759,3 +759,4 @@
 |752| [Underwater](https://github.com/xml12333/HTML_CSS_JS/tree/main/752.Underwater)| [Demo](https://nikt.com.ua/projects/htmlCssJs/752.Underwater/)|
 |753| [Raindrop](https://github.com/xml12333/HTML_CSS_JS/tree/main/753.Raindrop)| [Demo](https://nikt.com.ua/projects/htmlCssJs/753.Raindrop/)|
 |754| [Rain](https://github.com/xml12333/HTML_CSS_JS/tree/main/754.Rain)| [Demo](https://nikt.com.ua/projects/htmlCssJs/754.Rain/)|
+|755| [Stream](https://github.com/xml12333/HTML_CSS_JS/tree/main/755.Stream)| [Demo](https://nikt.com.ua/projects/htmlCssJs/755.Stream/)|
