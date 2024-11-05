@@ -1,0 +1,58 @@
+body {
+  display: grid;
+  place-content: end center;
+  overflow: hidden;
+  margin: 0;
+  height: 100vh;
+  background: #000;
+}
+
+.canv {
+  --rdist: calc(1em*var(--f));
+  --p3d: perspective(20em);
+  position: relative;
+  padding: calc(var(--rdist) + 1em);
+  background: #000;
+  filter: contrast(19);
+  animation: fall 2s ease-in infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: var(--p3d) translatey(-100vh) scale(0.25) rotatex(0deg);
+  }
+  32% {
+    transform: var(--p3d) translatey(0) scale(0.35, 0.75) rotatex(0deg);
+  }
+  33% {
+    transform: var(--p3d) translatey(0) scale(0.85, 0.35) rotatex(0deg);
+  }
+  35%, 100% {
+    transform: var(--p3d) translatey(0) scale(1) rotatex(75deg);
+  }
+}
+.drop {
+  --rdrop: calc(var(--s)*1em);
+  --adrop: var(--k)*1turn/var(--n);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: calc(-1*var(--rdrop));
+  padding: var(--rdrop);
+  border-radius: 50%;
+  transform: rotate(calc(var(--adrop) - 45deg)) translate(var(--rdist)) scale(0, calc(var(--s)*.5));
+  background: dodgerblue;
+  filter: blur(5px);
+  animation: wave 2s ease-out infinite;
+}
+
+@keyframes wave {
+  0%, 32% {
+    border-radius: 3px 25% 25% 75%;
+    transform: rotate(-45deg) translatey(calc(var(--s)*1em)) scale(1);
+  }
+  35% {
+    border-radius: 50%;
+    transform: rotate(calc(var(--adrop) - 45deg)) translate(0) scale(1);
+  }
+}

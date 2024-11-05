@@ -1,0 +1,5 @@
+- var n = 36, f = 1/Math.tan(Math.PI/n);
+
+.canv(style=`--n: ${n}; --f: ${f}`)
+	- for(let k = 0; k < n; k++)
+		.drop(style=`--k: ${k}; --s: ${+(.35 + .8*Math.random()).toFixed(2)}`)
