@@ -1,0 +1,186 @@
+:root{
+    --w: 125px;
+    --h: 210px;
+    --cColor: rgb(27, 255, 0);
+    --cColor2: rgb(24, 234, 255);
+}
+.wall{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    &::before{
+        content: '';
+        position: absolute;
+        border-radius: 47% 53% 45% 55% / 67% 59% 41% 33%;
+        margin: auto;
+        width: 0;
+        height: 0;
+        left: 0;
+        right: -70px;
+        z-index: -1;
+        top: -30px;
+        opacity: 0.3;
+        bottom: -180px;
+        animation: s 9s linear infinite forwards;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        border-radius: 47% 53% 45% 55% / 67% 59% 41% 33%;
+        margin: auto;
+        width: 0;
+        height: 0;
+        left: -30px;
+        right: 0;
+        z-index: -1;
+        bottom: -180px;
+        opacity: 0.3;
+        top: 0;
+        animation: s 12s linear infinite forwards;
+        animation-direction: reverse;
+        animation-duration: 10s;
+    }
+}
+.c{
+    width: var(--w);
+    height: var(--h);
+    margin: auto;
+    border-width: 3px;
+    border-style: solid;
+    animation: b 9s linear infinite forwards;
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.11) 65%,rgba(148, 13, 144, 0.99) 100%);
+}
+.l{
+    &::after,
+    &::before{
+        content: '';
+        position: absolute;
+        animation: rotate1 10s linear infinite;
+        background-image: linear-gradient(45deg, rgb(27, 255, 0), rgb(24, 234, 255));
+        width: 194px;
+        height: 194px;
+        border-radius: 40% 60% 38% 62% / 53% 35% 65% 47%;
+        bottom: -178px;
+        right: -38px;
+        transform: scale(1.1) skew(20deg);
+        z-index: -1;
+        border: 1px solid #01d5ff;
+        opacity: 0.9;
+    }
+    &::after{
+        animation-direction: reverse;
+        animation-duration: 20s;
+        right: -20px;
+        bottom: -180px;
+    }
+}
+.b{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background-color: black;
+    z-index: -2;
+    filter: contrast(20);
+    i:nth-child(2){
+        &::before{
+            animation-duration: 25s;
+            width: 50px;
+            height: 50px;
+            background-image: linear-gradient(45deg, rgba(76, 249, 225, 0.64), rgb(69, 107, 212));
+        }
+        &::after{
+            animation-play-state: paused;
+            margin-top: 255px;
+            width: 80px;
+            height: 22px;
+        }
+    }
+    i{
+        &::before{
+            content: '';
+            position: absolute;
+            border-radius: 47% 53% 45% 55% / 67% 59% 41% 33%;
+            background-image: linear-gradient(45deg, rgba(0, 196, 255, 0.64), rgb(253, 255, 112));
+            width: 40px;
+            height: 50px;
+            top: 20px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            z-index: 0;
+            filter: blur(10px);
+            animation: rotate1 9s linear infinite, yAxis 10s linear infinite alternate-reverse forwards, bs 5s linear infinite;
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            border-radius: 47% 53% 45% 55% / 67% 59% 41% 33%;
+            background-image: linear-gradient(45deg, #7ffb4c, rgba(166, 255, 255, 0.84));
+            width: 60px;
+            height: 52px;
+            top: 70px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            z-index: 0;
+            filter: blur(10px);
+            animation: rotate1 8s linear infinite, yAxis 20s linear infinite alternate forwards;
+        }
+    }
+}
+
+@keyframes rotate1{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+@keyframes yAxis{
+    from{
+        top: -60px;
+        border-radius: 17% 53% 45% 55% / 67% 59% 41% 33%;
+    }
+    to{
+        top: 210px;
+        border-radius: 97% 33% 65% 55% / 87% 29% 41% 33%;
+    }
+}
+@keyframes b{
+    from{
+        border-color: var(--cColor);
+    }
+    50%{
+        border-color: var(--cColor2);
+    }
+    to{
+        border-color: var(--cColor);
+    }
+}
+@keyframes bs{
+    from{
+        box-shadow: 0px 0px 0px 2px rgb(237, 255, 87);
+    }
+    50%{
+        box-shadow: 0px 0px 0px 10px #00c4ff;
+    }
+    to{
+        box-shadow: 0px 0px 0px 1px rgb(237, 255, 87);
+    }
+}
+@keyframes s{
+    from{
+        box-shadow: 0 0 50px 40px #00BCD4;
+    }
+    50%{
+        box-shadow: 0 0 50px 45px rgb(237, 255, 87);
+    }
+    to{
+        box-shadow: 0 0 50px 40px #00BCD4;
+    }
+}

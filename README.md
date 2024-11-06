@@ -761,3 +761,4 @@
 |754| [Rain](https://github.com/xml12333/HTML_CSS_JS/tree/main/754.Rain)| [Demo](https://nikt.com.ua/projects/htmlCssJs/754.Rain/)|
 |755| [Stream](https://github.com/xml12333/HTML_CSS_JS/tree/main/755.Stream)| [Demo](https://nikt.com.ua/projects/htmlCssJs/755.Stream/)|
 |756| [Water Loader](https://github.com/xml12333/HTML_CSS_JS/tree/main/756.Water%20Loader)| [Demo](https://nikt.com.ua/projects/htmlCssJs/756.Water%20Loader/)|
+|757| [Lava Lamp](https://github.com/xml12333/HTML_CSS_JS/tree/main/757.Lava%20Lamp)| [Demo](https://nikt.com.ua/projects/htmlCssJs/757.Lava%20Lamp/)|
