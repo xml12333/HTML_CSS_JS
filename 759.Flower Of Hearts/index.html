@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Flower of Hearts - CSS Doodle</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<style>
+  css-doodle {
+    --rule: (
+      :doodle {
+        @grid: 200x1 / 70vmin 100vmin;
+        overflow: visible;
+        contain: initial;
+        --colors: @p(
+          (#e9dbce, #fceade, #ea526f, #e2c290, #6b2d5c, #25ced1),
+          (#c9cba3, #ffe1a8, #e26d5c, #723d46, #472d30),
+          (#2B2B2B, #91B3E1, #2F5FB3, #3D4B89, #AE99E8, #DBE2EC),
+          (#114b5f, #1a936f, #88d498, #c6dabf, #f3e9d2),
+          (#e42268, #fb8075, #761871, #5b7d9c, #a38cb4, #476590),
+          (#223843, #e9dbce, #eff1f3, #dbd3d8, #d8b4a0, #d77a61),
+          (#e29578, #ffffff, #006d77, #83c5be, #ffddd2, #edf6f9),
+          (#ffbe0b, #fb5607, #ff006e, #8338ec, #3a86ff)
+        );
+        --color-1: @p(--colors);
+        --color-2: @P;
+        --color-3: @P;
+        --color-4: @P;
+        --color-5: @P;
+        --color-6: @P;
+        background-image: @svg(
+          viewBox: 0 0 1000 1000;
+          circle*400 {
+            cx: @r(20, 980);
+            cy: @r(20, 980);
+            r: @r(.01, 3);
+            fill: @p(--colors);
+          }
+        );
+        filter: @svg-filter(
+          feTurbulence {
+            type: fractalNoise;
+            baseFrequency: 0.8;
+          }
+          feDisplacementMap {
+            in: SourceGraphic;
+            scale: 1.5;
+          }
+        );
+      }
+
+      position: absolute;
+      @keyframes keyframes {
+        from { scale: 1; }
+        to { scale: 0; }
+      }
+
+      @match (i < @p(1, 41)) {
+        @size: @r(5, 12)vmin;
+        @place: @r(0, 100)% @r(60, 100)%;
+        transform: rotate(calc(@p(-90, 90)deg + @r(±30)deg)) skew(@r(20)deg);
+        background: linear-gradient(180deg, @p(--colors), @P);
+        opacity: @r(0.5, 0.8);
+        clip-path: @shape(
+          points: 200;
+          a: cos(t)*@r(9, 13)/18 - cos(2t)*5/@r(9, 18);
+          b: cos(3t)/@r(10, 18) + cos(3t)/@r(18, 20);
+          x: .75 * sin(t - @r(0.1))^3;
+          y: a - b + .15;
+        );
+      }
+
+      @match(i = 41) {
+        @place: 57% 65%;
+        ::after {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          content: "(";
+          font-size: 15vmin;
+          color: @p(--colors);
+          -webkit-text-stroke: 0.2vmin @P();
+          transform: rotate(60deg) skew(60deg) scale(1.2, 3);
+        }
+      }
+
+      @match(i > 41 && i < 60) {
+        @size: @r(15, 25)vmin;
+        @place: 50% 20%;
+        transform: rotate(@r(360)deg) skew(@r(20)deg);
+        transform-origin: 50% 85%;
+        background: linear-gradient(180deg, @p(--colors), @P);
+        opacity: @r(0.2, 1);
+        clip-path: @shape(
+          points: 200;
+          a: cos(t)*@r(9, 13)/18 - cos(2t)*5/@r(9, 18);
+          b: cos(3t)/@r(10, 18) + cos(3t)/@r(18, 20);
+          x: .75 * sin(t - @r(0.1))^3;
+          y: a - b + .15;
+        );
+
+        ::after {
+          content: "";
+          @size: 100%;
+          @place: center;
+        }
+      }
+    )
+  }
+</style>
+<graph>
+  <css-doodle use="var(--rule)" click-to-update>
+    :doodle {
+
+    }
+  </css-doodle>
+</graph>
+<!-- partial -->
+  <script src='https://esm.sh/css-doodle@0.40.8/css-doodle.min.js?raw'></script><script  src="./js/script.js"></script>
+
+</body>
+</html>

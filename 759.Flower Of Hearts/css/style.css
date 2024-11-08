@@ -1,0 +1,19 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1e1e1e;
+}
+
+graph {
+  position: relative;
+  width: 70vmin;
+  height: 100vmin;
+  background: #1e1e1e;
+}
