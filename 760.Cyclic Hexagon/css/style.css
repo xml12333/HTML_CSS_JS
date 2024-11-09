@@ -1,0 +1,11 @@
+/* #447abd */
+body {
+  background-color: #447abd;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}

@@ -764,3 +764,4 @@
 |757| [Lava Lamp](https://github.com/xml12333/HTML_CSS_JS/tree/main/757.Lava%20Lamp)| [Demo](https://nikt.com.ua/projects/htmlCssJs/757.Lava%20Lamp/)|
 |758| [Lightweight Water Distortion](https://github.com/xml12333/HTML_CSS_JS/tree/main/758.Lightweight%20Water%20Distortion)| [Demo](https://nikt.com.ua/projects/htmlCssJs/758.Lightweight%20Water%20Distortion/)|
 |759| [Flower Of Hearts](https://github.com/xml12333/HTML_CSS_JS/tree/main/759.Flower%20Of%20Hearts)| [Demo](https://nikt.com.ua/projects/htmlCssJs/759.Flower%20Of%20Hearts/)|
+|760| [Cyclic Hexagon](https://github.com/xml12333/HTML_CSS_JS/tree/main/760.Cyclic%20Hexagon)| [Demo](https://nikt.com.ua/projects/htmlCssJs/760.Cyclic%20Hexagon/)|
