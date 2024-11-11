@@ -766,3 +766,4 @@
 |759| [Flower Of Hearts](https://github.com/xml12333/HTML_CSS_JS/tree/main/759.Flower%20Of%20Hearts)| [Demo](https://nikt.com.ua/projects/htmlCssJs/759.Flower%20Of%20Hearts/)|
 |760| [Cyclic Hexagon](https://github.com/xml12333/HTML_CSS_JS/tree/main/760.Cyclic%20Hexagon)| [Demo](https://nikt.com.ua/projects/htmlCssJs/760.Cyclic%20Hexagon/)|
 |761| [1Bit Color Scheme](https://github.com/xml12333/HTML_CSS_JS/tree/main/761.1Bit%20Color%20Scheme)| [Demo](https://nikt.com.ua/projects/htmlCssJs/761.1Bit%20Color%20Scheme/)|
+|762| [Rainbow](https://github.com/xml12333/HTML_CSS_JS/tree/main/762.Rainbow)| [Demo](https://nikt.com.ua/projects/htmlCssJs/762.Rainbow/)|
