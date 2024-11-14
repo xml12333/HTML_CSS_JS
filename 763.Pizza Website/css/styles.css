@@ -217,7 +217,9 @@ img {
   top: 0;
 }
 /* Add shadow header */
-
+.shadow-header {
+  box-shadow: 0 4px 16px hsla(353, 100%, 8%, 0.1);
+}
 /* Active link */
 
 /*=============== HOME ===============*/
@@ -250,51 +252,51 @@ img {
   left: 2.5rem;
   bottom: -4.5rem;
 }
-.home__images{
+.home__images {
   position: relative;
   display: grid;
   justify-items: center;
   justify-self: center;
 }
-.home__ingredient{
+.home__ingredient {
   width: 60px;
   filter: var(--shadow-small-img);
   position: absolute;
   z-index: 2;
 }
 .home__board,
-.home__pizza{
+.home__pizza {
   filter: var(--shadow-big-img);
 }
-.home__pizza{
+.home__pizza {
   width: 300px;
   z-index: 2;
 }
-.home__board{
+.home__board {
   width: 300px;
   position: absolute;
   bottom: -0.5rem;
   left: -0.15rem;
 }
-.home__leaf-1{
+.home__leaf-1 {
   top: -1rem;
 }
-.home__pepperoni{
+.home__pepperoni {
   right: -0.5rem;
   top: 2rem;
 }
-.home__mushroom{
+.home__mushroom {
   right: -0.5rem;
   bottom: 2rem;
 }
-.home__olive{
+.home__olive {
   bottom: -1rem;
 }
-.home__leaf-2{
+.home__leaf-2 {
   left: -0.5rem;
   bottom: 2rem;
 }
-.home__tomato{
+.home__tomato {
   left: -0.5rem;
   top: 2rem;
 }
@@ -308,13 +310,40 @@ img {
   font-weight: var(--font-semi-bold);
   border-radius: 4rem;
   box-shadow: 0 8px 24px hsla(353, 100%, 40%, 0.4);
-  transition: background-color .4s;
+  transition: background-color 0.4s;
 }
-.button:hover{
+.button:hover {
   background-color: var(--first-color-alt);
 }
 /*=============== ABOUT ===============*/
-
+.about {
+  background-color: var(--container-color);
+}
+.about__container {
+  row-gap: 2rem;
+  padding-bottom: 2rem;
+}
+.about__data {
+  position: relative;
+  text-align: center;
+}
+.about__data .section__title {
+  margin-bottom: 1rem;
+}
+.about__description {
+  margin-bottom: 2rem;
+}
+.about__sticker {
+  width: 40px;
+  position: absolute;
+  right: 0;
+  bottom: 2rem;
+}
+.about__img {
+  width: 320px;
+  justify-self: center;
+  filter: var(--shadow-big-img);
+}
 /*=============== POPULAR ===============*/
 
 /* Swiper class */
