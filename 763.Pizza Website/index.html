@@ -14,7 +14,7 @@
     />
 
     <!--=============== SWIPER CSS ===============-->
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
 
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="./css/styles.css" />
@@ -145,7 +145,33 @@
       </section>
 
       <!--==================== POPULAR ====================-->
-      <section class="popular section" id="popular"></section>
+      <section class="popular section" id="popular">
+        <div class="popular__container container grid">
+          <div class="popular__data">
+            <h2 class="section__title">Discover <br> Popular Orders</h2>
+            <p class="popular__description">Select the best prepared and delicious flavors. 
+              We have collected some popular recipes from around 
+              the world for you to choose your favorite.</p>
+          </div>
+          <div class="popular__swiper swiper">
+            <img src="./img/popular-dish.png" alt="img" class="popular__dish">
+            <div class="swiper-wrapper">
+              <article class="popular__card swiper-slide">
+                <img src="./img/popular-1.png" alt="img" class="popular__img">
+                <h3 class="popular__title">Margherita Pizza</h3>
+              </article>
+              <article class="popular__card swiper-slide">
+                <img src="./img/popular-2.png" alt="img" class="popular__img">
+                <h3 class="popular__title">Mushroom Pizza</h3>
+              </article>
+              <article class="popular__card swiper-slide">
+                <img src="./img/popular-3.png" alt="img" class="popular__img">
+                <h3 class="popular__title">Pepperoni Pizza</h3>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!--==================== RECIPE ====================-->
       <section class="recipe section"></section>
@@ -163,10 +189,10 @@
     <!--========== SCROLL UP ==========-->
 
     <!--=============== SCROLLREVEAL ===============-->
-    <script src=""></script>
+    <script src="./js/scrollreveal.min.js"></script>
 
     <!--=============== SWIPER JS ===============-->
-    <script src=""></script>
+    <script src="./js/swiper-bundle.min.js"></script>
 
     <!--=============== MAIN JS ===============-->
     <script src="./js/main.js"></script>

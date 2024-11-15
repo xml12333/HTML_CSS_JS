@@ -345,9 +345,55 @@ img {
   filter: var(--shadow-big-img);
 }
 /*=============== POPULAR ===============*/
-
+.pupular__container {
+  grid-template-columns: 100%;
+  row-gap: 3rem;
+  padding-bottom: 2rem;
+}
+.popular__data .section__title {
+  margin-bottom: 1rem;
+}
+.popular__description {
+  text-align: center;
+}
+.popular__swiper {
+  position: relative;
+}
+.popular__dish {
+  width: 220px;
+  filter: var(--shadow-big-img);
+  position: absolute;
+  inset: 0;
+  top: -0.85rem;
+  margin-inline: auto;
+}
+.popular__card,
+.popular__img {
+  width: 200px;
+}
+.popular__img {
+  transform: scale(0.8) rotate(-90deg);
+  transition: transform 0.4s;
+}
+.popular__title {
+  font-size: var(--h3-font-size);
+  color: var(--first-color);
+  margin-top: 2rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
 /* Swiper class */
-
+.swiper {
+  margin-inline: initial;
+  overflow: visible;
+}
+:is(.swiper-slide-active, .swiper-slide-duplicate-active) .popular__img {
+  transform: scale(1) rotate(0);
+}
+:is(.swiper-slide-active, .swiper-slide-duplicate-active) .popular__title {
+  opacity: 1;
+}
 /*=============== RECIPE ===============*/
 
 /*=============== PRODUCTS ===============*/
