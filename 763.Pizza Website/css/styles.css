@@ -347,7 +347,7 @@ img {
   filter: var(--shadow-big-img);
 }
 /*=============== POPULAR ===============*/
-.pupular__container {
+.popular__container {
   grid-template-columns: 100%;
   row-gap: 3rem;
   padding-bottom: 2rem;
@@ -660,7 +660,71 @@ img {
 }
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-
+@media screen and (max-width: 320px) {
+  .container {
+    margin-inline: 1rem;
+  }
+  .products__container {
+    grid-template-columns: 150px;
+    justify-content: center;
+  }
+  .footer__form {
+    background-color: transparent;
+    box-shadow: none;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 0;
+  }
+  .footer__input {
+    background-color: var(--container-color);
+    box-shadow: 0 4px 16px hsla(353, 100%, 8%, 0.1);
+    padding: 0.75rem 1rem;
+    border-radius: 4rem;
+  }
+}
 /* For medium devices */
-
+@media screen and (min-width: 576px) {
+  .home__container,
+  .about__container,
+  .popular__container,
+  .recipe__container {
+    grid-template-columns: 380px;
+    justify-content: center;
+  }
+  .products__container {
+    grid-template-columns: repeat(2, 160px);
+    justify-content: center;
+  }
+  .contact__container {
+    width: 450px;
+    margin-inline: auto;
+  }
+  .footer__form{
+    width: 360px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .popular__swiper{
+    width: 600px;
+    overflow-x: clip;
+    justify-self: center;
+  }
+  .products__container{
+    grid-template-columns: repeat(3, 160px);
+  }
+  .footer__content{
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+  .footer__content div:nth-child(3){
+    grid-column: 1 / 3;
+  }
+  .footer__title{
+    text-align: center;
+  }
+  .footer__social,
+  .footer__pay{
+    column-gap: 1.5rem;
+  }
+}
 /* For large devices */
