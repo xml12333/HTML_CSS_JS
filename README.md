@@ -767,3 +767,4 @@
 |760| [Cyclic Hexagon](https://github.com/xml12333/HTML_CSS_JS/tree/main/760.Cyclic%20Hexagon)| [Demo](https://nikt.com.ua/projects/htmlCssJs/760.Cyclic%20Hexagon/)|
 |761| [1Bit Color Scheme](https://github.com/xml12333/HTML_CSS_JS/tree/main/761.1Bit%20Color%20Scheme)| [Demo](https://nikt.com.ua/projects/htmlCssJs/761.1Bit%20Color%20Scheme/)|
 |762| [Rainbow](https://github.com/xml12333/HTML_CSS_JS/tree/main/762.Rainbow)| [Demo](https://nikt.com.ua/projects/htmlCssJs/762.Rainbow/)|
+|763| [Pizza Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/763.Pizza%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/763.Pizza%20Website/)|
