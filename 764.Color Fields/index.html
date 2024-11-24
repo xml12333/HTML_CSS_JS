@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Color Fields</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="menu">
+  <p id="controls">close controls</p>
+  <div id="showhide">
+    <hr>
+    <p>field type: <select id="mode">
+        <option value="0">parallel</option>
+        <option value="1">mixed</option>
+        <option value="2">perpendicular</option>
+        <option value="3">noise</option>
+        <option value="4" selected>eddies</option>
+      </select></p>
+    <hr>
+    <p>paint mode: <select id="paintmode">
+        <option value="0">automatic</option>
+        <option value="1">manual</option>
+      </select></p>
+    <p>color choice mode: <select id="colorchoicemode">
+        <option value="0">automatic</option>
+        <option value="1">manual</option>
+      </select></p>
+    <p>color: <input type="color" id="color" value="#ffa000"></p>
+    <p>sat/lum randomness: </p>
+    <p><input type="range" min=0 max=1 step="any" value=0.5 id="fibrosity"> <canvas id="displaycolor"></canvas></p>
+    <p>line width: <input type="range" min=0.1 max=4 step="any" value=3 id="lwidth"></p>
+    <hr>
+    <p class="center"><button type="button" id="clear">new</button> <button type="button" id="clearsamefield">new -
+        same field</button></p>
+  </div> <!-- showhide -->
+</div> <!-- menu -->
+<!-- partial -->
+  <script  src="./js/script.js"></script>
+
+</body>
+</html>

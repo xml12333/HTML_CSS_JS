@@ -1,0 +1,62 @@
+body {
+  font-family: Arial, Helvetica, "Liberation Sans", FreeSans, sans-serif;
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+input {
+  caret-color: auto;
+}
+
+#menu {
+  font-size: 80%;
+  margin: 0;
+  padding: 5px;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 128, 0.9);
+  color: black;
+  z-index: 10;
+}
+
+#menu.hidden #showhide {
+  display: none;
+}
+
+#controls {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: right;
+}
+
+#controls:hover {
+  background-color: rgba(255, 200, 128, 0.9);
+}
+
+#menu button {
+  margin-right: 5px;
+  margin-left: 5px;
+  border-radius: 5px;
+}
+
+#menu .center {
+  text-align: center;
+}
+
+#colorspan {
+  margin: 0 5px;
+  padding: 0 2em;
+  border: 1px solid black;
+}
+
+canvas#displaycolor {
+  width: 5em;
+  height: 1.25em;
+  border: 1px solid black;
+}
