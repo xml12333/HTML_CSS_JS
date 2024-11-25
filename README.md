@@ -769,3 +769,4 @@
 |762| [Rainbow](https://github.com/xml12333/HTML_CSS_JS/tree/main/762.Rainbow)| [Demo](https://nikt.com.ua/projects/htmlCssJs/762.Rainbow/)|
 |763| [Pizza Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/763.Pizza%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/763.Pizza%20Website/)|
 |764| [Color Fields](https://github.com/xml12333/HTML_CSS_JS/tree/main/764.Color%20Fields)| [Demo](https://nikt.com.ua/projects/htmlCssJs/764.Color%20Fields/)|
+|765| [Truchet Tiles](https://github.com/xml12333/HTML_CSS_JS/tree/main/765.Truchet%20Tiles)| [Demo](https://nikt.com.ua/projects/htmlCssJs/765.Truchet%20Tiles/)|

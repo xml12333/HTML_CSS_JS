@@ -1,0 +1,67 @@
+*{ box-sizing: border-box; }
+html, body { height: 100%; overflow: hidden;}
+
+body {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; align-items: center;
+    margin: 0;
+    --bg: 	#ccc; 
+    --clr: 	#333;
+    background: var(--bg);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    background: #333;
+}
+
+body::after {
+  content: ''; display: block;
+  position: absolute;
+  width: 100%; height: 100%;
+  background: linear-gradient(0deg, #0000 42%, #0003 100%);
+  pointer-events: none;
+}
+
+.cirContainer {
+    transform: translateY(-12%) rotateX(28deg);
+    --tc: 4px;
+}
+.cirRow {
+    display: flex;
+    height: fit-content;
+}
+.cir {
+    position: relative;
+    width: var(--size); height: var(--size);
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    box-shadow: inset 0 0 0 0.5px #aaa;
+    background: var(--bg);
+}
+.cir::before,
+.cir::after {
+    content: ''; display: block;
+    position: absolute; margin: auto;
+    left: 0; right: 0; top: 0; bottom: 0;
+    height: 100%; width: 100%;
+}
+.cir::before {
+    background: radial-gradient(
+        circle at 0.1% 0.1%, 
+        transparent 0px, 
+        transparent calc((var(--size) / 2) - var(--tc)), 
+        var(--clr)  calc((var(--size) / 2) - var(--tc)), 
+        var(--clr)  calc((var(--size) / 2) + var(--tc)), 
+        transparent calc((var(--size) / 2) + var(--tc))
+    );
+}
+.cir::after {
+    background: radial-gradient(
+        circle at 99.9% 99.9%, 
+        transparent 0px, 
+        transparent calc((var(--size) / 2) - var(--tc)), 
+        var(--clr) calc((var(--size) / 2) - var(--tc)), 
+        var(--clr) calc((var(--size) / 2) + var(--tc)), 
+        transparent calc((var(--size) / 2) + var(--tc))
+    );
+}
