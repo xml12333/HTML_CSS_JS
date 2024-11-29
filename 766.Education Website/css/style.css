@@ -134,7 +134,11 @@ nav button {
 .nav__menu a:hover {
   color: var(--color-bg2);
 }
-
+/* navbar on scroll */
+.window-scroll{
+  background: var(--color-primary);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
 /* ============= HEADER =============== */
 header {
   position: relative;
