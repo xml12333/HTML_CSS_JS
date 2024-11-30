@@ -76,6 +76,10 @@ a {
   color: var(--color-white);
 }
 
+p {
+  color: var(--color-light);
+}
+
 img {
   width: 100%;
   display: block;
@@ -135,7 +139,7 @@ nav button {
   color: var(--color-bg2);
 }
 /* navbar on scroll */
-.window-scroll{
+.window-scroll {
   background: var(--color-primary);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
@@ -213,4 +217,31 @@ header {
 }
 .category p {
   font-size: 0.85rem;
+}
+
+/* ============= POPULAR COURSES =============== */
+.courses {
+  margin-top: 10rem;
+}
+.courses__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.course {
+  background: var(--color-bg1);
+  text-align: center;
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+.course:hover {
+  background: transparent;
+  border-color: var(--color-primary);
+}
+.course__info {
+  padding: 2rem;
+}
+.course__info p {
+  margin: 1.2rem 0 2rem;
+  font-size: 0.9rem;
 }
