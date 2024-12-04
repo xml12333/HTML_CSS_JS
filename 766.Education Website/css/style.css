@@ -325,3 +325,39 @@ header {
   top: -1.5rem;
   transform: rotate(45deg);
 }
+/* ============= FOOTER =============== */
+footer {
+  background: var(--color-bg1);
+  padding-top: 5rem;
+  font-size: 0.9rem;
+}
+.footer__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5rem;
+}
+
+.footer__container > div h4 {
+  margin-bottom: 1.2rem;
+}
+.footer__1 p {
+  margin: 0 0 2rem;
+}
+footer ul li {
+  margin-bottom: 0.7rem;
+}
+footer ul li a:hover {
+  text-decoration: underline;
+}
+.footer__socials {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+.footer__copyright {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 1.2rem 0;
+  border-top: 1px solid var(--color-bg1);
+}
