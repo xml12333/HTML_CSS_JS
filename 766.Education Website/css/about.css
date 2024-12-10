@@ -97,3 +97,42 @@
 .team__member-socials a {
   padding: 1rem;
 }
+
+/* =========== MEDIA QUERIES (TABLETS) ============= */
+@media screen and (max-width: 1024px) {
+.about__achievements{
+  margin-top: 2rem;
+}  
+.about__achievements-container{
+  grid-template-columns: 1fr;
+  gap: 4rem;
+}
+.about__achievements-left{
+  width: 80%;
+  margin: 0 auto;
+}
+.team__container{
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.team__member{
+  padding: 1rem;
+}
+}
+/* =========== MEDIA QUERIES (TABLETS) ============= */
+@media screen and (max-width: 600px) {
+  .achievement__card{
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem;
+  }
+  .team__container{
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem;
+  }
+  .team__member{
+    padding: 0;
+  }
+  .team__member p{
+    margin-bottom: 1.5rem;
+  }
+}
