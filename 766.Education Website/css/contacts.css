@@ -76,4 +76,45 @@ color: var(--color-white);
     margin-top: 1rem;
     cursor: pointer;
 }
-/* ============== MEDIA QUERIES ==================== */
+/* ============== MEDIA QUERIES (TABLETS) ==================== */
+@media screen and (max-width: 1024px) {
+    .contact{
+        padding-bottom: 0;
+    }
+    .contact__container{
+        gap: 1.5rem;
+        margin-top: 3rem;
+        height: auto;
+        padding: 1.5rem;
+    }
+    .contact__aside{
+        width: auto;
+        padding: 1.5rem;
+        bottom: 0;
+    }
+    .contact__form{
+        align-self: center;
+        margin-right: 1.5rem;
+    }
+    
+}
+/* ============== MEDIA QUERIES (PHONES) ==================== */
+@media screen and (max-width: 600px) {
+    .contact__container{
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        margin-top: 0;
+        padding: 0;
+    }
+    .contact__form{
+        margin: 0 1.5rem 3rem;
+    }
+    .form__name{
+        flex-direction: column;
+    }
+    .form__name input[type="text"]{
+        width: 100%;
+    }
+
+
+}
