@@ -56,6 +56,7 @@
     flex-direction: column;
     gap: 1.2rem;
     margin-right: 4rem;
+    position: relative;
 }
 .form__name{
     display: flex;
@@ -76,6 +77,14 @@ color: var(--color-white);
     margin-top: 1rem;
     cursor: pointer;
 }
+.contact__message {
+    position: absolute;
+    left: 0;
+    bottom: -2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-white);
+  }
 /* ============== MEDIA QUERIES (TABLETS) ==================== */
 @media screen and (max-width: 1024px) {
     .contact{
