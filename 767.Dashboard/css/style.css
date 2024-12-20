@@ -113,7 +113,6 @@ aside {
   height: 100vh;
 }
 aside .top {
-  background: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -437,14 +436,14 @@ main .recent-orders a {
   display: flex;
 }
 
-.right .sales-analytics .item.offline .icon{
+.right .sales-analytics .item.offline .icon {
   background: var(--color-danger);
 }
 
-.right .sales-analytics .item.customers .icon{
+.right .sales-analytics .item.customers .icon {
   background: var(--color-success);
 }
-.right .sales-analytics .add-product{
+.right .sales-analytics .add-product {
   background-color: transparent;
   border: 2px dashed var(--color-primary);
   display: flex;
@@ -452,11 +451,56 @@ main .recent-orders a {
   justify-content: center;
 }
 
-.right .sales-analytics .add-product div{
+.right .sales-analytics .add-product div {
   display: flex;
   align-items: center;
   gap: 0.6rem;
 }
-.right .sales-analytics .add-product div h3{
+.right .sales-analytics .add-product div h3 {
   font-weight: 600;
+}
+
+/* =================== MEDIA QUERIES ====================== */
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 94%;
+    grid-template-columns: 7rem auto 23rem;
+  }
+
+  aside .logo h2 {
+    display: none;
+  }
+  aside .sidebar h3 {
+    display: none;
+  }
+  aside .sidebar a {
+    width: 5.6rem;
+  }
+  aside .sidebar a:last-child {
+    position: relative;
+    margin-top: 1.8rem;
+  }
+  main .insights {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  main .recent-orders {
+    width: 94%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 2rem 0 0 8.8rem;
+  }
+  main .recent-orders table {
+    width: 83vw;
+  }
+
+  main table thead tr th:last-child,
+  main table thead tr th:first-child {
+    display: none;
+  }
+  main table thead tr td:last-child,
+  main table thead tr td:first-child {
+    display: none;
+  }
 }
