@@ -460,7 +460,10 @@ main .recent-orders a {
   align-items: center;
   justify-content: center;
 }
-
+.right .sales-analytics .add-product:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
 .right .sales-analytics .add-product div {
   display: flex;
   align-items: center;
