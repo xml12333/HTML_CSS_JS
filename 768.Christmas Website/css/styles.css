@@ -133,11 +133,110 @@ img {
 }
 
 /*=============== HOME ===============*/
+.home {
+  position: relative;
+}
+.home__container {
+  height: 100vh;
+  overflow: hidden;
+}
+.home__bg,
+.home__cloud-1,
+.home__cloud-2,
+.home__sled,
+.home__images img,
+.home__title {
+  position: absolute;
+}
+.home__bg {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.home__images img {
+  max-width: initial;
+  width: 900px;
+  right: -16rem;
+  bottom: 0;
+}
+.home__sled {
+  width: 200px;
+  top: 11rem;
+  left: 0;
+  animation: sled 10s linear infinite;
+  transition: transform 0.4s;
+}
+.home__cloud-1,
+.home__cloud-2 {
+  width: 80px;
+}
+.home__cloud-1 {
+  left: 2rem;
+  top: 5rem;
+  animation: cloud-1 12s linear infinite;
+}
+.home__cloud-2 {
+  right: 2rem;
+  top: 8.5rem;
+  animation: cloud-2 12s linear infinite;
+}
+.home__title {
+  bottom: 1.5rem;
+  left: 0;
+  right: 0;
+  color: var(--first-color);
+  font: var(--font-regular) var(--biggest-font-size) var(--second-font);
+  line-height: 100%;
+  text-align: center;
+}
 
 /* Animated Clouds */
-
+@keyframes cloud-1 {
+  0% {
+    margin-left: 100%;
+  }
+  100% {
+    margin-left: -1000px;
+  }
+}
+@keyframes cloud-2 {
+  0% {
+    margin-right: -1000px;
+  }
+  100% {
+    margin-right: 100%;
+  }
+}
 /* Animated sled */
-
+@keyframes sled {
+  0% {
+    transform: translateX(-150vw) rotate(15deg) scale(0.2);
+  }
+  15% {
+    transform: translateX(0vw) rotate(10deg) scale(1);
+  }
+  30% {
+    transform: translateX(10vw) rotate(7deg);
+  }
+  45% {
+    transform: translateX(20vw) rotate(6deg);
+  }
+  60% {
+    transform: translateX(30vw) rotate(5deg);
+  }
+  75% {
+    transform: translateX(40vw) rotate(4deg);
+  }
+  90% {
+    transform: translateX(50vw) rotate(-2deg);
+  }
+  100% {
+    transform: translateX(150vw) rotate(-15deg) scale(0.2);
+  }
+}
 /* Snow color */
 
 /*=============== BREAKPOINTS ===============*/
