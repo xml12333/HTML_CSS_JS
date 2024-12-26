@@ -773,3 +773,4 @@
 |766| [Education Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/766.Education%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/766.Education%20Website/)|
 |767| [Dashboard](https://github.com/xml12333/HTML_CSS_JS/tree/main/767.Dashboard)| [Demo](https://nikt.com.ua/projects/htmlCssJs/767.Dashboard/)|
 |768| [Christmas Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/768.Christmas%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/768.Christmas%20Website/)|
+|769| [Dropdown Menu](https://github.com/xml12333/HTML_CSS_JS/tree/main/769.Dropdown%20Menu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/769.Dropdown%20Menu/)|
