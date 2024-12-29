@@ -191,3 +191,63 @@ main .container .left .profile{
 .left .sidebar .active{
   background: var(--color-light);
 }
+
+.left .sidebar .active i,
+.left .sidebar .active h3{
+  color: var(--color-primary);
+}
+.left .sidebar .active::before{
+  content: "";
+  display: block;
+  width: 0.5rem;
+  height: 100%;
+  position: absolute;
+  background: var(--color-primary);
+}
+.left .sidebar .menu-item:first-child.active{
+  border-top-left-radius: var(--card-border-radius);
+  overflow: hidden;
+}
+.left .sidebar .menu-item:last-child.active{
+  border-bottom-left-radius: var(--card-border-radius);
+  overflow: hidden;
+}
+.left .btn{
+  margin-top: 1rem;
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* ----------------- NOTIFICATION POPUP --------------------- */
+.left .notifications-popup{
+  position: absolute;
+  top: 0;
+  left: 110%;
+  width: 30rem;
+  background: var(--color-white);
+  border-radius: var(--card-border-radius);
+  padding: var(--card-padding);
+  box-shadow: 0 0 2rem hsl(var(--color-primary), 75%, 60%, 25%);
+  z-index: 8;
+  display: none;
+}
+.left .notifications-popup::before{
+  content: "";
+  width: 1.2rem;
+  height: 1.2rem;
+  display: block;
+  background: var(--color-white);
+  position: absolute;
+  left: -0.6rem;
+  transform: rotate(45deg);
+}
+.left .notifications-popup > div{
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.left .notifications-popup small{
+  display: block;
+}
