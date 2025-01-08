@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+:root {
+  --primary-color: #480ca8;
+  --primary-color-variant: #4cc9f0;
+  --secondary-color: #f72585;
+  --white-color: #ffffff;
+  --light-color: rgba(#fff, 0.7);
+  --black-color: #0c031b;
+  --dark-color: rgba(var(--black-color), 0.7);
+  --success-color: #54eb72;
+  --container-lg: 82%;
+  --container-md: 90%;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+  border: 0;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  background: var(--primary-color);
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.2;
+}
+section {
+  margin-top: 6rem;
+}
+section > h2 {
+  text-align: center;
+}
+section > p {
+  text-align: center;
+  width: 45%;
+  margin: 0.6rem auto 2.5rem;
+}
+
+.container {
+  width: var(--container-lg);
+  margin: 0 auto;
+}
+
+.btn {
+  display: inline-block;
+  width: fit-content;
+  padding: 0.75rem 1rem;
+  border-radius: 0.4rem;
+  background: var(--secondary-color);
+  color: var(--white-color);
+  cursor: pointer;
+  transition: all 400ms ease;
+}
+.btn:hover {
+  background: lighten(var(--secondary-color), 80%);
+}
