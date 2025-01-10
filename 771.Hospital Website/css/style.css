@@ -19,7 +19,6 @@
 }
 
 * {
-  font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
   border: 0;
   outline: 0;
@@ -27,6 +26,16 @@
   padding: 0;
   list-style: none;
   text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
+  color: var(--dark-color);
+  background: rgba((var(--primary-color-variant), 0.1));
+  user-select: none;
 }
 
 img {
@@ -57,7 +66,8 @@ section > p {
   margin: 0 auto;
 }
 
-.btn {
+.btn,
+.btn-primary {
   display: inline-block;
   width: fit-content;
   padding: 0.75rem 1rem;
@@ -67,23 +77,17 @@ section > p {
   cursor: pointer;
   transition: all 400ms ease;
 }
-.btn:hover {
+.btn:hover,
+.btn-primary:hover {
   background: hsl(
     var(--secondary-color-hue),
     var(--secondary-color-saturation),
     calc(var(--secondary-color-lightness) + 8%)
   );
-  box-shadow: 0 1rem 1.6rem rgba(var(--black-color), 0.15);
+  box-shadow: 0 1rem 1.6rem rgba(0, 0, 0, 0.15);
 }
 .btn-primary {
-  display: inline-block;
-  width: fit-content;
-  padding: 0.75rem 1rem;
-  border-radius: 0.4rem;
   background: var(--primary-color);
-  color: var(--white-color);
-  cursor: pointer;
-  transition: all 400ms ease;
 }
 .btn-primary:hover {
   background: hsl(
@@ -91,8 +95,31 @@ section > p {
     var(--primary-color-saturation),
     calc(var(--primary-color-lightness) + 8%)
   );
-  box-shadow: 0 1rem 1.6rem rgba(var(--black-color), 0.15);
 }
+/* ======================= NAV ======================== */
+nav {
+  width: 100vw;
+  height: 5rem;
+  position: fixed;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+nav .container {
+  display: flex;
+  justify-content: center;
+}
+
+nav .container ul {
+  display: flex;
+}
+/*  only for medium and small devices */
+nav .container button{
+  display: none;
+}
+
 /* ================ MEDIA QUERIES (MEDIUM DEVICES) ======================= */
 @media screen and (max-width: 1024px) {
   .container {
