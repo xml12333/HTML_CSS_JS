@@ -4,7 +4,10 @@
   --primary-color-hue: 259; /* Hue of #480ca8 */
   --primary-color-saturation: 79%; /* Saturation of #480ca8 */
   --primary-color-lightness: 34%; /* Lightness of #480ca8 */
-  --primary-color-variant: #4cc9f0;
+  --primary-color-variant: hsl(197, 88%, 63%);
+  --primary-color-variant-hue: 197; 
+  --primary-color-variant-saturation: 88%;
+  --primary-color-variant-lightness: 63%; 
   --secondary-color: #f72585; /* Base color */
   --secondary-color-hue: 326; /* Hue of #f72585 */
   --secondary-color-saturation: 89%; /* Saturation of #f72585 */
@@ -105,19 +108,43 @@ nav {
   display: grid;
   place-items: center;
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-color-variant)
+  );
+  color: var(--white-color);
+}
+nav h1,
+nav h2,
+nav h3,
+nav h4,
+nav h5 {
+  color: var(--white-color);
 }
 
 nav .container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 nav .container ul {
   display: flex;
+  gap: 3rem;
+  align-items: center;
 }
 /*  only for medium and small devices */
-nav .container button{
+nav .container button {
   display: none;
+}
+nav .container a {
+  color: var(--white-color);
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+nav .container .nav__logo h3 {
+  color: var(--white-color);
 }
 
 /* ================ MEDIA QUERIES (MEDIUM DEVICES) ======================= */
@@ -127,6 +154,45 @@ nav .container button{
   }
   section > p {
     width: 55%;
+  }
+  nav .container button {
+    display: inline-block;
+    background: transparent;
+    color: var(--white-color);
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  nav #close__nav-btn {
+    display: none;
+  }
+  nav .container ul {
+    position: fixed;
+    right: 5%;
+    top: 5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+  nav .container ul li {
+    width: 100%;
+  }
+  nav .container ul li a {
+    color: var(--white-color);
+    height: 100%;
+    display: block;
+    padding: 1.5rem 2rem;
+    border-radius: 0;
+    background: linear-gradient(
+      var(--primary-color-variant),
+      hsl(
+        var(--primary-color-variant-hue),
+        var(--primary-color-variant-saturation),
+        calc(var(--primary-color-variant-lightness) - 12%)
+      )
+    );
+  }
+  nav .container .btn{
+    background: var(--secondary-color);
   }
 }
 /* ================ MEDIA QUERIES (SMALL DEVICES) ======================= */
