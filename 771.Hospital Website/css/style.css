@@ -147,6 +147,38 @@ nav .container .nav__logo h3 {
   color: var(--white-color);
 }
 
+header {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-color-variant)
+  );
+  color: var(--white-color);
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+header .container {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 46% 46%;
+  gap: 8%;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__content h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  letter-spacing: -3px;
+  font-weight: 300;
+}
+.header__content p {
+  margin: 1rem 0 2rem;
+  color: var(--light-color);
+  font-size: 1.1rem;
+}
 /* ================ MEDIA QUERIES (MEDIUM DEVICES) ======================= */
 @media screen and (max-width: 1024px) {
   .container {
@@ -181,16 +213,16 @@ nav .container .nav__logo h3 {
     animation: flipNavItem 300ms ease forwards;
     transform-origin: top;
   }
-  nav .container ul li:nth-child(2){
+  nav .container ul li:nth-child(2) {
     animation-delay: 200ms;
   }
-  nav .container ul li:nth-child(3){
+  nav .container ul li:nth-child(3) {
     animation-delay: 400ms;
   }
-  nav .container ul li:nth-child(4){
+  nav .container ul li:nth-child(4) {
     animation-delay: 600ms;
   }
-  nav .container ul li:nth-child(5){
+  nav .container ul li:nth-child(5) {
     animation-delay: 800ms;
   }
   @keyframes flipNavItem {
@@ -220,10 +252,32 @@ nav .container .nav__logo h3 {
   nav .container .btn {
     background: var(--secondary-color);
   }
+  header {
+    height: 60vh;
+  }
+  header .container{
+    gap: 1rem;
+  }
+  header .container h1 {
+    font-size: 2.1rem;
+  }
 }
 /* ================ MEDIA QUERIES (SMALL DEVICES) ======================= */
 @media screen and (max-width: 600px) {
   section > p {
     width: var(--container-md);
   }
+  header {
+    height: 100vh;
+    padding-top: 3rem;
+  }
+  header .container{
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .header__content p{
+    margin: 0.8rem 0 1.5rem;
+    line-height: 1.4;
+  }
+
 }
