@@ -179,6 +179,35 @@ header .container {
   color: var(--light-color);
   font-size: 1.1rem;
 }
+#services .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+#services .container article {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-color-variant)
+  );
+  color: var(--white-color);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  display: flex;
+  gap: 1.5rem;
+  height: fit-content;
+  transition: all 400ms ease;
+}
+#services .container article:hover{
+  margin-top: -0.5rem;
+}
+#services .container article i{
+  font-size: 1.7rem;
+}
+#services .container article div h4{
+  margin-bottom: 1rem;
+  
+}
 /* ================ MEDIA QUERIES (MEDIUM DEVICES) ======================= */
 @media screen and (max-width: 1024px) {
   .container {
@@ -255,11 +284,22 @@ header .container {
   header {
     height: 60vh;
   }
-  header .container{
+  header .container {
     gap: 1rem;
   }
   header .container h1 {
     font-size: 2.1rem;
+  }
+  #services .container{
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+  }
+  #services .container article{
+    padding: 1.2rem;
+    gap: 0.8rem;
+  }
+  #services .container article:hover{
+    margin: 0;
   }
 }
 /* ================ MEDIA QUERIES (SMALL DEVICES) ======================= */
@@ -271,13 +311,18 @@ header .container {
     height: 100vh;
     padding-top: 3rem;
   }
-  header .container{
+  header .container {
     grid-template-columns: 1fr;
     text-align: center;
   }
-  .header__content p{
+  .header__content p {
     margin: 0.8rem 0 1.5rem;
     line-height: 1.4;
   }
-
+  #services .container{
+   grid-template-columns: 1fr;
+  }
+  #services .container article div h4{
+    margin-bottom: 0.8rem;
+  }
 }
