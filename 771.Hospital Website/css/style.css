@@ -308,6 +308,36 @@ header .container {
   transition: all 1s 400ms ease;
 }
 
+.swiper{
+  width: var(--container-lg);
+}
+.swiper .swiper-wrapper article{
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-color-variant)
+  );
+  color: var(--white-color);
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  cursor: default;
+  font-size: 0.9rem;
+}
+.swiper .swiper-wrapper article .patient{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.swiper .swiper-wrapper article p{
+  margin-bottom: 1.5rem;
+}
+.swiper .swiper-wrapper article .avatar{
+  width: 2.5rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
 /* ================ MEDIA QUERIES (MEDIUM DEVICES) ======================= */
 @media screen and (max-width: 1024px) {
   .container {
@@ -401,6 +431,10 @@ header .container {
   #services .container article:hover {
     margin: 0;
   }
+  #specialists .container{
+    grid-template-columns: 1fr 1fr;
+  }
+  
 }
 /* ================ MEDIA QUERIES (SMALL DEVICES) ======================= */
 @media screen and (max-width: 600px) {
@@ -424,5 +458,11 @@ header .container {
   }
   #services .container article div h4 {
     margin-bottom: 0.8rem;
+  }
+  #specialists .container{
+    grid-template-columns: 1fr;
+  }
+  .swiper .swiper-wrapper article{
+    padding: 1.5rem;
   }
 }

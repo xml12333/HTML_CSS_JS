@@ -14,3 +14,20 @@ const closeNav = () => {
   closeNavBtn.style.display = "none";
 };
 closeNavBtn.addEventListener("click", closeNav);
+// swiper
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    600: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  },
+});
