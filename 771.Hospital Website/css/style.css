@@ -308,10 +308,10 @@ header .container {
   transition: all 1s 400ms ease;
 }
 
-.swiper{
+.swiper {
   width: var(--container-lg);
 }
-.swiper .swiper-wrapper article{
+.swiper .swiper-wrapper article {
   background: linear-gradient(
     135deg,
     var(--primary-color),
@@ -323,21 +323,52 @@ header .container {
   cursor: default;
   font-size: 0.9rem;
 }
-.swiper .swiper-wrapper article .patient{
+.swiper .swiper-wrapper article .patient {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-.swiper .swiper-wrapper article p{
+.swiper .swiper-wrapper article p {
   margin-bottom: 1.5rem;
 }
-.swiper .swiper-wrapper article .avatar{
+.swiper .swiper-wrapper article .avatar {
   width: 2.5rem;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
 }
-
+.swiper .swiper-wrapper {
+  margin-bottom: 4rem;
+}
+.swiper .swiper-pagination-bullet {
+  background: var(--primary-color);
+}
+#appointment .container {
+  display: grid;
+  grid-template-columns: 47% 47%;
+  gap: 6%;
+}
+#appointment .container .info p{
+  margin: 0.5rem 0 2rem;
+}
+#appointment .container .info article{
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+#appointment .container .info article small{
+  margin-top: 0.4rem;
+  display: block;
+}
+#appointment .container .info article .info__icon{
+  background: var(--secondary-color);
+  color: var(--white-color);
+  padding: 0.8rem;
+  border-radius: 50%;
+  display: flex;
+  height: fit-content;
+  font-size: 1.2rem;
+}
 /* ================ MEDIA QUERIES (MEDIUM DEVICES) ======================= */
 @media screen and (max-width: 1024px) {
   .container {
@@ -431,10 +462,9 @@ header .container {
   #services .container article:hover {
     margin: 0;
   }
-  #specialists .container{
+  #specialists .container {
     grid-template-columns: 1fr 1fr;
   }
-  
 }
 /* ================ MEDIA QUERIES (SMALL DEVICES) ======================= */
 @media screen and (max-width: 600px) {
@@ -459,10 +489,10 @@ header .container {
   #services .container article div h4 {
     margin-bottom: 0.8rem;
   }
-  #specialists .container{
+  #specialists .container {
     grid-template-columns: 1fr;
   }
-  .swiper .swiper-wrapper article{
+  .swiper .swiper-wrapper article {
     padding: 1.5rem;
   }
 }
