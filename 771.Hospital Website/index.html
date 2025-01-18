@@ -377,7 +377,66 @@
         </div>
 
         <form>
-          form
+          <div class="form__group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              placeholder="Enter Your Name"
+              name="Patient's Name"
+              id="name"
+              required
+            />
+          </div>
+          <div class="form__group">
+            <label for="phone">Phone Number</label>
+            <input
+              type="number"
+              placeholder="Enter Phone Number"
+              name="Phone Number"
+              id="phone"
+              required
+            />
+          </div>
+          <div class="form__group">
+            <label for="date">Date</label>
+            <input
+              type="date"
+              placeholder="Choose a date"
+              name="Date"
+              id="date"
+              required
+            />
+          </div>
+          <div class="form__group">
+            <label for="department">Select Department</label>
+            <select name="Department" id="department" required>
+              <option value="Department One">Department One</option>
+              <option value="Department Two">Department Two</option>
+              <option value="Department Three">Department Three</option>
+              <option value="Department Four">Department Four</option>
+            </select>
+          </div>
+          <div class="form__group">
+            <label for="doctor">Select Doctor</label>
+            <select name="Doctor" id="doctor" required>
+              <option value="Doctor One">Doctor One</option>
+              <option value="Doctor Two">Doctor Two</option>
+              <option value="Doctor Three">Doctor Three</option>
+              <option value="Doctor Four">Doctor Four</option>
+              <option value="Doctor Five">Doctor Five</option>
+            </select>
+          </div>
+          <div class="form__group">
+            <label for="message">Additional Message</label>
+            <textarea
+              name="Added Message"
+              id="message"
+              rows="6"
+              placeholder="Add a message"
+              required
+            ></textarea>
+          </div>
+          <input type="submit" value="Submit Request" class="btn-primary" />
         </form>
       </div>
     </section>

@@ -37,7 +37,12 @@ body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.5;
   color: var(--dark-color);
-  background: rgba((var(--primary-color-variant), 0.1));
+  background: hsla(
+    var(--primary-color-variant-hue),
+    var(--primary-color-variant-lightness),
+    var(--primary-color-variant-lightness),
+    0.1
+  );
   user-select: none;
 }
 
@@ -348,19 +353,19 @@ header .container {
   grid-template-columns: 47% 47%;
   gap: 6%;
 }
-#appointment .container .info p{
+#appointment .container .info p {
   margin: 0.5rem 0 2rem;
 }
-#appointment .container .info article{
+#appointment .container .info article {
   display: flex;
   gap: 1.5rem;
   margin-bottom: 1.5rem;
 }
-#appointment .container .info article small{
+#appointment .container .info article small {
   margin-top: 0.4rem;
   display: block;
 }
-#appointment .container .info article .info__icon{
+#appointment .container .info article .info__icon {
   background: var(--secondary-color);
   color: var(--white-color);
   padding: 0.8rem;
@@ -368,6 +373,27 @@ header .container {
   display: flex;
   height: fit-content;
   font-size: 1.2rem;
+}
+#appointment .container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+#appointment .container form .form__group label {
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  display: inline-block;
+  font-weight: 600;
+}
+#appointment .container form .form__group input,
+#appointment .container form .form__group textarea,
+#appointment .container form .form__group select {
+  background: var(--white-color);
+  padding: 0.85rem 1rem;
+  display: block;
+  width: 100%;
+  border-radius: 0.4rem;
+  resize: none;
 }
 /* ================ MEDIA QUERIES (MEDIUM DEVICES) ======================= */
 @media screen and (max-width: 1024px) {
@@ -464,6 +490,14 @@ header .container {
   }
   #specialists .container {
     grid-template-columns: 1fr 1fr;
+  }
+  #appointment .container{
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  #appointment .container .info h2,
+  #appointment .container .info p{
+    text-align: center;
   }
 }
 /* ================ MEDIA QUERIES (SMALL DEVICES) ======================= */
