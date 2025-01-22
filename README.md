@@ -778,3 +778,4 @@
 |771| [Hospital Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/771.Hospital%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/771.Hospital%20Website/)|
 |772| [Truchet 10 Print](https://github.com/xml12333/HTML_CSS_JS/tree/main/772.Truchet%2010%20Print)| [Demo](https://nikt.com.ua/projects/htmlCssJs/772.Truchet%2010%20Print/)|
 |773| [Phonebook Dots](https://github.com/xml12333/HTML_CSS_JS/tree/main/773.Phonebook%20Dots)| [Demo](https://nikt.com.ua/projects/htmlCssJs/773.Phonebook%20Dots/)|
+|774| [Broken Glass](https://github.com/xml12333/HTML_CSS_JS/tree/main/774.Broken%20Glass)| [Demo](https://nikt.com.ua/projects/htmlCssJs/774.Broken%20Glass/)|
