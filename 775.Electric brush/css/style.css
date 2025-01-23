@@ -1,0 +1,10 @@
+* {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+p { 
+position: fixed;
+  padding: 1rem;
+left: 0; top: 0;color:white;font-family:monospace;}
