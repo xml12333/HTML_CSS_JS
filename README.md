@@ -780,3 +780,4 @@
 |773| [Phonebook Dots](https://github.com/xml12333/HTML_CSS_JS/tree/main/773.Phonebook%20Dots)| [Demo](https://nikt.com.ua/projects/htmlCssJs/773.Phonebook%20Dots/)|
 |774| [Broken Glass](https://github.com/xml12333/HTML_CSS_JS/tree/main/774.Broken%20Glass)| [Demo](https://nikt.com.ua/projects/htmlCssJs/774.Broken%20Glass/)|
 |775| [Electric brush](https://github.com/xml12333/HTML_CSS_JS/tree/main/775.Electric%20brush)| [Demo](https://nikt.com.ua/projects/htmlCssJs/775.Electric%20brush/)|
+|776| [Loaders](https://github.com/xml12333/HTML_CSS_JS/tree/main/776.Loaders)| [Demo](https://nikt.com.ua/projects/htmlCssJs/776.Loaders/)|
