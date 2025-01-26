@@ -1,0 +1,341 @@
+@property --progress {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: true;
+}
+:root {
+  --color-primary: #ef6416;
+  --color-surface: black;
+  --progress: 100;
+  -webkit-animation: progress-demo 5s ease-in infinite;
+          animation: progress-demo 5s ease-in infinite;
+}
+
+.scene {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  filter: saturate(1.2) brightness(1.7);
+  --content: calc(var(--progress) * 0.88);
+}
+
+.gear {
+  position: absolute;
+  width: 65vmin;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  --gradient-progress: calc(var(--progress) * 0.8%);
+  --line-highlight: calc(
+    var(--progress) * 2.876deg - 143.45deg
+  );
+  border-radius: 50%;
+  background: radial-gradient(14vmin 10vmin at 50% 90%, #0a0a0a, transparent), var(--color-surface);
+  -webkit-mask: conic-gradient(from 150deg, transparent 17.2%, black 0%), radial-gradient(transparent 42%, black 42%);
+          mask: conic-gradient(from 150deg, transparent 17.2%, black 0%), radial-gradient(transparent 42%, black 42%);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  z-index: -1;
+}
+.gear:before {
+  counter-reset: content var(--gear-content);
+  content: counter(content);
+  position: absolute;
+  display: grid;
+  place-items: center;
+  translate: 0 26.5vmin;
+  box-shadow: -0.4vmin -0.4vmin 0.8vmin black, 0.4vmin 0.4vmin 0.8vmin black, 0vmin 0vmin 2vmin 0.1vmin rgba(0, 0, 0, 0.5);
+  font-size: 4vmin;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 400;
+  filter: brightness(0.5);
+  background: black;
+  border: 0.1vmin solid rgba(255, 255, 255, 0.15);
+  padding: 0.5vmin 1.25vmin;
+  min-width: 2.5vmin;
+  border-radius: 1vmin;
+}
+
+.circle {
+  position: absolute;
+  width: 70vmin;
+  aspect-ratio: 1;
+  --gradient-progress: calc(var(--progress) * .8%);
+  --line-highlight: calc(var(--progress) * 2.876deg - 143.45deg);
+  background: radial-gradient(black 34%, transparent 43%), conic-gradient(from var(--line-highlight), rgba(245, 181, 136, 0.3) 0.1%, transparent 0.6%), radial-gradient(transparent 30%, transparent 40%, rgba(0, 0, 0, 0.8) 42.8%, black 45%, rgba(0, 0, 0, 0.85) 54%, transparent 68%, rgba(255, 255, 255, 0.1) 65%, transparent 66%, transparent 70%), radial-gradient(transparent 67%, rgba(0, 0, 0, 0.49) 71%, black), radial-gradient(transparent 65%, rgba(0, 0, 0, 0.87) 69%, black), conic-gradient(from -143deg, var(--color-primary) var(--gradient-progress), black 0%);
+  border-radius: 50%;
+  -webkit-mask: radial-gradient(9.5vmin at 28% 85%, black 50%, transparent), conic-gradient(from -143deg, transparent var(--gradient-progress), black 0%), radial-gradient(transparent 42%, black 42%);
+          mask: radial-gradient(9.5vmin at 28% 85%, black 50%, transparent), conic-gradient(from -143deg, transparent var(--gradient-progress), black 0%), radial-gradient(transparent 42%, black 42%);
+  -webkit-mask-composite: xor, xor;
+          mask-composite: exclude, exclude;
+  z-index: -1;
+}
+
+.inner-circle {
+  position: absolute;
+  width: 35.1vmin;
+  aspect-ratio: 1;
+  --gradient-progress: calc(var(--progress) * 0.8%);
+  --line-highlight: calc(
+    var(--progress) * 2.876deg - 143.45deg
+  );
+  background: conic-gradient(from -143deg, var(--color-primary) var(--gradient-progress), black 0%);
+  border-radius: 50%;
+  -webkit-mask: radial-gradient(black 64%, transparent 68%), conic-gradient(from -143deg, black var(--gradient-progress), transparent 0%);
+          mask: radial-gradient(black 64%, transparent 68%), conic-gradient(from -143deg, black var(--gradient-progress), transparent 0%);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+}
+
+.speed {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 35vmin;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  --h1: rgba(255, 255, 255, 0.01);
+  --h2: rgba(255, 255, 255, 0.06);
+  background: radial-gradient(transparent 62%, black 90%, rgba(255, 255, 255, 0.2) 92%), radial-gradient(transparent 62%, black 90%, rgba(255, 255, 255, 0.2) 92%), radial-gradient(transparent 62%, black 70%, black 90%), conic-gradient(transparent, var(--h2), transparent, var(--h2), transparent, var(--h2), transparent, var(--h2), transparent, var(--h2), transparent), conic-gradient(var(--h1), black, var(--h1));
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  z-index: 1;
+}
+.speed .pulse {
+  position: absolute;
+  width: 20vmin;
+  aspect-ratio: 1;
+  border-radius: inherit;
+  --h1: rgba(255, 255, 255, 0.03);
+  background: conic-gradient(var(--h1), transparent, transparent, transparent, var(--h1)), black;
+  transform: scale(calc(0.8 + 0.35 * var(--progress) / 100));
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  box-shadow: inset 0 0 1.5vmin rgba(255, 255, 255, 0.2), inset 0 0 4.5vmin rgba(255, 255, 255, 0.1);
+  opacity: calc(0.5 + 0.5 * var(--progress) / 100);
+}
+.speed:before {
+  counter-reset: content var(--content);
+  content: counter(content);
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 300;
+  position: absolute;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 10vmin;
+  width: 20vmin;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 0.1vmin dashed rgba(255, 255, 255, 0.2);
+  z-index: 111;
+  text-shadow: 0 0 5vmin white;
+}
+.speed:after {
+  content: "MP/H";
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 100;
+  translate: 0 6vmin;
+  position: absolute;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 1vmin;
+}
+
+.marker {
+  position: absolute;
+  width: 0.15vmin;
+  height: 2vmin;
+  background: linear-gradient(rgba(255, 255, 255, 0.2) 50%, transparent);
+  --offset-per-item: calc(360deg / 5);
+  --radius: 16.5vmin;
+  --angle: calc(var(--offset-per-item) * var(--i) - 18deg);
+  --x: calc(cos(var(--angle)) * var(--radius));
+  --y: calc(sin(var(--angle)) * var(--radius));
+  translate: var(--x) var(--y);
+  rotate: calc(var(--angle) + 90deg);
+}
+.marker:nth-child(1) {
+  --i: 0;
+}
+.marker:nth-child(2) {
+  --i: 1;
+}
+.marker:nth-child(3) {
+  --i: 2;
+}
+.marker:nth-child(4) {
+  --i: 3;
+}
+.marker:nth-child(5) {
+  --i: 4;
+}
+.marker:nth-child(6) {
+  --i: 5;
+}
+
+body {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  --h: rgba(255, 255, 255, 0.02);
+  background: var(--color-surface);
+  color: var(--color-primary);
+  position: relative;
+}
+body:before, body:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  --size: 1.6rem;
+  background: url(https://assets.codepen.io/907471/noise.png) repeat 0 0/var(--size) var(--size);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  filter: invert(1) brightness(0.6);
+  -webkit-animation: noise-animation 0.2s 0.15s ease-in-out infinite;
+          animation: noise-animation 0.2s 0.15s ease-in-out infinite;
+  opacity: 0.3;
+  z-index: 1;
+  -webkit-mask: radial-gradient(circle at center, transparent 20vmin, black 20vmin);
+          mask: radial-gradient(circle at center, transparent 20vmin, black 20vmin);
+}
+body:after {
+  background: url(https://assets.codepen.io/907471/noise3.png) repeat 0 0/var(--size) var(--size);
+  -webkit-animation: noise-animation 0.2s ease-in-out infinite;
+          animation: noise-animation 0.2s ease-in-out infinite;
+  filter: invert(0) brightness(3.5);
+}
+
+@-webkit-keyframes progress-demo {
+  from {
+    --progress: 0;
+    --gear-content: 1;
+  }
+  10% {
+    --gear-content: 2;
+  }
+  20% {
+    --gear-content: 3;
+  }
+  40% {
+    --gear-content: 4;
+    --progress: 100;
+  }
+  45% {
+    --gear-content: 4;
+    --progress: 100;
+  }
+  70% {
+    --gear-content: 3;
+    --progress: 42;
+  }
+  75% {
+    --progress: 42;
+  }
+  90% {
+    --gear-content: 2;
+  }
+  to {
+    --progress: 0;
+    --gear-content: 1;
+  }
+}
+
+@keyframes progress-demo {
+  from {
+    --progress: 0;
+    --gear-content: 1;
+  }
+  10% {
+    --gear-content: 2;
+  }
+  20% {
+    --gear-content: 3;
+  }
+  40% {
+    --gear-content: 4;
+    --progress: 100;
+  }
+  45% {
+    --gear-content: 4;
+    --progress: 100;
+  }
+  70% {
+    --gear-content: 3;
+    --progress: 42;
+  }
+  75% {
+    --progress: 42;
+  }
+  90% {
+    --gear-content: 2;
+  }
+  to {
+    --progress: 0;
+    --gear-content: 1;
+  }
+}
+@-webkit-keyframes noise-animation {
+  from {
+    translate: 0 0;
+    opacity: 0.6;
+  }
+  10% {
+    translate: 0.1vmin 0;
+  }
+  30% {
+    translate: -0.1vmin 0vmin;
+  }
+  40% {
+    translate: 0.1vmin -0.1vmin;
+  }
+  60% {
+    translate: 0vmin 0.1vmin;
+    opacity: 0.8;
+  }
+  90% {
+    translate: 0.15vmin 0vmin;
+  }
+  to {
+    translate: 0 0;
+    opacity: 0.6;
+  }
+}
+@keyframes noise-animation {
+  from {
+    translate: 0 0;
+    opacity: 0.6;
+  }
+  10% {
+    translate: 0.1vmin 0;
+  }
+  30% {
+    translate: -0.1vmin 0vmin;
+  }
+  40% {
+    translate: 0.1vmin -0.1vmin;
+  }
+  60% {
+    translate: 0vmin 0.1vmin;
+    opacity: 0.8;
+  }
+  90% {
+    translate: 0.15vmin 0vmin;
+  }
+  to {
+    translate: 0 0;
+    opacity: 0.6;
+  }
+}
+a.labs-follow-me {
+  left: 2rem;
+  right: 2rem;
+  bottom: 1rem;
+  top: unset;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}

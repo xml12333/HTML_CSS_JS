@@ -782,3 +782,4 @@
 |775| [Electric brush](https://github.com/xml12333/HTML_CSS_JS/tree/main/775.Electric%20brush)| [Demo](https://nikt.com.ua/projects/htmlCssJs/775.Electric%20brush/)|
 |776| [Loaders](https://github.com/xml12333/HTML_CSS_JS/tree/main/776.Loaders)| [Demo](https://nikt.com.ua/projects/htmlCssJs/776.Loaders/)|
 |777| [Lightspeed](https://github.com/xml12333/HTML_CSS_JS/tree/main/777.Lightspeed)| [Demo](https://nikt.com.ua/projects/htmlCssJs/777.Lightspeed/)|
+|778| [Speed Indicator](https://github.com/xml12333/HTML_CSS_JS/tree/main/778.Speed%20Indicator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/778.Speed%20Indicator/)|
