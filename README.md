@@ -783,3 +783,4 @@
 |776| [Loaders](https://github.com/xml12333/HTML_CSS_JS/tree/main/776.Loaders)| [Demo](https://nikt.com.ua/projects/htmlCssJs/776.Loaders/)|
 |777| [Lightspeed](https://github.com/xml12333/HTML_CSS_JS/tree/main/777.Lightspeed)| [Demo](https://nikt.com.ua/projects/htmlCssJs/777.Lightspeed/)|
 |778| [Speed Indicator](https://github.com/xml12333/HTML_CSS_JS/tree/main/778.Speed%20Indicator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/778.Speed%20Indicator/)|
+|779| [Foods Doodle](https://github.com/xml12333/HTML_CSS_JS/tree/main/779.Foods%20Doodle)| [Demo](https://nikt.com.ua/projects/htmlCssJs/779.Foods%20Doodle/)|
