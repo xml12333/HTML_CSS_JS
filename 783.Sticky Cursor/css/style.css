@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+:root {
+	--cursor-size: 24px;
+	--background: #f2f2f2;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	display: block;
+}
+
+ul {
+	list-style: none;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background: var(--background);
+	font-family: "Inter";
+	display: grid;
+	place-content: center;
+}
+
+button {
+	outline: none;
+	border: none;
+	background: inherit;
+	color: currentcolor;
+	font-size: inherit;
+	font-family: inherit;
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+	color: currentcolor;
+}
+
+main {
+	height: 100%;
+
+	> div {
+		display: flex;
+		gap: 6rem;
+	}
+}
+
+.btn {
+	--size: 40px;
+	width: var(--size);
+	height: var(--size);
+	position: relative;
+	display: grid;
+	place-content: center;
+
+	svg {
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+	}
+}
+
+[data-hover] {
+	position: relative;
+
+	[data-hover-bounds] {
+		position: absolute;
+		left: 0;
+		top: 0;
+		inset: 0;
+
+		/* 		outline: 1px solid red; */
+	}
+
+	&:hover {
+		[data-hover-bounds] {
+			transform: scale(4);
+		}
+	}
+}
+
+.cursor {
+	width: var(--cursor-size);
+	height: var(--cursor-size);
+	border-radius: 50%;
+
+	position: fixed;
+	left: 0;
+	top: 0;
+	transform: translate(-50%, -50%);
+
+	background: var(--background);
+	mix-blend-mode: difference;
+	pointer-events: none;
+}
+
+.cta {
+	width: 100px;
+	position: fixed;
+	top: -999px;
+	left: -999px;
+	pointer-events: none;
+}
