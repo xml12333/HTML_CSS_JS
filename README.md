@@ -788,3 +788,4 @@
 |781| [Notifications and Messages](https://github.com/xml12333/HTML_CSS_JS/tree/main/781.Notifications%20and%20Messages)| [Demo](https://nikt.com.ua/projects/htmlCssJs/781.Notifications%20and%20Messages/)|
 |782| [Services Section](https://github.com/xml12333/HTML_CSS_JS/tree/main/782.Services%20Section)| [Demo](https://nikt.com.ua/projects/htmlCssJs/782.Services%20Section/)|
 |783| [Sticky Cursor](https://github.com/xml12333/HTML_CSS_JS/tree/main/783.Sticky%20Cursor)| [Demo](https://nikt.com.ua/projects/htmlCssJs/783.Sticky%20Cursor/)|
+|784| [Button Keyframe Tricks](https://github.com/xml12333/HTML_CSS_JS/tree/main/784.Button%20Keyframe%20Tricks)| [Demo](https://nikt.com.ua/projects/htmlCssJs/784.Button%20Keyframe%20Tricks/)|
