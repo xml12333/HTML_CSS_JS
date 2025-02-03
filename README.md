@@ -790,3 +790,4 @@
 |783| [Sticky Cursor](https://github.com/xml12333/HTML_CSS_JS/tree/main/783.Sticky%20Cursor)| [Demo](https://nikt.com.ua/projects/htmlCssJs/783.Sticky%20Cursor/)|
 |784| [Button Keyframe Tricks](https://github.com/xml12333/HTML_CSS_JS/tree/main/784.Button%20Keyframe%20Tricks)| [Demo](https://nikt.com.ua/projects/htmlCssJs/784.Button%20Keyframe%20Tricks/)|
 |785| [Vertical Scrolling Parallax Gallery](https://github.com/xml12333/HTML_CSS_JS/tree/main/785.Vertical%20Scrolling%20Parallax%20Gallery)| [Demo](https://nikt.com.ua/projects/htmlCssJs/785.Vertical%20Scrolling%20Parallax%20Gallery/)|
+|786| [Product Grid](https://github.com/xml12333/HTML_CSS_JS/tree/main/786.Product%20Grid)| [Demo](https://nikt.com.ua/projects/htmlCssJs/786.Product%20Grid/)|

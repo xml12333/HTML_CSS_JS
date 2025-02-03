@@ -1,0 +1,383 @@
+@import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=DM+Mono:wght@500&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --brand-blue: #4876ff;
+  --brand-lime: #d9f154;
+  --brand-navy: #2e3192;
+  --brand-orange: #ff7347;
+  --brand-pink: #f7d0e9;
+  --brand-purple: #692e54;
+  --brand-gray: #fffdf9;
+
+  /*  Fluid Typography  */
+  --step--2: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
+  --step--1: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
+  --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  --step-1: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
+  --step-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
+  --step-3: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
+  --step-4: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
+  --step-5: clamp(2.7994rem, 2.4462rem + 1.7658vw, 3.8147rem);
+  --step-6: clamp(3.3592rem, 2.8691rem + 2.4507vw, 4.7684rem);
+}
+
+body {
+  font-family: "DM Mono";
+  margin: 0;
+  box-sizing: border-box;
+  color: rgb(39, 39, 42);
+  padding: 12px;
+  background: url("https://assets.codepen.io/1385231/bg-texture.webp") no-repeat
+    center center;
+  background-size: cover;
+  background-color: var(--brand-gray);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Bowlby One SC";
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.title-section h2 {
+  opacity:0;
+  font-size: var(--step-6);
+  text-transform: uppercase;
+  line-height: 1;
+  text-align: center;
+  margin-bottom: 16px;
+  animation: slideInFromLeft 600ms linear(0, 0.464 8.3%, 0.819 17%, 0.956 21.5%, 1.069 26.2%, 1.156 31%, 1.219 36%, 1.252 40.2%, 1.271 44.5%, 1.275 49.1%, 1.265 54.1%, 1.215 63.4%, 1.041 86.9%, 1.01 93.7%, 1) forwards;
+  animation-delay: 200ms;
+}
+
+.subtitle-section p {
+  opacity:0;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: var(--step-0);
+  animation: slideInFromLeft 600ms linear(0, 0.464 8.3%, 0.819 17%, 0.956 21.5%, 1.069 26.2%, 1.156 31%, 1.219 36%, 1.252 40.2%, 1.271 44.5%, 1.275 49.1%, 1.265 54.1%, 1.215 63.4%, 1.041 86.9%, 1.01 93.7%, 1) forwards;
+  animation-delay: 500ms;
+}
+
+.product-grid {
+   --min: 225px;
+  --gap: 1.25rem;
+
+  display: grid;
+  grid-gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+}
+
+@media (min-width: 768px) {
+  .product-card:nth-child(even) {
+  margin-top: 4rem;
+}
+}
+
+$product-card-delay: 0.6s;
+$delay-increment: 0.2s;
+
+.product-card {
+  padding: 1rem 2rem 0 2rem;
+  max-height: 600px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  position: relative;
+  inline-margin: auto;
+  width: 100%;
+  max-width: 18rem;
+  opacity: 0; 
+  transform: translateY(50px);
+  animation: slideInFromBottom 0.8s linear(0, 0.464 8.3%, 0.819 17%, 0.956 21.5%, 1.069 26.2%, 1.156 31%, 1.219 36%, 1.252 40.2%, 1.271 44.5%, 1.275 49.1%, 1.265 54.1%, 1.215 63.4%, 1.041 86.9%, 1.01 93.7%, 1) forwards;
+
+  @for $i from 1 through 10 { 
+    &:nth-child(#{$i}) {
+      animation-delay: .2 + $product-card-delay + ($delay-increment * ($i - 1));
+    }
+  }
+}
+
+.horizontal-line,
+.vertical-line {
+  stroke-width: 2;
+  transition: opacity 0.3s ease;
+  color: #a8a29e;
+  opacity:.5;
+}
+
+.horizontal-line {
+  margin-left: -8rem;
+  margin-right: -8rem;
+  height: auto;
+  width: calc(100% + 5rem);
+}
+
+.vertical-line {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.vertical-line.left {
+  left: 1rem;
+}
+
+.vertical-line.right {
+  right: 1rem;
+}
+
+.product-card:hover :is(.horizontal-line, .vertical-line) {
+  opacity:1;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 16px;
+  width: 58%;
+  transform-origin: top center;
+  transition: transform 500ms linear(0, -0.008 3.8%, -0.035 7.8%, -0.177 20.3%, -0.215 24.7%, -0.228 29%, -0.207 32.9%, -0.12 37.9%, 0.037 42.5%, 0.261 46.7%, 0.877 55.7%, 1.055 59.9%, 1.17 64.4%, 1.222 69%, 1.228 71.5%, 1.221 74.2%, 1.182 79.2%, 1.033 92.4%, 1.008 96.3%, 1);
+}
+
+.product-card:hover img {
+  transform: scale(1.5);
+}
+
+.title-wrapper {
+  position: relative;
+  height: 50px;
+}
+
+.product-title {
+  font-size: var(--step-0);
+  font-weight: bold;
+  margin: 8px 0;
+  position: absolute;
+  inset: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.product-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--step-1);
+  margin-bottom: 16px;
+}
+
+.product-button-wrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.product-card:hover .product-button-wrapper, .product-card:focus-within .product-button-wrapper {
+  opacity:1;
+}
+
+.product-image-wrapper {
+  overflow: hidden;
+  margin-bottom: -0.25rem;
+  padding-inline: 1rem;
+}
+
+.scribble-svg {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  animation: squiggle 0.5s infinite;
+
+}
+
+.scribble-path {
+  transform-origin: center;
+  opacity: 0.6;
+  transition: stroke-dashoffset 500ms ease-in;
+  stroke-dasharray: 1700;
+  stroke-dashoffset: 1700;
+}
+
+.product-card:hover .scribble-path {
+  stroke-dashoffset: 0;
+}
+
+
+
+
+
+@keyframes squiggle {
+  0% {
+    filter: url("#squiggle-0");
+  }
+  25% {
+    filter: url("#squiggle-1");
+  }
+  50% {
+    filter: url("#squiggle-2");
+  }
+  75% {
+    filter: url("#squiggle-3");
+  }
+  100% {
+    filter: url("#squiggle-4");
+  }
+}
+
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-20px);
+  }
+}
+
+
+
+/* Button coded by the brilliant Adam Kuhn  */
+
+.button-outer {
+    filter: drop-shadow(0 1px 0 #000) drop-shadow(-1px 0 0 #000)
+      drop-shadow(1px 0 0 #000) drop-shadow(0 -1px 0 #000)
+      drop-shadow(5px 5px 0 #000);
+    transition: filter 0.3s ease-in-out;
+    &:hover {
+      filter: drop-shadow(0 1px 0 #000) drop-shadow(-1px 0 0 #000)
+        drop-shadow(1px 0 0 #000) drop-shadow(0 -1px 0 #000)
+        drop-shadow(0px 0px 0 #000);
+      .button-middle {
+        transform: translate(5px, 5px);
+        .button-inner {
+          color: #000;
+          background-position:50% 100%;
+        }
+      }
+    }
+    .button-middle {
+      text-decoration:none;
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+      position: relative;
+      border: none;
+      font-family: monospace;
+      font-size: var(--step-0);
+      font-weight:600;
+      padding: 0;
+      .button-inner {
+        background: linear-gradient(to bottom, var(--brand-orange) 33%, var(--brand-lime) 66%) 50% 0% / 100% 400% no-repeat;
+        color: #000;
+        padding: 1rem;
+        position: relative;
+        transition: color 0.3s ease-in-out, background-position 0.3s ease-in-out;
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+          width: 1rem;
+          height: 100%;
+          top: 0;
+          left: calc(100% - 1px);
+          background: inherit;
+          clip-path: polygon(
+            100% 0,
+            74% 28%,
+            100% 29%,
+            100% 70%,
+            84% 78%,
+            100% 100%,
+            0 100%,
+            0 0
+          );
+        }
+        &:after {
+          left: calc(-1rem + 1px);
+          clip-path: polygon(
+            23% 19%,
+            0 0,
+            100% 0,
+            100% 100%,
+            0 100%,
+            29% 79%,
+            9% 80%,
+            0 33%
+          );
+        }
+      }
+    }
+  }
+
+
+
+// Link to YouTube Video
+
+
+.promo-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.promo-link {
+  font-size: var(--step--1);
+  opacity:0;
+  display: inline-flex;
+  align-items: center;
+  color: white;
+  background-color: #444;
+  border-bottom-left-radius: .5rem;
+  cursor: pointer;  
+  gap: .5rem;
+  padding: 26px 12px 6px;
+  text-decoration: none;
+  z-index: 10;
+    animation: slideInFromTop 0.8s linear(0, 0.464 8.3%, 0.819 17%, 0.956 21.5%, 1.069 26.2%, 1.156 31%, 1.219 36%, 1.252 40.2%, 1.271 44.5%, 1.275 49.1%, 1.265 54.1%, 1.215 63.4%, 1.041 86.9%, 1.01 93.7%, 1) forwards;
+  animation-delay: 4s;
+}
+
+.promo-link svg {
+  height: 1.5em;
+}
