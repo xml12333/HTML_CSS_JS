@@ -792,3 +792,4 @@
 |785| [Vertical Scrolling Parallax Gallery](https://github.com/xml12333/HTML_CSS_JS/tree/main/785.Vertical%20Scrolling%20Parallax%20Gallery)| [Demo](https://nikt.com.ua/projects/htmlCssJs/785.Vertical%20Scrolling%20Parallax%20Gallery/)|
 |786| [Product Grid](https://github.com/xml12333/HTML_CSS_JS/tree/main/786.Product%20Grid)| [Demo](https://nikt.com.ua/projects/htmlCssJs/786.Product%20Grid/)|
 |787| [Transaction List Transitions](https://github.com/xml12333/HTML_CSS_JS/tree/main/787.Transaction%20List%20Transitions)| [Demo](https://nikt.com.ua/projects/htmlCssJs/787.Transaction%20List%20Transitions/)|
+|789| [SVG Loader Generator](https://github.com/xml12333/HTML_CSS_JS/tree/main/789.SVG%20Loader%20Generator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/789.SVG%20Loader%20Generator/)|

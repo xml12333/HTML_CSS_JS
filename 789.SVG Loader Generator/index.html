@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>SVG Loader Generator ⚙️🌀</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Rubik&amp;display=swap'><link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<section class="generatorPanel">
+	<section id="svgPanel" class="svgPanel"></section>
+
+	<section class="settingsPanel">
+		<label>
+			<div class="title">Size</div>
+			<div id="sizeReadout">140px</div>
+		</label>
+		<input id="sizeSlider" type="range" min="16" max="200" step="4" value="140" />
+
+		<label>
+			<div class="title">Inner Space</div>
+			<div id="innerReadout">44px</div>
+		</label>
+		<input id="innerSlider" type="range" min="0" max="100" step="1" value="44" />
+
+		<label>
+			<div class="title">Segments</div>
+			<div id="segmentsReadout">22</div>
+		</label>
+		<input id="segmentsSlider" type="range" min="8" max="64" step="2" value="22" />
+
+		<label>
+			<div class="title">Thickness</div>
+			<div id="thicknessReadout">4px</div>
+		</label>
+		<input id="thicknessSlider" type="range" min="1" max="10" step="1" value="4" />
+
+		<label>
+			<div class="title">Speed</div>
+			<div id="speedReadout">1150ms</div>
+		</label>
+		<input id="speedSlider" type="range" min="400" max="8400" step="50" value="7650" />
+
+		<label>
+			<div class="title">Color</div>
+			<div id="colorContainer">
+				<div id="colorBlock"></div>
+				<div id="colorReadout">#006D8F</div>
+			</div>
+		</label>
+		<input id="colorPicker" type="color" value="#006D8F" />
+	</section>
+</section>
+
+<button id="randomBtn"><i class="fa fa-random"></i> Random</button>
+<button id="copyBtn"><i class="fa fa-copy"></i> Copy SVG</button>
+<!-- partial -->
+  <script  src="./js/script.js"></script>
+
+</body>
+</html>

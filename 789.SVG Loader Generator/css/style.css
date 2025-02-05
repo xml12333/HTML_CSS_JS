@@ -1,0 +1,173 @@
+:root {
+	--title: "SVG Loader Generator";
+	--author: "Matt Cannon";
+	--contact: "mc@mattcannon.design";
+	--description: "A seamless, customizable SVG loader generator with dynamic controls for size, innerspace, segments, thickness, speed, and color as well as the ability to copy the SVG code.";
+	--keywords: "codepenchallenge, cpc-rotate-spin, svg loader, animation, seamless, JavaScript, visual effects, dynamic display, customizable loader, CSS animations";
+	--last-modified: "2025-01-16";
+	--content-language: "en";
+	--generator: "HTML5, CSS3, JavaScript";
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-family: "Rubik", -apple-system, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #fff;
+	background-color: #000;
+	-webkit-font-smoothing: antialiased;
+}
+
+.generatorPanel {
+	border: 1px solid #181818;
+	border-bottom: none;
+	border-radius: 4px 4px 0 0;
+	text-align: center;
+	overflow: visible;
+	margin-top: 20px;
+}
+.svgPanel {
+	width: 220px;
+	height: 220px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	background: #000;
+}
+
+.settingsPanel {
+	display: block;
+	padding: 12px 16px 8px 16px;
+	background-color: #181818;
+}
+
+label {
+	display: flex;
+	padding: 4px;
+	justify-content: space-between;
+	user-select: none;
+}
+
+.settingsPanel label:first-of-type {
+	margin-top: 16px;
+}
+.settingsPanel label:last-of-type {
+	margin-bottom: 16px;
+}
+
+label .title {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+#sizeReadout,
+#innerReadout,
+#segmentsReadout,
+#thicknessReadout,
+#speedReadout,
+#colorReadout {
+	font-weight: 300;
+}
+
+#colorContainer {
+	display: flex;
+	align-items: center;
+}
+
+#colorBlock {
+	width: 16px;
+	height: 16px;
+	background-color: #006d8f;
+	margin-right: 8px;
+	border: 1px solid #ccc;
+	cursor: pointer;
+}
+
+input,
+button {
+	display: block;
+	margin-bottom: 0.8em;
+	width: 180px;
+}
+
+input[type="color"] {
+	display: none;
+}
+
+button {
+	padding: 6px;
+	background-color: #333;
+	border: 2px solid #fff;
+	color: #fff;
+	cursor: pointer;
+	border-radius: 9999px;
+	width: 180px;
+	margin: 16px auto 0 auto;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-family: "Rubik", -apple-system, Helvetica, sans-serif;
+}
+button:hover {
+	background-color: #555;
+}
+
+.fa {
+	margin-right: 0.5em;
+}
+
+#randomBtn {
+	padding: 6px;
+	background-color: #333;
+	border: 2px solid #fff;
+	color: #fff;
+	cursor: pointer;
+	border-radius: 9999px;
+	width: 180px;
+	margin: 16px auto 0 auto;
+}
+
+#randomBtn:hover {
+	background-color: #555;
+}
+
+line {
+	opacity: 0.1;
+}
+
+@keyframes fade {
+	0% {
+		opacity: 0.1;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0.1;
+	}
+}
+
+line {
+	stroke-linecap: round;
+	animation-name: fade;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-fill-mode: forwards;
+	animation-duration: var(--anim-duration, 1s);
+	animation-delay: var(--anim-delay, 0s);
+}
