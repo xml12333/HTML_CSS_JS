@@ -793,3 +793,4 @@
 |786| [Product Grid](https://github.com/xml12333/HTML_CSS_JS/tree/main/786.Product%20Grid)| [Demo](https://nikt.com.ua/projects/htmlCssJs/786.Product%20Grid/)|
 |787| [Transaction List Transitions](https://github.com/xml12333/HTML_CSS_JS/tree/main/787.Transaction%20List%20Transitions)| [Demo](https://nikt.com.ua/projects/htmlCssJs/787.Transaction%20List%20Transitions/)|
 |789| [SVG Loader Generator](https://github.com/xml12333/HTML_CSS_JS/tree/main/789.SVG%20Loader%20Generator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/789.SVG%20Loader%20Generator/)|
+|790| [Dragon Curve](https://github.com/xml12333/HTML_CSS_JS/tree/main/790.Dragon%20Curve)| [Demo](https://nikt.com.ua/projects/htmlCssJs/790.Dragon%20Curve/)|
