@@ -1,0 +1,156 @@
+/* Import a modern sans-serif font (Roboto) */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  /* Use a subtle gradient background */
+  background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* A centered “card” container for the maze */
+#maze-container {
+  width: 90vw;
+  height: 90vh;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+#maze-grid {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  gap: 2px;
+  /* a slightly larger gap between cells */
+  background-color: #ccc;
+}
+
+.maze-cell {
+  position: relative;
+  background-color: #fff;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  /* Ensure each cell stays square */
+  aspect-ratio: 1;
+  /* A subtle inner shadow for a modern “inset” look */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.maze-cell::before {
+  content: "";
+  position: absolute;
+  background-color: #2c3e50;
+  transition: opacity 0.3s ease;
+}
+
+.maze-cell.wall-top::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+.maze-cell.wall-right::before {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 3px;
+}
+
+.maze-cell.wall-bottom::before {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+.maze-cell.wall-left::before {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 3px;
+}
+
+/* When a cell becomes a wall */
+.maze-cell.wall {
+  background-color: #2c3e50;
+}
+
+/* Start and end cells get bold colors */
+.maze-cell.start {
+  background-color: #4caf50 !important;
+}
+
+.maze-cell.end {
+  background-color: #f44336 !important;
+}
+
+/* Markers for start and end – centered with a bold font */
+.maze-cell.start::after,
+.maze-cell.end::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.maze-cell.start::after {
+  content: "S";
+}
+
+.maze-cell.end::after {
+  content: "E";
+}
+
+/* Visited and solution cells */
+.maze-cell.visited {
+  background-color: rgba(100, 149, 237, 0.3);
+  animation: visitedAnimation 0.3s ease-out;
+}
+
+.maze-cell.path {
+  background-color: #ffd700;
+  animation: pathAnimation 0.5s ease-out;
+}
+
+@keyframes visitedAnimation {
+  0% {
+    transform: scale(0.3);
+    background-color: rgba(0, 0, 66, 0.75);
+  }
+
+  50% {
+    background-color: rgba(17, 104, 217, 0.75);
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: rgba(100, 149, 237, 0.3);
+  }
+}
+
+@keyframes pathAnimation {
+  0% {
+    transform: scale(0.6);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

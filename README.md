@@ -797,3 +797,4 @@
 |791| [Draggable 3D Cube](https://github.com/xml12333/HTML_CSS_JS/tree/main/791.Draggable%203D%20Cube)| [Demo](https://nikt.com.ua/projects/htmlCssJs/791.Draggable%203D%20Cube/)|
 |792| [Tab Simulator](https://github.com/xml12333/HTML_CSS_JS/tree/main/792.Tab%20Simulator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/792.Tab%20Simulator/)|
 |793| [Star Track](https://github.com/xml12333/HTML_CSS_JS/tree/main/793.Star%20Track)| [Demo](https://nikt.com.ua/projects/htmlCssJs/793.Star%20Track/)|
+|794| [Maze Solver](https://github.com/xml12333/HTML_CSS_JS/tree/main/794.Maze%20Solver)| [Demo](https://nikt.com.ua/projects/htmlCssJs/794.Maze%20Solver/)|
