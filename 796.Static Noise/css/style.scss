@@ -1,0 +1,54 @@
+:root {
+  --bgcolor: #aaa;
+  --bgcolor2: #444;
+  --movex: 100;
+  --movey: 100;
+  --opacity: .3;
+  --speedx: 0.16;
+  --speedy: 0.48;
+}
+
+.static-noise {
+  // display: none;
+  position: absolute;
+  inset: 0;
+  background: url(https://i.ibb.co/77NfVB5/noise.png);
+  opacity: var(--opacity);
+  animation: static-noise-x calc(1s * var(--speedx)) steps(2, jump-start) infinite,
+    static-noise-y calc(1s * var(--speedy)) steps(3, jump-start) infinite;
+}
+
+// @supports (mix-blend-mode: overlay) {
+  .static-noise {
+    mix-blend-mode: multiply;
+    opacity: var(--opacity);
+  }
+// }
+@keyframes static-noise-x {
+  100% {
+    background-position-x: calc(1px * var(--movex));
+  }
+}
+@keyframes static-noise-y {
+  100% {
+    background-position-y: calc(1px * var(--movey));
+  }
+}
+
+
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  background: linear-gradient(var(--bgcolor), var(--bgcolor2)); //var(--bgcolor);
+  font-family: sans-serif;
+  &::before {
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		background: linear-gradient(var(--s2));
+		filter: url(#dither);
+		content: '';
+    transform: scale(1.12);
+	}
+}

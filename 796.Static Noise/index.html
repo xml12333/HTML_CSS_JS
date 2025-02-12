@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>static noise</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="static-noise">
+</div>
+  <h1>static noise</h1>
+
+<svg width="0" height="0" aria-hidden="true">
+  <filter id="dither" primitiveUnits="objectBoundingBox">
+    <feTurbulence type="fractalNoise" baseFrequency="4.71"></feTurbulence>
+    <feDisplacementMap in="SourceGraphic" scale=".52"></feDisplacementMap>
+    <feBlend in2="SourceGraphic"></feBlend>
+  </filter>
+</svg>
+<!-- partial -->
+  <script src='https://cdn.jsdelivr.net/npm/tweakpane@3.0.5/dist/tweakpane.min.js'></script><script  src="./js/script.js"></script>
+
+</body>
+</html>
