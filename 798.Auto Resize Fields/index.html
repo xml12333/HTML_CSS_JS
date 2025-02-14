@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>auto resize input fields: pure css</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="form">
+  <h1>field-sizing: content</h1>
+  <div class="text">Enter/Select value to test how the input elements resize to fit the content.</div>
+  <div class="inputgroup">
+    <label for="name">Name</label>
+    <input type="text" id="name" minlength="3" maxlength="20" placeholder="User"/>
+  </div>
+  <div class="inputgroup">
+    <label for="type">Type</label>
+    <select id="Type">
+      <option value="u">User</option>
+      <option value="a">Admin</option>
+      <option value="d">Developer</option>
+    </select>
+  </div>
+  <div class="inputgroup">
+    <label for="msg">Message</label>
+    <textarea id="msg"></textarea>
+  </div>
+  <div class="note">
+    <p>Note: Experimental, check <a href="https://caniuse.com/?search=field-sizing">Can I Use</a></p>
+  </div>
+</div>
+<!-- partial -->
+  
+</body>
+</html>

@@ -1,0 +1,19 @@
+.form
+  h1 field-sizing: content
+  .text Enter/Select value to test how the input elements resize to fit the content.
+  .inputgroup
+    label(for="name") Name
+    input(type="text" id="name" minlength="3" maxlength="20" placeholder="User")
+  .inputgroup
+    label(for="type") Type
+    select(id="Type")
+      option(value="u") User
+      option(value="a") Admin
+      option(value="d") Developer
+  .inputgroup
+    label(for="msg") Message
+    textarea(id="msg")
+  .note
+    p Note: Experimental, check 
+      a(href="https://caniuse.com/?search=field-sizing") Can I Use
+      
