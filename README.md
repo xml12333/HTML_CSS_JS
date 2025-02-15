@@ -802,3 +802,4 @@
 |796| [Static Noise](https://github.com/xml12333/HTML_CSS_JS/tree/main/796.Static%20Noise)| [Demo](https://nikt.com.ua/projects/htmlCssJs/796.Static%20Noise/)|
 |797| [Magnifying Glass Cursor](https://github.com/xml12333/HTML_CSS_JS/tree/main/797.Magnifying%20Glass%20Cursor)| [Demo](https://nikt.com.ua/projects/htmlCssJs/797.Magnifying%20Glass%20Cursor/)|
 |798| [Auto Resize Fields](https://github.com/xml12333/HTML_CSS_JS/tree/main/798.Auto%20Resize%20Fields)| [Demo](https://nikt.com.ua/projects/htmlCssJs/798.Auto%20Resize%20Fields/)|
+|799| [Monospace ASCII Generator](https://github.com/xml12333/HTML_CSS_JS/tree/main/799.Monospace%20ASCII%20Generator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/799.Monospace%20ASCII%20Generator/)|

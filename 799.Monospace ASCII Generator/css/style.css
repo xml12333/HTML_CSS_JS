@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background-color: #000; /* Dark theme by default */
+  color: #eee;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+/* Increase sidebar width to fit labels and numeric values */
+.sidebar {
+  width: 380px;
+  flex-shrink: 0;
+  background: #111; /* Matches dark theme */
+  color: #eee;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.sidebar h3 {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.control-group {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #666;
+  padding-bottom: 10px;
+}
+
+.control-group:last-of-type {
+  border-bottom: none;
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.control label {
+  flex: 0 0 150px;
+  margin-right: 10px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.control input[type="range"],
+.control select,
+.control input[type="text"] {
+  flex: 1;
+}
+
+.value-label {
+  display: inline-block;
+  width: 40px;
+  text-align: center;
+  margin-left: 8px;
+  font-size: 0.9rem;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 380px;
+  padding: 20px;
+  overflow-y: auto;
+  background: #000;
+  color: #eee;
+  box-sizing: border-box;
+}
+
+#ascii-art {
+  background: #000;
+  padding: 10px;
+  white-space: pre;
+  font-family: Consolas, Monaco, "Liberation Mono", monospace;
+  font-size: 7px;
+  line-height: 7px;
+}
+
+button {
+  margin-right: 10px;
+  padding: 5px 10px;
+}
+
+body.light-mode {
+  background-color: #fff;
+  color: #000;
+}
+
+body.light-mode .sidebar {
+  background: #F4F4F4;
+  color: #000;
+}
+
+body.light-mode .main-content {
+  background: #fff;
+  color: #000;
+}
+
+body.light-mode #ascii-art {
+  background: #fff;
+}

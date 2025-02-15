@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Monospace (ASCII art generator)</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="layout">
+  <aside class="sidebar">
+    <section class="control-group global-settings">
+      <h3>Global Settings</h3>
+      <div class="control">
+        <label for="theme">Theme:</label>
+        <select id="theme">
+          <option value="dark" selected>Dark</option>
+          <option value="light">Light</option>
+        </select>
+      </div>
+      <div class="control">
+        <label for="ignoreWhite">Ignore Pure White:</label>
+        <input type="checkbox" id="ignoreWhite" checked>
+      </div>
+    </section>
+    
+    <section class="control-group upload-group">
+      <h3>1. Upload Your File</h3>
+      <div class="control">
+        <input type="file" id="upload" accept="image/*">
+      </div>
+    </section>
+    
+    <section class="control-group image-processing">
+      <h3>2. Basic Adjustments</h3>
+      <div class="control">
+        <label for="asciiWidth">Output Width (chars):</label>
+        <input type="range" id="asciiWidth" min="20" max="300" value="150">
+        <span class="value-label" id="asciiWidthVal">100</span>
+      </div>
+      <div class="control">
+        <label for="brightness">Brightness:</label>
+        <input type="range" id="brightness" min="-100" max="100" value="0">
+        <span class="value-label" id="brightnessVal">0</span>
+      </div>
+      <div class="control">
+        <label for="contrast">Contrast:</label>
+        <input type="range" id="contrast" min="-100" max="100" value="0">
+        <span class="value-label" id="contrastVal">0</span>
+      </div>
+      <div class="control">
+        <label for="blur">Blur (px):</label>
+        <input type="range" id="blur" min="0" max="10" step="0.01" value="0">
+        <span class="value-label" id="blurVal">0</span>
+      </div>
+      <div class="control">
+        <label for="invert">Invert Colors:</label>
+        <input type="checkbox" id="invert">
+      </div>
+    </section>
+    
+    <section class="control-group dithering-settings">
+      <h3>3. Dithering Options</h3>
+      <div class="control">
+        <label for="dithering">Enable Dithering:</label>
+        <input type="checkbox" id="dithering" checked>
+      </div>
+      <div class="control">
+        <label for="ditherAlgorithm">Dither Algorithm:</label>
+        <select id="ditherAlgorithm">
+          <option value="floyd" selected>Floyd–Steinberg</option>
+          <option value="atkinson">Atkinson</option>
+          <option value="noise">Noise</option>
+          <option value="ordered">Ordered</option>
+        </select>
+      </div>
+    </section>
+    
+    <section class="control-group charset-settings">
+      <h3>4. Character Set</h3>
+      <div class="control">
+        <label for="charset">Select Set:</label>
+        <select id="charset">
+          <option value="detailed" selected>Detailed</option>
+          <option value="standard">Standard</option>
+          <option value="blocks">Blocks</option>
+          <option value="binary">Binary</option>
+          <option value="hex">Hex</option>
+          <option value="manual">Manual</option>
+        </select>
+      </div>
+      <div class="control" id="manualCharControl" style="display: none;">
+        <label for="manualCharInput">Manual Character:</label>
+        <input type="text" id="manualCharInput" maxlength="1" value="0">
+      </div>
+    </section>
+    
+    <section class="control-group edge-detection-settings">
+      <h3>5. Edge Detection</h3>
+      <p>Select one edge detection method:</p>
+      <div class="control">
+        <input type="radio" name="edgeMethod" id="edgeNone" value="none" checked>
+        <label for="edgeNone">No Edge Detection</label>
+      </div>
+      <div class="control">
+        <input type="radio" name="edgeMethod" id="edgeSobel" value="sobel">
+        <label for="edgeSobel">Sobel Edge Detection</label>
+      </div>
+      <div class="control">
+        <input type="radio" name="edgeMethod" id="edgeDoG" value="dog">
+        <label for="edgeDoG">DoG (Contour) Detection</label>
+      </div>
+      <div class="control" id="sobelThresholdControl" style="display: none;">
+        <label for="edgeThreshold">Sobel Threshold:</label>
+        <input type="range" id="edgeThreshold" min="0" max="255" value="100">
+        <span class="value-label" id="edgeThresholdVal">100</span>
+      </div>
+      <div class="control" id="dogThresholdControl" style="display: none;">
+        <label for="dogEdgeThreshold">DoG Threshold:</label>
+        <input type="range" id="dogEdgeThreshold" min="0" max="255" value="100">
+        <span class="value-label" id="dogEdgeThresholdVal">100</span>
+      </div>
+    </section>
+    
+    <section class="control-group display-settings">
+      <h3>6. Display Settings</h3>
+      <div class="control">
+        <label for="zoom">Zoom (%):</label>
+        <input type="range" id="zoom" min="20" max="600" value="100">
+        <span class="value-label" id="zoomVal">100</span>
+      </div>
+    </section>
+    
+    <section class="control-group misc-settings">
+      <div class="control">
+        <button id="reset">Reset All Settings</button>
+      </div>
+    </section>
+  </aside>
+  
+  <main class="main-content">
+    <pre id="ascii-art"></pre>
+    <button id="copyBtn">Copy ASCII Art</button>
+    <button id="downloadBtn">Download PNG</button>
+  </main>
+</div>
+<canvas id="canvas" style="display: none;"></canvas>
+<!-- partial -->
+  <script  src="./js/script.js"></script>
+
+</body>
+</html>
