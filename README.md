@@ -804,3 +804,4 @@
 |798| [Auto Resize Fields](https://github.com/xml12333/HTML_CSS_JS/tree/main/798.Auto%20Resize%20Fields)| [Demo](https://nikt.com.ua/projects/htmlCssJs/798.Auto%20Resize%20Fields/)|
 |799| [Monospace ASCII Generator](https://github.com/xml12333/HTML_CSS_JS/tree/main/799.Monospace%20ASCII%20Generator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/799.Monospace%20ASCII%20Generator/)|
 |800| [Bubbles](https://github.com/xml12333/HTML_CSS_JS/tree/main/800.Bubbles)| [Demo](https://nikt.com.ua/projects/htmlCssJs/800.Bubbles/)|
+|801| [Apple NavBar](https://github.com/xml12333/HTML_CSS_JS/tree/main/801.Apple%20NavBar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/801.Apple%20NavBar/)|
