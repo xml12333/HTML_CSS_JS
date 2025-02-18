@@ -805,3 +805,4 @@
 |799| [Monospace ASCII Generator](https://github.com/xml12333/HTML_CSS_JS/tree/main/799.Monospace%20ASCII%20Generator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/799.Monospace%20ASCII%20Generator/)|
 |800| [Bubbles](https://github.com/xml12333/HTML_CSS_JS/tree/main/800.Bubbles)| [Demo](https://nikt.com.ua/projects/htmlCssJs/800.Bubbles/)|
 |801| [Apple NavBar](https://github.com/xml12333/HTML_CSS_JS/tree/main/801.Apple%20NavBar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/801.Apple%20NavBar/)|
+|802| [Orbit Animation](https://github.com/xml12333/HTML_CSS_JS/tree/main/802.Orbit%20Animation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/802.Orbit%20Animation/)|
