@@ -806,3 +806,4 @@
 |800| [Bubbles](https://github.com/xml12333/HTML_CSS_JS/tree/main/800.Bubbles)| [Demo](https://nikt.com.ua/projects/htmlCssJs/800.Bubbles/)|
 |801| [Apple NavBar](https://github.com/xml12333/HTML_CSS_JS/tree/main/801.Apple%20NavBar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/801.Apple%20NavBar/)|
 |802| [Orbit Animation](https://github.com/xml12333/HTML_CSS_JS/tree/main/802.Orbit%20Animation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/802.Orbit%20Animation/)|
+|803| [Eagles Single Div](https://github.com/xml12333/HTML_CSS_JS/tree/main/803.Eagles%20Single%20Div)| [Demo](https://nikt.com.ua/projects/htmlCssJs/803.Eagles%20Single%20Div/)|
