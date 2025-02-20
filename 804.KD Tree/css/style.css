@@ -1,0 +1,31 @@
+body {
+  background:#000;
+  width: 100vw; min-height: 100dvh;
+  overflow: hidden;
+  margin:0; padding: 0;
+}
+button { position: fixed; z-index: 1; left:1em; top:1em }
+.slider { 
+	background:transparent;
+	transform-origin: top left;
+	position: absolute;
+	
+	left: 50%;
+	top: 50%;
+	height: 1px;
+	
+	input[type=range] {
+		position:absolute;
+		margin-top:-0.5em;
+		width: calc(100% + 8px);
+		left:-4px;
+	}
+}
+.bg {
+	position: absolute;
+	background:#000;
+	left: 50%;
+	top: 50%;
+  transition: background 0.3s ease-in-out;
+  &:not(.completed) {background:#fff!important}
+}
