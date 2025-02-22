@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Checkboxing Audio Visualizer</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <link
+      rel="preload"
+      as="audio"
+      href="./img/Free_Test_Data_500KB_MP3.mp3"
+      type="audio/mpeg"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <!--
+# Audio Visualizer with Checkboxes
+
+## Description
+Interactive audio visualizer using **checkbox grids** to represent frequency bands dynamically. 
+It works with **both a default audio file and user-uploaded MP3/WAV files**. The visualization updates in real-time 
+based on the frequency spectrum of the audio.
+
+
+## Themes
+- **Light Theme:** Simple white background with blue accents.
+- **Dark Theme:** High contrast dark mode with orange accents.
+- **Acid Theme:** Bright, bold **80s-inspired neon colors**.
+- **Cyber Theme:** Futuristic dark blue tones with cyan & magenta highlights.
+-->
+
+    <input
+      type="file"
+      id="audioFile"
+      accept="audio/mp3, audio/wav"
+      style="display: none"
+    />
+    <div id="tweakpane-container"></div>
+    <div class="checkbox-container" id="checkboxContainer"></div>
+
+ 
+    <!-- partial -->
+    <script src="./js/lr-utils.js"></script>
+    <script src="./js/tweakpane.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
