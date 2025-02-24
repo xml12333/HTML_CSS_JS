@@ -811,3 +811,4 @@
 |805| [Halftone Editor](https://github.com/xml12333/HTML_CSS_JS/tree/main/805.Halftone%20Editor)| [Demo](https://nikt.com.ua/projects/htmlCssJs/805.Halftone%20Editor/)|
 |806| [Checkbox Audio Visualizer](https://github.com/xml12333/HTML_CSS_JS/tree/main/806.Checkbox%20Audio%20Visualizer)| [Demo](https://nikt.com.ua/projects/htmlCssJs/806.Checkbox%20Audio%20Visualizer/)|
 |807| [Infinite Masonry](https://github.com/xml12333/HTML_CSS_JS/tree/main/807.Infinite%20Masonry)| [Demo](https://nikt.com.ua/projects/htmlCssJs/807.Infinite%20Masonry/)|
+|808| [SVG Filter Sticker](https://github.com/xml12333/HTML_CSS_JS/tree/main/808.SVG%20Filter%20Sticker)| [Demo](https://nikt.com.ua/projects/htmlCssJs/808.SVG%20Filter%20Sticker/)|
