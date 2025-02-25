@@ -812,3 +812,4 @@
 |806| [Checkbox Audio Visualizer](https://github.com/xml12333/HTML_CSS_JS/tree/main/806.Checkbox%20Audio%20Visualizer)| [Demo](https://nikt.com.ua/projects/htmlCssJs/806.Checkbox%20Audio%20Visualizer/)|
 |807| [Infinite Masonry](https://github.com/xml12333/HTML_CSS_JS/tree/main/807.Infinite%20Masonry)| [Demo](https://nikt.com.ua/projects/htmlCssJs/807.Infinite%20Masonry/)|
 |808| [SVG Filter Sticker](https://github.com/xml12333/HTML_CSS_JS/tree/main/808.SVG%20Filter%20Sticker)| [Demo](https://nikt.com.ua/projects/htmlCssJs/808.SVG%20Filter%20Sticker/)|
+|809| [Gooey Cursor](https://github.com/xml12333/HTML_CSS_JS/tree/main/809.Gooey%20Cursor)| [Demo](https://nikt.com.ua/projects/htmlCssJs/809.Gooey%20Cursor/)|
