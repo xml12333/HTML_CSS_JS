@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  touch-action: none;
+  overflow: hidden;
+  display: grid;
+  user-select: none;
+}
+canvas {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+body > * {
+  grid-row: 1;
+  grid-column: 1;
+}
+main {
+  display: grid;
+}
+main > * {
+  grid-row: 1;
+  grid-column: 1;
+}
+article {
+  position: relative;
+  align-self: center;
+  justify-self: center;
+  width: 18ch;
+  font: bold 20px/1 system-ui;
+  color: #b5b5b5;
+  text-rendering: optimizeLegibility;
+}
+article > h2 {
+  font-size: 2em;
+  opacity: 0;
+  animation: fade-in 10s forwards 0s;
+  margin: 0;
+  line-height: 1.6;
+}
+article > p {
+  opacity: 0;
+  animation: fade-in 10s forwards 4s;
+  margin: 0;
+  line-height: 1.2;
+}
+article > p::before {
+  opacity: 0;
+  animation: fade-in 10s forwards 8s;
+}
+article > p::after {
+  opacity: 0;
+  animation: fade-in 10s forwards 8s;
+}
+article:nth-of-type(2) {
+  margin-left: 5ch;
+  text-align: right;
+}
+article:nth-of-type(3) {
+  margin-left: 15ch;
+}
+article:nth-of-type(3) > h2 {
+  text-align: center;
+  line-height: 100%;
+  margin: 0;
+}
+article:nth-of-type(3) > p {
+  position: relative;
+  font-size: 60px;
+  line-height: 100%;
+  margin: 0;
+  color: #c51;
+}
+@media screen and (min-width: 600px) {
+  article:nth-of-type(3) > p::before {
+    content: "";
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-image: linear-gradient(315deg, #b5b5b5, transparent) 1;
+    left: -80px;
+    top: -65px;
+  }
+  article:nth-of-type(3) > p::after {
+    content: "";
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    border-bottom: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-image: linear-gradient(135deg, #b5b5b5, transparent) 1;
+    right: -80px;
+    bottom: -55px;
+  }
+}
+.hide > *,
+.hide > *::before,
+.hide > *::after {
+  animation: fade-out 1s forwards 0s;
+}
+.hidden {
+  visibility: hidden;
+}
+@keyframes fade-in {
+  80% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
