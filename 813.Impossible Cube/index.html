@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Impossible cube</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Cube 3D Personnalisable</title>
+    <style>
+        body { 
+            margin: 0; 
+            overflow: hidden; 
+            background: linear-gradient(to bottom, #000000, #0a0a2a);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+        }
+        canvas { 
+            display: block; 
+            width: 800px;
+            height: 800px;
+            cursor: pointer;
+            box-shadow: 0 0 50px rgba(0, 100, 255, 0.3);
+        }
+        .controls {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 250px;
+            background: rgba(0, 0, 20, 0.7);
+            padding: 15px;
+            border-radius: 8px;
+            z-index: 100;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .controls h3 {
+            margin-top: 15px;
+            margin-bottom: 5px;
+            border-bottom: 1px solid rgba(100, 150, 255, 0.5);
+            padding-bottom: 5px;
+        }
+        .control-group {
+            margin-bottom: 15px;
+        }
+        .control-item {
+            margin-bottom: 8px;
+        }
+        label {
+            display: block;
+            margin-bottom: 3px;
+            font-size: 12px;
+        }
+        input[type="range"] {
+            width: 100%;
+        }
+        input[type="color"] {
+            width: 50px;
+            height: 25px;
+            border: none;
+            cursor: pointer;
+        }
+        .color-picker {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .color-value {
+            font-size: 11px;
+            color: #aaa;
+        }
+        button {
+            background: rgba(30, 30, 100, 0.6);
+            border: 1px solid rgba(100, 150, 255, 0.5);
+            padding: 8px 15px;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+            margin: 5px 3px;
+        }
+        button:hover {
+            background: rgba(70, 70, 200, 0.7);
+            transform: translateY(-2px);
+        }
+        .buttons-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="glCanvas"></canvas>
+    
+    <div class="controls">
+        <h3>Effets</h3>
+        <div class="buttons-container">
+            <button id="btnGravity">Gravité</button>
+            <button id="btnExplosion">Explosion</button>
+            <button id="btnImplosion">Implosion</button>
+            <button id="btnVortex">Vortex</button>
+            <button id="btnNeon">Néon</button>
+            <button id="btnReset">Reset</button>
+        </div>
+        
+        <h3>Particules</h3>
+        <div class="control-group">
+            <div class="control-item">
+                <label for="particleSize">Taille des particules</label>
+                <input type="range" id="particleSize" min="5" max="40" value="15" step="1">
+            </div>
+            <div class="control-item">
+                <label for="particleDensity">Densité des particules</label>
+                <input type="range" id="particleDensity" min="10" max="35" value="25" step="1">
+            </div>
+        </div>
+        
+        <h3>Couleurs</h3>
+        <div class="control-group">
+            <div class="control-item color-picker">
+                <label>Couleur primaire</label>
+                <input type="color" id="primaryColor" value="#3366ff">
+                <span id="primaryColorValue" class="color-value">#3366ff</span>
+            </div>
+            <div class="control-item color-picker">
+                <label>Couleur secondaire</label>
+                <input type="color" id="secondaryColor" value="#ff3366">
+                <span id="secondaryColorValue" class="color-value">#ff3366</span>
+            </div>
+            <div class="control-item color-picker">
+                <label>Couleur d'accent</label>
+                <input type="color" id="accentColor" value="#33ff66">
+                <span id="accentColorValue" class="color-value">#33ff66</span>
+            </div>
+        </div>
+        
+        <h3>Animation</h3>
+        <div class="control-group">
+            <div class="control-item">
+                <label for="rotationSpeed">Vitesse de rotation</label>
+                <input type="range" id="rotationSpeed" min="0.1" max="3" value="1" step="0.1">
+            </div>
+            <div class="control-item">
+                <label for="pulseSpeed">Vitesse de pulsation</label>
+                <input type="range" id="pulseSpeed" min="0.5" max="5" value="1.5" step="0.1">
+            </div>
+            <div class="control-item">
+                <label for="pulseIntensity">Intensité de pulsation</label>
+                <input type="range" id="pulseIntensity" min="0.5" max="3" value="1.2" step="0.1">
+            </div>
+        </div>
+        
+        <h3>Effets visuels</h3>
+        <div class="control-group">
+            <div class="control-item">
+                <label for="glowIntensity">Intensité de lueur</label>
+                <input type="range" id="glowIntensity" min="0" max="3" value="1.2" step="0.1">
+            </div>
+            <div class="control-item">
+                <label for="colorSaturation">Saturation des couleurs</label>
+                <input type="range" id="colorSaturation" min="0.5" max="3" value="1.5" step="0.1">
+            </div>
+            <div class="control-item">
+                <label for="colorIntensity">Intensité des couleurs</label>
+                <input type="range" id="colorIntensity" min="0.5" max="3" value="1.5" step="0.1">
+            </div>
+        </div>
+    </div>
+
+    <script type="x-shader/x-vertex" id="vertexShader">
+        attribute vec4 aVertexPosition;
+        attribute vec3 aVertexColor;
+        attribute float aPointOffset;
+        attribute vec3 aOriginalPosition;
+        attribute float aPointSize;
+        
+        uniform mat4 uModelViewMatrix;
+        uniform mat4 uProjectionMatrix;
+        uniform float uTime;
+        uniform float uBasePointSize;
+        uniform bool uGravityMode;
+        uniform float uGravityTime;
+        uniform bool uExplosionMode;
+        uniform float uExplosionTime;
+        uniform bool uImplosionMode;
+        uniform float uImplosionTime;
+        uniform bool uVortexMode;
+        uniform float uVortexTime;
+        uniform bool uNeonMode;
+        uniform float uNeonTime;
+        uniform float uRotationSpeed;
+        uniform float uPulseSpeed;
+        uniform float uPulseIntensity;
+        uniform vec3 uPrimaryColor;
+        uniform vec3 uSecondaryColor;
+        uniform vec3 uAccentColor;
+        uniform float uColorSaturation;
+        uniform float uColorIntensity;
+        
+        varying highp vec3 vColor;
+        varying highp float vTime;
+        varying highp float vPulse;
+        varying highp float vDistance;
+        varying highp vec2 vUV;
+        varying highp float vPointOffset;
+        
+        #define PI 3.14159265359
+        
+        vec3 generateCustomColor(vec3 pos, float t) {
+            vec3 uv = pos * 0.5 + 0.5;
+            vec3 col = vec3(0.0);
+            
+            float n = 8.0 * PI * (1.0 - cos(t * 0.3 * uPulseSpeed));
+            
+            for(int i = 0; i < 6; i++) {
+                float fi = float(i) / 6.0;
+                
+                float x = sin(uv.x * 6.0 + t * 1.2 * uPulseSpeed + fi * PI * 2.0);
+                float y = cos(uv.y * 6.0 + t * 0.9 * uPulseSpeed + fi * PI * 2.0);
+                float z = sin(uv.z * 6.0 + t * 0.7 * uPulseSpeed + fi * PI * 2.0);
+                
+                float r = sin(x * cos(t/3.0) + y * 2.0) * 0.5 + 0.5;
+                float g = sin(x + y * sin(t/4.0) + z * 2.0 + t) * 0.5 + 0.5;
+                float b = sin(sqrt(x*x + y*y + z*z) * 2.0 + t * 1.2) * 0.5 + 0.5;
+                
+                vec3 baseColor = mix(
+                    mix(uPrimaryColor, uSecondaryColor, r),
+                    uAccentColor,
+                    b * 0.5
+                );
+                
+                col += baseColor * vec3(r, g, b) / (float(i) + 2.0);
+            }
+            
+            if (uNeonMode) {
+                col = pow(col, vec3(0.6)) * 2.0;
+                
+                float neonCycle = sin(uTime * 2.0 + uNeonTime * 5.0) * 0.5 + 0.5;
+                vec3 neonTint = vec3(
+                    sin(uNeonTime * 3.0) * 0.5 + 0.5,
+                    sin(uNeonTime * 3.0 + PI * 2.0/3.0) * 0.5 + 0.5,
+                    sin(uNeonTime * 3.0 + PI * 4.0/3.0) * 0.5 + 0.5
+                );
+                
+                col = mix(col, col * neonTint, 0.6);
+            } else {
+                col = pow(col, vec3(1.0/uColorSaturation)) * uColorIntensity;
+            }
+            
+            return col;
+        }
+
+        vec3 applyGravity(vec3 originalPos, float time, float offset) {
+            if (!uGravityMode) return originalPos;
+            
+            float fallDelay = offset * 0.3;
+            float effectiveTime = max(0.0, uGravityTime - fallDelay);
+            
+            float gravity = 12.0;
+            float y = originalPos.y - 0.5 * gravity * effectiveTime * effectiveTime;
+            
+            float xNoise = sin(offset * 70.0) * 0.08 * effectiveTime;
+            float zNoise = cos(offset * 70.0) * 0.08 * effectiveTime;
+            
+            if (y < -3.0) {
+                float bounceFactor = 0.6;
+                float bounceTime = effectiveTime - sqrt(6.0/gravity);
+                if (bounceTime > 0.0) {
+                    y = -3.0 + bounceFactor * (originalPos.y + 3.0 - 0.5 * gravity * bounceTime * bounceTime);
+                } else {
+                    y = -3.0;
+                }
+            }
+            
+            return vec3(originalPos.x + xNoise, y, originalPos.z + zNoise);
+        }
+        
+        vec3 applyExplosion(vec3 originalPos, float time, float offset) {
+            if (!uExplosionMode) return originalPos;
+            
+            float angle1 = offset * 10.0 * PI;
+            float angle2 = offset * 20.0 * PI;
+            vec3 dir = vec3(
+                sin(angle1) * cos(angle2),
+                sin(angle1) * sin(angle2),
+                cos(angle1)
+            );
+            
+            float explosionPower = 5.0 * (1.0 - min(1.0, uExplosionTime * 0.5));
+            float delay = offset * 0.1;
+            float effectiveTime = max(0.0, uExplosionTime - delay);
+            
+            vec3 turbulence = vec3(
+                sin(effectiveTime * 5.0 + offset * 10.0),
+                cos(effectiveTime * 6.0 + offset * 10.0),
+                sin(effectiveTime * 7.0 + offset * 10.0)
+            ) * 0.2 * effectiveTime;
+            
+            return originalPos + (dir * effectiveTime * explosionPower) + turbulence;
+        }
+        
+        vec3 applyImplosion(vec3 originalPos, float time, float offset) {
+            if (!uImplosionMode) return originalPos;
+            
+            vec3 dir = normalize(-originalPos);
+            
+            float implosionPower = 3.0 * min(1.0, uImplosionTime * 0.8);
+            float delay = (1.0 - length(originalPos) * 0.5) * 0.2;
+            float effectiveTime = max(0.0, uImplosionTime - delay);
+            
+            float rotationSpeed = 2.0 * effectiveTime;
+            mat3 rotX = mat3(
+                1.0, 0.0, 0.0,
+                0.0, cos(rotationSpeed), -sin(rotationSpeed),
+                0.0, sin(rotationSpeed), cos(rotationSpeed)
+            );
+            mat3 rotY = mat3(
+                cos(rotationSpeed), 0.0, sin(rotationSpeed),
+                0.0, 1.0, 0.0,
+                -sin(rotationSpeed), 0.0, cos(rotationSpeed)
+            );
+            
+            vec3 result = originalPos + (dir * effectiveTime * implosionPower);
+            return rotX * rotY * result;
+        }
+        
+        vec3 applyVortex(vec3 originalPos, float time, float offset) {
+            if (!uVortexMode) return originalPos;
+            
+            vec3 axis = vec3(0.0, 1.0, 0.0);
+            vec2 xzPos = vec2(originalPos.x, originalPos.z);
+            float distToAxis = length(xzPos);
+            vec2 perp = vec2(-xzPos.y, xzPos.x) / max(0.001, distToAxis);
+            
+            float rotSpeed = (3.0 / (0.5 + distToAxis)) * uVortexTime;
+            float lift = sin(uVortexTime * 3.0 + offset * 5.0) * 0.5;
+            
+            float angle = rotSpeed * 2.0 * PI;
+            float cos_a = cos(angle);
+            float sin_a = sin(angle);
+            vec2 rotated = vec2(
+                xzPos.x * cos_a - xzPos.y * sin_a,
+                xzPos.x * sin_a + xzPos.y * cos_a
+            );
+            
+            return vec3(rotated.x, originalPos.y + lift * uVortexTime, rotated.y);
+        }
+        
+        vec3 applyNeon(vec3 originalPos, float time, float offset) {
+            if (!uNeonMode) return originalPos;
+            
+            float pulse = sin(uTime * 3.0 + offset * 10.0) * 0.05;
+            
+            float orbit = uNeonTime * 2.0;
+            mat3 rotY = mat3(
+                cos(orbit), 0.0, sin(orbit),
+                0.0, 1.0, 0.0,
+                -sin(orbit), 0.0, cos(orbit)
+            );
+            
+            vec3 wave = vec3(
+                sin(uTime * 2.0 + originalPos.x * 5.0) * 0.03,
+                cos(uTime * 2.0 + originalPos.y * 5.0) * 0.03,
+                sin(uTime * 2.0 + originalPos.z * 5.0) * 0.03
+            );
+            
+            return rotY * (originalPos * (1.0 + pulse)) + wave;
+        }
+        
+        void main(void) {
+            vec3 position = aVertexPosition.xyz;
+            
+            if (uGravityMode) {
+                position = applyGravity(aOriginalPosition, uTime, aPointOffset);
+            } else if (uExplosionMode) {
+                position = applyExplosion(aOriginalPosition, uTime, aPointOffset);
+            } else if (uImplosionMode) {
+                position = applyImplosion(aOriginalPosition, uTime, aPointOffset);
+            } else if (uVortexMode) {
+                position = applyVortex(aOriginalPosition, uTime, aPointOffset);
+            } else if (uNeonMode) {
+                position = applyNeon(aOriginalPosition, uTime, aPointOffset);
+            }
+            
+            gl_Position = uProjectionMatrix * uModelViewMatrix * vec4(position, 1.0);
+            
+            vColor = generateCustomColor(position, uTime);
+            
+            float pulseFreq = uPulseSpeed * (2.0 + sin(aPointOffset * 15.0) * 1.0);
+            float pulsePhase = aPointOffset * 30.0;
+            float pulse = 0.6 + 0.4 * sin(uTime * pulseFreq + pulsePhase);
+            
+            if (uGravityMode) {
+                pulse = mix(pulse, 0.6, min(1.0, uGravityTime * 0.7));
+            } else if (uExplosionMode) {
+                pulse = mix(pulse, 1.2, min(1.0, uExplosionTime));
+            } else if (uImplosionMode) {
+                pulse = mix(pulse, 0.8, min(1.0, uImplosionTime));
+            } else if (uVortexMode) {
+                pulse = mix(pulse, 0.7 + 0.5 * sin(uTime * 3.0), min(1.0, uVortexTime));
+            } else if (uNeonMode) {
+                pulse = mix(pulse, 1.5 + sin(uTime * 8.0 + aPointOffset * 20.0) * 0.5, min(1.0, uNeonTime));
+            }
+            
+            pulse = pow(pulse, 1.2) * uPulseIntensity;
+            
+            gl_PointSize = uBasePointSize * pulse * aPointSize;
+            
+            vDistance = length(position);
+            vTime = uTime;
+            vPulse = pulse;
+            vUV = position.xy;
+            vPointOffset = aPointOffset;
+        }
+    </script>
+    
+    <script type="x-shader/x-fragment" id="fragmentShader">
+        precision highp float;
+        
+        varying highp vec3 vColor;
+        varying highp float vTime;
+        varying highp float vPulse;
+        varying highp float vDistance;
+        varying highp vec2 vUV;
+        varying highp float vPointOffset;
+        
+        uniform float uGlowIntensity;
+        
+        float halo(vec2 center, float radius) {
+            float dist = length(center);
+            return pow(1.0 - min(1.0, dist / radius), 2.0);
+        }
+        
+        void main() {
+            vec2 center = gl_PointCoord - 0.5;
+            float dist = length(center);
+            
+            if (dist > 0.5) {
+                discard;
+            }
+            
+            float haloIntensity = halo(center, 0.5) * vPulse;
+            
+            vec3 color = vColor * (1.0 + vPulse * 0.3);
+            
+            float glow = smoothstep(0.5, 0.0, dist) * vPulse * uGlowIntensity;
+            color += glow * 0.6 * vColor;
+            
+            float edgeWidth = 0.15 + 0.05 * sin(vTime * 2.0 + vPointOffset * 5.0);
+            float alpha = smoothstep(0.5, 0.5 - edgeWidth, dist);
+            
+            float sparkle = pow(sin(vTime * 3.0 + vUV.x * 10.0 + vUV.y * 10.0) * 0.5 + 0.5, 3.0) * 0.2;
+            color += sparkle * vColor;
+            
+            float dispersion = 0.1 * sin(vTime + vPointOffset * 10.0);
+            vec3 dispColor = vec3(
+                color.r * (1.0 + dispersion),
+                color.g,
+                color.b * (1.0 - dispersion)
+            );
+            color = mix(color, dispColor, 0.3);
+            
+            gl_FragColor = vec4(color, alpha * (0.7 + 0.3 * vPulse));
+        }
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"></script>
+    <script>
+        window.onload = function() {
+            const canvas = document.getElementById('glCanvas');
+            const gl = canvas.getContext('webgl');
+            
+            if (!gl) {
+                console.error("WebGL n'est pas supporté par votre navigateur.");
+                return;
+            }
+            
+            let gravityMode = false;
+            let gravityStartTime = 0;
+            let explosionMode = false;
+            let explosionStartTime = 0;
+            let implosionMode = false;
+            let implosionStartTime = 0;
+            let vortexMode = false;
+            let vortexStartTime = 0;
+            let neonMode = false;
+            let neonStartTime = 0;
+            let resetTimeout = null;
+            
+            let isDragging = false;
+            let lastMouseX = 0;
+            let lastMouseY = 0;
+            let rotationX = 0;
+            let rotationY = 0;
+            
+            let particleSize = 15;
+            let particleDensity = 25;
+            let rotationSpeed = 1.0;
+            let pulseSpeed = 1.5;
+            let pulseIntensity = 1.2;
+            let glowIntensity = 1.2;
+            let colorSaturation = 1.5;
+            let colorIntensity = 1.5;
+            let primaryColor = [0.2, 0.4, 1.0];  // Bleu
+            let secondaryColor = [1.0, 0.2, 0.4]; // Rouge-rose
+            let accentColor = [0.2, 1.0, 0.4];    // Vert
+            
+            let buffers = null;
+            let needsRebuild = true;
+            
+            gl.enable(gl.BLEND);
+            gl.blendFunc(gl.SRC_ALPHA, gl.ONE);
+            gl.enable(gl.DEPTH_TEST);
+            
+            function resizeCanvas() {
+                canvas.width = canvas.clientWidth;
+                canvas.height = canvas.clientHeight;
+                gl.viewport(0, 0, canvas.width, canvas.height);
+            }
+            
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+            
+            document.getElementById('btnGravity').addEventListener('click', function() {
+                resetAllEffects();
+                gravityMode = true;
+                gravityStartTime = Date.now();
+                setResetTimeout(6000);
+            });
+            
+            document.getElementById('btnExplosion').addEventListener('click', function() {
+                resetAllEffects();
+                explosionMode = true;
+                explosionStartTime = Date.now();
+                setResetTimeout(5000);
+            });
+            
+            document.getElementById('btnImplosion').addEventListener('click', function() {
+                resetAllEffects();
+                implosionMode = true;
+                implosionStartTime = Date.now();
+                setResetTimeout(5000);
+            });
+            
+            document.getElementById('btnVortex').addEventListener('click', function() {
+                resetAllEffects();
+                vortexMode = true;
+                vortexStartTime = Date.now();
+                setResetTimeout(7000);
+            });
+            
+            document.getElementById('btnNeon').addEventListener('click', function() {
+                resetAllEffects();
+                neonMode = true;
+                neonStartTime = Date.now();
+                setResetTimeout(8000);
+            });
+            
+            document.getElementById('btnReset').addEventListener('click', resetAllEffects);
+            
+            document.getElementById('particleSize').addEventListener('input', function(e) {
+                particleSize = parseFloat(e.target.value);
+            });
+            
+            document.getElementById('particleDensity').addEventListener('input', function(e) {
+                particleDensity = parseInt(e.target.value);
+                needsRebuild = true;
+            });
+            
+            document.getElementById('rotationSpeed').addEventListener('input', function(e) {
+                rotationSpeed = parseFloat(e.target.value);
+            });
+            
+            document.getElementById('pulseSpeed').addEventListener('input', function(e) {
+                pulseSpeed = parseFloat(e.target.value);
+            });
+            
+            document.getElementById('pulseIntensity').addEventListener('input', function(e) {
+                pulseIntensity = parseFloat(e.target.value);
+            });
+            
+            document.getElementById('glowIntensity').addEventListener('input', function(e) {
+                glowIntensity = parseFloat(e.target.value);
+            });
+            
+            document.getElementById('colorSaturation').addEventListener('input', function(e) {
+                colorSaturation = parseFloat(e.target.value);
+            });
+            
+            document.getElementById('colorIntensity').addEventListener('input', function(e) {
+                colorIntensity = parseFloat(e.target.value);
+            });
+            
+            function hexToRgb(hex) {
+                const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+                return result ? [
+                    parseInt(result[1], 16) / 255,
+                    parseInt(result[2], 16) / 255,
+                    parseInt(result[3], 16) / 255
+                ] : [0, 0, 0];
+            }
+            
+            document.getElementById('primaryColor').addEventListener('input', function(e) {
+                primaryColor = hexToRgb(e.target.value);
+                document.getElementById('primaryColorValue').textContent = e.target.value;
+            });
+            
+            document.getElementById('secondaryColor').addEventListener('input', function(e) {
+                secondaryColor = hexToRgb(e.target.value);
+                document.getElementById('secondaryColorValue').textContent = e.target.value;
+            });
+            
+            document.getElementById('accentColor').addEventListener('input', function(e) {
+                accentColor = hexToRgb(e.target.value);
+                document.getElementById('accentColorValue').textContent = e.target.value;
+            });
+            
+            function resetAllEffects() {
+                gravityMode = false;
+                explosionMode = false;
+                implosionMode = false;
+                vortexMode = false;
+                neonMode = false;
+                
+                if (resetTimeout !== null) {
+                    clearTimeout(resetTimeout);
+                    resetTimeout = null;
+                }
+            }
+            
+            function setResetTimeout(delay) {
+                if (resetTimeout !== null) {
+                    clearTimeout(resetTimeout);
+                }
+                
+                resetTimeout = setTimeout(resetAllEffects, delay);
+            }
+            
+            canvas.addEventListener('mousedown', function(event) {
+                isDragging = true;
+                lastMouseX = event.clientX;
+                lastMouseY = event.clientY;
+            });
+            
+            canvas.addEventListener('mouseup', function() {
+                isDragging = false;
+            });
+            
+            canvas.addEventListener('mouseleave', function() {
+                isDragging = false;
+            });
+            
+            canvas.addEventListener('mousemove', function(event) {
+                if (!isDragging || gravityMode || explosionMode || implosionMode || vortexMode || neonMode) {
+                    return;
+                }
+                
+                const newX = event.clientX;
+                const newY = event.clientY;
+                
+                const deltaX = newX - lastMouseX;
+                const deltaY = newY - lastMouseY;
+                
+                rotationY += deltaX * 0.01;
+                rotationX += deltaY * 0.01;
+                
+                rotationX = Math.max(-Math.PI/2, Math.min(Math.PI/2, rotationX));
+                
+                lastMouseX = newX;
+                lastMouseY = newY;
+            });
+            
+            let lastClickTime = 0;
+            canvas.addEventListener('click', function() {
+                const currentTime = Date.now();
+                if (currentTime - lastClickTime < 300) {
+                    resetAllEffects();
+                    explosionMode = true;
+                    explosionStartTime = Date.now();
+                    setResetTimeout(5000);
+                } else if (!gravityMode && !explosionMode && !implosionMode && !vortexMode && !neonMode) {
+                    gravityMode = true;
+                    gravityStartTime = Date.now();
+                    setResetTimeout(6000);
+                }
+                lastClickTime = currentTime;
+            });
+            
+            function compileShader(gl, source, type) {
+                const shader = gl.createShader(type);
+                gl.shaderSource(shader, source);
+                gl.compileShader(shader);
+                
+                if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+                    const error = gl.getShaderInfoLog(shader);
+                    console.error('Erreur de compilation du shader:', error);
+                    gl.deleteShader(shader);
+                    return null;
+                }
+                
+                return shader;
+            }
+            
+            function initShaderProgram(gl, vsSource, fsSource) {
+                const vertexShader = compileShader(gl, vsSource, gl.VERTEX_SHADER);
+                const fragmentShader = compileShader(gl, fsSource, gl.FRAGMENT_SHADER);
+                
+                if (!vertexShader || !fragmentShader) {
+                    return null;
+                }
+                
+                const shaderProgram = gl.createProgram();
+                gl.attachShader(shaderProgram, vertexShader);
+                gl.attachShader(shaderProgram, fragmentShader);
+                gl.linkProgram(shaderProgram);
+                
+                if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) {
+                    const error = gl.getProgramInfoLog(shaderProgram);
+                    console.error('Erreur de liaison du programme shader:', error);
+                    return null;
+                }
+                
+                return shaderProgram;
+            }
+            
+            function generatePointsOnCube(density) {
+                const positions = [];
+                const originalPositions = [];
+                const colors = [];
+                const offsets = [];
+                const sizes = [];
+                
+                function addFacePoints(normalAxis, normalSign) {
+                    const size = 1.0;
+                    const step = 2.0 / density;
+                    
+                    for (let i = 0; i < density; i++) {
+                        for (let j = 0; j < density; j++) {
+                            const a = -size + i * step;
+                            const b = -size + j * step;
+                            
+                            const jitter = 0.08;
+                            const ax = a + (Math.random() * 2 - 1) * jitter;
+                            const bx = b + (Math.random() * 2 - 1) * jitter;
+                            
+                            let x, y, z;
+                            if (normalAxis === 'x') {
+                                x = normalSign * size;
+                                y = ax;
+                                z = bx;
+                            } else if (normalAxis === 'y') {
+                                x = ax;
+                                y = normalSign * size;
+                                z = bx;
+                            } else {
+                                x = ax;
+                                y = bx;
+                                z = normalSign * size;
+                            }
+                            
+                            positions.push(x, y, z);
+                            originalPositions.push(x, y, z);
+                            colors.push(0.5, 0.5, 0.5);
+                            offsets.push(Math.random());
+                            sizes.push(0.7 + Math.random() * 0.6);
+                        }
+                    }
+                }
+                
+                addFacePoints('x', 1);
+                addFacePoints('x', -1);
+                addFacePoints('y', 1);
+                addFacePoints('y', -1);
+                addFacePoints('z', 1);
+                addFacePoints('z', -1);
+                
+                const innerPoints = density * 8;
+                for (let i = 0; i < innerPoints; i++) {
+                    const x = (Math.random() * 2 - 1) * 0.8;
+                    const y = (Math.random() * 2 - 1) * 0.8;
+                    const z = (Math.random() * 2 - 1) * 0.8;
+                    
+                    positions.push(x, y, z);
+                    originalPositions.push(x, y, z);
+                    colors.push(0.5, 0.5, 0.5);
+                    offsets.push(Math.random());
+                    sizes.push(0.5 + Math.random() * 0.7);
+                }
+                
+                const spherePoints = density * 6;
+                for (let i = 0; i < spherePoints; i++) {
+                    const theta = Math.random() * Math.PI * 2;
+                    const phi = Math.acos(2 * Math.random() - 1);
+                    const radius = 1.2 + Math.random() * 0.3;
+                    
+                    const x = radius * Math.sin(phi) * Math.cos(theta);
+                    const y = radius * Math.sin(phi) * Math.sin(theta);
+                    const z = radius * Math.cos(phi);
+                    
+                    positions.push(x, y, z);
+                    originalPositions.push(x, y, z);
+                    colors.push(0.5, 0.5, 0.5);
+                    offsets.push(Math.random());
+                    sizes.push(0.4 + Math.random() * 0.4);
+                }
+                
+                return {
+                    positions: positions,
+                    originalPositions: originalPositions,
+                    colors: colors,
+                    offsets: offsets,
+                    sizes: sizes,
+                    count: positions.length / 3
+                };
+            }
+            
+            function initBuffers(gl, density) {
+                const cubePoints = generatePointsOnCube(density);
+                
+                const positionBuffer = gl.createBuffer();
+                gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+                gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(cubePoints.positions), gl.STATIC_DRAW);
+                
+                const originalPositionBuffer = gl.createBuffer();
+                gl.bindBuffer(gl.ARRAY_BUFFER, originalPositionBuffer);
+                gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(cubePoints.originalPositions), gl.STATIC_DRAW);
+                
+                const colorBuffer = gl.createBuffer();
+                gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
+                gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(cubePoints.colors), gl.STATIC_DRAW);
+                
+                const offsetBuffer = gl.createBuffer();
+                gl.bindBuffer(gl.ARRAY_BUFFER, offsetBuffer);
+                gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(cubePoints.offsets), gl.STATIC_DRAW);
+                
+                const sizeBuffer = gl.createBuffer();
+                gl.bindBuffer(gl.ARRAY_BUFFER, sizeBuffer);
+                gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(cubePoints.sizes), gl.STATIC_DRAW);
+                
+                return {
+                    position: positionBuffer,
+                    originalPosition: originalPositionBuffer,
+                    color: colorBuffer,
+                    offset: offsetBuffer,
+                    size: sizeBuffer,
+                    count: cubePoints.count
+                };
+            }
+            
+            function drawScene(gl, programInfo, buffers, time, gravityTime, explosionTime, implosionTime, vortexTime, neonTime) {
+                gl.clearColor(0.0, 0.0, 0.02, 1.0);
+                gl.clearDepth(1.0);
+                gl.depthFunc(gl.LEQUAL);
+                
+                gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+                
+                const fieldOfView = 45 * Math.PI / 180;
+                const aspect = gl.canvas.clientWidth / gl.canvas.clientHeight;
+                const zNear = 0.1;
+                const zFar = 100.0;
+                const projectionMatrix = mat4.create();
+                
+                mat4.perspective(projectionMatrix, fieldOfView, aspect, zNear, zFar);
+                
+                const modelViewMatrix = mat4.create();
+                
+                mat4.translate(modelViewMatrix, modelViewMatrix, [0.0, 0.0, -5.0]);
+                
+                mat4.rotate(modelViewMatrix, modelViewMatrix, rotationX, [1, 0, 0]);
+                mat4.rotate(modelViewMatrix, modelViewMatrix, rotationY, [0, 1, 0]);
+                
+                if (!gravityMode && !explosionMode && !implosionMode && !vortexMode && !neonMode) {
+                    mat4.rotate(modelViewMatrix, modelViewMatrix, time * 0.2 * rotationSpeed, [0, 1, 0]);
+                    mat4.rotate(modelViewMatrix, modelViewMatrix, time * 0.1 * rotationSpeed, [1, 0, 0]);
+                    mat4.rotate(modelViewMatrix, modelViewMatrix, time * 0.05 * rotationSpeed, [0, 0, 1]);
+                }
+                
+                const numComponents = 3;
+                const type = gl.FLOAT;
+                const normalize = false;
+                const stride = 0;
+                const offset = 0;
+                
+                gl.bindBuffer(gl.ARRAY_BUFFER, buffers.position);
+                gl.vertexAttribPointer(
+                    programInfo.attribLocations.vertexPosition,
+                    numComponents,
+                    type,
+                    normalize,
+                    stride,
+                    offset
+                );
+                gl.enableVertexAttribArray(programInfo.attribLocations.vertexPosition);
+                
+                gl.bindBuffer(gl.ARRAY_BUFFER, buffers.originalPosition);
+                gl.vertexAttribPointer(
+                    programInfo.attribLocations.originalPosition,
+                    numComponents,
+                    type,
+                    normalize,
+                    stride,
+                    offset
+                );
+                gl.enableVertexAttribArray(programInfo.attribLocations.originalPosition);
+                
+                gl.bindBuffer(gl.ARRAY_BUFFER, buffers.color);
+                gl.vertexAttribPointer(
+                    programInfo.attribLocations.vertexColor,
+                    numComponents,
+                    type,
+                    normalize,
+                    stride,
+                    offset
+                );
+                gl.enableVertexAttribArray(programInfo.attribLocations.vertexColor);
+                
+                gl.bindBuffer(gl.ARRAY_BUFFER, buffers.offset);
+                gl.vertexAttribPointer(
+                    programInfo.attribLocations.pointOffset,
+                    1,
+                    type,
+                    normalize,
+                    stride,
+                    offset
+                );
+                gl.enableVertexAttribArray(programInfo.attribLocations.pointOffset);
+                
+                gl.bindBuffer(gl.ARRAY_BUFFER, buffers.size);
+                gl.vertexAttribPointer(
+                    programInfo.attribLocations.pointSize,
+                    1,
+                    type,
+                    normalize,
+                    stride,
+                    offset
+                );
+                gl.enableVertexAttribArray(programInfo.attribLocations.pointSize);
+                
+                gl.useProgram(programInfo.program);
+                
+                gl.uniformMatrix4fv(
+                    programInfo.uniformLocations.projectionMatrix,
+                    false,
+                    projectionMatrix
+                );
+                gl.uniformMatrix4fv(
+                    programInfo.uniformLocations.modelViewMatrix,
+                    false,
+                    modelViewMatrix
+                );
+                gl.uniform1f(
+                    programInfo.uniformLocations.time,
+                    time
+                );
+                
+                gl.uniform1f(
+                    programInfo.uniformLocations.basePointSize,
+                    particleSize
+                );
+                
+                gl.uniform1i(
+                    programInfo.uniformLocations.gravityMode,
+                    gravityMode ? 1 : 0
+                );
+                gl.uniform1f(
+                    programInfo.uniformLocations.gravityTime,
+                    gravityTime
+                );
+                
+                gl.uniform1i(
+                    programInfo.uniformLocations.explosionMode,
+                    explosionMode ? 1 : 0
+                );
+                gl.uniform1f(
+                    programInfo.uniformLocations.explosionTime,
+                    explosionTime
+                );
+                
+                gl.uniform1i(
+                    programInfo.uniformLocations.implosionMode,
+                    implosionMode ? 1 : 0
+                );
+                gl.uniform1f(
+                    programInfo.uniformLocations.implosionTime,
+                    implosionTime
+                );
+                
+                gl.uniform1i(
+                    programInfo.uniformLocations.vortexMode,
+                    vortexMode ? 1 : 0
+                );
+                gl.uniform1f(
+                    programInfo.uniformLocations.vortexTime,
+                    vortexTime
+                );
+                
+                gl.uniform1i(
+                    programInfo.uniformLocations.neonMode,
+                    neonMode ? 1 : 0
+                );
+                gl.uniform1f(
+                    programInfo.uniformLocations.neonTime,
+                    neonTime
+                );
+                
+                gl.uniform1f(
+                    programInfo.uniformLocations.rotationSpeed,
+                    rotationSpeed
+                );
+                gl.uniform1f(
+                    programInfo.uniformLocations.pulseSpeed,
+                    pulseSpeed
+                );
+                gl.uniform1f(
+                    programInfo.uniformLocations.pulseIntensity,
+                    pulseIntensity
+                );
+                gl.uniform1f(
+                    programInfo.uniformLocations.glowIntensity,
+                    glowIntensity
+                );
+                gl.uniform1f(
+                    programInfo.uniformLocations.colorSaturation,
+                    colorSaturation
+                );
+                gl.uniform1f(
+                    programInfo.uniformLocations.colorIntensity,
+                    colorIntensity
+                );
+                
+                gl.uniform3fv(
+                    programInfo.uniformLocations.primaryColor,
+                    primaryColor
+                );
+                gl.uniform3fv(
+                    programInfo.uniformLocations.secondaryColor,
+                    secondaryColor
+                );
+                gl.uniform3fv(
+                    programInfo.uniformLocations.accentColor,
+                    accentColor
+                );
+                
+                gl.drawArrays(gl.POINTS, 0, buffers.count);
+            }
+            
+            const vsSource = document.getElementById('vertexShader').textContent;
+            const fsSource = document.getElementById('fragmentShader').textContent;
+            
+            const shaderProgram = initShaderProgram(gl, vsSource, fsSource);
+            
+            if (!shaderProgram) {
+                return;
+            }
+            
+            const programInfo = {
+                program: shaderProgram,
+                attribLocations: {
+                    vertexPosition: gl.getAttribLocation(shaderProgram, 'aVertexPosition'),
+                    vertexColor: gl.getAttribLocation(shaderProgram, 'aVertexColor'),
+                    pointOffset: gl.getAttribLocation(shaderProgram, 'aPointOffset'),
+                    originalPosition: gl.getAttribLocation(shaderProgram, 'aOriginalPosition'),
+                    pointSize: gl.getAttribLocation(shaderProgram, 'aPointSize'),
+                },
+                uniformLocations: {
+                    projectionMatrix: gl.getUniformLocation(shaderProgram, 'uProjectionMatrix'),
+                    modelViewMatrix: gl.getUniformLocation(shaderProgram, 'uModelViewMatrix'),
+                    time: gl.getUniformLocation(shaderProgram, 'uTime'),
+                    basePointSize: gl.getUniformLocation(shaderProgram, 'uBasePointSize'),
+                    gravityMode: gl.getUniformLocation(shaderProgram, 'uGravityMode'),
+                    gravityTime: gl.getUniformLocation(shaderProgram, 'uGravityTime'),
+                    explosionMode: gl.getUniformLocation(shaderProgram, 'uExplosionMode'),
+                    explosionTime: gl.getUniformLocation(shaderProgram, 'uExplosionTime'),
+                    implosionMode: gl.getUniformLocation(shaderProgram, 'uImplosionMode'),
+                    implosionTime: gl.getUniformLocation(shaderProgram, 'uImplosionTime'),
+                    vortexMode: gl.getUniformLocation(shaderProgram, 'uVortexMode'),
+                    vortexTime: gl.getUniformLocation(shaderProgram, 'uVortexTime'),
+                    neonMode: gl.getUniformLocation(shaderProgram, 'uNeonMode'),
+                    neonTime: gl.getUniformLocation(shaderProgram, 'uNeonTime'),
+                    rotationSpeed: gl.getUniformLocation(shaderProgram, 'uRotationSpeed'),
+                    pulseSpeed: gl.getUniformLocation(shaderProgram, 'uPulseSpeed'),
+                    pulseIntensity: gl.getUniformLocation(shaderProgram, 'uPulseIntensity'),
+                    glowIntensity: gl.getUniformLocation(shaderProgram, 'uGlowIntensity'),
+                    colorSaturation: gl.getUniformLocation(shaderProgram, 'uColorSaturation'),
+                    colorIntensity: gl.getUniformLocation(shaderProgram, 'uColorIntensity'),
+                    primaryColor: gl.getUniformLocation(shaderProgram, 'uPrimaryColor'),
+                    secondaryColor: gl.getUniformLocation(shaderProgram, 'uSecondaryColor'),
+                    accentColor: gl.getUniformLocation(shaderProgram, 'uAccentColor'),
+                },
+            };
+            
+            buffers = initBuffers(gl, particleDensity);
+            
+            let startTime = Date.now();
+            function render() {
+                if (needsRebuild) {
+                    buffers = initBuffers(gl, particleDensity);
+                    needsRebuild = false;
+                }
+                
+                const currentTime = (Date.now() - startTime) / 1000;
+                
+                let gravityTime = 0;
+                if (gravityMode) {
+                    gravityTime = (Date.now() - gravityStartTime) / 1000;
+                }
+                
+                let explosionTime = 0;
+                if (explosionMode) {
+                    explosionTime = (Date.now() - explosionStartTime) / 1000;
+                }
+                
+                let implosionTime = 0;
+                if (implosionMode) {
+                    implosionTime = (Date.now() - implosionStartTime) / 1000;
+                }
+                
+                let vortexTime = 0;
+                if (vortexMode) {
+                    vortexTime = (Date.now() - vortexStartTime) / 1000;
+                }
+                
+                let neonTime = 0;
+                if (neonMode) {
+                    neonTime = (Date.now() - neonStartTime) / 1000;
+                }
+                
+                drawScene(gl, programInfo, buffers, currentTime, gravityTime, explosionTime, implosionTime, vortexTime, neonTime);
+                
+                requestAnimationFrame(render);
+            }
+            
+            requestAnimationFrame(render);
+        };
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
