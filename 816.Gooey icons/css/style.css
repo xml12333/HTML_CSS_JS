@@ -1,0 +1,87 @@
+/* Keyframe animations */
+@keyframes opacity-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes opacity-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes blur-in {
+  from {
+    filter: blur(10px);
+  }
+  to {
+    filter: blur(0);
+  }
+}
+
+@keyframes blur-out {
+  from {
+    filter: blur(0);
+  }
+  to {
+    filter: blur(10px);
+  }
+}
+
+/* Animation classes */
+.showing {
+  animation: opacity-in 150ms linear forwards, blur-in 400ms linear forwards;
+}
+
+.hiding {
+  animation: blur-out 400ms linear forwards,
+    opacity-out 150ms linear 300ms forwards;
+}
+/* Contrast effect for the first button */
+.contrast-button {
+  /* the 0.2px blur is "antialiasing" */
+
+  filter: contrast(200) blur(0.2px);
+}
+
+/* Hidden state for icons not currently animating */
+.hidden {
+  opacity: 0;
+  filter: blur(10px);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24rem;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon-container {
+  position: relative;
+  height: 7rem;
+  width: 7rem;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+}
