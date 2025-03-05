@@ -820,3 +820,4 @@
 |814| [Portal Effect](https://github.com/xml12333/HTML_CSS_JS/tree/main/814.Portal%20Effect)| [Demo](https://nikt.com.ua/projects/htmlCssJs/814.Portal%20Effect/)|
 |815| [Pixel Canvas](https://github.com/xml12333/HTML_CSS_JS/tree/main/815.Pixel%20Canvas)| [Demo](https://nikt.com.ua/projects/htmlCssJs/815.Pixel%20Canvas/)|
 |816| [Gooey icons](https://github.com/xml12333/HTML_CSS_JS/tree/main/816.Gooey%20icons)| [Demo](https://nikt.com.ua/projects/htmlCssJs/816.Gooey%20icons/)|
+|817| [Storage Widget](https://github.com/xml12333/HTML_CSS_JS/tree/main/817.Storage%20Widget)| [Demo](https://nikt.com.ua/projects/htmlCssJs/817.Storage%20Widget/)|
