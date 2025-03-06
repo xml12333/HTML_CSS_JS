@@ -1,0 +1,17 @@
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container{
+   max-width: 1120px;
+   margin-inline: 1.5rem;
+}
+
+.card{
+   &-yellow{
+      --hue: var(--yellow-color);
+   }
+   &-green{
+      --hue: var(--green-color)
+   }
+   &-pink{
+      --hue: var(--pink-color);
+   }
+}

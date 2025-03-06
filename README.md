@@ -821,3 +821,4 @@
 |815| [Pixel Canvas](https://github.com/xml12333/HTML_CSS_JS/tree/main/815.Pixel%20Canvas)| [Demo](https://nikt.com.ua/projects/htmlCssJs/815.Pixel%20Canvas/)|
 |816| [Gooey icons](https://github.com/xml12333/HTML_CSS_JS/tree/main/816.Gooey%20icons)| [Demo](https://nikt.com.ua/projects/htmlCssJs/816.Gooey%20icons/)|
 |817| [Storage Widget](https://github.com/xml12333/HTML_CSS_JS/tree/main/817.Storage%20Widget)| [Demo](https://nikt.com.ua/projects/htmlCssJs/817.Storage%20Widget/)|
+|818| [Clip-path Card](https://github.com/xml12333/HTML_CSS_JS/tree/main/818.Clip-path%20Card)| [Demo](https://nikt.com.ua/projects/htmlCssJs/818.Clip-path%20Card/)|

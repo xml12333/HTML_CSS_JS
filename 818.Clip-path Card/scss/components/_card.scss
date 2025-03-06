@@ -1,0 +1,154 @@
+/*=============== CARD ===============*/
+.card{
+   position: relative;
+   padding-block: 5rem;
+   
+   &__bg,
+   &__blur{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+   }
+   &__bg{
+      object-fit: cover;
+      object-position: center;
+   }
+   &__blur{
+      backdrop-filter: blur(24px);
+   }
+   &__container{
+      position: relative;
+      display: grid;
+      grid-template-columns: 260px;
+      justify-content: center;
+      gap: 2rem;
+   }
+   &__article{
+      position: relative;
+      border-radius: 2rem;
+      overflow: hidden;
+   }
+   &__img{
+      border-radius: 2rem;
+      transition: transform .4s;
+   }
+   &__shadow{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, 
+                hsla(0, 0%, 0%, 0) 70%, 
+                hsl(0, 0%, 0%) 100%);
+   }
+   &__data{
+      color: var(--white-color);
+      position: absolute;
+      left: 1.5rem;
+      bottom: 2rem;
+   }
+   &__name{
+      font-size: var(--big-font-size);
+      margin-bottom: .25rem;
+   }
+   &__profession{
+      display: block;
+      font-size: var(--small-font-size);
+   }
+   &__clip{
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: hsl(var(--hue), 90%, 50%);
+      box-shadow: 0 0 16px 4px hsl(var(--hue), 90%, 50%);
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      color: var(--black-color);
+      z-index: 5;
+      cursor: pointer;
+      transition: transform .4s;
+   }
+   &__article:hover .card__img{
+      transform: scale(1.1);
+   }
+}
+
+/*=============== CARD INFO ===============*/
+.info{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: hsla(0, 0%, 0%, .1);
+   backdrop-filter: blur(12px);
+   padding: 3rem 1.5rem 1.5rem;
+   color: var(--white-color);
+   clip-path: circle(8px at 88% 9%);
+   transition: clip-path .5s ease-in-out;
+
+   &__name{
+      font-size: var(--biggest-font-size);
+      margin-bottom: .5rem;
+   }
+   &__description{
+      font-size: var(--small-font-size);
+      margin-bottom: 1rem;
+   }
+   &__button{
+      display: inline-flex;
+      background-color: hsl(var(--hue), 90%, 50%);
+      box-shadow: 0 0 12px hsl(var(--hue), 90%, 50%);
+      padding: .5rem .75rem;
+      border-radius: .5rem;
+      color: var(--black-color);
+      font-size: var(--small-font-size);
+      font-weight: var(--font-semi-bold);
+      transition: box-shadow .4s;
+
+      &:hover{
+         box-shadow: 0 0 20px hsl(var(--hue), 90%, 50%);
+      }
+   }
+   &__social{
+      position: absolute;
+      left: 1.5rem;
+      bottom: 1.5rem;
+      display: flex;
+      column-gap: .5rem;
+   }
+   &__link{
+      background-color: hsl(var(--hue), 90%, 50%);
+      box-shadow: 0 0 12px hsl(var(--hue), 90%, 50%);
+      width: 2rem;
+      height: 2rem;
+      border-radius: .75rem;
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      color: var(--black-color);
+      transition: transform .4s;
+
+      &:hover{
+         transform: translateY(-.25rem);
+      }
+   }
+}
+
+/* Rotate icon */
+.card__article:hover .card__clip{
+   transform: rotate(-45deg);
+}
+
+/* Clip path animation */
+.info:hover,
+.card__clip:hover ~ .info{
+   clip-path: circle(100%);
+}

@@ -1,0 +1,316 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;600;700&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  /* 
+      For more colors visit: https://htmlcolorcodes.com/
+      -> Choose any color 
+      -> Copy the color mode (HSL)
+  */
+  --yellow-color: 52;
+  --green-color: 116;
+  --pink-color: 300;
+  --white-color: hsl(0, 0%, 100%);
+  --black-color: hsl(0, 0%, 0%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat Alternates", serif;
+  --biggest-font-size: 2rem;
+  --big-font-size: 1.5rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --biggest-font-size: 3rem;
+    --big-font-size: 2.5rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.card-yellow {
+  --hue: var(--yellow-color);
+}
+
+.card-green {
+  --hue: var(--green-color) ;
+}
+
+.card-pink {
+  --hue: var(--pink-color);
+}
+
+/*=============== CARD ===============*/
+.card {
+  position: relative;
+  padding-block: 5rem;
+}
+
+.card__bg, 
+.card__blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card__bg {
+  object-fit: cover;
+  object-position: center;
+}
+
+.card__blur {
+  backdrop-filter: blur(24px);
+}
+
+.card__container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 260px;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.card__article {
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.card__img {
+  border-radius: 2rem;
+  transition: transform .4s;
+}
+
+.card__shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, 
+            hsla(0, 0%, 0%, 0) 70%, 
+            hsl(0, 0%, 0%) 100%);
+}
+
+.card__data {
+  color: var(--white-color);
+  position: absolute;
+  left: 1.5rem;
+  bottom: 2rem;
+}
+
+.card__name {
+  font-size: var(--big-font-size);
+  margin-bottom: .25rem;
+}
+
+.card__profession {
+  display: block;
+  font-size: var(--small-font-size);
+}
+
+.card__clip {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: hsl(var(--hue), 90%, 50%);
+  box-shadow: 0 0 16px 4px hsl(var(--hue), 90%, 50%);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  color: var(--black-color);
+  z-index: 5;
+  cursor: pointer;
+  transition: transform .4s;
+}
+
+.card__article:hover .card__img {
+  transform: scale(1.1);
+}
+
+/*=============== CARD INFO ===============*/
+.info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(0, 0%, 0%, .1);
+  backdrop-filter: blur(12px);
+  padding: 3rem 1.5rem 1.5rem;
+  color: var(--white-color);
+  clip-path: circle(8px at 88% 9%);
+  transition: clip-path .5s ease-in-out;
+}
+
+.info__name {
+  font-size: var(--biggest-font-size);
+  margin-bottom: .5rem;
+}
+
+.info__description {
+  font-size: var(--small-font-size);
+  margin-bottom: 1rem;
+}
+
+.info__button {
+  display: inline-flex;
+  background-color: hsl(var(--hue), 90%, 50%);
+  box-shadow: 0 0 12px hsl(var(--hue), 90%, 50%);
+  padding: .5rem .75rem;
+  border-radius: .5rem;
+  color: var(--black-color);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  transition: box-shadow .4s;
+}
+
+.info__button:hover {
+  box-shadow: 0 0 20px hsl(var(--hue), 90%, 50%);
+}
+
+.info__social {
+  position: absolute;
+  left: 1.5rem;
+  bottom: 1.5rem;
+  display: flex;
+  column-gap: .5rem;
+}
+
+.info__link {
+  background-color: hsl(var(--hue), 90%, 50%);
+  box-shadow: 0 0 12px hsl(var(--hue), 90%, 50%);
+  width: 2rem;
+  height: 2rem;
+  border-radius: .75rem;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  color: var(--black-color);
+  transition: transform .4s;
+}
+
+.info__link:hover {
+  transform: translateY(-.25rem);
+}
+
+/* Rotate icon */
+.card__article:hover .card__clip {
+  transform: rotate(-45deg);
+}
+
+/* Clip path animation */
+.info:hover,
+.card__clip:hover ~ .info {
+  clip-path: circle(100%);
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 320px) {
+  .container {
+    margin-inline: 1rem;
+  }
+
+  .card__container {
+    grid-template-columns: 1fr;
+  }
+
+  .info {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 768px) {
+  .card__container {
+    grid-template-columns: repeat(2, 260px);
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1150px) {
+  .card {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+  }
+  .card__container {
+    grid-template-columns: repeat(3, 340px);
+  }
+  .card__article, 
+  .card__img {
+    border-radius: 3rem;
+  }
+  .card__data {
+    left: 2rem;
+    bottom: 3rem;
+  }
+  .card__profession {
+    font-size: var(--normal-font-size);
+  }
+  .card__clip {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .info {
+    padding: 4rem 2rem 2.5rem;
+  }
+  .info__description, 
+  .info__button {
+    font-size: var(--normal-font-size);
+  }
+  .info__description {
+    margin-bottom: 1.5rem;
+  }
+  .info__social {
+    left: 2rem;
+    bottom: 2.5rem;
+    column-gap: .75rem;
+  }
+}
