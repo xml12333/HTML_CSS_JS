@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body,
+html {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	font-family: "Roboto", sans-serif;
+}
+canvas {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+#controls {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+}
+.btn {
+	background-color: rgba(0, 0, 0, 0.4);
+	border: none;
+	color: rgba(255, 255, 255, 0.4);
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 2px 2px;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: background-color 0.3s;
+}
+.btn:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+	color: rgba(255, 255, 0, 1);
+}
+#fullscreenBtn {
+	font-size: 20px;
+}
+
+#settingsPanel {
+	position: fixed;
+	top: 60px;
+	left: 10px;
+	background-color: rgba(0, 0, 0, 0.6);
+	color: white;
+	padding: 15px;
+	border-radius: 10px;
+	max-width: 300px;
+	z-index: 100;
+	transition: transform 0.3s ease-in-out;
+	transform: translateX(-120%);
+}
+
+#settingsPanel.visible {
+	transform: translateX(0);
+}
+
+.slider-group {
+	margin-bottom: 10px;
+}
+
+.slider-group label {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 5px;
+}
+
+.slider-group input[type="range"] {
+	width: 100%;
+}
+
+.panel-actions {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 15px;
+}
+
+.panel-actions .btn {
+	flex-grow: 1;
+	margin: 0 5px;
+}

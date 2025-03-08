@@ -823,3 +823,4 @@
 |817| [Storage Widget](https://github.com/xml12333/HTML_CSS_JS/tree/main/817.Storage%20Widget)| [Demo](https://nikt.com.ua/projects/htmlCssJs/817.Storage%20Widget/)|
 |818| [Clip-path Card](https://github.com/xml12333/HTML_CSS_JS/tree/main/818.Clip-path%20Card)| [Demo](https://nikt.com.ua/projects/htmlCssJs/818.Clip-path%20Card/)|
 |819| [Explosive Map](https://github.com/xml12333/HTML_CSS_JS/tree/main/819.Explosive%20Map)| [Demo](https://nikt.com.ua/projects/htmlCssJs/819.Explosive%20Map/)|
+|820| [Seaspas](https://github.com/xml12333/HTML_CSS_JS/tree/main/820.Seaspas)| [Demo](https://nikt.com.ua/projects/htmlCssJs/820.Seaspas/)|
