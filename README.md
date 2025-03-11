@@ -826,3 +826,4 @@
 |820| [Seaspas](https://github.com/xml12333/HTML_CSS_JS/tree/main/820.Seaspas)| [Demo](https://nikt.com.ua/projects/htmlCssJs/820.Seaspas/)|
 |821| [US Visited Map](https://github.com/xml12333/HTML_CSS_JS/tree/main/821.US%20Visited%20Map)| [Demo](https://nikt.com.ua/projects/htmlCssJs/821.US%20Visited%20Map/)|
 |822| [Matrix Rain](https://github.com/xml12333/HTML_CSS_JS/tree/main/822.Matrix%20Rain)| [Demo](https://nikt.com.ua/projects/htmlCssJs/822.Matrix%20Rain/)|
+|823| [Gooey Nav](https://github.com/xml12333/HTML_CSS_JS/tree/main/823.Gooey%20Nav)| [Demo](https://nikt.com.ua/projects/htmlCssJs/823.Gooey%20Nav/)|

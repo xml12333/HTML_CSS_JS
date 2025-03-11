@@ -1,0 +1,375 @@
+/* Navigation styling with glassmorphism effect */
+nav {
+  display: flex;
+  position: relative;
+  transform: translate3d(0, 0, 0.01px);
+  opacity: 0.999;
+  background: hsl(205deg 0% 0% / 0.1);
+  -webkit-backdrop-filter: blur(9px) brightness(1.1);
+          backdrop-filter: blur(9px) brightness(1.1);
+  border-radius: 100vw;
+  padding: 0.4em;
+  box-shadow: 
+    0 4px 20px hsl(205deg 50% 30% / 0.15),
+    0 4px 10px hsl(205deg 30% 10% / 0.075),
+    inset 0 -4px 15px 6px hsl(205deg 70% 90% / 0.2),
+    inset 0 -2px 5px hsl(205deg 70% 90% / 0.15),
+    inset 0 -1px 1px hsl(205deg 70% 90% / 0.4),
+    inset 0 10px 15px hsl(205deg 30% 10% / 0.2),
+    inset 0 1px 2px hsl(205deg 70% 90% / 0.3);
+}
+
+/* First noise texture layer */
+nav:before {
+  content: "";
+  inset: 0;
+  position: absolute;
+  -webkit-mask-image: url(https://assets.codepen.io/13471/nnnoise%281%29.png);
+          mask-image: url(https://assets.codepen.io/13471/nnnoise%281%29.png);
+  mask-mode: luminance;
+  -webkit-mask-repeat: repeat;
+          mask-repeat: repeat;
+  -webkit-mask-size: 55%;
+          mask-size: 55%;
+  border-radius: 100vw;
+  z-index: 1;
+  -webkit-backdrop-filter: blur(7px) brightness(1.05);
+          backdrop-filter: blur(7px) brightness(1.05);
+  background: hsl(205deg 0% 100% / 0.1);
+}
+
+/* Second noise texture layer */
+nav:after {
+  content: "";
+  inset: 0;
+  position: absolute;
+  -webkit-mask-image: url(https://assets.codepen.io/13471/nnnoise%281%29.png);
+          mask-image: url(https://assets.codepen.io/13471/nnnoise%281%29.png);
+  mask-mode: luminance;
+  -webkit-mask-size: 50%;
+          mask-size: 50%;
+  -webkit-mask-repeat: repeat;
+          mask-repeat: repeat;
+  border-radius: 100vw;
+  z-index: 2;
+  -webkit-backdrop-filter: blur(5px) brightness(0.95);
+          backdrop-filter: blur(5px) brightness(0.95);
+  box-shadow: 
+    inset 0 -4px 15px 5px hsl(205deg 70% 90% / 0.3),
+    inset 0 -2px 5px hsl(205deg 70% 90% / 0.15),
+    inset 0 -1px 1px hsl(205deg 70% 90% / 0.4),
+    inset 0 1px 2px hsl(205deg 70% 90% / 0.3);
+  background: hsl(205deg 0% 20% / 0.05);
+}
+
+/* Navigation list styling */
+nav ul {
+  display: flex;
+  gap: 5em;
+  list-style: none;
+  padding: 0 1em;
+  margin: 0;
+  position: relative;
+  z-index: 3;
+  color: white;
+  text-shadow: 0 1px 1px hsl(205deg 30% 10% / 0.2);
+}
+
+/* Navigation list items */
+nav ul li {
+  padding: 0.6em 1em;
+  border-radius: 100vw;
+  position: relative;
+  transition: all 1.8s var(--linear-ease) 0.2s, box-shadow 0.3s ease;
+  color: white;
+  cursor: pointer;
+    box-shadow:0 0 0.5px 1.5px transparent;
+    &:focus-within:has(:focus-visible) {
+        box-shadow:0 0 0.5px 1.5px white;
+    }
+}
+
+/* Pill background for list items */
+nav ul li:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 100vw;
+  background: white;
+  opacity: 0;
+  scale: 0;
+  transition: all 2s var(--linear-ease) 0.2s;
+  z-index: -1;
+}
+
+/* Active state for list items */
+nav ul li.active {
+  color: black;
+  text-shadow: none;
+}
+
+nav ul li.active:after {
+  opacity: 1;
+  scale: 1;
+}
+
+/* Effect element for animations */
+.effect {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 0px;
+  height: 0px;
+  opacity: 1;
+  pointer-events: none;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+}
+
+/* Text effect styling */
+.effect.text {
+  color: white;
+  z-index: 1;
+  transition: color 0s ease;
+}
+
+.effect.text.active {
+  color: black;
+  transition: color 1.8s var(--linear-ease) 0.2s;
+}
+
+/* Filter effect styling */
+.effect.filter {
+  filter: blur(7px) contrast(20) blur(0);
+  mix-blend-mode: lighten;
+  position: absolute;
+}
+
+.effect.filter::before {
+  content: "";
+  position: absolute;
+  inset: -75px;
+  z-index: -2;
+  background: black;
+}
+
+.effect.filter::after {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  background: white;
+  scale: 0;
+  opacity: 0;
+  z-index: -1;
+  border-radius: 100vw;
+}
+
+/* Active effect animation */
+.effect.active:after {
+  -webkit-animation: pill 2s var(--linear-ease) 0.2s both;
+          animation: pill 2s var(--linear-ease) 0.2s both;
+}
+
+/* Particle container */
+.particles {
+  position: absolute;
+  inset: 0;
+  transform: translate3d(0, 0, 0px);
+}
+
+/* Particle elements */
+.particle, .point {
+  display: block;
+  opacity: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  transform-origin: center;
+}
+
+.particle {
+  --time: 5s;
+  opacity: 0;
+  position: absolute;
+  top: calc(50% - 8px);
+  left: calc(50% - 8px);
+  -webkit-animation: particle calc(var(--time)) ease 1 -350ms;
+          animation: particle calc(var(--time)) ease 1 -350ms;
+}
+
+.point {
+  background: var(--color);
+  opacity: 1;
+  -webkit-animation: point calc(var(--time)) ease 1 -350ms;
+          animation: point calc(var(--time)) ease 1 -350ms;
+}
+
+/* Animation keyframes */
+@-webkit-keyframes particle {
+  0% {
+    transform: rotate(0deg) translate(calc(var(--start-x) * 1), calc(var(--start-y) * 1));
+    opacity: 1;
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+            animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+  70% {
+    transform: rotate(calc(var(--rotate) * 0.5)) translate(calc(var(--end-x) * 1.2), calc(var(--end-y) * 1.2));
+    opacity: 1;
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+  }
+  85% {
+    transform: rotate(calc(var(--rotate) * 0.66)) translate(calc(var(--end-x) * 1), calc(var(--end-y) * 1));
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(calc(var(--rotate) * 1.2)) translate(calc(var(--end-x) * 0.5), calc(var(--end-y) * 0.5));
+    opacity: 1;
+  }
+}
+@keyframes particle {
+  0% {
+    transform: rotate(0deg) translate(calc(var(--start-x) * 1), calc(var(--start-y) * 1));
+    opacity: 1;
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+            animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+  70% {
+    transform: rotate(calc(var(--rotate) * 0.5)) translate(calc(var(--end-x) * 1.2), calc(var(--end-y) * 1.2));
+    opacity: 1;
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+  }
+  85% {
+    transform: rotate(calc(var(--rotate) * 0.66)) translate(calc(var(--end-x) * 1), calc(var(--end-y) * 1));
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(calc(var(--rotate) * 1.2)) translate(calc(var(--end-x) * 0.5), calc(var(--end-y) * 0.5));
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes point {
+  0% {
+    scale: 0;
+    opacity: 0;
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+            animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+  25% {
+    scale: calc(var(--scale) * 0.25);
+  }
+  38% {
+    opacity: 1;
+  }
+  65% {
+    scale: var(--scale);
+    opacity: 1;
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+  }
+  85% {
+    scale: var(--scale);
+    opacity: 1;
+  }
+  100% {
+    scale: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes point {
+  0% {
+    scale: 0;
+    opacity: 0;
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+            animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+  25% {
+    scale: calc(var(--scale) * 0.25);
+  }
+  38% {
+    opacity: 1;
+  }
+  65% {
+    scale: var(--scale);
+    opacity: 1;
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+  }
+  85% {
+    scale: var(--scale);
+    opacity: 1;
+  }
+  100% {
+    scale: 0;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes pill {
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes pill {
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes pillOff {
+  from {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes pillOff {
+  from {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+/* Custom animation easing function */
+:root {
+  --linear-ease: linear(0, 0.068, 0.19 2.7%, 0.804 8.1%, 1.037, 1.199 13.2%, 1.245, 1.27 15.8%, 1.274, 1.272 17.4%, 1.249 19.1%, 0.996 28%, 0.949, 0.928 33.3%, 0.926, 0.933 36.8%, 1.001 45.6%, 1.013, 1.019 50.8%, 1.018 54.4%, 1 63.1%, 0.995 68%, 1.001 85%, 1);
+}
+
+/* Document setup */
+body, html, #app {
+  height: 100%;
+}
+
+#app {
+    font-size: 20px;
+  display: grid;
+    grid-template-rows: 1fr 2fr 0.5fr;
+  place-items: center;
+  background-image: url(https://images.pexels.com/photos/2387532/pexels-photo-2387532.jpeg?auto=compress&cs=tinysrgb&w=1800&dpr=2);
+    background-size: cover;
+}
+
+#app {
+    & a, & a:hover, & a:active, & a:focus {
+        color: inherit;
+        outline: none;
+    }
+}
+
+h1 {
+    color: white;
+    text-shadow: 0 1px 1px hsla(205deg,0%,20%,0.25),  0 2px 4px hsla(205deg,20%,20%,0.5),  0 3px 8px hsla(205deg,5%,5%,0.5),  0 4px 16px hsla(205deg,5%,5%,0.5),  0 0px 32px hsla(205deg,5%,5%,0.5),  0 0px 32px hsla(205deg,5%,5%,0.5);
+}
