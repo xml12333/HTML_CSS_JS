@@ -1,0 +1,68 @@
+body {
+  height: 100dvh;
+  overflow: hidden;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  align-items: space-between;
+  background: cornsilk;
+}
+
+.settings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5em;
+  font-size: 1.2em;
+  font-family: monospace;
+  font-variant: small-caps;
+  letter-spacing: .05em;
+}
+
+.source {
+  font-style: italic;
+  color: peru;
+}
+
+.world {
+  --size: 100dvmin;
+  --bands: 150;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  -webkit-clip-path: circle();
+          clip-path: circle();
+}
+
+.world::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: cornsilk;
+  opacity: .5;
+  mix-blend-mode: color;
+}
+
+.band {
+  --latitude: calc(sin(PI / var(--bands) * var(--i)));
+  --width: calc(var(--size) * var(--latitude));
+  width: var(--width);
+  height: calc(var(--size) / var(--bands) * var(--latitude));
+  background: url(https://assets.codepen.io/25387/Gall_Stereographic_projection_SW_centered.jpg) 50% fixed;
+  background-size: var(--width) 67%;
+  -webkit-animation: spin 5s linear infinite;
+          animation: spin 5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  100% {
+    background-position-x: calc(50% + var(--width));
+  }
+}
+
+@keyframes spin {
+  100% {
+    background-position-x: calc(50% + var(--width));
+  }
+}
