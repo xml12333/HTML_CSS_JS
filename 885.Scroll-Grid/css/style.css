@@ -1,0 +1,73 @@
+body {
+  font-family: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
+  font-weight: normal;
+  height: 100dvh;
+  margin: 0;
+  scrollbar-color: #0003 #0001;
+  scrollbar-width: thin;
+  width: 100vw;
+}
+
+.ui-scroll-grid {
+  container-type: inline-size;
+  height: 100dvh;
+  list-style-type: none;
+  margin: 0;
+  overflow: clip auto;
+  padding: 0;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  width: 100vw;
+
+  ol {
+    display: flex;
+    list-style-type: none;
+    overflow: auto clip;
+    padding: 0;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+  }
+
+  li {
+    background: var(--bg);
+    box-sizing: border-box;
+    color: #FFFD;
+    display: grid;
+    flex: 0 0 calc(100vw - 1rem);
+    font-size: 7.5cqi;
+    height: 100dvh;
+    padding-inline: 1rem;
+    place-content: center;
+    scroll-snap-align: start;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  & > li {
+    &:nth-of-type(1) { --bg: #123; }
+    &:nth-of-type(2) { --bg: #187; }
+    &:nth-of-type(3) { --bg: #C90; }
+    &:nth-of-type(4) { --bg: #D32; }
+    &:nth-of-type(5) { --bg: #594; }
+  }
+}
+
+.ui-scroll-grid-nav {
+  bottom: 2rem;
+  display: grid;
+  gap: .25rem;
+  grid-template-columns: repeat(5, 1fr);
+  position: fixed;
+  right: 2rem;
+
+  a {
+    aspect-ratio: 1;
+    background-color: #FFFD;
+    border-radius: 50%;
+    display: block;
+    width: .5rem;
+    &.active {
+      background-color: #0EF;
+    }
+  }
+}
