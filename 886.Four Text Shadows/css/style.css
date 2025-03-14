@@ -1,0 +1,45 @@
+body{
+  background-color:#fff8f8;
+  margin: 100px;
+  padding: 0px;
+}
+.space{
+  display: inline-block;
+  width: 20px;
+}
+.container{
+}
+
+.title{
+  display: inline;
+  font-size: 120px;
+  font-family: Helvetica;
+  color:#0000;
+  padding: 0px;
+  margin: 0px;
+  animation: blur-anime 2s ease-in-out infinite;
+}
+:root {
+  --d: 1s;
+  --c: #3119;
+  --f: #311e;
+  --n: 80px;
+}
+.delay1{animation-delay: 0.2s;}
+.delay2{animation-delay: 0.4s;}
+.delay3{animation-delay: 0.6s;}
+.delay4{animation-delay: 0.8s;}
+.delay5{animation-delay: 1.0s;}
+.delay6{animation-delay: 1.2s;}
+.delay7{animation-delay: 1.4s;}
+.delay8{animation-delay: 1.6s;}
+.delay9{animation-delay: 1.8s;}
+.delay0{animation-delay: 0.0s;}
+
+
+
+@keyframes blur-anime {
+  0%, 60%, 100%  {text-shadow: 0px 0px 0px var(--c),0px 0px 0px var(--c),0px 0px 0px var(--c),0px 0px 0px var(--c);}
+  30%  {text-shadow: 0px calc(var(--n)) 0px var(--f),0px calc(-1*var(--n)) 0px var(--f),calc(var(--n)) 0px 0px var(--f),calc(-1*var(--n)) 0px 0px var(--f);
+  }
+}
