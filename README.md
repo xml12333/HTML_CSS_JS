@@ -832,3 +832,4 @@
 |886| [Four Text Shadows](https://github.com/xml12333/HTML_CSS_JS/tree/main/886.Four%20Text%20Shadows)| [Demo](https://nikt.com.ua/projects/htmlCssJs/886.Four%20Text%20Shadows/)|
 |887| [Pi-chart](https://github.com/xml12333/HTML_CSS_JS/tree/main/887.Pi-chart)| [Demo](https://nikt.com.ua/projects/htmlCssJs/887.Pi-chart/)|
 |888| [Microchip Loader](https://github.com/xml12333/HTML_CSS_JS/tree/main/888.Microchip%20Loader)| [Demo](https://nikt.com.ua/projects/htmlCssJs/888.Microchip%20Loader/)|
+|889| [Rose Equations](https://github.com/xml12333/HTML_CSS_JS/tree/main/889.Rose%20Equations)| [Demo](https://nikt.com.ua/projects/htmlCssJs/889.Rose%20Equations/)|
