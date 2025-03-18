@@ -1,0 +1,93 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+html {
+  background: #00050A;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+canvas,
+#pointer-detector {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+canvas {
+  border: solid 1.5px white;
+  box-shadow: #FFF4 0 0 30px;
+}
+#can-1 {
+  z-index: 10;
+}
+#vinyl-hole {
+  z-index: 20;
+  border: solid 1.5px white;
+  box-shadow: #FFF4 0 0 30px inset;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: none;
+}
+#pointer-detector {
+  z-index: 30;
+}
+#ui {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 0 20px;
+}
+
+/* Switch UI element */
+.knob {
+	border-radius: 50%;
+	background: white;
+	width: calc(var(--thickness) - 2 * var(--padding));
+	height: calc(var(--thickness) - 2 * var(--padding));
+	position: absolute;
+	box-shadow: rgba(0, 0, 0, .5) 0 0 calc(var(--thickness) / 5);
+	transition: all 300ms;
+	transform: translate(-50%, -50%);
+}
+.switch {
+  --radius: 20px;
+  --thickness: 30px;
+	--offset: 0px;
+  --padding: 5px;
+  --size: calc(2 * var(--radius) + 2 * var(--thickness) / 2);
+  
+	height: var(--size);
+	width: var(--size);
+	position: relative;
+	cursor: pointer;
+}
+.switch.state-1 .knob {
+	left: calc(var(--size) / 2 - var(--radius));
+	top: calc(var(--size) / 2 + var(--offset));
+}
+.switch.state-2 .knob {
+	left: calc(var(--size) / 2 + var(--radius));
+	top: calc(var(--size) / 2 + var(--offset));
+}
+.switch-segment {
+	position: absolute;
+	transform-origin: calc(var(--thickness) / 2) calc(var(--thickness) / 2);
+	height: var(--thickness);
+	width: calc(2 * var(--radius) + 2 * (var(--thickness) / 2));
+	border-radius: calc(var(--thickness) / 2);
+  transform: translate(calc(var(--size) / 2 - var(--thickness) / 2 - var(--radius)), calc(var(--size) / 2 - var(--thickness) / 2 + var(--offset))) rotate(0deg);
+  transition: background-color 150ms;
+}
