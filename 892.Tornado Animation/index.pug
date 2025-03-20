@@ -1,0 +1,26 @@
+- var depth = 26;
+mixin nestedElmt(index)
+	i
+		if index > 1
+			+nestedElmt(index - 1)
+
+main
+	+nestedElmt(depth)
+	span
+	span
+	span
+	span
+	span
+	span
+	span
+	span
+	span
+	span
+	span
+	span
+	.gust
+	.gust
+	.gust
+	.gust.gust--2
+	.gust.gust--2
+	.gust.gust--2
