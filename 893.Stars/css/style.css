@@ -1,0 +1,123 @@
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+:root {
+  --blackberry: #1e1f2a;
+  --wisteria: #c79de2;
+  --bubblegum: #fca8ce;
+  --lemon-drop: #fecb40;
+  --grass: #99c868;
+  --serene-sea: #60c5dd;
+  --stars: 8;
+}
+
+.block {
+  --angle: 0;
+  --sz: clamp(320px, 50vw, 50rem);
+  --angle-offset: calc(360 / var(--stars) * 1deg);
+  margin: auto;
+  width: var(--sz);
+  aspect-ratio: 1/1;
+  position: relative;
+  place-content: center;
+}
+
+.origin {
+  --sz: clamp(1rem, 10vw, 50rem);
+  --r: calc(var(--sz) * 1.25);
+  width: var(--sz);
+  margin: auto;
+  aspect-ratio: 1;
+  position: relative;
+}
+
+.star {
+  --s-angle: calc(var(--angle-offset) * var(--i));
+  --d: calc(var(--sz) / 2);
+  --x: calc(var(--r) * cos(calc(var(--s-angle) + var(--angle))));
+  --y: calc(var(--r) * sin(calc(var(--s-angle) + var(--angle))));
+  --shadow-offset: calc(var(--d) / 4);
+  position: absolute;
+  top: calc(var(--d) / 2);
+  left: calc(var(--d) / 2);
+  background-color: var(--bg-color);
+  width: var(--d);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+          clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  transform: translate(var(--x), var(--y)) rotate(calc(var(--angle) * -1));
+  -webkit-animation: rotate 6s infinite linear;
+          animation: rotate 6s infinite linear;
+  will-change: transform;
+  box-shadow: var(--left-shad-color) var(--shadow-offset) var(--shadow-offset) inset, var(--right-shad-color) calc(var(--shadow-offset) * -1) calc(var(--shadow-offset) * -1) inset;
+}
+
+@-webkit-keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+/* page styles/setup */
+.star:nth-child(1) {
+  --bg-color: var(--lemon-drop);
+  --left-shad-color: var(--bubblegum);
+  --right-shad-color: var(--grass);
+}
+
+.star:nth-child(2) {
+  --bg-color: var(--wisteria);
+  --left-shad-color: var(--lemon-drop);
+  --right-shad-color: var(--serene-sea);
+}
+
+.star:nth-child(3) {
+  --bg-color: var(--lemon-drop);
+  --left-shad-color: var(--bubblegum);
+  --right-shad-color: var(--grass);
+}
+
+.star:nth-child(4) {
+  --bg-color: var(--wisteria);
+  --left-shad-color: var(--lemon-drop);
+  --right-shad-color: var(--serene-sea);
+}
+
+.star:nth-child(5) {
+  --bg-color: var(--lemon-drop);
+  --left-shad-color: var(--bubblegum);
+  --right-shad-color: var(--grass);
+}
+
+.star:nth-child(6) {
+  --bg-color: var(--wisteria);
+  --left-shad-color: var(--lemon-drop);
+  --right-shad-color: var(--serene-sea);
+}
+
+.star:nth-child(7) {
+  --bg-color: var(--lemon-drop);
+  --left-shad-color: var(--bubblegum);
+  --right-shad-color: var(--grass);
+}
+
+.star:nth-child(8) {
+  --bg-color: var(--wisteria);
+  --left-shad-color: var(--lemon-drop);
+  --right-shad-color: var(--serene-sea);
+}
+
+body {
+  min-height: 100svh;
+  display: flex;
+  place-items: center;
+  background-color: var(--blackberry);
+}
