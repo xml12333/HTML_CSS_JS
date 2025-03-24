@@ -839,3 +839,4 @@
 |893| [Stars](https://github.com/xml12333/HTML_CSS_JS/tree/main/893.Stars)| [Demo](https://nikt.com.ua/projects/htmlCssJs/893.Stars/)|
 |894| [Hacker Text Generator](https://github.com/xml12333/HTML_CSS_JS/tree/main/894.Hacker%20Text%20Generator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/894.Hacker%20Text%20Generator/)|
 |895| [Pointer Position Animation](https://github.com/xml12333/HTML_CSS_JS/tree/main/895.Pointer%20Position%20Animation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/895.Pointer%20Position%20Animation/)|
+|896| [Logo Marquee](https://github.com/xml12333/HTML_CSS_JS/tree/main/896.Logo%20Marquee)| [Demo](https://nikt.com.ua/projects/htmlCssJs/896.Logo%20Marquee/)|

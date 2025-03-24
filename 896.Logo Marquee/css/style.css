@@ -1,0 +1,284 @@
+@import url('https://unpkg.com/normalize.css') layer(normalize);
+
+@layer normalize, base, demo, loops, explode;
+
+@layer explode {
+  main,
+  ul:first-of-type {
+    transform-style: preserve-3d;
+  }
+  ul {
+    transition: opacity 0.5s 1.5s;
+  }
+  [data-marker] {
+    outline: 2px dashed hsl(0 100% 50% / 0.8);
+    opacity: 0;
+    outline-offset: 2px;
+  }
+  [data-explode='false'] {
+    main {
+      transition: transform 0.5s 0.5s;
+    }
+    [data-logo],
+    [data-marker] {
+      transition: opacity 0.5s, transform 0.5s;
+    }
+    main ul:first-of-type {
+      transition: translate 0.5s 1s;
+    }
+  }
+
+  [data-explode='true'] {
+    /* transitions */
+    main {
+      transition: transform 0.5s 1s;
+    }
+    [data-logo],
+    [data-marker] {
+      transition: opacity 0.5s 1.5s, transform 0.5s 1.5s;
+    }
+    main ul:first-of-type {
+      transition: translate 0.5s 0.5s;
+    }
+    ul {
+      transition: opacity 0.5s;
+    }
+
+    [data-marker] {
+      opacity: 1;
+    }
+    main ul:not(:first-of-type) {
+      opacity: 0;
+    }
+    main {
+      transform: rotateX(24deg) rotateY(-45deg);
+    }
+    main ul:first-of-type {
+      translate: calc(150% + 6rem) 0;
+    }
+    main [data-logo] {
+      -webkit-animation-name: appear;
+              animation-name: appear;
+      -webkit-animation-duration: calc(var(--duration) * 1s);
+              animation-duration: calc(var(--duration) * 1s);
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+      -webkit-animation-delay: calc(
+        (var(--duration) / var(--items)) * (var(--items) - var(--i)) * -1s +
+          (var(--base-delay) * 1s)
+      );
+              animation-delay: calc(
+        (var(--duration) / var(--items)) * (var(--items) - var(--i)) * -1s +
+          (var(--base-delay) * 1s)
+      );
+      transform-style: preserve-3d;
+      filter: blur(0px) !important;
+    }
+    [data-logo],
+    [data-marker] {
+      transform: translate3d(0, 0, calc((var(--i) - 1) * 4rem));
+    }
+    use {
+      -webkit-animation: none;
+              animation: none;
+    }
+    ul:first-of-type [data-logo] {
+      --opacity: 0.25;
+    }
+    ul:first-of-type use {
+      opacity: 1 !important;
+    }
+  }
+}
+
+@layer loops {
+  /*
+    this is where it gets "technical"
+    if you have say 5 items to loop, each one gets 20% of the keyframe, right?
+    but how do you get the overlap?
+  */
+  :root {
+    --duration: 30;
+  }
+
+  ul {
+    --base-delay: calc(
+      sin((var(--index) / var(--lists)) * 45deg) * var(--stagger, 0)
+    );
+  }
+
+  [data-logo] use {
+    -webkit-animation-name: appear;
+            animation-name: appear;
+    -webkit-animation-duration: calc(var(--duration) * 1s);
+            animation-duration: calc(var(--duration) * 1s);
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-delay: calc(
+      (var(--duration) / var(--items)) * (var(--items) - var(--i)) * -1s +
+        (var(--base-delay) * 1s)
+    );
+            animation-delay: calc(
+      (var(--duration) / var(--items)) * (var(--items) - var(--i)) * -1s +
+        (var(--base-delay) * 1s)
+    );
+    mix-blend-mode: hard-light;
+    transform-box: fill-box;
+  }
+  [data-logo] svg {
+    overflow: visible !important;
+    height: 3rem;
+  }
+}
+
+@layer demo {
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    justify-content: center;
+  }
+  ul {
+    width: 100px;
+    /* outline: 2px dashed color-mix(in hsl, canvasText, #0000);
+    outline-offset: 2px; */
+    display: grid;
+    grid-template: 1fr / 1fr;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  li {
+    grid-area: 1 / 1;
+    display: grid;
+    place-items: center;
+  }
+}
+
+@layer base {
+  :root {
+    --font-size-min: 16;
+    --font-size-max: 20;
+    --font-ratio-min: 1.2;
+    --font-ratio-max: 1.33;
+    --font-width-min: 375;
+    --font-width-max: 1500;
+  }
+
+  html {
+    color-scheme: light dark;
+  }
+
+  [data-theme='light'] {
+    color-scheme: light only;
+  }
+
+  [data-theme='dark'] {
+    color-scheme: dark only;
+  }
+
+  :where(.fluid) {
+    --fluid-min: calc(
+      var(--font-size-min) * pow(var(--font-ratio-min), var(--font-level, 0))
+    );
+    --fluid-max: calc(
+      var(--font-size-max) * pow(var(--font-ratio-max), var(--font-level, 0))
+    );
+    --fluid-preferred: calc(
+      (var(--fluid-max) - var(--fluid-min)) /
+        (var(--font-width-max) - var(--font-width-min))
+    );
+    --fluid-type: clamp(
+      (var(--fluid-min) / 16) * 1rem,
+      ((var(--fluid-min) / 16) * 1rem) -
+        (((var(--fluid-preferred) * var(--font-width-min)) / 16) * 1rem) +
+        (var(--fluid-preferred) * var(--variable-unit, 100vi)),
+      (var(--fluid-max) / 16) * 1rem
+    );
+    font-size: var(--fluid-type);
+  }
+
+  *,
+  *:after,
+  *:before {
+    box-sizing: border-box;
+  }
+
+  body {
+    background: light-dark(#fff, #000);
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    font-family: 'SF Pro Text', 'SF Pro Icons', 'AOS Icons', 'Helvetica Neue',
+      Helvetica, Arial, sans-serif, system-ui;
+  }
+
+  body::before {
+    --size: 45px;
+    --line: color-mix(in hsl, canvasText, transparent 70%);
+    content: '';
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background: linear-gradient(
+          90deg,
+          var(--line) 1px,
+          transparent 1px var(--size)
+        )
+        50% 50% / var(--size) var(--size),
+      linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
+        var(--size) var(--size);
+    -webkit-mask: linear-gradient(-20deg, transparent 50%, white);
+            mask: linear-gradient(-20deg, transparent 50%, white);
+    top: 0;
+    transform-style: flat;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .bear-link {
+    color: canvasText;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    width: 48px;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    opacity: 0.8;
+  }
+
+  :where(.x-link, .bear-link):is(:hover, :focus-visible) {
+    opacity: 1;
+  }
+
+  .bear-link svg {
+    width: 75%;
+  }
+
+  /* Utilities */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}
+div.tp-dfwv {
+  width: 280px;
+  * {
+    text-transform: lowercase;
+    white-space: nowrap;
+    font-family: monospace;
+  }
+}
