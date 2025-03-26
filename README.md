@@ -841,3 +841,4 @@
 |895| [Pointer Position Animation](https://github.com/xml12333/HTML_CSS_JS/tree/main/895.Pointer%20Position%20Animation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/895.Pointer%20Position%20Animation/)|
 |896| [Logo Marquee](https://github.com/xml12333/HTML_CSS_JS/tree/main/896.Logo%20Marquee)| [Demo](https://nikt.com.ua/projects/htmlCssJs/896.Logo%20Marquee/)|
 |897| [Lumon Globe](https://github.com/xml12333/HTML_CSS_JS/tree/main/897.Lumon%20Globe)| [Demo](https://nikt.com.ua/projects/htmlCssJs/897.Lumon%20Globe/)|
+|898| [Gooey Stars](https://github.com/xml12333/HTML_CSS_JS/tree/main/898.Gooey%20Stars)| [Demo](https://nikt.com.ua/projects/htmlCssJs/898.Gooey%20Stars/)|

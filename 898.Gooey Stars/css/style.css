@@ -1,0 +1,7014 @@
+@property --move {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0;
+}
+:root {
+  --count: 10;
+}
+
+@-webkit-keyframes move {
+  from {
+    --move: 0vmin;
+    opacity: 0;
+  }
+  20%, 50%, 70% {
+    opacity: 1;
+  }
+  to {
+    --move: 22vmin;
+  }
+}
+
+@keyframes move {
+  from {
+    --move: 0vmin;
+    opacity: 0;
+  }
+  20%, 50%, 70% {
+    opacity: 1;
+  }
+  to {
+    --move: 22vmin;
+  }
+}
+.leaf {
+  background: radial-gradient(color-mix(in srgb, white, transparent 90%), color-mix(in srgb, var(--color-primary), hsla(calc(10 * var(--i)), 100%, 50%, 1) 50%));
+  opacity: 0;
+  --size: 20vmin;
+  height: var(--size);
+  aspect-ratio: 1/8;
+  border-radius: 50%;
+  position: absolute;
+  -webkit-animation: move 0.8s var(--delay) ease infinite;
+          animation: move 0.8s var(--delay) ease infinite;
+  --r: calc(var(--move, 0vmin) + 4.2vmin + var(--ri, 0) * var(--size) * 0.44);
+  --angle-per-item: calc(360deg / var(--count));
+  --ai: calc(var(--angle-per-item) * var(--i));
+  translate: calc(cos(var(--ai)) * var(--r)) calc(sin(var(--ai)) * var(--r) * -1);
+  rotate: calc(90deg - 360deg / var(--count) * var(--i));
+}
+.leaf:nth-child(1) {
+  --count: 10;
+  --ri: 0;
+  --i: 0;
+  --d: "0";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9626949502);
+}
+.leaf:nth-child(2) {
+  --count: 10;
+  --ri: 0;
+  --i: 1;
+  --d: "1";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1799137349);
+}
+.leaf:nth-child(3) {
+  --count: 10;
+  --ri: 0;
+  --i: 2;
+  --d: "2";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3163754916);
+}
+.leaf:nth-child(4) {
+  --count: 10;
+  --ri: 0;
+  --i: 3;
+  --d: "3";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.54191301);
+}
+.leaf:nth-child(5) {
+  --count: 10;
+  --ri: 0;
+  --i: 4;
+  --d: "4";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3874201958);
+}
+.leaf:nth-child(6) {
+  --count: 10;
+  --ri: 0;
+  --i: 5;
+  --d: "5";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.174653404);
+}
+.leaf:nth-child(7) {
+  --count: 10;
+  --ri: 0;
+  --i: 6;
+  --d: "6";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3045958712);
+}
+.leaf:nth-child(8) {
+  --count: 10;
+  --ri: 0;
+  --i: 7;
+  --d: "7";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4157276591);
+}
+.leaf:nth-child(9) {
+  --count: 10;
+  --ri: 0;
+  --i: 8;
+  --d: "8";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3493686758);
+}
+.leaf:nth-child(10) {
+  --count: 10;
+  --ri: 0;
+  --i: 9;
+  --d: "9";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2384030759);
+}
+.leaf:nth-child(11) {
+  --count: 21;
+  --ri: 1;
+  --i: 10;
+  --d: "10";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5041370185);
+}
+.leaf:nth-child(12) {
+  --count: 21;
+  --ri: 1;
+  --i: 11;
+  --d: "11";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9702550888);
+}
+.leaf:nth-child(13) {
+  --count: 21;
+  --ri: 1;
+  --i: 12;
+  --d: "12";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6683545632);
+}
+.leaf:nth-child(14) {
+  --count: 21;
+  --ri: 1;
+  --i: 13;
+  --d: "13";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9010214949);
+}
+.leaf:nth-child(15) {
+  --count: 21;
+  --ri: 1;
+  --i: 14;
+  --d: "14";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5076620231);
+}
+.leaf:nth-child(16) {
+  --count: 21;
+  --ri: 1;
+  --i: 15;
+  --d: "15";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5285928275);
+}
+.leaf:nth-child(17) {
+  --count: 21;
+  --ri: 1;
+  --i: 16;
+  --d: "16";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.686309793);
+}
+.leaf:nth-child(18) {
+  --count: 21;
+  --ri: 1;
+  --i: 17;
+  --d: "17";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9334641666);
+}
+.leaf:nth-child(19) {
+  --count: 21;
+  --ri: 1;
+  --i: 18;
+  --d: "18";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9398640922);
+}
+.leaf:nth-child(20) {
+  --count: 21;
+  --ri: 1;
+  --i: 19;
+  --d: "19";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0633137411);
+}
+.leaf:nth-child(21) {
+  --count: 21;
+  --ri: 1;
+  --i: 20;
+  --d: "20";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.857658491);
+}
+.leaf:nth-child(22) {
+  --count: 21;
+  --ri: 1;
+  --i: 21;
+  --d: "21";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6990091509);
+}
+.leaf:nth-child(23) {
+  --count: 21;
+  --ri: 1;
+  --i: 22;
+  --d: "22";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4604445024);
+}
+.leaf:nth-child(24) {
+  --count: 21;
+  --ri: 1;
+  --i: 23;
+  --d: "23";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5066804567);
+}
+.leaf:nth-child(25) {
+  --count: 21;
+  --ri: 1;
+  --i: 24;
+  --d: "24";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7060308675);
+}
+.leaf:nth-child(26) {
+  --count: 21;
+  --ri: 1;
+  --i: 25;
+  --d: "25";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7631883339);
+}
+.leaf:nth-child(27) {
+  --count: 21;
+  --ri: 1;
+  --i: 26;
+  --d: "26";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2911297573);
+}
+.leaf:nth-child(28) {
+  --count: 21;
+  --ri: 1;
+  --i: 27;
+  --d: "27";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7387681422);
+}
+.leaf:nth-child(29) {
+  --count: 21;
+  --ri: 1;
+  --i: 28;
+  --d: "28";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5248552638);
+}
+.leaf:nth-child(30) {
+  --count: 21;
+  --ri: 1;
+  --i: 29;
+  --d: "29";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6856007368);
+}
+.leaf:nth-child(31) {
+  --count: 21;
+  --ri: 1;
+  --i: 30;
+  --d: "30";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0645954022);
+}
+.leaf:nth-child(32) {
+  --count: 32;
+  --ri: 2;
+  --i: 31;
+  --d: "31";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1677958518);
+}
+.leaf:nth-child(33) {
+  --count: 32;
+  --ri: 2;
+  --i: 32;
+  --d: "32";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6474482746);
+}
+.leaf:nth-child(34) {
+  --count: 32;
+  --ri: 2;
+  --i: 33;
+  --d: "33";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3521826091);
+}
+.leaf:nth-child(35) {
+  --count: 32;
+  --ri: 2;
+  --i: 34;
+  --d: "34";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6503014945);
+}
+.leaf:nth-child(36) {
+  --count: 32;
+  --ri: 2;
+  --i: 35;
+  --d: "35";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3854633628);
+}
+.leaf:nth-child(37) {
+  --count: 32;
+  --ri: 2;
+  --i: 36;
+  --d: "36";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7705217414);
+}
+.leaf:nth-child(38) {
+  --count: 32;
+  --ri: 2;
+  --i: 37;
+  --d: "37";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5377508989);
+}
+.leaf:nth-child(39) {
+  --count: 32;
+  --ri: 2;
+  --i: 38;
+  --d: "38";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6333961177);
+}
+.leaf:nth-child(40) {
+  --count: 32;
+  --ri: 2;
+  --i: 39;
+  --d: "39";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2177462777);
+}
+.leaf:nth-child(41) {
+  --count: 32;
+  --ri: 2;
+  --i: 40;
+  --d: "40";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9556870892);
+}
+.leaf:nth-child(42) {
+  --count: 32;
+  --ri: 2;
+  --i: 41;
+  --d: "41";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4096542566);
+}
+.leaf:nth-child(43) {
+  --count: 32;
+  --ri: 2;
+  --i: 42;
+  --d: "42";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.175171787);
+}
+.leaf:nth-child(44) {
+  --count: 32;
+  --ri: 2;
+  --i: 43;
+  --d: "43";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9191212982);
+}
+.leaf:nth-child(45) {
+  --count: 32;
+  --ri: 2;
+  --i: 44;
+  --d: "44";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2250473211);
+}
+.leaf:nth-child(46) {
+  --count: 32;
+  --ri: 2;
+  --i: 45;
+  --d: "45";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3182046851);
+}
+.leaf:nth-child(47) {
+  --count: 32;
+  --ri: 2;
+  --i: 46;
+  --d: "46";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3632168626);
+}
+.leaf:nth-child(48) {
+  --count: 32;
+  --ri: 2;
+  --i: 47;
+  --d: "47";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2828343925);
+}
+.leaf:nth-child(49) {
+  --count: 32;
+  --ri: 2;
+  --i: 48;
+  --d: "48";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1551426831);
+}
+.leaf:nth-child(50) {
+  --count: 32;
+  --ri: 2;
+  --i: 49;
+  --d: "49";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3949084843);
+}
+.leaf:nth-child(51) {
+  --count: 32;
+  --ri: 2;
+  --i: 50;
+  --d: "50";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.672657228);
+}
+.leaf:nth-child(52) {
+  --count: 32;
+  --ri: 2;
+  --i: 51;
+  --d: "51";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0301380903);
+}
+.leaf:nth-child(53) {
+  --count: 32;
+  --ri: 2;
+  --i: 52;
+  --d: "52";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5146484315);
+}
+.leaf:nth-child(54) {
+  --count: 32;
+  --ri: 2;
+  --i: 53;
+  --d: "53";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6681254151);
+}
+.leaf:nth-child(55) {
+  --count: 32;
+  --ri: 2;
+  --i: 54;
+  --d: "54";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0913248363);
+}
+.leaf:nth-child(56) {
+  --count: 32;
+  --ri: 2;
+  --i: 55;
+  --d: "55";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4665054664);
+}
+.leaf:nth-child(57) {
+  --count: 32;
+  --ri: 2;
+  --i: 56;
+  --d: "56";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9860782015);
+}
+.leaf:nth-child(58) {
+  --count: 32;
+  --ri: 2;
+  --i: 57;
+  --d: "57";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0102399403);
+}
+.leaf:nth-child(59) {
+  --count: 32;
+  --ri: 2;
+  --i: 58;
+  --d: "58";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9261877346);
+}
+.leaf:nth-child(60) {
+  --count: 32;
+  --ri: 2;
+  --i: 59;
+  --d: "59";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7716382536);
+}
+.leaf:nth-child(61) {
+  --count: 32;
+  --ri: 2;
+  --i: 60;
+  --d: "60";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.521079336);
+}
+.leaf:nth-child(62) {
+  --count: 32;
+  --ri: 2;
+  --i: 61;
+  --d: "61";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7212673629);
+}
+.leaf:nth-child(63) {
+  --count: 32;
+  --ri: 2;
+  --i: 62;
+  --d: "62";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.397707813);
+}
+.leaf:nth-child(64) {
+  --count: 43;
+  --ri: 3;
+  --i: 63;
+  --d: "63";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2584243339);
+}
+.leaf:nth-child(65) {
+  --count: 43;
+  --ri: 3;
+  --i: 64;
+  --d: "64";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3741098566);
+}
+.leaf:nth-child(66) {
+  --count: 43;
+  --ri: 3;
+  --i: 65;
+  --d: "65";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4938739139);
+}
+.leaf:nth-child(67) {
+  --count: 43;
+  --ri: 3;
+  --i: 66;
+  --d: "66";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3086281332);
+}
+.leaf:nth-child(68) {
+  --count: 43;
+  --ri: 3;
+  --i: 67;
+  --d: "67";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6061928781);
+}
+.leaf:nth-child(69) {
+  --count: 43;
+  --ri: 3;
+  --i: 68;
+  --d: "68";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0762935844);
+}
+.leaf:nth-child(70) {
+  --count: 43;
+  --ri: 3;
+  --i: 69;
+  --d: "69";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3755944244);
+}
+.leaf:nth-child(71) {
+  --count: 43;
+  --ri: 3;
+  --i: 70;
+  --d: "70";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5523482128);
+}
+.leaf:nth-child(72) {
+  --count: 43;
+  --ri: 3;
+  --i: 71;
+  --d: "71";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3345223472);
+}
+.leaf:nth-child(73) {
+  --count: 43;
+  --ri: 3;
+  --i: 72;
+  --d: "72";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8482726991);
+}
+.leaf:nth-child(74) {
+  --count: 43;
+  --ri: 3;
+  --i: 73;
+  --d: "73";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4796877674);
+}
+.leaf:nth-child(75) {
+  --count: 43;
+  --ri: 3;
+  --i: 74;
+  --d: "74";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0378820233);
+}
+.leaf:nth-child(76) {
+  --count: 43;
+  --ri: 3;
+  --i: 75;
+  --d: "75";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.600366372);
+}
+.leaf:nth-child(77) {
+  --count: 43;
+  --ri: 3;
+  --i: 76;
+  --d: "76";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3225730726);
+}
+.leaf:nth-child(78) {
+  --count: 43;
+  --ri: 3;
+  --i: 77;
+  --d: "77";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3760492046);
+}
+.leaf:nth-child(79) {
+  --count: 43;
+  --ri: 3;
+  --i: 78;
+  --d: "78";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1589960778);
+}
+.leaf:nth-child(80) {
+  --count: 43;
+  --ri: 3;
+  --i: 79;
+  --d: "79";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0782471041);
+}
+.leaf:nth-child(81) {
+  --count: 43;
+  --ri: 3;
+  --i: 80;
+  --d: "80";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7234554942);
+}
+.leaf:nth-child(82) {
+  --count: 43;
+  --ri: 3;
+  --i: 81;
+  --d: "81";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2531194199);
+}
+.leaf:nth-child(83) {
+  --count: 43;
+  --ri: 3;
+  --i: 82;
+  --d: "82";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5447576375);
+}
+.leaf:nth-child(84) {
+  --count: 43;
+  --ri: 3;
+  --i: 83;
+  --d: "83";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9823155339);
+}
+.leaf:nth-child(85) {
+  --count: 43;
+  --ri: 3;
+  --i: 84;
+  --d: "84";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7574674338);
+}
+.leaf:nth-child(86) {
+  --count: 43;
+  --ri: 3;
+  --i: 85;
+  --d: "85";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6408827661);
+}
+.leaf:nth-child(87) {
+  --count: 43;
+  --ri: 3;
+  --i: 86;
+  --d: "86";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2747183525);
+}
+.leaf:nth-child(88) {
+  --count: 43;
+  --ri: 3;
+  --i: 87;
+  --d: "87";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7264844331);
+}
+.leaf:nth-child(89) {
+  --count: 43;
+  --ri: 3;
+  --i: 88;
+  --d: "88";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3647348543);
+}
+.leaf:nth-child(90) {
+  --count: 43;
+  --ri: 3;
+  --i: 89;
+  --d: "89";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8446549343);
+}
+.leaf:nth-child(91) {
+  --count: 43;
+  --ri: 3;
+  --i: 90;
+  --d: "90";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0094207425);
+}
+.leaf:nth-child(92) {
+  --count: 43;
+  --ri: 3;
+  --i: 91;
+  --d: "91";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4825983949);
+}
+.leaf:nth-child(93) {
+  --count: 43;
+  --ri: 3;
+  --i: 92;
+  --d: "92";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6004690693);
+}
+.leaf:nth-child(94) {
+  --count: 43;
+  --ri: 3;
+  --i: 93;
+  --d: "93";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6084995281);
+}
+.leaf:nth-child(95) {
+  --count: 43;
+  --ri: 3;
+  --i: 94;
+  --d: "94";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7499327331);
+}
+.leaf:nth-child(96) {
+  --count: 43;
+  --ri: 3;
+  --i: 95;
+  --d: "95";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1233763552);
+}
+.leaf:nth-child(97) {
+  --count: 43;
+  --ri: 3;
+  --i: 96;
+  --d: "96";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6737712949);
+}
+.leaf:nth-child(98) {
+  --count: 43;
+  --ri: 3;
+  --i: 97;
+  --d: "97";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7107196872);
+}
+.leaf:nth-child(99) {
+  --count: 43;
+  --ri: 3;
+  --i: 98;
+  --d: "98";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.394642076);
+}
+.leaf:nth-child(100) {
+  --count: 43;
+  --ri: 3;
+  --i: 99;
+  --d: "99";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1228415581);
+}
+.leaf:nth-child(101) {
+  --count: 43;
+  --ri: 3;
+  --i: 100;
+  --d: "100";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1726865486);
+}
+.leaf:nth-child(102) {
+  --count: 43;
+  --ri: 3;
+  --i: 101;
+  --d: "101";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4356695034);
+}
+.leaf:nth-child(103) {
+  --count: 43;
+  --ri: 3;
+  --i: 102;
+  --d: "102";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.996487472);
+}
+.leaf:nth-child(104) {
+  --count: 43;
+  --ri: 3;
+  --i: 103;
+  --d: "103";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2436253298);
+}
+.leaf:nth-child(105) {
+  --count: 43;
+  --ri: 3;
+  --i: 104;
+  --d: "104";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2036752657);
+}
+.leaf:nth-child(106) {
+  --count: 43;
+  --ri: 3;
+  --i: 105;
+  --d: "105";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0752226123);
+}
+.leaf:nth-child(107) {
+  --count: 54;
+  --ri: 4;
+  --i: 106;
+  --d: "106";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9453141904);
+}
+.leaf:nth-child(108) {
+  --count: 54;
+  --ri: 4;
+  --i: 107;
+  --d: "107";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9553386257);
+}
+.leaf:nth-child(109) {
+  --count: 54;
+  --ri: 4;
+  --i: 108;
+  --d: "108";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9291511893);
+}
+.leaf:nth-child(110) {
+  --count: 54;
+  --ri: 4;
+  --i: 109;
+  --d: "109";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4643332429);
+}
+.leaf:nth-child(111) {
+  --count: 54;
+  --ri: 4;
+  --i: 110;
+  --d: "110";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.841557021);
+}
+.leaf:nth-child(112) {
+  --count: 54;
+  --ri: 4;
+  --i: 111;
+  --d: "111";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3389616102);
+}
+.leaf:nth-child(113) {
+  --count: 54;
+  --ri: 4;
+  --i: 112;
+  --d: "112";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1897190655);
+}
+.leaf:nth-child(114) {
+  --count: 54;
+  --ri: 4;
+  --i: 113;
+  --d: "113";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1181013683);
+}
+.leaf:nth-child(115) {
+  --count: 54;
+  --ri: 4;
+  --i: 114;
+  --d: "114";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.53127386);
+}
+.leaf:nth-child(116) {
+  --count: 54;
+  --ri: 4;
+  --i: 115;
+  --d: "115";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3248659198);
+}
+.leaf:nth-child(117) {
+  --count: 54;
+  --ri: 4;
+  --i: 116;
+  --d: "116";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5249778882);
+}
+.leaf:nth-child(118) {
+  --count: 54;
+  --ri: 4;
+  --i: 117;
+  --d: "117";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8828620675);
+}
+.leaf:nth-child(119) {
+  --count: 54;
+  --ri: 4;
+  --i: 118;
+  --d: "118";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9737953986);
+}
+.leaf:nth-child(120) {
+  --count: 54;
+  --ri: 4;
+  --i: 119;
+  --d: "119";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9508166324);
+}
+.leaf:nth-child(121) {
+  --count: 54;
+  --ri: 4;
+  --i: 120;
+  --d: "120";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1704998502);
+}
+.leaf:nth-child(122) {
+  --count: 54;
+  --ri: 4;
+  --i: 121;
+  --d: "121";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.44844256);
+}
+.leaf:nth-child(123) {
+  --count: 54;
+  --ri: 4;
+  --i: 122;
+  --d: "122";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1388518451);
+}
+.leaf:nth-child(124) {
+  --count: 54;
+  --ri: 4;
+  --i: 123;
+  --d: "123";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7211377963);
+}
+.leaf:nth-child(125) {
+  --count: 54;
+  --ri: 4;
+  --i: 124;
+  --d: "124";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7849970966);
+}
+.leaf:nth-child(126) {
+  --count: 54;
+  --ri: 4;
+  --i: 125;
+  --d: "125";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4335014098);
+}
+.leaf:nth-child(127) {
+  --count: 54;
+  --ri: 4;
+  --i: 126;
+  --d: "126";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7259068044);
+}
+.leaf:nth-child(128) {
+  --count: 54;
+  --ri: 4;
+  --i: 127;
+  --d: "127";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8517487086);
+}
+.leaf:nth-child(129) {
+  --count: 54;
+  --ri: 4;
+  --i: 128;
+  --d: "128";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6489225279);
+}
+.leaf:nth-child(130) {
+  --count: 54;
+  --ri: 4;
+  --i: 129;
+  --d: "129";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.047343044);
+}
+.leaf:nth-child(131) {
+  --count: 54;
+  --ri: 4;
+  --i: 130;
+  --d: "130";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9034362217);
+}
+.leaf:nth-child(132) {
+  --count: 54;
+  --ri: 4;
+  --i: 131;
+  --d: "131";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7701445062);
+}
+.leaf:nth-child(133) {
+  --count: 54;
+  --ri: 4;
+  --i: 132;
+  --d: "132";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0837909636);
+}
+.leaf:nth-child(134) {
+  --count: 54;
+  --ri: 4;
+  --i: 133;
+  --d: "133";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4891531103);
+}
+.leaf:nth-child(135) {
+  --count: 54;
+  --ri: 4;
+  --i: 134;
+  --d: "134";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0501065629);
+}
+.leaf:nth-child(136) {
+  --count: 54;
+  --ri: 4;
+  --i: 135;
+  --d: "135";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9505149786);
+}
+.leaf:nth-child(137) {
+  --count: 54;
+  --ri: 4;
+  --i: 136;
+  --d: "136";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3944953821);
+}
+.leaf:nth-child(138) {
+  --count: 54;
+  --ri: 4;
+  --i: 137;
+  --d: "137";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0538134022);
+}
+.leaf:nth-child(139) {
+  --count: 54;
+  --ri: 4;
+  --i: 138;
+  --d: "138";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8102365336);
+}
+.leaf:nth-child(140) {
+  --count: 54;
+  --ri: 4;
+  --i: 139;
+  --d: "139";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4350953911);
+}
+.leaf:nth-child(141) {
+  --count: 54;
+  --ri: 4;
+  --i: 140;
+  --d: "140";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6060561607);
+}
+.leaf:nth-child(142) {
+  --count: 54;
+  --ri: 4;
+  --i: 141;
+  --d: "141";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4844000173);
+}
+.leaf:nth-child(143) {
+  --count: 54;
+  --ri: 4;
+  --i: 142;
+  --d: "142";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1003861991);
+}
+.leaf:nth-child(144) {
+  --count: 54;
+  --ri: 4;
+  --i: 143;
+  --d: "143";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0417266281);
+}
+.leaf:nth-child(145) {
+  --count: 54;
+  --ri: 4;
+  --i: 144;
+  --d: "144";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5668435618);
+}
+.leaf:nth-child(146) {
+  --count: 54;
+  --ri: 4;
+  --i: 145;
+  --d: "145";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3040433962);
+}
+.leaf:nth-child(147) {
+  --count: 54;
+  --ri: 4;
+  --i: 146;
+  --d: "146";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0206715962);
+}
+.leaf:nth-child(148) {
+  --count: 54;
+  --ri: 4;
+  --i: 147;
+  --d: "147";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7491186519);
+}
+.leaf:nth-child(149) {
+  --count: 54;
+  --ri: 4;
+  --i: 148;
+  --d: "148";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8448135753);
+}
+.leaf:nth-child(150) {
+  --count: 54;
+  --ri: 4;
+  --i: 149;
+  --d: "149";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0130065973);
+}
+.leaf:nth-child(151) {
+  --count: 54;
+  --ri: 4;
+  --i: 150;
+  --d: "150";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3824671981);
+}
+.leaf:nth-child(152) {
+  --count: 54;
+  --ri: 4;
+  --i: 151;
+  --d: "151";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8691912204);
+}
+.leaf:nth-child(153) {
+  --count: 54;
+  --ri: 4;
+  --i: 152;
+  --d: "152";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1398002179);
+}
+.leaf:nth-child(154) {
+  --count: 54;
+  --ri: 4;
+  --i: 153;
+  --d: "153";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0436415508);
+}
+.leaf:nth-child(155) {
+  --count: 54;
+  --ri: 4;
+  --i: 154;
+  --d: "154";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6574449386);
+}
+.leaf:nth-child(156) {
+  --count: 54;
+  --ri: 4;
+  --i: 155;
+  --d: "155";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4132554857);
+}
+.leaf:nth-child(157) {
+  --count: 54;
+  --ri: 4;
+  --i: 156;
+  --d: "156";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.198584669);
+}
+.leaf:nth-child(158) {
+  --count: 54;
+  --ri: 4;
+  --i: 157;
+  --d: "157";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6107667318);
+}
+.leaf:nth-child(159) {
+  --count: 54;
+  --ri: 4;
+  --i: 158;
+  --d: "158";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2370791345);
+}
+.leaf:nth-child(160) {
+  --count: 54;
+  --ri: 4;
+  --i: 159;
+  --d: "159";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5915287518);
+}
+.leaf:nth-child(161) {
+  --count: 65;
+  --ri: 5;
+  --i: 160;
+  --d: "160";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1066659552);
+}
+.leaf:nth-child(162) {
+  --count: 65;
+  --ri: 5;
+  --i: 161;
+  --d: "161";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3725856498);
+}
+.leaf:nth-child(163) {
+  --count: 65;
+  --ri: 5;
+  --i: 162;
+  --d: "162";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6060697856);
+}
+.leaf:nth-child(164) {
+  --count: 65;
+  --ri: 5;
+  --i: 163;
+  --d: "163";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2264012598);
+}
+.leaf:nth-child(165) {
+  --count: 65;
+  --ri: 5;
+  --i: 164;
+  --d: "164";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7420564129);
+}
+.leaf:nth-child(166) {
+  --count: 65;
+  --ri: 5;
+  --i: 165;
+  --d: "165";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6482227384);
+}
+.leaf:nth-child(167) {
+  --count: 65;
+  --ri: 5;
+  --i: 166;
+  --d: "166";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4399347177);
+}
+.leaf:nth-child(168) {
+  --count: 65;
+  --ri: 5;
+  --i: 167;
+  --d: "167";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4917178067);
+}
+.leaf:nth-child(169) {
+  --count: 65;
+  --ri: 5;
+  --i: 168;
+  --d: "168";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9171818917);
+}
+.leaf:nth-child(170) {
+  --count: 65;
+  --ri: 5;
+  --i: 169;
+  --d: "169";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0572224611);
+}
+.leaf:nth-child(171) {
+  --count: 65;
+  --ri: 5;
+  --i: 170;
+  --d: "170";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2909766343);
+}
+.leaf:nth-child(172) {
+  --count: 65;
+  --ri: 5;
+  --i: 171;
+  --d: "171";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5621059678);
+}
+.leaf:nth-child(173) {
+  --count: 65;
+  --ri: 5;
+  --i: 172;
+  --d: "172";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.907432325);
+}
+.leaf:nth-child(174) {
+  --count: 65;
+  --ri: 5;
+  --i: 173;
+  --d: "173";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6140665662);
+}
+.leaf:nth-child(175) {
+  --count: 65;
+  --ri: 5;
+  --i: 174;
+  --d: "174";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4379497514);
+}
+.leaf:nth-child(176) {
+  --count: 65;
+  --ri: 5;
+  --i: 175;
+  --d: "175";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7152140894);
+}
+.leaf:nth-child(177) {
+  --count: 65;
+  --ri: 5;
+  --i: 176;
+  --d: "176";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9218002693);
+}
+.leaf:nth-child(178) {
+  --count: 65;
+  --ri: 5;
+  --i: 177;
+  --d: "177";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2638121117);
+}
+.leaf:nth-child(179) {
+  --count: 65;
+  --ri: 5;
+  --i: 178;
+  --d: "178";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3723817621);
+}
+.leaf:nth-child(180) {
+  --count: 65;
+  --ri: 5;
+  --i: 179;
+  --d: "179";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.505026201);
+}
+.leaf:nth-child(181) {
+  --count: 65;
+  --ri: 5;
+  --i: 180;
+  --d: "180";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9381595775);
+}
+.leaf:nth-child(182) {
+  --count: 65;
+  --ri: 5;
+  --i: 181;
+  --d: "181";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1159731766);
+}
+.leaf:nth-child(183) {
+  --count: 65;
+  --ri: 5;
+  --i: 182;
+  --d: "182";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1783482908);
+}
+.leaf:nth-child(184) {
+  --count: 65;
+  --ri: 5;
+  --i: 183;
+  --d: "183";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5375873676);
+}
+.leaf:nth-child(185) {
+  --count: 65;
+  --ri: 5;
+  --i: 184;
+  --d: "184";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6436715745);
+}
+.leaf:nth-child(186) {
+  --count: 65;
+  --ri: 5;
+  --i: 185;
+  --d: "185";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.691223107);
+}
+.leaf:nth-child(187) {
+  --count: 65;
+  --ri: 5;
+  --i: 186;
+  --d: "186";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1192953942);
+}
+.leaf:nth-child(188) {
+  --count: 65;
+  --ri: 5;
+  --i: 187;
+  --d: "187";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3767139584);
+}
+.leaf:nth-child(189) {
+  --count: 65;
+  --ri: 5;
+  --i: 188;
+  --d: "188";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6846027181);
+}
+.leaf:nth-child(190) {
+  --count: 65;
+  --ri: 5;
+  --i: 189;
+  --d: "189";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6676990377);
+}
+.leaf:nth-child(191) {
+  --count: 65;
+  --ri: 5;
+  --i: 190;
+  --d: "190";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2470400169);
+}
+.leaf:nth-child(192) {
+  --count: 65;
+  --ri: 5;
+  --i: 191;
+  --d: "191";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6536193344);
+}
+.leaf:nth-child(193) {
+  --count: 65;
+  --ri: 5;
+  --i: 192;
+  --d: "192";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1136669818);
+}
+.leaf:nth-child(194) {
+  --count: 65;
+  --ri: 5;
+  --i: 193;
+  --d: "193";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6407042014);
+}
+.leaf:nth-child(195) {
+  --count: 65;
+  --ri: 5;
+  --i: 194;
+  --d: "194";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5390656167);
+}
+.leaf:nth-child(196) {
+  --count: 65;
+  --ri: 5;
+  --i: 195;
+  --d: "195";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3933957256);
+}
+.leaf:nth-child(197) {
+  --count: 65;
+  --ri: 5;
+  --i: 196;
+  --d: "196";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9254099258);
+}
+.leaf:nth-child(198) {
+  --count: 65;
+  --ri: 5;
+  --i: 197;
+  --d: "197";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2614624287);
+}
+.leaf:nth-child(199) {
+  --count: 65;
+  --ri: 5;
+  --i: 198;
+  --d: "198";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7725108736);
+}
+.leaf:nth-child(200) {
+  --count: 65;
+  --ri: 5;
+  --i: 199;
+  --d: "199";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1506536813);
+}
+.leaf:nth-child(201) {
+  --count: 65;
+  --ri: 5;
+  --i: 200;
+  --d: "200";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5959887148);
+}
+.leaf:nth-child(202) {
+  --count: 65;
+  --ri: 5;
+  --i: 201;
+  --d: "201";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9382631638);
+}
+.leaf:nth-child(203) {
+  --count: 65;
+  --ri: 5;
+  --i: 202;
+  --d: "202";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9260571766);
+}
+.leaf:nth-child(204) {
+  --count: 65;
+  --ri: 5;
+  --i: 203;
+  --d: "203";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2861987237);
+}
+.leaf:nth-child(205) {
+  --count: 65;
+  --ri: 5;
+  --i: 204;
+  --d: "204";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3965200272);
+}
+.leaf:nth-child(206) {
+  --count: 65;
+  --ri: 5;
+  --i: 205;
+  --d: "205";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8361968183);
+}
+.leaf:nth-child(207) {
+  --count: 65;
+  --ri: 5;
+  --i: 206;
+  --d: "206";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2365004655);
+}
+.leaf:nth-child(208) {
+  --count: 65;
+  --ri: 5;
+  --i: 207;
+  --d: "207";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9782904653);
+}
+.leaf:nth-child(209) {
+  --count: 65;
+  --ri: 5;
+  --i: 208;
+  --d: "208";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2119896467);
+}
+.leaf:nth-child(210) {
+  --count: 65;
+  --ri: 5;
+  --i: 209;
+  --d: "209";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9585532138);
+}
+.leaf:nth-child(211) {
+  --count: 65;
+  --ri: 5;
+  --i: 210;
+  --d: "210";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7086778788);
+}
+.leaf:nth-child(212) {
+  --count: 65;
+  --ri: 5;
+  --i: 211;
+  --d: "211";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6746181022);
+}
+.leaf:nth-child(213) {
+  --count: 65;
+  --ri: 5;
+  --i: 212;
+  --d: "212";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1189882359);
+}
+.leaf:nth-child(214) {
+  --count: 65;
+  --ri: 5;
+  --i: 213;
+  --d: "213";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5721019385);
+}
+.leaf:nth-child(215) {
+  --count: 65;
+  --ri: 5;
+  --i: 214;
+  --d: "214";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6338816326);
+}
+.leaf:nth-child(216) {
+  --count: 65;
+  --ri: 5;
+  --i: 215;
+  --d: "215";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7490330531);
+}
+.leaf:nth-child(217) {
+  --count: 65;
+  --ri: 5;
+  --i: 216;
+  --d: "216";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5063599744);
+}
+.leaf:nth-child(218) {
+  --count: 65;
+  --ri: 5;
+  --i: 217;
+  --d: "217";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9629539229);
+}
+.leaf:nth-child(219) {
+  --count: 65;
+  --ri: 5;
+  --i: 218;
+  --d: "218";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7129748451);
+}
+.leaf:nth-child(220) {
+  --count: 65;
+  --ri: 5;
+  --i: 219;
+  --d: "219";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2011104222);
+}
+.leaf:nth-child(221) {
+  --count: 65;
+  --ri: 5;
+  --i: 220;
+  --d: "220";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.015051059);
+}
+.leaf:nth-child(222) {
+  --count: 65;
+  --ri: 5;
+  --i: 221;
+  --d: "221";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.165903383);
+}
+.leaf:nth-child(223) {
+  --count: 65;
+  --ri: 5;
+  --i: 222;
+  --d: "222";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.409477082);
+}
+.leaf:nth-child(224) {
+  --count: 65;
+  --ri: 5;
+  --i: 223;
+  --d: "223";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0233078985);
+}
+.leaf:nth-child(225) {
+  --count: 65;
+  --ri: 5;
+  --i: 224;
+  --d: "224";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2140870603);
+}
+.leaf:nth-child(226) {
+  --count: 76;
+  --ri: 6;
+  --i: 225;
+  --d: "225";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4671951827);
+}
+.leaf:nth-child(227) {
+  --count: 76;
+  --ri: 6;
+  --i: 226;
+  --d: "226";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0502516226);
+}
+.leaf:nth-child(228) {
+  --count: 76;
+  --ri: 6;
+  --i: 227;
+  --d: "227";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1974688654);
+}
+.leaf:nth-child(229) {
+  --count: 76;
+  --ri: 6;
+  --i: 228;
+  --d: "228";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0163903792);
+}
+.leaf:nth-child(230) {
+  --count: 76;
+  --ri: 6;
+  --i: 229;
+  --d: "229";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8316175362);
+}
+.leaf:nth-child(231) {
+  --count: 76;
+  --ri: 6;
+  --i: 230;
+  --d: "230";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8561832066);
+}
+.leaf:nth-child(232) {
+  --count: 76;
+  --ri: 6;
+  --i: 231;
+  --d: "231";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5336836378);
+}
+.leaf:nth-child(233) {
+  --count: 76;
+  --ri: 6;
+  --i: 232;
+  --d: "232";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8096050792);
+}
+.leaf:nth-child(234) {
+  --count: 76;
+  --ri: 6;
+  --i: 233;
+  --d: "233";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.516971908);
+}
+.leaf:nth-child(235) {
+  --count: 76;
+  --ri: 6;
+  --i: 234;
+  --d: "234";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.725301346);
+}
+.leaf:nth-child(236) {
+  --count: 76;
+  --ri: 6;
+  --i: 235;
+  --d: "235";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6560740329);
+}
+.leaf:nth-child(237) {
+  --count: 76;
+  --ri: 6;
+  --i: 236;
+  --d: "236";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4454311956);
+}
+.leaf:nth-child(238) {
+  --count: 76;
+  --ri: 6;
+  --i: 237;
+  --d: "237";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8150801278);
+}
+.leaf:nth-child(239) {
+  --count: 76;
+  --ri: 6;
+  --i: 238;
+  --d: "238";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1461790009);
+}
+.leaf:nth-child(240) {
+  --count: 76;
+  --ri: 6;
+  --i: 239;
+  --d: "239";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6007515462);
+}
+.leaf:nth-child(241) {
+  --count: 76;
+  --ri: 6;
+  --i: 240;
+  --d: "240";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0774188464);
+}
+.leaf:nth-child(242) {
+  --count: 76;
+  --ri: 6;
+  --i: 241;
+  --d: "241";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8983228733);
+}
+.leaf:nth-child(243) {
+  --count: 76;
+  --ri: 6;
+  --i: 242;
+  --d: "242";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7426441332);
+}
+.leaf:nth-child(244) {
+  --count: 76;
+  --ri: 6;
+  --i: 243;
+  --d: "243";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8269764234);
+}
+.leaf:nth-child(245) {
+  --count: 76;
+  --ri: 6;
+  --i: 244;
+  --d: "244";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6228486633);
+}
+.leaf:nth-child(246) {
+  --count: 76;
+  --ri: 6;
+  --i: 245;
+  --d: "245";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.25609248);
+}
+.leaf:nth-child(247) {
+  --count: 76;
+  --ri: 6;
+  --i: 246;
+  --d: "246";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8819501624);
+}
+.leaf:nth-child(248) {
+  --count: 76;
+  --ri: 6;
+  --i: 247;
+  --d: "247";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2453701266);
+}
+.leaf:nth-child(249) {
+  --count: 76;
+  --ri: 6;
+  --i: 248;
+  --d: "248";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.029841565);
+}
+.leaf:nth-child(250) {
+  --count: 76;
+  --ri: 6;
+  --i: 249;
+  --d: "249";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.479750421);
+}
+.leaf:nth-child(251) {
+  --count: 76;
+  --ri: 6;
+  --i: 250;
+  --d: "250";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7728034627);
+}
+.leaf:nth-child(252) {
+  --count: 76;
+  --ri: 6;
+  --i: 251;
+  --d: "251";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4134621843);
+}
+.leaf:nth-child(253) {
+  --count: 76;
+  --ri: 6;
+  --i: 252;
+  --d: "252";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3195464668);
+}
+.leaf:nth-child(254) {
+  --count: 76;
+  --ri: 6;
+  --i: 253;
+  --d: "253";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3113118116);
+}
+.leaf:nth-child(255) {
+  --count: 76;
+  --ri: 6;
+  --i: 254;
+  --d: "254";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8850769304);
+}
+.leaf:nth-child(256) {
+  --count: 76;
+  --ri: 6;
+  --i: 255;
+  --d: "255";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9481749543);
+}
+.leaf:nth-child(257) {
+  --count: 76;
+  --ri: 6;
+  --i: 256;
+  --d: "256";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8743913172);
+}
+.leaf:nth-child(258) {
+  --count: 76;
+  --ri: 6;
+  --i: 257;
+  --d: "257";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1799385189);
+}
+.leaf:nth-child(259) {
+  --count: 76;
+  --ri: 6;
+  --i: 258;
+  --d: "258";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4052883097);
+}
+.leaf:nth-child(260) {
+  --count: 76;
+  --ri: 6;
+  --i: 259;
+  --d: "259";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6571614936);
+}
+.leaf:nth-child(261) {
+  --count: 76;
+  --ri: 6;
+  --i: 260;
+  --d: "260";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0696044861);
+}
+.leaf:nth-child(262) {
+  --count: 76;
+  --ri: 6;
+  --i: 261;
+  --d: "261";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4568522852);
+}
+.leaf:nth-child(263) {
+  --count: 76;
+  --ri: 6;
+  --i: 262;
+  --d: "262";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7769410007);
+}
+.leaf:nth-child(264) {
+  --count: 76;
+  --ri: 6;
+  --i: 263;
+  --d: "263";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1260499145);
+}
+.leaf:nth-child(265) {
+  --count: 76;
+  --ri: 6;
+  --i: 264;
+  --d: "264";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5130040252);
+}
+.leaf:nth-child(266) {
+  --count: 76;
+  --ri: 6;
+  --i: 265;
+  --d: "265";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4123161232);
+}
+.leaf:nth-child(267) {
+  --count: 76;
+  --ri: 6;
+  --i: 266;
+  --d: "266";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3366556655);
+}
+.leaf:nth-child(268) {
+  --count: 76;
+  --ri: 6;
+  --i: 267;
+  --d: "267";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5879084641);
+}
+.leaf:nth-child(269) {
+  --count: 76;
+  --ri: 6;
+  --i: 268;
+  --d: "268";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6884799435);
+}
+.leaf:nth-child(270) {
+  --count: 76;
+  --ri: 6;
+  --i: 269;
+  --d: "269";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2825781866);
+}
+.leaf:nth-child(271) {
+  --count: 76;
+  --ri: 6;
+  --i: 270;
+  --d: "270";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3401190313);
+}
+.leaf:nth-child(272) {
+  --count: 76;
+  --ri: 6;
+  --i: 271;
+  --d: "271";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9806891888);
+}
+.leaf:nth-child(273) {
+  --count: 76;
+  --ri: 6;
+  --i: 272;
+  --d: "272";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7407869566);
+}
+.leaf:nth-child(274) {
+  --count: 76;
+  --ri: 6;
+  --i: 273;
+  --d: "273";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5726778286);
+}
+.leaf:nth-child(275) {
+  --count: 76;
+  --ri: 6;
+  --i: 274;
+  --d: "274";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8995019305);
+}
+.leaf:nth-child(276) {
+  --count: 76;
+  --ri: 6;
+  --i: 275;
+  --d: "275";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9689470485);
+}
+.leaf:nth-child(277) {
+  --count: 76;
+  --ri: 6;
+  --i: 276;
+  --d: "276";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3483443688);
+}
+.leaf:nth-child(278) {
+  --count: 76;
+  --ri: 6;
+  --i: 277;
+  --d: "277";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4937026521);
+}
+.leaf:nth-child(279) {
+  --count: 76;
+  --ri: 6;
+  --i: 278;
+  --d: "278";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1874236954);
+}
+.leaf:nth-child(280) {
+  --count: 76;
+  --ri: 6;
+  --i: 279;
+  --d: "279";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4409992772);
+}
+.leaf:nth-child(281) {
+  --count: 76;
+  --ri: 6;
+  --i: 280;
+  --d: "280";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4734881515);
+}
+.leaf:nth-child(282) {
+  --count: 76;
+  --ri: 6;
+  --i: 281;
+  --d: "281";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.597328806);
+}
+.leaf:nth-child(283) {
+  --count: 76;
+  --ri: 6;
+  --i: 282;
+  --d: "282";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2732683673);
+}
+.leaf:nth-child(284) {
+  --count: 76;
+  --ri: 6;
+  --i: 283;
+  --d: "283";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7139962086);
+}
+.leaf:nth-child(285) {
+  --count: 76;
+  --ri: 6;
+  --i: 284;
+  --d: "284";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6218951193);
+}
+.leaf:nth-child(286) {
+  --count: 76;
+  --ri: 6;
+  --i: 285;
+  --d: "285";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2855055501);
+}
+.leaf:nth-child(287) {
+  --count: 76;
+  --ri: 6;
+  --i: 286;
+  --d: "286";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2279365737);
+}
+.leaf:nth-child(288) {
+  --count: 76;
+  --ri: 6;
+  --i: 287;
+  --d: "287";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6566796769);
+}
+.leaf:nth-child(289) {
+  --count: 76;
+  --ri: 6;
+  --i: 288;
+  --d: "288";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8746653585);
+}
+.leaf:nth-child(290) {
+  --count: 76;
+  --ri: 6;
+  --i: 289;
+  --d: "289";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0775728855);
+}
+.leaf:nth-child(291) {
+  --count: 76;
+  --ri: 6;
+  --i: 290;
+  --d: "290";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5956674825);
+}
+.leaf:nth-child(292) {
+  --count: 76;
+  --ri: 6;
+  --i: 291;
+  --d: "291";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.815413196);
+}
+.leaf:nth-child(293) {
+  --count: 76;
+  --ri: 6;
+  --i: 292;
+  --d: "292";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2102032172);
+}
+.leaf:nth-child(294) {
+  --count: 76;
+  --ri: 6;
+  --i: 293;
+  --d: "293";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2852814613);
+}
+.leaf:nth-child(295) {
+  --count: 76;
+  --ri: 6;
+  --i: 294;
+  --d: "294";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9485646338);
+}
+.leaf:nth-child(296) {
+  --count: 76;
+  --ri: 6;
+  --i: 295;
+  --d: "295";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3125245994);
+}
+.leaf:nth-child(297) {
+  --count: 76;
+  --ri: 6;
+  --i: 296;
+  --d: "296";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7972859747);
+}
+.leaf:nth-child(298) {
+  --count: 76;
+  --ri: 6;
+  --i: 297;
+  --d: "297";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4771875815);
+}
+.leaf:nth-child(299) {
+  --count: 76;
+  --ri: 6;
+  --i: 298;
+  --d: "298";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1461566339);
+}
+.leaf:nth-child(300) {
+  --count: 76;
+  --ri: 6;
+  --i: 299;
+  --d: "299";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.246012214);
+}
+.leaf:nth-child(301) {
+  --count: 76;
+  --ri: 6;
+  --i: 300;
+  --d: "300";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9150730957);
+}
+.leaf:nth-child(302) {
+  --count: 87;
+  --ri: 7;
+  --i: 301;
+  --d: "301";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3294183197);
+}
+.leaf:nth-child(303) {
+  --count: 87;
+  --ri: 7;
+  --i: 302;
+  --d: "302";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.290907086);
+}
+.leaf:nth-child(304) {
+  --count: 87;
+  --ri: 7;
+  --i: 303;
+  --d: "303";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0830954902);
+}
+.leaf:nth-child(305) {
+  --count: 87;
+  --ri: 7;
+  --i: 304;
+  --d: "304";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.676878597);
+}
+.leaf:nth-child(306) {
+  --count: 87;
+  --ri: 7;
+  --i: 305;
+  --d: "305";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6937052073);
+}
+.leaf:nth-child(307) {
+  --count: 87;
+  --ri: 7;
+  --i: 306;
+  --d: "306";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0786012261);
+}
+.leaf:nth-child(308) {
+  --count: 87;
+  --ri: 7;
+  --i: 307;
+  --d: "307";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4334975317);
+}
+.leaf:nth-child(309) {
+  --count: 87;
+  --ri: 7;
+  --i: 308;
+  --d: "308";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3645966921);
+}
+.leaf:nth-child(310) {
+  --count: 87;
+  --ri: 7;
+  --i: 309;
+  --d: "309";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6768435356);
+}
+.leaf:nth-child(311) {
+  --count: 87;
+  --ri: 7;
+  --i: 310;
+  --d: "310";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7875634002);
+}
+.leaf:nth-child(312) {
+  --count: 87;
+  --ri: 7;
+  --i: 311;
+  --d: "311";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5632845888);
+}
+.leaf:nth-child(313) {
+  --count: 87;
+  --ri: 7;
+  --i: 312;
+  --d: "312";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4552695671);
+}
+.leaf:nth-child(314) {
+  --count: 87;
+  --ri: 7;
+  --i: 313;
+  --d: "313";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3630705252);
+}
+.leaf:nth-child(315) {
+  --count: 87;
+  --ri: 7;
+  --i: 314;
+  --d: "314";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8824869773);
+}
+.leaf:nth-child(316) {
+  --count: 87;
+  --ri: 7;
+  --i: 315;
+  --d: "315";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8669498129);
+}
+.leaf:nth-child(317) {
+  --count: 87;
+  --ri: 7;
+  --i: 316;
+  --d: "316";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4292847296);
+}
+.leaf:nth-child(318) {
+  --count: 87;
+  --ri: 7;
+  --i: 317;
+  --d: "317";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5109992304);
+}
+.leaf:nth-child(319) {
+  --count: 87;
+  --ri: 7;
+  --i: 318;
+  --d: "318";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5512920537);
+}
+.leaf:nth-child(320) {
+  --count: 87;
+  --ri: 7;
+  --i: 319;
+  --d: "319";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6943946);
+}
+.leaf:nth-child(321) {
+  --count: 87;
+  --ri: 7;
+  --i: 320;
+  --d: "320";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1016879763);
+}
+.leaf:nth-child(322) {
+  --count: 87;
+  --ri: 7;
+  --i: 321;
+  --d: "321";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6277540225);
+}
+.leaf:nth-child(323) {
+  --count: 87;
+  --ri: 7;
+  --i: 322;
+  --d: "322";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3082201635);
+}
+.leaf:nth-child(324) {
+  --count: 87;
+  --ri: 7;
+  --i: 323;
+  --d: "323";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3032662506);
+}
+.leaf:nth-child(325) {
+  --count: 87;
+  --ri: 7;
+  --i: 324;
+  --d: "324";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9766922619);
+}
+.leaf:nth-child(326) {
+  --count: 87;
+  --ri: 7;
+  --i: 325;
+  --d: "325";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2124520563);
+}
+.leaf:nth-child(327) {
+  --count: 87;
+  --ri: 7;
+  --i: 326;
+  --d: "326";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3839875428);
+}
+.leaf:nth-child(328) {
+  --count: 87;
+  --ri: 7;
+  --i: 327;
+  --d: "327";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1382413273);
+}
+.leaf:nth-child(329) {
+  --count: 87;
+  --ri: 7;
+  --i: 328;
+  --d: "328";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4388125149);
+}
+.leaf:nth-child(330) {
+  --count: 87;
+  --ri: 7;
+  --i: 329;
+  --d: "329";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4600655356);
+}
+.leaf:nth-child(331) {
+  --count: 87;
+  --ri: 7;
+  --i: 330;
+  --d: "330";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8598526944);
+}
+.leaf:nth-child(332) {
+  --count: 87;
+  --ri: 7;
+  --i: 331;
+  --d: "331";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7862448992);
+}
+.leaf:nth-child(333) {
+  --count: 87;
+  --ri: 7;
+  --i: 332;
+  --d: "332";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.264015289);
+}
+.leaf:nth-child(334) {
+  --count: 87;
+  --ri: 7;
+  --i: 333;
+  --d: "333";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1794737605);
+}
+.leaf:nth-child(335) {
+  --count: 87;
+  --ri: 7;
+  --i: 334;
+  --d: "334";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9770486896);
+}
+.leaf:nth-child(336) {
+  --count: 87;
+  --ri: 7;
+  --i: 335;
+  --d: "335";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5030233615);
+}
+.leaf:nth-child(337) {
+  --count: 87;
+  --ri: 7;
+  --i: 336;
+  --d: "336";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3010783195);
+}
+.leaf:nth-child(338) {
+  --count: 87;
+  --ri: 7;
+  --i: 337;
+  --d: "337";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.189599924);
+}
+.leaf:nth-child(339) {
+  --count: 87;
+  --ri: 7;
+  --i: 338;
+  --d: "338";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7560685955);
+}
+.leaf:nth-child(340) {
+  --count: 87;
+  --ri: 7;
+  --i: 339;
+  --d: "339";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3233107634);
+}
+.leaf:nth-child(341) {
+  --count: 87;
+  --ri: 7;
+  --i: 340;
+  --d: "340";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4079900044);
+}
+.leaf:nth-child(342) {
+  --count: 87;
+  --ri: 7;
+  --i: 341;
+  --d: "341";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6089527846);
+}
+.leaf:nth-child(343) {
+  --count: 87;
+  --ri: 7;
+  --i: 342;
+  --d: "342";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2009086122);
+}
+.leaf:nth-child(344) {
+  --count: 87;
+  --ri: 7;
+  --i: 343;
+  --d: "343";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4217909014);
+}
+.leaf:nth-child(345) {
+  --count: 87;
+  --ri: 7;
+  --i: 344;
+  --d: "344";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6125339954);
+}
+.leaf:nth-child(346) {
+  --count: 87;
+  --ri: 7;
+  --i: 345;
+  --d: "345";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9297910761);
+}
+.leaf:nth-child(347) {
+  --count: 87;
+  --ri: 7;
+  --i: 346;
+  --d: "346";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0423999112);
+}
+.leaf:nth-child(348) {
+  --count: 87;
+  --ri: 7;
+  --i: 347;
+  --d: "347";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7155225966);
+}
+.leaf:nth-child(349) {
+  --count: 87;
+  --ri: 7;
+  --i: 348;
+  --d: "348";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2585689305);
+}
+.leaf:nth-child(350) {
+  --count: 87;
+  --ri: 7;
+  --i: 349;
+  --d: "349";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9473538153);
+}
+.leaf:nth-child(351) {
+  --count: 87;
+  --ri: 7;
+  --i: 350;
+  --d: "350";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6930544956);
+}
+.leaf:nth-child(352) {
+  --count: 87;
+  --ri: 7;
+  --i: 351;
+  --d: "351";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2145663626);
+}
+.leaf:nth-child(353) {
+  --count: 87;
+  --ri: 7;
+  --i: 352;
+  --d: "352";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2977546898);
+}
+.leaf:nth-child(354) {
+  --count: 87;
+  --ri: 7;
+  --i: 353;
+  --d: "353";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1428908046);
+}
+.leaf:nth-child(355) {
+  --count: 87;
+  --ri: 7;
+  --i: 354;
+  --d: "354";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4639282332);
+}
+.leaf:nth-child(356) {
+  --count: 87;
+  --ri: 7;
+  --i: 355;
+  --d: "355";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0106848964);
+}
+.leaf:nth-child(357) {
+  --count: 87;
+  --ri: 7;
+  --i: 356;
+  --d: "356";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.788492897);
+}
+.leaf:nth-child(358) {
+  --count: 87;
+  --ri: 7;
+  --i: 357;
+  --d: "357";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4186026641);
+}
+.leaf:nth-child(359) {
+  --count: 87;
+  --ri: 7;
+  --i: 358;
+  --d: "358";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4454837146);
+}
+.leaf:nth-child(360) {
+  --count: 87;
+  --ri: 7;
+  --i: 359;
+  --d: "359";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4201314871);
+}
+.leaf:nth-child(361) {
+  --count: 87;
+  --ri: 7;
+  --i: 360;
+  --d: "360";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8883156059);
+}
+.leaf:nth-child(362) {
+  --count: 87;
+  --ri: 7;
+  --i: 361;
+  --d: "361";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1672387892);
+}
+.leaf:nth-child(363) {
+  --count: 87;
+  --ri: 7;
+  --i: 362;
+  --d: "362";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.915207134);
+}
+.leaf:nth-child(364) {
+  --count: 87;
+  --ri: 7;
+  --i: 363;
+  --d: "363";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2533463607);
+}
+.leaf:nth-child(365) {
+  --count: 87;
+  --ri: 7;
+  --i: 364;
+  --d: "364";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2366326832);
+}
+.leaf:nth-child(366) {
+  --count: 87;
+  --ri: 7;
+  --i: 365;
+  --d: "365";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9611031924);
+}
+.leaf:nth-child(367) {
+  --count: 87;
+  --ri: 7;
+  --i: 366;
+  --d: "366";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6484732941);
+}
+.leaf:nth-child(368) {
+  --count: 87;
+  --ri: 7;
+  --i: 367;
+  --d: "367";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9679492543);
+}
+.leaf:nth-child(369) {
+  --count: 87;
+  --ri: 7;
+  --i: 368;
+  --d: "368";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.408390252);
+}
+.leaf:nth-child(370) {
+  --count: 87;
+  --ri: 7;
+  --i: 369;
+  --d: "369";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6264595686);
+}
+.leaf:nth-child(371) {
+  --count: 87;
+  --ri: 7;
+  --i: 370;
+  --d: "370";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7135309427);
+}
+.leaf:nth-child(372) {
+  --count: 87;
+  --ri: 7;
+  --i: 371;
+  --d: "371";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7027556321);
+}
+.leaf:nth-child(373) {
+  --count: 87;
+  --ri: 7;
+  --i: 372;
+  --d: "372";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8012148066);
+}
+.leaf:nth-child(374) {
+  --count: 87;
+  --ri: 7;
+  --i: 373;
+  --d: "373";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2941245057);
+}
+.leaf:nth-child(375) {
+  --count: 87;
+  --ri: 7;
+  --i: 374;
+  --d: "374";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.777461141);
+}
+.leaf:nth-child(376) {
+  --count: 87;
+  --ri: 7;
+  --i: 375;
+  --d: "375";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5030580132);
+}
+.leaf:nth-child(377) {
+  --count: 87;
+  --ri: 7;
+  --i: 376;
+  --d: "376";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8706844353);
+}
+.leaf:nth-child(378) {
+  --count: 87;
+  --ri: 7;
+  --i: 377;
+  --d: "377";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7886640964);
+}
+.leaf:nth-child(379) {
+  --count: 87;
+  --ri: 7;
+  --i: 378;
+  --d: "378";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1210674601);
+}
+.leaf:nth-child(380) {
+  --count: 87;
+  --ri: 7;
+  --i: 379;
+  --d: "379";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.575772797);
+}
+.leaf:nth-child(381) {
+  --count: 87;
+  --ri: 7;
+  --i: 380;
+  --d: "380";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8647355595);
+}
+.leaf:nth-child(382) {
+  --count: 87;
+  --ri: 7;
+  --i: 381;
+  --d: "381";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5054060573);
+}
+.leaf:nth-child(383) {
+  --count: 87;
+  --ri: 7;
+  --i: 382;
+  --d: "382";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2646842867);
+}
+.leaf:nth-child(384) {
+  --count: 87;
+  --ri: 7;
+  --i: 383;
+  --d: "383";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1378808297);
+}
+.leaf:nth-child(385) {
+  --count: 87;
+  --ri: 7;
+  --i: 384;
+  --d: "384";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3043343814);
+}
+.leaf:nth-child(386) {
+  --count: 87;
+  --ri: 7;
+  --i: 385;
+  --d: "385";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8298235513);
+}
+.leaf:nth-child(387) {
+  --count: 87;
+  --ri: 7;
+  --i: 386;
+  --d: "386";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8513195282);
+}
+.leaf:nth-child(388) {
+  --count: 87;
+  --ri: 7;
+  --i: 387;
+  --d: "387";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9689351179);
+}
+.leaf:nth-child(389) {
+  --count: 98;
+  --ri: 8;
+  --i: 388;
+  --d: "388";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7968393955);
+}
+.leaf:nth-child(390) {
+  --count: 98;
+  --ri: 8;
+  --i: 389;
+  --d: "389";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.480605155);
+}
+.leaf:nth-child(391) {
+  --count: 98;
+  --ri: 8;
+  --i: 390;
+  --d: "390";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1570502888);
+}
+.leaf:nth-child(392) {
+  --count: 98;
+  --ri: 8;
+  --i: 391;
+  --d: "391";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3136935067);
+}
+.leaf:nth-child(393) {
+  --count: 98;
+  --ri: 8;
+  --i: 392;
+  --d: "392";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5546493949);
+}
+.leaf:nth-child(394) {
+  --count: 98;
+  --ri: 8;
+  --i: 393;
+  --d: "393";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4682344962);
+}
+.leaf:nth-child(395) {
+  --count: 98;
+  --ri: 8;
+  --i: 394;
+  --d: "394";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8405293052);
+}
+.leaf:nth-child(396) {
+  --count: 98;
+  --ri: 8;
+  --i: 395;
+  --d: "395";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2783482823);
+}
+.leaf:nth-child(397) {
+  --count: 98;
+  --ri: 8;
+  --i: 396;
+  --d: "396";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6413512314);
+}
+.leaf:nth-child(398) {
+  --count: 98;
+  --ri: 8;
+  --i: 397;
+  --d: "397";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7871704511);
+}
+.leaf:nth-child(399) {
+  --count: 98;
+  --ri: 8;
+  --i: 398;
+  --d: "398";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1290418391);
+}
+.leaf:nth-child(400) {
+  --count: 98;
+  --ri: 8;
+  --i: 399;
+  --d: "399";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3545855904);
+}
+.leaf:nth-child(401) {
+  --count: 98;
+  --ri: 8;
+  --i: 400;
+  --d: "400";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8278899719);
+}
+.leaf:nth-child(402) {
+  --count: 98;
+  --ri: 8;
+  --i: 401;
+  --d: "401";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0149378562);
+}
+.leaf:nth-child(403) {
+  --count: 98;
+  --ri: 8;
+  --i: 402;
+  --d: "402";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4158959402);
+}
+.leaf:nth-child(404) {
+  --count: 98;
+  --ri: 8;
+  --i: 403;
+  --d: "403";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7717722125);
+}
+.leaf:nth-child(405) {
+  --count: 98;
+  --ri: 8;
+  --i: 404;
+  --d: "404";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2888752694);
+}
+.leaf:nth-child(406) {
+  --count: 98;
+  --ri: 8;
+  --i: 405;
+  --d: "405";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.497805593);
+}
+.leaf:nth-child(407) {
+  --count: 98;
+  --ri: 8;
+  --i: 406;
+  --d: "406";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0278483848);
+}
+.leaf:nth-child(408) {
+  --count: 98;
+  --ri: 8;
+  --i: 407;
+  --d: "407";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0840766334);
+}
+.leaf:nth-child(409) {
+  --count: 98;
+  --ri: 8;
+  --i: 408;
+  --d: "408";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1133110178);
+}
+.leaf:nth-child(410) {
+  --count: 98;
+  --ri: 8;
+  --i: 409;
+  --d: "409";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7535659517);
+}
+.leaf:nth-child(411) {
+  --count: 98;
+  --ri: 8;
+  --i: 410;
+  --d: "410";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0398282873);
+}
+.leaf:nth-child(412) {
+  --count: 98;
+  --ri: 8;
+  --i: 411;
+  --d: "411";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5124164389);
+}
+.leaf:nth-child(413) {
+  --count: 98;
+  --ri: 8;
+  --i: 412;
+  --d: "412";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.85124505);
+}
+.leaf:nth-child(414) {
+  --count: 98;
+  --ri: 8;
+  --i: 413;
+  --d: "413";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5814359576);
+}
+.leaf:nth-child(415) {
+  --count: 98;
+  --ri: 8;
+  --i: 414;
+  --d: "414";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0916135682);
+}
+.leaf:nth-child(416) {
+  --count: 98;
+  --ri: 8;
+  --i: 415;
+  --d: "415";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4933308129);
+}
+.leaf:nth-child(417) {
+  --count: 98;
+  --ri: 8;
+  --i: 416;
+  --d: "416";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4807016438);
+}
+.leaf:nth-child(418) {
+  --count: 98;
+  --ri: 8;
+  --i: 417;
+  --d: "417";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1055308748);
+}
+.leaf:nth-child(419) {
+  --count: 98;
+  --ri: 8;
+  --i: 418;
+  --d: "418";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8371822152);
+}
+.leaf:nth-child(420) {
+  --count: 98;
+  --ri: 8;
+  --i: 419;
+  --d: "419";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3927921684);
+}
+.leaf:nth-child(421) {
+  --count: 98;
+  --ri: 8;
+  --i: 420;
+  --d: "420";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1979083006);
+}
+.leaf:nth-child(422) {
+  --count: 98;
+  --ri: 8;
+  --i: 421;
+  --d: "421";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5296786627);
+}
+.leaf:nth-child(423) {
+  --count: 98;
+  --ri: 8;
+  --i: 422;
+  --d: "422";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7875841963);
+}
+.leaf:nth-child(424) {
+  --count: 98;
+  --ri: 8;
+  --i: 423;
+  --d: "423";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.970945687);
+}
+.leaf:nth-child(425) {
+  --count: 98;
+  --ri: 8;
+  --i: 424;
+  --d: "424";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0884851952);
+}
+.leaf:nth-child(426) {
+  --count: 98;
+  --ri: 8;
+  --i: 425;
+  --d: "425";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9161121263);
+}
+.leaf:nth-child(427) {
+  --count: 98;
+  --ri: 8;
+  --i: 426;
+  --d: "426";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2854964916);
+}
+.leaf:nth-child(428) {
+  --count: 98;
+  --ri: 8;
+  --i: 427;
+  --d: "427";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0160427446);
+}
+.leaf:nth-child(429) {
+  --count: 98;
+  --ri: 8;
+  --i: 428;
+  --d: "428";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7070258183);
+}
+.leaf:nth-child(430) {
+  --count: 98;
+  --ri: 8;
+  --i: 429;
+  --d: "429";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1147309743);
+}
+.leaf:nth-child(431) {
+  --count: 98;
+  --ri: 8;
+  --i: 430;
+  --d: "430";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9066281104);
+}
+.leaf:nth-child(432) {
+  --count: 98;
+  --ri: 8;
+  --i: 431;
+  --d: "431";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0378430103);
+}
+.leaf:nth-child(433) {
+  --count: 98;
+  --ri: 8;
+  --i: 432;
+  --d: "432";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4473704294);
+}
+.leaf:nth-child(434) {
+  --count: 98;
+  --ri: 8;
+  --i: 433;
+  --d: "433";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3468962786);
+}
+.leaf:nth-child(435) {
+  --count: 98;
+  --ri: 8;
+  --i: 434;
+  --d: "434";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5036973685);
+}
+.leaf:nth-child(436) {
+  --count: 98;
+  --ri: 8;
+  --i: 435;
+  --d: "435";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6223113873);
+}
+.leaf:nth-child(437) {
+  --count: 98;
+  --ri: 8;
+  --i: 436;
+  --d: "436";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4528565311);
+}
+.leaf:nth-child(438) {
+  --count: 98;
+  --ri: 8;
+  --i: 437;
+  --d: "437";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8332276966);
+}
+.leaf:nth-child(439) {
+  --count: 98;
+  --ri: 8;
+  --i: 438;
+  --d: "438";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2821719166);
+}
+.leaf:nth-child(440) {
+  --count: 98;
+  --ri: 8;
+  --i: 439;
+  --d: "439";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0744854072);
+}
+.leaf:nth-child(441) {
+  --count: 98;
+  --ri: 8;
+  --i: 440;
+  --d: "440";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6136214724);
+}
+.leaf:nth-child(442) {
+  --count: 98;
+  --ri: 8;
+  --i: 441;
+  --d: "441";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4275675731);
+}
+.leaf:nth-child(443) {
+  --count: 98;
+  --ri: 8;
+  --i: 442;
+  --d: "442";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9466147192);
+}
+.leaf:nth-child(444) {
+  --count: 98;
+  --ri: 8;
+  --i: 443;
+  --d: "443";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7502437376);
+}
+.leaf:nth-child(445) {
+  --count: 98;
+  --ri: 8;
+  --i: 444;
+  --d: "444";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5302798858);
+}
+.leaf:nth-child(446) {
+  --count: 98;
+  --ri: 8;
+  --i: 445;
+  --d: "445";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7768803229);
+}
+.leaf:nth-child(447) {
+  --count: 98;
+  --ri: 8;
+  --i: 446;
+  --d: "446";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6854190746);
+}
+.leaf:nth-child(448) {
+  --count: 98;
+  --ri: 8;
+  --i: 447;
+  --d: "447";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1976939649);
+}
+.leaf:nth-child(449) {
+  --count: 98;
+  --ri: 8;
+  --i: 448;
+  --d: "448";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5376735484);
+}
+.leaf:nth-child(450) {
+  --count: 98;
+  --ri: 8;
+  --i: 449;
+  --d: "449";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5208574688);
+}
+.leaf:nth-child(451) {
+  --count: 98;
+  --ri: 8;
+  --i: 450;
+  --d: "450";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8437818464);
+}
+.leaf:nth-child(452) {
+  --count: 98;
+  --ri: 8;
+  --i: 451;
+  --d: "451";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.382981031);
+}
+.leaf:nth-child(453) {
+  --count: 98;
+  --ri: 8;
+  --i: 452;
+  --d: "452";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7964657489);
+}
+.leaf:nth-child(454) {
+  --count: 98;
+  --ri: 8;
+  --i: 453;
+  --d: "453";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3165113479);
+}
+.leaf:nth-child(455) {
+  --count: 98;
+  --ri: 8;
+  --i: 454;
+  --d: "454";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8729323145);
+}
+.leaf:nth-child(456) {
+  --count: 98;
+  --ri: 8;
+  --i: 455;
+  --d: "455";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9970434234);
+}
+.leaf:nth-child(457) {
+  --count: 98;
+  --ri: 8;
+  --i: 456;
+  --d: "456";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.732887734);
+}
+.leaf:nth-child(458) {
+  --count: 98;
+  --ri: 8;
+  --i: 457;
+  --d: "457";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4896708985);
+}
+.leaf:nth-child(459) {
+  --count: 98;
+  --ri: 8;
+  --i: 458;
+  --d: "458";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8866285156);
+}
+.leaf:nth-child(460) {
+  --count: 98;
+  --ri: 8;
+  --i: 459;
+  --d: "459";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7343325668);
+}
+.leaf:nth-child(461) {
+  --count: 98;
+  --ri: 8;
+  --i: 460;
+  --d: "460";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4609162403);
+}
+.leaf:nth-child(462) {
+  --count: 98;
+  --ri: 8;
+  --i: 461;
+  --d: "461";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3021729844);
+}
+.leaf:nth-child(463) {
+  --count: 98;
+  --ri: 8;
+  --i: 462;
+  --d: "462";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3833442864);
+}
+.leaf:nth-child(464) {
+  --count: 98;
+  --ri: 8;
+  --i: 463;
+  --d: "463";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9874742835);
+}
+.leaf:nth-child(465) {
+  --count: 98;
+  --ri: 8;
+  --i: 464;
+  --d: "464";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0236534117);
+}
+.leaf:nth-child(466) {
+  --count: 98;
+  --ri: 8;
+  --i: 465;
+  --d: "465";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4292987844);
+}
+.leaf:nth-child(467) {
+  --count: 98;
+  --ri: 8;
+  --i: 466;
+  --d: "466";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5972557059);
+}
+.leaf:nth-child(468) {
+  --count: 98;
+  --ri: 8;
+  --i: 467;
+  --d: "467";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7451926678);
+}
+.leaf:nth-child(469) {
+  --count: 98;
+  --ri: 8;
+  --i: 468;
+  --d: "468";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7873962107);
+}
+.leaf:nth-child(470) {
+  --count: 98;
+  --ri: 8;
+  --i: 469;
+  --d: "469";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8167811647);
+}
+.leaf:nth-child(471) {
+  --count: 98;
+  --ri: 8;
+  --i: 470;
+  --d: "470";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6869067441);
+}
+.leaf:nth-child(472) {
+  --count: 98;
+  --ri: 8;
+  --i: 471;
+  --d: "471";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0698289142);
+}
+.leaf:nth-child(473) {
+  --count: 98;
+  --ri: 8;
+  --i: 472;
+  --d: "472";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8852793317);
+}
+.leaf:nth-child(474) {
+  --count: 98;
+  --ri: 8;
+  --i: 473;
+  --d: "473";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.231501837);
+}
+.leaf:nth-child(475) {
+  --count: 98;
+  --ri: 8;
+  --i: 474;
+  --d: "474";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8620830271);
+}
+.leaf:nth-child(476) {
+  --count: 98;
+  --ri: 8;
+  --i: 475;
+  --d: "475";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3486895618);
+}
+.leaf:nth-child(477) {
+  --count: 98;
+  --ri: 8;
+  --i: 476;
+  --d: "476";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6852979239);
+}
+.leaf:nth-child(478) {
+  --count: 98;
+  --ri: 8;
+  --i: 477;
+  --d: "477";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4615136779);
+}
+.leaf:nth-child(479) {
+  --count: 98;
+  --ri: 8;
+  --i: 478;
+  --d: "478";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7660953286);
+}
+.leaf:nth-child(480) {
+  --count: 98;
+  --ri: 8;
+  --i: 479;
+  --d: "479";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1224590098);
+}
+.leaf:nth-child(481) {
+  --count: 98;
+  --ri: 8;
+  --i: 480;
+  --d: "480";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.365151748);
+}
+.leaf:nth-child(482) {
+  --count: 98;
+  --ri: 8;
+  --i: 481;
+  --d: "481";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3431436853);
+}
+.leaf:nth-child(483) {
+  --count: 98;
+  --ri: 8;
+  --i: 482;
+  --d: "482";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1298598535);
+}
+.leaf:nth-child(484) {
+  --count: 98;
+  --ri: 8;
+  --i: 483;
+  --d: "483";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7652272716);
+}
+.leaf:nth-child(485) {
+  --count: 98;
+  --ri: 8;
+  --i: 484;
+  --d: "484";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1651429775);
+}
+.leaf:nth-child(486) {
+  --count: 98;
+  --ri: 8;
+  --i: 485;
+  --d: "485";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0047735584);
+}
+.leaf:nth-child(487) {
+  --count: 109;
+  --ri: 9;
+  --i: 486;
+  --d: "486";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4961933506);
+}
+.leaf:nth-child(488) {
+  --count: 109;
+  --ri: 9;
+  --i: 487;
+  --d: "487";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7440008407);
+}
+.leaf:nth-child(489) {
+  --count: 109;
+  --ri: 9;
+  --i: 488;
+  --d: "488";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0039562992);
+}
+.leaf:nth-child(490) {
+  --count: 109;
+  --ri: 9;
+  --i: 489;
+  --d: "489";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1078076968);
+}
+.leaf:nth-child(491) {
+  --count: 109;
+  --ri: 9;
+  --i: 490;
+  --d: "490";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4186854173);
+}
+.leaf:nth-child(492) {
+  --count: 109;
+  --ri: 9;
+  --i: 491;
+  --d: "491";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9563449384);
+}
+.leaf:nth-child(493) {
+  --count: 109;
+  --ri: 9;
+  --i: 492;
+  --d: "492";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5278859821);
+}
+.leaf:nth-child(494) {
+  --count: 109;
+  --ri: 9;
+  --i: 493;
+  --d: "493";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3522427172);
+}
+.leaf:nth-child(495) {
+  --count: 109;
+  --ri: 9;
+  --i: 494;
+  --d: "494";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2640906232);
+}
+.leaf:nth-child(496) {
+  --count: 109;
+  --ri: 9;
+  --i: 495;
+  --d: "495";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8031362826);
+}
+.leaf:nth-child(497) {
+  --count: 109;
+  --ri: 9;
+  --i: 496;
+  --d: "496";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.432303475);
+}
+.leaf:nth-child(498) {
+  --count: 109;
+  --ri: 9;
+  --i: 497;
+  --d: "497";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3507966574);
+}
+.leaf:nth-child(499) {
+  --count: 109;
+  --ri: 9;
+  --i: 498;
+  --d: "498";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7649922496);
+}
+.leaf:nth-child(500) {
+  --count: 109;
+  --ri: 9;
+  --i: 499;
+  --d: "499";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4598021797);
+}
+.leaf:nth-child(501) {
+  --count: 109;
+  --ri: 9;
+  --i: 500;
+  --d: "500";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2564884879);
+}
+.leaf:nth-child(502) {
+  --count: 109;
+  --ri: 9;
+  --i: 501;
+  --d: "501";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6032010088);
+}
+.leaf:nth-child(503) {
+  --count: 109;
+  --ri: 9;
+  --i: 502;
+  --d: "502";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5579907538);
+}
+.leaf:nth-child(504) {
+  --count: 109;
+  --ri: 9;
+  --i: 503;
+  --d: "503";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6455992825);
+}
+.leaf:nth-child(505) {
+  --count: 109;
+  --ri: 9;
+  --i: 504;
+  --d: "504";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8223643811);
+}
+.leaf:nth-child(506) {
+  --count: 109;
+  --ri: 9;
+  --i: 505;
+  --d: "505";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2011013394);
+}
+.leaf:nth-child(507) {
+  --count: 109;
+  --ri: 9;
+  --i: 506;
+  --d: "506";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2382735682);
+}
+.leaf:nth-child(508) {
+  --count: 109;
+  --ri: 9;
+  --i: 507;
+  --d: "507";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0313817935);
+}
+.leaf:nth-child(509) {
+  --count: 109;
+  --ri: 9;
+  --i: 508;
+  --d: "508";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0751835627);
+}
+.leaf:nth-child(510) {
+  --count: 109;
+  --ri: 9;
+  --i: 509;
+  --d: "509";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.190340715);
+}
+.leaf:nth-child(511) {
+  --count: 109;
+  --ri: 9;
+  --i: 510;
+  --d: "510";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4763061408);
+}
+.leaf:nth-child(512) {
+  --count: 109;
+  --ri: 9;
+  --i: 511;
+  --d: "511";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9405313129);
+}
+.leaf:nth-child(513) {
+  --count: 109;
+  --ri: 9;
+  --i: 512;
+  --d: "512";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2264961358);
+}
+.leaf:nth-child(514) {
+  --count: 109;
+  --ri: 9;
+  --i: 513;
+  --d: "513";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7192493745);
+}
+.leaf:nth-child(515) {
+  --count: 109;
+  --ri: 9;
+  --i: 514;
+  --d: "514";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8670564632);
+}
+.leaf:nth-child(516) {
+  --count: 109;
+  --ri: 9;
+  --i: 515;
+  --d: "515";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4934345768);
+}
+.leaf:nth-child(517) {
+  --count: 109;
+  --ri: 9;
+  --i: 516;
+  --d: "516";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6698716339);
+}
+.leaf:nth-child(518) {
+  --count: 109;
+  --ri: 9;
+  --i: 517;
+  --d: "517";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7336138678);
+}
+.leaf:nth-child(519) {
+  --count: 109;
+  --ri: 9;
+  --i: 518;
+  --d: "518";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5603329463);
+}
+.leaf:nth-child(520) {
+  --count: 109;
+  --ri: 9;
+  --i: 519;
+  --d: "519";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.905335159);
+}
+.leaf:nth-child(521) {
+  --count: 109;
+  --ri: 9;
+  --i: 520;
+  --d: "520";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1184923571);
+}
+.leaf:nth-child(522) {
+  --count: 109;
+  --ri: 9;
+  --i: 521;
+  --d: "521";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5125400203);
+}
+.leaf:nth-child(523) {
+  --count: 109;
+  --ri: 9;
+  --i: 522;
+  --d: "522";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7446777307);
+}
+.leaf:nth-child(524) {
+  --count: 109;
+  --ri: 9;
+  --i: 523;
+  --d: "523";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6459085662);
+}
+.leaf:nth-child(525) {
+  --count: 109;
+  --ri: 9;
+  --i: 524;
+  --d: "524";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7892498698);
+}
+.leaf:nth-child(526) {
+  --count: 109;
+  --ri: 9;
+  --i: 525;
+  --d: "525";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6930099336);
+}
+.leaf:nth-child(527) {
+  --count: 109;
+  --ri: 9;
+  --i: 526;
+  --d: "526";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9458393676);
+}
+.leaf:nth-child(528) {
+  --count: 109;
+  --ri: 9;
+  --i: 527;
+  --d: "527";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3059141894);
+}
+.leaf:nth-child(529) {
+  --count: 109;
+  --ri: 9;
+  --i: 528;
+  --d: "528";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5767787256);
+}
+.leaf:nth-child(530) {
+  --count: 109;
+  --ri: 9;
+  --i: 529;
+  --d: "529";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9556208695);
+}
+.leaf:nth-child(531) {
+  --count: 109;
+  --ri: 9;
+  --i: 530;
+  --d: "530";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2872313);
+}
+.leaf:nth-child(532) {
+  --count: 109;
+  --ri: 9;
+  --i: 531;
+  --d: "531";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3762345841);
+}
+.leaf:nth-child(533) {
+  --count: 109;
+  --ri: 9;
+  --i: 532;
+  --d: "532";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1391244832);
+}
+.leaf:nth-child(534) {
+  --count: 109;
+  --ri: 9;
+  --i: 533;
+  --d: "533";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1178991885);
+}
+.leaf:nth-child(535) {
+  --count: 109;
+  --ri: 9;
+  --i: 534;
+  --d: "534";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8052546974);
+}
+.leaf:nth-child(536) {
+  --count: 109;
+  --ri: 9;
+  --i: 535;
+  --d: "535";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0033766796);
+}
+.leaf:nth-child(537) {
+  --count: 109;
+  --ri: 9;
+  --i: 536;
+  --d: "536";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9977586712);
+}
+.leaf:nth-child(538) {
+  --count: 109;
+  --ri: 9;
+  --i: 537;
+  --d: "537";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2172964942);
+}
+.leaf:nth-child(539) {
+  --count: 109;
+  --ri: 9;
+  --i: 538;
+  --d: "538";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7380551641);
+}
+.leaf:nth-child(540) {
+  --count: 109;
+  --ri: 9;
+  --i: 539;
+  --d: "539";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1856220886);
+}
+.leaf:nth-child(541) {
+  --count: 109;
+  --ri: 9;
+  --i: 540;
+  --d: "540";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0998866969);
+}
+.leaf:nth-child(542) {
+  --count: 109;
+  --ri: 9;
+  --i: 541;
+  --d: "541";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5935641139);
+}
+.leaf:nth-child(543) {
+  --count: 109;
+  --ri: 9;
+  --i: 542;
+  --d: "542";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6120894973);
+}
+.leaf:nth-child(544) {
+  --count: 109;
+  --ri: 9;
+  --i: 543;
+  --d: "543";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.532932624);
+}
+.leaf:nth-child(545) {
+  --count: 109;
+  --ri: 9;
+  --i: 544;
+  --d: "544";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3173345487);
+}
+.leaf:nth-child(546) {
+  --count: 109;
+  --ri: 9;
+  --i: 545;
+  --d: "545";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7857347958);
+}
+.leaf:nth-child(547) {
+  --count: 109;
+  --ri: 9;
+  --i: 546;
+  --d: "546";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6102300001);
+}
+.leaf:nth-child(548) {
+  --count: 109;
+  --ri: 9;
+  --i: 547;
+  --d: "547";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4545691923);
+}
+.leaf:nth-child(549) {
+  --count: 109;
+  --ri: 9;
+  --i: 548;
+  --d: "548";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5272157467);
+}
+.leaf:nth-child(550) {
+  --count: 109;
+  --ri: 9;
+  --i: 549;
+  --d: "549";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7328691163);
+}
+.leaf:nth-child(551) {
+  --count: 109;
+  --ri: 9;
+  --i: 550;
+  --d: "550";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.989877253);
+}
+.leaf:nth-child(552) {
+  --count: 109;
+  --ri: 9;
+  --i: 551;
+  --d: "551";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5125051477);
+}
+.leaf:nth-child(553) {
+  --count: 109;
+  --ri: 9;
+  --i: 552;
+  --d: "552";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7745368051);
+}
+.leaf:nth-child(554) {
+  --count: 109;
+  --ri: 9;
+  --i: 553;
+  --d: "553";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8349483364);
+}
+.leaf:nth-child(555) {
+  --count: 109;
+  --ri: 9;
+  --i: 554;
+  --d: "554";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6800812564);
+}
+.leaf:nth-child(556) {
+  --count: 109;
+  --ri: 9;
+  --i: 555;
+  --d: "555";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3023364351);
+}
+.leaf:nth-child(557) {
+  --count: 109;
+  --ri: 9;
+  --i: 556;
+  --d: "556";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6996899489);
+}
+.leaf:nth-child(558) {
+  --count: 109;
+  --ri: 9;
+  --i: 557;
+  --d: "557";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0503020288);
+}
+.leaf:nth-child(559) {
+  --count: 109;
+  --ri: 9;
+  --i: 558;
+  --d: "558";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3819054351);
+}
+.leaf:nth-child(560) {
+  --count: 109;
+  --ri: 9;
+  --i: 559;
+  --d: "559";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8556280503);
+}
+.leaf:nth-child(561) {
+  --count: 109;
+  --ri: 9;
+  --i: 560;
+  --d: "560";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7195763583);
+}
+.leaf:nth-child(562) {
+  --count: 109;
+  --ri: 9;
+  --i: 561;
+  --d: "561";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0305590508);
+}
+.leaf:nth-child(563) {
+  --count: 109;
+  --ri: 9;
+  --i: 562;
+  --d: "562";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1382567446);
+}
+.leaf:nth-child(564) {
+  --count: 109;
+  --ri: 9;
+  --i: 563;
+  --d: "563";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0718805074);
+}
+.leaf:nth-child(565) {
+  --count: 109;
+  --ri: 9;
+  --i: 564;
+  --d: "564";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1425501696);
+}
+.leaf:nth-child(566) {
+  --count: 109;
+  --ri: 9;
+  --i: 565;
+  --d: "565";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7665906455);
+}
+.leaf:nth-child(567) {
+  --count: 109;
+  --ri: 9;
+  --i: 566;
+  --d: "566";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4669002012);
+}
+.leaf:nth-child(568) {
+  --count: 109;
+  --ri: 9;
+  --i: 567;
+  --d: "567";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0135385792);
+}
+.leaf:nth-child(569) {
+  --count: 109;
+  --ri: 9;
+  --i: 568;
+  --d: "568";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2542461838);
+}
+.leaf:nth-child(570) {
+  --count: 109;
+  --ri: 9;
+  --i: 569;
+  --d: "569";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1857686688);
+}
+.leaf:nth-child(571) {
+  --count: 109;
+  --ri: 9;
+  --i: 570;
+  --d: "570";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9245592994);
+}
+.leaf:nth-child(572) {
+  --count: 109;
+  --ri: 9;
+  --i: 571;
+  --d: "571";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4597729244);
+}
+.leaf:nth-child(573) {
+  --count: 109;
+  --ri: 9;
+  --i: 572;
+  --d: "572";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7620785855);
+}
+.leaf:nth-child(574) {
+  --count: 109;
+  --ri: 9;
+  --i: 573;
+  --d: "573";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4869212086);
+}
+.leaf:nth-child(575) {
+  --count: 109;
+  --ri: 9;
+  --i: 574;
+  --d: "574";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3265354924);
+}
+.leaf:nth-child(576) {
+  --count: 109;
+  --ri: 9;
+  --i: 575;
+  --d: "575";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8894455074);
+}
+.leaf:nth-child(577) {
+  --count: 109;
+  --ri: 9;
+  --i: 576;
+  --d: "576";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5869229784);
+}
+.leaf:nth-child(578) {
+  --count: 109;
+  --ri: 9;
+  --i: 577;
+  --d: "577";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9724006491);
+}
+.leaf:nth-child(579) {
+  --count: 109;
+  --ri: 9;
+  --i: 578;
+  --d: "578";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4396136193);
+}
+.leaf:nth-child(580) {
+  --count: 109;
+  --ri: 9;
+  --i: 579;
+  --d: "579";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1525988361);
+}
+.leaf:nth-child(581) {
+  --count: 109;
+  --ri: 9;
+  --i: 580;
+  --d: "580";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5337780714);
+}
+.leaf:nth-child(582) {
+  --count: 109;
+  --ri: 9;
+  --i: 581;
+  --d: "581";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0452606968);
+}
+.leaf:nth-child(583) {
+  --count: 109;
+  --ri: 9;
+  --i: 582;
+  --d: "582";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4206107443);
+}
+.leaf:nth-child(584) {
+  --count: 109;
+  --ri: 9;
+  --i: 583;
+  --d: "583";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8787627873);
+}
+.leaf:nth-child(585) {
+  --count: 109;
+  --ri: 9;
+  --i: 584;
+  --d: "584";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2971357203);
+}
+.leaf:nth-child(586) {
+  --count: 109;
+  --ri: 9;
+  --i: 585;
+  --d: "585";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7817265941);
+}
+.leaf:nth-child(587) {
+  --count: 109;
+  --ri: 9;
+  --i: 586;
+  --d: "586";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4859943755);
+}
+.leaf:nth-child(588) {
+  --count: 109;
+  --ri: 9;
+  --i: 587;
+  --d: "587";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4813656179);
+}
+.leaf:nth-child(589) {
+  --count: 109;
+  --ri: 9;
+  --i: 588;
+  --d: "588";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1694629766);
+}
+.leaf:nth-child(590) {
+  --count: 109;
+  --ri: 9;
+  --i: 589;
+  --d: "589";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0627956223);
+}
+.leaf:nth-child(591) {
+  --count: 109;
+  --ri: 9;
+  --i: 590;
+  --d: "590";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6316699113);
+}
+.leaf:nth-child(592) {
+  --count: 109;
+  --ri: 9;
+  --i: 591;
+  --d: "591";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3080293973);
+}
+.leaf:nth-child(593) {
+  --count: 109;
+  --ri: 9;
+  --i: 592;
+  --d: "592";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3203806721);
+}
+.leaf:nth-child(594) {
+  --count: 109;
+  --ri: 9;
+  --i: 593;
+  --d: "593";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6301130827);
+}
+.leaf:nth-child(595) {
+  --count: 109;
+  --ri: 9;
+  --i: 594;
+  --d: "594";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3751651813);
+}
+.leaf:nth-child(596) {
+  --count: 120;
+  --ri: 10;
+  --i: 595;
+  --d: "595";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8479030592);
+}
+.leaf:nth-child(597) {
+  --count: 120;
+  --ri: 10;
+  --i: 596;
+  --d: "596";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9151215938);
+}
+.leaf:nth-child(598) {
+  --count: 120;
+  --ri: 10;
+  --i: 597;
+  --d: "597";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4817267171);
+}
+.leaf:nth-child(599) {
+  --count: 120;
+  --ri: 10;
+  --i: 598;
+  --d: "598";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7636661256);
+}
+.leaf:nth-child(600) {
+  --count: 120;
+  --ri: 10;
+  --i: 599;
+  --d: "599";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2889140487);
+}
+.leaf:nth-child(601) {
+  --count: 120;
+  --ri: 10;
+  --i: 600;
+  --d: "600";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4173618682);
+}
+.leaf:nth-child(602) {
+  --count: 120;
+  --ri: 10;
+  --i: 601;
+  --d: "601";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6952139855);
+}
+.leaf:nth-child(603) {
+  --count: 120;
+  --ri: 10;
+  --i: 602;
+  --d: "602";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7543620845);
+}
+.leaf:nth-child(604) {
+  --count: 120;
+  --ri: 10;
+  --i: 603;
+  --d: "603";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.86354624);
+}
+.leaf:nth-child(605) {
+  --count: 120;
+  --ri: 10;
+  --i: 604;
+  --d: "604";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6290418296);
+}
+.leaf:nth-child(606) {
+  --count: 120;
+  --ri: 10;
+  --i: 605;
+  --d: "605";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1219886489);
+}
+.leaf:nth-child(607) {
+  --count: 120;
+  --ri: 10;
+  --i: 606;
+  --d: "606";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4931068689);
+}
+.leaf:nth-child(608) {
+  --count: 120;
+  --ri: 10;
+  --i: 607;
+  --d: "607";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7110997242);
+}
+.leaf:nth-child(609) {
+  --count: 120;
+  --ri: 10;
+  --i: 608;
+  --d: "608";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4611309073);
+}
+.leaf:nth-child(610) {
+  --count: 120;
+  --ri: 10;
+  --i: 609;
+  --d: "609";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4220838388);
+}
+.leaf:nth-child(611) {
+  --count: 120;
+  --ri: 10;
+  --i: 610;
+  --d: "610";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9030420587);
+}
+.leaf:nth-child(612) {
+  --count: 120;
+  --ri: 10;
+  --i: 611;
+  --d: "611";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.97725948);
+}
+.leaf:nth-child(613) {
+  --count: 120;
+  --ri: 10;
+  --i: 612;
+  --d: "612";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1626046244);
+}
+.leaf:nth-child(614) {
+  --count: 120;
+  --ri: 10;
+  --i: 613;
+  --d: "613";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.204006101);
+}
+.leaf:nth-child(615) {
+  --count: 120;
+  --ri: 10;
+  --i: 614;
+  --d: "614";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5610944326);
+}
+.leaf:nth-child(616) {
+  --count: 120;
+  --ri: 10;
+  --i: 615;
+  --d: "615";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6553403552);
+}
+.leaf:nth-child(617) {
+  --count: 120;
+  --ri: 10;
+  --i: 616;
+  --d: "616";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6251432316);
+}
+.leaf:nth-child(618) {
+  --count: 120;
+  --ri: 10;
+  --i: 617;
+  --d: "617";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9731683477);
+}
+.leaf:nth-child(619) {
+  --count: 120;
+  --ri: 10;
+  --i: 618;
+  --d: "618";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0138287875);
+}
+.leaf:nth-child(620) {
+  --count: 120;
+  --ri: 10;
+  --i: 619;
+  --d: "619";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4475294658);
+}
+.leaf:nth-child(621) {
+  --count: 120;
+  --ri: 10;
+  --i: 620;
+  --d: "620";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7926152171);
+}
+.leaf:nth-child(622) {
+  --count: 120;
+  --ri: 10;
+  --i: 621;
+  --d: "621";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5649975501);
+}
+.leaf:nth-child(623) {
+  --count: 120;
+  --ri: 10;
+  --i: 622;
+  --d: "622";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0867849773);
+}
+.leaf:nth-child(624) {
+  --count: 120;
+  --ri: 10;
+  --i: 623;
+  --d: "623";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2368091214);
+}
+.leaf:nth-child(625) {
+  --count: 120;
+  --ri: 10;
+  --i: 624;
+  --d: "624";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3829789887);
+}
+.leaf:nth-child(626) {
+  --count: 120;
+  --ri: 10;
+  --i: 625;
+  --d: "625";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1600990063);
+}
+.leaf:nth-child(627) {
+  --count: 120;
+  --ri: 10;
+  --i: 626;
+  --d: "626";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3437331324);
+}
+.leaf:nth-child(628) {
+  --count: 120;
+  --ri: 10;
+  --i: 627;
+  --d: "627";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5819803652);
+}
+.leaf:nth-child(629) {
+  --count: 120;
+  --ri: 10;
+  --i: 628;
+  --d: "628";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8230476339);
+}
+.leaf:nth-child(630) {
+  --count: 120;
+  --ri: 10;
+  --i: 629;
+  --d: "629";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2219078834);
+}
+.leaf:nth-child(631) {
+  --count: 120;
+  --ri: 10;
+  --i: 630;
+  --d: "630";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4655640537);
+}
+.leaf:nth-child(632) {
+  --count: 120;
+  --ri: 10;
+  --i: 631;
+  --d: "631";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1293944125);
+}
+.leaf:nth-child(633) {
+  --count: 120;
+  --ri: 10;
+  --i: 632;
+  --d: "632";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8081611401);
+}
+.leaf:nth-child(634) {
+  --count: 120;
+  --ri: 10;
+  --i: 633;
+  --d: "633";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4176573448);
+}
+.leaf:nth-child(635) {
+  --count: 120;
+  --ri: 10;
+  --i: 634;
+  --d: "634";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2405686977);
+}
+.leaf:nth-child(636) {
+  --count: 120;
+  --ri: 10;
+  --i: 635;
+  --d: "635";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6910213434);
+}
+.leaf:nth-child(637) {
+  --count: 120;
+  --ri: 10;
+  --i: 636;
+  --d: "636";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3799305675);
+}
+.leaf:nth-child(638) {
+  --count: 120;
+  --ri: 10;
+  --i: 637;
+  --d: "637";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3688920456);
+}
+.leaf:nth-child(639) {
+  --count: 120;
+  --ri: 10;
+  --i: 638;
+  --d: "638";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0337415768);
+}
+.leaf:nth-child(640) {
+  --count: 120;
+  --ri: 10;
+  --i: 639;
+  --d: "639";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3182504879);
+}
+.leaf:nth-child(641) {
+  --count: 120;
+  --ri: 10;
+  --i: 640;
+  --d: "640";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2971743986);
+}
+.leaf:nth-child(642) {
+  --count: 120;
+  --ri: 10;
+  --i: 641;
+  --d: "641";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2293156016);
+}
+.leaf:nth-child(643) {
+  --count: 120;
+  --ri: 10;
+  --i: 642;
+  --d: "642";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5868349644);
+}
+.leaf:nth-child(644) {
+  --count: 120;
+  --ri: 10;
+  --i: 643;
+  --d: "643";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0693942305);
+}
+.leaf:nth-child(645) {
+  --count: 120;
+  --ri: 10;
+  --i: 644;
+  --d: "644";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3127934846);
+}
+.leaf:nth-child(646) {
+  --count: 120;
+  --ri: 10;
+  --i: 645;
+  --d: "645";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0874681734);
+}
+.leaf:nth-child(647) {
+  --count: 120;
+  --ri: 10;
+  --i: 646;
+  --d: "646";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6084619832);
+}
+.leaf:nth-child(648) {
+  --count: 120;
+  --ri: 10;
+  --i: 647;
+  --d: "647";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1224764286);
+}
+.leaf:nth-child(649) {
+  --count: 120;
+  --ri: 10;
+  --i: 648;
+  --d: "648";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9906285891);
+}
+.leaf:nth-child(650) {
+  --count: 120;
+  --ri: 10;
+  --i: 649;
+  --d: "649";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3974633386);
+}
+.leaf:nth-child(651) {
+  --count: 120;
+  --ri: 10;
+  --i: 650;
+  --d: "650";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.827861505);
+}
+.leaf:nth-child(652) {
+  --count: 120;
+  --ri: 10;
+  --i: 651;
+  --d: "651";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3415303341);
+}
+.leaf:nth-child(653) {
+  --count: 120;
+  --ri: 10;
+  --i: 652;
+  --d: "652";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1926576349);
+}
+.leaf:nth-child(654) {
+  --count: 120;
+  --ri: 10;
+  --i: 653;
+  --d: "653";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2781837966);
+}
+.leaf:nth-child(655) {
+  --count: 120;
+  --ri: 10;
+  --i: 654;
+  --d: "654";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0208025202);
+}
+.leaf:nth-child(656) {
+  --count: 120;
+  --ri: 10;
+  --i: 655;
+  --d: "655";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9087568778);
+}
+.leaf:nth-child(657) {
+  --count: 120;
+  --ri: 10;
+  --i: 656;
+  --d: "656";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2318475965);
+}
+.leaf:nth-child(658) {
+  --count: 120;
+  --ri: 10;
+  --i: 657;
+  --d: "657";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.541598245);
+}
+.leaf:nth-child(659) {
+  --count: 120;
+  --ri: 10;
+  --i: 658;
+  --d: "658";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6476408355);
+}
+.leaf:nth-child(660) {
+  --count: 120;
+  --ri: 10;
+  --i: 659;
+  --d: "659";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.637097655);
+}
+.leaf:nth-child(661) {
+  --count: 120;
+  --ri: 10;
+  --i: 660;
+  --d: "660";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7454490156);
+}
+.leaf:nth-child(662) {
+  --count: 120;
+  --ri: 10;
+  --i: 661;
+  --d: "661";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6395231768);
+}
+.leaf:nth-child(663) {
+  --count: 120;
+  --ri: 10;
+  --i: 662;
+  --d: "662";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6179150187);
+}
+.leaf:nth-child(664) {
+  --count: 120;
+  --ri: 10;
+  --i: 663;
+  --d: "663";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4449263559);
+}
+.leaf:nth-child(665) {
+  --count: 120;
+  --ri: 10;
+  --i: 664;
+  --d: "664";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4568949348);
+}
+.leaf:nth-child(666) {
+  --count: 120;
+  --ri: 10;
+  --i: 665;
+  --d: "665";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8066849499);
+}
+.leaf:nth-child(667) {
+  --count: 120;
+  --ri: 10;
+  --i: 666;
+  --d: "666";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1296081444);
+}
+.leaf:nth-child(668) {
+  --count: 120;
+  --ri: 10;
+  --i: 667;
+  --d: "667";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.333550565);
+}
+.leaf:nth-child(669) {
+  --count: 120;
+  --ri: 10;
+  --i: 668;
+  --d: "668";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5446648429);
+}
+.leaf:nth-child(670) {
+  --count: 120;
+  --ri: 10;
+  --i: 669;
+  --d: "669";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3630815401);
+}
+.leaf:nth-child(671) {
+  --count: 120;
+  --ri: 10;
+  --i: 670;
+  --d: "670";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2462286102);
+}
+.leaf:nth-child(672) {
+  --count: 120;
+  --ri: 10;
+  --i: 671;
+  --d: "671";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3833379129);
+}
+.leaf:nth-child(673) {
+  --count: 120;
+  --ri: 10;
+  --i: 672;
+  --d: "672";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6636773703);
+}
+.leaf:nth-child(674) {
+  --count: 120;
+  --ri: 10;
+  --i: 673;
+  --d: "673";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1428181407);
+}
+.leaf:nth-child(675) {
+  --count: 120;
+  --ri: 10;
+  --i: 674;
+  --d: "674";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.785235682);
+}
+.leaf:nth-child(676) {
+  --count: 120;
+  --ri: 10;
+  --i: 675;
+  --d: "675";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9864520014);
+}
+.leaf:nth-child(677) {
+  --count: 120;
+  --ri: 10;
+  --i: 676;
+  --d: "676";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6141301715);
+}
+.leaf:nth-child(678) {
+  --count: 120;
+  --ri: 10;
+  --i: 677;
+  --d: "677";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9240803323);
+}
+.leaf:nth-child(679) {
+  --count: 120;
+  --ri: 10;
+  --i: 678;
+  --d: "678";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1315492303);
+}
+.leaf:nth-child(680) {
+  --count: 120;
+  --ri: 10;
+  --i: 679;
+  --d: "679";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5149356141);
+}
+.leaf:nth-child(681) {
+  --count: 120;
+  --ri: 10;
+  --i: 680;
+  --d: "680";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3128933906);
+}
+.leaf:nth-child(682) {
+  --count: 120;
+  --ri: 10;
+  --i: 681;
+  --d: "681";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7975510835);
+}
+.leaf:nth-child(683) {
+  --count: 120;
+  --ri: 10;
+  --i: 682;
+  --d: "682";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9171385173);
+}
+.leaf:nth-child(684) {
+  --count: 120;
+  --ri: 10;
+  --i: 683;
+  --d: "683";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7012198885);
+}
+.leaf:nth-child(685) {
+  --count: 120;
+  --ri: 10;
+  --i: 684;
+  --d: "684";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0063259379);
+}
+.leaf:nth-child(686) {
+  --count: 120;
+  --ri: 10;
+  --i: 685;
+  --d: "685";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7597202379);
+}
+.leaf:nth-child(687) {
+  --count: 120;
+  --ri: 10;
+  --i: 686;
+  --d: "686";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6429190593);
+}
+.leaf:nth-child(688) {
+  --count: 120;
+  --ri: 10;
+  --i: 687;
+  --d: "687";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5906593204);
+}
+.leaf:nth-child(689) {
+  --count: 120;
+  --ri: 10;
+  --i: 688;
+  --d: "688";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0097504306);
+}
+.leaf:nth-child(690) {
+  --count: 120;
+  --ri: 10;
+  --i: 689;
+  --d: "689";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3103732329);
+}
+.leaf:nth-child(691) {
+  --count: 120;
+  --ri: 10;
+  --i: 690;
+  --d: "690";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2932388924);
+}
+.leaf:nth-child(692) {
+  --count: 120;
+  --ri: 10;
+  --i: 691;
+  --d: "691";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.616999266);
+}
+.leaf:nth-child(693) {
+  --count: 120;
+  --ri: 10;
+  --i: 692;
+  --d: "692";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3013020612);
+}
+.leaf:nth-child(694) {
+  --count: 120;
+  --ri: 10;
+  --i: 693;
+  --d: "693";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6498832977);
+}
+.leaf:nth-child(695) {
+  --count: 120;
+  --ri: 10;
+  --i: 694;
+  --d: "694";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6485561458);
+}
+.leaf:nth-child(696) {
+  --count: 120;
+  --ri: 10;
+  --i: 695;
+  --d: "695";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6162759867);
+}
+.leaf:nth-child(697) {
+  --count: 120;
+  --ri: 10;
+  --i: 696;
+  --d: "696";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.768446913);
+}
+.leaf:nth-child(698) {
+  --count: 120;
+  --ri: 10;
+  --i: 697;
+  --d: "697";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6374358607);
+}
+.leaf:nth-child(699) {
+  --count: 120;
+  --ri: 10;
+  --i: 698;
+  --d: "698";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0660416836);
+}
+.leaf:nth-child(700) {
+  --count: 120;
+  --ri: 10;
+  --i: 699;
+  --d: "699";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0420543547);
+}
+.leaf:nth-child(701) {
+  --count: 120;
+  --ri: 10;
+  --i: 700;
+  --d: "700";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.526254247);
+}
+.leaf:nth-child(702) {
+  --count: 120;
+  --ri: 10;
+  --i: 701;
+  --d: "701";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2086404941);
+}
+.leaf:nth-child(703) {
+  --count: 120;
+  --ri: 10;
+  --i: 702;
+  --d: "702";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2472596744);
+}
+.leaf:nth-child(704) {
+  --count: 120;
+  --ri: 10;
+  --i: 703;
+  --d: "703";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2097409734);
+}
+.leaf:nth-child(705) {
+  --count: 120;
+  --ri: 10;
+  --i: 704;
+  --d: "704";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5381305978);
+}
+.leaf:nth-child(706) {
+  --count: 120;
+  --ri: 10;
+  --i: 705;
+  --d: "705";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8015345731);
+}
+.leaf:nth-child(707) {
+  --count: 120;
+  --ri: 10;
+  --i: 706;
+  --d: "706";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5207457817);
+}
+.leaf:nth-child(708) {
+  --count: 120;
+  --ri: 10;
+  --i: 707;
+  --d: "707";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.700277976);
+}
+.leaf:nth-child(709) {
+  --count: 120;
+  --ri: 10;
+  --i: 708;
+  --d: "708";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5887040087);
+}
+.leaf:nth-child(710) {
+  --count: 120;
+  --ri: 10;
+  --i: 709;
+  --d: "709";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1991456011);
+}
+.leaf:nth-child(711) {
+  --count: 120;
+  --ri: 10;
+  --i: 710;
+  --d: "710";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3693561915);
+}
+.leaf:nth-child(712) {
+  --count: 120;
+  --ri: 10;
+  --i: 711;
+  --d: "711";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6370501993);
+}
+.leaf:nth-child(713) {
+  --count: 120;
+  --ri: 10;
+  --i: 712;
+  --d: "712";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4506581517);
+}
+.leaf:nth-child(714) {
+  --count: 120;
+  --ri: 10;
+  --i: 713;
+  --d: "713";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0332600412);
+}
+.leaf:nth-child(715) {
+  --count: 120;
+  --ri: 10;
+  --i: 714;
+  --d: "714";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0510203232);
+}
+.leaf:nth-child(716) {
+  --count: 131;
+  --ri: 11;
+  --i: 715;
+  --d: "715";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0642433994);
+}
+.leaf:nth-child(717) {
+  --count: 131;
+  --ri: 11;
+  --i: 716;
+  --d: "716";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4723842587);
+}
+.leaf:nth-child(718) {
+  --count: 131;
+  --ri: 11;
+  --i: 717;
+  --d: "717";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3093306322);
+}
+.leaf:nth-child(719) {
+  --count: 131;
+  --ri: 11;
+  --i: 718;
+  --d: "718";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9786371033);
+}
+.leaf:nth-child(720) {
+  --count: 131;
+  --ri: 11;
+  --i: 719;
+  --d: "719";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8600558481);
+}
+.leaf:nth-child(721) {
+  --count: 131;
+  --ri: 11;
+  --i: 720;
+  --d: "720";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1852467333);
+}
+.leaf:nth-child(722) {
+  --count: 131;
+  --ri: 11;
+  --i: 721;
+  --d: "721";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4269634965);
+}
+.leaf:nth-child(723) {
+  --count: 131;
+  --ri: 11;
+  --i: 722;
+  --d: "722";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7601331596);
+}
+.leaf:nth-child(724) {
+  --count: 131;
+  --ri: 11;
+  --i: 723;
+  --d: "723";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5012692834);
+}
+.leaf:nth-child(725) {
+  --count: 131;
+  --ri: 11;
+  --i: 724;
+  --d: "724";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2694957358);
+}
+.leaf:nth-child(726) {
+  --count: 131;
+  --ri: 11;
+  --i: 725;
+  --d: "725";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.152944526);
+}
+.leaf:nth-child(727) {
+  --count: 131;
+  --ri: 11;
+  --i: 726;
+  --d: "726";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1497094079);
+}
+.leaf:nth-child(728) {
+  --count: 131;
+  --ri: 11;
+  --i: 727;
+  --d: "727";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3115523875);
+}
+.leaf:nth-child(729) {
+  --count: 131;
+  --ri: 11;
+  --i: 728;
+  --d: "728";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7583435961);
+}
+.leaf:nth-child(730) {
+  --count: 131;
+  --ri: 11;
+  --i: 729;
+  --d: "729";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8496783288);
+}
+.leaf:nth-child(731) {
+  --count: 131;
+  --ri: 11;
+  --i: 730;
+  --d: "730";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6906700231);
+}
+.leaf:nth-child(732) {
+  --count: 131;
+  --ri: 11;
+  --i: 731;
+  --d: "731";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9737342061);
+}
+.leaf:nth-child(733) {
+  --count: 131;
+  --ri: 11;
+  --i: 732;
+  --d: "732";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7324895246);
+}
+.leaf:nth-child(734) {
+  --count: 131;
+  --ri: 11;
+  --i: 733;
+  --d: "733";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0424591891);
+}
+.leaf:nth-child(735) {
+  --count: 131;
+  --ri: 11;
+  --i: 734;
+  --d: "734";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7934075647);
+}
+.leaf:nth-child(736) {
+  --count: 131;
+  --ri: 11;
+  --i: 735;
+  --d: "735";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5093624672);
+}
+.leaf:nth-child(737) {
+  --count: 131;
+  --ri: 11;
+  --i: 736;
+  --d: "736";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3876471451);
+}
+.leaf:nth-child(738) {
+  --count: 131;
+  --ri: 11;
+  --i: 737;
+  --d: "737";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9004577718);
+}
+.leaf:nth-child(739) {
+  --count: 131;
+  --ri: 11;
+  --i: 738;
+  --d: "738";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.143671256);
+}
+.leaf:nth-child(740) {
+  --count: 131;
+  --ri: 11;
+  --i: 739;
+  --d: "739";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2250879727);
+}
+.leaf:nth-child(741) {
+  --count: 131;
+  --ri: 11;
+  --i: 740;
+  --d: "740";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1830448925);
+}
+.leaf:nth-child(742) {
+  --count: 131;
+  --ri: 11;
+  --i: 741;
+  --d: "741";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3701285357);
+}
+.leaf:nth-child(743) {
+  --count: 131;
+  --ri: 11;
+  --i: 742;
+  --d: "742";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1321485753);
+}
+.leaf:nth-child(744) {
+  --count: 131;
+  --ri: 11;
+  --i: 743;
+  --d: "743";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0351290957);
+}
+.leaf:nth-child(745) {
+  --count: 131;
+  --ri: 11;
+  --i: 744;
+  --d: "744";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2857123769);
+}
+.leaf:nth-child(746) {
+  --count: 131;
+  --ri: 11;
+  --i: 745;
+  --d: "745";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.806111263);
+}
+.leaf:nth-child(747) {
+  --count: 131;
+  --ri: 11;
+  --i: 746;
+  --d: "746";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5860471786);
+}
+.leaf:nth-child(748) {
+  --count: 131;
+  --ri: 11;
+  --i: 747;
+  --d: "747";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.95223734);
+}
+.leaf:nth-child(749) {
+  --count: 131;
+  --ri: 11;
+  --i: 748;
+  --d: "748";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9962406878);
+}
+.leaf:nth-child(750) {
+  --count: 131;
+  --ri: 11;
+  --i: 749;
+  --d: "749";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.394768727);
+}
+.leaf:nth-child(751) {
+  --count: 131;
+  --ri: 11;
+  --i: 750;
+  --d: "750";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6743748476);
+}
+.leaf:nth-child(752) {
+  --count: 131;
+  --ri: 11;
+  --i: 751;
+  --d: "751";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5877012896);
+}
+.leaf:nth-child(753) {
+  --count: 131;
+  --ri: 11;
+  --i: 752;
+  --d: "752";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5098383777);
+}
+.leaf:nth-child(754) {
+  --count: 131;
+  --ri: 11;
+  --i: 753;
+  --d: "753";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3250887563);
+}
+.leaf:nth-child(755) {
+  --count: 131;
+  --ri: 11;
+  --i: 754;
+  --d: "754";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2320087691);
+}
+.leaf:nth-child(756) {
+  --count: 131;
+  --ri: 11;
+  --i: 755;
+  --d: "755";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2190071377);
+}
+.leaf:nth-child(757) {
+  --count: 131;
+  --ri: 11;
+  --i: 756;
+  --d: "756";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9440309125);
+}
+.leaf:nth-child(758) {
+  --count: 131;
+  --ri: 11;
+  --i: 757;
+  --d: "757";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1934909708);
+}
+.leaf:nth-child(759) {
+  --count: 131;
+  --ri: 11;
+  --i: 758;
+  --d: "758";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6981813883);
+}
+.leaf:nth-child(760) {
+  --count: 131;
+  --ri: 11;
+  --i: 759;
+  --d: "759";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5236475722);
+}
+.leaf:nth-child(761) {
+  --count: 131;
+  --ri: 11;
+  --i: 760;
+  --d: "760";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.555042972);
+}
+.leaf:nth-child(762) {
+  --count: 131;
+  --ri: 11;
+  --i: 761;
+  --d: "761";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7327651777);
+}
+.leaf:nth-child(763) {
+  --count: 131;
+  --ri: 11;
+  --i: 762;
+  --d: "762";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0596892597);
+}
+.leaf:nth-child(764) {
+  --count: 131;
+  --ri: 11;
+  --i: 763;
+  --d: "763";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1226115755);
+}
+.leaf:nth-child(765) {
+  --count: 131;
+  --ri: 11;
+  --i: 764;
+  --d: "764";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2333054033);
+}
+.leaf:nth-child(766) {
+  --count: 131;
+  --ri: 11;
+  --i: 765;
+  --d: "765";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5035035462);
+}
+.leaf:nth-child(767) {
+  --count: 131;
+  --ri: 11;
+  --i: 766;
+  --d: "766";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5105559058);
+}
+.leaf:nth-child(768) {
+  --count: 131;
+  --ri: 11;
+  --i: 767;
+  --d: "767";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7452581281);
+}
+.leaf:nth-child(769) {
+  --count: 131;
+  --ri: 11;
+  --i: 768;
+  --d: "768";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9847409114);
+}
+.leaf:nth-child(770) {
+  --count: 131;
+  --ri: 11;
+  --i: 769;
+  --d: "769";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2771133251);
+}
+.leaf:nth-child(771) {
+  --count: 131;
+  --ri: 11;
+  --i: 770;
+  --d: "770";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5675974083);
+}
+.leaf:nth-child(772) {
+  --count: 131;
+  --ri: 11;
+  --i: 771;
+  --d: "771";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0662922862);
+}
+.leaf:nth-child(773) {
+  --count: 131;
+  --ri: 11;
+  --i: 772;
+  --d: "772";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6839300519);
+}
+.leaf:nth-child(774) {
+  --count: 131;
+  --ri: 11;
+  --i: 773;
+  --d: "773";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9132704903);
+}
+.leaf:nth-child(775) {
+  --count: 131;
+  --ri: 11;
+  --i: 774;
+  --d: "774";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3770380987);
+}
+.leaf:nth-child(776) {
+  --count: 131;
+  --ri: 11;
+  --i: 775;
+  --d: "775";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7044054279);
+}
+.leaf:nth-child(777) {
+  --count: 131;
+  --ri: 11;
+  --i: 776;
+  --d: "776";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6042045296);
+}
+.leaf:nth-child(778) {
+  --count: 131;
+  --ri: 11;
+  --i: 777;
+  --d: "777";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5879266307);
+}
+.leaf:nth-child(779) {
+  --count: 131;
+  --ri: 11;
+  --i: 778;
+  --d: "778";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4706720804);
+}
+.leaf:nth-child(780) {
+  --count: 131;
+  --ri: 11;
+  --i: 779;
+  --d: "779";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9751434109);
+}
+.leaf:nth-child(781) {
+  --count: 131;
+  --ri: 11;
+  --i: 780;
+  --d: "780";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0087762435);
+}
+.leaf:nth-child(782) {
+  --count: 131;
+  --ri: 11;
+  --i: 781;
+  --d: "781";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7384203131);
+}
+.leaf:nth-child(783) {
+  --count: 131;
+  --ri: 11;
+  --i: 782;
+  --d: "782";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.504059585);
+}
+.leaf:nth-child(784) {
+  --count: 131;
+  --ri: 11;
+  --i: 783;
+  --d: "783";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6195523057);
+}
+.leaf:nth-child(785) {
+  --count: 131;
+  --ri: 11;
+  --i: 784;
+  --d: "784";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6112712468);
+}
+.leaf:nth-child(786) {
+  --count: 131;
+  --ri: 11;
+  --i: 785;
+  --d: "785";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7510989322);
+}
+.leaf:nth-child(787) {
+  --count: 131;
+  --ri: 11;
+  --i: 786;
+  --d: "786";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2134870711);
+}
+.leaf:nth-child(788) {
+  --count: 131;
+  --ri: 11;
+  --i: 787;
+  --d: "787";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8246569288);
+}
+.leaf:nth-child(789) {
+  --count: 131;
+  --ri: 11;
+  --i: 788;
+  --d: "788";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5413391382);
+}
+.leaf:nth-child(790) {
+  --count: 131;
+  --ri: 11;
+  --i: 789;
+  --d: "789";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6898844157);
+}
+.leaf:nth-child(791) {
+  --count: 131;
+  --ri: 11;
+  --i: 790;
+  --d: "790";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7185036008);
+}
+.leaf:nth-child(792) {
+  --count: 131;
+  --ri: 11;
+  --i: 791;
+  --d: "791";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7112955171);
+}
+.leaf:nth-child(793) {
+  --count: 131;
+  --ri: 11;
+  --i: 792;
+  --d: "792";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.452924157);
+}
+.leaf:nth-child(794) {
+  --count: 131;
+  --ri: 11;
+  --i: 793;
+  --d: "793";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.389287432);
+}
+.leaf:nth-child(795) {
+  --count: 131;
+  --ri: 11;
+  --i: 794;
+  --d: "794";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2342673491);
+}
+.leaf:nth-child(796) {
+  --count: 131;
+  --ri: 11;
+  --i: 795;
+  --d: "795";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9492165537);
+}
+.leaf:nth-child(797) {
+  --count: 131;
+  --ri: 11;
+  --i: 796;
+  --d: "796";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7039669748);
+}
+.leaf:nth-child(798) {
+  --count: 131;
+  --ri: 11;
+  --i: 797;
+  --d: "797";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1730589701);
+}
+.leaf:nth-child(799) {
+  --count: 131;
+  --ri: 11;
+  --i: 798;
+  --d: "798";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6630369217);
+}
+.leaf:nth-child(800) {
+  --count: 131;
+  --ri: 11;
+  --i: 799;
+  --d: "799";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0539663906);
+}
+.leaf:nth-child(801) {
+  --count: 131;
+  --ri: 11;
+  --i: 800;
+  --d: "800";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1512504738);
+}
+.leaf:nth-child(802) {
+  --count: 131;
+  --ri: 11;
+  --i: 801;
+  --d: "801";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.654196569);
+}
+.leaf:nth-child(803) {
+  --count: 131;
+  --ri: 11;
+  --i: 802;
+  --d: "802";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7112596088);
+}
+.leaf:nth-child(804) {
+  --count: 131;
+  --ri: 11;
+  --i: 803;
+  --d: "803";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.072219507);
+}
+.leaf:nth-child(805) {
+  --count: 131;
+  --ri: 11;
+  --i: 804;
+  --d: "804";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4841249348);
+}
+.leaf:nth-child(806) {
+  --count: 131;
+  --ri: 11;
+  --i: 805;
+  --d: "805";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6962530389);
+}
+.leaf:nth-child(807) {
+  --count: 131;
+  --ri: 11;
+  --i: 806;
+  --d: "806";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0097191263);
+}
+.leaf:nth-child(808) {
+  --count: 131;
+  --ri: 11;
+  --i: 807;
+  --d: "807";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1280766881);
+}
+.leaf:nth-child(809) {
+  --count: 131;
+  --ri: 11;
+  --i: 808;
+  --d: "808";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9857544934);
+}
+.leaf:nth-child(810) {
+  --count: 131;
+  --ri: 11;
+  --i: 809;
+  --d: "809";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0421730022);
+}
+.leaf:nth-child(811) {
+  --count: 131;
+  --ri: 11;
+  --i: 810;
+  --d: "810";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4109236756);
+}
+.leaf:nth-child(812) {
+  --count: 131;
+  --ri: 11;
+  --i: 811;
+  --d: "811";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9908813194);
+}
+.leaf:nth-child(813) {
+  --count: 131;
+  --ri: 11;
+  --i: 812;
+  --d: "812";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4837373761);
+}
+.leaf:nth-child(814) {
+  --count: 131;
+  --ri: 11;
+  --i: 813;
+  --d: "813";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9450020402);
+}
+.leaf:nth-child(815) {
+  --count: 131;
+  --ri: 11;
+  --i: 814;
+  --d: "814";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4504287685);
+}
+.leaf:nth-child(816) {
+  --count: 131;
+  --ri: 11;
+  --i: 815;
+  --d: "815";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2332768031);
+}
+.leaf:nth-child(817) {
+  --count: 131;
+  --ri: 11;
+  --i: 816;
+  --d: "816";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4997076663);
+}
+.leaf:nth-child(818) {
+  --count: 131;
+  --ri: 11;
+  --i: 817;
+  --d: "817";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1963041937);
+}
+.leaf:nth-child(819) {
+  --count: 131;
+  --ri: 11;
+  --i: 818;
+  --d: "818";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0515921673);
+}
+.leaf:nth-child(820) {
+  --count: 131;
+  --ri: 11;
+  --i: 819;
+  --d: "819";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.511842272);
+}
+.leaf:nth-child(821) {
+  --count: 131;
+  --ri: 11;
+  --i: 820;
+  --d: "820";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9467397485);
+}
+.leaf:nth-child(822) {
+  --count: 131;
+  --ri: 11;
+  --i: 821;
+  --d: "821";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0924435259);
+}
+.leaf:nth-child(823) {
+  --count: 131;
+  --ri: 11;
+  --i: 822;
+  --d: "822";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9266943169);
+}
+.leaf:nth-child(824) {
+  --count: 131;
+  --ri: 11;
+  --i: 823;
+  --d: "823";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7722299894);
+}
+.leaf:nth-child(825) {
+  --count: 131;
+  --ri: 11;
+  --i: 824;
+  --d: "824";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2088386722);
+}
+.leaf:nth-child(826) {
+  --count: 131;
+  --ri: 11;
+  --i: 825;
+  --d: "825";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7991342887);
+}
+.leaf:nth-child(827) {
+  --count: 131;
+  --ri: 11;
+  --i: 826;
+  --d: "826";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7188868513);
+}
+.leaf:nth-child(828) {
+  --count: 131;
+  --ri: 11;
+  --i: 827;
+  --d: "827";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7940677487);
+}
+.leaf:nth-child(829) {
+  --count: 131;
+  --ri: 11;
+  --i: 828;
+  --d: "828";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2152499405);
+}
+.leaf:nth-child(830) {
+  --count: 131;
+  --ri: 11;
+  --i: 829;
+  --d: "829";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5293973364);
+}
+.leaf:nth-child(831) {
+  --count: 131;
+  --ri: 11;
+  --i: 830;
+  --d: "830";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.133501777);
+}
+.leaf:nth-child(832) {
+  --count: 131;
+  --ri: 11;
+  --i: 831;
+  --d: "831";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1023340549);
+}
+.leaf:nth-child(833) {
+  --count: 131;
+  --ri: 11;
+  --i: 832;
+  --d: "832";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.390872624);
+}
+.leaf:nth-child(834) {
+  --count: 131;
+  --ri: 11;
+  --i: 833;
+  --d: "833";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0990386408);
+}
+.leaf:nth-child(835) {
+  --count: 131;
+  --ri: 11;
+  --i: 834;
+  --d: "834";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2443434544);
+}
+.leaf:nth-child(836) {
+  --count: 131;
+  --ri: 11;
+  --i: 835;
+  --d: "835";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9064676961);
+}
+.leaf:nth-child(837) {
+  --count: 131;
+  --ri: 11;
+  --i: 836;
+  --d: "836";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.623041156);
+}
+.leaf:nth-child(838) {
+  --count: 131;
+  --ri: 11;
+  --i: 837;
+  --d: "837";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8744597174);
+}
+.leaf:nth-child(839) {
+  --count: 131;
+  --ri: 11;
+  --i: 838;
+  --d: "838";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.903784415);
+}
+.leaf:nth-child(840) {
+  --count: 131;
+  --ri: 11;
+  --i: 839;
+  --d: "839";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1621028822);
+}
+.leaf:nth-child(841) {
+  --count: 131;
+  --ri: 11;
+  --i: 840;
+  --d: "840";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8381262593);
+}
+.leaf:nth-child(842) {
+  --count: 131;
+  --ri: 11;
+  --i: 841;
+  --d: "841";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7095117134);
+}
+.leaf:nth-child(843) {
+  --count: 131;
+  --ri: 11;
+  --i: 842;
+  --d: "842";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5795596525);
+}
+.leaf:nth-child(844) {
+  --count: 131;
+  --ri: 11;
+  --i: 843;
+  --d: "843";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7397161701);
+}
+.leaf:nth-child(845) {
+  --count: 131;
+  --ri: 11;
+  --i: 844;
+  --d: "844";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8589654507);
+}
+.leaf:nth-child(846) {
+  --count: 131;
+  --ri: 11;
+  --i: 845;
+  --d: "845";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7678011739);
+}
+.leaf:nth-child(847) {
+  --count: 142;
+  --ri: 12;
+  --i: 846;
+  --d: "846";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.808635743);
+}
+.leaf:nth-child(848) {
+  --count: 142;
+  --ri: 12;
+  --i: 847;
+  --d: "847";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6348154839);
+}
+.leaf:nth-child(849) {
+  --count: 142;
+  --ri: 12;
+  --i: 848;
+  --d: "848";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5997503345);
+}
+.leaf:nth-child(850) {
+  --count: 142;
+  --ri: 12;
+  --i: 849;
+  --d: "849";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4433729999);
+}
+.leaf:nth-child(851) {
+  --count: 142;
+  --ri: 12;
+  --i: 850;
+  --d: "850";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0553526895);
+}
+.leaf:nth-child(852) {
+  --count: 142;
+  --ri: 12;
+  --i: 851;
+  --d: "851";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1915452999);
+}
+.leaf:nth-child(853) {
+  --count: 142;
+  --ri: 12;
+  --i: 852;
+  --d: "852";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6829586124);
+}
+.leaf:nth-child(854) {
+  --count: 142;
+  --ri: 12;
+  --i: 853;
+  --d: "853";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4956279205);
+}
+.leaf:nth-child(855) {
+  --count: 142;
+  --ri: 12;
+  --i: 854;
+  --d: "854";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0117303495);
+}
+.leaf:nth-child(856) {
+  --count: 142;
+  --ri: 12;
+  --i: 855;
+  --d: "855";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3008632758);
+}
+.leaf:nth-child(857) {
+  --count: 142;
+  --ri: 12;
+  --i: 856;
+  --d: "856";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6048038989);
+}
+.leaf:nth-child(858) {
+  --count: 142;
+  --ri: 12;
+  --i: 857;
+  --d: "857";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.593617509);
+}
+.leaf:nth-child(859) {
+  --count: 142;
+  --ri: 12;
+  --i: 858;
+  --d: "858";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4257512328);
+}
+.leaf:nth-child(860) {
+  --count: 142;
+  --ri: 12;
+  --i: 859;
+  --d: "859";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5284195893);
+}
+.leaf:nth-child(861) {
+  --count: 142;
+  --ri: 12;
+  --i: 860;
+  --d: "860";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5456443907);
+}
+.leaf:nth-child(862) {
+  --count: 142;
+  --ri: 12;
+  --i: 861;
+  --d: "861";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.091132502);
+}
+.leaf:nth-child(863) {
+  --count: 142;
+  --ri: 12;
+  --i: 862;
+  --d: "862";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1554592031);
+}
+.leaf:nth-child(864) {
+  --count: 142;
+  --ri: 12;
+  --i: 863;
+  --d: "863";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9712514174);
+}
+.leaf:nth-child(865) {
+  --count: 142;
+  --ri: 12;
+  --i: 864;
+  --d: "864";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8375777285);
+}
+.leaf:nth-child(866) {
+  --count: 142;
+  --ri: 12;
+  --i: 865;
+  --d: "865";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0813206328);
+}
+.leaf:nth-child(867) {
+  --count: 142;
+  --ri: 12;
+  --i: 866;
+  --d: "866";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8142245741);
+}
+.leaf:nth-child(868) {
+  --count: 142;
+  --ri: 12;
+  --i: 867;
+  --d: "867";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0467743475);
+}
+.leaf:nth-child(869) {
+  --count: 142;
+  --ri: 12;
+  --i: 868;
+  --d: "868";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6819919552);
+}
+.leaf:nth-child(870) {
+  --count: 142;
+  --ri: 12;
+  --i: 869;
+  --d: "869";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7770162856);
+}
+.leaf:nth-child(871) {
+  --count: 142;
+  --ri: 12;
+  --i: 870;
+  --d: "870";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3637817815);
+}
+.leaf:nth-child(872) {
+  --count: 142;
+  --ri: 12;
+  --i: 871;
+  --d: "871";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5691859851);
+}
+.leaf:nth-child(873) {
+  --count: 142;
+  --ri: 12;
+  --i: 872;
+  --d: "872";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1736237146);
+}
+.leaf:nth-child(874) {
+  --count: 142;
+  --ri: 12;
+  --i: 873;
+  --d: "873";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4742337927);
+}
+.leaf:nth-child(875) {
+  --count: 142;
+  --ri: 12;
+  --i: 874;
+  --d: "874";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1013750471);
+}
+.leaf:nth-child(876) {
+  --count: 142;
+  --ri: 12;
+  --i: 875;
+  --d: "875";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0618361722);
+}
+.leaf:nth-child(877) {
+  --count: 142;
+  --ri: 12;
+  --i: 876;
+  --d: "876";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2950660483);
+}
+.leaf:nth-child(878) {
+  --count: 142;
+  --ri: 12;
+  --i: 877;
+  --d: "877";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8444891127);
+}
+.leaf:nth-child(879) {
+  --count: 142;
+  --ri: 12;
+  --i: 878;
+  --d: "878";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.370505294);
+}
+.leaf:nth-child(880) {
+  --count: 142;
+  --ri: 12;
+  --i: 879;
+  --d: "879";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9497038238);
+}
+.leaf:nth-child(881) {
+  --count: 142;
+  --ri: 12;
+  --i: 880;
+  --d: "880";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4165904475);
+}
+.leaf:nth-child(882) {
+  --count: 142;
+  --ri: 12;
+  --i: 881;
+  --d: "881";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8235592104);
+}
+.leaf:nth-child(883) {
+  --count: 142;
+  --ri: 12;
+  --i: 882;
+  --d: "882";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.72024996);
+}
+.leaf:nth-child(884) {
+  --count: 142;
+  --ri: 12;
+  --i: 883;
+  --d: "883";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6960657494);
+}
+.leaf:nth-child(885) {
+  --count: 142;
+  --ri: 12;
+  --i: 884;
+  --d: "884";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1640671621);
+}
+.leaf:nth-child(886) {
+  --count: 142;
+  --ri: 12;
+  --i: 885;
+  --d: "885";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9728561494);
+}
+.leaf:nth-child(887) {
+  --count: 142;
+  --ri: 12;
+  --i: 886;
+  --d: "886";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1627784639);
+}
+.leaf:nth-child(888) {
+  --count: 142;
+  --ri: 12;
+  --i: 887;
+  --d: "887";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4669946854);
+}
+.leaf:nth-child(889) {
+  --count: 142;
+  --ri: 12;
+  --i: 888;
+  --d: "888";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.581993409);
+}
+.leaf:nth-child(890) {
+  --count: 142;
+  --ri: 12;
+  --i: 889;
+  --d: "889";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5143594884);
+}
+.leaf:nth-child(891) {
+  --count: 142;
+  --ri: 12;
+  --i: 890;
+  --d: "890";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9542928316);
+}
+.leaf:nth-child(892) {
+  --count: 142;
+  --ri: 12;
+  --i: 891;
+  --d: "891";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.472663452);
+}
+.leaf:nth-child(893) {
+  --count: 142;
+  --ri: 12;
+  --i: 892;
+  --d: "892";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1955096617);
+}
+.leaf:nth-child(894) {
+  --count: 142;
+  --ri: 12;
+  --i: 893;
+  --d: "893";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.395967553);
+}
+.leaf:nth-child(895) {
+  --count: 142;
+  --ri: 12;
+  --i: 894;
+  --d: "894";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.949277216);
+}
+.leaf:nth-child(896) {
+  --count: 142;
+  --ri: 12;
+  --i: 895;
+  --d: "895";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0079635366);
+}
+.leaf:nth-child(897) {
+  --count: 142;
+  --ri: 12;
+  --i: 896;
+  --d: "896";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3373508537);
+}
+.leaf:nth-child(898) {
+  --count: 142;
+  --ri: 12;
+  --i: 897;
+  --d: "897";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1928415987);
+}
+.leaf:nth-child(899) {
+  --count: 142;
+  --ri: 12;
+  --i: 898;
+  --d: "898";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6633078486);
+}
+.leaf:nth-child(900) {
+  --count: 142;
+  --ri: 12;
+  --i: 899;
+  --d: "899";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0940953563);
+}
+.leaf:nth-child(901) {
+  --count: 142;
+  --ri: 12;
+  --i: 900;
+  --d: "900";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7827200922);
+}
+.leaf:nth-child(902) {
+  --count: 142;
+  --ri: 12;
+  --i: 901;
+  --d: "901";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2514206891);
+}
+.leaf:nth-child(903) {
+  --count: 142;
+  --ri: 12;
+  --i: 902;
+  --d: "902";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6270891311);
+}
+.leaf:nth-child(904) {
+  --count: 142;
+  --ri: 12;
+  --i: 903;
+  --d: "903";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4587921488);
+}
+.leaf:nth-child(905) {
+  --count: 142;
+  --ri: 12;
+  --i: 904;
+  --d: "904";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.574228637);
+}
+.leaf:nth-child(906) {
+  --count: 142;
+  --ri: 12;
+  --i: 905;
+  --d: "905";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2705673248);
+}
+.leaf:nth-child(907) {
+  --count: 142;
+  --ri: 12;
+  --i: 906;
+  --d: "906";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3093451997);
+}
+.leaf:nth-child(908) {
+  --count: 142;
+  --ri: 12;
+  --i: 907;
+  --d: "907";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9150199272);
+}
+.leaf:nth-child(909) {
+  --count: 142;
+  --ri: 12;
+  --i: 908;
+  --d: "908";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4376574828);
+}
+.leaf:nth-child(910) {
+  --count: 142;
+  --ri: 12;
+  --i: 909;
+  --d: "909";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.920939992);
+}
+.leaf:nth-child(911) {
+  --count: 142;
+  --ri: 12;
+  --i: 910;
+  --d: "910";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3752888852);
+}
+.leaf:nth-child(912) {
+  --count: 142;
+  --ri: 12;
+  --i: 911;
+  --d: "911";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4813205398);
+}
+.leaf:nth-child(913) {
+  --count: 142;
+  --ri: 12;
+  --i: 912;
+  --d: "912";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.409290404);
+}
+.leaf:nth-child(914) {
+  --count: 142;
+  --ri: 12;
+  --i: 913;
+  --d: "913";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0879283546);
+}
+.leaf:nth-child(915) {
+  --count: 142;
+  --ri: 12;
+  --i: 914;
+  --d: "914";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2785517597);
+}
+.leaf:nth-child(916) {
+  --count: 142;
+  --ri: 12;
+  --i: 915;
+  --d: "915";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9462753387);
+}
+.leaf:nth-child(917) {
+  --count: 142;
+  --ri: 12;
+  --i: 916;
+  --d: "916";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2185441977);
+}
+.leaf:nth-child(918) {
+  --count: 142;
+  --ri: 12;
+  --i: 917;
+  --d: "917";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6018812018);
+}
+.leaf:nth-child(919) {
+  --count: 142;
+  --ri: 12;
+  --i: 918;
+  --d: "918";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1441201417);
+}
+.leaf:nth-child(920) {
+  --count: 142;
+  --ri: 12;
+  --i: 919;
+  --d: "919";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.095428298);
+}
+.leaf:nth-child(921) {
+  --count: 142;
+  --ri: 12;
+  --i: 920;
+  --d: "920";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5093636472);
+}
+.leaf:nth-child(922) {
+  --count: 142;
+  --ri: 12;
+  --i: 921;
+  --d: "921";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7992401375);
+}
+.leaf:nth-child(923) {
+  --count: 142;
+  --ri: 12;
+  --i: 922;
+  --d: "922";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6316209651);
+}
+.leaf:nth-child(924) {
+  --count: 142;
+  --ri: 12;
+  --i: 923;
+  --d: "923";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8877919021);
+}
+.leaf:nth-child(925) {
+  --count: 142;
+  --ri: 12;
+  --i: 924;
+  --d: "924";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6957900013);
+}
+.leaf:nth-child(926) {
+  --count: 142;
+  --ri: 12;
+  --i: 925;
+  --d: "925";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2623400623);
+}
+.leaf:nth-child(927) {
+  --count: 142;
+  --ri: 12;
+  --i: 926;
+  --d: "926";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.162281998);
+}
+.leaf:nth-child(928) {
+  --count: 142;
+  --ri: 12;
+  --i: 927;
+  --d: "927";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5127063483);
+}
+.leaf:nth-child(929) {
+  --count: 142;
+  --ri: 12;
+  --i: 928;
+  --d: "928";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2803402263);
+}
+.leaf:nth-child(930) {
+  --count: 142;
+  --ri: 12;
+  --i: 929;
+  --d: "929";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5431792908);
+}
+.leaf:nth-child(931) {
+  --count: 142;
+  --ri: 12;
+  --i: 930;
+  --d: "930";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5656299299);
+}
+.leaf:nth-child(932) {
+  --count: 142;
+  --ri: 12;
+  --i: 931;
+  --d: "931";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6658897691);
+}
+.leaf:nth-child(933) {
+  --count: 142;
+  --ri: 12;
+  --i: 932;
+  --d: "932";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3714783615);
+}
+.leaf:nth-child(934) {
+  --count: 142;
+  --ri: 12;
+  --i: 933;
+  --d: "933";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2597148699);
+}
+.leaf:nth-child(935) {
+  --count: 142;
+  --ri: 12;
+  --i: 934;
+  --d: "934";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0517392422);
+}
+.leaf:nth-child(936) {
+  --count: 142;
+  --ri: 12;
+  --i: 935;
+  --d: "935";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2480751226);
+}
+.leaf:nth-child(937) {
+  --count: 142;
+  --ri: 12;
+  --i: 936;
+  --d: "936";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4546812656);
+}
+.leaf:nth-child(938) {
+  --count: 142;
+  --ri: 12;
+  --i: 937;
+  --d: "937";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2113808203);
+}
+.leaf:nth-child(939) {
+  --count: 142;
+  --ri: 12;
+  --i: 938;
+  --d: "938";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7070809266);
+}
+.leaf:nth-child(940) {
+  --count: 142;
+  --ri: 12;
+  --i: 939;
+  --d: "939";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4672438427);
+}
+.leaf:nth-child(941) {
+  --count: 142;
+  --ri: 12;
+  --i: 940;
+  --d: "940";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6688200707);
+}
+.leaf:nth-child(942) {
+  --count: 142;
+  --ri: 12;
+  --i: 941;
+  --d: "941";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1560991723);
+}
+.leaf:nth-child(943) {
+  --count: 142;
+  --ri: 12;
+  --i: 942;
+  --d: "942";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7482085768);
+}
+.leaf:nth-child(944) {
+  --count: 142;
+  --ri: 12;
+  --i: 943;
+  --d: "943";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4666347507);
+}
+.leaf:nth-child(945) {
+  --count: 142;
+  --ri: 12;
+  --i: 944;
+  --d: "944";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1411753695);
+}
+.leaf:nth-child(946) {
+  --count: 142;
+  --ri: 12;
+  --i: 945;
+  --d: "945";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.239770582);
+}
+.leaf:nth-child(947) {
+  --count: 142;
+  --ri: 12;
+  --i: 946;
+  --d: "946";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6269877748);
+}
+.leaf:nth-child(948) {
+  --count: 142;
+  --ri: 12;
+  --i: 947;
+  --d: "947";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4687285349);
+}
+.leaf:nth-child(949) {
+  --count: 142;
+  --ri: 12;
+  --i: 948;
+  --d: "948";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3072159451);
+}
+.leaf:nth-child(950) {
+  --count: 142;
+  --ri: 12;
+  --i: 949;
+  --d: "949";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9176576501);
+}
+.leaf:nth-child(951) {
+  --count: 142;
+  --ri: 12;
+  --i: 950;
+  --d: "950";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2781812848);
+}
+.leaf:nth-child(952) {
+  --count: 142;
+  --ri: 12;
+  --i: 951;
+  --d: "951";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9442480625);
+}
+.leaf:nth-child(953) {
+  --count: 142;
+  --ri: 12;
+  --i: 952;
+  --d: "952";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.8746371646);
+}
+.leaf:nth-child(954) {
+  --count: 142;
+  --ri: 12;
+  --i: 953;
+  --d: "953";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7224851264);
+}
+.leaf:nth-child(955) {
+  --count: 142;
+  --ri: 12;
+  --i: 954;
+  --d: "954";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4705557241);
+}
+.leaf:nth-child(956) {
+  --count: 142;
+  --ri: 12;
+  --i: 955;
+  --d: "955";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7693860925);
+}
+.leaf:nth-child(957) {
+  --count: 142;
+  --ri: 12;
+  --i: 956;
+  --d: "956";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7439191843);
+}
+.leaf:nth-child(958) {
+  --count: 142;
+  --ri: 12;
+  --i: 957;
+  --d: "957";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1146641124);
+}
+.leaf:nth-child(959) {
+  --count: 142;
+  --ri: 12;
+  --i: 958;
+  --d: "958";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9130941563);
+}
+.leaf:nth-child(960) {
+  --count: 142;
+  --ri: 12;
+  --i: 959;
+  --d: "959";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1972344617);
+}
+.leaf:nth-child(961) {
+  --count: 142;
+  --ri: 12;
+  --i: 960;
+  --d: "960";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.6615855812);
+}
+.leaf:nth-child(962) {
+  --count: 142;
+  --ri: 12;
+  --i: 961;
+  --d: "961";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3705064183);
+}
+.leaf:nth-child(963) {
+  --count: 142;
+  --ri: 12;
+  --i: 962;
+  --d: "962";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4301804312);
+}
+.leaf:nth-child(964) {
+  --count: 142;
+  --ri: 12;
+  --i: 963;
+  --d: "963";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0460600221);
+}
+.leaf:nth-child(965) {
+  --count: 142;
+  --ri: 12;
+  --i: 964;
+  --d: "964";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4600594125);
+}
+.leaf:nth-child(966) {
+  --count: 142;
+  --ri: 12;
+  --i: 965;
+  --d: "965";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.5893482686);
+}
+.leaf:nth-child(967) {
+  --count: 142;
+  --ri: 12;
+  --i: 966;
+  --d: "966";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2590140206);
+}
+.leaf:nth-child(968) {
+  --count: 142;
+  --ri: 12;
+  --i: 967;
+  --d: "967";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.2882544953);
+}
+.leaf:nth-child(969) {
+  --count: 142;
+  --ri: 12;
+  --i: 968;
+  --d: "968";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4412857527);
+}
+.leaf:nth-child(970) {
+  --count: 142;
+  --ri: 12;
+  --i: 969;
+  --d: "969";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9973637477);
+}
+.leaf:nth-child(971) {
+  --count: 142;
+  --ri: 12;
+  --i: 970;
+  --d: "970";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1279793066);
+}
+.leaf:nth-child(972) {
+  --count: 142;
+  --ri: 12;
+  --i: 971;
+  --d: "971";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.4890166937);
+}
+.leaf:nth-child(973) {
+  --count: 142;
+  --ri: 12;
+  --i: 972;
+  --d: "972";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.296778726);
+}
+.leaf:nth-child(974) {
+  --count: 142;
+  --ri: 12;
+  --i: 973;
+  --d: "973";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9869804607);
+}
+.leaf:nth-child(975) {
+  --count: 142;
+  --ri: 12;
+  --i: 974;
+  --d: "974";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.173667153);
+}
+.leaf:nth-child(976) {
+  --count: 142;
+  --ri: 12;
+  --i: 975;
+  --d: "975";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.3137759176);
+}
+.leaf:nth-child(977) {
+  --count: 142;
+  --ri: 12;
+  --i: 976;
+  --d: "976";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0404594229);
+}
+.leaf:nth-child(978) {
+  --count: 142;
+  --ri: 12;
+  --i: 977;
+  --d: "977";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9425381527);
+}
+.leaf:nth-child(979) {
+  --count: 142;
+  --ri: 12;
+  --i: 978;
+  --d: "978";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9943525144);
+}
+.leaf:nth-child(980) {
+  --count: 142;
+  --ri: 12;
+  --i: 979;
+  --d: "979";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7127504439);
+}
+.leaf:nth-child(981) {
+  --count: 142;
+  --ri: 12;
+  --i: 980;
+  --d: "980";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.144068862);
+}
+.leaf:nth-child(982) {
+  --count: 142;
+  --ri: 12;
+  --i: 981;
+  --d: "981";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.064045939);
+}
+.leaf:nth-child(983) {
+  --count: 142;
+  --ri: 12;
+  --i: 982;
+  --d: "982";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.1164802798);
+}
+.leaf:nth-child(984) {
+  --count: 142;
+  --ri: 12;
+  --i: 983;
+  --d: "983";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7576482321);
+}
+.leaf:nth-child(985) {
+  --count: 142;
+  --ri: 12;
+  --i: 984;
+  --d: "984";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.274422919);
+}
+.leaf:nth-child(986) {
+  --count: 142;
+  --ri: 12;
+  --i: 985;
+  --d: "985";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.9065595851);
+}
+.leaf:nth-child(987) {
+  --count: 142;
+  --ri: 12;
+  --i: 986;
+  --d: "986";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.7240803927);
+}
+.leaf:nth-child(988) {
+  --count: 142;
+  --ri: 12;
+  --i: 987;
+  --d: "987";
+  --delay: calc(0.6s * var(--ri) + 0.9s * 0.0357741592);
+}
+.leaf:before {
+  position: absolute;
+  color: white;
+}
+
+.container {
+  filter: url(#blurFilter) saturate(1.5) brightness(1.1);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+body:after {
+  content: "";
+  position: absolute;
+  width: 30vmin;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: inherit;
+  translate: 0 50%;
+  filter: blur(1rem);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.filter {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+:root {
+  --color-primary: #ee75d2;
+  --color-secondary: #75d8ee;
+  --color-tertiary: #deee75;
+  --color-quaternary: #9375ee;
+  --color-surface: #111;
+}

@@ -1,0 +1,118 @@
+@use "sass:math";
+
+@property --move {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0;
+}
+$startCount: 10;
+$ringCount: 13;
+:root {
+  --count: #{$startCount};
+}
+
+@keyframes move {
+  from {
+    --move: 0vmin;
+    opacity: .0;
+  }
+  20%,
+  50%,
+  70% {
+    opacity: 1;
+  }
+  to {
+    --move: 22vmin;
+  }
+}
+
+.leaf {
+  background: radial-gradient(
+    color-mix(in srgb, white, transparent 90%),
+    color-mix(
+      in srgb,
+      var(--color-primary),
+      hsla(calc(10 * var(--i)), 100%, 50%, 1) 50%
+    )
+  );
+      opacity: .0;
+  --size: 20vmin;
+  height: var(--size);
+  aspect-ratio: 1 / 8;
+  border-radius: 50%;
+  position: absolute;
+  animation: move .8s var(--delay) ease infinite;
+
+  --r: calc(var(--move, 0vmin) + 4.2vmin + var(--ri, 0) * var(--size) * 0.44);
+  --angle-per-item: calc(360deg / var(--count));
+  --ai: calc(var(--angle-per-item) * var(--i));
+  translate: calc(cos(var(--ai)) * var(--r))
+    calc(sin(var(--ai)) * var(--r) * -1);
+  rotate: calc(90deg - 360deg / var(--count) * var(--i));
+  $index: 0;
+  @for $ri from 0 through $ringCount - 1 {
+    $count: $startCount - 1 + $ri * 11;
+    @for $i from 0 through $count {
+      &:nth-child(#{$index + 1}) {
+        --count: #{$count + 1};
+        --ri: #{$ri};
+
+        --i: #{$index};
+        --d: "#{$index}";
+        --delay: calc(0.6s * var(--ri) + 0.9s * #{math.random()});
+        $index: $index + 1;
+      }
+    }
+  }
+
+  &:before {
+    // content: var(--d); // debug
+    position: absolute;
+    color: white;
+  }
+}
+
+.container {
+  filter: url(#blurFilter) saturate(1.5) brightness(1.1);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  
+  &:after {
+    content: '';
+    position: absolute;
+    width: 30vmin;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: inherit;
+    translate: 0 50%;
+    filter: blur(1rem);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.filter {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+}
+:root {
+  --color-primary: #ee75d2;
+  --color-secondary: #75d8ee;
+  --color-tertiary: #deee75;
+  --color-quaternary: #9375ee;
+  --color-surface: #111;
+}
+
