@@ -1,0 +1,275 @@
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --hue: 223;
+  --sat: 10%;
+  --white: hsl(0,0%,100%);
+  --light-gray1: hsl(var(--hue),var(--sat),95%);
+  --light-gray2: hsl(var(--hue),var(--sat),90%);
+  --light-gray4: hsl(var(--hue),var(--sat),80%);
+  --gray: hsl(var(--hue),var(--sat),50%);
+  --dark-gray6: hsl(var(--hue),var(--sat),20%);
+  --dark-gray8: hsl(var(--hue),var(--sat),10%);
+  --dark-gray9: hsl(var(--hue),var(--sat),5%);
+  --red1: hsl(0,90%,60%);
+  --red2: hsl(0,90%,50%);
+  --trans-dur: 0.3s;
+  color-scheme: light dark;
+  font-size: clamp(1rem,0.9rem + 0.5vw,1.5rem);
+}
+
+body {
+  background-color: light-dark(var(--white), var(--dark-gray8));
+  color: light-dark(var(--dark-gray8), var(--light-gray2));
+  display: flex;
+  font: 1em/1.5 sans-serif;
+  height: 100vh;
+  transition: background-color var(--trans-dur), color var(--trans-dur);
+}
+
+.dice {
+  --dur: 3s;
+  --size: 5em;
+  --size-half: calc(var(--size) / 2 - 0.5px);
+  margin: auto;
+  perspective: 800px;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+}
+.dice__dot, .dice__side, .dice__side:before, .dice__side:after, .dice__sides {
+  animation-duration: var(--dur);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.dice__dot {
+  animation-name: dice-dot-lighting, dice-dot-rotate;
+  background-color: var(--white);
+  box-shadow: 0 calc(var(--size) * 0.05) calc(var(--size) * 0.05) calc(var(--size) * 0.0625) var(--dark-gray9) inset;
+  border-radius: 50%;
+  width: 80%;
+  height: 80%;
+}
+.dice__side {
+  animation-name: dice-lighting;
+  backface-visibility: hidden;
+  background-color: var(--light-gray2);
+  box-shadow: 0 0 calc(var(--size) * 0.1) calc(var(--size) * 0.05) var(--white) inset;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  padding: 12.5%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: background-color var(--trans-dur);
+}
+.dice__side:before, .dice__side:after {
+  background-image: linear-gradient(90deg, transparent 90%, var(--gray) 120%);
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+.dice__side:before {
+  transform: rotate(90deg);
+}
+.dice__side:after {
+  animation-name: dice-shadow;
+  opacity: 0;
+}
+.dice__side, .dice__sides {
+  width: 100%;
+  height: 100%;
+}
+.dice__sides {
+  animation-name: dice-rotate;
+  transform: rotateX(-30deg) rotateY(-45deg);
+  transform-style: preserve-3d;
+}
+.dice__side--1 {
+  transform: translate3d(0, 0, var(--size-half));
+}
+.dice__side--2 {
+  transform: rotateY(-90deg) translate3d(0, 0, var(--size-half));
+}
+.dice__side--2, .dice__side--2:after {
+  animation-delay: calc(var(--dur) * -0.25);
+}
+.dice__side--3 {
+  box-shadow: 0 0 calc(var(--size) * 0.05) calc(var(--size) * 0.05) var(--light-gray3) inset;
+  transform: rotateX(-90deg) translate3d(0, 0, var(--size-half));
+}
+.dice__side--3:before {
+  opacity: 0;
+}
+.dice__side--3:after {
+  animation-name: none;
+}
+.dice__side--4 {
+  animation-name: none;
+  transform: rotateX(90deg) translate3d(0, 0, var(--size-half));
+}
+.dice__side--4:before, .dice__side--4:after {
+  animation-name: dice-shadow-top-fade, dice-shadow-top-flip-1;
+  animation-timing-function: linear, steps(1, start);
+}
+.dice__side--4:after {
+  animation-name: dice-shadow-top-fade, dice-shadow-top-flip-2;
+  animation-delay: calc(var(--dur) * -0.75);
+}
+.dice__side--5 {
+  transform: rotateY(-270deg) translate3d(0, 0, var(--size-half));
+}
+.dice__side--5, .dice__side--5:after {
+  animation-delay: calc(var(--dur) * -0.75);
+}
+.dice__side--6 {
+  transform: rotateY(-180deg) translate3d(0, 0, var(--size-half));
+}
+.dice__side--6, .dice__side--6:after {
+  animation-delay: calc(var(--dur) * -0.5);
+}
+.dice__side--1 .dice__dot {
+  animation-name: dice-dot-lighting-red, dice-dot-rotate;
+  box-shadow: 0 calc(var(--size) * 0.0625) calc(var(--size) * 0.05) calc(var(--size) * 0.075) var(--red2) inset;
+  grid-column: 2;
+  grid-row: 2;
+  width: 100%;
+  height: 100%;
+}
+.dice__side--2 .dice__dot:nth-child(1), .dice__side--3 .dice__dot:nth-child(1) {
+  grid-row: 3;
+  align-self: end;
+}
+.dice__side--2 .dice__dot:nth-child(2), .dice__side--3 .dice__dot:nth-child(2) {
+  grid-column: 3;
+  justify-self: end;
+}
+.dice__side--2 .dice__dot {
+  animation-delay: calc(var(--dur) * -0.25);
+}
+.dice__side--3 .dice__dot, .dice__side--4 .dice__dot {
+  animation-name: dice-dot-rotate;
+}
+.dice__side--3 .dice__dot:nth-child(3), .dice__side--5 .dice__dot:nth-child(5) {
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: center;
+  align-self: center;
+}
+.dice__side--4 .dice__dot:nth-child(even), .dice__side--5 .dice__dot:nth-child(even), .dice__side--6 .dice__dot:nth-child(even) {
+  grid-column: 3;
+  justify-self: end;
+}
+.dice__side--4 .dice__dot:nth-child(3), .dice__side--4 .dice__dot:nth-child(4), .dice__side--5 .dice__dot:nth-child(3), .dice__side--5 .dice__dot:nth-child(4), .dice__side--6 .dice__dot:nth-child(3), .dice__side--6 .dice__dot:nth-child(4) {
+  grid-row: 3;
+  align-self: end;
+}
+.dice__side--4 .dice__dot, .dice__side--6 .dice__dot {
+  animation-delay: calc(var(--dur) * -0.5);
+}
+.dice__side--4 .dice__dot {
+  animation-direction: reverse;
+}
+.dice__side--5 .dice__dot {
+  animation-delay: calc(var(--dur) * -0.75);
+}
+.dice__side--6 .dice__dot:nth-child(n+5) {
+  align-self: center;
+}
+
+/* Animation */
+@keyframes dice-dot-lighting {
+  from, to {
+    background-color: var(--white);
+    filter: brightness(1);
+  }
+  25%, 75% {
+    background-color: var(--dark-gray6);
+    filter: brightness(0.9);
+  }
+}
+@keyframes dice-dot-lighting-red {
+  from, to {
+    background-color: var(--white);
+    filter: brightness(1);
+  }
+  25%, 75% {
+    background-color: var(--red1);
+    filter: brightness(0.9);
+  }
+}
+@keyframes dice-dot-rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+@keyframes dice-lighting {
+  from, to {
+    background-color: var(--light-gray2);
+  }
+  25%, 75% {
+    background-color: var(--light-gray4);
+  }
+}
+@keyframes dice-rotate {
+  from {
+    transform: rotateX(-30deg) rotateY(0);
+  }
+  to {
+    transform: rotateX(-30deg) rotateY(-1turn);
+  }
+}
+@keyframes dice-shadow {
+  from {
+    opacity: 0;
+    transform: scaleX(-1);
+  }
+  25% {
+    animation-timing-function: steps(1);
+    opacity: 1;
+    transform: scaleX(-1);
+  }
+  50%, 75% {
+    animation-timing-function: linear;
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  to {
+    opacity: 0;
+    transform: scaleX(1);
+  }
+}
+@keyframes dice-shadow-top-fade {
+  from, 50%, to {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+@keyframes dice-shadow-top-flip-1 {
+  from, 25%, to {
+    transform: rotate(-0.25turn);
+  }
+  50%, 75% {
+    transform: rotate(-0.75turn);
+  }
+}
+@keyframes dice-shadow-top-flip-2 {
+  from, 25%, to {
+    transform: rotate(0.5turn);
+  }
+  50%, 75% {
+    transform: rotate(0);
+  }
+}

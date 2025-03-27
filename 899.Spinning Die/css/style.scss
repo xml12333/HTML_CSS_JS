@@ -1,0 +1,345 @@
+* {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+:root {
+	--hue: 223;
+	--sat: 10%;
+	--white: hsl(0,0%,100%);
+	--light-gray1: hsl(var(--hue),var(--sat),95%);
+	--light-gray2: hsl(var(--hue),var(--sat),90%);
+	--light-gray4: hsl(var(--hue),var(--sat),80%);
+	--gray: hsl(var(--hue),var(--sat),50%);
+	--dark-gray6: hsl(var(--hue),var(--sat),20%);
+	--dark-gray8: hsl(var(--hue),var(--sat),10%);
+	--dark-gray9: hsl(var(--hue),var(--sat),5%);
+	--red1: hsl(0,90%,60%);
+	--red2: hsl(0,90%,50%);
+	--trans-dur: 0.3s;
+	color-scheme: light dark;
+	font-size: clamp(1rem,0.9rem + 0.5vw,1.5rem);
+}
+body {
+	background-color: light-dark(var(--white),var(--dark-gray8));
+	color: light-dark(var(--dark-gray8),var(--light-gray2));
+	display: flex;
+	font: 1em/1.5 sans-serif;
+	height: 100vh;
+	transition:
+		background-color var(--trans-dur),
+		color var(--trans-dur);
+}
+.dice {
+	--dur: 3s;
+	--size: 5em;
+	--size-half: calc(var(--size) / 2 - 0.5px);
+	margin: auto;
+	perspective: 800px;
+	position: relative;
+	width: var(--size);
+	height: var(--size);
+
+	&__dot,
+	&__side,
+	&__side:before,
+	&__side:after,
+	&__sides {
+		animation: {
+			duration: var(--dur);
+			timing-function: linear;
+			iteration-count: infinite;
+			// play-state: paused;
+		};
+	}
+	&__dot {
+		animation-name:
+			dice-dot-lighting,
+			dice-dot-rotate;
+		background-color: var(--white);
+		box-shadow: 0 calc(var(--size) * 0.05) calc(var(--size) * 0.05) calc(var(--size) * 0.0625) var(--dark-gray9) inset;
+		border-radius: 50%;
+		width: 80%;
+		height: 80%;
+	}
+	&__side {
+		animation-name: dice-lighting;
+		backface-visibility: hidden;
+		background-color: var(--light-gray2);
+		box-shadow: 0 0 calc(var(--size) * 0.1) calc(var(--size) * 0.05) var(--white) inset;
+		display: grid;
+		grid: {
+			template: {
+				columns: repeat(3,1fr);
+				rows: repeat(3,1fr);
+			};
+		};
+		padding: 12.5%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: background-color var(--trans-dur);
+
+		&:before,
+		&:after {
+			background-image: linear-gradient(90deg,transparent 90%,var(--gray) 120%);
+			content: "";
+			display: block;
+			position: absolute;
+			inset: 0;
+		}
+		&:before {
+			transform: rotate(90deg);
+		}
+		&:after {
+			animation-name: dice-shadow;
+			opacity: 0;
+		}
+	}
+	&__side,
+	&__sides {
+		width: 100%;
+		height: 100%;
+	}
+	&__sides {
+		animation-name: dice-rotate;
+		transform: rotateX(-30deg) rotateY(-45deg);
+		transform-style: preserve-3d;
+	}
+	&__side--1 {
+		transform: translate3d(0,0,var(--size-half));
+	}
+	&__side--2 {
+		transform: rotateY(-90deg) translate3d(0,0,var(--size-half));
+
+		&,
+		&:after {
+			animation-delay: calc(var(--dur) * -0.25);
+		}
+	}
+	&__side--3 {
+		box-shadow: 0 0 calc(var(--size) * 0.05) calc(var(--size) * 0.05) var(--light-gray3) inset;
+		transform: rotateX(-90deg) translate3d(0,0,var(--size-half));
+
+		&:before {
+			opacity: 0;
+		}
+		&:after {
+			animation-name: none;
+		}
+	}
+	&__side--4 {
+		animation-name: none;
+		transform: rotateX(90deg) translate3d(0,0,var(--size-half));
+
+		&:before,
+		&:after {
+			animation: {
+				name:
+					dice-shadow-top-fade,
+					dice-shadow-top-flip-1;
+				timing-function:
+					linear,
+					steps(1,start);
+			};
+		}
+		&:after {
+			animation: {
+				name:
+					dice-shadow-top-fade,
+					dice-shadow-top-flip-2;
+				delay: calc(var(--dur) * -0.75);
+			};
+		}
+	}
+	&__side--5 {
+		transform: rotateY(-270deg) translate3d(0,0,var(--size-half));
+
+		&,
+		&:after {
+			animation-delay: calc(var(--dur) * -0.75);
+		}
+	}
+	&__side--6 {
+		transform: rotateY(-180deg) translate3d(0,0,var(--size-half));
+
+		&,
+		&:after {
+			animation-delay: calc(var(--dur) * -0.5);
+		}
+	}
+	&__side--1 &__dot {
+		animation-name:
+			dice-dot-lighting-red,
+			dice-dot-rotate;
+		box-shadow: 0 calc(var(--size) * 0.0625) calc(var(--size) * 0.05) calc(var(--size) * 0.075) var(--red2) inset;
+		grid: {
+			column: 2;
+			row: 2;
+		};
+		width: 100%;
+		height: 100%;
+	}
+	&__side--2 &__dot,
+	&__side--3 &__dot {
+		&:nth-child(1) {
+			grid-row: 3;
+			align-self: end;
+		}
+		&:nth-child(2) {
+			grid-column: 3;
+			justify-self: end;
+		}
+	}
+	&__side--2 &__dot {
+		animation-delay: calc(var(--dur) * -0.25);
+	}
+	&__side--3 &__dot,
+	&__side--4 &__dot {
+		animation-name: dice-dot-rotate;
+	}
+	&__side--3 &__dot:nth-child(3),
+	&__side--5 &__dot:nth-child(5) {
+		grid: {
+			column: 2;
+			row: 2;
+		};
+		justify-self: center;
+		align-self: center;
+	}
+	&__side--4 &__dot,
+	&__side--5 &__dot,
+	&__side--6 &__dot {
+		&:nth-child(even) {
+			grid-column: 3;
+			justify-self: end;
+		}
+		&:nth-child(3),
+		&:nth-child(4) {
+			grid-row: 3;
+			align-self: end;
+		}
+	}
+	&__side--4 &__dot,
+	&__side--6 &__dot {
+		animation-delay: calc(var(--dur) * -0.5);
+	}
+	&__side--4 &__dot {
+		animation-direction: reverse;
+	}
+	&__side--5 &__dot {
+		animation-delay: calc(var(--dur) * -0.75);
+	}
+	&__side--6 &__dot {
+		&:nth-child(n + 5) {
+			align-self: center;
+		}
+	}
+}
+
+/* Animation */
+@keyframes dice-dot-lighting {
+	from,
+	to {
+		background-color: var(--white);
+		filter: brightness(1);
+	}
+	25%,
+	75% {
+		background-color: var(--dark-gray6);
+		filter: brightness(0.9);
+	}
+}
+@keyframes dice-dot-lighting-red {
+	from,
+	to {
+		background-color: var(--white);
+		filter: brightness(1);
+	}
+	25%,
+	75% {
+		background-color: var(--red1);
+		filter: brightness(0.9);
+	}
+}
+@keyframes dice-dot-rotate {
+	from {
+		transform: rotate(0);
+	}
+	to {
+		transform: rotate(1turn);
+	}
+}
+@keyframes dice-lighting {
+	from,
+	to {
+		background-color: var(--light-gray2);
+	}
+	25%,
+	75% {
+		background-color: var(--light-gray4);
+	}
+}
+@keyframes dice-rotate {
+	from {
+		transform: rotateX(-30deg) rotateY(0);
+	}
+	to {
+		transform: rotateX(-30deg) rotateY(-1turn);		
+	}
+}
+@keyframes dice-shadow {
+	from {
+		opacity: 0;
+		transform: scaleX(-1);
+	}
+	25% {
+		animation-timing-function: steps(1);
+		opacity: 1;
+		transform: scaleX(-1);
+	}
+	50%,
+	75% {
+		animation-timing-function: linear;
+		opacity: 1;
+		transform: scaleX(1);
+	}
+	to {
+		opacity: 0;
+		transform: scaleX(1);
+	}
+}
+@keyframes dice-shadow-top-fade {
+	from,
+	50%,
+	to {
+		opacity: 1;
+	}
+	25%, 
+	75% {
+		opacity: 0;
+	}
+}
+@keyframes dice-shadow-top-flip-1 {
+	from,
+	25%,
+	to {
+		transform: rotate(-0.25turn);
+	}
+	50%,
+	75% {
+		transform: rotate(-0.75turn);
+	}
+}
+@keyframes dice-shadow-top-flip-2 {
+	from,
+	25%,
+	to {
+		transform: rotate(0.5turn);
+	}
+	50%,
+	75% {
+		transform: rotate(0);
+	}
+}

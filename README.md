@@ -842,3 +842,4 @@
 |896| [Logo Marquee](https://github.com/xml12333/HTML_CSS_JS/tree/main/896.Logo%20Marquee)| [Demo](https://nikt.com.ua/projects/htmlCssJs/896.Logo%20Marquee/)|
 |897| [Lumon Globe](https://github.com/xml12333/HTML_CSS_JS/tree/main/897.Lumon%20Globe)| [Demo](https://nikt.com.ua/projects/htmlCssJs/897.Lumon%20Globe/)|
 |898| [Gooey Stars](https://github.com/xml12333/HTML_CSS_JS/tree/main/898.Gooey%20Stars)| [Demo](https://nikt.com.ua/projects/htmlCssJs/898.Gooey%20Stars/)|
+|899| [Spinning Die](https://github.com/xml12333/HTML_CSS_JS/tree/main/899.Spinning%20Die)| [Demo](https://nikt.com.ua/projects/htmlCssJs/899.Spinning%20Die/)|
