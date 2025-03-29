@@ -844,3 +844,4 @@
 |898| [Gooey Stars](https://github.com/xml12333/HTML_CSS_JS/tree/main/898.Gooey%20Stars)| [Demo](https://nikt.com.ua/projects/htmlCssJs/898.Gooey%20Stars/)|
 |899| [Spinning Die](https://github.com/xml12333/HTML_CSS_JS/tree/main/899.Spinning%20Die)| [Demo](https://nikt.com.ua/projects/htmlCssJs/899.Spinning%20Die/)|
 |900| [Polygon Loader](https://github.com/xml12333/HTML_CSS_JS/tree/main/900.Polygon%20Loader)| [Demo](https://nikt.com.ua/projects/htmlCssJs/900.Polygon%20Loader/)|
+|901| [Toggle Categories](https://github.com/xml12333/HTML_CSS_JS/tree/main/901.Toggle%20Categories)| [Demo](https://nikt.com.ua/projects/htmlCssJs/901.Toggle%20Categories/)|
