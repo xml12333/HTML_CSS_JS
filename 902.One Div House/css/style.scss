@@ -1,0 +1,384 @@
+/* TRANSITION AVAILABLE ONLY ON CHROME AND EDGE */
+
+@layer reset, base, utils, elements, credits;
+
+/* ----- D E V   E N V I R O M E N T ----- */
+@mixin size($w, $h: $w) {
+	width  : $w;
+	height : $h;
+}
+
+@function remove-last-char($string) {
+	@return unquote(str-slice($string, 1, str-length($string) - 2));
+}
+
+@function get-value($element, $index, $extras : false) {
+	$target : nth($element, 2);
+	@if ($extras == true) {
+		@return if(length($target) > 3, get-value($element, $index), '');
+	}
+	@return nth($target, $index);
+}
+
+@function circle($color, $size, $position) {
+	@return radial-gradient(circle #{$size} at #{$position}, var(--#{$color}) 99.99%, transparent 0);
+}
+
+@function linear($color) {
+	@return linear-gradient(var(--#{$color}) 0, var(--#{$color}) 100%);
+}
+
+@function conic($color, $from, $end) {
+	@return conic-gradient(#{unquote($from)}, var(--#{$color}) #{$end}, transparent #{$end});
+}
+
+@function gradient($element, $color, $from, $end) {
+	$target : nth($element, 2);
+	@if (length($target) > 3) {
+		@return '#{conic($color, $from, $end)}, ';
+	}
+	@if (length(nth($target, 2)) == 1) {
+		@return '#{circle($color, nth($target, 2), 50% 50%)}, ';
+	}
+	@return '#{linear($color)}, ';
+}
+
+@function separate-property-list($list) {
+	@return '#{nth($list, 1)} #{nth($list, 2)}, '
+}
+
+
+/* ----- C O N T E N T ----- */
+$brick-size      : 1.25em 0.5em;
+$brick-size-lage : 2em 0.5em;
+//                                             (for conic)
+// element: (color, size-x size-y, pos-x pos-y, from, to)
+$elements        : (
+	// Bushes and grass
+		grass-base: (grass-300, var(--main-width) 0.5em, 0 26.5em),
+		bush-right-front-detail-1 : (grass-100, 0.5em, 32.25em 25em),
+		bush-right-front-detail-2 : (grass-100, 0.75em, 35em 22.5em),
+		bush-right-front-detail-3 : (grass-100, 0.25em, 37.5em 25em),
+		bush-right-front-1: (grass-200, 2em, 31em 23.5em),
+		bush-right-front-2: (grass-200, 3em, 33em 22em),
+		bush-right-front-3: (grass-200, 1.5em, 37.5em 24.5em),
+	// Bricks
+		side-brick-1: (wall-400, $brick-size, 21.75em 23.25em),
+		side-brick-2: (wall-400, $brick-size, 28.5em 23.25em),
+		side-brick-3: (wall-400, $brick-size, 32em 17.5em),
+		front-brick-1: (wall-200, $brick-size, 10em 22.5em),
+		front-brick-2: (wall-200, $brick-size, 17.5em 21.5em),
+		front-brick-3: (wall-200, $brick-size, 18.5em 19.5em),
+		front-brick-4: (wall-200, $brick-size, 16.5em 16.75em),
+		front-brick-5: (wall-200, $brick-size, 11em 16.75em),
+		roof-brick-1: (roof-300, $brick-size-lage, 19.25em 10.75em),
+		roof-brick-2: (roof-300, $brick-size-lage, 21em 12.25em),
+		roof-brick-3: (roof-300, $brick-size-lage, 28.5em 12.25em),
+		roof-brick-4: (roof-300, $brick-size-lage, 26em 13.5em),
+	// Window Right
+		window-right-base: (roof-300, 3.5em 0.35em, 29em 21.5em),
+		window-right-base-side: (roof-200, 3.5em 0.35em, 28.15em 21.5em),
+		window-right-base-shadow: (wall-400, 3.75em 0.65em, 28.15em 21.85em),
+		window-right-glass: (glass, 2.6em 2.6em, 28.45em 18.575em),
+		window-right-frame: (white, 3.25em 3.25em, 28.15em 18.25em),
+		window-right-shadow: (wall-100, 0.75em 3.35em, 31.35em 18.25em),
+	// Window Left
+		window-left-base: (roof-300, 3.5em 0.35em, 23.5em 21.5em),
+		window-left-base-side: (roof-200, 3.5em 0.35em, 22.65em 21.5em),
+		window-left-base-shadow: (wall-400, 3.75em 0.65em, 22.65em 21.85em),
+		window-left-glass: (glass, 2.6em 2.6em, 22.95em 18.575em),
+		window-left-frame: (white, 3.25em 3.25em, 22.65em 18.25em),
+		window-left-shadow: (wall-100, 0.75em 3.35em, 25.85em 18.25em),
+	// Hearth
+		heart-front: (roof-100, 1.25em 3em, 24.25em 8.5em, 'from 0 at 0 70% ', 125deg),
+		heart-front-up : (roof-100, 1.75em 0.6em, 23.75em 7.5em),
+		heart-front-shadow: (roof-200, 1.25em 0.55em, 24.25em 8em),
+		heart-side-up: (roof-200, 2.75em 0.6em, 25.25em 7.5em),
+		heart-side-shadow: (roof-400, 2em 0.55em, 25.5em 8em),
+		hearth-side: (roof-300, 2em 3em, 25.5em 8.5em),
+	// Front
+		step-front-down: (wall-100, 5.5em 1em, 8em 25.5em),
+		step-front: (wall-50, 5em 1em, 10em 24.5em),
+		step-shadow: (wall-400, 3.5em 2em, 13.5em 24.5em),
+		base: (wall-300, 11.7em 2em, 8.75em 24.5em),
+		door-out-shadow: (wall-400, 1em 6.25em, 11.5em 18.25em),
+		roof-back: (roof-300, 0.75em 0.75em, 9em 15.25em, 'from 40deg at 0 100%', 180deg),
+		door-inner-shadow: (door-200, 4.5em 1em, 12.5em 18.25em),
+		door: (door-100, 4.5em 6.25em, 12.5em 18.25em),
+		roof-wall-front: (wall-100, 10.725em 6.75em, 9.75em 11.5em, 'from 135deg at calc(50% - 0.4em) 0', 90deg),
+		roof-wall-front-alt : (wall-300, 10.725em 6.75em, 9.75em 10.25em, 'from 135deg at calc(50% - 0.4em) 0', 90deg),
+		roof-front: (roof-100, 11.5em 7em, 9em 9em, 'from 135deg at 50% 0', 90deg),
+		wall-front: (wall-100, 10.75em 8.55em, 9.75em 16em),
+	// Side
+		roof-shadow-side : (roof-300, 13.75em 1.25em, 20.25em 14.75em),
+		shadow-side : (wall-400, 13.25em 1em, 20.25em 16em),
+		wall-side : (wall-300, 13.25em 8.55em, 20.25em 16em),
+		base-side : (wall-400, 13.25em 2em, 20.25em 24.5em),
+		roof-side: (roof-200, 19.25em 6.5em, 14.75em 9em, 'from 135deg at 70% 0', 140deg),
+	// Bush
+		bush-left-detail-1: (grass-200, 0.6em, 7.35em 22.5em),
+		bush-left-detail-2: (grass-200, 0.25em, 6.6em 24.5em),
+		bush-left-detail-3: (grass-200, 0.5em, 4.5em 24.5em),
+		bush-left-1: (grass-300, 2.25em, 3.5em 23.75em),
+		bush-left-2: (grass-300, 3em, 6.5em 21.5em),
+		bush-right-back: (grass-300, 2.5em, 31.7em 19.25em),
+);
+
+$colors          : '';
+$sizes           : '';
+$positions       : '';
+
+@each $element in $elements {
+	$color-element    : get-value($element, 1);
+	$size-element     : get-value($element, 2);
+	$position-element : get-value($element, 3);
+	$from-element     : get-value($element, 4, true);
+	$end-element      : get-value($element, 5, true);
+	
+	$colors           : $colors + gradient($element, $color-element, $from-element, $end-element);
+	$positions        : $positions + separate-property-list($position-element);
+	//	Conditional for radial gradients
+	$sizes            : $sizes + if(length($size-element) > 1, separate-property-list($size-element), '#{$size-element * 2} #{$size-element * 2}, ');
+}
+
+/* ----- C O L O R S ----- */
+// DISCLAIMER
+// For some reason, using view transition API + light-dark() function
+// doesn't change the colors on Safari in external elements from the house (like the smoke).
+// Due to that and that Codepen was not able to generate the thumbnail,
+// the colors are declared without light-dark() function.
+// Special thanks Safari for complicate my life (as always)!
+[data-theme=light],
+html {
+	color-scheme      : light only;
+	
+	// Glass
+	--glass           : #53C9E9;
+	--reflect         : rgba(255, 255, 255, 0.4);
+	
+	//	Roof colors
+	--roof-100        : #F1624A;
+	--roof-200        : #EC4042;
+	--roof-300        : #DC1F2E;
+	--roof-400        : #C31B28;
+	
+	//	Wall colors
+	--wall-50         : #FFD16F;
+	--wall-100        : #FDBE3D;
+	--wall-200        : #FBAD2F;
+	--wall-300        : #F99C29;
+	--wall-400        : #F57C35;
+	
+	//	Door colors
+	--door-100        : #A14F3C;
+	--door-200        : #7E3A2C;
+	
+	//	Grass colors
+	--grass-100       : #D4E16D;
+	--grass-200       : #A4CE3B;
+	--grass-300       : #6FBE46;
+	
+	// Decorations
+	--body            : #DFF8F8;
+	--satellite-front : #FFDF1E;
+	--satellite-back  : #FEF3A5;
+	--satellite-bg    : #{circle(satellite-front, 2.8em, 50% 50%)}, var(--satellite-back);
+	--smoke           : #D0DAE3;
+}
+
+[data-theme=dark] {
+	color-scheme      : dark only;
+	
+	// Glass
+	--glass           : #F0B455;
+	--reflect         : rgba(255, 255, 255, 0.2);
+	
+	//	Roof colors
+	--roof-100        : #C8405D;
+	--roof-200        : #A03045;
+	--roof-300        : #7C2334;
+	--roof-400        : #871B26;
+	
+	//	Wall colors
+	--wall-50         : #D8A254;
+	--wall-100        : #C89B57;
+	--wall-200        : #B0842B;
+	--wall-300        : #B57850;
+	--wall-400        : #865F22;
+	
+	//	Door colors
+	--door-100        : #713D2B;
+	--door-200        : #5F3323;
+	
+	//	Grass colors
+	--grass-100       : #9AB24E;
+	--grass-200       : #729B31;
+	--grass-300       : #517B32;
+	
+	// Decorations
+	--body            : #19152E;
+	--satellite-front : #FEFEFE;
+	--satellite-back  : #D2D8DE;
+	--satellite-bg    : #{circle(satellite-front, 3.5em, 58% 45%)}, #D0D9DC;
+	--smoke           : #584D67;
+}
+
+:root {
+	--black                   : #000000;
+	--white                   : #FFFFFF;
+	
+	//	Extra backgrounds
+	--glass-reflect           : linear-gradient(315deg, var(--reflect) 35%, var(--reflect) 40%, transparent 40%, transparent 50%, var(--reflect) 50%, var(--reflect) 65%, transparent 65%);
+	--glass-reflect-size      : 2.6em 2.6em;
+	--glass-reflect-positions : 22.95em 18.575em, 28.45em 18.575em;
+	
+	// Final values
+	--image                   : linear-gradient(var(--body), transparent), var(--glass-reflect), var(--glass-reflect), #{remove-last-char($colors)};
+	--size                    : 100% 3rem, var(--glass-reflect-size), var(--glass-reflect-size), #{remove-last-char($sizes)};
+	--position                : 0 0, var(--glass-reflect-positions), #{remove-last-char($positions)};
+}
+
+/* ----- H O U S E ----- */
+@layer elements.house {
+  .house {
+    @include size(var(--main-width), var(--main-height));
+    overflow            : hidden;
+
+    //	Backgrounds
+    background-image    : var(--image);
+    background-size     : var(--size);
+    background-position : var(--position);
+    background-repeat   : no-repeat;
+
+    //	Circle window
+    &::before {
+      @include size(2.75em);
+      content       : '';
+      left          : 13.25em;
+      top           : 13.75em;
+      border-radius : 100%;
+
+      // Window backgrounds
+      background    : circle(glass, 1em, 75% 50%), circle(white, 1.25em, 70% 50%), var(--wall-400);
+    }
+
+    //	Smoke
+    &::after {
+      --height   : 19em;
+      @include size(3em, var(--height));
+      content    : '';
+      right      : 17.65em;
+      top        : 0;
+      z-index    : -1;
+      animation  : smoke 5000ms infinite linear;
+      background : circle(smoke, 1.2em, 42% 1.2em),
+      circle(smoke, 0.75em, 70% 3.5em),
+      circle(smoke, 0.35em, 0.75em 4.1em),
+      circle(smoke, 0.55em, 50% 5.5em),
+      circle(smoke, 0.7em, 25% 8em),
+      circle(smoke, 0.3em, 90% 7.5em),
+      circle(smoke, 1.2em, 42% 10.7em),
+      circle(smoke, 0.75em, 70% 13em),
+      circle(smoke, 0.35em, 0.75em 13.6em),
+      circle(smoke, 0.55em, 50% 15em),
+      circle(smoke, 0.7em, 25% 17.5em),
+      circle(smoke, 0.3em, 90% 17em);
+
+      @keyframes smoke {
+        to {
+          translate : 0 calc(var(--height) / 2 * -1) 0;
+        }
+      }
+    }
+  }
+}
+
+/* ----- M O O N ----- */
+@layer elements.moon {
+  body::before {
+    @include size(8em);
+    content       : '';
+    position      : absolute;
+    border-radius : 100%;
+    left          : 3em;
+    top           : 3em;
+    background    : var(--satellite-bg);
+  }
+}
+
+@layer utils {
+  /* ----- A N I M A T I O N ----- */
+  @keyframes clip-in {
+    from {
+      clip-path : xywh(0 0 0% 100%);
+    }
+
+    to {
+      clip-path : xywh(0 0 100% 100%);
+    }
+  }
+
+  ::view-transition-old(root) {
+    animation : none;
+  }
+
+  ::view-transition-new(root) {
+    animation : clip-in 350ms ease-in-out both;
+  }
+}
+
+/* ----- R E S E T ----- */
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing : border-box;
+  }
+}
+
+/* ----- B A S E ----- */
+@layer base {
+  :root {
+    --main-width  : 45em;
+    --main-height : 27em;
+  }
+
+  body {
+    display          : flex;
+    justify-content  : center;
+    align-items      : center;
+    padding-top      : 5em;
+    height           : 100dvh;
+    overflow         : hidden;
+    color            : canvasText;
+    background-color : var(--body);
+    font-size        : clamp(0.6rem, calc(1vw + 0.1rem), 1.5rem);
+    cursor           : pointer;
+
+    *:not(a, a *) {
+      position : absolute;
+
+      &::before,
+      &::after {
+        position : absolute;
+      }
+    }
+  }
+}
+
+/* ----- C R E D I T S ----- */
+@layer credits {
+  p {
+    bottom      : 1rem;
+    left        : 50%;
+    translate   : -50%;
+    font-size   : 0.75rem;
+    font-family : sans-serif;
+    opacity     : 0.7;
+
+    a {
+      font-weight : 600;
+      white-space : nowrap;
+    }
+  }
+}

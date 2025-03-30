@@ -1,0 +1,184 @@
+/* TRANSITION AVAILABLE ONLY ON CHROME AND EDGE */
+@layer reset, base, utils, elements, credits;
+/* ----- D E V   E N V I R O M E N T ----- */
+/* ----- C O N T E N T ----- */
+/* ----- C O L O R S ----- */
+[data-theme=light],
+html {
+  color-scheme: light only;
+  --glass: #53C9E9;
+  --reflect: rgba(255, 255, 255, 0.4);
+  --roof-100: #F1624A;
+  --roof-200: #EC4042;
+  --roof-300: #DC1F2E;
+  --roof-400: #C31B28;
+  --wall-50: #FFD16F;
+  --wall-100: #FDBE3D;
+  --wall-200: #FBAD2F;
+  --wall-300: #F99C29;
+  --wall-400: #F57C35;
+  --door-100: #A14F3C;
+  --door-200: #7E3A2C;
+  --grass-100: #D4E16D;
+  --grass-200: #A4CE3B;
+  --grass-300: #6FBE46;
+  --body: #DFF8F8;
+  --satellite-front: #FFDF1E;
+  --satellite-back: #FEF3A5;
+  --satellite-bg: radial-gradient(circle 2.8em at 50% 50%, var(--satellite-front) 99.99%, transparent 0), var(--satellite-back);
+  --smoke: #D0DAE3;
+}
+
+[data-theme=dark] {
+  color-scheme: dark only;
+  --glass: #F0B455;
+  --reflect: rgba(255, 255, 255, 0.2);
+  --roof-100: #C8405D;
+  --roof-200: #A03045;
+  --roof-300: #7C2334;
+  --roof-400: #871B26;
+  --wall-50: #D8A254;
+  --wall-100: #C89B57;
+  --wall-200: #B0842B;
+  --wall-300: #B57850;
+  --wall-400: #865F22;
+  --door-100: #713D2B;
+  --door-200: #5F3323;
+  --grass-100: #9AB24E;
+  --grass-200: #729B31;
+  --grass-300: #517B32;
+  --body: #19152E;
+  --satellite-front: #FEFEFE;
+  --satellite-back: #D2D8DE;
+  --satellite-bg: radial-gradient(circle 3.5em at 58% 45%, var(--satellite-front) 99.99%, transparent 0), #D0D9DC;
+  --smoke: #584D67;
+}
+
+:root {
+  --black: #000000;
+  --white: #FFFFFF;
+  --glass-reflect: linear-gradient(315deg, var(--reflect) 35%, var(--reflect) 40%, transparent 40%, transparent 50%, var(--reflect) 50%, var(--reflect) 65%, transparent 65%);
+  --glass-reflect-size: 2.6em 2.6em;
+  --glass-reflect-positions: 22.95em 18.575em, 28.45em 18.575em;
+  --image: linear-gradient(var(--body), transparent), var(--glass-reflect), var(--glass-reflect), linear-gradient(var(--grass-300) 0, var(--grass-300) 100%), radial-gradient(circle 0.5em at 50% 50%, var(--grass-100) 99.99%, transparent 0), radial-gradient(circle 0.75em at 50% 50%, var(--grass-100) 99.99%, transparent 0), radial-gradient(circle 0.25em at 50% 50%, var(--grass-100) 99.99%, transparent 0), radial-gradient(circle 2em at 50% 50%, var(--grass-200) 99.99%, transparent 0), radial-gradient(circle 3em at 50% 50%, var(--grass-200) 99.99%, transparent 0), radial-gradient(circle 1.5em at 50% 50%, var(--grass-200) 99.99%, transparent 0), linear-gradient(var(--wall-400) 0, var(--wall-400) 100%), linear-gradient(var(--wall-400) 0, var(--wall-400) 100%), linear-gradient(var(--wall-400) 0, var(--wall-400) 100%), linear-gradient(var(--wall-200) 0, var(--wall-200) 100%), linear-gradient(var(--wall-200) 0, var(--wall-200) 100%), linear-gradient(var(--wall-200) 0, var(--wall-200) 100%), linear-gradient(var(--wall-200) 0, var(--wall-200) 100%), linear-gradient(var(--wall-200) 0, var(--wall-200) 100%), linear-gradient(var(--roof-300) 0, var(--roof-300) 100%), linear-gradient(var(--roof-300) 0, var(--roof-300) 100%), linear-gradient(var(--roof-300) 0, var(--roof-300) 100%), linear-gradient(var(--roof-300) 0, var(--roof-300) 100%), linear-gradient(var(--roof-300) 0, var(--roof-300) 100%), linear-gradient(var(--roof-200) 0, var(--roof-200) 100%), linear-gradient(var(--wall-400) 0, var(--wall-400) 100%), linear-gradient(var(--glass) 0, var(--glass) 100%), linear-gradient(var(--white) 0, var(--white) 100%), linear-gradient(var(--wall-100) 0, var(--wall-100) 100%), linear-gradient(var(--roof-300) 0, var(--roof-300) 100%), linear-gradient(var(--roof-200) 0, var(--roof-200) 100%), linear-gradient(var(--wall-400) 0, var(--wall-400) 100%), linear-gradient(var(--glass) 0, var(--glass) 100%), linear-gradient(var(--white) 0, var(--white) 100%), linear-gradient(var(--wall-100) 0, var(--wall-100) 100%), conic-gradient(from 0 at 0 70% , var(--roof-100) 125deg, transparent 125deg), linear-gradient(var(--roof-100) 0, var(--roof-100) 100%), linear-gradient(var(--roof-200) 0, var(--roof-200) 100%), linear-gradient(var(--roof-200) 0, var(--roof-200) 100%), linear-gradient(var(--roof-400) 0, var(--roof-400) 100%), linear-gradient(var(--roof-300) 0, var(--roof-300) 100%), linear-gradient(var(--wall-100) 0, var(--wall-100) 100%), linear-gradient(var(--wall-50) 0, var(--wall-50) 100%), linear-gradient(var(--wall-400) 0, var(--wall-400) 100%), linear-gradient(var(--wall-300) 0, var(--wall-300) 100%), linear-gradient(var(--wall-400) 0, var(--wall-400) 100%), conic-gradient(from 40deg at 0 100%, var(--roof-300) 180deg, transparent 180deg), linear-gradient(var(--door-200) 0, var(--door-200) 100%), linear-gradient(var(--door-100) 0, var(--door-100) 100%), conic-gradient(from 135deg at calc(50% - 0.4em) 0, var(--wall-100) 90deg, transparent 90deg), conic-gradient(from 135deg at calc(50% - 0.4em) 0, var(--wall-300) 90deg, transparent 90deg), conic-gradient(from 135deg at 50% 0, var(--roof-100) 90deg, transparent 90deg), linear-gradient(var(--wall-100) 0, var(--wall-100) 100%), linear-gradient(var(--roof-300) 0, var(--roof-300) 100%), linear-gradient(var(--wall-400) 0, var(--wall-400) 100%), linear-gradient(var(--wall-300) 0, var(--wall-300) 100%), linear-gradient(var(--wall-400) 0, var(--wall-400) 100%), conic-gradient(from 135deg at 70% 0, var(--roof-200) 140deg, transparent 140deg), radial-gradient(circle 0.6em at 50% 50%, var(--grass-200) 99.99%, transparent 0), radial-gradient(circle 0.25em at 50% 50%, var(--grass-200) 99.99%, transparent 0), radial-gradient(circle 0.5em at 50% 50%, var(--grass-200) 99.99%, transparent 0), radial-gradient(circle 2.25em at 50% 50%, var(--grass-300) 99.99%, transparent 0), radial-gradient(circle 3em at 50% 50%, var(--grass-300) 99.99%, transparent 0), radial-gradient(circle 2.5em at 50% 50%, var(--grass-300) 99.99%, transparent 0);
+  --size: 100% 3rem, var(--glass-reflect-size), var(--glass-reflect-size), var(--main-width) 0.5em, 1em 1em, 1.5em 1.5em, 0.5em 0.5em, 4em 4em, 6em 6em, 3em 3em, 1.25em 0.5em, 1.25em 0.5em, 1.25em 0.5em, 1.25em 0.5em, 1.25em 0.5em, 1.25em 0.5em, 1.25em 0.5em, 1.25em 0.5em, 2em 0.5em, 2em 0.5em, 2em 0.5em, 2em 0.5em, 3.5em 0.35em, 3.5em 0.35em, 3.75em 0.65em, 2.6em 2.6em, 3.25em 3.25em, 0.75em 3.35em, 3.5em 0.35em, 3.5em 0.35em, 3.75em 0.65em, 2.6em 2.6em, 3.25em 3.25em, 0.75em 3.35em, 1.25em 3em, 1.75em 0.6em, 1.25em 0.55em, 2.75em 0.6em, 2em 0.55em, 2em 3em, 5.5em 1em, 5em 1em, 3.5em 2em, 11.7em 2em, 1em 6.25em, 0.75em 0.75em, 4.5em 1em, 4.5em 6.25em, 10.725em 6.75em, 10.725em 6.75em, 11.5em 7em, 10.75em 8.55em, 13.75em 1.25em, 13.25em 1em, 13.25em 8.55em, 13.25em 2em, 19.25em 6.5em, 1.2em 1.2em, 0.5em 0.5em, 1em 1em, 4.5em 4.5em, 6em 6em, 5em 5em;
+  --position: 0 0, var(--glass-reflect-positions), 0 26.5em, 32.25em 25em, 35em 22.5em, 37.5em 25em, 31em 23.5em, 33em 22em, 37.5em 24.5em, 21.75em 23.25em, 28.5em 23.25em, 32em 17.5em, 10em 22.5em, 17.5em 21.5em, 18.5em 19.5em, 16.5em 16.75em, 11em 16.75em, 19.25em 10.75em, 21em 12.25em, 28.5em 12.25em, 26em 13.5em, 29em 21.5em, 28.15em 21.5em, 28.15em 21.85em, 28.45em 18.575em, 28.15em 18.25em, 31.35em 18.25em, 23.5em 21.5em, 22.65em 21.5em, 22.65em 21.85em, 22.95em 18.575em, 22.65em 18.25em, 25.85em 18.25em, 24.25em 8.5em, 23.75em 7.5em, 24.25em 8em, 25.25em 7.5em, 25.5em 8em, 25.5em 8.5em, 8em 25.5em, 10em 24.5em, 13.5em 24.5em, 8.75em 24.5em, 11.5em 18.25em, 9em 15.25em, 12.5em 18.25em, 12.5em 18.25em, 9.75em 11.5em, 9.75em 10.25em, 9em 9em, 9.75em 16em, 20.25em 14.75em, 20.25em 16em, 20.25em 16em, 20.25em 24.5em, 14.75em 9em, 7.35em 22.5em, 6.6em 24.5em, 4.5em 24.5em, 3.5em 23.75em, 6.5em 21.5em, 31.7em 19.25em;
+}
+
+/* ----- H O U S E ----- */
+@layer elements.house {
+  .house {
+    width: var(--main-width);
+    height: var(--main-height);
+    overflow: hidden;
+    background-image: var(--image);
+    background-size: var(--size);
+    background-position: var(--position);
+    background-repeat: no-repeat;
+  }
+  .house::before {
+    width: 2.75em;
+    height: 2.75em;
+    content: "";
+    left: 13.25em;
+    top: 13.75em;
+    border-radius: 100%;
+    background: radial-gradient(circle 1em at 75% 50%, var(--glass) 99.99%, transparent 0), radial-gradient(circle 1.25em at 70% 50%, var(--white) 99.99%, transparent 0), var(--wall-400);
+  }
+  .house::after {
+    --height: 19em;
+    width: 3em;
+    height: var(--height);
+    content: "";
+    right: 17.65em;
+    top: 0;
+    z-index: -1;
+    animation: smoke 5000ms infinite linear;
+    background: radial-gradient(circle 1.2em at 42% 1.2em, var(--smoke) 99.99%, transparent 0), radial-gradient(circle 0.75em at 70% 3.5em, var(--smoke) 99.99%, transparent 0), radial-gradient(circle 0.35em at 0.75em 4.1em, var(--smoke) 99.99%, transparent 0), radial-gradient(circle 0.55em at 50% 5.5em, var(--smoke) 99.99%, transparent 0), radial-gradient(circle 0.7em at 25% 8em, var(--smoke) 99.99%, transparent 0), radial-gradient(circle 0.3em at 90% 7.5em, var(--smoke) 99.99%, transparent 0), radial-gradient(circle 1.2em at 42% 10.7em, var(--smoke) 99.99%, transparent 0), radial-gradient(circle 0.75em at 70% 13em, var(--smoke) 99.99%, transparent 0), radial-gradient(circle 0.35em at 0.75em 13.6em, var(--smoke) 99.99%, transparent 0), radial-gradient(circle 0.55em at 50% 15em, var(--smoke) 99.99%, transparent 0), radial-gradient(circle 0.7em at 25% 17.5em, var(--smoke) 99.99%, transparent 0), radial-gradient(circle 0.3em at 90% 17em, var(--smoke) 99.99%, transparent 0);
+  }
+  @keyframes smoke {
+    to {
+      translate: 0 calc(var(--height) / 2 * -1) 0;
+    }
+  }
+}
+/* ----- M O O N ----- */
+@layer elements.moon {
+  body::before {
+    width: 8em;
+    height: 8em;
+    content: "";
+    position: absolute;
+    border-radius: 100%;
+    left: 3em;
+    top: 3em;
+    background: var(--satellite-bg);
+  }
+}
+@layer utils {
+  /* ----- A N I M A T I O N ----- */
+  @keyframes clip-in {
+    from {
+      clip-path: xywh(0 0 0% 100%);
+    }
+    to {
+      clip-path: xywh(0 0 100% 100%);
+    }
+  }
+  ::view-transition-old(root) {
+    animation: none;
+  }
+
+  ::view-transition-new(root) {
+    animation: clip-in 350ms ease-in-out both;
+  }
+}
+/* ----- R E S E T ----- */
+@layer reset {
+  *,
+*::before,
+*::after {
+    box-sizing: border-box;
+  }
+}
+/* ----- B A S E ----- */
+@layer base {
+  :root {
+    --main-width: 45em;
+    --main-height: 27em;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5em;
+    height: 100dvh;
+    overflow: hidden;
+    color: canvasText;
+    background-color: var(--body);
+    font-size: clamp(0.6rem, calc(1vw + 0.1rem), 1.5rem);
+    cursor: pointer;
+  }
+  body *:not(a, a *) {
+    position: absolute;
+  }
+  body *:not(a, a *)::before, body *:not(a, a *)::after {
+    position: absolute;
+  }
+}
+/* ----- C R E D I T S ----- */
+@layer credits {
+  p {
+    bottom: 1rem;
+    left: 50%;
+    translate: -50%;
+    font-size: 0.75rem;
+    font-family: sans-serif;
+    opacity: 0.7;
+  }
+  p a {
+    font-weight: 600;
+    white-space: nowrap;
+  }
+}
