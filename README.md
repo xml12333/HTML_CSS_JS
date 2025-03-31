@@ -846,3 +846,4 @@
 |900| [Polygon Loader](https://github.com/xml12333/HTML_CSS_JS/tree/main/900.Polygon%20Loader)| [Demo](https://nikt.com.ua/projects/htmlCssJs/900.Polygon%20Loader/)|
 |901| [Toggle Categories](https://github.com/xml12333/HTML_CSS_JS/tree/main/901.Toggle%20Categories)| [Demo](https://nikt.com.ua/projects/htmlCssJs/901.Toggle%20Categories/)|
 |902| [One Div House](https://github.com/xml12333/HTML_CSS_JS/tree/main/902.One%20Div%20House)| [Demo](https://nikt.com.ua/projects/htmlCssJs/902.One%20Div%20House/)|
+|903| [Scroll Galaxy](https://github.com/xml12333/HTML_CSS_JS/tree/main/903.Scroll%20Galaxy)| [Demo](https://nikt.com.ua/projects/htmlCssJs/903.Scroll%20Galaxy/)|

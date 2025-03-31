@@ -1,0 +1,127 @@
+/* keeps things centered and on screen during scroll */
+.sticky-container {
+  position: fixed;
+  inset: 0;
+}
+
+/* stacked and centered container to revolve within */
+.orbit {
+  display: grid;
+  place-content: center;
+  
+  > * {
+    grid-area: 1/1;
+  }
+}
+
+
+/* SUN */
+@keyframes sun-spin {
+  to {
+    rotate: .25turn;
+  }  
+}
+
+/* mask icon */
+[data-icon="sun"] {
+  /* size and color */
+  inline-size: 200px;
+  --_icon: url(https://api.iconify.design/material-symbols:sunny-rounded.svg);
+  background: linear-gradient(
+    to bottom right in oklab,
+    oklch(95% 100% 110), 
+    oklch(72% 100% 90)
+  );
+  
+  /* spin on scroll with sun keyframes */
+  animation: sun-spin linear both;
+  animation-timeline: scroll();
+}
+
+/* EARTH */
+@keyframes earth-spin {
+  to {
+    rotate: 4turn;
+  }  
+}
+
+/* offset from sun */
+.earth.orbit {
+  animation: earth-spin linear both;
+  animation-timeline: scroll();
+  
+  > * {
+    translate: 200px 0;
+  }
+}
+
+[data-icon="earth"] {
+  inline-size: 100px;
+  
+  --_icon: url(https://api.iconify.design/material-symbols:globe.svg);
+  
+  background: linear-gradient(
+    to bottom right in oklab,
+    oklch(95% 80% 210), 
+    oklch(72% 80% 140)
+  );
+}
+
+
+/* MOON */
+@keyframes moon-spin {
+  to {
+    rotate: 6turn;
+  }  
+}
+
+.moon.orbit {
+  animation: moon-spin linear both;
+  animation-timeline: scroll();
+  
+  > * {
+    translate: 75px 0;
+  }
+}
+
+[data-icon="moon"] {
+  inline-size: 25px;
+    
+  --_icon: url(https://api.iconify.design/material-symbols:dark-mode.svg);
+  
+  background: linear-gradient(
+    to bottom right in oklab,
+    oklch(95% 10% 210), 
+    oklch(85% 10% 210)
+  );
+}
+
+
+
+
+
+
+@layer support {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  html {
+    block-size: 100%;
+    color-scheme: dark;
+    background: oklch(5% 10% 300);
+  }
+
+  body {
+    min-block-size: 300%;
+    font-family: system-ui, sans-serif;
+  }
+  
+  [data-icon] {
+    --_icon:;
+    mask: var(--_icon) center / contain no-repeat;
+
+    aspect-ratio: 1;
+  }
+}
