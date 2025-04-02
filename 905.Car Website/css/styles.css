@@ -1,0 +1,257 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(43, 90%, 50%);
+  --first-color-alt: hsl(43, 88%, 48%);
+  --text-color: hsl(0, 0%, 42%);
+  --text-color-lighten: hsl(0, 0%, 92%);
+  --black-color: hsl(0, 0%, 8%);
+  --white-color: hsl(0, 0%, 100%);
+  --body-color: hsl(0, 0%, 98%);
+  --body-second-color: hsl(25, 70%, 55%);
+  --shadow-img: -8px 8px 16px hsla(0, 0%, 0%, 0.2);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", sans-serif;
+  --biggest-font-size: 4.5rem;
+  --big-font-size: 2.5rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+  --font-extra-bold: 800;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --biggest-font-size: 10.5rem;
+    --big-font-size: 5.5rem;
+    --h1-font-size: 3rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+input,
+button {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--black-color);
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: var(--font-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+video {
+  max-width: 100%;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding-block: 5rem 1rem;
+}
+
+.section__title,
+.section__subtitle {
+  text-align: center;
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-extra-bold);
+  color: var(--black-color);
+  margin-bottom: 3rem;
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.main {
+  overflow: hidden;
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  z-index: var(--z-fixed);
+  transition: background-color 0.4s, box-shadow 0.4s;
+}
+.nav {
+  position: relative;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__logo {
+  color: var(--black-color);
+  font-weight: var(--font-bold);
+}
+.nav__toggle,
+.nav__close {
+  display: inline-flex;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Navigation for mobile devices */
+@media screen and (max-width:1150px) {
+  .nav__menu {
+    position: fixed;
+    top: -120%;
+    left: 0;
+    background-color: var(--body-color);
+    width: 100%;
+    padding-block: 4rem;
+    box-shadow: 0 4px 16px hsla(0, 0%, 0%, 0.1);
+    transition: top .4s;
+  }
+}
+.nav__list{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+.nav__link{
+  position: relative;
+  color: var(--black-color);
+  font-weight: var(--font-semi-bold);
+}
+.nav__link::after{
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: var(--black-color);
+  position: absolute;
+  left: 0;
+  bottom: -.5rem;
+  transition: width .4s;
+}
+.nav__link:hover::after{
+  width: 60%;
+}
+.nav__close{
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+}
+/* Show menu */
+.show-menu{
+  top: 0;
+}
+/* Change background header */
+
+/* Active link */
+
+/*=============== HOME ===============*/
+
+/* Swiper class */
+
+/*=============== BUTTON ===============*/
+
+/*=============== ABOUT ===============*/
+
+/*=============== MODELS ===============*/
+
+/*=============== INFO ===============*/
+
+/*=============== CONTACT ===============*/
+
+/*=============== FOOTER ===============*/
+
+/*=============== SCROLL BAR ===============*/
+
+/*=============== SCROLL UP ===============*/
+
+/* Show Scroll Up */
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+/* For medium devices */
+
+/* For large devices */
+
+/* For 2K resolutions (2048 x 1152, 2048 x 1536) */
