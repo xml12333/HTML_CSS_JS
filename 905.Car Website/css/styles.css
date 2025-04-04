@@ -222,7 +222,10 @@ video {
   top: 0;
 }
 /* Change background header */
-
+.bg-header {
+  background-color: var(--body-color);
+  box-shadow: 0 4px 16px hsla(0, 0%, 0%, 0.1);
+}
 /* Active link */
 
 /*=============== HOME ===============*/
@@ -321,8 +324,70 @@ video {
   color: black;
 }
 /*=============== BUTTON ===============*/
-
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.5rem;
+  background-color: var(--first-color);
+  color: var(--black-color);
+  padding: 0.75rem 2rem;
+  font-weight: var(--font-semi-bold);
+  box-shadow: 0 4px 12px hsla(43, 88%, 32%, 0.4);
+}
+.button i {
+  font-weight: initial;
+  font-size: 1.5rem;
+  transition: transform .4s;
+}
+.button:hover i{
+transform: translateX(.5rem);
+}
+.button__ghost{
+  background-color: transparent;
+  box-shadow: none;
+  border: 2px solid var(--white-color);
+  color: var(--white-color);
+}
 /*=============== ABOUT ===============*/
+.about {
+  background-color: var(--body-second-color);
+}
+.about__container {
+  padding-bottom: 3rem;
+  row-gap: 3rem;
+}
+.about__title {
+  color: var(--white-color);
+  margin-bottom: 1rem;
+}
+.about__title span {
+  color: var(--black-color);
+}
+.about__data {
+  text-align: center;
+}
+.about__description {
+  margin-bottom: 1.5rem;
+  color: var(--white-color);
+}
+.about__video {
+  position: relative;
+  width: 250px;
+  height: 320px;
+  justify-self: center;
+  box-shadow: var(--shadow-img);
+  transform: skew(-12deg);
+  display: grid;
+  overflow: hidden;
+}
+.about__file {
+  max-width: initial;
+  height: 320px;
+  transform: skew(12deg);
+  position: absolute;
+  justify-self: center;
+}
 
 /*=============== MODELS ===============*/
 
