@@ -477,7 +477,59 @@ video {
   text-align: center;
 }
 /*=============== CONTACT ===============*/
-
+.contact {
+  background-color: var(--body-second-color);
+}
+.contact__container {
+  row-gap: 3rem;
+  padding-bottom: 2rem;
+}
+.contact__title {
+  color: var(--white-color);
+  margin-bottom: 4rem;
+}
+.contact__form {
+  row-gap: 2rem;
+}
+.contact__inputs {
+  row-gap: 2.5rem;
+}
+.contact__box {
+  position: relative;
+  width: 100%;
+  height: 58px;
+}
+.contact__input {
+  width: 100%;
+  height: 100%;
+  background-color: var(--body-second-color);
+  border: 2px solid var(--white-color);
+  padding: 0.75rem;
+  color: var(--white-color);
+}
+.contact__input::placeholder {
+  color: var(--white-color);
+}
+.contact__label {
+  position: absolute;
+  top: -1.5rem;
+  left: 0;
+  color: var(--white-color);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+}
+.contact__input:-webkit-autofill {
+  transition: background-color 6000s, color 6000s;
+}
+.contact__button {
+  cursor: pointer;
+}
+.contact__img {
+  width: 250px;
+  transform: skew(-12deg);
+  justify-self: center;
+  box-shadow: var(--shadow-img);
+}
 /*=============== FOOTER ===============*/
 
 /*=============== SCROLL BAR ===============*/
