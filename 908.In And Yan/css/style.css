@@ -1,0 +1,294 @@
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: true;
+}
+:root {
+  --speed: 1.6;
+  --filter: url(#blurFilter) drop-shadow(0 0 6vmin rgba(0, 0, 0, 0.2));
+}
+
+.head {
+  width: 10vmin;
+  height: 16vmin;
+  background: var(--c);
+  border-radius: 50% 50% 3vmin 3vmin;
+  position: relative;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+  -webkit-mask: radial-gradient(1.7vmin 2.4vmin at 25% 30%, transparent 1vmin, black 0.35vmin), radial-gradient(1.7vmin 2.4vmin at 75% 30%, transparent 1vmin, black 0.35vmin);
+          mask: radial-gradient(1.7vmin 2.4vmin at 25% 30%, transparent 1vmin, black 0.35vmin), radial-gradient(1.7vmin 2.4vmin at 75% 30%, transparent 1vmin, black 0.35vmin);
+  -webkit-mask-composite: source-in, xor;
+          mask-composite: intersect;
+  -webkit-animation: head calc(5s * var(--speed)) ease-in-out infinite;
+          animation: head calc(5s * var(--speed)) ease-in-out infinite;
+  --part-distance: 1vmin;
+  --part-rotation: 6deg;
+  --part-initial-rotation: 40deg;
+  transform-origin: bottom;
+}
+
+.parts {
+  display: flex;
+  flex-direction: column;
+  --part-distance: 1vmin;
+}
+
+@-webkit-keyframes head {
+  from, to {
+    translate: 0 0;
+    rotate: var(--part-initial-rotation);
+  }
+  25%, 70% {
+    translate: var(--part-distance) 0;
+    rotate: calc(var(--part-rotation) + var(--part-initial-rotation));
+  }
+  50% {
+    translate: calc(var(--part-distance) * -1) 0;
+    rotate: calc(var(--part-rotation) * -1 + var(--part-initial-rotation));
+  }
+}
+
+@keyframes head {
+  from, to {
+    translate: 0 0;
+    rotate: var(--part-initial-rotation);
+  }
+  25%, 70% {
+    translate: var(--part-distance) 0;
+    rotate: calc(var(--part-rotation) + var(--part-initial-rotation));
+  }
+  50% {
+    translate: calc(var(--part-distance) * -1) 0;
+    rotate: calc(var(--part-rotation) * -1 + var(--part-initial-rotation));
+  }
+}
+@-webkit-keyframes body-part {
+  from, to {
+    translate: 0 0;
+  }
+  25%, 70% {
+    translate: var(--part-distance) 0;
+  }
+  50% {
+    translate: calc(var(--part-distance) * -1) 0;
+  }
+}
+@keyframes body-part {
+  from, to {
+    translate: 0 0;
+  }
+  25%, 70% {
+    translate: var(--part-distance) 0;
+  }
+  50% {
+    translate: calc(var(--part-distance) * -1) 0;
+  }
+}
+.part {
+  -webkit-animation: body-part calc(1s * var(--speed)) var(--delay) ease-in-out infinite;
+          animation: body-part calc(1s * var(--speed)) var(--delay) ease-in-out infinite;
+  background: var(--c);
+  width: 10vmin;
+  height: 3vmin;
+  border-radius: 2vmin;
+  margin-top: -1vmin;
+  --delay: calc(var(--i) * 0.1s);
+  scale: calc(1 - 0.08 * var(--i));
+  rotate: calc(30deg / 10 * var(--i));
+}
+.part:nth-child(1) {
+  --i: 0;
+}
+.part:nth-child(2) {
+  --i: 1;
+}
+.part:nth-child(3) {
+  --i: 2;
+}
+.part:nth-child(4) {
+  --i: 3;
+}
+.part:nth-child(5) {
+  --i: 4;
+}
+.part:nth-child(6) {
+  --i: 5;
+}
+.part:nth-child(7) {
+  --i: 6;
+}
+.part:nth-child(8) {
+  --i: 7;
+}
+.part:nth-child(9) {
+  --i: 8;
+}
+.part:nth-child(10) {
+  --i: 9;
+}
+.part:nth-child(11) {
+  --i: 10;
+}
+
+.fin {
+  position: absolute;
+  translate: 0 10vmin;
+  width: 18vmin;
+  height: 15vmin;
+  background: var(--c);
+  transform-origin: top;
+  -webkit-clip-path: polygon(100% 60%, 100% 100%, 50% 30%, 0 100%, 0 60%, 50% 0);
+          clip-path: polygon(100% 60%, 100% 100%, 50% 30%, 0 100%, 0 60%, 50% 0);
+  -webkit-animation: fin 1s ease-in-out infinite;
+          animation: fin 1s ease-in-out infinite;
+}
+
+@-webkit-keyframes fin {
+  from, to {
+    scale: 1;
+    rotate: 0;
+  }
+  50% {
+    scale: 99% 99%;
+    rotate: 2deg;
+  }
+}
+
+@keyframes fin {
+  from, to {
+    scale: 1;
+    rotate: 0;
+  }
+  50% {
+    scale: 99% 99%;
+    rotate: 2deg;
+  }
+}
+.tail {
+  translate: -7.5vmin -2vmin;
+}
+.tail:before, .tail:after {
+  content: "";
+  position: absolute;
+  width: 15vmin;
+  height: 15vmin;
+  background: var(--c);
+  transform-origin: top;
+  -webkit-clip-path: polygon(100% 60%, 100% 100%, 50% 20%, 0 100%, 0 60%, 50% 0);
+          clip-path: polygon(100% 60%, 100% 100%, 50% 20%, 0 100%, 0 60%, 50% 0);
+  --part-distance: 1vmin;
+  --part-rotation: 20deg;
+  --part-base-rotation: -20deg;
+  -webkit-animation: tail calc(1s * var(--speed)) ease-in-out infinite;
+          animation: tail calc(1s * var(--speed)) ease-in-out infinite;
+}
+.tail:after {
+  -webkit-clip-path: polygon(100% 80%, 100% 100%, 50% 10%, 0 100%, 0 80%, 50% 0);
+          clip-path: polygon(100% 80%, 100% 100%, 50% 10%, 0 100%, 0 80%, 50% 0);
+  --part-distance: 2vmin;
+  --part-rotation: 15deg;
+  -webkit-animation-duration: calc(1.5s * var(--speed));
+          animation-duration: calc(1.5s * var(--speed));
+}
+
+@-webkit-keyframes tail {
+  from, to {
+    translate: 0 0;
+    rotate: var(--part-base-rotation);
+  }
+  25%, 70% {
+    translate: var(--part-distance) 0;
+    rotate: calc(var(--part-rotation) + var(--part-base-rotation));
+  }
+  50% {
+    translate: calc(var(--part-distance) * -1) 0;
+    rotate: calc(var(--part-rotation) * -1 + var(--part-base-rotation));
+  }
+}
+
+@keyframes tail {
+  from, to {
+    translate: 0 0;
+    rotate: var(--part-base-rotation);
+  }
+  25%, 70% {
+    translate: var(--part-distance) 0;
+    rotate: calc(var(--part-rotation) + var(--part-base-rotation));
+  }
+  50% {
+    translate: calc(var(--part-distance) * -1) 0;
+    rotate: calc(var(--part-rotation) * -1 + var(--part-base-rotation));
+  }
+}
+.koi {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  --ai: calc(360deg / 2 * var(--i));
+  --r: 16vmin;
+  translate: calc(cos(var(--ai)) * var(--r) * -1) calc(sin(var(--ai)) * var(--r) - 35%);
+  rotate: calc(var(--ai) - 25deg);
+  --i: 0;
+  --c: black;
+}
+.koi:last-of-type {
+  --i: 1;
+  --c: white;
+}
+
+.scene {
+  filter: var(--filter);
+  background: #e93e1e;
+  width: 10vmin;
+  border-radius: 50%;
+  height: 10vmin;
+  position: absolute;
+  rotate: var(--angle);
+}
+.scene:before {
+  pointer-events: none;
+  rotate: calc(var(--angle) * -1);
+  border: 1vmin dashed rgba(0, 0, 0, 0.2);
+  filter: brightness(1.5);
+  content: "";
+  position: absolute;
+  inset: -3vmin;
+  border-radius: inherit;
+  background: inherit;
+}
+
+@-webkit-keyframes rotation {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@keyframes rotation {
+  to {
+    --angle: 360deg;
+  }
+}
+body {
+  display: grid;
+  place-items: center;
+  height: 100dvh;
+  background: radial-gradient(circle at center, transparent 1vmin, #fafafa 30vmin), repeating-radial-gradient(circle at 50% 0%, rgba(25, 25, 25, 0.1) 1vmin, transparent 1.2vmin, transparent 3.5vmin) repeat, #fafafa;
+  background-size: 100% 100%, 2vmin 2vmin;
+  position: relative;
+  overflow: clip;
+  -webkit-animation: rotation 8s linear infinite;
+          animation: rotation 8s linear infinite;
+}
+
+.filter {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+* {
+  box-sizing: border-box;
+}
