@@ -852,3 +852,4 @@
 |906| [Hourglass](https://github.com/xml12333/HTML_CSS_JS/tree/main/906.Hourglass)| [Demo](https://nikt.com.ua/projects/htmlCssJs/906.Hourglass/)|
 |907| [Rool for Premium](https://github.com/xml12333/HTML_CSS_JS/tree/main/907.Rool%20for%20Premium)| [Demo](https://nikt.com.ua/projects/htmlCssJs/907.Rool%20for%20Premium/)|
 |908| [In And Yan](https://github.com/xml12333/HTML_CSS_JS/tree/main/908.In%20And%20Yan)| [Demo](https://nikt.com.ua/projects/htmlCssJs/908.In%20And%20Yan/)|
+|909| [Black Hole](https://github.com/xml12333/HTML_CSS_JS/tree/main/909.Black%20Hole)| [Demo](https://nikt.com.ua/projects/htmlCssJs/909.Black%20Hole/)|
