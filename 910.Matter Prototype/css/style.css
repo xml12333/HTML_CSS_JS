@@ -1,0 +1,15 @@
+body {
+  background: #222;
+  text-align: center;
+}
+
+canvas {
+  display: inline-block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+canvas:active { 
+  cursor: pointer;
+  cursor: -webkit-grabbing;
+}
