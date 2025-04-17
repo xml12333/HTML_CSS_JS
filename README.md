@@ -854,3 +854,4 @@
 |908| [In And Yan](https://github.com/xml12333/HTML_CSS_JS/tree/main/908.In%20And%20Yan)| [Demo](https://nikt.com.ua/projects/htmlCssJs/908.In%20And%20Yan/)|
 |909| [Black Hole](https://github.com/xml12333/HTML_CSS_JS/tree/main/909.Black%20Hole)| [Demo](https://nikt.com.ua/projects/htmlCssJs/909.Black%20Hole/)|
 |910| [Matter Prototype](https://github.com/xml12333/HTML_CSS_JS/tree/main/910.Matter%20Prototype)| [Demo](https://nikt.com.ua/projects/htmlCssJs/910.Matter%20Prototype/)|
+|911| [4Bit Binary Adder](https://github.com/xml12333/HTML_CSS_JS/tree/main/911.4Bit%20Binary%20Adder)| [Demo](https://nikt.com.ua/projects/htmlCssJs/911.4Bit%20Binary%20Adder/)|
