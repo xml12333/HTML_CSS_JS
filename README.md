@@ -857,3 +857,4 @@
 |911| [4Bit Binary Adder](https://github.com/xml12333/HTML_CSS_JS/tree/main/911.4Bit%20Binary%20Adder)| [Demo](https://nikt.com.ua/projects/htmlCssJs/911.4Bit%20Binary%20Adder/)|
 |912| [Hungry Bear](https://github.com/xml12333/HTML_CSS_JS/tree/main/912.Hungry%20Bear)| [Demo](https://nikt.com.ua/projects/htmlCssJs/912.Hungry%20Bear/)|
 |913| [Swim SVG](https://github.com/xml12333/HTML_CSS_JS/tree/main/913.Swim%20SVG)| [Demo](https://nikt.com.ua/projects/htmlCssJs/913.Swim%20SVG/)|
+|914| [CSS Sprite-Animation Switcher](https://github.com/xml12333/HTML_CSS_JS/tree/main/914.CSS%20Sprite-Animation%20Switcher)| [Demo](https://nikt.com.ua/projects/htmlCssJs/914.CSS%20Sprite-Animation%20Switcher/)|
