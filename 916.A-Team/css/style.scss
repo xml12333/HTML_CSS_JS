@@ -1,0 +1,1962 @@
+$none: rgba(#fff, 0);
+$blk: #211f1d;
+$blue: #035e9f;
+
+@import url("https://fonts.googleapis.com/css2?family=Emblema+One&family=Orbitron:wght@400..900&display=swap");
+
+html,
+body {
+  height: 100%;
+}
+html {
+  font-size: 1vmin;
+}
+body {
+  margin: 0;
+  background: linear-gradient($none, $blue 50%, $blue 50%, $blk);
+  font-family: math;
+  font-family: "Emblema One", math;
+  overflow: hidden;
+  text-transform: uppercase;
+  color:#555;
+}
+span {
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  font-size: 5em;
+  text-align: center;
+  display: block;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 22ch;
+  height: 100rem;
+  transform: translate3d(0, 20rem, 0);
+  -webkit-box-reflect: below -125rem linear-gradient($none, rgba(#fff, 0.15), $none);
+  &:after {
+    animation: bump2 10s infinite;
+    transform: translate3d(20rem, -100rem, 0);
+  }
+  &:before {
+    animation: forwardness 1s infinite;
+  }
+}
+@keyframes bump2 {
+  12%,
+  22%,
+  32%,
+  42%,
+  52%,
+  62%,
+  72%,
+  82% {
+    transform: translate3d(20rem, 20.2rem, 0);
+  }
+
+  15%,
+  25%,
+  35%,
+  45%,
+  55%,
+  65%,
+  75%,
+  85% {
+    transform: translate3d(20rem, 19.7rem, 0);
+  }
+  17%,
+  27%,
+  37%,
+  47%,
+  57%,
+  67%,
+  77%,
+  87% {
+    transform: translate3d(20rem, 20.5rem, 0);
+  }
+}
+
+$r: #e62f34;
+$g: gray;
+$tb: rgba(skyblue, 0.5);
+$lg: lighten($g, 15);
+$dr: mix($r, $blk, 50%);
+
+$g4: lighten($g, 2);
+$g3: lighten($g, 4);
+$g2: lighten($g, 6);
+$g1: lighten($g, 8);
+
+$blk1: lighten($blk, 3);
+$blk2: lighten($blk, 5);
+$blk3: lighten($blk, 9);
+$blk4: lighten($blk, 12);
+
+span {
+  &:after {
+    width: 1rem;
+    height: 1rem;
+    box-shadow: 1rem 0 0 lighten($r, 15),
+      //
+      2rem 0 0 lighten($r, 10),
+      //
+      26rem 0 0 lighten($blk, 10),
+      //
+      //
+      0 1rem 0 lighten($r, 15),
+      //
+      1rem 1rem 0 $r,
+      //
+      2rem 1rem 0 $r,
+      //
+      3rem 1rem 0 mix($r, $lg, 70%),
+      //
+      4rem 1rem 0 mix($r, $lg, 30%),
+      //
+      5rem 1rem 0 mix($r, $lg, 10%),
+      //
+      6rem 1rem 0 $lg,
+      //
+      7rem 1rem 0 $lg,
+      //
+      8rem 1rem 0 $lg,
+      //
+      9rem 1rem 0 $lg,
+      //
+      10rem 1rem 0 $lg,
+      //
+      11rem 1rem 0 $lg,
+      //
+      12rem 1rem 0 $lg,
+      //
+      13rem 1rem 0 $lg,
+      //
+      14rem 1rem 0 $lg,
+      //
+      15rem 1rem 0 $lg,
+      //
+      16rem 1rem 0 $lg,
+      //
+      17rem 1rem 0 $lg,
+      //
+      18rem 1rem 0 $lg,
+      //
+      19rem 1rem 0 $lg,
+      //
+      20rem 1rem 0 $lg,
+      //
+      21rem 1rem 0 $lg,
+      //
+      22rem 1rem 0 $lg,
+      //
+      23rem 1rem 0 $lg,
+      //
+      24rem 1rem 0 $lg,
+      //
+      25rem 1rem 0 $lg,
+      //
+      26rem 1rem 0 $lg,
+      //
+      27rem 1rem 0 $lg,
+      //
+      28rem 1rem 0 rgba($lg, 0.5),
+      //
+      //
+      // 2
+      //
+      -1rem 2rem 0 rgba($blk, 0.2),
+      //
+      0 2rem 0 $blk,
+      //
+      1rem 2rem 0 $blk,
+      //
+      2rem 2rem 0 mix($dr, $blk, 50%),
+      //
+      3rem 2rem 0 $dr,
+      //
+      4rem 2rem 0 $dr,
+      //
+      5rem 2rem 0 $dr,
+      //
+      6rem 2rem 0 mix($dr, $g, 40%),
+      //
+      7rem 2rem 0 mix($r, $g, 10%),
+      //
+      8rem 2rem 0 $g,
+      //
+      9rem 2rem 0 $g,
+      //
+      10rem 2rem 0 $g,
+      //
+      11rem 2rem 0 $g,
+      //
+      12rem 2rem 0 $g,
+      //
+      13rem 2rem 0 $g,
+      //
+      14rem 2rem 0 $g,
+      //
+      15rem 2rem 0 $g,
+      //
+      16rem 2rem 0 $g,
+      //
+      17rem 2rem 0 $g,
+      //
+      18rem 2rem 0 $g,
+      //
+      19rem 2rem 0 $g,
+      //
+      20rem 2rem 0 $g,
+      //
+      21rem 2rem 0 $g,
+      //
+      22rem 2rem 0 $g,
+      //
+      23rem 2rem 0 $g,
+      //
+      24rem 2rem 0 $g,
+      //
+      25rem 2rem 0 $g,
+      //
+      26rem 2rem 0 $g4,
+      //
+      27rem 2rem 0 $g3,
+      //
+      28rem 2rem 0 $g2,
+      //
+      29rem 2rem 0 $g1,
+      //
+      //
+      // 3
+      //
+      -1rem 3rem 0 rgba($blk, 0.5),
+      //
+      0 3rem 0 $blk,
+      //
+      1rem 3rem 0 $blk,
+      //
+      2rem 3rem 0 $blk,
+      //
+      3rem 3rem 0 $blk,
+      //
+      4rem 3rem 0 mix($r, $blk, 20%),
+      //
+      5rem 3rem 0 mix($r, $blk, 50%),
+      //
+      6rem 3rem 0 mix($dr, $g, 90%),
+      //
+      7rem 3rem 0 mix($r, $g, 60%),
+      //
+      8rem 3rem 0 mix($r, $g1, 30%),
+      //
+      9rem 3rem 0 mix($r, $g1, 10%),
+      //
+      10rem 3rem 0 $g1,
+      //
+      11rem 3rem 0 $g1,
+      //
+      12rem 3rem 0 $g1,
+      //
+      13rem 3rem 0 $g1,
+      //
+      14rem 3rem 0 $g1,
+      //
+      15rem 3rem 0 $g1,
+      //
+      16rem 3rem 0 $g1,
+      //
+      17rem 3rem 0 $g1,
+      //
+      18rem 3rem 0 $g1,
+      //
+      19rem 3rem 0 $g1,
+      //
+      20rem 3rem 0 $g1,
+      //
+      21rem 3rem 0 $g1,
+      //
+      22rem 3rem 0 $g1,
+      //
+      23rem 3rem 0 $g1,
+      //
+      24rem 3rem 0 $tb,
+      //
+      25rem 3rem 0 $tb,
+      //
+      26rem 3rem 0 $tb,
+      //
+      27rem 3rem 0 mix($g1, $tb, 50%),
+      //
+      28rem 3rem 0 mix($g1, $tb, 20%),
+      //
+      29rem 3rem 0 rgba(skyblue, 0.7),
+      //
+      //
+      // 4
+      //
+      -1rem 4rem 0 rgba($blk, 0.75),
+      //
+      0 4rem 0 $blk,
+      //
+      1rem 4rem 0 $blk,
+      //
+      2rem 4rem 0 $blk,
+      //
+      3rem 4rem 0 $blk,
+      //
+      4rem 4rem 0 $blk,
+      //
+      5rem 4rem 0 $blk,
+      //
+      6rem 4rem 0 $blk,
+      //
+      7rem 4rem 0 mix($r, $blk, 30%),
+      //
+      8rem 4rem 0 mix($r, $blk, 50%),
+      //
+      9rem 4rem 0 mix($dr, $g, 70%),
+      //
+      10rem 4rem 0 mix($r, $g, 40%),
+      //
+      11rem 4rem 0 mix($r, $g2, 30%),
+      //
+      12rem 4rem 0 mix($r, $g2, 10%),
+      //
+      13rem 4rem 0 $g2,
+      //
+      14rem 4rem 0 $g2,
+      //
+      15rem 4rem 0 $g2,
+      //
+      16rem 4rem 0 $g2,
+      //
+      17rem 4rem 0 $g2,
+      //
+      18rem 4rem 0 $g2,
+      //
+      19rem 4rem 0 $g2,
+      //
+      20rem 4rem 0 $g2,
+      //
+      21rem 4rem 0 $g2,
+      //
+      22rem 4rem 0 $g2,
+      //
+      23rem 4rem 0 $g2,
+      //
+      24rem 4rem 0 $tb,
+      //
+      25rem 4rem 0 $tb,
+      //
+      26rem 4rem 0 $tb,
+      //
+      27rem 4rem 0 $tb,
+      //
+      28rem 4rem 0 mix($g2, $tb, 50%),
+      //
+      29rem 4rem 0 mix($g2, $tb, 20%),
+      //
+      30rem 4rem 0 rgba(skyblue, 0.7),
+      //
+      //
+      // 5
+      //
+      -1rem 5rem 0 $blk,
+      //
+      0 5rem 0 $blk,
+      //
+      1rem 5rem 0 $blk,
+      //
+      2rem 5rem 0 $blk,
+      //
+      3rem 5rem 0 $blk,
+      //
+      4rem 5rem 0 $blk,
+      //
+      5rem 5rem 0 $blk,
+      //
+      6rem 5rem 0 $blk,
+      //
+      7rem 5rem 0 $blk,
+      //
+      8rem 5rem 0 $blk,
+      //
+      9rem 5rem 0 $blk,
+      //
+      10rem 5rem 0 mix($r, $blk, 25%),
+      //
+      11rem 5rem 0 mix($r, $blk, 50%),
+      //
+      12rem 5rem 0 mix($dr, $g3, 75%),
+      //
+      13rem 5rem 0 mix($r, $g3, 40%),
+      //
+      14rem 5rem 0 mix($r, $g3, 20%),
+      //
+      15rem 5rem 0 mix($r, $g3, 10%),
+      //
+      16rem 5rem 0 $g3,
+      //
+      17rem 5rem 0 $g3,
+      //
+      18rem 5rem 0 $g3,
+      //
+      19rem 5rem 0 $g3,
+      //
+      20rem 5rem 0 $g3,
+      //
+      21rem 5rem 0 $g3,
+      //
+      22rem 5rem 0 $g3,
+      //
+      23rem 5rem 0 $g3,
+      //
+      24rem 5rem 0 mix($g3, $tb, 20%),
+      //
+      25rem 5rem 0 $tb,
+      //
+      26rem 5rem 0 $tb,
+      //
+      27rem 5rem 0 $tb,
+      //
+      28rem 5rem 0 $tb,
+      //
+      29rem 5rem 0 mix($g3, $tb, 50%),
+      //
+      30rem 5rem 0 mix($g3, $tb, 20%),
+      //
+      31rem 5rem 0 rgba(skyblue, 0.7),
+      //
+      //
+      // 6
+      //
+      -2rem 6rem 0 rgba($blk, 0.2),
+      //
+      -1rem 6rem 0 $blk,
+      //
+      0 6rem 0 $blk,
+      //
+      1rem 6rem 0 $blk,
+      //
+      2rem 6rem 0 $blk,
+      //
+      3rem 6rem 0 $blk,
+      //
+      4rem 6rem 0 $blk,
+      //
+      5rem 6rem 0 $blk,
+      //
+      6rem 6rem 0 $blk,
+      //
+      7rem 6rem 0 $blk1,
+      //
+      8rem 6rem 0 $blk1,
+      //
+      9rem 6rem 0 $blk1,
+      //
+      10rem 6rem 0 $blk1,
+      //
+      11rem 6rem 0 $blk1,
+      //
+      12rem 6rem 0 $blk1,
+      //
+      13rem 6rem 0 $blk1,
+      //
+      14rem 6rem 0 mix($r, $blk, 25%),
+      //
+      15rem 6rem 0 mix($r, $blk, 50%),
+      //
+      16rem 6rem 0 mix($dr, $g4, 50%),
+      //
+      17rem 6rem 0 mix($r, $g4, 30%),
+      //
+      18rem 6rem 0 mix($r, $g4, 20%),
+      //
+      19rem 6rem 0 $g4,
+      //
+      20rem 6rem 0 $g4,
+      //
+      21rem 6rem 0 $g4,
+      //
+      22rem 6rem 0 $g4,
+      //
+      23rem 6rem 0 $g4,
+      //
+      24rem 6rem 0 $g4,
+      //
+      25rem 6rem 0 $g4,
+      //
+      26rem 6rem 0 $g4,
+      //
+      27rem 6rem 0 $g4,
+      //
+      28rem 6rem 0 $blk4,
+      //
+      29rem 6rem 0 mix($blk4, $g4, 50%),
+      //
+      30rem 6rem 0 $g4,
+      //
+      31rem 6rem 0 $g4,
+      //
+      32rem 6rem 0 rgba($g4, 0.8),
+      //
+      33rem 6rem 0 rgba($g4, 0.3),
+      //
+      34rem 6rem 0 rgba($g4, 0.1),
+      //
+      //
+      // 7
+      //
+      -2rem 7rem 0 rgba($blk, 0.5),
+      //
+      -1rem 7rem 0 $blk,
+      //
+      0 7rem 0 $blk,
+      //
+      1rem 7rem 0 $blk,
+      //
+      2rem 7rem 0 $blk1,
+      //
+      3rem 7rem 0 $blk1,
+      //
+      4rem 7rem 0 $blk1,
+      //
+      5rem 7rem 0 $blk2,
+      //
+      6rem 7rem 0 $blk2,
+      //
+      7rem 7rem 0 $blk2,
+      //
+      8rem 7rem 0 $blk2,
+      //
+      9rem 7rem 0 $blk2,
+      //
+      10rem 7rem 0 $blk2,
+      //
+      11rem 7rem 0 $blk2,
+      //
+      12rem 7rem 0 $blk2,
+      //
+      13rem 7rem 0 $blk2,
+      //
+      14rem 7rem 0 $blk2,
+      //
+      15rem 7rem 0 $blk2,
+      //
+      16rem 7rem 0 $blk2,
+      //
+      17rem 7rem 0 mix($r, $blk, 25%),
+      //
+      18rem 7rem 0 mix($r, $blk, 50%),
+      //
+      19rem 7rem 0 mix($dr, $g, 70%),
+      //
+      20rem 7rem 0 mix($r, $g, 40%),
+      //
+      21rem 7rem 0 mix($r, $g, 25%),
+      //
+      22rem 7rem 0 mix($r, $g, 10%),
+      //
+      23rem 7rem 0 $g2,
+      //
+      24rem 7rem 0 $blk4,
+      //
+      25rem 7rem 0 $g2,
+      //
+      26rem 7rem 0 $g2,
+      //
+      27rem 7rem 0 $g2,
+      //
+      28rem 7rem 0 $g2,
+      //
+      29rem 7rem 0 $g2,
+      //
+      30rem 7rem 0 $g2,
+      //
+      31rem 7rem 0 $g2,
+      //
+      32rem 7rem 0 $g2,
+      //
+      33rem 7rem 0 $g2,
+      //
+      34rem 7rem 0 rgba($g2, 0.7),
+      //
+      35rem 7rem 0 rgba($g2, 0.2),
+      //
+      //
+      // 8
+      //
+      -2rem 8rem 0 rgba($blk, 0.75),
+      //
+      -1rem 8rem 0 $blk,
+      //
+      0 8rem 0 $blk,
+      //
+      1rem 8rem 0 $blk,
+      //
+      2rem 8rem 0 $blk,
+      //
+      3rem 8rem 0 $blk,
+      //
+      4rem 8rem 0 $blk,
+      //
+      5rem 8rem 0 $blk,
+      //
+      6rem 8rem 0 $blk,
+      //
+      7rem 8rem 0 $blk,
+      //
+      8rem 8rem 0 $blk,
+      //
+      9rem 8rem 0 $blk,
+      //
+      10rem 8rem 0 $blk,
+      //
+      11rem 8rem 0 $blk,
+      //
+      12rem 8rem 0 $blk,
+      //
+      13rem 8rem 0 $blk,
+      //
+      14rem 8rem 0 $blk,
+      //
+      15rem 8rem 0 $blk,
+      //
+      16rem 8rem 0 $blk,
+      //
+      17rem 8rem 0 $blk,
+      //
+      18rem 8rem 0 $blk,
+      //
+      19rem 8rem 0 $blk,
+      //
+      20rem 8rem 0 $blk,
+      //
+      21rem 8rem 0 $blk,
+      //
+      22rem 8rem 0 mix($r, $blk, 25%),
+      //
+      23rem 8rem 0 $dr,
+      //
+      24rem 8rem 0 $dr,
+      //
+      25rem 8rem 0 $dr,
+      //
+      26rem 8rem 0 $dr,
+      //
+      27rem 8rem 0 $dr,
+      //
+      28rem 8rem 0 $dr,
+      //
+      29rem 8rem 0 $dr,
+      //
+      30rem 8rem 0 $dr,
+      //
+      31rem 8rem 0 $dr,
+      //
+      32rem 8rem 0 $dr,
+      //
+      33rem 8rem 0 $dr,
+      //
+      34rem 8rem 0 $dr,
+      //
+      35rem 8rem 0 $dr,
+      //
+      //
+      // 9
+      //
+      -2rem 9rem 0 $blk,
+      //
+      -1rem 9rem 0 $blk,
+      //
+      0 9rem 0 mix($r, $blk, 50%),
+      //
+      1rem 9rem 0 $blk,
+      //
+      2rem 9rem 0 $blk,
+      //
+      3rem 9rem 0 $blk,
+      //
+      4rem 9rem 0 $blk,
+      //
+      5rem 9rem 0 $blk,
+      //
+      6rem 9rem 0 $blk,
+      //
+      7rem 9rem 0 $blk,
+      //
+      8rem 9rem 0 $blk,
+      //
+      9rem 9rem 0 $blk,
+      //
+      10rem 9rem 0 $blk,
+      //
+      11rem 9rem 0 $blk,
+      //
+      12rem 9rem 0 $blk,
+      //
+      13rem 9rem 0 $blk,
+      //
+      14rem 9rem 0 $blk,
+      //
+      15rem 9rem 0 $blk,
+      //
+      16rem 9rem 0 $blk,
+      //
+      17rem 9rem 0 $blk,
+      //
+      18rem 9rem 0 $blk,
+      //
+      19rem 9rem 0 $blk,
+      //
+      20rem 9rem 0 $blk,
+      //
+      21rem 9rem 0 $blk,
+      //
+      22rem 9rem 0 $blk,
+      //
+      23rem 9rem 0 $blk,
+      //
+      24rem 9rem 0 $blk,
+      //
+      25rem 9rem 0 $blk,
+      //
+      26rem 9rem 0 $blk,
+      //
+      27rem 9rem 0 $blk,
+      //
+      28rem 9rem 0 $blk,
+      //
+      29rem 9rem 0 $blk,
+      //
+      30rem 9rem 0 $blk,
+      //
+      31rem 9rem 0 $blk,
+      //
+      32rem 9rem 0 $blk,
+      //
+      33rem 9rem 0 $blk,
+      //
+      34rem 9rem 0 mix(orange, $blk, 50%),
+      //
+      35rem 9rem 0 rgba($blk, 0.8),
+      //
+      36rem 9rem 0 $blk,
+      //
+      //
+      // 10
+      //
+      -2rem 10rem 0 $blk2,
+      //
+      -1rem 10rem 0 $blk2,
+      //
+      0 10rem 0 $blk2,
+      //
+      1rem 10rem 0 $blk2,
+      //
+      2rem 10rem 0 $blk2,
+      //
+      3rem 10rem 0 $blk2,
+      //
+      4rem 10rem 0 mix($g4, $blk4, 40%),
+      //
+      5rem 10rem 0 mix($g4, $blk4, 50%),
+      //
+      6rem 10rem 0 mix($g4, $blk4, 50%),
+      //
+      7rem 10rem 0 mix($g4, $blk4, 30%),
+      //
+      8rem 10rem 0 mix($g4, $blk4, 10%),
+      //
+      9rem 10rem 0 $blk2,
+      //
+      10rem 10rem 0 $blk2,
+      //
+      11rem 10rem 0 $blk2,
+      //
+      12rem 10rem 0 $blk2,
+      //
+      13rem 10rem 0 $blk2,
+      //
+      14rem 10rem 0 $blk2,
+      //
+      15rem 10rem 0 $blk2,
+      //
+      16rem 10rem 0 $blk2,
+      //
+      17rem 10rem 0 $blk2,
+      //
+      18rem 10rem 0 $blk2,
+      //
+      19rem 10rem 0 $blk2,
+      //
+      20rem 10rem 0 $blk2,
+      //
+      21rem 10rem 0 $blk2,
+      //
+      22rem 10rem 0 $blk2,
+      //
+      23rem 10rem 0 $blk2,
+      //
+      24rem 10rem 0 $blk2,
+      //
+      25rem 10rem 0 $blk2,
+      //
+      26rem 10rem 0 $blk2,
+      //
+      27rem 10rem 0 $blk2,
+      //
+      28rem 10rem 0 mix($g4, $blk4, 40%),
+      //
+      29rem 10rem 0 mix($g4, $blk4, 50%),
+      //
+      30rem 10rem 0 mix($g4, $blk4, 50%),
+      //
+      31rem 10rem 0 mix($g4, $blk4, 60%),
+      //
+      32rem 10rem 0 $blk4,
+      //
+      33rem 10rem 0 $blk2,
+      //
+      34rem 10rem 0 $blk2,
+      //
+      35rem 10rem 0 rgba($blk2, 0.9),
+      //
+      36rem 10rem 0 $blk,
+      //
+      //
+      // 11
+      //
+      -2rem 11rem 0 rgba($blk, 0.8),
+      //
+      -1rem 11rem 0 $blk3,
+      //
+      0 11rem 0 $blk3,
+      //
+      1rem 11rem 0 $blk3,
+      //
+      2rem 11rem 0 $blk3,
+      //
+      3rem 11rem 0 mix($g4, $blk4, 30%),
+      //
+      // same row
+      4rem 11rem 0 $blk1,
+      //
+      5rem 11rem 0 $blk,
+      //
+      6rem 11rem 0 $blk,
+      //
+      7rem 11rem 0 $blk,
+      //
+      8rem 11rem 0 $blk1,
+      //
+      9rem 11rem 0 $blk2,
+      //
+      // same row
+      10rem 11rem 0 $blk3,
+      //
+      11rem 11rem 0 $blk3,
+      //
+      12rem 11rem 0 $blk3,
+      //
+      13rem 11rem 0 $blk3,
+      //
+      14rem 11rem 0 $blk3,
+      //
+      15rem 11rem 0 $blk3,
+      //
+      16rem 11rem 0 $blk3,
+      //
+      17rem 11rem 0 $blk3,
+      //
+      18rem 11rem 0 $blk3,
+      //
+      19rem 11rem 0 $blk3,
+      //
+      20rem 11rem 0 $blk3,
+      //
+      21rem 11rem 0 $blk3,
+      //
+      22rem 11rem 0 $blk3,
+      //
+      23rem 11rem 0 $blk3,
+      //
+      24rem 11rem 0 $blk3,
+      //
+      25rem 11rem 0 $blk3,
+      //
+      26rem 11rem 0 $blk3,
+      //
+      27rem 11rem 0 mix($g4, $blk4, 30%),
+      //
+      // same row
+      28rem 11rem 0 $blk1,
+      //
+      29rem 11rem 0 $blk,
+      //
+      30rem 11rem 0 $blk,
+      //
+      31rem 11rem 0 $blk,
+      //
+      32rem 11rem 0 $blk1,
+      //
+      33rem 11rem 0 $blk2,
+      //
+      // same row
+      34rem 11rem 0 $blk3,
+      //
+      35rem 11rem 0 rgba($blk3, 0.9),
+      //
+      36rem 11rem 0 $blk,
+      //
+      //
+      // 12
+      //
+      -2rem 12rem 0 $blk,
+      //
+      -1rem 12rem 0 $blk4,
+      //
+      0 12rem 0 $blk4,
+      //
+      1rem 12rem 0 $blk4,
+      //
+      2rem 12rem 0 $blk2,
+      //
+      3rem 12rem 0 $blk,
+      //
+      // same row
+      4rem 12rem 0 rgba($blk, 0.5),
+      //
+      5rem 12rem 0 rgba($blk, 0.25),
+      //
+      6rem 12rem 0 rgba($blk, 0.25),
+      //
+      7rem 12rem 0 rgba($blk, 0.25),
+      //
+      8rem 12rem 0 rgba($blk, 0.5),
+      //
+      9rem 12rem 0 $blk,
+      //
+      // same row
+      10rem 12rem 0 $blk2,
+      //
+      11rem 12rem 0 $blk4,
+      //
+      12rem 12rem 0 $blk4,
+      //
+      13rem 12rem 0 $blk4,
+      //
+      14rem 12rem 0 $blk4,
+      //
+      15rem 12rem 0 $blk4,
+      //
+      16rem 12rem 0 $blk4,
+      //
+      17rem 12rem 0 $blk4,
+      //
+      18rem 12rem 0 $blk4,
+      //
+      19rem 12rem 0 $blk4,
+      //
+      20rem 12rem 0 $blk4,
+      //
+      21rem 12rem 0 $blk4,
+      //
+      22rem 12rem 0 $blk4,
+      //
+      23rem 12rem 0 $blk4,
+      //
+      24rem 12rem 0 $blk4,
+      //
+      25rem 12rem 0 $blk4,
+      //
+      26rem 12rem 0 $blk2,
+      //
+      27rem 12rem 0 $blk,
+      //
+      // same row
+      33rem 12rem 0 $blk,
+      //
+      // same row
+      34rem 12rem 0 $blk3,
+      //
+      35rem 12rem 0 rgba($blk4, 0.9),
+      //
+      36rem 12rem 0 $blk,
+      //
+      //
+      // 13
+      //
+      0 13rem 0 rgba($blk, 0.5),
+      //
+      1rem 13rem 0 $blk,
+      //
+      2rem 13rem 0 $blk,
+      //
+      3rem 13rem 0 $blk,
+      //
+      // same row
+      // same row
+      10rem 13rem 0 $blk,
+      //
+      11rem 13rem 0 $blk,
+      //
+      12rem 13rem 0 $blk,
+      //
+      13rem 13rem 0 $blk,
+      //
+      14rem 13rem 0 $blk,
+      //
+      15rem 13rem 0 $blk,
+      //
+      16rem 13rem 0 $blk,
+      //
+      17rem 13rem 0 $blk,
+      //
+      18rem 13rem 0 $blk,
+      //
+      19rem 13rem 0 $blk,
+      //
+      20rem 13rem 0 $blk,
+      //
+      21rem 13rem 0 $blk,
+      //
+      22rem 13rem 0 $blk,
+      //
+      23rem 13rem 0 $blk,
+      //
+      24rem 13rem 0 $blk,
+      //
+      25rem 13rem 0 $blk,
+      //
+      26rem 13rem 0 $blk,
+      //
+      27rem 13rem 0 $blk,
+      //
+      // same row
+      // same row
+      34rem 13rem 0 $blk,
+      //
+      35rem 13rem 0 rgba($blk, 0.9),
+      //
+      36rem 13rem 0 $blk,
+      //
+      //
+      // 14
+      //
+      // same row
+      10rem 14rem 0 rgba($blk, 0.5),
+      //
+      11rem 14rem 0 rgba($blk, 0.65),
+      //
+      12rem 14rem 0 rgba($blk, 0.8),
+      //
+      13rem 14rem 0 rgba($blk, 0.8),
+      //
+      14rem 14rem 0 rgba($blk, 0.8),
+      //
+      15rem 14rem 0 rgba($blk, 0.8),
+      //
+      16rem 14rem 0 rgba($blk, 0.8),
+      //
+      17rem 14rem 0 rgba($blk, 0.8),
+      //
+      18rem 14rem 0 rgba($blk, 0.8),
+      //
+      19rem 14rem 0 rgba($blk, 0.8),
+      //
+      20rem 14rem 0 rgba($blk, 0.8),
+      //
+      21rem 14rem 0 rgba($blk, 0.8),
+      //
+      22rem 14rem 0 rgba($blk, 0.8),
+      //
+      23rem 14rem 0 rgba($blk, 0.8),
+      //
+      24rem 14rem 0 rgba($blk, 0.8),
+      //
+      25rem 14rem 0 rgba($blk, 0.8),
+      //
+      26rem 14rem 0 rgba($blk, 0.8),
+      //
+      27rem 14rem 0 $blk,
+      //
+      //same row
+      //same row
+      34rem 14rem 0 rgba($blk, 0.7),
+      //
+      35rem 14rem 0 $blk;
+  }
+
+  &:before {
+    transform: translate3d(18rem, 20rem, 0);
+    width: 1rem;
+    height: 1rem;
+  }
+}
+@keyframes forwardness {
+  0%,
+  50%,
+  100% {
+    transform: translate3d(20rem, 20rem, 0);
+    box-shadow:
+        //
+        //ba
+        //
+      24rem 3rem 0 $blk,
+      //
+      25rem 3rem 0 rgba($blk, 0.5),
+      //
+      //
+      //ba
+      //
+      22rem 4rem 0 $blk,
+      //
+      24rem 4rem 0 $blk,
+      //
+      25rem 4rem 0 $blk,
+      //
+      //
+      //ba
+      //
+      22rem 5rem 0 rgba($blk, 0.5),
+      //
+      24rem 5rem 0 $blk,
+      //
+      25rem 5rem 0 rgba($blk, 0.5),
+      //
+      //
+      //ba
+      //
+      22rem 6rem 0 $blk,
+      //
+      23rem 6rem 0 rgba($blk, 0.5),
+      //
+      24rem 6rem 0 $blk,
+      //
+      25rem 6rem 0 $blk,
+      //
+      28rem 6rem 0 rgba($blk, 0.5),
+      //
+      //
+      //ba
+      //
+      22rem 7rem 0 $blk,
+      //
+      23rem 7rem 0 rgba($blk, 0.8),
+      //
+      24rem 7rem 0 $blk,
+      //
+      25rem 7rem 0 $blk,
+      //
+      26rem 7rem 0 $blk,
+      //
+      27rem 7rem 0 $blk,
+      //
+      28rem 7rem 0 $blk,
+      //
+      //
+      //ba
+      //
+      22rem 8rem 0 $blk,
+      //
+      23rem 8rem 0 $blk,
+      //
+      24rem 8rem 0 $blk,
+      //
+      25rem 8rem 0 $blk,
+      //
+      26rem 8rem 0 $blk,
+      //
+      28rem 8rem 0 rgba($blk, 0.5),
+      //
+      //
+      //ba
+      //
+      22rem 9rem 0 $blk,
+      //
+      23rem 9rem 0 $blk,
+      //
+      24rem 9rem 0 $blk,
+      //
+      25rem 9rem 0 $blk,
+      //
+      26rem 9rem 0 $blk,
+      //
+      //
+      //engine
+      //
+      27rem 9rem 0 rgba($blk, 0.75),
+      //
+      28rem 9rem 0 $blk,
+      //
+      29rem 9rem 0 $blk,
+      //
+      30rem 9rem 0 $blk,
+      //
+      31rem 9rem 0 $blk,
+      //
+      32rem 9rem 0 $blk,
+      //
+      33rem 9rem 0 rgba($blk, 0.75),
+      //
+      34rem 9rem 0 rgba($blk, 0.5),
+      //
+      35rem 9rem 0 $blk,
+      //
+      //
+      //ba
+      //
+      22rem 10rem 0 rgba($blk, 0.75),
+      //
+      23rem 10rem 0 $blk,
+      //
+      24rem 10rem 0 $blk,
+      //
+      25rem 10rem 0 $blk,
+      //
+      26rem 10rem 0 $blk,
+      //
+      //
+      //engine
+      //
+      27rem 10rem 0 $blk,
+      //
+      28rem 10rem 0 $blk,
+      //
+      29rem 10rem 0 $blk,
+      //
+      30rem 10rem 0 $blk,
+      //
+      31rem 10rem 0 $blk,
+      //
+      32rem 10rem 0 $blk,
+      //
+      33rem 10rem 0 $blk,
+      //
+      34rem 10rem 0 rgba($blk, 0.5),
+      //
+      35rem 10rem 0 $blk,
+      //
+      //
+      //ba
+      //
+      22rem 11rem 0 rgba($blk, 0.5),
+      //
+      23rem 11rem 0 $blk,
+      //
+      24rem 11rem 0 $blk,
+      //
+      25rem 11rem 0 $blk,
+      //
+      26rem 11rem 0 $blk,
+      //
+      //
+      //engine
+      //
+      27rem 11rem 0 $blk,
+      //
+      28rem 11rem 0 $blk,
+      //
+      29rem 11rem 0 $blk,
+      //
+      30rem 11rem 0 $blk,
+      //
+      31rem 11rem 0 $blk,
+      //
+      32rem 11rem 0 $blk,
+      //
+      33rem 11rem 0 $blk,
+      //
+      34rem 11rem 0 $blk,
+      //
+      35rem 11rem 0 $blk,
+      //
+      //
+      //ba
+      //
+      22rem 12rem 0 rgba($blk, 0.25),
+      //
+      23rem 12rem 0 rgba($blk, 0.75),
+      //
+      24rem 12rem 0 $blk,
+      //
+      25rem 12rem 0 rgba($blk, 0.75),
+      //
+      26rem 12rem 0 $blk,
+      //
+      //
+      // 12
+      //
+      // same row
+      4rem 12rem 0 rgba($blk2, 0.5),
+      //
+      5rem 12rem 0 $blk4,
+      //
+      6rem 12rem 0 $blk4,
+      //
+      7rem 12rem 0 $blk4,
+      //
+      8rem 12rem 0 rgba($blk3, 0.5),
+      //
+      9rem 12rem 0 rgba($blk, 0.2),
+      //
+      // same row
+      27rem 12rem 0 $blk,
+      //
+      // same row
+      28rem 12rem 0 $blk2,
+      //
+      29rem 12rem 0 $blk4,
+      //
+      30rem 12rem 0 $blk4,
+      //
+      31rem 12rem 0 $blk4,
+      //
+      32rem 12rem 0 $blk2,
+      //
+      33rem 12rem 0 $blk,
+      //
+      // same row
+      34rem 12rem 0 $blk,
+      //
+      35rem 12rem 0 $blk,
+      //
+      //
+      // 13
+      //
+      0 13rem 0 rgba($blk, 0.5),
+      //
+      1rem 13rem 0 $blk,
+      //
+      2rem 13rem 0 $blk,
+      //
+      3rem 13rem 0 $blk,
+      //
+      // same row
+      4rem 13rem 0 $blk4,
+      //
+      5rem 13rem 0 mix($r, $blk, 50%),
+      //
+      6rem 13rem 0 $r,
+      //
+      7rem 13rem 0 mix($r, $blk, 50%),
+      //
+      8rem 13rem 0 $blk4,
+      //
+      9rem 13rem 0 $blk,
+      //
+      // same row
+      10rem 13rem 0 $blk,
+      //
+      11rem 13rem 0 $blk,
+      //
+      12rem 13rem 0 $blk,
+      //
+      13rem 13rem 0 $blk,
+      //
+      14rem 13rem 0 $blk,
+      //
+      15rem 13rem 0 $blk,
+      //
+      16rem 13rem 0 $blk,
+      //
+      17rem 13rem 0 $blk,
+      //
+      18rem 13rem 0 $blk,
+      //
+      19rem 13rem 0 $blk,
+      //
+      20rem 13rem 0 $blk,
+      //
+      21rem 13rem 0 $blk,
+      //
+      22rem 13rem 0 $blk,
+      //
+      23rem 13rem 0 $blk,
+      //
+      24rem 13rem 0 $blk,
+      //
+      25rem 13rem 0 $blk,
+      //
+      26rem 13rem 0 $blk,
+      //
+      27rem 13rem 0 $blk,
+      //
+      // same row
+      28rem 13rem 0 $blk4,
+      //
+      29rem 13rem 0 mix($r, $blk, 50%),
+      //
+      30rem 13rem 0 $r,
+      //
+      31rem 13rem 0 mix($r, $blk, 50%),
+      //
+      32rem 13rem 0 $blk4,
+      //
+      33rem 13rem 0 $blk,
+      //
+      // same row
+      34rem 13rem 0 $blk,
+      //
+      35rem 13rem 0 rgba($blk, 0.9),
+      //
+      36rem 13rem 0 $blk,
+      //
+      //
+      // 14
+      //
+      4rem 14rem 0 $blk4,
+      //
+      5rem 14rem 0 $r,
+      //
+      6rem 14rem 0 mix($r, $blk, 70%),
+      //
+      7rem 14rem 0 $r,
+      //
+      8rem 14rem 0 $blk4,
+      //
+      9rem 14rem 0 $blk,
+      //
+      //same row
+      10rem 14rem 0 rgba($blk, 0.5),
+      //
+      11rem 14rem 0 rgba($blk, 0.65),
+      //
+      12rem 14rem 0 rgba($blk, 0.8),
+      //
+      13rem 14rem 0 rgba($blk, 0.8),
+      //
+      14rem 14rem 0 rgba($blk, 0.8),
+      //
+      15rem 14rem 0 rgba($blk, 0.8),
+      //
+      16rem 14rem 0 rgba($blk, 0.8),
+      //
+      17rem 14rem 0 rgba($blk, 0.8),
+      //
+      18rem 14rem 0 rgba($blk, 0.8),
+      //
+      19rem 14rem 0 rgba($blk, 0.8),
+      //
+      20rem 14rem 0 rgba($blk, 0.8),
+      //
+      21rem 14rem 0 rgba($blk, 0.8),
+      //
+      22rem 14rem 0 rgba($blk, 0.8),
+      //
+      23rem 14rem 0 rgba($blk, 0.8),
+      //
+      24rem 14rem 0 rgba($blk, 0.8),
+      //
+      25rem 14rem 0 rgba($blk, 0.8),
+      //
+      26rem 14rem 0 rgba($blk, 0.8),
+      //
+      27rem 14rem 0 $blk,
+      //
+      //same row
+      28rem 14rem 0 $blk4,
+      //
+      29rem 14rem 0 $r,
+      //
+      30rem 14rem 0 mix($r, $blk, 70%),
+      //
+      31rem 14rem 0 $r,
+      //
+      32rem 14rem 0 $blk4,
+      //
+      33rem 14rem 0 $blk,
+      //
+      //same row
+      //
+      // 15
+      //
+      4rem 15rem 0 $blk4,
+      //
+      5rem 15rem 0 mix($r, $blk, 50%),
+      //
+      6rem 15rem 0 $r,
+      //
+      7rem 15rem 0 mix($r, $blk, 50%),
+      //
+      8rem 15rem 0 $blk4,
+      //
+      9rem 15rem 0 rgba($blk4, 0.8),
+      //
+      // same row
+      28rem 15rem 0 $blk4,
+      //
+      29rem 15rem 0 mix($r, $blk, 50%),
+      //
+      30rem 15rem 0 $r,
+      //
+      31rem 15rem 0 mix($r, $blk, 50%),
+      //
+      32rem 15rem 0 $blk4,
+      //
+      33rem 15rem 0 rgba($blk4, 0.8),
+      //
+      //
+      // 16
+      //
+      4rem 16rem 0 rgba($blk4, 0.3),
+      //
+      5rem 16rem 0 rgba($blk4, 0.9),
+      //
+      6rem 16rem 0 $blk4,
+      //
+      7rem 16rem 0 $blk4,
+      //
+      8rem 16rem 0 rgba($blk4, 0.6),
+      //
+      9rem 16rem 0 rgba($blk4, 0.2),
+      //
+      // same row
+      28rem 16rem 0 rgba($blk4, 0.3),
+      //
+      29rem 16rem 0 rgba($blk4, 0.9),
+      //
+      30rem 16rem 0 $blk4,
+      //
+      31rem 16rem 0 $blk4,
+      //
+      32rem 16rem 0 rgba($blk4, 0.6),
+      //
+      33rem 16rem 0 rgba($blk4, 0.2); //
+  }
+
+  25%,
+  75% {
+    transform: translate3d(20rem, 20.5rem, 0);
+    box-shadow:
+        //
+        //ba
+        //
+      24rem 3rem 0 $blk,
+      //
+      25rem 3rem 0 rgba($blk, 0.5),
+      //
+      //
+      //ba
+      //
+      22rem 4rem 0 $blk,
+      //
+      24rem 4rem 0 $blk,
+      //
+      25rem 4rem 0 $blk,
+      //
+      //
+      //ba
+      //
+      22rem 5rem 0 rgba($blk, 0.5),
+      //
+      24rem 5rem 0 $blk,
+      //
+      25rem 5rem 0 rgba($blk, 0.5),
+      //
+      //
+      //ba
+      //
+      22rem 6rem 0 $blk,
+      //
+      23rem 6rem 0 rgba($blk, 0.5),
+      //
+      24rem 6rem 0 $blk,
+      //
+      25rem 6rem 0 $blk,
+      //
+      28rem 6rem 0 rgba($blk, 0.5),
+      //
+      //
+      //ba
+      //
+      22rem 7rem 0 $blk,
+      //
+      23rem 7rem 0 rgba($blk, 0.8),
+      //
+      24rem 7rem 0 $blk,
+      //
+      25rem 7rem 0 $blk,
+      //
+      26rem 7rem 0 $blk,
+      //
+      27rem 7rem 0 $blk,
+      //
+      28rem 7rem 0 $blk,
+      //
+      //
+      //ba
+      //
+      22rem 8rem 0 $blk,
+      //
+      23rem 8rem 0 $blk,
+      //
+      24rem 8rem 0 $blk,
+      //
+      25rem 8rem 0 $blk,
+      //
+      26rem 8rem 0 $blk,
+      //
+      28rem 8rem 0 rgba($blk, 0.5),
+      //
+      //
+      //ba
+      //
+      22rem 9rem 0 $blk,
+      //
+      23rem 9rem 0 $blk,
+      //
+      24rem 9rem 0 $blk,
+      //
+      25rem 9rem 0 $blk,
+      //
+      26rem 9rem 0 $blk,
+      //
+      //
+      //engine
+      //
+      27rem 9rem 0 rgba($blk, 0.75),
+      //
+      28rem 9rem 0 $blk,
+      //
+      29rem 9rem 0 $blk,
+      //
+      30rem 9rem 0 $blk,
+      //
+      31rem 9rem 0 $blk,
+      //
+      32rem 9rem 0 $blk,
+      //
+      33rem 9rem 0 rgba($blk, 0.75),
+      //
+      34rem 9rem 0 rgba($blk, 0.5),
+      //
+      35rem 9rem 0 $blk,
+      //
+      //
+      //ba
+      //
+      22rem 10rem 0 rgba($blk, 0.75),
+      //
+      23rem 10rem 0 $blk,
+      //
+      24rem 10rem 0 $blk,
+      //
+      25rem 10rem 0 $blk,
+      //
+      26rem 10rem 0 $blk,
+      //
+      //
+      //engine
+      //
+      27rem 10rem 0 $blk,
+      //
+      28rem 10rem 0 $blk,
+      //
+      29rem 10rem 0 $blk,
+      //
+      30rem 10rem 0 $blk,
+      //
+      31rem 10rem 0 $blk,
+      //
+      32rem 10rem 0 $blk,
+      //
+      33rem 10rem 0 $blk,
+      //
+      34rem 10rem 0 rgba($blk, 0.5),
+      //
+      35rem 10rem 0 $blk,
+      //
+      //
+      //ba
+      //
+      22rem 11rem 0 rgba($blk, 0.5),
+      //
+      23rem 11rem 0 $blk,
+      //
+      24rem 11rem 0 $blk,
+      //
+      25rem 11rem 0 $blk,
+      //
+      26rem 11rem 0 $blk,
+      //
+      //
+      //engine
+      //
+      27rem 11rem 0 $blk,
+      //
+      28rem 11rem 0 $blk,
+      //
+      29rem 11rem 0 $blk,
+      //
+      30rem 11rem 0 $blk,
+      //
+      31rem 11rem 0 $blk,
+      //
+      32rem 11rem 0 $blk,
+      //
+      33rem 11rem 0 $blk,
+      //
+      34rem 11rem 0 $blk,
+      //
+      35rem 11rem 0 $blk,
+      //
+      //
+      //ba
+      //
+      22rem 12rem 0 rgba($blk, 0.25),
+      //
+      23rem 12rem 0 rgba($blk, 0.75),
+      //
+      24rem 12rem 0 $blk,
+      //
+      25rem 12rem 0 rgba($blk, 0.75),
+      //
+      26rem 12rem 0 $blk,
+      //
+      //
+      // 12
+      //
+      // same row
+      4rem 12rem 0 rgba($blk2, 0.5),
+      //
+      5rem 12rem 0 $blk4,
+      //
+      6rem 12rem 0 $blk4,
+      //
+      7rem 12rem 0 $blk4,
+      //
+      8rem 12rem 0 rgba($blk3, 0.5),
+      //
+      9rem 12rem 0 rgba($blk, 0.2),
+      //
+      // same row
+      27rem 12rem 0 $blk,
+      //
+      // same row
+      28rem 12rem 0 $blk2,
+      //
+      29rem 12rem 0 $blk4,
+      //
+      30rem 12rem 0 $blk4,
+      //
+      31rem 12rem 0 $blk4,
+      //
+      32rem 12rem 0 $blk2,
+      //
+      33rem 12rem 0 $blk,
+      //
+      // same row
+      34rem 12rem 0 $blk,
+      //
+      35rem 12rem 0 $blk,
+      //
+      //
+      // 13
+      //
+      0 13rem 0 rgba($blk, 0.5),
+      //
+      1rem 13rem 0 $blk,
+      //
+      2rem 13rem 0 $blk,
+      //
+      3rem 13rem 0 $blk,
+      //
+      // same row
+      4rem 13rem 0 $blk4,
+      //
+      5rem 13rem 0 mix($r, $blk4, 30%),
+      //
+      6rem 13rem 0 mix($r, $blk, 50%),
+      //
+      7rem 13rem 0 mix($r, $blk4, 30%),
+      //
+      8rem 13rem 0 $blk4,
+      //
+      9rem 13rem 0 $blk,
+      //
+      // same row
+      10rem 13rem 0 $blk,
+      //
+      11rem 13rem 0 $blk,
+      //
+      12rem 13rem 0 $blk,
+      //
+      13rem 13rem 0 $blk,
+      //
+      14rem 13rem 0 $blk,
+      //
+      15rem 13rem 0 $blk,
+      //
+      16rem 13rem 0 $blk,
+      //
+      17rem 13rem 0 $blk,
+      //
+      18rem 13rem 0 $blk,
+      //
+      19rem 13rem 0 $blk,
+      //
+      20rem 13rem 0 $blk,
+      //
+      21rem 13rem 0 $blk,
+      //
+      22rem 13rem 0 $blk,
+      //
+      23rem 13rem 0 $blk,
+      //
+      24rem 13rem 0 $blk,
+      //
+      25rem 13rem 0 $blk,
+      //
+      26rem 13rem 0 $blk,
+      //
+      27rem 13rem 0 $blk,
+      //
+      // same row
+      28rem 13rem 0 $blk4,
+      //
+      29rem 13rem 0 mix($r, $blk4, 30%),
+      //
+      30rem 13rem 0 mix($r, $blk, 50%),
+      //
+      31rem 13rem 0 mix($r, $blk4, 30%),
+      //
+      32rem 13rem 0 $blk4,
+      //
+      33rem 13rem 0 $blk,
+      //
+      // same row
+      34rem 13rem 0 $blk,
+      //
+      35rem 13rem 0 rgba($blk, 0.9),
+      //
+      36rem 13rem 0 $blk,
+      //
+      //
+      // 14
+      //
+      4rem 14rem 0 $blk4,
+      //
+      5rem 14rem 0 mix($r, $blk, 50%),
+      //
+      6rem 14rem 0 mix($r, $blk, 40%),
+      //
+      7rem 14rem 0 mix($r, $blk, 50%),
+      //
+      8rem 14rem 0 $blk4,
+      //
+      9rem 14rem 0 $blk,
+      //
+      //same row
+      10rem 14rem 0 rgba($blk, 0.5),
+      //
+      11rem 14rem 0 rgba($blk, 0.65),
+      //
+      12rem 14rem 0 rgba($blk, 0.8),
+      //
+      13rem 14rem 0 rgba($blk, 0.8),
+      //
+      14rem 14rem 0 rgba($blk, 0.8),
+      //
+      15rem 14rem 0 rgba($blk, 0.8),
+      //
+      16rem 14rem 0 rgba($blk, 0.8),
+      //
+      17rem 14rem 0 rgba($blk, 0.8),
+      //
+      18rem 14rem 0 rgba($blk, 0.8),
+      //
+      19rem 14rem 0 rgba($blk, 0.8),
+      //
+      20rem 14rem 0 rgba($blk, 0.8),
+      //
+      21rem 14rem 0 rgba($blk, 0.8),
+      //
+      22rem 14rem 0 rgba($blk, 0.8),
+      //
+      23rem 14rem 0 rgba($blk, 0.8),
+      //
+      24rem 14rem 0 rgba($blk, 0.8),
+      //
+      25rem 14rem 0 rgba($blk, 0.8),
+      //
+      26rem 14rem 0 rgba($blk, 0.8),
+      //
+      27rem 14rem 0 $blk,
+      //
+      //same row
+      28rem 14rem 0 $blk4,
+      //
+      29rem 14rem 0 mix($r, $blk, 50%),
+      //
+      30rem 14rem 0 mix($r, $blk, 40%),
+      //
+      31rem 14rem 0 mix($r, $blk, 50%),
+      //
+      32rem 14rem 0 $blk4,
+      //
+      33rem 14rem 0 $blk,
+      //
+      //same row
+      //
+      // 15
+      //
+      4rem 15rem 0 $blk4,
+      //
+      5rem 15rem 0 mix($r, $blk4, 30%),
+      //
+      6rem 15rem 0 mix($r, $blk, 50%),
+      //
+      7rem 15rem 0 mix($r, $blk4, 30%),
+      //
+      8rem 15rem 0 $blk4,
+      //
+      9rem 15rem 0 rgba($blk4, 0.8),
+      //
+      // same row
+      28rem 15rem 0 $blk4,
+      //
+      29rem 15rem 0 mix($r, $blk4, 30%),
+      //
+      30rem 15rem 0 mix($r, $blk, 50%),
+      //
+      31rem 15rem 0 mix($r, $blk4, 30%),
+      //
+      32rem 15rem 0 $blk4,
+      //
+      33rem 15rem 0 rgba($blk4, 0.8),
+      //
+      //
+      // 16
+      //
+      4rem 16rem 0 rgba($blk4, 0.3),
+      //
+      5rem 16rem 0 rgba($blk4, 0.9),
+      //
+      6rem 16rem 0 $blk4,
+      //
+      7rem 16rem 0 $blk4,
+      //
+      8rem 16rem 0 rgba($blk4, 0.6),
+      //
+      9rem 16rem 0 rgba($blk4, 0.2),
+      //
+      // same row
+      28rem 16rem 0 rgba($blk4, 0.3),
+      //
+      29rem 16rem 0 rgba($blk4, 0.9),
+      //
+      30rem 16rem 0 $blk4,
+      //
+      31rem 16rem 0 $blk4,
+      //
+      32rem 16rem 0 rgba($blk4, 0.6),
+      //
+      33rem 16rem 0 rgba($blk4, 0.2); //
+  }
+}
