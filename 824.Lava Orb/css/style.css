@@ -1,0 +1,114 @@
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+:root {
+  --bg: oklch(12.9% 0.042 264.695);
+  --c1: oklch(44.4% 0.177 26.899);
+  --c2: oklch(85.2% 0.199 91.936);
+  --c3: oklch(58.8% 0.158 241.966);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  font-family: system-ui, sans-serif;
+  background-color: var(--bg);
+}
+
+.orb {
+  display: grid;
+  grid-template-areas: "stack";
+  inline-size: min(80vmin, 100%);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 50%;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    grid-area: stack;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: translateZ(0);
+  }
+
+  &::before {
+    background: conic-gradient(
+        from calc(var(--angle) * 2) at 25% 70%,
+        var(--c3),
+        transparent 20% 80%,
+        var(--c3)
+      ),
+      conic-gradient(
+        from calc(var(--angle) * 2) at 45% 75%,
+        var(--c2),
+        transparent 30% 60%,
+        var(--c2)
+      ),
+      conic-gradient(
+        from calc(var(--angle) * -3) at 80% 20%,
+        var(--c1),
+        transparent 40% 60%,
+        var(--c1)
+      ),
+      conic-gradient(
+        from calc(var(--angle) * 2) at 15% 5%,
+        var(--c2),
+        transparent 10% 90%,
+        var(--c2)
+      ),
+      conic-gradient(
+        from calc(var(--angle) * 1) at 20% 80%,
+        var(--c1),
+        transparent 10% 90%,
+        var(--c1)
+      ),
+      conic-gradient(
+        from calc(var(--angle) * -2) at 85% 10%,
+        var(--c3),
+        transparent 20% 80%,
+        var(--c3)
+      );
+    box-shadow: inset var(--bg) 0 0 5vmin 1vmin;
+    filter: blur(3vmin) contrast(5);
+    -webkit-animation: rotate 20s linear infinite;
+            animation: rotate 20s linear infinite;
+  }
+
+  &::after {
+    --dot: 1.5px;
+    background-image: radial-gradient(
+      circle at center,
+      var(--bg) var(--dot),
+      transparent var(--dot)
+    );
+    background-size: calc(var(--dot) * 2) calc(var(--dot) * 2);
+    -webkit-mask-image: radial-gradient(black 25%, transparent 75%);
+            mask-image: radial-gradient(black 25%, transparent 75%);
+    -webkit-backdrop-filter: blur(8vmin) contrast(10);
+            backdrop-filter: blur(8vmin) contrast(10);
+    mix-blend-mode: overlay;
+  }
+}
+
+@-webkit-keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
