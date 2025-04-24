@@ -828,6 +828,7 @@
 |822| [Matrix Rain](https://github.com/xml12333/HTML_CSS_JS/tree/main/822.Matrix%20Rain)| [Demo](https://nikt.com.ua/projects/htmlCssJs/822.Matrix%20Rain/)|
 |823| [Gooey Nav](https://github.com/xml12333/HTML_CSS_JS/tree/main/823.Gooey%20Nav)| [Demo](https://nikt.com.ua/projects/htmlCssJs/823.Gooey%20Nav/)|
 |824| [Lava Orb](https://github.com/xml12333/HTML_CSS_JS/tree/main/824.Lava%20Orb)| [Demo](https://nikt.com.ua/projects/htmlCssJs/824.Lava%20Orb/)|
+|825| [Gooey Ring](https://github.com/xml12333/HTML_CSS_JS/tree/main/825.Gooey%20Ring)| [Demo](https://nikt.com.ua/projects/htmlCssJs/825.Gooey%20Ring/)|
 |884| [Spinning Earth](https://github.com/xml12333/HTML_CSS_JS/tree/main/884.Spinning%20Earth)| [Demo](https://nikt.com.ua/projects/htmlCssJs/884.Spinning%20Earth/)|
 |885| [Scroll-Grid](https://github.com/xml12333/HTML_CSS_JS/tree/main/885.Scroll-Grid)| [Demo](https://nikt.com.ua/projects/htmlCssJs/885.Scroll-Grid/)|
 |886| [Four Text Shadows](https://github.com/xml12333/HTML_CSS_JS/tree/main/886.Four%20Text%20Shadows)| [Demo](https://nikt.com.ua/projects/htmlCssJs/886.Four%20Text%20Shadows/)|
