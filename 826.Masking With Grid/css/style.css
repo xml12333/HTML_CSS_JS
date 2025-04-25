@@ -1,0 +1,442 @@
+@import url('https://unpkg.com/normalize.css') layer(normalize);
+
+@layer normalize, base, demo, masking, debug;
+
+@layer debug {
+  [data-animate-bg='true'] .container {
+    --bg: linear-gradient(in hsl longer hue 90deg, hsl(10 100% 70%) 0 100%)
+      calc(var(--bd) * -1px) 0 / 400% 100%;
+    &::before,
+    &::after {
+      animation: scale-bg infinite linear 8s;
+    }
+  }
+
+  [data-animate-bg='false'] .container {
+    --primary: light-dark(hsl(0 0% 0% / 0.4), hsl(0 0% 90%));
+    --bg: linear-gradient(var(--primary) 0 100%);
+    --bg: linear-gradient(#0000 0 100%);
+  }
+
+  .container {
+    height: calc((var(--size) + (var(--size) * 0.5)) * 1px);
+    padding-inline: calc(var(--size) * 0.25px);
+    border-radius: calc(var(--size) * 2px);
+    position: relative;
+    --bd: 2;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      border-radius: calc(var(--size) * 2px);
+      background: var(--bg);
+    }
+
+    &::before {
+      opacity: 0.3;
+    }
+
+    &::after {
+      border: calc(var(--bd) * 1px) solid #0000;
+      mask: linear-gradient(transparent, transparent),
+        linear-gradient(white, white);
+      mask-clip: padding-box, border-box;
+      mask-composite: intersect;
+    }
+  }
+
+  @keyframes scale-bg {
+    to {
+      background-position: 400% 0;
+    }
+  }
+
+  ul.items::after {
+    padding-top: 1rem;
+    color: color-mix(in hsl, currentColor, #0000 25%);
+    text-align: center;
+    font-family: monospace;
+    font-weight: 200;
+    text-transform: uppercase;
+    content: 'masked item';
+    position: absolute;
+    background: blue;
+    z-index: -1;
+    width: calc(var(--size) * 1px);
+    aspect-ratio: 1 / 3;
+    outline: 1px solid red;
+    background: repeating-linear-gradient(
+      45deg,
+      hsl(0 100% 50% / 0.5) 0 1px,
+      #0000 6px 7px
+    );
+    bottom: 0%;
+    opacity: 0;
+    left: calc(var(--column) * 1.5px);
+    translate: -50% calc((var(--size) - var(--column)) * 0.5px);
+    transition: opacity 0.5s ease-out;
+  }
+  li:first-of-type {
+    position: relative;
+  }
+  li:first-of-type::after {
+    padding-top: 1rem;
+    color: color-mix(in hsl, currentColor, #0000 25%);
+    text-align: center;
+    font-family: monospace;
+    font-weight: 200;
+    text-transform: uppercase;
+    content: 'grid column';
+    width: calc(var(--column) * 1px);
+    height: calc(var(--size) * 2.5px);
+    outline: 1px solid hsl(220 100% 50%);
+    background: repeating-linear-gradient(
+      45deg,
+      hsl(220 100% 50% / 0.5) 0 1px,
+      #0000 6px 7px
+    );
+    position: absolute;
+    left: 50%;
+    translate: -50% 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+  }
+
+  [data-debug='true'] {
+    li:first-of-type::after,
+    ul.items::after {
+      opacity: 1;
+    }
+    .name {
+      opacity: 0;
+    }
+  }
+}
+
+@layer masking {
+  .container {
+    /* this is the config */
+    --size: 108;
+    --border: 8;
+    --column: 60;
+    --transition: 0.12;
+    --ease: ease-out;
+  }
+
+  [data-ltr='true'] ul li:not(:first-of-type) .avatar-holder {
+    --rad-x: calc(
+      var(--circle) - (var(--column) * 1px) - (var(--border) * 1px)
+    );
+  }
+
+  [data-ltr='false'] ul li:not(:last-of-type) .avatar-holder {
+    --rad-x: calc(
+      var(--circle) + (var(--column) * 1px) - (var(--border) * 1px)
+    );
+  }
+
+  [data-ltr='true'] ul li:not(:first-of-type) .avatar-holder,
+  [data-ltr='false'] ul li:not(:last-of-type) .avatar-holder {
+    --circle: calc(((var(--border) * 2px) + (var(--size) * 1px)) * 0.5);
+    mask-image: radial-gradient(
+      var(--circle) var(--circle) at var(--rad-x, 0) 50%,
+      #0000 calc(var(--circle) - 0.5px),
+      #fff var(--circle)
+    );
+    mask-size: 100% 100%;
+    mask-position: 0 calc(var(--size) * 1px);
+    transition: mask-position calc(var(--transition) * 1s) var(--ease);
+  }
+
+  [data-ltr='true'] ul li:hover + li .avatar-holder,
+  [data-ltr='false'] ul li:has(+ li:hover) .avatar-holder {
+    mask-position: 0 0;
+    /* by default it's at size * 1px so you are going to size * movement */
+    mask-position: 0 calc(var(--size) * ((1 - var(--movement)) * 1px));
+  }
+
+  ul {
+    li {
+      position: relative;
+      pointer-events: none;
+
+      &::before {
+        content: '';
+        width: 100%;
+        aspect-ratio: 1;
+        bottom: 0;
+        position: absolute;
+        pointer-events: all;
+      }
+
+      & .avatar {
+        pointer-events: all;
+        transition: translate calc(var(--transition) * 1s) var(--ease);
+      }
+
+      /* when it comes to translation and mask position */
+      /* movement equates to either 100% or .1px for the position */
+      &:hover .avatar {
+        translate: 0 calc(var(--movement) * -100%);
+      }
+    }
+  }
+}
+
+@layer demo {
+  .container {
+    align-items: center;
+    display: flex;
+    gap: calc(var(--size) * 0.5px);
+
+    button {
+      width: calc(var(--size) * 0.5px);
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0;
+      appearance: none;
+      border: 0;
+      background: #0000;
+      margin-left: 0.5rem;
+
+      svg {
+        width: 100%;
+      }
+    }
+  }
+
+  [data-ringed='true'] {
+    li {
+      &:hover .name span {
+        translate: 0 0;
+      }
+      .name {
+        width: calc(var(--size) * 1px);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        bottom: 0;
+        translate: -50% calc(var(--movement) * -100%);
+
+        span {
+          offset-path: border-box;
+          offset-distance: calc((var(--offset) + var(--i)) * 1ch);
+          offset-anchor: 50% 150%;
+          position: absolute;
+          transition: translate calc(var(--transition) * 1s) var(--ease);
+          translate: 0 100%;
+        }
+      }
+    }
+  }
+  [data-ringed='false'] {
+    li {
+      &:hover .name {
+        translate: -50% -50%;
+      }
+
+      .name {
+        bottom: calc((var(--size) * (1 + var(--movement))) * 1px);
+        translate: -50% 50%;
+        span {
+          translate: 0 -150%;
+        }
+      }
+    }
+  }
+
+  ul.items {
+    align-content: end;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc(var(--column) * 1px);
+    height: calc(var(--column) * 1px);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    translate: calc((var(--size) - var(--column)) * 0.5px) 0;
+
+    li {
+      align-content: end;
+      aspect-ratio: 1 / 3;
+      display: grid;
+      position: relative;
+      width: calc(var(--size) * 1px);
+      translate:
+        /* 0 */ calc((var(--size) - var(--column)) * -0.5px)
+        calc((var(--size) - var(--column)) * 0.5px);
+
+      .avatar-holder {
+        position: absolute;
+        inset: 0;
+        align-content: end;
+        display: grid;
+      }
+
+      &:nth-of-type(1) img {
+        filter: contrast(1.2);
+      }
+
+      &:hover .name {
+        filter: blur(0px);
+        opacity: 1;
+      }
+
+      .name {
+        transition-property: filter, opacity, translate;
+        transition-timing-function: var(--ease);
+        transition-duration: calc(var(--transition) * 1s);
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-family: monospace;
+        position: absolute;
+        left: 50%;
+        filter: blur(4px);
+        opacity: 0;
+      }
+
+      .avatar {
+        display: inline-block;
+        width: 100%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+
+        img {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          background: color-mix(in hsl, canvas, canvasText);
+        }
+      }
+    }
+  }
+}
+
+@layer base {
+  :root {
+    --font-size-min: 16;
+    --font-size-max: 20;
+    --font-ratio-min: 1.2;
+    --font-ratio-max: 1.33;
+    --font-width-min: 375;
+    --font-width-max: 1500;
+  }
+
+  html {
+    color-scheme: light dark;
+  }
+
+  [data-theme='light'] {
+    color-scheme: light only;
+  }
+
+  [data-theme='dark'] {
+    color-scheme: dark only;
+  }
+
+  :where(.fluid) {
+    --fluid-min: calc(
+      var(--font-size-min) * pow(var(--font-ratio-min), var(--font-level, 0))
+    );
+    --fluid-max: calc(
+      var(--font-size-max) * pow(var(--font-ratio-max), var(--font-level, 0))
+    );
+    --fluid-preferred: calc(
+      (var(--fluid-max) - var(--fluid-min)) /
+        (var(--font-width-max) - var(--font-width-min))
+    );
+    --fluid-type: clamp(
+      (var(--fluid-min) / 16) * 1rem,
+      ((var(--fluid-min) / 16) * 1rem) -
+        (((var(--fluid-preferred) * var(--font-width-min)) / 16) * 1rem) +
+        (var(--fluid-preferred) * var(--variable-unit, 100vi)),
+      (var(--fluid-max) / 16) * 1rem
+    );
+    font-size: var(--fluid-type);
+  }
+
+  *,
+  *:after,
+  *:before {
+    box-sizing: border-box;
+  }
+
+  body {
+    background: light-dark(#fff, #000);
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    font-family: 'SF Pro Text', 'SF Pro Icons', 'AOS Icons', 'Helvetica Neue',
+      Helvetica, Arial, sans-serif, system-ui;
+  }
+
+  body::before {
+    --size: 45px;
+    --line: color-mix(in hsl, canvasText, transparent 70%);
+    content: '';
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background: linear-gradient(
+          90deg,
+          var(--line) 1px,
+          transparent 1px var(--size)
+        )
+        50% 50% / var(--size) var(--size),
+      linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
+        var(--size) var(--size);
+    mask: linear-gradient(-20deg, transparent 50%, white);
+    top: 0;
+    transform-style: flat;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .bear-link {
+    color: canvasText;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    width: 48px;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    opacity: 0.8;
+  }
+
+  :where(.x-link, .bear-link):is(:hover, :focus-visible) {
+    opacity: 1;
+  }
+
+  .bear-link svg {
+    width: 75%;
+  }
+
+  /* Utilities */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}
+div.tp-dfwv {
+  width: 280px;
+}
