@@ -1,0 +1,216 @@
+:root {
+    
+    /* demo vars for controlling */
+    
+    --status-size: 20px; /* size of the status */
+    --status-gap: 5px; /* size of the gap around the status */
+    --status-offset: 0px; /* how far from the circumference to offset the status */
+    --status-angle: 120deg; /* where on the edge we want the status */
+}
+
+.avatar {
+    
+    /* necessary vars for calculating position/size */
+
+    --d: calc(var(--status-size) + (var(--status-gap) * 2));
+    --r: calc((100% / 2) + var(--status-offset));
+    --x: calc(var(--r) * cos(var(--status-angle) - 90deg) + (100% / 2));
+    --y: calc(var(--r) * sin(var(--status-angle) - 90deg) + (100% / 2));
+    
+    /* colors */
+    
+    --color-offline: slategrey;
+    --color-online:  rgb(0, 255, 135);
+    --color-idle: rgb(255, 185, 51);
+    --color-dnd: rgb(255, 40, 80);
+    
+    position: relative;
+    
+    &.status {
+        &::after {
+            content: "";
+            width: var(--status-size);
+            aspect-ratio: 1;
+            background: var(--color-offline);
+            border-radius: 100%;
+            position: absolute;
+            top: calc(var(--y) - (var(--status-size)/2));
+            left: calc(var(--x) - (var(--status-size)/2));
+        }
+        
+        & > * {
+            -webkit-mask-image: radial-gradient(var(--d) var(--d) at var(--x) var(--y), transparent calc(50% - 0.5px), black calc(50% + 0.5px));
+                    mask-image: radial-gradient(var(--d) var(--d) at var(--x) var(--y), transparent calc(50% - 0.5px), black calc(50% + 0.5px));
+        }
+        
+        &.online&::after {
+            background-color: var(--color-online);
+        }
+        &.idle&::after {
+            background-color: var(--color-idle);
+        }
+        &.dnd&::after {
+            background-color: var(--color-dnd);
+        }
+        
+        /* 
+            these next styles are just extra, not needed if you
+            just want the color circles 
+        */
+        
+        &.idle&::after {
+            /* extra mask for idle 'moon' effect */
+            -webkit-mask-image: radial-gradient(90% 100% at 90% 30%, transparent calc(50% - 0.5px), black calc(50% + 0.5px));
+                    mask-image: radial-gradient(90% 100% at 90% 30%, transparent calc(50% - 0.5px), black calc(50% + 0.5px));
+        }
+        &.dnd&::before {
+            /* this is all a bit extra for the 'dnd' style */
+            content: "";
+            position: absolute;
+            top: calc(var(--y) );
+            left: calc(var(--x) );
+            width: calc(var(--status-size) * 0.8);
+            translate: -50% -50%;
+            rotate: -9deg;
+            aspect-ratio: 4/1;
+            border-radius: 100vmax;
+            /* background: hsl(349deg, 90%, 80% ); */
+            background: color-mix(in oklch, var(--color-dnd), white 50%);
+            z-index: 1;
+        }
+    }
+}
+
+
+
+
+
+/** demo specific css */
+
+.avatar {
+
+    height: 100%;
+    aspect-ratio: 1;
+    flex-shrink: 0;
+    z-index: 1;
+    
+    & img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1;
+        -o-object-fit: cover;
+           object-fit: cover;
+        border-radius: 100%;
+        filter: grayscale(0.9);
+        transition: all 0.5s ease;
+    }
+
+}
+
+#app {
+    display: flex;
+    place-content: center;
+    align-items: center;
+}
+.resizer {
+    display: flex;
+    position: relative;
+    gap: 20px;
+    padding: 20px;
+    place-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 120px;
+    resize: vertical;
+    
+    &:hover img {
+        filter: grayscale(0);
+    }
+}
+
+.bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    background: repeating-linear-gradient(45deg, transparent 0px , hsla(var(--h),var(--s),66%,0.66) 0px 10px, transparent 10px 20px ) 20%;
+    transition: all 5s ease;
+}
+.resizer:hover .bg {
+    opacity: 1;
+    transition-duration: 500ms;
+}
+
+html, body, main {
+    height: 100%;
+}
+form {
+    padding-block: 2em;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: -webkit-max-content -webkit-max-content 2fr 1fr;
+    grid-template-rows: max-content max-content 2fr 1fr;
+    place-items: center;
+    height: 100%;
+}
+#controls {
+    display: flex;
+    flex-wrap: wrap;
+    place-content: center;
+    gap: 1em;
+}
+.field {
+    text-align: center;
+    margin: 0!important;
+    & label {
+        width: 100%;
+    }
+    & .range input {
+        width: 100%;
+    }
+    & em {
+        font-size: 0.875em;
+        text-transform: lowercase;
+        color: rgb(0, 255, 135);
+        &::before {
+            content: " ( ";
+        }
+        &::after {
+            content: " )";
+        }
+    }
+}
+
+h1,h2 {
+    margin:0;
+    text-shadow: 0 1px 1px color-mix(in oklch, var(--bg), black);
+}
+h2 {
+    font-weight: 200;
+    font-style: italic;
+    color: color-mix(in oklch, var(--fg) 60%, var(--bg));
+}
+h1 span {
+    font-style: italic;
+    color: color-mix(in oklch, var(--fg) 60%, var(--bg));
+}
+
+body {
+    font-family: 'Asap Condensed', sans-serif;
+    font-weight: 400;
+}
+
+h1, h2 {
+    font-family: 'Amaranth', sans-serif;
+}
+
+code, pre {
+    font-family: 'Kode mono', monospace;
+}
+code {
+    display: inline-block;
+    padding-inline: 0.4em;
+    border-radius: 0.2em;
+    background: color-mix(in oklch, var(--bg) 85%, black);
+    color: color-mix(in oklch, var(--fg) 60%, var(--tint));
+    font-size: 0.875em;
+}
