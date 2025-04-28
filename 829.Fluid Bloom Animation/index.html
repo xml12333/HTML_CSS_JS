@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Fluid Bloom Animation</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            overflow: hidden;
+            touch-action: none;
+        }
+        canvas { display: block; }
+        .glass-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            z-index: 10;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .glass-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            padding: 15px 20px;
+            color: #fff;
+            font-family: sans-serif;
+            text-align: left;
+            pointer-events: auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 80%;
+        }
+        .glass-box p {
+            margin: 0;
+            font-size: 1em;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+    <script>
+        let t = 0;
+        const SEGMENTS = 16;
+        let sliceAngle;
+        let fluidPoints = [];
+        let segmentedPoints = [];
+        let fluidForces = [];
+        let particles = [];
+        let hueOffset = 0;
+        let rotationSpeed = 0.015;
+        let bloomIntensity = 1;
+        const fluidDamping = 0.95;
+        const springStrength = 0.05;
+
+        function setup() {
+            createCanvas(windowWidth, windowHeight);
+            colorMode(HSB, 360, 100, 100, 100);
+            sliceAngle = TWO_PI / SEGMENTS;
+            segmentedPoints = Array.from({length: SEGMENTS}, () => []);
+            initFluidPoints();
+            initParticles();
+
+            background(0);
+        }
+
+        function initFluidPoints() {
+            fluidPoints = [];
+            const rings = 8;
+            for (let ring = 0; ring < rings; ring++) {
+                const radius = map(ring, 0, rings - 1, 0.1, 1.0);
+                const circumference = TWO_PI * radius;
+                const pts = max(12, floor(circumference * 20));
+                for (let i = 0; i < pts; i++) {
+                    const angle = (i / pts) * TWO_PI;
+                    const seg = floor(angle / sliceAngle);
+                    let p = {
+                        baseX: radius * cos(angle),
+                        baseY: radius * sin(angle),
+                        x: radius * cos(angle),
+                        y: radius * sin(angle),
+                        vx: 0, vy: 0,
+                        radius, angle,
+                        intensity: 0,
+                        segment: seg
+                    };
+                    fluidPoints.push(p);
+                    if (segmentedPoints[seg]) {
+                         segmentedPoints[seg].push(p);
+                    }
+                }
+            }
+            for(let i = 0; i < SEGMENTS; i++) {
+                if (segmentedPoints[i]) {
+                    segmentedPoints[i].sort((a, b) => a.angle - b.angle);
+                }
+            }
+        }
+
+        function initParticles() {
+             particles = [];
+             for (let i = 0; i < 80; i++) {
+                particles.push(createParticle());
+            }
+        }
+
+
+        function draw() {
+            background(0, 10);
+            t += rotationSpeed;
+            bloomIntensity = max(1, bloomIntensity * 0.97);
+            updateFluid();
+            blendMode(ADD);
+            drawBloom();
+            blendMode(BLEND);
+            updateParticles();
+        }
+
+        function updateFluid() {
+            for (let i = fluidForces.length - 1; i >= 0; i--) {
+                let F = fluidForces[i];
+                F.life--;
+                if (F.life <= 0) {
+                    fluidForces.splice(i, 1);
+                    continue;
+                }
+                if (F.easeIn && F.life > F.maxLife - F.easeIn) {
+                    let pct = (F.maxLife - F.life) / F.easeIn;
+                    F.strength = lerp(0, F.maxStrength, pct);
+                }
+                const scale = min(width, height) * 0.5;
+                for (let p of fluidPoints) {
+                    let dx = p.baseX * scale - F.x;
+                    let dy = p.baseY * scale - F.y;
+                    let d = sqrt(dx*dx + dy*dy);
+                    let df = abs(d - F.radius);
+                    if (d < F.maxRadius && df < F.width) {
+                        let n = df / F.width;
+                        let ease = 1 - n*n*(3 - 2*n);
+                        let S = ease * F.strength;
+                        p.vx += (dx/d) * S * 0.8;
+                        p.vy += (dy/d) * S * 0.8;
+                        p.intensity = max(p.intensity, S * 1.5);
+                    }
+                }
+                F.radius += F.speed;
+            }
+            const scale = min(width, height) * 0.5;
+            for (let p of fluidPoints) {
+                p.x += p.vx;
+                p.y += p.vy;
+                p.vx *= fluidDamping;
+                p.vy *= fluidDamping;
+                let dx = p.baseX - p.x;
+                let dy = p.baseY - p.y;
+                let d2 = dx*dx + dy*dy;
+                let spring = springStrength * (0.2 + 0.8 * min(1, d2 * 100));
+                p.vx += dx * spring;
+                p.vy += dy * spring;
+                p.intensity *= 0.9;
+            }
+        }
+
+        function drawBloom() {
+            push();
+                translate(width/2, height/2);
+                drawCentralGlow();
+                drawFluidBloom();
+            pop();
+        }
+
+        function drawCentralGlow() {
+            drawingContext.shadowBlur = 30;
+            drawingContext.shadowColor = `hsla(${(t*40 + hueOffset)%360},90%,70%,0.9)`;
+            noStroke();
+            for (let r = 250; r > 0; r -= 40) {
+                let alpha = map(r, 250, 0, 5, 50);
+                let size = (min(width, height)*0.25) * (1 + sin(t*2)*0.05) * bloomIntensity;
+                fill((t*40 + hueOffset + r*0.1)%360, 85, 100, alpha);
+                ellipse(0, 0, size*(r/150), size*(r/150));
+            }
+            drawingContext.shadowBlur = 0;
+        }
+
+        function drawFluidBloom() {
+            const scale = min(width, height)*0.5;
+            for (let s = 0; s < SEGMENTS; s++) {
+                let pts = segmentedPoints[s];
+                if (!pts || pts.length < 3) continue;
+                let avgI = min(0.8, pts.reduce((sum,p)=>sum+p.intensity,0)/pts.length);
+                let baseHue = (hueOffset + t*30 + s*(360/SEGMENTS)) % 360;
+                let hue = (baseHue + avgI*20) % 360;
+                let bright = min(100, 80 + avgI*15);
+                fill(hue, 75, bright, 0.3 * 100);
+                beginShape();
+                    vertex(0,0);
+                    for (let p of pts) {
+                        let sc = scale * p.radius * (1 + p.intensity*0.2) * bloomIntensity;
+                        vertex(p.x*sc, p.y*sc);
+                    }
+                endShape(CLOSE);
+                if (avgI > 0.1) {
+                    stroke(hue, 70, 100, 15);
+                    strokeWeight(1.5 + avgI*1);
+                    noFill();
+                    beginShape();
+                        vertex(0,0);
+                        for (let p of pts) {
+                            let sc = scale * p.radius * (1 + p.intensity*0.2) * bloomIntensity;
+                            vertex(p.x*sc, p.y*sc);
+                        }
+                    endShape(CLOSE);
+                    noStroke();
+                }
+            }
+        }
+
+        function createParticle() {
+            const angle = random(TWO_PI);
+            const radius = random(min(width, height) * 0.1, min(width, height) * 0.45);
+            return {
+                angle,
+                radius,
+                speed: random(0.008, 0.03),
+                size: random(3, 10),
+                hue: (hueOffset + random(-30, 30)) % 360
+            };
+        }
+
+        function updateParticles() {
+            noStroke();
+            for (let p of particles) {
+                p.angle += p.speed;
+                if (p.angle > TWO_PI) p.angle -= TWO_PI;
+                if (p.angle < 0) p.angle += TWO_PI;
+                let x = width/2 + cos(p.angle) * p.radius;
+                let y = height/2 + sin(p.angle) * p.radius;
+                fill((p.hue + t*15) % 360, 90, 100, 60);
+                ellipse(x, y, p.size * bloomIntensity);
+            }
+        }
+
+        function handleInteraction(x, y) {
+            const fx = x - width/2;
+            const fy = y - height/2;
+            fluidForces.push({
+                x: fx, y: fy,
+                radius: 0,
+                speed: min(width, height)*0.008,
+                maxRadius: min(width, height)*0.9,
+                width: min(width, height)*0.25,
+                strength: 0.008, maxStrength: 0.06,
+                life: 150, maxLife: 150,
+                easeIn: 40
+            });
+            hueOffset = (hueOffset + 20) % 360;
+            bloomIntensity = 1.15;
+            rotationSpeed = 0.015 + random(-0.002, 0.002);
+        }
+
+        function mousePressed() {
+            handleInteraction(mouseX, mouseY);
+            return false;
+        }
+
+        function touchStarted() {
+            if (touches.length) {
+                handleInteraction(touches[0].x, touches[0].y);
+            }
+            return false;
+        }
+
+        function windowResized() {
+            resizeCanvas(windowWidth, windowHeight);
+            initFluidPoints();
+            initParticles();
+            background(0);
+        }
+    </script>
+    <div class="glass-container">
+        <div class="glass-box">
+            <p>Click or tap anywhere to interact</p>
+        </div>
+    </div>
+<!-- partial -->
+  
+</body>
+</html>
