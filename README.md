@@ -833,6 +833,7 @@
 |827| [Avatar Indicators](https://github.com/xml12333/HTML_CSS_JS/tree/main/827.Avatar%20Indicators)| [Demo](https://nikt.com.ua/projects/htmlCssJs/827.Avatar%20Indicators/)|
 |828| [CSS Flip Carousel](https://github.com/xml12333/HTML_CSS_JS/tree/main/828.CSS%20Flip%20Carousel)| [Demo](https://nikt.com.ua/projects/htmlCssJs/828.CSS%20Flip%20Carousel/)|
 |829| [Fluid Bloom Animation](https://github.com/xml12333/HTML_CSS_JS/tree/main/829.Fluid%20Bloom%20Animation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/829.Fluid%20Bloom%20Animation/)|
+|830| [Simmering Squares](https://github.com/xml12333/HTML_CSS_JS/tree/main/830.Simmering%20Squares)| [Demo](https://nikt.com.ua/projects/htmlCssJs/830.Simmering%20Squares/)|
 |884| [Spinning Earth](https://github.com/xml12333/HTML_CSS_JS/tree/main/884.Spinning%20Earth)| [Demo](https://nikt.com.ua/projects/htmlCssJs/884.Spinning%20Earth/)|
 |885| [Scroll-Grid](https://github.com/xml12333/HTML_CSS_JS/tree/main/885.Scroll-Grid)| [Demo](https://nikt.com.ua/projects/htmlCssJs/885.Scroll-Grid/)|
 |886| [Four Text Shadows](https://github.com/xml12333/HTML_CSS_JS/tree/main/886.Four%20Text%20Shadows)| [Demo](https://nikt.com.ua/projects/htmlCssJs/886.Four%20Text%20Shadows/)|
