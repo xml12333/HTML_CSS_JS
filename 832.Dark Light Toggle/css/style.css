@@ -1,0 +1,290 @@
+:root {
+	--background-color-light: hsla(230, 80%, 98%, 1);
+	--toggle-light: hsla(230, 25%, 10%, 1);
+	--line-light: hsla(230, 35%, 92.5%, 1);
+	--dot-light: hsla(230, 25%, 75%, 1);
+	--text-top-light: hsla(240, 25%, 10%, 1);
+	--text-bottom-light: hsla(240, 25%, 25%, 1);
+	--text-circle-light: hsla(240, 25%, 25%, 1);
+
+	--background-color-dark: hsla(230, 55%, 4%, 1);
+	--toggle-dark: hsla(230, 25%, 75%, 1);
+	--line-dark: hsla(230, 25%, 15%, .75);
+	--dot-dark: hsla(230, 25%, 90%, 1);
+	--text-top-dark: hsla(240, 60%, 90%, 1);
+	--text-bottom-dark: hsla(240, 60%, 95%, 1);
+	--text-circle-dark: hsla(240, 60%, 95%, .15);
+
+	color-scheme: light;
+
+	--x: 50%;
+	--y: 50%;
+}
+
+html {
+	--background-color: var(--background-color-light);
+	--toggle-color: var(--toggle-light);
+	--line-color: var(--line-light);
+	--dot-color: var(--dot-light);
+	--text-color-top: var(--text-top-light);
+	--text-color-bottom: var(--text-bottom-light);
+	--text-color-circle: var(--text-circle-light);
+}
+
+html.dark {
+	color-scheme: dark;
+
+	--background-color: var(--background-color-dark);
+	--toggle-color: var(--toggle-dark);
+	--line-color: var(--line-dark);
+	--dot-color: var(--dot-dark);
+	--text-color-top: var(--text-top-dark);
+	--text-color-bottom: var(--text-bottom-dark);
+	--text-color-circle: var(--text-circle-dark);
+}
+
+body {
+	min-height: 100dvh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: "Instrument Sans", sans-serif;
+	transition: background-color 0.3s ease, color 0.3s ease;
+	background-color: var(--background-color);
+}
+
+main {
+	width: 100%;
+}
+
+section {
+	width: clamp(360px, 60vw, 780px);
+	aspect-ratio: 1.55 / .5;
+	min-height: 200px;
+	margin: auto;
+	text-align: center;
+	place-items: center;
+	display: grid;
+	position: relative;
+	
+	.dot {
+		height: 5px;
+		width: 5px;
+		background-color: var(--dot-color);
+		position: absolute;
+		z-index: 1;
+		border-radius: 50%;
+		box-shadow: 0 0 0 3px var(--background-color);
+		
+		&:nth-child(1) {
+			top: -2px;
+			left: -2px;
+		}
+		
+		&:nth-child(2) {
+			top: -2px;
+			right: -2px;
+		}
+		
+		&:nth-child(3) {
+			bottom: -2px;
+			right: -2px;
+		}
+		
+		&:nth-child(4) {
+			bottom: -2px;
+			left: -2px;
+		}
+	}
+
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		height: 100dvh;
+		width: 1px;
+		background-color: var(--line-color);
+	}
+
+	&:before {
+		left: 0;
+	}
+
+	&:after {
+		right: 0;
+	}
+}
+
+main hr {
+	border: none;
+	height: 1px;
+	width: 100%;
+	margin: 0;
+	background-color: var(--line-color);
+}
+
+h1 {
+	font-optical-sizing: auto;
+	font-weight: 700;
+	font-style: normal;
+	font-variation-settings: "wdth" 95;
+	font-size: clamp(32px, 6vw, 68px);
+	line-height: 1.05;
+	margin: 0;
+	text-align: left;
+}
+
+h1 span {
+	background-image: linear-gradient(180deg, var(--text-color-top) 0%, var(--text-color-bottom) 100%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+h1 strong {
+	display: inline-block;
+	color: transparent;
+	background-image: url('https://assets.codepen.io/165585/circle-bg_1.svg');
+	background-color: var(--text-color-circle);
+	background-size: 400px;
+	background-position: 50% 80%;
+	background-blend-mode: overlay;
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	letter-spacing: 0.015em;
+}
+
+@-webkit-keyframes reveal-in {
+	from {
+		-webkit-clip-path: circle(0% at var(--x) var(--y));
+		        clip-path: circle(0% at var(--x) var(--y));
+	}
+	to {
+		-webkit-clip-path: circle(150% at var(--x) var(--y));
+		        clip-path: circle(150% at var(--x) var(--y));
+	}
+}
+
+@keyframes reveal-in {
+	from {
+		-webkit-clip-path: circle(0% at var(--x) var(--y));
+		        clip-path: circle(0% at var(--x) var(--y));
+	}
+	to {
+		-webkit-clip-path: circle(150% at var(--x) var(--y));
+		        clip-path: circle(150% at var(--x) var(--y));
+	}
+}
+
+@-webkit-keyframes reveal-out {
+	from {
+		-webkit-clip-path: circle(150% at var(--x) var(--y));
+		        clip-path: circle(150% at var(--x) var(--y));
+	}
+	to {
+		-webkit-clip-path: circle(0% at var(--x) var(--y));
+		        clip-path: circle(0% at var(--x) var(--y));
+	}
+}
+
+@keyframes reveal-out {
+	from {
+		-webkit-clip-path: circle(150% at var(--x) var(--y));
+		        clip-path: circle(150% at var(--x) var(--y));
+	}
+	to {
+		-webkit-clip-path: circle(0% at var(--x) var(--y));
+		        clip-path: circle(0% at var(--x) var(--y));
+	}
+}
+
+::view-transition-new(root) {
+	-webkit-animation: reveal-in 0.5s ease-in-out forwards;
+	        animation: reveal-in 0.5s ease-in-out forwards;
+	z-index: 1;
+	mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+	-webkit-animation: reveal-out 0.5s ease-in-out forwards;
+	        animation: reveal-out 0.5s ease-in-out forwards; 					-webkit-animation-delay: .5s; 					animation-delay: .5s;
+	z-index: 0;
+	mix-blend-mode: normal;
+}
+
+::view-transition-image-pair(root) {
+	isolation: isolate;
+}
+
+.toggle {
+	position: fixed;
+	top: 12px;
+	left: 50%;
+	transform: translateX(-50%) scale(.5);
+	cursor: pointer;
+	z-index: 10;
+}
+
+.toggle input {
+	display: none;
+}
+
+.toggle input + div {
+	border-radius: 50%;
+	width: 36px;
+	height: 36px;
+	position: relative;
+	box-shadow: inset 16px -16px 0 0 var(--toggle-color);
+	transform: scale(1) rotate(-2deg);
+	transition: box-shadow .5s ease 0s, transform .4s ease .1s;
+}
+
+.toggle input + div:before {
+	content: '';
+	width: inherit;
+	height: inherit;
+	border-radius: inherit;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: light-dark(transparent, var(--toggle-color));
+	transition: background .3s ease;
+}
+
+.toggle input + div:after {
+	content: '';
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	margin: -4px 0 0 -4px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	box-shadow: 0 -23px 0 var(--toggle-color),
+		0 23px 0 var(--toggle-color),
+		23px 0 0 var(--toggle-color),
+		-23px 0 0 var(--toggle-color),
+		15px 15px 0 var(--toggle-color),
+		-15px 15px 0 var(--toggle-color),
+		15px -15px 0 var(--toggle-color),
+		-15px -15px 0 var(--toggle-color);
+	transform: scale(0);
+	transition: all .3s ease;
+}
+
+.toggle input:checked + div {
+	box-shadow: inset 32px -32px 0 0 var(--background-color);
+	transform: scale(.5) rotate(0deg);
+	transition: transform .3s ease .1s, box-shadow .2s ease 0s;
+}
+
+.toggle input:checked + div:before {
+	background: var(--toggle-color);
+	transition: background .3s ease .1s;
+}
+
+.toggle input:checked + div:after {
+	transform: scale(1.5);
+	transition: transform .5s ease .15s;
+}
