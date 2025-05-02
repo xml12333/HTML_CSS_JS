@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Card Carousel (Vertical with JS, Version 1)</title>
+	<link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+	<!-- partial:index.partial.html -->
+	<div class="carousel-container">
+		<!-- Tabs -->
+		<div class="tabs" id="tabs"></div>
+
+		<!-- Carousel Viewport -->
+		<div class="carousel-wrapper">
+			<button class="nav-button up" onclick="scrollToCard(activeIndex - 1)">&#8593;</button>
+			<button class="nav-button down" onclick="scrollToCard(activeIndex + 1)">&#8595;</button>
+
+			<div class="carousel-track" id="track">
+				<!-- Cards will be inserted dynamically -->
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdn.tailwindcss.com"></script>
+	<!-- partial -->
+	<script src="./js/script.js"></script>
+
+</body>
+</html>
