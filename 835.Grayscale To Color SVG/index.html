@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Grayscale to Color SVG Filter</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="container">
+	<h1>Grayscale to Color SVG Filter</h1>
+	<canvas id="imageCanvas"></canvas>
+	<div id="controls">
+		<div class="channel">
+			<label>Red (Dark)</label>
+			<input type="range" id="r0" min="0" max="1" step="0.01" value="0.17">
+			<label>Red (Mid)</label>
+			<input type="range" id="r1" min="0" max="1" step="0.01" value="0.61">
+			<label>Red (Light)</label>
+			<input type="range" id="r2" min="0" max="1" step="0.01" value="0.1">
+		</div>
+		<div class="channel">
+			<label>Green (Dark)</label>
+			<input type="range" id="g0" min="0" max="1" step="0.01" value="0.06">
+			<label>Green (Mid)</label>
+			<input type="range" id="g1" min="0" max="1" step="0.01" value="0.38">
+			<label>Green (Light)</label>
+			<input type="range" id="g2" min="0" max="1" step="0.01" value="0.89">
+		</div>
+		<div class="channel">
+			<label>Blue (Dark)</label>
+			<input type="range" id="b0" min="0" max="1" step="0.01" value="0.1">
+			<label>Blue (Mid)</label>
+			<input type="range" id="b1" min="0" max="1" step="0.01" value="0.3">
+			<label>Blue (Light)</label>
+			<input type="range" id="b2" min="0" max="1" step="0.01" value="0.8">
+		</div>
+	</div>
+	<div id="filterOutput">
+		<label>SVG Filter Code:</label>
+		<textarea id="filterCode" readonly></textarea>
+	</div>
+</div>
+
+<svg width="0" height="0">
+	<defs>
+		<filter id="colorize">
+			<feComponentTransfer>
+				<feFuncR type="table" tableValues="0.17 0.61 0.1"/>
+        <feFuncG type="table" tableValues="0.06 0.38 0.89"/>
+				<feFuncB type="table" tableValues="0.1 0.3 0.8"></feFuncB>
+			</feComponentTransfer>
+		</filter>
+	</defs>
+</svg>
+<!-- partial -->
+  <script  src="./js/script.js"></script>
+
+</body>
+</html>
