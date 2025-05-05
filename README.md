@@ -839,6 +839,7 @@
 |833| [Card Carousel](https://github.com/xml12333/HTML_CSS_JS/tree/main/833.Card%20Carousel)| [Demo](https://nikt.com.ua/projects/htmlCssJs/833.Card%20Carousel/)|
 |834| [Product Swiper](https://github.com/xml12333/HTML_CSS_JS/tree/main/834.Product%20Swiper)| [Demo](https://nikt.com.ua/projects/htmlCssJs/834.Product%20Swiper/)|
 |835| [Grayscale To Color SVG](https://github.com/xml12333/HTML_CSS_JS/tree/main/835.Grayscale%20To%20Color%20SVG)| [Demo](https://nikt.com.ua/projects/htmlCssJs/835.Grayscale%20To%20Color%20SVG/)|
+|836| [Image Zoom on Hover](https://github.com/xml12333/HTML_CSS_JS/tree/main/836.Image%20Zoom%20on%20Hover)| [Demo](https://nikt.com.ua/projects/htmlCssJs/836.Image%20Zoom%20on%20Hover/)|
 |884| [Spinning Earth](https://github.com/xml12333/HTML_CSS_JS/tree/main/884.Spinning%20Earth)| [Demo](https://nikt.com.ua/projects/htmlCssJs/884.Spinning%20Earth/)|
 |885| [Scroll-Grid](https://github.com/xml12333/HTML_CSS_JS/tree/main/885.Scroll-Grid)| [Demo](https://nikt.com.ua/projects/htmlCssJs/885.Scroll-Grid/)|
 |886| [Four Text Shadows](https://github.com/xml12333/HTML_CSS_JS/tree/main/886.Four%20Text%20Shadows)| [Demo](https://nikt.com.ua/projects/htmlCssJs/886.Four%20Text%20Shadows/)|
