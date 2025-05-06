@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Toggle with [type=radio] + :has()</title>
+  <link rel="stylesheet" href="https://public.codepenassets.com/css/normalize-5.0.0.min.css">
+<link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="control">
+      <div class="control__track">
+        <div class="indicator"></div>
+        <label for="free">Free</label>
+        <input class="sr-only" type="radio" name="tier" id="free" checked />
+        <div class="premium">
+          <div class="indicator"></div>
+          <label for="solo"
+            ><span>Solo</span><span class="sr-only">Premium Solo</span></label
+          >
+          <input class="sr-only" type="radio" name="tier" id="solo" />
+          <label for="team"
+            ><span>Team</span><span class="sr-only">Premium Team</span></label
+          >
+          <input class="sr-only" type="radio" name="tier" id="team" />
+        </div>
+      </div>
+    </div>
+ 
+<!-- partial -->
+  <script type="module" src="./js/script.js"></script>
+
+</body>
+</html>
