@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #012;
+}
+
+.baseLight {
+    position: fixed;
+    inset: calc(50% - (var(--ball-size) * 6));
+    background-image: radial-gradient(closest-side, #fff, 2%, transparent);
+}
+
+.shadows, .balls {
+    position: fixed;
+    inset: 50%; 
+}
+
+.shadow {
+    --_translate: calc(var(--dist-factor) * var(--ball-size));
+
+    position: absolute;
+    width: calc(var(--ball-size) * 2);
+    height: calc(var(--ball-size) * 1);
+    transform-origin: left;
+    background-image: linear-gradient(to right, #000, transparent);
+    opacity: var(--dist-factor, 0);
+    transform:
+        rotate(calc(var(--angle) * 1rad))
+        translate(var(--_translate))
+        perspective(calc(var(--ball-size) * 2))
+        rotateY(calc(var(--dist-factor) * -50deg - 20deg));
+}
+
+.ball {
+    --_bpx1: calc(var(--dist-factor) * 100% - 100%);
+    --_bpx2: calc(var(--dist-factor) * -100% + 50%);
+    --_translate: calc(var(--dist-factor) * var(--ball-size));
+
+    position: absolute;
+    width: var(--ball-size);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: hsl(var(--hue), 100%, 50%);
+    background-image:
+        radial-gradient(circle at var(--_bpx1, -100%) 50%, #fff, 25%, transparent),
+        radial-gradient(circle at var(--_bpx2, 50%) 50%, transparent, #000a 100%);
+    background-repeat: no-repeat;
+    transform: rotate(calc(var(--angle, 0) * 1rad)) translate(var(--_translate));
+
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        inset: calc(var(--ball-size) * 0.3);
+        background-color: #fff;
+        border-radius: 50%;
+        background-image:
+            radial-gradient(closest-side, transparent 50%, #000),
+            radial-gradient(circle at 30% 50%, #000 35%, transparent 40%);
+        transform:
+            rotate(calc(var(--angle, 0) * -1rad))
+            translate(calc(var(--ball-size) * var(--_tx, -0.2)), calc(var(--ball-size) * -0.1))
+            scaleY(var(--dist-factor, 0))
+            rotate(calc(var(--angle, 0) * 1rad));
+    }
+
+    &::after {
+        --_tx: 0.2;
+    }
+}
