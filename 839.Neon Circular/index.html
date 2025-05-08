@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Neon Circular pattern #anydayshaders 39</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<shader-art autoplay role="img" aria-label="a neon animated basic circular color pattern, which slightly look like water ripples">
+
+  <uniform name="zoom" type="float" value="28" min="0.1" max="100" step="0.01"/>
+  <uniform name="colorCycleSpeed" type="float" value="10" min="0.1" max="100" step="0.01" />
+  <uniform name="waveIntensity" type="float" value="5" min="0.1" max="10" step="0.01" />
+  <script type="text/buffer" id="position" data-size="2">
+    [-1, 1, -1,-1, 1,1, 1, 1, -1,-1, 1,-1]
+  </script>
+  <script type="text/buffer" id="uv" data-size="2">
+    [ 0, 0,  0, 1, 1,0, 1, 0,  0, 1, 1, 1]
+  </script>
+ 
+  <script type="vert">
+    precision highp float;
+    attribute vec4 position;
+    attribute vec2 uv;
+    
+    varying vec2 vUv;
+    varying vec4 vPos;
+    void main() {
+      gl_Position = position;
+      vUv = uv;
+      vPos = position;
+    }
+  </script>
+
+  <script type="frag">
+    precision highp float;
+    uniform float time;
+    uniform vec2 resolution;
+    uniform float zoom;
+    uniform float colorResolution;
+    uniform float colorCycleSpeed;
+    uniform float waveIntensity;
+    uniform float rFreq;
+    uniform float gFreq;
+    uniform float bFreq;
+    uniform float lParam;
+    varying vec2 vUv;
+    varying vec4 vPos;
+    
+    
+    vec3 palette( in float t, in vec3 a, in vec3 b, in vec3 c, in vec3 d )
+    {
+      return a + b*cos( 6.283185*(c*t+d) );
+    }
+    
+    vec3 twilight( in float t) {
+      return palette(t, vec3(0.5), vec3(0.5), vec3(2.,1., 0.), vec3(0.5, .2, .25));
+    }
+    
+    vec3 rainbow( in float t) {
+      return palette(t, vec3(0.5), vec3(0.5), vec3(0.5), vec3(0., 0.33, 0.67));
+    }
+    
+    vec3 reducecolors(vec3 color, float n) {
+      return floor(color * n) / n;
+    }
+    
+    float f(float x) {
+      return 0.5 + 0.5*sin(x * 10.);
+    }
+    
+    float g(float x) {
+      return f(x * 2.);
+    }
+    
+    float min3(float a,float b, float c) { return min(a,min(b,c));}
+    float nsin(float x) { return 0.5 + 0.5 * sin(x); }
+    float ncos(float x) { return 0.5 + 0.5 * cos(x); }
+
+    float sawtooth(float x) {
+      return mod(x, 2.);
+    }
+    
+    float sine(float a, float w, float x, float b) {
+      return a * sin(w * x + b);
+    }
+    
+    float L(float x) {
+      return sine(x,x, 60., 0.);
+    }
+    
+    void main() {
+      vec2 p = vec2(vPos.x * resolution.x / resolution.y, vPos.y) * (100. - zoom) * 0.01;
+      float t = time * .1;
+      float m= (1. + sin(p.x * p.y * waveIntensity + time * 0.1) * cos(p.y * waveIntensity + time) * sin(p.x * waveIntensity + time));
+      float l1 = L(length(p) + m * 0.02);
+      float l2 = L(length(p) + m * 0.06);
+      float l = min(l1, l2);
+      vec3 c0 = twilight(nsin(l + length(p) * 2. - time * colorCycleSpeed * 0.01));
+      vec3 black = vec3(0.);
+      vec3 white = vec3(1.);
+      vec3 c = mix(c0, white, 
+        clamp((l*l) * 4.,0.0,1.0)
+      );
+      c = mix(c, black, clamp((l*l) * 16.,0.0,1.0));
+      gl_FragColor = vec4(c, 1.);
+    }
+  </script>
+</shader-art>
+<!-- partial -->
+  <script type="module" src="./js/script.js"></script>
+
+</body>
+</html>
