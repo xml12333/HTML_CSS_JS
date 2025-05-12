@@ -1,0 +1,637 @@
+@import url("https://fonts.cdnfonts.com/css/thegoodmonolith");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: #f0f0f0;
+  font-family: "TheGoodMonolith", monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: 24px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.animation-container {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible;
+  transition: border-color 0.3s ease;
+}
+
+.animation-container:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.animation-title {
+  margin-bottom: 30px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.menu-container {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+/* Corner decorations for all animation containers */
+.corner {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  color: white;
+  opacity: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.corner svg {
+  width: 100%;
+  height: 100%;
+}
+
+.top-left {
+  top: -8px;
+  left: -8px;
+}
+
+.top-right {
+  top: -8px;
+  right: -8px;
+  transform: rotate(90deg);
+}
+
+.bottom-left {
+  bottom: -8px;
+  left: -8px;
+  transform: rotate(-90deg);
+}
+
+.bottom-right {
+  bottom: -8px;
+  right: -8px;
+  transform: rotate(180deg);
+}
+
+/* ------------------ 1. Dots Grid ------------------ */
+.dots-grid {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dots-grid .dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.dots-grid .dot:nth-child(1) {
+  top: 15px;
+  left: 15px;
+}
+
+.dots-grid .dot:nth-child(2) {
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dots-grid .dot:nth-child(3) {
+  top: 15px;
+  right: 15px;
+}
+
+.dots-grid .dot:nth-child(4) {
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+}
+
+.dots-grid .dot:nth-child(5) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dots-grid .dot:nth-child(6) {
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+}
+
+.dots-grid .dot:nth-child(7) {
+  bottom: 15px;
+  left: 15px;
+}
+
+.dots-grid .dot:nth-child(8) {
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dots-grid .dot:nth-child(9) {
+  bottom: 15px;
+  right: 15px;
+}
+
+/* ------------------ 2. Text Morph ------------------ */
+.text-morph {
+  position: relative;
+  width: 75px;
+  height: 20px;
+}
+
+.text-morph span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.text-morph .text-container {
+  position: relative;
+  width: 60px;
+  height: 100%;
+  overflow: hidden;
+  margin-left: 15px;
+}
+
+.text-morph .menu {
+  transform: translateY(0);
+}
+
+.text-morph .close {
+  transform: translateY(20px);
+}
+
+.text-morph .circle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border-radius: 50%;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+/* ------------------ 3. Plus Morph ------------------ */
+.plus-morph {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plus-morph .line {
+  position: absolute;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+}
+
+.plus-morph .horizontal {
+  width: 30px;
+  height: 4px;
+  transform: translate(-50%, -50%);
+}
+
+.plus-morph .vertical {
+  height: 30px;
+  width: 4px;
+  transform: translate(-50%, -50%);
+}
+
+/* ------------------ 4. Circle Pulse ------------------ */
+.circle-pulse {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  overflow: visible;
+}
+
+.circle-pulse .circle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.circle-pulse .ring {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 2;
+}
+
+.circle-pulse .particles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.circle-pulse .particle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #fff;
+  background-color: transparent;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+.circle-pulse .wave {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+/* ------------------ 5. 3D Cube ------------------ */
+.cube-spin {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  perspective: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cube-spin .cube {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  transform-style: preserve-3d;
+  transform: rotateY(0);
+}
+
+.cube-spin .face {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
+}
+
+.cube-spin .front {
+  transform: translateZ(20px);
+}
+
+.cube-spin .right {
+  transform: rotateY(90deg) translateZ(20px);
+}
+
+.cube-spin .back {
+  transform: rotateY(180deg) translateZ(20px);
+}
+
+.cube-spin .left {
+  transform: rotateY(-90deg) translateZ(20px);
+}
+
+/* Plus symbol on front */
+.cube-spin .plus-symbol {
+  position: relative;
+  width: 26px;
+  height: 26px;
+}
+
+.cube-spin .plus-symbol .line {
+  position: absolute;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cube-spin .plus-symbol .horizontal {
+  width: 26px;
+  height: 4px;
+}
+
+.cube-spin .plus-symbol .vertical {
+  width: 4px;
+  height: 26px;
+}
+
+/* X symbol on right face */
+.cube-spin .x-symbol {
+  position: relative;
+  width: 26px;
+  height: 26px;
+}
+
+.cube-spin .x-symbol .line {
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+}
+
+.cube-spin .x-symbol .line:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.cube-spin .x-symbol .line:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* ------------------ 6. Stacked Circles ------------------ */
+.stacked-circles {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stacked-circles .circle {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.stacked-circles .circle:nth-child(1) {
+  opacity: 1;
+  z-index: 5;
+}
+
+.stacked-circles .circle:nth-child(2) {
+  opacity: 0.8;
+  transform: translate(calc(-50% + 5px), -50%);
+  z-index: 4;
+}
+
+.stacked-circles .circle:nth-child(3) {
+  opacity: 0.6;
+  transform: translate(calc(-50% + 10px), -50%);
+  z-index: 3;
+}
+
+.stacked-circles .circle:nth-child(4) {
+  opacity: 0.4;
+  transform: translate(calc(-50% + 15px), -50%);
+  z-index: 2;
+}
+
+.stacked-circles .circle:nth-child(5) {
+  opacity: 0.2;
+  transform: translate(calc(-50% + 20px), -50%);
+  z-index: 1;
+}
+
+/* ------------------ 7. Rotating Circles ------------------ */
+.rotating-circles {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rotating-circles .circle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+/* ------------------ 8. Isometric Cube ------------------ */
+.isometric-cube {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  perspective: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.isometric-cube .cube {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  transform-style: preserve-3d;
+  transform: rotateX(35.264deg) rotateY(45deg);
+}
+
+.isometric-cube .face {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #222;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) inset;
+}
+
+.isometric-cube .front {
+  transform: translateZ(15px);
+}
+
+.isometric-cube .back {
+  transform: rotateY(180deg) translateZ(15px);
+}
+
+.isometric-cube .right {
+  transform: rotateY(90deg) translateZ(15px);
+}
+
+.isometric-cube .left {
+  transform: rotateY(-90deg) translateZ(15px);
+}
+
+.isometric-cube .top {
+  transform: rotateX(90deg) translateZ(15px);
+}
+
+.isometric-cube .bottom {
+  transform: rotateX(-90deg) translateZ(15px);
+}
+
+/* Plus symbol */
+.isometric-cube .plus-symbol {
+  position: relative;
+  width: 12px;
+  height: 12px;
+}
+
+.isometric-cube .plus-symbol .line {
+  position: absolute;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.isometric-cube .plus-symbol .horizontal {
+  width: 12px;
+  height: 2px;
+}
+
+.isometric-cube .plus-symbol .vertical {
+  width: 2px;
+  height: 12px;
+}
+
+/* X symbol */
+.isometric-cube .x-symbol {
+  position: relative;
+  width: 12px;
+  height: 12px;
+}
+
+.isometric-cube .x-symbol .line {
+  position: absolute;
+  width: 12px;
+  height: 2px;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+}
+
+.isometric-cube .x-symbol .line:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.isometric-cube .x-symbol .line:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* ------------------ 9. Expanding Circles ------------------ */
+.expanding-circles {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.expanding-circles .circle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: 1;
+}
+
+.expanding-circles .circle.extra {
+  opacity: 0;
+}
+
+.expanding-circles .circle.micro {
+  width: 4px;
+  height: 4px;
+  opacity: 0;
+}
