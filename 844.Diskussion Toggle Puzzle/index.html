@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Diskussion Toggle Puzzle</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+  <!-- partial:index.partial.html -->
+  <div class="ui">
+    <div class="title">Diskussion</div>
+
+    <div class="shuffle">Shuffle</div>
+
+    <div class="solved true">SOLVED</div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="direction bottomup">
+      <path
+        d="m14.707 12.707-4 4a1 1 0 0 1-1.414-1.414L12.586 12 9.293 8.707a1 1 0 1 1 1.414-1.414l4 4a1 1 0 0 1 0 1.414z" />
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="direction topup">
+      <path
+        d="m14.707 12.707-4 4a1 1 0 0 1-1.414-1.414L12.586 12 9.293 8.707a1 1 0 1 1 1.414-1.414l4 4a1 1 0 0 1 0 1.414z" />
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="direction top">
+      <path
+        d="m14.707 12.707-4 4a1 1 0 0 1-1.414-1.414L12.586 12 9.293 8.707a1 1 0 1 1 1.414-1.414l4 4a1 1 0 0 1 0 1.414z" />
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="direction right">
+      <path
+        d="m14.707 12.707-4 4a1 1 0 0 1-1.414-1.414L12.586 12 9.293 8.707a1 1 0 1 1 1.414-1.414l4 4a1 1 0 0 1 0 1.414z" />
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="direction bottom">
+      <path
+        d="m14.707 12.707-4 4a1 1 0 0 1-1.414-1.414L12.586 12 9.293 8.707a1 1 0 1 1 1.414-1.414l4 4a1 1 0 0 1 0 1.414z" />
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="direction left">
+      <path
+        d="m14.707 12.707-4 4a1 1 0 0 1-1.414-1.414L12.586 12 9.293 8.707a1 1 0 1 1 1.414-1.414l4 4a1 1 0 0 1 0 1.414z" />
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="circle" id="A" data-pos="0">
+      <div data-cur="a" data-static="2"></div>
+      <div data-cur="a" data-static="3"></div>
+      <div data-cur="a" data-static="4"></div>
+      <div data-cur="" data-static="5"></div>
+      <div data-cur="a" data-static="0"></div>
+      <div data-cur="a" data-static="1"></div>
+    </div>
+    <div class="circle" id="B" data-pos="0">
+      <div data-cur="b" data-static="0"></div>
+      <div data-cur="b" data-static="1"></div>
+      <div data-cur="b" data-static="2"></div>
+      <div data-cur="b" data-static="3"></div>
+      <div data-cur="" data-static="4"></div>
+      <div data-cur="b" data-static="5"></div>
+    </div>
+    <div class="circle" id="C" data-pos="0">
+      <div data-cur="" data-static="5"></div>
+      <div data-cur="c" data-static="0"></div>
+      <div data-cur="c" data-static="1"></div>
+      <div data-cur="c" data-static="2"></div>
+      <div data-cur="c" data-static="3"></div>
+      <div data-cur="c" data-static="4"></div>
+    </div>
+    <div class="circle" id="D" data-pos="0">
+      <div data-cur="d" data-static="3"></div>
+      <div data-cur="" data-static="4"></div>
+      <div data-cur="d" data-static="5"></div>
+      <div data-cur="d" data-static="0"></div>
+      <div data-cur="d" data-static="1"></div>
+      <div data-cur="d" data-static="2"></div>
+    </div>
+
+    <div class="arrow a">
+      <div class="left"></div>
+      <div class="right"></div>
+    </div>
+    <div class="arrow b">
+      <div class="left"></div>
+      <div class="right"></div>
+    </div>
+    <div class="arrow c">
+      <div class="left"></div>
+      <div class="right"></div>
+    </div>
+    <div class="arrow d">
+      <div class="left"></div>
+      <div class="right"></div>
+    </div>
+  </div>
+  <!-- partial -->
+  <script src="./js/script.js"></script>
+
+</body>
+</html>
