@@ -1,0 +1,44 @@
+- const delay = 0.5;
+- const dur = delay * 4;
+- const count = 10;
+- const w = 300;
+- const h = w * 3;
+- const x1 = w / 7;
+- const x2 = w / 4;
+- const x3 = w / 2;
+- const y1 = h / 20;
+- const y2 = h / 10;
+- const y3 = h / 5;
+- const y4 = h / 3;
+- const y5 = h / 1.2;
+
+- const flatStart = `M0 ${y1} C${x1} ${y1} ${x2} ${y1} ${x2} ${y1}`;
+- const flatEnd = `C${x3} ${y1} ${x3} ${y1} ${x3} ${y1}`;
+- const dropPath = `M${x3} ${y1}C${x3} ${y1} ${x2} ${y1} ${x3} ${y1}`;
+- const midPath = `C${x1} ${y1} ${x3} ${y1} ${x3} ${y2} M${x3} ${y2} C${x3} ${y3} ${x2} ${y3} ${x3} ${y4}`;
+- const risePath = `C${x3} ${y1} ${x3} ${y2} ${x3} ${y4} M${x3} ${y4} C${x3} ${y4} ${x2} ${y5} ${x3} ${y5}`;
+- const pullPath = `M${x3} ${h} C${x3} ${h} ${x3} ${h} ${x2} ${h}`;
+- const pathValues = `${flatStart} ${flatEnd} ${dropPath}; ${flatStart} ${midPath}; ${flatStart} ${risePath}; ${flatStart} ${flatEnd} ${pullPath}`;
+
+mixin pathAnimation(index)
+  animate(
+    attributeName='d'
+    dur=`${dur}s`
+    repeatCount='indefinite'
+    values=pathValues
+    keyTimes="0; 0.2; 0.8; 1"
+    begin=`${delay * Math.cos(index)}s`
+  )
+
+svg(
+  width=w * count
+  height=h
+  viewBox=`0 0 ${w * count} ${h}`
+  xmlns='http://www.w3.org/2000/svg'
+)
+  each val, i in [...Array(count)]
+    g(transform=`translate(${i * w}, 0)`)
+      path
+        +pathAnimation(i)
+      path(transform=`translate(${w}, 0) scale(-1, 1)`)
+        +pathAnimation(i)

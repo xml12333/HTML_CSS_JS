@@ -1,0 +1,17 @@
+body {
+	height: 100vh;
+	margin: 0;
+	display: flex;
+	padding: 0;
+	align-items: center;
+	justify-itens: space-around;
+	background: #420;
+}
+
+path {
+	stroke: #e90;
+	stroke-width: 5px;
+	stroke-linecap: butt;
+	stroke-linejoin: round;
+	fill: none;
+}
