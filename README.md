@@ -850,6 +850,7 @@
 |844| [Diskussion Toggle Puzzle](https://github.com/xml12333/HTML_CSS_JS/tree/main/844.Diskussion%20Toggle%20Puzzle)| [Demo](https://nikt.com.ua/projects/htmlCssJs/844.Diskussion%20Toggle%20Puzzle/)|
 |845| [Oily Staff](https://github.com/xml12333/HTML_CSS_JS/tree/main/845.Oily%20Staff)| [Demo](https://nikt.com.ua/projects/htmlCssJs/845.Oily%20Staff/)|
 |846| [Kebab](https://github.com/xml12333/HTML_CSS_JS/tree/main/846.Kebab)| [Demo](https://nikt.com.ua/projects/htmlCssJs/846.Kebab/)|
+|847| [Glitchify Image](https://github.com/xml12333/HTML_CSS_JS/tree/main/847.Glitchify%20Image)| [Demo](https://nikt.com.ua/projects/htmlCssJs/847.Glitchify%20Image/)|
 |884| [Spinning Earth](https://github.com/xml12333/HTML_CSS_JS/tree/main/884.Spinning%20Earth)| [Demo](https://nikt.com.ua/projects/htmlCssJs/884.Spinning%20Earth/)|
 |885| [Scroll-Grid](https://github.com/xml12333/HTML_CSS_JS/tree/main/885.Scroll-Grid)| [Demo](https://nikt.com.ua/projects/htmlCssJs/885.Scroll-Grid/)|
 |886| [Four Text Shadows](https://github.com/xml12333/HTML_CSS_JS/tree/main/886.Four%20Text%20Shadows)| [Demo](https://nikt.com.ua/projects/htmlCssJs/886.Four%20Text%20Shadows/)|
