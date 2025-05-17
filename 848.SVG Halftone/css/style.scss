@@ -1,0 +1,11 @@
+body {
+	background: oklch(from #fe0 .9 .064 h);
+  font-family: sans-serif;
+  padding: 1rem;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  filter: none;
+}
