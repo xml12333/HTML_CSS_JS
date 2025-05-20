@@ -854,6 +854,7 @@
 |848| [SVG Halftone](https://github.com/xml12333/HTML_CSS_JS/tree/main/848.SVG%20Halftone)| [Demo](https://nikt.com.ua/projects/htmlCssJs/848.SVG%20Halftone/)|
 |849| [Circular Animation](https://github.com/xml12333/HTML_CSS_JS/tree/main/849.Circular%20Animation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/849.Circular%20Animation/)|
 |850| [Carousel LightBox Glow](https://github.com/xml12333/HTML_CSS_JS/tree/main/850.Carousel%20LightBox%20Glow)| [Demo](https://nikt.com.ua/projects/htmlCssJs/850.Carousel%20LightBox%20Glow/)|
+|851| [Glass Refraction](https://github.com/xml12333/HTML_CSS_JS/tree/main/851.Glass%20Refraction)| [Demo](https://nikt.com.ua/projects/htmlCssJs/851.Glass%20Refraction/)|
 |884| [Spinning Earth](https://github.com/xml12333/HTML_CSS_JS/tree/main/884.Spinning%20Earth)| [Demo](https://nikt.com.ua/projects/htmlCssJs/884.Spinning%20Earth/)|
 |885| [Scroll-Grid](https://github.com/xml12333/HTML_CSS_JS/tree/main/885.Scroll-Grid)| [Demo](https://nikt.com.ua/projects/htmlCssJs/885.Scroll-Grid/)|
 |886| [Four Text Shadows](https://github.com/xml12333/HTML_CSS_JS/tree/main/886.Four%20Text%20Shadows)| [Demo](https://nikt.com.ua/projects/htmlCssJs/886.Four%20Text%20Shadows/)|
