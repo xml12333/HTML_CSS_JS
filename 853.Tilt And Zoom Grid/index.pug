@@ -1,0 +1,398 @@
+- let base = 'unsplash.com/photo';
+- let data = [
+- 	{
+-			code: '1465146344425-f00d5f5c8f07', 
+- 		link: 'orange-flowers-IicyiaPYGGI', 
+- 		text: 'lots of poppies in a field', 
+- 		name: 'Henry Be'
+- 	}, 
+- 	{
+-			code: '1505820013142-f86a3439c5b2', 
+- 		link: 'red-and-white-mushroom-Dm-qxdynoEc', 
+- 		text: 'fly agaric, a large white-gilled, white-spotted red mushroom', 
+- 		name: 'Florian van Duyn'
+- 	}, 
+- 	{
+-			code: '1471879832106-c7ab9e0cee23', 
+- 		link: 'macro-photography-of-drop-of-water-on-top-of-green-plant-Kp9z6zcUfGw', 
+- 		text: 'macro photography of drop of water on top of unfurled leaf', 
+- 		name: 'Aaron Burden'
+- 	}, 
+- 	{
+-			code: '1518963534257-f901d4d46f59', 
+- 		link: 'purple-flowers-photo-MVr6pgZzlbY', 
+- 		text: 'purple crocus rising from the snow', 
+- 		name: 'Johannes Plenio'
+- 	}, 
+- 	{
+-			code: '1493166228553-4fa0fdb916e8', 
+- 		link: 'tree-trunks-and-fallen-leaves-on-the-forest-floor--UmCb7gAAUI', 
+- 		text: 'tree trunks and fallen leaves on the forest floor', 
+- 		name: 'Craig Strahorn'
+- 	}, 
+- 	{
+-			code: '1483206048520-2321c1a5fb36', 
+- 		link: 'lightning-during-nighttime-t9LjTYOTw_g', 
+- 		text: 'lightning during nighttime, turning sky purple', 
+- 		name: 'Jorge Rojas'
+- 	}, 
+- 	{
+-			code: '1421789665209-c9b2a435e3dc', 
+- 		link: 'selective-photography-of-green-leaf-plant-Rfflri94rs8', 
+- 		text: 'conifer sapling close-up', 
+- 		name: 'Matthew Smith'
+- 	}, 
+- 	{
+-			code: '1475776408506-9a5371e7a068', 
+- 		link: 'volcano-eruption-during-daytime-qexZLgMcbPc', 
+- 		text: 'massive ash cloud above erupting volcano', 
+- 		name: 'Yosh Ginsu'
+- 	}, 
+- 	{
+-			code: '1457270508644-1e4905fabd7e', 
+- 		link: 'selective-focus-photography-snowflakes-9yhy1FXlKwI', 
+- 		text: 'crystal structure of snowflakes', 
+- 		name: 'Aaron Burden'
+- 	}, 
+- 	{
+-			code: '1496851925983-9c879a7038de', 
+- 		link: 'macro-photography-of-dandelion-NTbZzC7FuRw', 
+- 		text: 'macro photography of dandelion', 
+- 		name: 'Luca Campioni'
+- 	}, 
+- 	{
+-			code: '1539634262233-7c0b48ab9503', 
+- 		link: 'rock-formation-on-body-of-water-8zD7rs8UpxU', 
+- 		text: 'view of sea stacks and an islet further away whose peaks disappear into the clouds from across the water', 
+- 		name: 'Sebastian Boring'
+- 	}, 
+- 	{
+-			code: '1506057213367-028a17ec52e5', 
+- 		link: 'black-and-red-clouds-n20DUSVsUk8', 
+- 		text: 'dramatic sky with dark clouds partly lit up in red', 
+- 		name: 'Dan Aragón'
+- 	}, 
+- 	{
+-			code: '1518977877150-35db786d223a', 
+- 		link: 'green-leaf-dQrWTGi_atM', 
+- 		text: 'green leaf details', 
+- 		name: 'Becca Lavin'
+- 	}, 
+- 	{
+-			code: '1527766833261-b09c3163a791', 
+- 		link: 'photo-of-body-of-water-and-droplets-ZxZQk7777R4', 
+- 		text: 'raindrops falling in a puddle on the road', 
+- 		name: 'Alex Dukhanov'
+- 	}, 
+- 	{
+-			code: '1505765050516-f72dcac9c60e', 
+- 		link: 'landscape-photography-of-black-mountain-y2azHvupCVo', 
+- 		text: 'mountain with snowy peaks rising above the clouds', 
+- 		name: 'Eberhard Grossgasteiger'
+- 	}, 
+- 	{
+-			code: '1539192262370-c2e258ff1cf5', 
+- 		link: 'close-up-photo-of-seashore-Hie0wB5R1GY', 
+- 		text: 'close-up photo of seashore', 
+- 		name: 'Oliver Paaske'
+- 	}, 
+- 	{
+-			code: '1476970980147-71209edbfa4f', 
+- 		link: 'green-northern-lights-at-night-Ejpx_sdKEKo', 
+- 		text: 'green Northern Lights at night', 
+- 		name: 'Jonathan Bean'
+- 	}, 
+- 	{
+-			code: '1539362286735-21789f9187f7', 
+- 		link: 'galaxy-hWOwYb4Lz3U', 
+- 		text: 'night sky with Southern Cross and Centaurus seen from the mountains', 
+- 		name: 'Bruce Timaná'
+- 	}, 
+- 	{
+-			code: '1539485420953-992679a61975', 
+- 		link: 'rock-formation-YNsQJLOhEXk', 
+- 		text: 'natural rock arch with a dead tree and a bunch of shrubs in front', 
+- 		name: 'Clark Tibbs'
+- 	}, 
+- 	{
+-			code: '1499748926165-1085fc69e9fc', 
+- 		link: 'rock-formation-eQu4HfK53lk', 
+- 		text: 'rocks carved by water erosion', 
+- 		name: 'Naveen Prajapat'
+- 	}, 
+- 	{
+-			code: '1539693565400-356293b6df0f', 
+- 		link: 'pile-of-brown-wilted-leaves-6rNitHsIU3c', 
+- 		text: 'brown wilted leaves fallen on the grass', 
+- 		name: 'Wes Hicks'
+- 	}, 
+- 	{
+-			code: '1539678786826-79e8b51b457a', 
+- 		link: 'green-trees-with-smoky-mountain-Ae64KHAzt1I', 
+- 		text: 'moody landscape: green trees on a smoky mountain', 
+- 		name: 'Louis Maniquet'
+- 	}, 
+- 	{
+-			code: '1539470090907-7cc242c37af5', 
+- 		link: 'silhouette-of-pink-hibiscus-aLoqgNAyxDs', 
+- 		text: 'pink hibiscus close-up', 
+- 		name: 'John Wilander'
+- 	}, 
+- 	{
+-			code: '1501854140801-50d01698950b', 
+- 		link: 'birds-eye-view-photograph-of-green-mountains-01_igFr7hd4', 
+- 		text: 'bird\'s eye view of monthane grasslands and sheep', 
+- 		name: 'Qingbao Meng'
+- 	}, 
+- 	{
+-			code: '1500673922987-e212871fec22', 
+- 		link: 'yellow-lights-between-trees-hvrpOmuMrAI', 
+- 		text: 'golden pathway through a dark forest in the autumn', 
+- 		name: 'Johannes Plenio'
+- 	}, 
+- 	{
+-			code: '1426604966848-d7adac402bff', 
+- 		link: 'landmark-photography-of-trees-near-rocky-mountain-under-blue-skies-daytime-ndN00KmbJ1c', 
+- 		text: 'green trees near granite monolith under blue skies', 
+- 		name: 'Adam Kool'
+- 	}, 
+- 	{
+-			code: '1475598322381-f1b499717dda', 
+- 		link: 'lava-dripping-to-ocean-E4944K_4SvI', 
+- 		text: 'rivers of lava meet the ocean and throw up sulfurous steam clouds', 
+- 		name: 'Buzz Andersen'
+- 	}, 
+- 	{
+-			code: '1497436072909-60f360e1d4b1', 
+- 		link: 'birds-eye-view-photography-of-trees-and-body-of-water-mawU2PoJWfU', 
+- 		text: 'aerial view of lake and trees next to it', 
+- 		name: 'Andreas Gücklhorn'
+- 	}, 
+- 	{
+-			code: '1444090542259-0af8fa96557e', 
+- 		link: 'landscape-photography-of-mountains-with-cloudy-skies-during-golden-hour-RbbdzZBKRDY', 
+- 		text: 'mountain peaks rising from the clouds during golden hour', 
+- 		name: 'Nitish Meena'
+- 	}, 
+- 	{
+-			code: '1420745981456-b95fe23f5753', 
+- 		link: 'low-angle-photography-of-green-leaf-trees-at-daytime-buF62ewDLcQ', 
+- 		text: 'low-angle photography of mostly bamboo trees at daytime', 
+- 		name: 'Jason Ortego'
+- 	}, 
+- 	{
+-			code: '1445964047600-cdbdb873673d', 
+- 		link: 'photo-of-muddy-road-in-forest-CoD2Q92UaEg', 
+- 		text: 'photo of muddy forest road, covered in autumn leaves', 
+- 		name: 'Sebastian Unrau'
+- 	}, 
+- 	{
+-			code: '1504700610630-ac6aba3536d3', 
+- 		link: 'mirror-photography-of-mountain-and-trees-near-body-of-water-2VDa8bnLM8c', 
+- 		text: 'trees and mountain behind them reflected in the lake in the foreground', 
+- 		name: 'Riccardo Chiarini'
+- 	}, 
+- 	{
+-			code: '1539567601-bf304c363f16', 
+- 		link: 'pumpkin-lot-xtpQx26ABbM', 
+- 		text: 'many pumpkins', 
+- 		name: 'Bri Tucker'
+- 	}, 
+- 	{
+-			code: '1472214103451-9374bd1c798e', 
+- 		link: 'green-grass-field-during-sunset-_RBcxo9AU-U', 
+- 		text: 'stones forming circles on a green grass pateau', 
+- 		name: 'Robert Lukeman'
+- 	}, 
+- 	{
+-			code: '1490682143684-14369e18dce8', 
+- 		link: 'mountains-and-tree-range-during-golden-hour-8c6eS43iq1o', 
+- 		text: 'valley between tree-covered mountains during golden hour', 
+- 		name: 'Artem Sapegin'
+- 	}, 
+- 	{
+-			code: '1470813740244-df37b8c1edcb', 
+- 		link: 'blue-starry-night-1OtUkD_8svc', 
+- 		text: 'blue starry night sky seen from ravine', 
+- 		name: 'Mark Basarab'
+- 	}, 
+- 	{
+-			code: '1473448912268-2022ce9509d8', 
+- 		link: 'body-of-water-surrounded-by-pine-trees-during-daytime-ESkw2ayO2As', 
+- 		text: 'pine trees a the lake with a misty mountain in the background', 
+- 		name: 'Luca Bravo'
+- 	}, 
+- 	{
+-			code: '1500964757637-c85e8a162699', 
+- 		link: 'landscape-photography-of-mountains-twukN12EN7c', 
+- 		text: 'mountains under a rainbow sky', 
+- 		name: 'Simon Berger'
+- 	}, 
+- 	{
+-			code: '1539356891430-52718ed0bfd6', 
+- 		link: 'pink-petaled-flowers-SGl7ntWLUkw', 
+- 		text: 'pink petaled flowers', 
+- 		name: 'Kelly Sikkema'
+- 	}, 
+- 	{
+-			code: '1523712999610-f77fbcfc3843', 
+- 		link: 'forest-heat-by-sunbeam-RwHv7LgeC7s', 
+- 		text: 'sunlight shining through the trees in a forest', 
+- 		name: 'Johannes Plenio'
+- 	}, 
+- 	{
+-			code: '1533208705114-4f6b97d68ab1', 
+- 		link: 'black-bee-on-red-petaled-flower-jN5pk0lbv4E', 
+- 		text: 'close-up of black bee on orange petaled flower', 
+- 		name: 'Ray Hennessy'
+- 	}, 
+- 	{
+-			code: '1522140607231-7c05952eb779', 
+- 		link: 'a-close-up-of-a-wave-in-the-ocean--wwVLgVYB7o', 
+- 		text: 'a closeup of an ice sculpture', 
+- 		name: 'Nico Frey'
+- 	}, 
+- 	{
+-			code: '1539477857993-860599c2e840', 
+- 		link: 'selective-focus-photography-of-yellow-flowers-6EfKUoRTe8I', 
+- 		text: 'yellow flowers and bees against a blue sky', 
+- 		name: 'Masaaki Komori'
+- 	}, 
+- 	{
+-			code: '1539448295811-52fc1a563c68', 
+- 		link: 'an-aerial-view-of-a-beach-with-waves-crashing-on-it-i5Epy0nkAEs', 
+- 		text: 'an aerial view of a beach with waves crashing on it', 
+- 		name: 'Marco Xu'
+- 	}, 
+- 	{
+-			code: '1522635442916-3acd8dcad9ce', 
+- 		link: 'shallow-focus-photo-of-palnts-joWcqnriPNA', 
+- 		text: 'close up of frozen twigs, surrounded by a thin layer of ice', 
+- 		name: 'Michael Skok'
+- 	}, 
+- 	{
+-			code: '1539206263626-8e1342ad1c60', 
+- 		link: 'green-leaf-trees-at-daytime-EKLr56NaJDw', 
+- 		text: 'conifer forest seen from above', 
+- 		name: 'Robert Bye'
+- 	}, 
+- 	{
+-			code: '1489887856603-daad26812962', 
+- 		link: 'coastline-lCd-oZC4_X4', 
+- 		text: 'waves crashing into the beach under a cloudy purple sky', 
+- 		name: 'Jack Robinson'
+- 	}, 
+- 	{
+-			code: '1525115450806-c4b70fd049bd', 
+- 		link: 'body-of-water-L-9wn-ceFd4', 
+- 		text: 'water splashing ont the sand', 
+- 		name: 'Wolfgang Hasselmann'
+- 	}, 
+- 	{
+-			code: '1548167390-863d815de934', 
+- 		link: 'mountain-covered-with-snow-during-golden-hour-njgv9Lz_obc', 
+- 		text: 'snow-covered, smoking volcano top seen from a forest at its foot', 
+- 		name: 'Willian Justen de Vasconcellos'
+- 	}, 
+- 	{
+-			code: '1496497243327-9dccd845c35f', 
+- 		link: 'african-penguins-on-seashore-beside-boulder-UjpEGHu8uNU', 
+- 		text: 'African penguins on seashore beside boulders', 
+- 		name: 'Casey Allen'
+- 	}, 
+- 	{
+-			code: '1446292532430-3e76f6ab6444', 
+- 		link: 'grey-stone-surrounded-with-succulent-plants-hS46bsAASwQ', 
+- 		text: 'grey stone surrounded by golden-brown pebbles and succulent plants', 
+- 		name: 'Annie Spratt'
+- 	}, 
+- 	{
+-			code: '1462733441571-9312d0b53818', 
+- 		link: 'macro-photography-of-red-rose-3wbxAMUj7sg', 
+- 		text: 'close-up of dew on a vibrant red rose', 
+- 		name: 'Roksolana Zasiadko'
+- 	}, 
+- 	{
+-			code: '1499002238440-d264edd596ec', 
+- 		link: 'lavender-field-c1Jp-fo53U8', 
+- 		text: 'sunset over a lavender field', 
+- 		name: 'Léonard Cotte'
+- 	}, 
+- 	{
+-			code: '1494500764479-0c8f2919a3d8', 
+- 		link: 'tree-on-body-of-water-near-mountains-KonWFWUaAuk', 
+- 		text: 'tree in the middle of a leke in front of mountains at dawn', 
+- 		name: 'Ken Cheung'
+- 	}, 
+- 	{
+-			code: '1496482475496-a91f31e0386c', 
+- 		link: 'silhouette-of-stone-on-seashore-during-golden-hour-63JKK67yGUE', 
+- 		text: 'silhouette of stone monoliths on seashore during golden hour', 
+- 		name: 'Graham Holtshausen'
+- 	}, 
+- 	{
+-			code: '1632659895656-1e4c368afd9a', 
+- 		link: 'a-mountain-range-with-rocks-and-plants-in-the-foreground-c6vrHG2icaE', 
+- 		text: 'a mountain range with rocks and plants in the foreground', 
+- 		name: 'Azzedine Rouichi'
+- 	}, 
+- 	{
+-			code: '1487252015168-776961549aca', 
+- 		link: 'star-fish-under-water-n5wwck8ES4w', 
+- 		text: 'starfish, seen underwater', 
+- 		name: 'Jakob Owens'
+- 	}, 
+- 	{
+-			code: '1520637102912-2df6bb2aec6d', 
+- 		link: 'person-in-front-of-waterfalls-during-nighttime-VlH2eHyE_50', 
+- 		text: 'waterfall in the dark, under a spray-induced moonbow the starry night sky', 
+- 		name: 'Jonatan Pie'
+- 	}, 
+- 	{
+-			code: '1470165511815-34e78ff7a111', 
+- 		link: 'fox-laying-on-snow-qQUtvVdurHg', 
+- 		text: 'fox curled up in the snow, half its face hidden in its fur', 
+- 		name: 'Ray Hennessy'
+- 	}, 
+- 	{
+-			code: '1547471080-7cc2caa01a7e', 
+- 		link: 'tree-between-green-land-during-golden-hour-T-LfvX-7IVg', 
+- 		text: 'solitary tree in the middle of grasslands during golden hour', 
+- 		name: 'Damian Patkowski'
+- 	}
+- ];
+
+header
+	svg(width='0' height='0' aria-hidden='true')
+		filter#dissolve(primitiveUnits='objectBoundingBox' 
+				x='-100%' y='-100%' width='300%' height='300%' 
+				color-interpolation-filters='sRGB')
+			feTurbulence(type='fractalNoise' baseFrequency='7.13' result='noise')
+			feFlood(flood-color='rgba(50%, 50%, 0%, calc(1 - var(--out)))')
+			feBlend(in2='noise')
+			feDisplacementMap(in='SourceGraphic' scale='.25' 
+				xChannelSelector='R' yChannelSelector='G')
+	h1 Pure CSS on scroll tilt & zoom grid
+	em scroll down
+main
+	- data.forEach((c, i) => {
+		figure
+			img(src=`https://images.${base}-${c.code}?w=400` alt=c.text)
+			figcaption by 
+				a(href=`https://${base}s/${c.link}` target='_blank') #{c.name}
+	- })
+footer
+	b Fin.
+	p
+		strong One more thing.
+		|  If the Maths and Physics infused CSS, canvas and SVG work that I've been putting out for over a decade has helped you in any way or you just like it, please remember that praise can't keep me afloat financially, but you can! So please consider being a cool cat and supporting it monthly or with a one time donation on 
+		a(href='https://ko-fi.com/anatudor' target='_blank') Ko-fi
+		| . Or at least sharing this to show the world what can be done on the web these days... because I think it's pretty damn cool!
+
+// just support info
+aside
+	p.box-info-scrollani Sorry, your browser does not appear to support scroll-driven animation. As of August 2024, this is supported in Firefox if the 
+		kbd layout.css.scroll-driven-animations.enabled
+		|  flag is set to true in 
+		kbd about:config
+		|  and in Chromium browsers. Safari support is coming, but it hasn't arrived yet.

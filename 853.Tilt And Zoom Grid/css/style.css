@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&family=Tangerine:wght@700&display=swap');
+
+@property --prg {
+	syntax: '<number>';
+	initial-value: 0;
+	inherits: true;
+}
+
+@property --out {
+	syntax: '<number>';
+	initial-value: 0;
+	inherits: true;
+}
+
+@property --hov {
+	syntax: '<number>';
+	initial-value: 0;
+	inherits: true
+}
+
+/* needed for Firefox */
+@property --x {
+	syntax: '<length>';
+	initial-value: 0px;
+	inherits: true;
+}
+
+@property --y {
+	syntax: '<length>';
+	initial-value: 0px;
+	inherits: true;
+}
+
+* { margin: 0 }
+
+html, body, header, main, footer, figure, em { display: grid }
+
+html {
+	container-type: inline-size;
+	height: 100%;
+	background: #bababa
+}
+
+body {
+	--y: 30vh;
+	--x: 100cqw;
+	--out: round(up, var(--prg));
+	--max: Min(30deg, atan2(var(--y), var(--x)));
+	--ang: calc(var(--max)*(1 - 2*var(--prg)));
+	--tan: tan(abs(var(--ang)));
+	--sgn: sign(var(--ang));
+	--bit: calc(.5*(var(--sgn) + 1));
+	--dy: calc(100cqw*var(--tan));
+	font: clamp(.75em, 3vw, 1.5em)/ 1 genos, sans-serif;
+	filter: drop-shadow(1px 2px 3px);
+	animation: prg 1s linear;
+	animation-timeline: scroll();
+	
+	@supports not (scale: abs(-2)) {
+		--tan: tan(max(var(--ang), -1*var(--ang)))
+	}
+	
+	@supports not (scale: sign(-2)) {
+		--sgn: clamp(-1, tan(var(--ang))*10000, 1)
+	}
+}
+
+@supports (animation-timeline: scroll()) {
+	@keyframes prg { to { --prg: 1 } }
+}
+
+header, footer, main { box-sizing: border-box }
+
+header, footer {
+	--dy0: (1 - var(--bit))*var(--dy);
+	--dy1: var(--bit)*var(--dy);
+	grid-gap: 2em;
+	place-content: center;
+	height: 100vh;
+	height: calc(100dvh + .5*var(--dy));
+	background: #212121;
+	color: #dedede;
+	text-wrap: balance
+}
+
+header {
+	padding-bottom: var(--dy);
+	text-align: center;
+	clip-path: 
+		polygon(0 0, 100% 0, 
+			100% calc(100% - var(--dy0)), 
+			0 calc(100% - var(--dy1)));
+	transition: --out 1s ease-out, 
+		--hov calc(var(--hov)*6s) linear;
+	
+	&:hover { --hov: 1 }
+}
+
+h1, em {
+	translate: 0 calc(var(--prg)*300vh);
+	opacity: calc(1 - var(--out));
+	filter: blur(calc(var(--out)*8px)) 
+		url(#dissolve)
+}
+
+h1 {
+	max-width: 9em;
+	font-size: 2.5em;
+	font-weight: 500
+}
+
+em {
+	place-items: center;
+	letter-spacing: calc(.25em*(1 - cos(var(--hov)*3turn)));
+	
+	&::after {
+		padding: .5em;
+		border: solid 0;
+		border-width: 0 3px 3px 0;
+		translate: 0 calc(50%*(1 - cos(var(--hov)*3turn)));
+		rotate: 45deg;
+		content: ''
+	}
+}
+
+main {
+	grid-gap: .5em;
+	grid-template-columns: 
+		repeat(auto-fit, minmax(min(100%, 12em), 1fr));
+	margin: calc(-.5*var(--dy)) 0;
+	padding: .5em;
+	transform: skewy(var(--ang))
+}
+
+figure {
+	grid-template: 100%/ 100%;
+	place-items: center end;
+	container-type: size;
+	overflow: hidden;
+	aspect-ratio: 5/ 2;
+	clip-path: inset(1px round 4px);
+	transition: .35s;
+	transition-property: --hov, background-color;
+	
+	:hover > & {
+		background: rgba(0 0 0/ calc(1 - var(--hov)))
+	}
+	
+	&:hover, &:focus-within { --hov: 1 }
+}
+
+img, figcaption { grid-area: 1/ 1 }
+
+img {
+	width: 100%;
+	height: calc(100cqh + 100cqw*var(--tan));
+	object-fit: cover;
+	transform: 
+		skewy(calc(-1*var(--ang))) 
+		scale(calc(1 + .25*var(--hov)));
+	mix-blend-mode: luminosity;
+	transition: inherit;
+	transition-property: filter
+}
+
+figcaption {
+	z-index: 2;
+	padding: 0 .5em;
+	opacity: var(--hov);
+	background: #fff6;
+	font: Max(.625em, .625rem, 4.5cqw)/ 2 sans-serif;
+	backdrop-filter: blur(4px);
+	
+	a { color: #780116 }
+}
+
+footer {
+	padding-top: var(--dy);
+	text-align: center;
+	clip-path: 
+		polygon(100% 100%, 0 100%, 
+			0 calc(var(--dy0)), 100% calc(var(--dy1)))
+}
+
+b {
+	font: 700 2.5em tangerine;
+	text-shadow: 1px 1px 2px #000
+}
+
+p {
+	max-width: 35em;
+	
+	a { color: #f7b538 }
+	a:is(:focus, :hover) { color: lightskyblue }
+}
+
+/* just support info */
+aside {
+	position: fixed;
+	bottom: 0;
+	padding: 1em;
+}
+
+.box-info-scrollani {
+	margin: 1em;
+	border-left: solid 5px #dc3055;
+	padding: 1em;
+	box-shadow: 2px 2px 5px hsla(0, 0%, 0%, .35);
+	background: #851d40;
+	color: #fff;
+	font: 1.25em/ 1.25 ubuntu, trebuchet ms, arial, sans-serif;
+	
+	@supports (animation-timeline: scroll()) { display: none }
+}
+
+kbd {
+	padding: 2px;
+	background: hsla(0, 0%, 0%, .35);
+	font: 1.1em/ 1.2 ubuntu mono, consolas, monaco, monospace
+}
