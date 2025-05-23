@@ -857,6 +857,7 @@
 |851| [Glass Refraction](https://github.com/xml12333/HTML_CSS_JS/tree/main/851.Glass%20Refraction)| [Demo](https://nikt.com.ua/projects/htmlCssJs/851.Glass%20Refraction/)|
 |852| [Sticky Progressive Blur](https://github.com/xml12333/HTML_CSS_JS/tree/main/852.Sticky%20Progressive%20Blur)| [Demo](https://nikt.com.ua/projects/htmlCssJs/852.Sticky%20Progressive%20Blur/)|
 |853| [Tilt And Zoom Grid](https://github.com/xml12333/HTML_CSS_JS/tree/main/853.Tilt%20And%20Zoom%20Grid)| [Demo](https://nikt.com.ua/projects/htmlCssJs/853.Tilt%20And%20Zoom%20Grid/)|
+|854| [ScrollSynced Carousel](https://github.com/xml12333/HTML_CSS_JS/tree/main/854.ScrollSynced%20Carousel)| [Demo](https://nikt.com.ua/projects/htmlCssJs/854.ScrollSynced%20Carousel/)|
 |884| [Spinning Earth](https://github.com/xml12333/HTML_CSS_JS/tree/main/884.Spinning%20Earth)| [Demo](https://nikt.com.ua/projects/htmlCssJs/884.Spinning%20Earth/)|
 |885| [Scroll-Grid](https://github.com/xml12333/HTML_CSS_JS/tree/main/885.Scroll-Grid)| [Demo](https://nikt.com.ua/projects/htmlCssJs/885.Scroll-Grid/)|
 |886| [Four Text Shadows](https://github.com/xml12333/HTML_CSS_JS/tree/main/886.Four%20Text%20Shadows)| [Demo](https://nikt.com.ua/projects/htmlCssJs/886.Four%20Text%20Shadows/)|

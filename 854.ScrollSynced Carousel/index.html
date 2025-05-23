@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ScrollSynced Carousel V3 (Gsap + Swiper)</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <link rel='stylesheet' href='./css/swiper.min.css'>
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+    <!-- partial:index.partial.html -->
+    <!-- 
+    Horizontal, responsive carousel (Swiper-based) enhanced with GSAP ScrollTrigger for 
+    scroll-synchronized animations. It supports both scrubbed (scroll-controlled) and free-swiping modes.
+    -->
+
+    <div class="viewport-wrapper">
+        <div class="content-scroll">
+            <main class="main-content">
+                <div class="dummy-block">
+                    <div>
+                        <h2>ScrollSynced Carousel (Gsap + Swiper)</h2>
+                        <h3>Scroll Down<br>↓</h3>
+                    </div>
+                </div>
+                <div class="carousel" id="carousel_1">
+                    <div class="wrapper">
+                        <div class="text-before">
+                            <h2>Fragments of a Digital Collapse.</h2>
+                        </div>
+                        <div class="swiper-container">
+                            <div class="swiper-column-gap"></div>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide no-interaction">
+                                    <div class="card">
+                                        <div class="media-container">
+                                            <picture>
+                                                <source
+                                                    srcset="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-01-300x300.webp 300w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-01-435x435.webp 435w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-01-820x820.webp 820w"
+                                                    sizes="(max-width:51.29875em) 100vw, 500px">
+                                                <img class="fit-cover middle-center"
+                                                    src="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-01.png"
+                                                    width="1024" height="1024"
+                                                    alt="Exploding digital billboard structure" decoding="sync">
+                                            </picture>
+                                        </div>
+                                        <div class="card-text">
+                                            <h3 class='title'>Billboard Implosion</h3>
+                                            <p>A towering billboard disintegrates into sharp shards and tangled frames,
+                                                caught in the moment of collapse amid a surreal desert landscape.</p>
+                                            <a href="https://codepen.io/luis-lessrain/pen/ogNKBmx"
+                                                class="cta-button"><span class="text">Glitchfy More</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide no-interaction">
+                                    <div class="card">
+                                        <div class="media-container">
+                                            <picture>
+                                                <source
+                                                    srcset="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-02-300x300.webp 300w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-02-435x435.webp 435w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-02-820x820.webp 820w"
+                                                    sizes="(max-width:51.29875em) 100vw, 500px">
+                                                <img class="fit-cover middle-center"
+                                                    src="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-02.png"
+                                                    width="1024" height="1024"
+                                                    alt="Twisted billboard becoming a sculpture" decoding="sync">
+                                            </picture>
+                                        </div>
+                                        <div class="card-text">
+                                            <h3 class='title'>Signal Vortex</h3>
+                                            <p>A digital storm of wires and signage spirals upward, twisting a collapsed
+                                                billboard into a sculpture of chaotic motion and force.</p>
+                                            <a href="https://codepen.io/luis-lessrain/pen/ogNKBmx"
+                                                class="cta-button"><span class="text">Glitchfy More</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide no-interaction">
+                                    <div class="card">
+                                        <div class="media-container">
+                                            <picture>
+                                                <source
+                                                    srcset="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-03-300x300.webp 300w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-03-435x435.webp 435w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-03-820x820.webp 820w"
+                                                    sizes="(max-width:51.29875em) 100vw, 500px">
+                                                <img class="fit-cover middle-center"
+                                                    src="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-03.png"
+                                                    width="1024" height="1024"
+                                                    alt="Giant shark built from mechanical debris" decoding="sync">
+                                            </picture>
+                                        </div>
+                                        <div class="card-text">
+                                            <h3 class='title'>Machine Shark</h3>
+                                            <p>A monstrous shark forged from steel and circuitry explodes from the
+                                                ground, jaws wide in an apocalyptic display of mechanical fury.</p>
+                                            <a href="https://codepen.io/luis-lessrain/pen/ogNKBmx"
+                                                class="cta-button"><span class="text">Glitchfy More</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide no-interaction">
+                                    <div class="card">
+                                        <div class="media-container">
+                                            <picture>
+                                                <source
+                                                    srcset="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-04-300x300.webp 300w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-04-435x435.webp 435w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-04-820x820.webp 820w"
+                                                    sizes="(max-width:51.29875em) 100vw, 500px">
+                                                <img class="fit-cover middle-center"
+                                                    src="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-04.png"
+                                                    width="1024" height="1024" alt="Decomposed cartoon head in desert"
+                                                    decoding="async">
+                                            </picture>
+                                        </div>
+                                        <div class="card-text">
+                                            <h3 class='title'>Desert Mascot Ruin</h3>
+                                            <p>A decaying robotic icon lies half-buried in the sand, its twisted metal
+                                                mouth agape like a relic from a lost theme park.</p>
+                                            <a href="https://codepen.io/luis-lessrain/pen/ogNKBmx"
+                                                class="cta-button"><span class="text">Glitchfy More</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide no-interaction">
+                                    <div class="card">
+                                        <div class="media-container">
+                                            <picture>
+                                                <source
+                                                    srcset="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-05-300x300.webp 300w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-05-435x435.webp 435w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-05-820x820.webp 820w"
+                                                    sizes="(max-width:51.29875em) 100vw, 500px">
+                                                <img class="fit-cover middle-center"
+                                                    src="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-05.png"
+                                                    width="1024" height="1024"
+                                                    alt="Exploding structure of digital billboards" decoding="async">
+                                            </picture>
+                                        </div>
+                                        <div class="card-text">
+                                            <h3 class='title'>Outburst of Screens</h3>
+                                            <p>An eruption of digital panels, wires, and fragments tears through the
+                                                desert silence in a spectacular explosion of tech debris.</p>
+                                            <a href="https://codepen.io/luis-lessrain/pen/ogNKBmx"
+                                                class="cta-button"><span class="text">Glitchfy More</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide no-interaction">
+                                    <div class="card">
+                                        <div class="media-container">
+                                            <picture>
+                                                <source
+                                                    srcset="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-06-300x300.webp 300w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-06-435x435.webp 435w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-06-820x820.webp 820w"
+                                                    sizes="(max-width:51.29875em) 100vw, 500px">
+                                                <img class="fit-cover middle-center"
+                                                    src="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-06.png"
+                                                    width="1024" height="1024"
+                                                    alt="Swirling paper chaos in industrial yard" decoding="async">
+                                            </picture>
+                                        </div>
+                                        <div class="card-text">
+                                            <h3 class='title'>Twister of Sheets</h3>
+                                            <p>A whirlwind of tangled wires and flying sheets twists through a barren
+                                                yard, captured mid-motion like a storm made of sketches.</p>
+                                            <a href="https://codepen.io/luis-lessrain/pen/ogNKBmx"
+                                                class="cta-button"><span class="text">Glitchfy More</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination-container">
+                            <div class="swiper-pagination-wrapper swiper-no-swiping">
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel" id="carousel_2">
+                    <div class="wrapper">
+                        <div class="text-before">
+                            <h2>Broadcasts from a Broken World.</h2>
+                        </div>
+                        <div class="swiper-container">
+                            <div class="swiper-column-gap"></div>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide no-interaction">
+                                    <div class="card">
+                                        <div class="media-container">
+                                            <picture>
+                                                <source
+                                                    srcset="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-07-300x300.webp 300w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-07-435x435.webp 435w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-07-820x820.webp 820w"
+                                                    sizes="(max-width:51.29875em) 100vw, 500px">
+                                                <img class="fit-cover middle-center"
+                                                    src="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-07.png"
+                                                    width="1024" height="1024" loading="lazy" decoding="async"
+                                                    alt="Glitched mouse character with distorted facial features">
+                                            </picture>
+                                        </div>
+                                        <div class="card-text">
+                                            <h3 class='title'>Glitch Mascot Face</h3>
+                                            <p>An iconic cartoon face is fragmented by digital decay, smiling eerily
+                                                through bands of glitch and static distortion.</p>
+                                            <a href="https://codepen.io/luis-lessrain/pen/ogNKBmx"
+                                                class="cta-button"><span class="text">Glitchfy More</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide no-interaction">
+                                    <div class="card">
+                                        <div class="media-container">
+                                            <picture>
+                                                <source
+                                                    srcset="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-08-300x300.webp 300w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-08-435x435.webp 435w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-08-820x820.webp 820w"
+                                                    sizes="(max-width:51.29875em) 100vw, 500px">
+                                                <img class="fit-cover middle-center"
+                                                    src="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-08.png"
+                                                    width="1024" height="1024" loading="lazy" decoding="async"
+                                                    alt="Exploding structure of a giant cartoon mouse head">
+                                            </picture>
+                                        </div>
+                                        <div class="card-text">
+                                            <h3 class='title'>Mascot in Ruin</h3>
+                                            <p>A once-cheerful icon now collapses violently, scattering wooden debris
+                                                and fragments across a barren digital wasteland.</p>
+                                            <a href="https://codepen.io/luis-lessrain/pen/ogNKBmx"
+                                                class="cta-button"><span class="text">Glitchfy More</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide no-interaction">
+                                    <div class="card">
+                                        <div class="media-container">
+                                            <picture>
+                                                <source
+                                                    srcset="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-09-300x300.webp 300w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-09-435x435.webp 435w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-09-820x820.webp 820w"
+                                                    sizes="(max-width:51.29875em) 100vw, 500px">
+                                                <img class="fit-cover middle-center"
+                                                    src="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-09.png"
+                                                    width="1024" height="1024" loading="lazy" decoding="async"
+                                                    alt="Organic architecture glitching in desert">
+                                            </picture>
+                                        </div>
+                                        <div class="card-text">
+                                            <h3 class='title'>Pixel Spire</h3>
+                                            <p>A twisted tower of organic forms and circular voids disintegrates under
+                                                digital strain, like architecture rewired by data corruption.</p>
+                                            <a href="https://codepen.io/luis-lessrain/pen/ogNKBmx"
+                                                class="cta-button"><span class="text">Glitchfy More</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide no-interaction">
+                                    <div class="card">
+                                        <div class="media-container">
+                                            <picture>
+                                                <source
+                                                    srcset="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-10-300x300.webp 300w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-10-435x435.webp 435w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-10-820x820.webp 820w"
+                                                    sizes="(max-width:51.29875em) 100vw, 500px">
+                                                <img class="fit-cover middle-center"
+                                                    src="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-10.png"
+                                                    width="1024" height="1024" loading="lazy" decoding="async"
+                                                    alt="Collapsed alien-looking structure with glitch effects">
+                                            </picture>
+                                        </div>
+                                        <div class="card-text">
+                                            <h3 class='title'>Cradle of Collapse</h3>
+                                            <p>An alien form splinters apart in the heat, caught between architecture
+                                                and abstraction, held together by threads of unreality.</p>
+                                            <a href="https://codepen.io/luis-lessrain/pen/ogNKBmx"
+                                                class="cta-button"><span class="text">Glitchfy More</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide no-interaction">
+                                    <div class="card">
+                                        <div class="media-container">
+                                            <picture>
+                                                <source
+                                                    srcset="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-11-300x300.webp 300w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-11-435x435.webp 435w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-11-820x820.webp 820w"
+                                                    sizes="(max-width:51.29875em) 100vw, 500px">
+                                                <img class="fit-cover middle-center"
+                                                    src="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-11.png"
+                                                    width="1024" height="1024" loading="lazy" decoding="async"
+                                                    alt="Cartoon dog statue overtaken by mechanical wires">
+                                            </picture>
+                                        </div>
+                                        <div class="card-text">
+                                            <h3 class='title'>Playland Remains</h3>
+                                            <p>A cartoon dog gives a thumbs up from a mound of mechanical wreckage,
+                                                half-cheerful, half-abandoned by time and nature.</p>
+                                            <a href="https://codepen.io/luis-lessrain/pen/ogNKBmx"
+                                                class="cta-button"><span class="text">Glitchfy More</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide no-interaction">
+                                    <div class="card">
+                                        <div class="media-container">
+                                            <picture>
+                                                <source
+                                                    srcset="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-12-300x300.webp 300w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-12-435x435.webp 435w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-12-820x820.webp 820w"
+                                                    sizes="(max-width:51.29875em) 100vw, 500px">
+                                                <img class="fit-cover middle-center"
+                                                    src="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-12.png"
+                                                    width="1024" height="1024" loading="lazy" decoding="async"
+                                                    alt="Distorted mickey-shaped head floating above desert">
+                                            </picture>
+                                        </div>
+                                        <div class="card-text">
+                                            <h3 class='title'>Echo in the Dust</h3>
+                                            <p>Suspended above a deserted wasteland, a fragmented mouse-shaped relic
+                                                hovers like the ghost of a forgotten broadcast dream.</p>
+                                            <a href="https://codepen.io/luis-lessrain/pen/ogNKBmx"
+                                                class="cta-button"><span class="text">Glitchfy More</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-navigation-container">
+                                <div class="swiper-navigation-wrapper swiper-no-swiping">
+                                    <div class="swiper-prev hide">
+                                        <svg aria-hidden="true" focusable="false" viewBox="0 0 40 40">
+                                            <path fill="currentColor"
+                                                d="m27.042 4.792 1.333 1.25-13.917 13.917 13.917 13.833-1.333 1.333-15.167-15.166L27.042 4.792z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div class="swiper-next hide">
+                                        <svg aria-hidden="true" focusable="false" viewBox="0 0 40 40">
+                                            <path fill="currentColor"
+                                                d="m13.208 35.125-1.333-1.25 13.917-13.917L11.875 6.125l1.333-1.333 15.167 15.166Z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination-container">
+                            <div class="swiper-pagination-wrapper swiper-no-swiping">
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel" id="carousel_3">
+                    <div class="wrapper">
+                        <div class="text-before">
+                            <h2>Artifacts of Collapse.</h2>
+                        </div>
+                        <div class="swiper-container">
+                            <div class="swiper-column-gap"></div>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide no-interaction">
+                                    <div class="card">
+                                        <div class="media-container">
+                                            <picture>
+                                                <source
+                                                    srcset="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-13-300x300.webp 300w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-13-435x435.webp 435w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-13-820x820.webp 820w"
+                                                    sizes="(max-width:51.29875em) 100vw, 500px">
+                                                <img class="fit-cover middle-center"
+                                                    src="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-13.png"
+                                                    width="1024" height="1024" loading="lazy" decoding="async"
+                                                    alt="Pagoda-like structure breaking apart with glitch fragments">
+                                            </picture>
+                                        </div>
+                                        <div class="card-text">
+                                            <h3 class='title'>Fractured Pagoda</h3>
+                                            <p>A spiraling structure collapses into shards under digital wind, its
+                                                once-majestic form disassembled by glitching vectors.</p>
+                                            <a href="https://codepen.io/luis-lessrain/pen/ogNKBmx"
+                                                class="cta-button"><span class="text">Glitchfy More</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide no-interaction">
+                                    <div class="card">
+                                        <div class="media-container">
+                                            <picture>
+                                                <source
+                                                    srcset="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-14-300x300.webp 300w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-14-435x435.webp 435w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-14-820x820.webp 820w"
+                                                    sizes="(max-width:51.29875em) 100vw, 500px">
+                                                <img class="fit-cover middle-center"
+                                                    src="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-14.png"
+                                                    width="1024" height="1024" loading="lazy" decoding="async"
+                                                    alt="Detached mouse mascot head with cables in post-apocalyptic setting">
+                                            </picture>
+                                        </div>
+                                        <div class="card-text">
+                                            <h3 class='title'>Lost Icon Head</h3>
+                                            <p>A familiar character's head lies split on the asphalt, its wireframe
+                                                nerves still twitching at sunset.</p>
+                                            <a href="https://codepen.io/luis-lessrain/pen/ogNKBmx"
+                                                class="cta-button"><span class="text">Glitchfy More</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide no-interaction">
+                                    <div class="card">
+                                        <div class="media-container">
+                                            <picture>
+                                                <source
+                                                    srcset="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-15-300x300.webp 300w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-15-435x435.webp 435w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-15-820x820.webp 820w"
+                                                    sizes="(max-width:51.29875em) 100vw, 500px">
+                                                <img class="fit-cover middle-center"
+                                                    src="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-15.png"
+                                                    width="1024" height="1024" loading="lazy" decoding="async"
+                                                    alt="Billboard structure spiraling into a digital tornado">
+                                            </picture>
+                                        </div>
+                                        <div class="card-text">
+                                            <h3 class='title'>Billboard Tornado</h3>
+                                            <p>What once was signage has twisted into a data-storm, pulling itself
+                                                skyward from the barren desert floor.</p>
+                                            <a href="https://codepen.io/luis-lessrain/pen/ogNKBmx"
+                                                class="cta-button"><span class="text">Glitchfy More</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide no-interaction">
+                                    <div class="card">
+                                        <div class="media-container">
+                                            <picture>
+                                                <source
+                                                    srcset="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-16-300x300.webp 300w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-16-435x435.webp 435w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-16-820x820.webp 820w"
+                                                    sizes="(max-width:51.29875em) 100vw, 500px">
+                                                <img class="fit-cover middle-center"
+                                                    src="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-16.png"
+                                                    width="1024" height="1024" loading="lazy" decoding="async"
+                                                    alt="Glitch-formed ocean wave crashing under a digital sun">
+                                            </picture>
+                                        </div>
+                                        <div class="card-text">
+                                            <h3 class='title'>Wave Error</h3>
+                                            <p>A great crest of glitch surges forward like a corrupted tsunami, its foam
+                                                pixelated into static.</p>
+                                            <a href="https://codepen.io/luis-lessrain/pen/ogNKBmx"
+                                                class="cta-button"><span class="text">Glitchfy More</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide no-interaction">
+                                    <div class="card">
+                                        <div class="media-container">
+                                            <picture>
+                                                <source
+                                                    srcset="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-17-300x300.webp 300w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-17-435x435.webp 435w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-17-820x820.webp 820w"
+                                                    sizes="(max-width:51.29875em) 100vw, 500px">
+                                                <img class="fit-cover middle-center"
+                                                    src="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-17.png"
+                                                    width="1024" height="1024" loading="lazy" decoding="async"
+                                                    alt="Cartoon character face melting through glitch distortions">
+                                            </picture>
+                                        </div>
+                                        <div class="card-text">
+                                            <h3 class='title'>Smile Collapse</h3>
+                                            <p>A distorted character smiles through fractured pixels, its cheer smeared
+                                                across broken data streams.</p>
+                                            <a href="https://codepen.io/luis-lessrain/pen/ogNKBmx"
+                                                class="cta-button"><span class="text">Glitchfy More</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide no-interaction">
+                                    <div class="card">
+                                        <div class="media-container">
+                                            <picture>
+                                                <source
+                                                    srcset="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-18-300x300.webp 300w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-18-435x435.webp 435w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-18-820x820.webp 820w"
+                                                    sizes="(max-width:51.29875em) 100vw, 500px">
+                                                <img class="fit-cover middle-center"
+                                                    src="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-18.png"
+                                                    width="1024" height="1024" loading="lazy" decoding="async"
+                                                    alt="Constructed mascot face from patched metal with glitching">
+                                            </picture>
+                                        </div>
+                                        <div class="card-text">
+                                            <h3 class='title'>Mascot Redux</h3>
+                                            <p>Mechanical ears and a stitched-together smile define a rebuilt amusement
+                                                relic, warped by repetition and wear.</p>
+                                            <a href="https://codepen.io/luis-lessrain/pen/ogNKBmx"
+                                                class="cta-button"><span class="text">Glitchfy More</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide no-interaction">
+                                    <div class="card">
+                                        <div class="media-container">
+                                            <picture>
+                                                <source
+                                                    srcset="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-19-300x300.webp 300w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-19-435x435.webp 435w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-19-820x820.webp 820w"
+                                                    sizes="(max-width:51.29875em) 100vw, 500px">
+                                                <img class="fit-cover middle-center"
+                                                    src="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-19.png"
+                                                    width="1024" height="1024" loading="lazy" decoding="async"
+                                                    alt="Cybernetic shark erupting through ground debris">
+                                            </picture>
+                                        </div>
+                                        <div class="card-text">
+                                            <h3 class='title'>Steel Shark</h3>
+                                            <p>A serrated predator bursts through layers of earth and code, jaws open in
+                                                a mechanical frenzy.</p>
+                                            <a href="https://codepen.io/luis-lessrain/pen/ogNKBmx"
+                                                class="cta-button"><span class="text">Glitchfy More</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide no-interaction">
+                                    <div class="card">
+                                        <div class="media-container">
+                                            <picture>
+                                                <source
+                                                    srcset="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-20-300x300.webp 300w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-20-435x435.webp 435w, https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-20-820x820.webp 820w"
+                                                    sizes="(max-width:51.29875em) 100vw, 500px">
+                                                <img class="fit-cover middle-center"
+                                                    src="https://www.lessrain.com/dev/images-2025/carousel/lr-demo-img-20.png"
+                                                    width="1024" height="1024" loading="lazy" decoding="async"
+                                                    alt="Curved wave of threads and clouds in surreal motion">
+                                            </picture>
+                                        </div>
+                                        <div class="card-text">
+                                            <h3 class='title'>Threaded Tide</h3>
+                                            <p>A wave formed of winding lines and cloud wisps curls in slow motion,
+                                                frozen between reality and render.</p>
+                                            <a href="https://codepen.io/luis-lessrain/pen/ogNKBmx"
+                                                class="cta-button"><span class="text">Glitchfy More</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination-container">
+                            <div class="swiper-pagination-wrapper swiper-no-swiping">
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dummy-block">
+                    <div>
+                        <h3>↑<br>Scroll Up</h3>
+                        <h2>ScrollSynced Carousel (Gsap + Swiper)</h2>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div id="app_blocker"></div>
+
+    <div class="resources-layer">
+        <div class="resources">
+            <a href="https://www.lessrain.com">Less Rain GmbH</a>
+            <a href="https://codepen.io/collection/bNyZkZ">JavaScript Codepen Collection</a>
+            <a href="https://codepen.io/collection/vOBVrG">Codepen Challenges Collection</a>
+        </div>
+    </div>
+    <!-- partial -->
+    <script src='./js/utils-v3.min.js'></script>
+    <script src='https://unpkg.co/gsap@3/dist/gsap.min.js'></script>
+    <script src='./js/ScrollTrigger.min.js'></script>
+    <script src='./js/ScrollSmoother.min.js'></script>
+    <script src='./js/swiper.min.js'></script>
+    <script src="./js/script.js"></script>
+
+</body>
+</html>
