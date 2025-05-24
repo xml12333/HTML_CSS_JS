@@ -1,0 +1,122 @@
+
+body {
+  background-color: #340824;
+  color: var(--color-light);
+  font-size: 1vw;
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
+  min-height: 100%;
+  font-family: PP Neue Montreal, Arial, sans-serif;
+  cursor: url("https://cdn.prod.website-files.com/6708f85ff3d3cba6aff436fb/671251b239d7aeb290a31ac5_cursor-default%402x.svg")
+      2 0,
+    auto;
+}
+
+a,
+button {
+  cursor: url("https://cdn.prod.website-files.com/6708f85ff3d3cba6aff436fb/671251b212e6b71494aa67ff_cursor-pointer%402x.svg")
+      12 0,
+    pointer;
+}
+
+.section-resource {
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  display: flex;
+  overflow: clip;
+}
+
+.drop-wrapper {
+  width: 100%;
+  min-height: 350vh;
+}
+
+.drop-section {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+}
+
+.drop-heading {
+  text-align: center;
+  max-width: 40rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 4rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.drop-heading-img {
+  z-index: 2;
+  width: 1.2em;
+  display: inline-block;
+  position: relative;
+}
+
+.drop-heading-img img {
+  width: 100%;
+  max-width: 100%;
+}
+
+.drop-heading-img.is--first {
+  transform: rotate(-20deg)translate(.15em, -.2em);
+}
+
+.drop-heading-img.is--second {
+  transform: translate(-.1em, 0.2em)rotate(10deg);
+}
+
+.drop-heading-img.is--third {
+  margin-left: -.1em;
+  margin-right: -.1em;
+  margin-top: -.2em;
+  transform: translate(-.05em, .1em)rotate(50deg);
+}
+
+[data-drop-text] .line { 
+  display: block;
+}
+
+.osmo-credits {
+  z-index: 999;
+  pointer-events: none;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 4em;
+  padding: 1em;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.osmo-credits__p {
+  pointer-events: auto;
+  color: #efeeec80;
+  text-align: center;
+  margin: 0;
+  font-family: PP Neue Montreal, Arial, sans-serif;
+  font-size: 1.125em;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.osmo-credits__p-a {
+  color: #efeeec;
+}
+
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('https://cdn.prod.website-files.com/6819ed8312518f61b84824df/6819ed8312518f61b84825ba_PPNeueMontreal-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
