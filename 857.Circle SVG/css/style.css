@@ -1,0 +1,22 @@
+#app {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  font-family: monospace;
+}
+
+.controls {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+  width: 350px;
+}
+
+label {
+  display: grid;
+  gap: .5rem;
+}
+
+svg {
+  max-width: 350px;
+}

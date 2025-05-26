@@ -860,6 +860,7 @@
 |854| [ScrollSynced Carousel](https://github.com/xml12333/HTML_CSS_JS/tree/main/854.ScrollSynced%20Carousel)| [Demo](https://nikt.com.ua/projects/htmlCssJs/854.ScrollSynced%20Carousel/)|
 |855| [Falling Text](https://github.com/xml12333/HTML_CSS_JS/tree/main/855.Falling%20Text)| [Demo](https://nikt.com.ua/projects/htmlCssJs/855.Falling%20Text/)|
 |856| [Toast Notification](https://github.com/xml12333/HTML_CSS_JS/tree/main/856.Toast%20Notification)| [Demo](https://nikt.com.ua/projects/htmlCssJs/856.Toast%20Notification/)|
+|857| [Circle SVG](https://github.com/xml12333/HTML_CSS_JS/tree/main/857.Circle%20SVG)| [Demo](https://nikt.com.ua/projects/htmlCssJs/857.Circle%20SVG/)|
 |884| [Spinning Earth](https://github.com/xml12333/HTML_CSS_JS/tree/main/884.Spinning%20Earth)| [Demo](https://nikt.com.ua/projects/htmlCssJs/884.Spinning%20Earth/)|
 |885| [Scroll-Grid](https://github.com/xml12333/HTML_CSS_JS/tree/main/885.Scroll-Grid)| [Demo](https://nikt.com.ua/projects/htmlCssJs/885.Scroll-Grid/)|
 |886| [Four Text Shadows](https://github.com/xml12333/HTML_CSS_JS/tree/main/886.Four%20Text%20Shadows)| [Demo](https://nikt.com.ua/projects/htmlCssJs/886.Four%20Text%20Shadows/)|
