@@ -1,0 +1,73 @@
+:root {
+	--stretch: 0.2%;
+	--gap: 2rem;
+	--rotate-increment: -4deg;
+}
+
+@property --rotate-frame {
+	syntax: "<number>";
+	inherits: true;
+	initial-value: 0;
+}
+
+@keyframes scrollAnim {
+	0% {
+		--rotate-frame: -10;
+	}
+	100% {
+		--rotate-frame: 10;
+	}
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background-color: #f80;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.carousel {
+	display: flex;
+	align-items: flex-end;
+	overflow-x: auto;
+	overflow-y: hidden;
+	height: fit-content;
+	-webkit-overflow-scrolling: touch;
+	padding: var(--gap);
+	gap: var(--gap);
+	max-width: 90vw;
+	animation: scrollAnim linear;
+	animation-timeline: scroll(self inline);
+	scrollbar-color: white #fff3;
+	scroll-snap-type: x mandatory;
+}
+
+.card {
+	scroll-snap-align: center;
+	transform: rotate(
+		calc(var(--rotate-frame) * var(--index) * var(--rotate-increment))
+	);
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	display: flex;
+	font-size: 8rem;
+
+	&.outer {
+		flex: 0 0 auto;
+		width: 25%;
+		aspect-ratio: 2/3;
+		background: #f8f8f8;
+		border: none;
+		border-radius: 1rem;
+		box-shadow: 0 1rem 1rem 1rem #f804;
+		&:active {
+			background: #fff;
+		}
+	}
+}
