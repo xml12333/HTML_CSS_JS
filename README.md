@@ -864,6 +864,7 @@
 |858| [Phantom Glow](https://github.com/xml12333/HTML_CSS_JS/tree/main/858.Phantom%20Glow)| [Demo](https://nikt.com.ua/projects/htmlCssJs/858.Phantom%20Glow/)|
 |859| [Carrousel](https://github.com/xml12333/HTML_CSS_JS/tree/main/859.Carrousel)| [Demo](https://nikt.com.ua/projects/htmlCssJs/859.Carrousel/)|
 |860| [Origami Preloader](https://github.com/xml12333/HTML_CSS_JS/tree/main/860.Origami%20Preloader)| [Demo](https://nikt.com.ua/projects/htmlCssJs/860.Origami%20Preloader/)|
+|861| [Broun Clock](https://github.com/xml12333/HTML_CSS_JS/tree/main/861.Broun%20Clock)| [Demo](https://nikt.com.ua/projects/htmlCssJs/861.Broun%20Clock/)|
 |884| [Spinning Earth](https://github.com/xml12333/HTML_CSS_JS/tree/main/884.Spinning%20Earth)| [Demo](https://nikt.com.ua/projects/htmlCssJs/884.Spinning%20Earth/)|
 |885| [Scroll-Grid](https://github.com/xml12333/HTML_CSS_JS/tree/main/885.Scroll-Grid)| [Demo](https://nikt.com.ua/projects/htmlCssJs/885.Scroll-Grid/)|
 |886| [Four Text Shadows](https://github.com/xml12333/HTML_CSS_JS/tree/main/886.Four%20Text%20Shadows)| [Demo](https://nikt.com.ua/projects/htmlCssJs/886.Four%20Text%20Shadows/)|
