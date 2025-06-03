@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root {
+  font-family: "Manrope", serif;
+  font-optical-sizing: auto;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --sprite-image: url("https://assets.codepen.io/36869/burger2.webp");
+}
+
+@layer base {
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  body:not(:hover) .sprite {
+    animation: to-start 0s !important;
+
+    &:after {
+      animation: to-start 0s !important;
+    }
+  }
+
+  .sprite-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 6rem 1rem;
+    background: #282828;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    box-shadow: 0 0 12px 3px #1b1b1b;
+
+    display: grid;
+    column-gap: clamp(0.5rem, 2vw, 2rem);
+    place-items: center;
+    grid-template-columns: 1fr auto 1fr;
+
+    .additional {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: clamp(1rem, 4vw, 2rem);
+      text-transform: uppercase;
+      color: #363636;
+      white-space: nowrap;
+
+      > svg {
+        width: clamp(16px, 4vw, 32px);
+        height: clamp(16px, 4vw, 32px);
+      }
+    }
+
+    .sprite {
+      margin: 0 auto;
+    }
+
+    input[type="checkbox"] {
+      position: absolute;
+      bottom: 1rem;
+      width: 25%;
+      margin: 0;
+      appearance: none;
+      height: 3px;
+      border-radius: 3px;
+      background: #616161;
+      left: 50%;
+      translate: -50% 0;
+
+      &:checked {
+        background: #60ff97;
+        box-shadow: 0 0 1rem #60ff97;
+      }
+    }
+  }
+}
+
+
+@layer main {
+  /* Frame start position */
+  @property --sprite-fs {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false
+  }
+
+  .sprite {
+    /* animation direction */
+    --sprite-ad: normal;
+    /* animation fill mode */
+    --sprite-af: forwards;
+    /* animation play state */
+    --sprite-ap: running;
+    /* animation iteration count */
+    --sprite-ai: 1;
+    /* animation timing function */
+    --sprite-at: linear;
+    /* animation frame rate */
+    --sprite-fr: 120;
+
+    /* sprite columns */
+    --sprite-c: 5;
+    /* sprite image height */
+    --sprite-h: 2160;
+    /* sprite image width */
+    --sprite-w: 1950;
+    /* Frame frames */
+    --sprite-f: 30;
+    /* Frame end position */
+    --sprite-fe: calc(var(--sprite-f) - 1);
+    /* Frame rate */
+    --sprite-as: calc(var(--sprite-f) / var(--sprite-fr) * 1s);
+
+    --sprite-th: 128;
+    --sprite-r: round(up, calc(var(--sprite-f) / var(--sprite-c)), 1);
+    --sprite-sh: calc(var(--sprite-h) / var(--sprite-r));
+    --sprite-ar: calc(var(--sprite-th) / var(--sprite-sh));
+    --sprite-uh: calc(var(--sprite-h) * var(--sprite-ar));
+    --sprite-uw: calc(var(--sprite-w) * var(--sprite-ar));
+    --sprite-tw: calc(var(--sprite-uw) / var(--sprite-c));
+
+    display: block;
+    position: relative;
+    top: 50px;
+    translate: 0 -50px;
+    transform-style: preserve-3d;
+    transition: top .5s ease;
+    cursor: pointer;
+    /*position: relative;*/
+    height: calc(1px * var(--sprite-th));
+    width: calc(1px * var(--sprite-tw));
+    background-image: var(--sprite-image);
+    transform-origin: center center;
+    background-size: calc(1px * var(--sprite-uw)) calc(1px * var(--sprite-uh));
+
+    /* Y position, round to check next ROW */
+    --row: calc(round(down, calc(calc(var(--sprite-tw) * var(--sprite-fs)) / var(--sprite-uw)), 1) * var(--sprite-th));
+    /* X position, mod to check COLUMN */
+    --col: mod(calc(var(--sprite-tw) * var(--sprite-fs)), var(--sprite-uw));
+    background-position: calc(-1px * var(--col)) calc(-1px * var(--row));
+
+    /* animation duration based on frame rate */
+    animation: to-start var(--sprite-as) var(--sprite-at) 0s var(--sprite-ai) var(--sprite-ad) var(--sprite-af) var(--sprite-ap);
+
+    &:has(+ input:checked) {
+      /* animation direction */
+      --sprite-ad: alternate;
+      /* animation fill mode */
+      --sprite-af: none;
+      /* animation iteration count */
+      --sprite-ai: infinite;
+      /* animation frame rate */
+      --sprite-fr: 30;
+
+      --sprite-fe: calc(var(--sprite-f) - 1);
+      --sprite-as: calc(var(--sprite-f) / var(--sprite-fr) * 1s);
+
+      top: 0;
+      /* Y position, round to check next ROW */
+      --row: calc(round(down, calc(calc(var(--sprite-tw) * var(--sprite-fs)) / var(--sprite-uw)), 1) * var(--sprite-th));
+      /* X position, mod to check COLUMN */
+      --col: mod(calc(var(--sprite-tw) * var(--sprite-fs)), var(--sprite-uw));
+
+      animation: frame var(--sprite-as) var(--sprite-at) 0s var(--sprite-ai) var(--sprite-ad) var(--sprite-af) var(--sprite-ap);
+
+      &:before {
+        bottom: calc(-25% - 50px);
+        scale: .75;
+        filter: contrast(0) brightness(0.15) blur(5px);
+        animation: frame var(--sprite-as) var(--sprite-at) 0s var(--sprite-ai) var(--sprite-ad) var(--sprite-af) var(--sprite-ap);
+      }
+    }
+
+    &:hover {
+      top: 0;
+      /* animation duration based on frame rate */
+      animation: frame var(--sprite-as) var(--sprite-at) 0s var(--sprite-ai) var(--sprite-ad) var(--sprite-af) var(--sprite-ap);
+
+      &:before {
+        bottom: calc(-25% - 50px);
+        scale: .75;
+        filter: contrast(0) brightness(0.15) blur(5px);
+        animation: frame var(--sprite-as) var(--sprite-at) 0s var(--sprite-ai) var(--sprite-ad) var(--sprite-af) var(--sprite-ap);
+      }
+    }
+
+    &:before {
+      content: "";
+      display: block;
+      position: relative;
+      --sprite-th: 128;
+      height: calc(1px * var(--sprite-th));
+      width: calc(1px * var(--sprite-tw));
+      background-image: var(--sprite-image);
+      background-size: calc(1px * var(--sprite-uw)) calc(1px * var(--sprite-uh));
+      background-position: calc(-1px * var(--col)) calc(-1px * var(--row));
+      animation: to-start var(--sprite-as) var(--sprite-at) 0s var(--sprite-ai) var(--sprite-ad) var(--sprite-af) var(--sprite-ap);
+
+      filter: contrast(0) brightness(0) blur(5px);
+      transform: rotateX(45deg) translateZ(-3em);
+      bottom: 0%;
+      z-index: -1;
+      pointer-events: none;
+      transition: bottom .5s ease, scale .5s ease, filter .5s ease;
+    }
+  }
+}
+
+@keyframes to-start {
+  from {
+    --sprite-fs: var(--sprite-fe);
+  }
+  to {
+    --sprite-fs: 0;
+  }
+}
+
+@keyframes frame {
+  to {
+    --sprite-fs: var(--sprite-fe);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  * {
+    animation: none;
+  }
+}
