@@ -870,6 +870,7 @@
 |864| [Space Anomaly](https://github.com/xml12333/HTML_CSS_JS/tree/main/864.Space%20Anomaly)| [Demo](https://nikt.com.ua/projects/htmlCssJs/864.Space%20Anomaly/)|
 |865| [Airbnb-Like Icon](https://github.com/xml12333/HTML_CSS_JS/tree/main/865.Airbnb-Like%20Icon)| [Demo](https://nikt.com.ua/projects/htmlCssJs/865.Airbnb-Like%20Icon/)|
 |866| [Photo Cube](https://github.com/xml12333/HTML_CSS_JS/tree/main/866.Photo%20Cube)| [Demo](https://nikt.com.ua/projects/htmlCssJs/866.Photo%20Cube/)|
+|867| [Seamless SVG Text](https://github.com/xml12333/HTML_CSS_JS/tree/main/867.Seamless%20SVG%20Text)| [Demo](https://nikt.com.ua/projects/htmlCssJs/867.Seamless%20SVG%20Text/)|
 |884| [Spinning Earth](https://github.com/xml12333/HTML_CSS_JS/tree/main/884.Spinning%20Earth)| [Demo](https://nikt.com.ua/projects/htmlCssJs/884.Spinning%20Earth/)|
 |885| [Scroll-Grid](https://github.com/xml12333/HTML_CSS_JS/tree/main/885.Scroll-Grid)| [Demo](https://nikt.com.ua/projects/htmlCssJs/885.Scroll-Grid/)|
 |886| [Four Text Shadows](https://github.com/xml12333/HTML_CSS_JS/tree/main/886.Four%20Text%20Shadows)| [Demo](https://nikt.com.ua/projects/htmlCssJs/886.Four%20Text%20Shadows/)|
