@@ -872,6 +872,7 @@
 |866| [Photo Cube](https://github.com/xml12333/HTML_CSS_JS/tree/main/866.Photo%20Cube)| [Demo](https://nikt.com.ua/projects/htmlCssJs/866.Photo%20Cube/)|
 |867| [Seamless SVG Text](https://github.com/xml12333/HTML_CSS_JS/tree/main/867.Seamless%20SVG%20Text)| [Demo](https://nikt.com.ua/projects/htmlCssJs/867.Seamless%20SVG%20Text/)|
 |868| [Image Ring](https://github.com/xml12333/HTML_CSS_JS/tree/main/868.Image%20Ring)| [Demo](https://nikt.com.ua/projects/htmlCssJs/868.Image%20Ring/)|
+|869| [Neural Network](https://github.com/xml12333/HTML_CSS_JS/tree/main/869.Neural%20Network)| [Demo](https://nikt.com.ua/projects/htmlCssJs/869.Neural%20Network/)|
 |884| [Spinning Earth](https://github.com/xml12333/HTML_CSS_JS/tree/main/884.Spinning%20Earth)| [Demo](https://nikt.com.ua/projects/htmlCssJs/884.Spinning%20Earth/)|
 |885| [Scroll-Grid](https://github.com/xml12333/HTML_CSS_JS/tree/main/885.Scroll-Grid)| [Demo](https://nikt.com.ua/projects/htmlCssJs/885.Scroll-Grid/)|
 |886| [Four Text Shadows](https://github.com/xml12333/HTML_CSS_JS/tree/main/886.Four%20Text%20Shadows)| [Demo](https://nikt.com.ua/projects/htmlCssJs/886.Four%20Text%20Shadows/)|
