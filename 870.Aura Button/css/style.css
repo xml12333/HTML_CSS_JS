@@ -1,0 +1,329 @@
+body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #222;
+      color: #fff;
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px #fff5;
+    }
+
+    .subtitle {
+      color: #ccc;
+      margin-bottom: 40px;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    button {
+      position: relative;
+      padding: 15px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      overflow: hidden;
+      color: white;
+    }
+
+    /* Common Effects */
+
+    .btn-effect-1 { border: 2px solid #0ff; background: transparent; color: #0ff; box-shadow: 0 0 5px #0ff; }
+    .btn-effect-1:hover { background: #0ff; color: #111; box-shadow: 0 0 20px #0ff, 0 0 40px #0ff; }
+
+    .btn-effect-2 { background: #ff3366; }
+    .btn-effect-2:hover { animation: explode 0.5s forwards; box-shadow: 0 0 30px #ff3366; }
+
+    .btn-effect-3 { background: #4a00e0; border-radius: 30px; }
+    .btn-effect-3:hover { background: #8e2de2; transform: translateY(-5px) scale(1.05); border-radius: 8px; }
+
+    .btn-effect-4 { background: #fd1d1d; position:relative}
+    .btn-effect-4::before, .btn-effect-4::after {
+      content: ''; position: absolute; top: 0; width: 50%; height: 100%; display:block;
+      background: #fd1d1d; z-index: -1; transition: 0.3s ease;
+    }
+    .btn-effect-4::before { left: 0; }
+    .btn-effect-4::after { right: 0; }
+    .btn-effect-4:hover::before { transform: translateX(-20%); background: #300; z-index:1}
+    .btn-effect-4:hover::after { transform: translateX(20%); background: #300;z-index:1 }
+
+    .btn-effect-5 { border: 2px solid #3ae374; background: transparent; color: #3ae374; }
+    .btn-effect-5::before {
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 0; height: 100%; background: #3ae374;
+      z-index: -1; transition: 0.5s;
+    }
+    .btn-effect-5:hover { color: #000; }
+    .btn-effect-5:hover::before { width: 100%; }
+
+    .btn-effect-6 { background: #0011a2; }
+    .btn-effect-6:hover { animation: shake 0.5s infinite; background: #0052a2; }
+
+    .btn-effect-7 { background: #222; color: #f1c40f; border: 2px solid #f1c40f; }
+    .btn-effect-7:hover { animation: lightning 1.5s infinite; }
+
+    .btn-effect-8 {
+      background: #3498db; padding: 25px 45px; min-width: 180px;
+      transform-style: preserve-3d; perspective: 800px;
+    }
+    .btn-effect-8 .front, .btn-effect-8 .back {
+      position: absolute; width: 100%; height: 100%; top: 0; left: 0;
+      display: flex; align-items: center; justify-content: center;
+      backface-visibility: hidden;
+    }
+    .btn-effect-8 .back { transform: rotateY(180deg); }
+    .btn-effect-8:hover { transform: rotateY(180deg); background: #2980b9; }
+
+    .btn-effect-9 { background: #9b59b6; }
+    .btn-effect-9:hover { animation: pulse 1.5s infinite; }
+
+    .btn-effect-10 { background: #27ae60; }
+    .btn-effect-10:hover { animation: blur 0.5s forwards; letter-spacing: 3px; }
+
+    .btn-effect-11 { background: #1abc9c; }
+    .btn-effect-11:hover { transform: translateX(20px); box-shadow: -5px 5px 0 #16a085; }
+
+    .btn-effect-12 { background: #e67e22; }
+    .btn-effect-12:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(230, 126, 34, 0.6);
+      animation: magnet 0.4s ease-in-out alternate infinite;
+    }
+
+    /* Animations */
+    @keyframes explode {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      60% { transform: scale(0.9); }
+      100% { transform: scale(1.1); }
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px) rotate(-5deg); }
+      50% { transform: translateX(5px) rotate(5deg); }
+      75% { transform: translateX(-5px) rotate(-5deg); }
+    }
+
+    @keyframes lightning {
+      0%, 50%, 100% { box-shadow: 0 0 5px #f1c40f; }
+      25% { box-shadow: 0 0 20px #f1c40f; }
+      75% { box-shadow: 0 0 30px #f1c40f, 0 0 50px #f1c40f; }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(155, 89, 182, 0.7); }
+      70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(155, 89, 182, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(155, 89, 182, 0); }
+    }
+
+    @keyframes blur {
+      0% { filter: blur(0); transform: scale(1); }
+      50% { filter: blur(3px); transform: scale(1.1); }
+      100% { filter: blur(0); transform: scale(1.05); background: #2ecc71; }
+    }
+
+    @keyframes magnet {
+      0% { transform: scale(1.05); }
+      100% { transform: scale(1.1) rotate(-2deg); }
+    }
+.btn-effect-13 {
+  background: #444;
+  position: relative;
+  overflow: hidden;
+}
+.btn-effect-13::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -75%;
+  width: 50%; height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+  transform: skewX(-20deg);
+  transition: all 0.5s;
+}
+.btn-effect-13:hover::after {
+  left: 130%;
+}
+
+.btn-effect-14 {
+  background: #e74c3c;
+}
+.btn-effect-14:hover {
+  animation: bouncePop 0.4s ease;
+}
+@keyframes bouncePop {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.2); }
+  60% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+.btn-effect-15 {
+  background: #6c5ce7;
+  background-size: 200% 200%;
+  background-image: conic-gradient(from 0deg, #6c5ce7, #00cec9, #6c5ce7);
+}
+.btn-effect-15:hover {
+  animation: swirlReveal 1.6s infinite linear;
+}
+@keyframes swirlReveal {
+  0% { background-position: -10% 50%; }
+  50% { background-position: 110% 50%; }
+    100% { background-position: -20% 50%; } 
+}
+ 
+.btn-effect-16 {
+  background: #2c3e50;
+  color: #ecf0f1;
+  overflow: hidden;
+  position:relative;
+}
+ 
+.btn-effect-16:hover {
+  animation: strobe 0.3s infinite;
+}
+@keyframes strobe {
+  0% { background:#fad }
+  10% { transform: translate(-2px, -2px); }
+  20% {transform: translate(2px, 2px); }
+  30% {  transform: translate(-1px, 1px); }
+  40%, 100% {transform: translate(0, 0); }
+}
+ 
+.btn-effect-17 {
+  background: #c0392b;
+  position: relative;
+  overflow: hidden;
+}
+.btn-effect-17::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transition: transform 0.5s ease-out;
+  z-index: 0;
+}
+.btn-effect-17:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+.btn-effect-17:hover {
+  background: #e74c3c;
+}
+
+.btn-effect-18 {
+  background-color: #1abc9c;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.btn-effect-18::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff6;
+  transform: rotate(0deg);
+  transition: top 0.3s ease;
+  z-index: 0;
+}
+.btn-effect-18:hover::before {
+  top: 0;
+}
+.btn-effect-18:hover {
+  color: #000d;
+}
+
+.btn-effect-18 {
+  background-color: #1abc9c;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.btn-effect-18::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+  transition: left 0.4s ease;
+}
+.btn-effect-18:hover::after {
+  left: 100%;
+}
+.btn-effect-18:hover {
+  box-shadow: 0 0 10px #1abc9c, 0 0 30px #1abc9c;
+}
+
+ .btn-effect-19 {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ecf0f1;
+  backdrop-filter: blur(5px);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.btn-effect-19:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow:0 0 10px #fff3 inset
+}
+
+.btn-effect-20 {
+  background-color: #f39c12;
+  color: white;
+  overflow: hidden;
+  position: relative;
+}
+.btn-effect-20::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, #ff0 0%, #fff 70%);
+ opacity:0;
+  scale:1.2
+}
+.btn-effect-20:hover::before {
+   animation: shineRotate 3s linear infinite;
+  opacity: 0.3;
+}
+@keyframes shineRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
