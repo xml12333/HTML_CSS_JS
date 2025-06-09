@@ -1,0 +1,115 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: sans-serif;
+  background: #ffdfc4;
+}
+
+.container-gallary {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(https://img.blacklead.work/grid.svg)
+}
+
+.canvas-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 450px;
+  height: 450px;
+  transform: translate(-50%, -50%);
+  clip-path: circle(50% at 50% 50%);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.border-inside {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 440px;
+  height: 440px;
+  border: 10px solid black;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  clip-path: circle(50% at 50% 50%);
+}
+
+
+.border-outside {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 464px;
+  height: 464px;
+  background: black;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  clip-path: circle(50% at 50% 50%);
+}
+
+.border-outside::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 454px;
+  height: 454px;
+  background-image: linear-gradient(180deg, #ffff82, #f4d2ba00 50%, #e8a5f3);
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.thumbnails {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.thumbnail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 74px;
+  height: 105px;
+  cursor: pointer;
+  opacity: 0.6;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.thumbnail .frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://cdn.prod.website-files.com/675835c7f4ae1fa1a79b3733/6762b98cb5e68f0b74323e61_collection-card-frame.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.thumbnail.active .frame,
+.thumbnail:hover .frame {
+  opacity: 1;
+}
+
+.thumbnail.active {
+  opacity: 1;
+}
+
+.thumbnail img {
+  width: 66px;
+  height: 99px;
+  object-fit: cover;
+}
