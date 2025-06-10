@@ -875,6 +875,7 @@
 |869| [Neural Network](https://github.com/xml12333/HTML_CSS_JS/tree/main/869.Neural%20Network)| [Demo](https://nikt.com.ua/projects/htmlCssJs/869.Neural%20Network/)|
 |870| [Aura Button](https://github.com/xml12333/HTML_CSS_JS/tree/main/870.Aura%20Button)| [Demo](https://nikt.com.ua/projects/htmlCssJs/870.Aura%20Button/)|
 |871| [Shader Image Transition](https://github.com/xml12333/HTML_CSS_JS/tree/main/871.Shader%20Image%20Transition)| [Demo](https://nikt.com.ua/projects/htmlCssJs/871.Shader%20Image%20Transition/)|
+|872| [CSS 3D David Eye](https://github.com/xml12333/HTML_CSS_JS/tree/main/872.CSS%203D%20David%20Eye)| [Demo](https://nikt.com.ua/projects/htmlCssJs/872.CSS%203D%20David%20Eye/)|
 |884| [Spinning Earth](https://github.com/xml12333/HTML_CSS_JS/tree/main/884.Spinning%20Earth)| [Demo](https://nikt.com.ua/projects/htmlCssJs/884.Spinning%20Earth/)|
 |885| [Scroll-Grid](https://github.com/xml12333/HTML_CSS_JS/tree/main/885.Scroll-Grid)| [Demo](https://nikt.com.ua/projects/htmlCssJs/885.Scroll-Grid/)|
 |886| [Four Text Shadows](https://github.com/xml12333/HTML_CSS_JS/tree/main/886.Four%20Text%20Shadows)| [Demo](https://nikt.com.ua/projects/htmlCssJs/886.Four%20Text%20Shadows/)|
