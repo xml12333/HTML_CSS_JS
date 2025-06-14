@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Boxed Space Anomaly</title>
+	<link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+	<!-- partial:index.partial.html -->
+	<canvas id="canvas"></canvas>
+	<textarea id="codeEditor" class="editor" spellcheck="false" autocorrect="off" autocapitalize="off" translate="no"
+		oninput="render()"></textarea>
+	<pre id="error"></pre>
+	<div id="indicator"></div>
+	<div id="controls">
+		<div class="controls">
+			<input id="btnToggleView" class="icon" type="checkbox" name="toggleView" onclick="toggleView()">
+			<input id="btnToggleResolution" class="icon" type="checkbox" name="toggleResolution"
+				onchange="toggleResolution()">
+			<input id="btnReset" class="icon" type="checkbox" name="reset" onclick="reset()">
+		</div>
+	</div>
+	<script type="x-shader/x-fragment">#version 300 es
+/*********
+* made by Matthias Hurrle (@atzedent)
+* Cubemap texture made by Emil Persson, aka Humus.
+* http://www.humus.name
+* licensed under a Creative Commons Attribution 3.0 Unported License.
+* http://creativecommons.org/licenses/by/3.0/
+*/
+precision highp float;
+out vec4 O;
+uniform float time;
+uniform vec2 resolution;
+uniform vec2 move;
+uniform samplerCube cubeMap;
+uniform int pointerCount;
+#define P pointerCount
+#define FC gl_FragCoord.xy
+#define R resolution
+#define T time
+#define N normalize
+#define S smoothstep
+#define MN min(R.x,R.y)
+#define rot(a) mat2(cos((a)-vec4(0,11,33,0)))
+#define hue(a) (.5+.5*sin(6.3*(a)+vec3(1,2,3)))
+#define cmul(a,b) vec2(a.x*b.x-a.y*b.y,a.x*b.y+a.y*b.x)
+float swirls(in vec3 p, float k) {
+	vec3 c=p;
+	float d=.2;
+	for (float i=.0; i<5.; i++) {
+		p=.7*abs(p)/dot(p,p)-.7;
+		p.z-=.0618*(1.+i);
+		p.yz=cmul(p.yz,p.yz);
+		p=p.zxy;
+    d+=exp(-9.*abs(dot(p,c)))*k/(5.-i);
+	}
+	return d;
+}
+vec3 march(in vec3 p, in vec3 rd) {
+	vec3 col=vec3(0), q=p;
+	float t=.0, d=.2, c=.0;
+	for (float i=.0; i<60.; i++) {
+		t+=d*exp(-1.4*c);
+		c=swirls(p+rd*t, 2.1/t);
+		col+=3e-2*c*hue(1.57*exp(-log(dot(p,p))*.9)*(i+1.)*c+.25);
+	}
+	return col;
+}
+float box(in vec3 p, in vec3 s, float r) {
+	p=abs(p)-s+r;
+	return length(max(p,.0))+min(.0,max(max(p.x,p.y),p.z))-r;
+}
+float map(in vec3 p) {
+	return abs(box(p,vec3(1.1),25e-2))-.0085;
+}
+vec3 norm(in vec3 p) {
+	float h=1e-3; vec2 k=vec2(-1,1);
+	return N(
+		k.xyy*map(p+k.xyy*h)+
+		k.yxy*map(p+k.yxy*h)+
+		k.yyx*map(p+k.yyx*h)+
+		k.xxx*map(p+k.xxx*h)
+	);
+}
+void cam(inout vec3 p) {
+	float k=P>0?.001:mix(.001,6.3,fract(T*.2));
+	p.yz*=rot(-.84+move.y*6.3/MN-sin(T*.1)*.25+.75-.1/k);
+	p.xz*=rot(.42-move.x*6.3/MN+T*.2);
+}
+vec3 blur(vec3 p) {
+	vec2 uv=(FC-.5*R)/MN;
+	uv.y+=.2;
+	float s=clamp(dot(uv,uv),.001,1.);
+	s=sqrt(s);
+	s=5.*s/MN;
+  vec3 col=vec3(0);
+	for (float x=-1.; x<2.; x++)
+	for (float y=-1.; y<2.; y++) {
+	for (float z=-1.; z<2.; z++) {
+		vec3 o=vec3(x,y,z)*s;
+		col+=max(col,texture(cubeMap,p+o).rgb)/27.;
+	}}
+  return col;
+}
+void main() {
+	vec2 uv=(FC-.5*R)/MN;
+	vec3 col=vec3(0),
+	p=vec3(0,0,-4),
+	rd=N(vec3(uv,1)), lp=vec3(1,3,-3);
+	cam(p); cam(rd);
+	float side=1., bnz=.0, dd=.0, at=.0;
+	for (float i=.0; i<400.; i++) {
+		float d=map(p)*side;
+		if (abs(d)<1e-3) {
+			if (bnz++>2.) break;
+			vec3 n=norm(p)*side,
+			l=N(lp-p),
+			bg=texture(cubeMap,reflect(rd,n)).rrr;
+			if (dot(l,n)<.0) l=-l;
+			float dif=clamp(dot(l,n),.0,1.),
+			spk=pow(clamp(dot(reflect(rd,n),N(vec3(0,5,0)-p)),.0,1.),12.),
+			fres=pow(clamp(1.+dot(rd,n),.0,1.),5.),
+			ldst=max(length(p),3e-3),
+			attn=1./(10.+ldst*.5+ldst*ldst*.1);
+			col=mix(vec3(.3)*mix(.5+dif,.0,fres),col,.9);
+			col=mix(vec3(1)*sqrt(dif)*1./max(5e-2,length(p)),col,.975);
+			col=mix(mix(col*vec3(.6,.8,1).bgr,vec3(1.-attn),fres),col,.75);
+      col=mix(col,bg,fres);
+      col+=spk*spk*spk*(3.-bnz)*.5*hue(sqrt(spk));
+			if (bnz==1.) {
+				vec3 rdd=N(vec3(uv,.2));
+				cam(rdd);
+				col+=fres*.3;
+				rd=refract(rdd,n,.88);
+				col=mix(march(4.*p,rd),col,fres);
+        col*=1.2;
+        col=S(-.5,1.5,col);
+				if ((col.r+col.g+col.b)/3. > .85) {
+					col+=spk*.25;
+					break;
+				}
+				col=S(.1,.65,col);
+				col=tanh(col*col*col);
+				col=pow(col,vec3(.4545));
+        col=mix(col,bg,fres);
+				col+=spk*.75;
+			}
+			/*** somehow way too expensive ***
+			if (bnz==3.) {
+				col=mix(col,blur(refract(rd,n,.7)),.1);
+			}
+			*/
+			side=-side;
+			d=55e-3;
+		}
+		if (d>10.){
+			vec3 rdd=N(vec3(uv,.3));
+			cam(rdd);
+			vec3 c=blur(rdd);
+      c=mix(c,vec3(dot(c,vec3(.21,.71,.07))),.5);
+			col=mix(vec3(.1,.2,.3),vec3(.01,.02,.03),pow(S(.0,.95,dot(uv,uv)),.9));
+			col=mix(col,(c+c.r*2.)/3.5,S(1.5,.125,dot(uv,uv)));
+			col+=sqrt(at*vec3(1,.95,.8))*1.5;
+			break;
+		}
+		p+=rd*d;
+		dd+=d;
+		at+=.05*(.05/dd);
+	}
+	float t=min((time-.5)*.3,1.);
+	col=mix(vec3(0),col,t);
+	col=S(-.15,1.1,.9*col);
+  O=vec4(col,1);
+}</script>
+	<!-- partial -->
+	<script src="./js/script.js"></script>
+
+</body>
+</html>
