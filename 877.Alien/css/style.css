@@ -1,0 +1,8 @@
+body {
+  height: 100vh;
+  margin: 0;
+}
+body,
+html {
+  overflow: hidden;
+}

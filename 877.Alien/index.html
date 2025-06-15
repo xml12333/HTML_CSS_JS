@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>alien 2</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<canvas id="glcanvas"></canvas>
+  <script id="vertex-shader" type="x-shader/x-vertex">
+    attribute vec2 a_position;
+    void main() {
+      gl_Position = vec4(a_position, 0.0, 1.0);
+    }
+  </script>
+<script id="fragment-shader" type="x-shader/x-fragment">
+#ifdef GL_ES
+precision mediump float;
+#endif
+
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+uniform float u_time;
+
+vec3 palette2(float t, float factor) {
+    vec3 a = vec3(0.5) + 0.3 * sin(vec3(0.1, 0.3, 0.5) * factor);
+    vec3 b = vec3(0.5) + 0.3 * cos(vec3(0.2, 0.4, 0.6) * factor);
+    vec3 c = vec3(1.0) + 0.5 * sin(vec3(0.3, 0.7, 0.9) * factor);
+    vec3 d = vec3(0.25, 0.4, 0.55) + 0.2 * cos(vec3(0.5, 0.6, 0.7) * factor);
+    return a + b * cos(6.28318 * (c * t + d));
+}
+float hash(vec2 p) {
+    return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123);
+}
+
+float noise(vec2 p) {
+    vec2 i = floor(p);
+    vec2 f = fract(p);
+    vec2 u = f * f * (3.0 - 2.0 * f);
+    
+    return mix(mix(hash(i + vec2(0.0, 0.0)), hash(i + vec2(1.0, 0.0)), u.x),
+               mix(hash(i + vec2(0.0, 1.0)), hash(i + vec2(1.0, 1.0)), u.x),
+               u.y);
+}
+
+void main() {
+    vec2 st = gl_FragCoord.xy/u_resolution.xy;
+    st.x *= u_resolution.x/u_resolution.y;
+    vec3 color = vec3(0.0);
+    vec2 uv = (gl_FragCoord.xy * 2.0 - u_resolution.xy) / u_resolution.y;
+    uv.x = abs(uv.x);
+    //float breath = 1.0 + 2.0 * sin(u_time * 0.15) * smoothstep(0.2, 1.5, length(uv));
+    //uv *= breath;
+    uv *= 20.0;
+
+for (int i = 0; i < 30; i++) {
+    float t = u_time * 0.01 - float(i);
+    uv *= mat2(cos(t), sin(t), -sin(t), cos(t));
+    uv += noise(sin(uv) * 0.6);
+    uv += noise(-cos(uv) * 0.6);
+
+    color += 0.002 / length(uv + sin(t));
+    
+    float intensity = 0.1 / length(uv - (10.3) * sin(t)) * (length(uv) * sin(float(i) + u_time));
+    
+
+	color += palette2(float(i) / u_time, u_time * 0.5) * intensity;
+}
+
+gl_FragColor = vec4(color, 1.0);
+}
+
+</script>
+<!-- partial -->
+  <script  src="./js/script.js"></script>
+
+</body>
+</html>
