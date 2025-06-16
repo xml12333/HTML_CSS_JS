@@ -881,6 +881,7 @@
 |875| [Cats](https://github.com/xml12333/HTML_CSS_JS/tree/main/875.Cats)| [Demo](https://nikt.com.ua/projects/htmlCssJs/875.Cats/)|
 |876| [Box Space Anomaly](https://github.com/xml12333/HTML_CSS_JS/tree/main/876.Box%20Space%20Anomaly)| [Demo](https://nikt.com.ua/projects/htmlCssJs/876.Box%20Space%20Anomaly/)|
 |877| [Alien](https://github.com/xml12333/HTML_CSS_JS/tree/main/877.Alien)| [Demo](https://nikt.com.ua/projects/htmlCssJs/877.Alien/)|
+|878| [CSS Bar Chart](https://github.com/xml12333/HTML_CSS_JS/tree/main/878.CSS%20Bar%20Chart)| [Demo](https://nikt.com.ua/projects/htmlCssJs/878.CSS%20Bar%20Chart/)|
 |884| [Spinning Earth](https://github.com/xml12333/HTML_CSS_JS/tree/main/884.Spinning%20Earth)| [Demo](https://nikt.com.ua/projects/htmlCssJs/884.Spinning%20Earth/)|
 |885| [Scroll-Grid](https://github.com/xml12333/HTML_CSS_JS/tree/main/885.Scroll-Grid)| [Demo](https://nikt.com.ua/projects/htmlCssJs/885.Scroll-Grid/)|
 |886| [Four Text Shadows](https://github.com/xml12333/HTML_CSS_JS/tree/main/886.Four%20Text%20Shadows)| [Demo](https://nikt.com.ua/projects/htmlCssJs/886.Four%20Text%20Shadows/)|

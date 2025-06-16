@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>alien 2</title>
@@ -7,15 +7,15 @@
 
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<canvas id="glcanvas"></canvas>
+  <!-- partial:index.partial.html -->
+  <canvas id="glcanvas"></canvas>
   <script id="vertex-shader" type="x-shader/x-vertex">
     attribute vec2 a_position;
     void main() {
       gl_Position = vec4(a_position, 0.0, 1.0);
     }
   </script>
-<script id="fragment-shader" type="x-shader/x-fragment">
+  <script id="fragment-shader" type="x-shader/x-fragment">
 #ifdef GL_ES
 precision mediump float;
 #endif
@@ -73,8 +73,8 @@ gl_FragColor = vec4(color, 1.0);
 }
 
 </script>
-<!-- partial -->
-  <script  src="./js/script.js"></script>
+  <!-- partial -->
+  <script src="./js/script.js"></script>
 
 </body>
 </html>
