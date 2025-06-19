@@ -884,6 +884,7 @@
 |878| [CSS Bar Chart](https://github.com/xml12333/HTML_CSS_JS/tree/main/878.CSS%20Bar%20Chart)| [Demo](https://nikt.com.ua/projects/htmlCssJs/878.CSS%20Bar%20Chart/)|
 |879| [CSS Grouped Bar Chart](https://github.com/xml12333/HTML_CSS_JS/tree/main/879.CSS%20Grouped%20Bar%20Chart)| [Demo](https://nikt.com.ua/projects/htmlCssJs/879.CSS%20Grouped%20Bar%20Chart/)|
 |880| [CSS Column Chart](https://github.com/xml12333/HTML_CSS_JS/tree/main/880.CSS%20Column%20Chart)| [Demo](https://nikt.com.ua/projects/htmlCssJs/880.CSS%20Column%20Chart/)|
+|881| [CSS Line Chart](https://github.com/xml12333/HTML_CSS_JS/tree/main/881.CSS%20Line%20Chart)| [Demo](https://nikt.com.ua/projects/htmlCssJs/881.CSS%20Line%20Chart/)|
 |884| [Spinning Earth](https://github.com/xml12333/HTML_CSS_JS/tree/main/884.Spinning%20Earth)| [Demo](https://nikt.com.ua/projects/htmlCssJs/884.Spinning%20Earth/)|
 |885| [Scroll-Grid](https://github.com/xml12333/HTML_CSS_JS/tree/main/885.Scroll-Grid)| [Demo](https://nikt.com.ua/projects/htmlCssJs/885.Scroll-Grid/)|
 |886| [Four Text Shadows](https://github.com/xml12333/HTML_CSS_JS/tree/main/886.Four%20Text%20Shadows)| [Demo](https://nikt.com.ua/projects/htmlCssJs/886.Four%20Text%20Shadows/)|
