@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Grouped Column Chart</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+  <!-- partial:index.partial.html -->
+  <data-chart aria-label="Annual Sales by Channel" id="chart-two" items-sm="6" items-xs="3" max="20000" min="0"
+    options="caption x-labels-vertical y-grid y-labels-end groups" role="figure" type="column">
+
+    <table>
+      <caption>Monthly Sales by Channel ($)</caption>
+      <thead aria-hidden="true">
+        <tr>
+          <th colspan="4">20000</th>
+        </tr>
+        <tr>
+          <th colspan="4"></th>
+        </tr>
+        <tr>
+          <th colspan="4">15000</th>
+        </tr>
+        <tr>
+          <th colspan="4"></th>
+        </tr>
+        <tr>
+          <th colspan="4">10000</th>
+        </tr>
+        <tr>
+          <th colspan="4"></th>
+        </tr>
+        <tr>
+          <th colspan="4">5000</th>
+        </tr>
+        <tr>
+          <th colspan="4"></th>
+        </tr>
+        <tr>
+          <th colspan="4">0</th>
+        </tr>
+      </thead>
+      <tbody data-t="184700,178400,93100">
+        <tr>
+          <th scope="row">January</th>
+          <td data-v="12500" data-pv="12500">12500</td>
+          <td data-v="9800" data-pv="9800">9800</td>
+          <td data-v="6200" data-pv="6200">6200</td>
+        </tr>
+        <tr>
+          <th scope="row">February</th>
+          <td data-v="10300" data-pv="12500">10300</td>
+          <td data-v="8400" data-pv="9800">8400</td>
+          <td data-v="3600" data-pv="6200">3600</td>
+        </tr>
+        <tr>
+          <th scope="row">March</th>
+          <td data-v="11900" data-pv="10300">11900</td>
+          <td data-v="11200" data-pv="8400">11200</td>
+          <td data-v="7000" data-pv="3600">7000</td>
+        </tr>
+        <tr>
+          <th scope="row">April</th>
+          <td data-v="14200" data-pv="11900">14200</td>
+          <td data-v="13600" data-pv="11200">13600</td>
+          <td data-v="8000" data-pv="7000">8000</td>
+        </tr>
+        <tr>
+          <th scope="row">May</th>
+          <td data-v="16400" data-pv="14200">16400</td>
+          <td data-v="16800" data-pv="13600">16800</td>
+          <td data-v="8800" data-pv="8000">8800</td>
+        </tr>
+        <tr>
+          <th scope="row">June</th>
+          <td data-v="17800" data-pv="16400">17800</td>
+          <td data-v="17500" data-pv="16800">17500</td>
+          <td data-v="10000" data-pv="8800">10000</td>
+        </tr>
+        <tr>
+          <th scope="row">July</th>
+          <td data-v="19200" data-pv="17800">19200</td>
+          <td data-v="19700" data-pv="17500">19700</td>
+          <td data-v="10000" data-pv="10000">10000</td>
+        </tr>
+        <tr>
+          <th scope="row">August</th>
+          <td data-v="18400" data-pv="19200">18400</td>
+          <td data-v="19800" data-pv="19700">19800</td>
+          <td data-v="9000" data-pv="10000">9000</td>
+        </tr>
+        <tr>
+          <th scope="row">September</th>
+          <td data-v="16800" data-pv="18400">16800</td>
+          <td data-v="17700" data-pv="19800">17700</td>
+          <td data-v="9000" data-pv="9000">9000</td>
+        </tr>
+        <tr>
+          <th scope="row">October</th>
+          <td data-v="15500" data-pv="16800">15500</td>
+          <td data-v="15200" data-pv="17700">15200</td>
+          <td data-v="8000" data-pv="9000">8000</td>
+        </tr>
+        <tr>
+          <th scope="row">November</th>
+          <td data-v="13200" data-pv="15500">13200</td>
+          <td data-v="12700" data-pv="15200">12700</td>
+          <td data-v="6500" data-pv="8000">6500</td>
+        </tr>
+        <tr>
+          <th scope="row">December</th>
+          <td data-v="18500" data-pv="13200">18500</td>
+          <td data-v="16000" data-pv="12700">16000</td>
+          <td data-v="7000" data-pv="6500">7000</td>
+        </tr>
+      </tbody>
+    </table>
+    <ul>
+      <li>In-store</li>
+      <li>Online</li>
+      <li>Mobile</li>
+    </ul>
+  </data-chart>
+  <!-- partial -->
+  <script src='./js/script.js'></script>
+</body>
+</html>
