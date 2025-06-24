@@ -922,3 +922,4 @@
 |916| [A-Team](https://github.com/xml12333/HTML_CSS_JS/tree/main/916.A-Team)| [Demo](https://nikt.com.ua/projects/htmlCssJs/916.A-Team/)|
 |917| [Dropdown Menu](https://github.com/xml12333/HTML_CSS_JS/tree/main/917.Dropdown%20Menu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/917.Dropdown%20Menu/)|
 |918| [Glass macOS](https://github.com/xml12333/HTML_CSS_JS/tree/main/918.Glass%20macOS)| [Demo](https://nikt.com.ua/projects/htmlCssJs/918.Glass%20macOS/)|
+|919| [Liquid Distortion Effect](https://github.com/xml12333/HTML_CSS_JS/tree/main/919.Liquid%20Distortion%20Effect)| [Demo](https://nikt.com.ua/projects/htmlCssJs/919.Liquid%20Distortion%20Effect/)|
