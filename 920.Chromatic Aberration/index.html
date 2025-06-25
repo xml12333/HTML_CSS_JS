@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chromatic aberration (CSS vars + Houdini magic)</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/prefixfree-1.0.7.min.js"></script>
+
+</head>
+<body>
+  <!-- partial:index.partial.html -->
+  <style>
+    :root {
+      --ns: 12;
+      --nl: 3;
+      --m: 9
+    }
+
+    .layer:nth-child(1) {
+      --j: 0
+    }
+
+    .layer:nth-child(2) {
+      --j: 1
+    }
+
+    .layer:nth-child(3) {
+      --j: 2
+    }
+  </style>
+  <div class="strip" style="--i: 0">
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+  </div>
+  <div class="strip" style="--i: 1">
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+  </div>
+  <div class="strip" style="--i: 2">
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+  </div>
+  <div class="strip" style="--i: 3">
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+  </div>
+  <div class="strip" style="--i: 4">
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+  </div>
+  <div class="strip" style="--i: 5">
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+  </div>
+  <div class="strip" style="--i: 6">
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+  </div>
+  <div class="strip" style="--i: 7">
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+  </div>
+  <div class="strip" style="--i: 8">
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+  </div>
+  <div class="strip" style="--i: 9">
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+  </div>
+  <div class="strip" style="--i: 10">
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+  </div>
+  <div class="strip" style="--i: 11">
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+  </div>
+  <!-- partial -->
+
+</body>
+</html>

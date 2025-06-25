@@ -1,0 +1,55 @@
+$u: 1.5em;
+$t: 1s;
+$o: .07;
+
+/* Chromium only */
+@property --tx {
+	syntax: '<number>';
+	initial-value: -1;
+	inherits: false
+}
+
+@property --sx {
+	syntax: '<number>';
+	initial-value: -1;
+	inherits: false
+}
+
+body {
+	display: grid;
+	place-content: center;
+	margin: 0;
+	height: 100vh;
+	background: #000
+}
+
+div { width: calc(var(--m)*#{$u}); height: $u }
+
+.strip {
+	--p: 0; // parity
+	--s: calc(1 - 2*var(--p)); // sign
+	position: relative;
+	
+	&:nth-of-type(2n) { --p: 1 }
+}
+
+.layer {
+	--hue: calc(var(--j)/var(--nl)*360);
+	--dt: calc((var(--i)/var(--ns) - 1)*#{$t});
+	--dx: calc((var(--j) + 1)*#{$o});
+	position: absolute;
+	transform: 
+		translate(calc(var(--tx)*var(--s)*#{2*$u}))
+		skewx(calc(var(--sx)*var(--s)*15deg));
+	background: 
+		linear-gradient(90deg, 
+				hsl(var(--hue), 100%, 50%) 50%, 
+				transparent 0) 0/ #{2*$u};
+	mix-blend-mode: screen;
+	animation: 
+		tx $t cubic-bezier(calc(.5 - var(--dx)), 0, calc(.5 + var(--dx)), 1) var(--dt) infinite alternate, 
+		sx $t linear calc(var(--dt) + #{.5*$t}) infinite alternate
+}
+
+@keyframes tx { to { --tx: 1 } }
+@keyframes sx { to { --sx: 1 } }

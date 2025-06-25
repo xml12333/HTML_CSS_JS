@@ -1,0 +1,54 @@
+/* Chromium only */
+@property --tx {
+  syntax: "<number>";
+  initial-value: -1;
+  inherits: false;
+}
+@property --sx {
+  syntax: "<number>";
+  initial-value: -1;
+  inherits: false;
+}
+body {
+  display: grid;
+  place-content: center;
+  margin: 0;
+  height: 100vh;
+  background: #000;
+}
+
+div {
+  width: calc(var(--m)*1.5em);
+  height: 1.5em;
+}
+
+.strip {
+  --p: 0;
+  --s: calc(1 - 2*var(--p));
+  position: relative;
+}
+.strip:nth-of-type(2n) {
+  --p: 1 ;
+}
+
+.layer {
+  --hue: calc(var(--j)/var(--nl)*360);
+  --dt: calc((var(--i)/var(--ns) - 1)*1s);
+  --dx: calc((var(--j) + 1)*0.07);
+  position: absolute;
+  transform: translate(calc(var(--tx)*var(--s)*3em)) skewx(calc(var(--sx)*var(--s)*15deg));
+  background: linear-gradient(90deg, hsl(var(--hue), 100%, 50%) 50%, transparent 0) 0/3em;
+  mix-blend-mode: screen;
+  animation: tx 1s cubic-bezier(calc(.5 - var(--dx)), 0, calc(.5 + var(--dx)), 1) var(--dt) infinite alternate, sx 1s linear calc(var(--dt) + 0.5s) infinite alternate;
+}
+
+@keyframes tx {
+  to {
+    --tx: 1 ;
+  }
+}
+@keyframes sx {
+  to {
+    --sx: 1 ;
+  }
+}
