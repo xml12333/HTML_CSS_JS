@@ -925,3 +925,4 @@
 |919| [Liquid Distortion Effect](https://github.com/xml12333/HTML_CSS_JS/tree/main/919.Liquid%20Distortion%20Effect)| [Demo](https://nikt.com.ua/projects/htmlCssJs/919.Liquid%20Distortion%20Effect/)|
 |920| [Chromatic Aberration](https://github.com/xml12333/HTML_CSS_JS/tree/main/920.Chromatic%20Aberration)| [Demo](https://nikt.com.ua/projects/htmlCssJs/920.Chromatic%20Aberration/)|
 |921| [Glass Refraction Text](https://github.com/xml12333/HTML_CSS_JS/tree/main/921.Glass%20Refraction%20Text)| [Demo](https://nikt.com.ua/projects/htmlCssJs/921.Glass%20Refraction%20Text/)|
+|922| [Full Screen Scroll](https://github.com/xml12333/HTML_CSS_JS/tree/main/922.Full%20Screen%20Scroll)| [Demo](https://nikt.com.ua/projects/htmlCssJs/922.Full%20Screen%20Scroll/)|
