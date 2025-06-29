@@ -1,0 +1,98 @@
+:root {
+	--border-size: 1.5%;
+	--duration: 7s;
+	--open-from: .5;
+}
+
+html, body { height: 100%; margin: 0; }
+body {
+	background: #fafafa;
+	color: #232323;
+	place-content: center;
+	justify-items: center;
+}
+
+.container { display: grid; overflow: hidden; }
+
+@property --progress {
+	syntax: '<number>';
+	initial-value: 0;
+	inherits: false;
+}
+@keyframes progress { to { --progress: 1; } }
+
+.hexagon {
+	grid-area: 1 / 1;
+	width: clamp(100px, 90vmin, 300px);
+	aspect-ratio: 1;
+	background: currentColor;
+
+	--o: (var(--progress) * 50%);
+	--i: max(0%, var(--o) - var(--border-size));
+	clip-path: polygon(
+		calc(50% + var(--o) * cos(  0deg)) calc(50% + var(--o) * sin(  0deg)),
+		calc(50% + var(--o) * cos( 60deg)) calc(50% + var(--o) * sin( 60deg)),
+		calc(50% + var(--o) * cos(120deg)) calc(50% + var(--o) * sin(120deg)),
+		calc(50% + var(--o) * cos(180deg)) calc(50% + var(--o) * sin(180deg)),
+		calc(50% + var(--o) * cos(240deg)) calc(50% + var(--o) * sin(240deg)),
+		calc(50% + var(--o) * cos(300deg)) calc(50% + var(--o) * sin(300deg)),
+		calc(50% + var(--o) * cos(360deg)) calc(50% + var(--o) * sin(360deg)),
+		calc(50% + var(--i) * cos(360deg)) calc(50% + var(--i) * sin(360deg)),
+		calc(50% + var(--i) * cos(300deg)) calc(50% + var(--i) * sin(300deg)),
+		calc(50% + var(--i) * cos(240deg)) calc(50% + var(--i) * sin(240deg)),
+		calc(50% + var(--i) * cos(180deg)) calc(50% + var(--i) * sin(180deg)),
+		calc(50% + var(--i) * cos(120deg)) calc(50% + var(--i) * sin(120deg)),
+		calc(50% + var(--i) * cos( 60deg)) calc(50% + var(--i) * sin( 60deg)),
+		calc(50% + var(--i) * cos(  0deg)) calc(50% + var(--i) * sin(  0deg))
+	);
+	
+	--a: (clamp(0, (var(--progress) - var(--open-from)) / (1 - var(--open-from)), 1) * 30deg);
+	mask-image: conic-gradient(
+		#0000 calc(var(--a)),
+		#000 0 calc( 60deg - var(--a)), #0000 0 calc( 60deg + var(--a)),
+		#000 0 calc(120deg - var(--a)), #0000 0 calc(120deg + var(--a)),
+		#000 0 calc(180deg - var(--a)), #0000 0 calc(180deg + var(--a)),
+		#000 0 calc(240deg - var(--a)), #0000 0 calc(240deg + var(--a)),
+		#000 0 calc(300deg - var(--a)), #0000 0 calc(300deg + var(--a)),
+		#000 0 calc(360deg - var(--a)), #0000 0
+	);
+
+	animation: progress var(--duration) linear infinite;
+	--sibling-count: sibling-count();
+	--sibling-index: sibling-index();
+	animation-delay: calc(-1 * var(--duration) * (var(--sibling-index) - 1) / var(--sibling-count));
+
+	&:nth-child(2n) { rotate: 30deg; }
+}
+
+/* emulate sibling-index() and sibling-count() support for up to 12 elements */
+@supports not (scale: sibling-index()) {
+	.container {
+		.hexagon { --sibling-count: 1; }
+		&:has(.hexagon:nth-child(2)) .hexagon { --sibling-count: 2; }
+		&:has(.hexagon:nth-child(3)) .hexagon { --sibling-count: 3; }
+		&:has(.hexagon:nth-child(4)) .hexagon { --sibling-count: 4; }
+		&:has(.hexagon:nth-child(5)) .hexagon { --sibling-count: 5; }
+		&:has(.hexagon:nth-child(6)) .hexagon { --sibling-count: 6; }
+		&:has(.hexagon:nth-child(7)) .hexagon { --sibling-count: 7; }
+		&:has(.hexagon:nth-child(8)) .hexagon { --sibling-count: 8; }
+		&:has(.hexagon:nth-child(9)) .hexagon { --sibling-count: 9; }
+		&:has(.hexagon:nth-child(10)) .hexagon { --sibling-count: 10; }
+		&:has(.hexagon:nth-child(11)) .hexagon { --sibling-count: 11; }
+		&:has(.hexagon:nth-child(12)) .hexagon { --sibling-count: 12; }
+	}
+	.hexagon {
+		--sibling-index: 1;
+		&:nth-child(2) { --sibling-index: 2; }
+		&:nth-child(3) { --sibling-index: 3; }
+		&:nth-child(4) { --sibling-index: 4; }
+		&:nth-child(5) { --sibling-index: 5; }
+		&:nth-child(6) { --sibling-index: 6; }
+		&:nth-child(7) { --sibling-index: 7; }
+		&:nth-child(8) { --sibling-index: 8; }
+		&:nth-child(9) { --sibling-index: 9; }
+		&:nth-child(10) { --sibling-index: 10; }
+		&:nth-child(11) { --sibling-index: 11; }
+		&:nth-child(12) { --sibling-index: 12; }
+	}
+}

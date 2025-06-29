@@ -927,3 +927,4 @@
 |921| [Glass Refraction Text](https://github.com/xml12333/HTML_CSS_JS/tree/main/921.Glass%20Refraction%20Text)| [Demo](https://nikt.com.ua/projects/htmlCssJs/921.Glass%20Refraction%20Text/)|
 |922| [Full Screen Scroll](https://github.com/xml12333/HTML_CSS_JS/tree/main/922.Full%20Screen%20Scroll)| [Demo](https://nikt.com.ua/projects/htmlCssJs/922.Full%20Screen%20Scroll/)|
 |923| [Decomposed Torus](https://github.com/xml12333/HTML_CSS_JS/tree/main/923.Decomposed%20Torus)| [Demo](https://nikt.com.ua/projects/htmlCssJs/923.Decomposed%20Torus/)|
+|924| [Hexagon ripple](https://github.com/xml12333/HTML_CSS_JS/tree/main/924.Hexagon%20ripple)| [Demo](https://nikt.com.ua/projects/htmlCssJs/924.Hexagon%20ripple/)|
