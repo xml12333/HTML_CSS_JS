@@ -928,3 +928,4 @@
 |922| [Full Screen Scroll](https://github.com/xml12333/HTML_CSS_JS/tree/main/922.Full%20Screen%20Scroll)| [Demo](https://nikt.com.ua/projects/htmlCssJs/922.Full%20Screen%20Scroll/)|
 |923| [Decomposed Torus](https://github.com/xml12333/HTML_CSS_JS/tree/main/923.Decomposed%20Torus)| [Demo](https://nikt.com.ua/projects/htmlCssJs/923.Decomposed%20Torus/)|
 |924| [Hexagon ripple](https://github.com/xml12333/HTML_CSS_JS/tree/main/924.Hexagon%20ripple)| [Demo](https://nikt.com.ua/projects/htmlCssJs/924.Hexagon%20ripple/)|
+|925| [Calendar](https://github.com/xml12333/HTML_CSS_JS/tree/main/925.Calendar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/925.Calendar/)|

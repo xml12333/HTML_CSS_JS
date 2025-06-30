@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Sixtyfour&display=swap");
+
+:root {
+  --hsl-primary: 249, 31%, 26%;
+  --hsl-secondary: 215, 27%, 42%;
+  --hsl-tertiary: 176, 39%, 60%;
+  --hsl-quaternary: 71, 64%, 82%;
+
+  --default-opacity: 0.75;
+
+  --primary: hsla(var(--hsl-primary), var(--default-opacity));
+  --secondary: hsla(var(--hsl-secondary), var(--default-opacity));
+  --tertiary: hsla(var(--hsl-tertiary), var(--default-opacity));
+  --quaternary: hsla(var(--hsl-quaternary), var(--default-opacity));
+}
+
+* {
+  /* border: 2px solid rgba(0, 0, 0, .2); */
+  min-width: 2rem;
+  min-height: 2rem;
+  padding: 0;
+  margin: 0;
+  font-family: "Sixtyfour", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "BLED" 0, "SCAN" 0;
+  text-transform: uppercase;
+}
+
+body {
+  display: flex;
+  place-items: center;
+  place-content: center;
+  background: hsl(var(--hsl-primary));
+  background-image: url("https://www.transparenttextures.com/patterns/diagonal-waves.png");
+}
+
+#calendar__container {
+  border-color: gray;
+  min-height: 90vh;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  gap: 1em;
+}
+
+#calendar__controls {
+  display: flex;
+  place-items: center;
+  place-content: space-around;
+  padding: 0;
+  color: hsla(var(--hsl-tertiary), 0.5);
+}
+
+#calendar__controls button {
+  background-image: url("https://www.transparenttextures.com/patterns/diagonal-waves.png");
+}
+#calendar__controls h1,
+#calendar__controls button {
+  height: 100%;
+  font-size: 3rem;
+  margin: 0;
+  text-shadow: 0.3rem 0.3rem 0.5rem hsla(var(--hsl-primary), 0.4);
+}
+
+#calendar {
+  overflow: hidden;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  color: hsl(var(--hsl-primary));
+  text-shadow: 0.1em 0.1em 0 hsla(var(--hsl-tertiary), 0.4);
+}
+
+.calendar__weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5em;
+}
+
+.calendar__dayname {
+  font-size: 1rem;
+  text-align: center;
+  background: hsla(var(--hsl-primary), 0.2);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border-color: brown;
+  display: flex;
+  place-items: center;
+  place-content: center;
+}
+
+.calendar__week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.8em;
+}
+
+.calendar__day {
+  background: var(--secondary);
+  font-size: 1.5rem;
+  display: flex;
+  place-items: flex-start;
+  place-content: flex-start;
+  padding: 0.6rem;
+  border-radius: 1rem;
+  color: var(--bg-color);
+}
+
+.current-month.weekend {
+  filter: saturate(0.5);
+}
+
+/* Different styles for months */
+.prev-month {
+  background: hsla(var(--hsl-tertiary), 0.15);
+}
+
+.next-month {
+  background: hsla(var(--hsl-tertiary), 0.15);
+}
+
+.current-month {
+  background: var(--secondary);
+}
+
+.weekend {
+  background: hsla(var(--hsl-quaternary), 0.4);
+  color: hsla(var(--hsl-primary), 1);
+}
+
+.today {
+  outline: 3px solid hsla(var(--hsl-quaternary), 1);
+  color: hsl(var(--hsl-quaternary));
+  background-color: hsla(var(--hsl-secondary), 1);
+  font-weight: bold;
+}
+
+button {
+  background: var(--primary);
+  color: var(--bg-color);
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.next-month,
+.prev-month {
+  opacity: 0.3;
+}
