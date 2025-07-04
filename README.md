@@ -932,3 +932,4 @@
 |926| [Transition](https://github.com/xml12333/HTML_CSS_JS/tree/main/926.Transition)| [Demo](https://nikt.com.ua/projects/htmlCssJs/926.Transition/)|
 |927| [Gravity Points](https://github.com/xml12333/HTML_CSS_JS/tree/main/927.Gravity%20Points)| [Demo](https://nikt.com.ua/projects/htmlCssJs/927.Gravity%20Points/)|
 |928| [Tearable Cloth](https://github.com/xml12333/HTML_CSS_JS/tree/main/928.Tearable%20Cloth)| [Demo](https://nikt.com.ua/projects/htmlCssJs/928.Tearable%20Cloth/)|
+|929| [Chord Progression](https://github.com/xml12333/HTML_CSS_JS/tree/main/929.Chord%20Progression)| [Demo](https://nikt.com.ua/projects/htmlCssJs/929.Chord%20Progression/)|
