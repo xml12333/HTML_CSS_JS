@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Glow effect to LineBasicMaterial without bloom</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+  <!-- partial:index.partial.html -->
+  <canvas id="upper"> <!-- blurred scene--> </canvas>
+  <canvas id="lower"> <!-- normal scene--> </canvas>
+
+  <script async src="./js/es-module-shims.js" crossorigin="anonymous"></script>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.177.0/build/three.module.js",
+			"three/addons/": "https://cdn.jsdelivr.net/npm/three@0.177.0/examples/jsm/",
+			"meg/": "https://cdn.jsdelivr.net/npm/meshedgesgeometry@latest/src/"
+    }
+  }
+</script>
+  <!-- partial -->
+  <script type="module" src="./js/script.js"></script>
+
+</body>
+</html>
