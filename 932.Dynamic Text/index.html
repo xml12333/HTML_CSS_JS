@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Interactive Text Effects</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+  <!-- partial:index.partial.html -->
+  <body>
+    <div class="mouse-follower"></div>
+    <div class="gradient-overlay top"></div>
+    <div class="gradient-overlay bottom"></div>
+
+    <div class="effect-controls">
+      <div class="effect-number active" data-effect="zigzag" title="ZigZag">
+        1
+      </div>
+      <div class="effect-number" data-effect="orbital" title="Orbital">2</div>
+      <div class="effect-number" data-effect="spiral" title="Spiral">3</div>
+      <div class="effect-number" data-effect="glitch" title="Glitch">G</div>
+
+      <div class="intensity-mini">
+        <label>Power: <span id="intensity-value">15</span></label>
+        <input type="range" id="intensity-slider" min="5" max="50" value="15" />
+      </div>
+    </div>
+
+    <div class="instructions">
+      Scroll with mouse wheel or swipe<br />
+      to create organic wave effects<br />
+      <small>Hover over words for magic<br />
+        Move cursor near words for magnetic pull<br />
+        Press 1,2,3 or G for different effects</small>
+    </div>
+
+    <div class="container">
+      <div class="column" id="column1">
+        <div class="column-content">
+          <p>
+            The universe is an extraordinary tapestry of cosmic phenomena, where
+            galaxies spiral through the vast darkness like luminous pinwheels.
+            Each star is a nuclear furnace, burning bright across billions of
+            years, creating the very elements that make life possible. Scientists
+            estimate there are over two trillion galaxies in the observable
+            universe.
+          </p>
+
+          <p>
+            Deep within these cosmic structures, black holes warp space and time
+            itself, creating gravitational wells so intense that not even light
+            can escape their grasp. These enigmatic objects challenge our
+            understanding of physics and continue to reveal secrets about the
+            fundamental nature of reality.
+          </p>
+
+          <p>
+            Quantum mechanics reveals that at the smallest scales, particles exist
+            in multiple states simultaneously until observed. This phenomenon,
+            known as superposition, has led to revolutionary technologies like
+            quantum computing and has profound implications for our understanding
+            of consciousness and observation.
+          </p>
+
+          <p>
+            The search for extraterrestrial life continues to captivate scientists
+            and the public alike. With thousands of exoplanets discovered orbiting
+            distant stars, many within the habitable zone where liquid water could
+            exist, the possibility of finding life beyond Earth becomes
+            increasingly plausible with each passing year.
+          </p>
+        </div>
+      </div>
+
+      <div class="column" id="column2">
+        <div class="column-content">
+          <p>
+            Artificial intelligence is reshaping the landscape of human knowledge
+            and capability. Machine learning algorithms can now recognize patterns
+            in data that would take humans centuries to identify, leading to
+            breakthroughs in medicine, climate science, and space exploration.
+          </p>
+
+          <p>
+            The human brain contains approximately 86 billion neurons, each
+            connected to thousands of others, creating a network more complex than
+            any supercomputer ever built. This biological marvel processes
+            information, generates consciousness, and creates the rich inner world
+            of human experience through mechanisms we are only beginning to
+            understand.
+          </p>
+
+          <p>
+            Climate change represents one of the most pressing challenges of our
+            time, requiring unprecedented global cooperation and innovation.
+            Scientists are developing revolutionary technologies like carbon
+            capture, renewable energy systems, and sustainable materials to
+            address this planetary crisis.
+          </p>
+
+          <p>
+            The concept of time remains one of physics' greatest mysteries.
+            Einstein showed us that time is relative, flowing differently
+            depending on gravity and velocity. This understanding has practical
+            applications in GPS satellites and opens doors to theoretical
+            possibilities like time dilation and the exploration of temporal
+            paradoxes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- partial -->
+  <script src="./js/script.js"></script>
+
+</body>
+</html>
