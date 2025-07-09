@@ -142,7 +142,7 @@ img {
   width: 100%;
   top: 0;
   left: 0;
-  background-color: var(--black-color);
+  background-color: transparent;
   z-index: var(--z-fixed);
   transition: background-color 0.4s, box-shadow 0.4s;
 }
@@ -229,15 +229,110 @@ img {
 }
 
 /* Change background header */
+.bg-header {
+  background-color: var(--body-color);
+  box-shadow: 0 8px 16px hsla(0, 0%, 0%, 0.1);
+}
+.bg-header :is(.nav__logo, .nav__toggle, .nav__theme) {
+  color: var(--title-color);
+}
+.bg-header .nav__logo img {
+  filter: invert(100%);
+}
 
 /* Active link */
 
 /*=============== HOME ===============*/
-
+.home {
+  position: relative;
+}
+.home__bg,
+.home__blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.home__bg {
+  object-fit: cover;
+  object-position: center;
+}
+.home__blur {
+  background-color: var(--opacity-color-20);
+  backdrop-filter: blur(40px);
+  transition: background-color 0.4s;
+}
+.home__container {
+  position: relative;
+  padding-block: 2rem 3rem;
+  row-gap: 3rem;
+}
+.home__data {
+  text-align: center;
+  color: var(--white-color);
+}
+.home__title {
+  font-size: var(--biggest-font-size);
+  font-weight: var(--font-bold);
+  line-height: 110%;
+  margin-bottom: 1rem;
+}
+.home__description {
+  margin-bottom: 2rem;
+}
+.home__swiper {
+  max-width: 320px;
+  border-radius: 1.5rem;
+}
 /* Swiper class */
-
+.home__swiper .swiper-button-prev::after,
+.home__swiper .swiper-button-next:after {
+  content: "";
+}
+.home__swiper :is(.swiper-button-prev, .swiper-button-next) {
+  color: var(--white-color);
+  font-size: 1.5rem;
+  background-color: var(--opacity-color-30);
+  backdrop-filter: blur(24px);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.25rem;
+  top: initial;
+  bottom: 1.25rem;
+  transition: background-color 0.4s;
+}
+.home__swiper .swiper-button-prev {
+  left: initial;
+  right: 4rem;
+}
+.home__swiper .swiper-button-next {
+  right: 1.25rem;
+}
 /*=============== BUTTON ===============*/
-
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.5rem;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  padding: 1rem 2rem;
+  font-weight: var(--font-semi-bold);
+  border-radius: 0.5rem;
+  transition: backgroun-color 0.4s;
+}
+.button i {
+  font-weight: initial;
+  font-size: 1.5rem;
+  transition: transform 0.4s;
+}
+.button:hover i {
+  transform: translateX(0.5rem);
+}
+.button__opa-30 {
+  background-color: var(--opacity-color-30);
+}
 /*=============== DESTINATION ===============*/
 
 /*=============== TESTIMONIAL ===============*/

@@ -11,7 +11,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 
    <!--=============== SWIPER CSS ===============-->
-   <link rel="stylesheet" href="">
+   <link rel="stylesheet" href="./css/swiper-bundle.min.css">
 
    <!--=============== CSS ===============-->
    <link rel="stylesheet" href="./css/styles.css">
@@ -34,11 +34,12 @@
                <li><a href="#gallery" class="nav__link">Gallery</a></li>
                <li><a href="#join" class="nav__link">Contact</a></li>
             </ul>
+            <!-- Close button -->
+            <div class="nav__close" id="nav-close">
+               <i class="ri-close-large-line"></i>
+            </div>
          </div>
-         <!-- Close button -->
-         <div class="nav__close" id="nav-close">
-            <i class="ri-close-large-line"></i>
-         </div>
+
          <div class="nav__buttons">
             <!-- Theme button -->
             <i class="ri-moon-fill nav__theme" id="theme-button"></i>
@@ -54,7 +55,42 @@
    <main class="main">
       <!--==================== HOME ====================-->
       <section class="home section" id="home">
-
+         <img src="./img/home-bg.png" alt="img" class="home__bg">
+         <div class="home__blur"></div>
+         <div class="home__container container grid">
+            <div class="home__data">
+               <h1 class="home__title">Travel <br> Around <br> The World</h1>
+               <p class="home__description">Explore the best beautiful tourist spots in
+                  the countries and see the world on all your
+                  amazing adventures.</p>
+               <a href="#destination" class="button button__opa-30">Explore The World
+                  <i class="ri-arrow-right-long-line"></i>
+               </a>
+            </div>
+            <div class="home__swiper swiper">
+               <div class="swiper-wrapper">
+                  <article class="home__article swiper-slide">
+                     <img src="./img/home-img-1.png" alt="img" class="home__img">
+                  </article>
+                  <article class="home__article swiper-slide">
+                     <img src="./img/home-img-2.png" alt="img" class="home__img">
+                  </article>
+                  <article class="home__article swiper-slide">
+                     <img src="./img/home-img-3.png" alt="img" class="home__img">
+                  </article>
+                  <article class="home__article swiper-slide">
+                     <img src="./img/home-img-4.png" alt="img" class="home__img">
+                  </article>
+               </div>
+               <!-- Navigation buttons -->
+               <div class="swiper-button-prev">
+                  <i class="ri-arrow-left-long-line"></i>
+               </div>
+               <div class="swiper-button-next">
+                  <i class="ri-arrow-right-long-line"></i>
+               </div>
+            </div>
+         </div>
       </section>
 
       <!--==================== DESTINATION ====================-->
@@ -90,7 +126,7 @@
    <script src=""></script>
 
    <!--=============== SWIPER JS ===============-->
-   <script src=""></script>
+   <script src="./js/swiper-bundle.min.js"></script>
 
    <!--=============== MAIN JS ===============-->
    <script src="./js/main.js"></script>
