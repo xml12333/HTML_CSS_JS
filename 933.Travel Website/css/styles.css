@@ -334,7 +334,53 @@ img {
   background-color: var(--opacity-color-30);
 }
 /*=============== DESTINATION ===============*/
-
+.destination__container {
+  grid-template-columns: 300px;
+  justify-content: center;
+}
+.destination__card {
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+.destination__img {
+  transition: transform 0.4s;
+}
+.destination__data {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 1.5rem;
+  background-color: var(--opacity-color-30);
+  backdrop-filter: blur(25px);
+  color: var(--white-color);
+  display: grid;
+  row-gap: 0.25rem;
+  border-radius: 1.5rem;
+  transition: background-color 0.4s;
+}
+.destination__subtitle {
+  font-size: var(--h2-font-size);
+  font-family: var(--second-font);
+}
+.destination__title {
+  font-size: var(--h1-font-size);
+}
+.destination__country {
+  display: flex;
+  align-items: center;
+  column-gap: 0.25rem;
+}
+.destination__country i {
+  font-size: 1rem;
+}
+.destination__country span {
+  font-size: var(--small-font-size);
+}
+.destination__card:hover .destination__img {
+  transform: scale(1.2);
+}
 /*=============== TESTIMONIAL ===============*/
 
 /* Swiper class */
