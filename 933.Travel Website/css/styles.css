@@ -382,9 +382,67 @@ img {
   transform: scale(1.2);
 }
 /*=============== TESTIMONIAL ===============*/
-
+.testimonial__container {
+  justify-content: center;
+  gap: 0;
+}
+.testimonial__img {
+  width: 300px;
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+.testimonial__swiper {
+  max-width: 300px;
+  background-color: var(--container-color);
+  border-radius: 0 0 1.5rem 1.5rem;
+  margin-inline: initial;
+  transition: background-color 0.4s;
+}
+.testimonial__card {
+  padding: 2.5rem 2rem 3rem 1.25rem;
+}
+.testimonial__title {
+  font-size: var(--h2-font-size);
+  color: var(--title-color);
+  margin-bottom: 0.75rem;
+}
+.testimonial__description {
+  margin-bottom: 1.5rem;
+}
+.testimonial__profile {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+.testimonial__profile img {
+  width: 60px;
+  border-radius: 50%;
+}
+.testimonial__info h3 {
+  font-size: var(--normal-font-size);
+  counter-reset: var(--title-color);
+  margin-bottom: 0.25rem;
+}
+.testimonial__info p {
+  font-size: var(--small-font-size);
+}
 /* Swiper class */
-
+.testimonial__swiper .swiper-button-prev::after,
+.testimonial__swiper .swiper-button-next:after {
+  content: "";
+}
+.testimonial__swiper :is(.swiper-button-prev, .swiper-button-next) {
+  color: var(--title-color);
+  font-size: 1.5rem;
+  top: initial;
+  bottom: 1.25rem;
+}
+.testimonial__swiper .swiper-button-prev {
+  left: initial;
+  right: 3.5rem;
+}
+.testimonial__swiper .swiper-button-next {
+  right: 1.25rem;
+}
 /*=============== GALLERY ===============*/
 
 /*=============== JOIN ===============*/

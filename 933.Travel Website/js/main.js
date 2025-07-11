@@ -33,6 +33,7 @@ navLink.forEach((n) => n.addEventListener("click", linkAction));
 const swiperHome = new Swiper(".home__swiper", {
   loop: true,
   slidesPerView: "auto",
+  grabCoursor: true,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -52,24 +53,30 @@ const bgHeader = () => {
 };
 window.addEventListener("scroll", bgHeader);
 /*=============== SWIPER TESTIMONIAL ===============*/
-let testimonialSwiper = new Swiper(".testimonial-swiper", {
-  spaceBetween: 30,
-  loop: "true",
+let swiperTestimonial = new Swiper(".testimonial__swiper", {
+  loop: true,
+  slidesPerView: "auto",
+  spaceBetween: 48,
+  grabCoursor: true,
 
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
 });
 /*=============== SHOW SCROLL UP ===============*/
-const scrollUp = () => {
-  const scrollUp = document.getElementById("scroll-up");
-  // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
-  this.scrollY >= 350
-    ? scrollUp.classList.add("show-scroll")
-    : scrollUp.classList.remove("show-scroll");
-};
-window.addEventListener("scroll", scrollUp);
+// const scrollUp = () => {
+//   const scrollUp = document.getElementById("scroll-up");
+//   // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
+//   this.scrollY >= 350
+//     ? scrollUp.classList.add("show-scroll")
+//     : scrollUp.classList.remove("show-scroll");
+// };
+// window.addEventListener("scroll", scrollUp);
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 const sections = document.querySelectorAll("section[id]");
 
