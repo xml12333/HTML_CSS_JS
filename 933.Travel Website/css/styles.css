@@ -485,6 +485,40 @@ img {
   transform: scale(1.2);
 }
 /*=============== JOIN ===============*/
+.join__container {
+  row-gap: 3rem;
+  padding-bottom: 3rem;
+}
+.join__data {
+  text-align: center;
+}
+.join__data .section__title {
+  margin-bottom: 1rem;
+}
+.join__description {
+  margin-bottom: 2rem;
+}
+.join__form {
+  display: grid;
+  row-gap: 1rem;
+}
+.join__input {
+  width: 100%;
+  background-color: var(--container-color);
+  color: var(--text-color);
+  padding: 1.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.4s;
+}
+.join__button {
+  padding-block: 1.25rem;
+  cursor: pointer;
+}
+.join__img {
+  width: 300px;
+  border-radius: 1.5rem;
+  justify-self: center;
+}
 
 /*=============== FOOTER ===============*/
 
