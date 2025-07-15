@@ -69,14 +69,14 @@ let swiperTestimonial = new Swiper(".testimonial__swiper", {
   },
 });
 /*=============== SHOW SCROLL UP ===============*/
-// const scrollUp = () => {
-//   const scrollUp = document.getElementById("scroll-up");
-//   // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
-//   this.scrollY >= 350
-//     ? scrollUp.classList.add("show-scroll")
-//     : scrollUp.classList.remove("show-scroll");
-// };
-// window.addEventListener("scroll", scrollUp);
+const scrollUp = () => {
+  const scrollUp = document.getElementById("scroll-up");
+  // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
+  this.scrollY >= 350
+    ? scrollUp.classList.add("show-scroll")
+    : scrollUp.classList.remove("show-scroll");
+};
+window.addEventListener("scroll", scrollUp);
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 const sections = document.querySelectorAll("section[id]");
 
@@ -102,7 +102,7 @@ window.addEventListener("scroll", scrollActive);
 /*=============== DARK LIGHT THEME ===============*/
 const themeButton = document.getElementById("theme-button");
 const darkTheme = "dark-theme";
-const iconTheme = "bx-sun";
+const iconTheme = "ri-sun-fill";
 
 // Previously selected topic (if user selected)
 const selectedTheme = localStorage.getItem("selected-theme");
@@ -112,7 +112,7 @@ const selectedIcon = localStorage.getItem("selected-icon");
 const getCurrentTheme = () =>
   document.body.classList.contains(darkTheme) ? "dark" : "light";
 const getCurrentIcon = () =>
-  themeButton.classList.contains(iconTheme) ? "bx bx-moon" : "bx bx-sun";
+  themeButton.classList.contains(iconTheme) ? "ri-moon-fill" : "ri-sun-fill";
 
 // We validate if the user previously chose a topic
 if (selectedTheme) {
@@ -120,7 +120,7 @@ if (selectedTheme) {
   document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
     darkTheme
   );
-  themeButton.classList[selectedIcon === "bx bx-moon" ? "add" : "remove"](
+  themeButton.classList[selectedIcon === "ri-moon-fill" ? "add" : "remove"](
     iconTheme
   );
 }
