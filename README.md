@@ -936,3 +936,4 @@
 |930| [Glow Effect](https://github.com/xml12333/HTML_CSS_JS/tree/main/930.Glow%20Effect)| [Demo](https://nikt.com.ua/projects/htmlCssJs/930.Glow%20Effect/)|
 |931| [Spinners](https://github.com/xml12333/HTML_CSS_JS/tree/main/931.Spinners)| [Demo](https://nikt.com.ua/projects/htmlCssJs/931.Spinners/)|
 |932| [Dynamic Text](https://github.com/xml12333/HTML_CSS_JS/tree/main/932.Dynamic%20Text)| [Demo](https://nikt.com.ua/projects/htmlCssJs/932.Dynamic%20Text/)|
+|933| [Travel Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/933.Travel%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/933.Travel%20Website/)|

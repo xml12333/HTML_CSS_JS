@@ -755,37 +755,90 @@ img {
   .destination__data {
     padding-inline: 2rem;
   }
-  .destination__title{
+  .destination__title {
     font-size: var(--h2-font-size);
   }
-  .testimonial__container{
+  .testimonial__container {
     grid-template-columns: 600px 400px;
   }
-  .testimonial__img{
+  .testimonial__img {
     width: 600px;
     border-radius: 1.5rem 0 0 1.5rem;
   }
-  .testimonial__card{
+  .testimonial__card {
     padding: 6rem 6rem 3rem 2rem;
   }
-  .testimonial__title{
+  .testimonial__title {
     margin-bottom: 1rem;
   }
-  .testimonial__description{
+  .testimonial__description {
     margin-bottom: 3rem;
   }
-  .testimonial__swiper{
+  .testimonial__swiper {
     border-radius: 0 1.5rem 1.5rem 0;
   }
   .testimonial .swiper-button-next,
-  .testimonial .swiper-button-prev{
+  .testimonial .swiper-button-prev {
     bottom: 2.5rem;
   }
-  .testimonial .swiper-button-prev{
+  .testimonial .swiper-button-prev {
     right: 5rem;
   }
-  .testimonial .swiper-button-next{
+  .testimonial .swiper-button-next {
+    right: 3rem;
+  }
+  .gallery__container {
+    grid-template-columns: repeat(2, 500px);
+    gap: 2rem;
+  }
+  .gallery__data {
+    left: 2px;
+    bottom: 2rem;
+  }
+  .gallery__title {
+    font-size: var(--h1-font-size);
+  }
+  .join__container {
+    grid-template-columns: 360px 500px;
+    align-items: center;
+    column-gap: 10rem;
+  }
+  .join__data {
+    text-align: initial;
+  }
+  .join__data .section__title {
+    margin-bottom: 1.5rem;
+    text-align: initial;
+  }
+  .join__description {
+    margin-bottom: 3rem;
+  }
+  .join__img {
+    width: 500px;
+  }
+  .footer {
+    padding-top: 4.5rem;
+  }
+  .footer__container {
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+  }
+  .footer__logo {
+    align-self: flex-start;
+  }
+  .footer__content {
+    column-gap: 4.5rem;
+  }
+  .footer__title {
+    margin-bottom: 1.5rem;
+  }
+  .scrollup {
     right: 3rem;
   }
 }
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
+@media screen and (min-width: 2048px) {
+  body {
+    zoom: 1.4;
+  }
+}
