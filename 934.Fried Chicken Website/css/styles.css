@@ -186,39 +186,112 @@ img {
     height: 100%;
     padding: 8rem 3.5rem 0;
     box-shadow: -4px 0 16px hsla(0, 0%, 0%, 0.1);
-    transition: right .4s;
+    transition: right 0.4s;
   }
 }
-.nav__list{
+.nav__list {
   display: flex;
   flex-direction: column;
   row-gap: 3.5rem;
 }
-.nav__link{
+.nav__link {
   color: var(--black-color);
   font-family: var(--second-font);
-  transition: color .4s;
+  transition: color 0.4s;
 }
-.nav__link:hover{
+.nav__link:hover {
   color: var(--white-color);
 }
-.nav__close{
+.nav__close {
   position: absolute;
   top: 1rem;
   right: 1.5rem;
 }
 /* Show menu */
-.show-menu{
+.show-menu {
   right: 0;
 }
 /* Add shadow header */
-
+.shadow-header {
+  box-shadow: 0 4px 16px hsla(0, 0%, 0%, 0.1);
+}
 /* Active link */
 
 /*=============== HOME ===============*/
-
+.home {
+  background-color: var(--first-color);
+}
+.home__container {
+  padding-block: 4rem 1rem;
+  row-gap: 3rem;
+}
+.home__data {
+  position: relative;
+  text-align: center;
+}
+.home__title {
+  font-size: var(--big-font-size);
+  margin-bottom: 0.5rem;
+}
+.home__title span {
+  color: var(--white-color);
+}
+.home__description {
+  margin-bottom: 2rem;
+}
+.home__dam-1,
+.home__dam-2,
+.home__dam-3,
+.home__dam-4,
+.home__dam-5 {
+  position: absolute;
+}
+.home__dam-1 {
+  width: 60px;
+  top: 4.5rem;
+  right: -1.5rem;
+}
+.home__dam-2 {
+  width: 80px;
+  top: -3.5rem;
+  left: -2.5rem;
+}
+.home__images {
+  position: relative;
+  justify-self: center;
+}
+.home__img {
+  width: 280px;
+  filter: var(--shadow-img);
+}
+.home__dam-3 {
+  width: 60px;
+  top: -2rem;
+  right: -1rem;
+}
+.home__dam-4 {
+  width: 60px;
+  right: 0.75rem;
+  bottom: -1.25rem;
+}
+.home__dam-5 {
+  width: 80px;
+  top: 5rem;
+  left: -2.5rem;
+}
 /*=============== BUTTON ===============*/
-
+.button {
+  display: inline-flex;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  padding: 1rem 2rem;
+  font-weight: var(--font-semi-bold);
+  border-radius: 0.75rem;
+  transition: box-shadow 0.4s;
+}
+.button:hover {
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.2);
+}
 /*=============== ABOUT ===============*/
 
 /*=============== ORDER ===============*/
