@@ -293,7 +293,81 @@ img {
   box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.2);
 }
 /*=============== ABOUT ===============*/
-
+.about {
+  background-color: var(--first-color);
+}
+.about__container {
+  padding-bottom: 3rem;
+  row-gap: 9rem;
+}
+.about__data {
+  text-align: center;
+}
+.about__data .section__subtitle {
+  color: var(--white-color);
+}
+.about__description {
+  margin-bottom: 2rem;
+}
+.about__images {
+  position: relative;
+  justify-self: center;
+  margin-right: 2rem;
+}
+.about__img-1 {
+  width: 280px;
+  position: relative;
+  z-index: 10;
+  filter: var(--shadow-img);
+}
+.about__img-2 {
+  width: 210px;
+  position: absolute;
+  top: -6.5rem;
+  right: -2rem;
+  filter: var(--shadow-img);
+}
+.about__tooltip-1,
+.about__tooltip-2 {
+  position: absolute;
+  display: inline-block;
+  padding: 0.25rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: var(--font-semi-bold);
+}
+.about__tooltip-1 {
+  background-color: var(--white-color);
+  top: -4rem;
+  left: 0;
+}
+.about__tooltip-2 {
+  background-color: var(--black-color);
+  color: var(--white-color);
+  right: -3rem;
+  bottom: 3rem;
+  z-index: 10;
+}
+.about__tooltip-1::after,
+.about__tooltip-2::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  rotate: 45deg;
+  border-radius: 0.25rem;
+  background-color: red;
+}
+.about__tooltip-1::after {
+  right: -8px;
+  background-color: var(--white-color);
+}
+.about__tooltip-2::after {
+  left: -8px;
+  background-color: var(--black-color);
+}
 /*=============== ORDER ===============*/
 
 /*=============== COMBO ===============*/
