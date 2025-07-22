@@ -467,6 +467,80 @@ img {
   cursor: pointer;
 }
 /*=============== COMBO ===============*/
+.combo {
+  background-color: var(--first-color);
+}
+.combo .section__title span {
+  color: var(--white-color);
+}
+.combo__container {
+  padding-block: 4rem 9rem;
+}
+.combo__content {
+  position: relative;
+  display: grid;
+}
+.combo__img {
+  width: 320px;
+  justify-self: center;
+  filter: var(--shadow-img);
+  z-index: 5;
+}
+.combo__numbers {
+  position: absolute;
+  top: -3rem;
+  justify-self: center;
+  display: flex;
+  column-gap: 4rem;
+}
+.combo__number {
+  display: grid;
+  row-gap: 0.25rem;
+  text-align: center;
+}
+.combo__number span {
+  font-size: var(--h3-font-size);
+  font-family: var(--second-font);
+}
+.combo__number i {
+  font-size: 1.25rem;
+}
+.combo__title {
+  font-size: var(--big-font-size);
+  color: var(--white-color);
+  line-height: 110%;
+  letter-spacing: 10px;
+}
+.combo__titles {
+  position: absolute;
+  top: 0;
+  justify-self: center;
+}
+.combo__data {
+  position: absolute;
+  bottom: -3.5rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+}
+.combo__info {
+  background-color: var(--white-color);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: var(--second-font);
+}
+.combo__info b {
+  font-family: var(--second-font);
+}
+.combo__price {
+  background-color: var(--black-color);
+  color: var(--first-color);
+  padding: 1.25rem;
+  border-radius: 1rem;
+  font-size: var(--h1-font-size);
+  font-family: var(--second-font);
+}
 
 /*=============== CONTACT ===============*/
 
