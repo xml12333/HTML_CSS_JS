@@ -543,7 +543,87 @@ img {
 }
 
 /*=============== CONTACT ===============*/
-
+.contact__container {
+  padding-block: 4rem 3rem;
+  row-gap: 3rem;
+  justify-content: center;
+}
+.contact__data {
+  position: relative;
+}
+.contact__title {
+  font-size: var(--bigger-font-size);
+}
+.contact__title span {
+  font-size: var(--biggest-font-size);
+  color: var(--first-color);
+}
+.contact__img-1,
+.contact__img-2 {
+  position: absolute;
+  filter: var(--shadow-img);
+}
+.contact__img-1 {
+  width: 110px;
+  top: 1.5rem;
+  right: 4rem;
+}
+.contact__img-2 {
+  width: 90px;
+  top: 3rem;
+  right: 2rem;
+}
+.contact__dam-1,
+.contact__dam-2,
+.contact__dam-3,
+.contact__dam-4 {
+  position: absolute;
+}
+.contact__dam-1 {
+  width: 60px;
+  top: -4rem;
+  right: 1rem;
+}
+.contact__dam-2 {
+  width: 80px;
+  right: -2rem;
+  bottom: -6rem;
+}
+.contact__dam-3{
+  width: 60px;
+  left: 0;
+  bottom: -4rem;
+}
+.contact__dam-4{
+  width: 80px;
+  top: -6rem;
+  left: -2rem;
+}
+.contact__info{
+  text-align: center;
+}
+.contact__subtitle{
+  font-size: var(--h3-font-size);
+  margin-bottom: .75rem;
+}
+.contact__social{
+  display: flex;
+  justify-content: center;
+  column-gap: 1rem;
+}
+.contact__social-link{
+  font-size: 1.5rem;
+  color: var(--first-color);
+  transition: transform .4s;
+}
+.contact__social-link:hover{
+  transform: translateY(-.25rem);
+}
+.contact__address{
+  color: var(--text-color);
+  font-style: initial;
+  font-weight: var(--font-semi-bold);
+}
 /*=============== FOOTER ===============*/
 
 /*=============== SCROLL BAR ===============*/
