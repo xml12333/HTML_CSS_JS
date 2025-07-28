@@ -938,3 +938,4 @@
 |932| [Dynamic Text](https://github.com/xml12333/HTML_CSS_JS/tree/main/932.Dynamic%20Text)| [Demo](https://nikt.com.ua/projects/htmlCssJs/932.Dynamic%20Text/)|
 |933| [Travel Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/933.Travel%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/933.Travel%20Website/)|
 |934| [Fried Chicken Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/934.Fried%20Chicken%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/934.Fried%20Chicken%20Website/)|
+|935| [Testimonial Slider](https://github.com/xml12333/HTML_CSS_JS/tree/main/935.Testimonial%20Slider)| [Demo](https://nikt.com.ua/projects/htmlCssJs/935.Testimonial%20Slider/)|
