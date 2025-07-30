@@ -1,0 +1,76 @@
+#wrapper {
+  position: absolute;
+  padding: 4.5vw;
+  inset: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5vw;
+  overflow: auto;
+  filter: drop-shadow(0 0.5vw 0.3vw #00000022)
+    drop-shadow(0 1vw 0.5vw #00000022) drop-shadow(0 0.3vw 0.1vw #00000055);
+}
+
+.button {
+  width: 10vw;
+  height: 10vw;
+  position: relative;
+  background: var(--bg);
+  border-radius: 0.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0.3vw -0.3vw 0 #00000044 inset, -0.3vw 0.3vw 0.3vw #ffffff44 inset;
+}
+.button:nth-of-type(3n),
+.button:nth-of-type(5n) {
+  box-shadow: 0.3vw -0.3vw 0 #00000044 inset, -0.3vw 0.3vw 0.3vw #ffffff44 inset,
+    -0.1vw 0.1vw #ffffff99 inset, 0 0 0 1vw var(--bg) inset,
+    -0.1vw 0.1vw 0 1.1vw #00000044 inset, 0.1vw -0.1vw 0 1.1vw #ffffff88 inset;
+}
+.button:nth-of-type(11n) {
+  box-shadow: 0.3vw -0.3vw 0 #00000044 inset, -0.3vw 0.3vw 0.3vw #ffffff44 inset,
+    -0.1vw 0.1vw #ffffff99 inset, 0 0 0 1.75vw var(--bg) inset,
+    -0.1vw 0.1vw 0 1.85vw #00000044 inset, 0.1vw -0.1vw 0 1.85vw #ffffff88 inset;
+}
+.button::after {
+  content: "::";
+  font-family: "Fira Code", monospace;
+  font-weight: 400;
+  color: #ffffff;
+  text-align: center;
+  transform: translate(0, -6%);
+  text-shadow: 0.2vw -0.2vw 0 #00000044;
+}
+.button:nth-of-type(5n)::after {
+  content: ":";
+}
+.button::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+h1,
+h3 {
+  width: 100%;
+  text-align: center;
+  font-family: "Fira Code", monospace;
+  color: #444444;
+  padding: 0;
+  margin: 0;
+}
+h1 {
+  font-size: 4vh;
+  margin-top: 12vh;
+}
+h3 {
+  color: #666666;
+  font-size: 3vh;
+  margin-bottom: 12vh;
+}
