@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Spiral Reality ?</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="spiral-wrapper">
+  <svg viewBox="0 0 800 800" class="spiral-svg" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <path id="spiralPath" fill="none" />
+    </defs>
+
+    <text font-size="20" fill="white" opacity="1">
+      <textPath id="spiralText1" href="#spiralPath" startOffset="0%">
+        Spiral Thoughts • Spiral Dreams • Spiral Reality • Spiral Thoughts • Spiral Dreams • Spiral Reality •
+      </textPath>
+    </text>
+    <text font-size="20" fill="white" opacity="0.5">
+      <textPath id="spiralText2" href="#spiralPath" startOffset="-3%">
+        Spiral Thoughts • Spiral Dreams • Spiral Reality • Spiral Thoughts • Spiral Dreams • Spiral Reality •
+      </textPath>
+    </text>
+    <text font-size="20" fill="white" opacity="0.2">
+      <textPath id="spiralText3" href="#spiralPath" startOffset="-6%">
+        Spiral Thoughts • Spiral Dreams • Spiral Reality • Spiral Thoughts • Spiral Dreams • Spiral Reality •
+      </textPath>
+    </text>
+  </svg>
+</div>
+
+<div class="controls">
+  <button id="toggleBtn">⏸️ Stop</button>
+</div>
+<!-- partial -->
+  <script  src="./js/script.js"></script>
+
+</body>
+</html>

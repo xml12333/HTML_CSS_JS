@@ -1,0 +1,87 @@
+html, body {
+  margin: 0; padding: 0; height: 100%;
+  background: radial-gradient(circle at center, #0f0c29, #302b63, #24243e);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.spiral-wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
+.spiral-svg text {
+  fill: white;
+  font-weight: 500;
+  font-size: 22px;
+  filter:
+    drop-shadow(0 0 8px #bb88ff)
+    drop-shadow(0 0 15px #ff77cc);
+  user-select: none;
+  letter-spacing: 0.06em;
+  animation: subtleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes subtleGlow {
+  0% {
+    filter:
+      drop-shadow(0 0 5px #bb88ff)
+      drop-shadow(0 0 10px #ff77cc);
+  }
+  100% {
+    filter:
+      drop-shadow(0 0 10px #d1a0ff)
+      drop-shadow(0 0 20px #ff99dd);
+  }
+}
+
+.controls {
+  position: absolute;
+	display: flex;
+	bottom: 10%;
+  gap: 15px;
+}
+
+button {
+  background: linear-gradient(135deg, #8866ff, #ff66bb);
+  border: none;
+  border-radius: 30px;
+  padding: 10px 25px;
+  font-weight: 600;
+  color: white;
+  box-shadow:
+    0 0 5px #ff66bb,
+    0 0 5px #8866ff;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  user-select: none;
+}
+
+button:hover {
+  box-shadow:
+    0 0 10px #ff88cc,
+    0 0 20px #aa77ff;
+  transform: scale(1.1);
+}
+
+button:active {
+  transform: scale(1.75);
+  box-shadow:
+    0 0 8px #cc55aa,
+    0 0 15px #7755cc;
+}
