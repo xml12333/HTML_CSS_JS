@@ -943,3 +943,4 @@
 |937| [Endless Button Collection](https://github.com/xml12333/HTML_CSS_JS/tree/main/937.Endless%20Button%20Collection)| [Demo](https://nikt.com.ua/projects/htmlCssJs/937.Endless%20Button%20Collection/)|
 |938| [Spiral](https://github.com/xml12333/HTML_CSS_JS/tree/main/938.Spiral)| [Demo](https://nikt.com.ua/projects/htmlCssJs/938.Spiral/)|
 |939| [Arcade Magazine Layout](https://github.com/xml12333/HTML_CSS_JS/tree/main/939.Arcade%20Magazine%20Layout)| [Demo](https://nikt.com.ua/projects/htmlCssJs/939.Arcade%20Magazine%20Layout/)|
+|940| [Geo Article](https://github.com/xml12333/HTML_CSS_JS/tree/main/940.Geo%20Article)| [Demo](https://nikt.com.ua/projects/htmlCssJs/940.Geo%20Article/)|
