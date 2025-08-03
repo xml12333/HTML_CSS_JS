@@ -1,0 +1,88 @@
+.items {
+    --y: 100px;
+    &:not(.cart) {
+        transform: translate(var(--x), calc(-1 * var(--y)));
+    }
+    &.espresso { --x: 0px; }
+    &.cappuccino { --x: -100%; }
+    &.flat-white { --x: 100%; }
+    input:checked{
+        transform: translate(calc(-1 * var(--x)), var(--y)) scale(0);
+        transition: transform .6s linear;
+    } 
+}
+
+@layer layout {
+    main {
+        width: 450px;
+        aspect-ratio: 1.5;
+        contain: layout;
+        .items {
+            width: 140px;
+            aspect-ratio: 1;    
+            position: absolute;
+            inset: auto 0 0;
+            margin-inline: auto;
+            &.cart {
+                width: 80px;
+                border-radius: 50%;
+                contain: layout;
+                output {
+                    display: block;
+                    width: 30px;
+                    aspect-ratio: 1;
+                    position: absolute;
+                    offset: content-box 6% 0deg / -10px 0;
+                    border-radius: inherit;
+                }
+            }
+            input { position: absolute; inset: 0; }
+        }
+        &:has(input:focus-visible) [hidden] { display: initial; }
+        &:not(:has(input:checked)) .cart::after { display: none; }
+    }
+}
+
+@layer theme {
+    .cart {
+        font-size: 32px;
+        text-align: center;
+        align-content: center;
+        color: transparent;
+        text-shadow: 0 0 0 lightsteelblue;
+        background-color: rgb(250, 250, 251);
+        box-shadow: 2px 2px 6px rgb(230, 230, 231), -2px -2px 6px rgb(250, 250, 251), inset 2px 2px 3px #fff;
+        output {
+            font-size: 12px;
+            align-content: inherit;
+            color: white;
+            background-color: rgba(0, 0, 70, 0.2);
+        }
+    }
+    input {
+        appearance: none;
+        background: center/contain;
+        cursor: pointer;
+        .espresso & { background-image: url("../img/espresso.webp"); }
+        .cappuccino & { background-image: url("../img/cappuccino.webp"); }
+        .flat-white & { background-image: url("../img/flatwhite.webp"); }
+        &:focus-visible {
+            outline: none;
+            .items:has(&) {
+                border: 2px solid;
+                border-radius: 4px;
+            }
+        }
+    }
+}
+
+body{
+    height: 100vh;
+    margin: 0;
+    display: grid;
+    place-content: center;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: default;
+    font: 14px 'poppins';
+}

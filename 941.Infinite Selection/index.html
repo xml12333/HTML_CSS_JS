@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Infinite Selection</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+  <!-- partial:index.partial.html -->
+  <main>
+    <span hidden>Use &darr; and &uarr; keys alternatively to keep adding the same item. Tab key to move between
+      items.</span>
+    <div class="items cart" data-count="0" aria-live="assertive">
+      &#x1F6D2;<output data-count="0" aria-label="Number of items in cart is">0</output>
+    </div>
+    <div class="items cappuccino">
+      <input type="radio" name="r1" title="Cappuccino">
+      <input type="radio" name="r1" title="Cappuccino">
+    </div>
+    <div class="items espresso">
+      <input type="radio" name="r2" title="Espresso">
+      <input type="radio" name="r2" title="Espresso">
+    </div>
+    <div class="items flat-white">
+      <input type="radio" name="r3" title="Flat White">
+      <input type="radio" name="r3" title="Flat White">
+    </div>
+  </main>
+  <!-- partial -->
+  <script src="./js/script.js"></script>
+
+</body>
+</html>
