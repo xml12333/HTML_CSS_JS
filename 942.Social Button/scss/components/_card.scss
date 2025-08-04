@@ -1,0 +1,25 @@
+/*=============== CARD ===============*/
+.card{
+   background-color: var(--body-color);
+   box-shadow: 0 4px 24px hsla(216, 50%, 20%, .1);
+   padding: 2rem 4.5rem 3rem;
+   border-radius: 3rem;
+   text-align: center;
+
+   &__img{
+      width: 100px;
+      margin: 0 auto .75rem;
+      border-radius: 50%;
+      border: 4px solid var(--first-color);
+   }
+   &__name{
+      font-size: var(--h2-font-size);
+      font-weight: 600;
+      color: var(--title-color);
+      margin-bottom: .25rem;
+   }
+   &__profession{
+      font-size: var(--small-font-size);
+      margin-bottom: 1.5rem;
+   }
+}

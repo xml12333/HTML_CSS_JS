@@ -1,0 +1,64 @@
+/*=============== BUTTON ===============*/
+.button{
+   position: relative;
+   background-color: var(--body-color);
+   border: 3px solid var(--first-color);
+   outline: none;
+   padding: .75rem 1.5rem;
+   border-radius: 4rem;
+   cursor: pointer;
+
+   &__social{
+      display: flex;
+      column-gap: .25rem;
+      z-index: 1;
+      
+      & a{
+         font-size: 1.5rem;
+         color: var(--first-color);
+         transition: transform .5s cubic-bezier(.2, .9, .2, 1.2);
+         transform: translateY(1rem);
+
+         &:nth-child(1){
+            transition-delay: .1s;
+         }
+         &:nth-child(2){
+            transition-delay: .15s;
+         }
+         &:nth-child(3){
+            transition-delay: .20s;
+         }
+         &:nth-child(4){
+            transition-delay: .25s;
+         }
+      }
+   }
+   &__content{
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: var(--first-color);
+      width: 100%;
+      height: 100%;
+      border-radius: 4rem;
+      display: grid;
+      place-items: center;
+      transform: scale(1.03);
+      transition: transform .5s cubic-bezier(.2, .9, .2, 1.2);
+      z-index: 5;
+      
+      & span{
+         color: var(--white-color);
+         font: 600 var(--normal-font-size) var(--body-font);
+      }
+   }
+}
+
+/* Animate button */
+.button:hover .button__content{
+   transform: translateY(-28px) scale(.4);
+}
+
+.button:hover .button__social a{
+   transform: translateY(0) scale(1);
+}

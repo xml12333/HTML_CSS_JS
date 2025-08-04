@@ -945,3 +945,4 @@
 |939| [Arcade Magazine Layout](https://github.com/xml12333/HTML_CSS_JS/tree/main/939.Arcade%20Magazine%20Layout)| [Demo](https://nikt.com.ua/projects/htmlCssJs/939.Arcade%20Magazine%20Layout/)|
 |940| [Geo Article](https://github.com/xml12333/HTML_CSS_JS/tree/main/940.Geo%20Article)| [Demo](https://nikt.com.ua/projects/htmlCssJs/940.Geo%20Article/)|
 |941| [Infinite Selection](https://github.com/xml12333/HTML_CSS_JS/tree/main/941.Infinite%20Selection)| [Demo](https://nikt.com.ua/projects/htmlCssJs/941.Infinite%20Selection/)|
+|942| [Social Button](https://github.com/xml12333/HTML_CSS_JS/tree/main/942.Social%20Button)| [Demo](https://nikt.com.ua/projects/htmlCssJs/942.Social%20Button/)|
