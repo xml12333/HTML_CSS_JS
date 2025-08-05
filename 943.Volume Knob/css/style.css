@@ -1,0 +1,355 @@
+@font-face {
+	font-family: "Alarm Clock";
+	src: url("https://cdn.josetxu.com/fonts/Alarm-Clock.ttf") format("truetype");
+}
+
+body {
+	background: #333;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	overflow: hidden;
+	--vol: 50;
+	--c1: #00ddff;
+	--shd: drop-shadow(-1px -2px 1px #111) drop-shadow(0px 1px 1px #404040);
+	--tra: all 0.4s ease 0s;
+	--mut: #39c1ff;
+}
+
+.slider::before {
+	background: linear-gradient(0deg, #525252 0%, #373737 100%);
+	width: 10em;
+	height: 10em;
+	border-radius: 50%;
+	box-shadow: 0px -20px 20px #757575,
+				0px 20px 35px #111111,
+				inset 0px 5px 6px #979797,
+				inset 0px -5px 6px #242424;
+}
+
+.slider::before, .knob {
+	width: 10em;
+	height: 10em;
+	position: relative;
+	/*cursor: pointer;*/
+}
+
+.knob::before,
+.knob::after,
+.slider::before,
+.glow:before,
+.glow:after {
+	content: '';
+	position: absolute;
+	border-radius: 50%;
+}
+
+.knob::before {
+	top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 29px;
+    background: radial-gradient(circle at 50% 45%, var(--mut) 5px, #fff0 6px), radial-gradient(circle at 50% 50%, #404040 5px, #fff0 7px), radial-gradient(circle at 50% 40%, #1118 5px, #fff0 6px), linear-gradient(0deg, #373737, #2e2e2e);
+    box-shadow: 0px -1px 1px #111, 0px 1px 1px #555;
+    border: 2px solid #2e2e2e;
+    box-sizing: border-box;
+	cursor: pointer;
+    z-index: 1;
+}
+
+.knob::after {
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid #00bcd410;
+    width: 130%;
+    height: 130%;
+    /* box-shadow: 0 0 10px #349beb, inset 0 0 10px #349beb; */
+	transition: var(--tra);
+}
+
+
+.knob:active:before {
+	box-shadow: 0 0 5px 1px var(--c1), 0 0 30px 1px var(--c1), 0 0 10px 1px var(--c1) inset, 0px -1px 1px #1118, 0px 3px 3px #404040;
+    border-color: var(--c1);
+	
+	box-shadow: 0 0 5px 1px var(--c1), 0 0 30px 1px var(--c1), 0 0 2px 0px var(--c1) inset, 0px -1px 1px #1118, 0px 3px 3px #404040;
+    border-color: var(--c1);
+}
+
+.slider:active .knob::after {
+    box-shadow: 0 0 10px #349beb, inset 0 0 10px #349beb;
+}
+
+
+.slider { transform: rotate(90deg)}
+
+.slider:before {
+    background: linear-gradient(-90deg, #525252 0%, #373737 100%);
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    box-shadow: -20px 0px 20px #757575, 20px 0px 35px #111111, inset -5px 0px 6px #242424, inset 5px 0px 6px #979797;
+}
+
+.slider:active * {
+    --c1: #c7e6ff;
+}
+
+.slider:active ~ .number {
+    box-shadow: 0 0 10px 0 #000 inset, 0 0 100px -40px #335564 inset, 0 0 30px 0px #8edbff;
+    text-shadow: 0 0 2px #2196F3, 0 0 2px #2196F3, 0 0 2px #23759b, 0 0 20px #144054, 0 0 25px #39c1ff;
+    color: #c7eaff;
+}
+
+
+
+
+
+.glow {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    width: 130%;
+    height: 130%;
+    box-shadow: 0 0 1px 7px #000, 0 0 30px 1px #349beb, inset 0 0 10px #349beb;
+    z-index: -2;
+}
+
+
+.glow:after {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    box-shadow: 0 0 10px #349beb8a, 0 0 0 1px #0007;
+    background: 
+		radial-gradient(circle at 50% 50%, #333333 6.5em, #fff0 calc(6.5em + 1px)),
+		linear-gradient(-90deg, var(--c1) 0 calc(var(--vol) * 1%), #fff0 0% 100%);
+    filter: drop-shadow(0px 0px 4px #000) drop-shadow(0px 0px 1px #349beb8a) drop-shadow(0px 0px 2px #349beb8a);
+}
+
+.glow:before {
+    width: calc(100% + 50px);
+    height: calc(100% + 50px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    --line: #f000 calc(50% - 1px), #00000070 50%, #fff0 calc(50% + 1px);
+    background: radial-gradient(#333333 0 12.5vmin, #fff0 calc(12.5vmin + 1px) 100%), linear-gradient(0deg, var(--line)), linear-gradient(18deg, var(--line)), linear-gradient(36deg, var(--line)), linear-gradient(54deg, var(--line)), linear-gradient(72deg, var(--line)), linear-gradient(90deg, var(--line)), linear-gradient(108deg, var(--line)), linear-gradient(126deg, var(--line)), linear-gradient(144deg, var(--line)), linear-gradient(162deg, var(--line));
+    box-shadow: 0 0 1em 0 #6668, 0 0 1em 0 #6668 inset;
+    border: 1px solid #66666642;
+	filter: drop-shadow(-1px -2px 10px #111) drop-shadow(0px 1px 10px #404040);
+}
+
+
+
+
+
+
+
+
+.number {
+    position: absolute;
+    /* bottom: calc(50% - 6em); */
+    /* left: calc(50% - 1em); */
+    width: 1.75em;
+    height: 1.75em;
+    background: #282828;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-family: 'Alarm Clock', Arial, Helvetica, serif;
+    color: #39c1ff;
+    border-radius: 99%;
+    /*text-shadow: 0 0 3px #000, 0 0 2px #000, 0 0 3px #39c1ff, 0 0 30px #39c1ff, 0 0 35px #39c1ff;*/
+    box-shadow: 0 0 10px 0 #000 inset, 0 0 100px -80px #39c1ff inset;
+    border: 2px solid #0001;
+    filter: var(--shd);
+}
+
+.number:after {
+    content: "88";
+    position: absolute;
+    color: #0001;
+    z-index: -1;
+    /* content: "11"; */
+    /* opacity: 0.1; */
+    text-shadow: 0 0 1px #0001;
+	filter: var(--shd);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mute {
+    top: calc(50% - 6em);
+    font-style: normal;
+    position: absolute;
+    left: calc(50% - 1em);
+    width: calc(2em + 4px);
+    height: calc(2em + 4px);
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    font-family: 'Alarm Clock', Arial, Helvetica, serif;
+    color: #39c1ff;
+    border-radius: 5px;
+    text-shadow: 0 0 3px #000, 0 0 2px #000, 0 0 3px #39c1ff, 0 0 30px #39c1ff, 0 0 35px #39c1ff;
+    box-shadow: 0 0 15px 0px var(--mut), 0 0 5px 10px var(--mut) inset;
+    cursor: pointer;
+    filter: var(--shd);
+}
+
+.mute:before {
+    content: " ";
+    position: absolute;
+    width: calc(100% - 15px);
+    height: calc(100% - 15px);
+    border: 1px solid var(--mut);
+    border-color: #5e5e5e #383838 #1c1c1c #363636;
+    border-radius: 5px;
+    transition: all 0.1s ease 0s;
+    background: linear-gradient(145deg, #464646, #222222);
+    box-shadow: 0px 0px 15px -2px #000;
+}
+
+.mute:hover:before {
+    box-shadow: 0 0 10px 1px #0008;
+	
+}
+.mute.muted:hover:before {
+    box-shadow: 0 0 10px 1px var(--mut);
+	
+}
+
+
+.mute:active:before, .mute.muted:active:before {
+    background: linear-gradient(145deg, #222222, #464646);
+}
+
+
+
+
+
+
+
+
+
+.muted {
+	box-shadow: 0 0 5px #000 inset;
+    border-radius: 5px;
+}
+
+
+
+.mute.muted:before {
+    background: linear-gradient(145deg, #464646, #222222);
+}
+
+.mute:active:before {
+    transition: all 0.1s ease 0s;
+    border-width: 1px;
+	width: calc(100% - 16px);
+    height: calc(100% - 16px);
+}
+
+.mute:hover {
+    box-shadow: 0 0 10px 0 #000 inset, 0 0 5px 0px var(--mut) inset, 0 0 5px 10px var(--mut) inset;
+}
+
+
+
+
+
+
+/*** MUTE SPAN ***/
+
+.mute span {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+	filter: drop-shadow(-1px -1px 1px #111) drop-shadow(1px 1px 1px #555);
+	filter: drop-shadow(0px 2px 1px #111) drop-shadow(2px -1px 1px #555);
+	filter: drop-shadow(0px 1px 1px #111) drop-shadow(1px -1px 1px #555);
+}
+
+
+.mute span:before {
+    content: "";
+    position: absolute;
+    border-width: 15px 20px;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 10% 100% 200% 10% / 10% 20% 20% 10%;
+    clip-path: polygon(3% 30%, 20% 30%, 21% 29%, 22% 28%, 55% 2.75%, 57.5% 2.25%, 59% 3.25%, 59% 96.75%, 57.5% 97.75%, 55% 97.25%, 22% 72%, 21% 71%, 20% 70%, 3% 70%, 1% 69%, 0% 66%, 0% 33%, 1% 31%);
+    background: var(--mut);
+    transition: var(--tra);
+}
+
+
+.mute:hover span:before {
+    background: var(--mut);
+}
+
+.mute span:after {
+    content: "\276B\276B\276B";
+    position: absolute;
+    border-radius: 2px;
+    top: 14px;
+	font-family: initial;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 22px;
+    text-indent: 33px;
+    overflow: hidden;
+    color: var(--mut);
+    text-shadow: 0 0 3px #0004, 0 0 2px #0004;
+    transition: var(--tra);
+    z-index: -1;
+}
+.mute.muted span:after, .mute:hover span:after {
+    content: "\2716";
+    color: #282828;
+}
+.mute:hover span:after {
+    color: var(--mut);
+}
+
+
+.mute.muted:hover span:before {
+	background: var(--mut);
+}
+
+.mute.muted span:before {
+	background: #282828;
+}
+
+.mute.muted:hover span {
+	transition: var(--tra);
+}
+
+.mute.muted:hover span:after {
+    color: var(--mut);
+    transition: var(--tra);
+    content: "\276B\276B\276B";
+}
