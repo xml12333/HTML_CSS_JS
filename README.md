@@ -948,3 +948,4 @@
 |942| [Social Button](https://github.com/xml12333/HTML_CSS_JS/tree/main/942.Social%20Button)| [Demo](https://nikt.com.ua/projects/htmlCssJs/942.Social%20Button/)|
 |943| [Volume Knob](https://github.com/xml12333/HTML_CSS_JS/tree/main/943.Volume%20Knob)| [Demo](https://nikt.com.ua/projects/htmlCssJs/943.Volume%20Knob/)|
 |944| [Sound Meter](https://github.com/xml12333/HTML_CSS_JS/tree/main/944.Sound%20Meter)| [Demo](https://nikt.com.ua/projects/htmlCssJs/944.Sound%20Meter/)|
+|945| [Sound Color Picker](https://github.com/xml12333/HTML_CSS_JS/tree/main/945.Sound%20Color%20Picker)| [Demo](https://nikt.com.ua/projects/htmlCssJs/945.Sound%20Color%20Picker/)|
