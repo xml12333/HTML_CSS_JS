@@ -1,0 +1,345 @@
+:root {
+  --font-mono: "PP Supply Mono", monospace;
+  --font-sans: "PP Neue Montreal", sans-serif;
+  --color-text: #fff;
+  --content-z: 2;
+  --desktop-width: 500px;
+  --mobile-width: 300px;
+}
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("https://assets.codepen.io/7558/PPNeueMontreal-Variable.woff2")
+    format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Supply Mono";
+  src: url("https://assets.codepen.io/7558/PPSupplyMono-Variable.woff2")
+    format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--font-sans);
+  background: black;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  will-change: transform;
+}
+
+.tp-dfwv {
+  visibility: hidden;
+}
+
+.image-slider {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.webgl-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Corner Text Styles */
+.corner-text {
+  position: fixed;
+  color: white;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.corner-text div {
+  margin-bottom: 4px;
+}
+
+.corner-text-top-left {
+  top: 2rem;
+  left: 2rem;
+}
+
+.corner-text-top-right {
+  top: 2rem;
+  right: 2rem;
+  text-align: right;
+}
+
+.corner-text-bottom-left {
+  bottom: 2rem;
+  left: 2rem;
+}
+
+.corner-text-bottom-right {
+  bottom: 2rem;
+  right: 2rem;
+  text-align: right;
+}
+
+.corner-text-shortcuts {
+  top: 50%;
+  left: 2rem;
+  transform: translateY(-50%);
+  font-size: 10px;
+  text-align: left;
+}
+
+.corner-text-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.featured-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25%;
+  height: 50%;
+  z-index: var(--content-z);
+}
+
+.featured-image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  will-change: clip-path;
+}
+
+.slide-text {
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  color: var(--color-text);
+  z-index: var(--content-z);
+}
+
+.slide-number {
+  position: relative;
+  width: var(--desktop-width);
+  height: 20px;
+  margin-bottom: 0.5em;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  overflow: hidden;
+}
+
+.slide-number span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  transform: translateY(0px);
+  will-change: transform;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.slide-title {
+  position: relative;
+  width: var(--desktop-width);
+  height: 60px;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  overflow: hidden;
+}
+
+.slide-title h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  transform: translateY(0px);
+  will-change: transform;
+  margin: 0;
+  padding: 0;
+}
+
+.slide-description {
+  position: relative;
+  width: var(--desktop-width);
+  height: 24px;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  overflow: hidden;
+}
+
+.slide-description p {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.2;
+  transform: translateY(0px);
+  will-change: transform;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.slide-paragraph {
+  position: absolute;
+  bottom: 10%;
+  right: 30%;
+  transform: translate(50%, -50%);
+  color: var(--color-text);
+  z-index: var(--content-z);
+  width: 460px;
+  overflow: hidden;
+}
+
+.slide-paragraph-line {
+  position: relative;
+  width: 100%;
+  height: 28px;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  overflow: hidden;
+}
+
+.slide-paragraph-line:last-child {
+  margin-bottom: 0;
+}
+
+.slide-paragraph-line span {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 1.25em;
+  font-weight: 500;
+  line-height: 1.4;
+  transform: translateY(0px);
+  will-change: transform;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .featured-image {
+    width: 75%;
+  }
+
+  .slide-text {
+    top: 60%;
+    left: 60%;
+  }
+
+  .slide-number {
+    width: var(--mobile-width);
+    height: 18px;
+  }
+
+  .slide-number span {
+    font-size: 10px;
+  }
+
+  .slide-title {
+    width: var(--mobile-width);
+    height: 50px;
+  }
+
+  .slide-title h1 {
+    font-size: 36px;
+  }
+
+  .slide-description {
+    width: var(--mobile-width);
+    height: 20px;
+  }
+
+  .slide-description p {
+    font-size: 12px;
+  }
+
+  .slide-paragraph {
+    top: 75%;
+    right: 20%;
+    width: 280px;
+    overflow: hidden;
+  }
+
+  .slide-paragraph-line {
+    height: 24px;
+    margin-bottom: 4px;
+  }
+
+  .slide-paragraph-line span {
+    font-size: 10px;
+    line-height: 1.4;
+    top: 2px;
+  }
+
+  .corner-text {
+    font-size: 10px;
+  }
+
+  .corner-text-shortcuts {
+    font-size: 8px;
+  }
+
+  .corner-text-center {
+    height: 70vh;
+  }
+}

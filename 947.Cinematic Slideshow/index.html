@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>[threejs/gsap] ❍ Cinematic Glitch Slideshow</title>
+  <link rel="stylesheet" href="https://public.codepenassets.com/css/normalize-5.0.0.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+  <!-- partial:index.partial.html -->
+  <main class="image-slider" role="region" aria-label="Image carousel" data-image-slider-init>
+    <canvas class="webgl-canvas" data-webgl-canvas aria-hidden="true"></canvas>
+
+    <!-- Fixed corner and center text -->
+    <aside class="corner-text corner-text-top-left" aria-hidden="true">
+      <div>ANCIENT</div>
+      <div>ONES</div>
+      <div></div>
+      <div>COSMIC</div>
+      <div>HORROR</div>
+    </aside>
+
+    <aside class="corner-text corner-text-top-right" aria-hidden="true">
+      <div>MADNESS</div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div>RISES</div>
+    </aside>
+
+    <aside class="corner-text corner-text-bottom-left" aria-hidden="true">
+      <div>TENTACLES</div>
+      <div>EMERGE</div>
+      <div></div>
+      <div>FROM</div>
+      <div>DEPTHS</div>
+    </aside>
+
+    <aside class="corner-text corner-text-bottom-right" aria-hidden="true">
+      <div>ELDRITCH</div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div>AWAKENS</div>
+    </aside>
+
+    <nav class="corner-text corner-text-shortcuts" aria-label="Keyboard shortcuts">
+      <div>H - TOGGLE SETTINGS</div>
+      <div>1 - DATAMOSH</div>
+      <div>2 - PIXEL SORT</div>
+      <div>3 - DIGITAL STATIC</div>
+      <div>4 - STATIC SWEEP</div>
+      <div>5 - GLITCH WIPE</div>
+      <div>6 - ANALOG DECAY</div>
+      <div>P - CYCLE PRESETS</div>
+      <div>+/- INTENSITY</div>
+      <div>[ ] SPEED</div>
+      <div>R - RESET</div>
+    </nav>
+
+    <aside class="corner-text corner-text-center" aria-hidden="true">
+      <div>R'LYEH</div>
+      <div></div>
+      <div>FHTAGN</div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div>CTHULHU</div>
+      <div></div>
+      <div>THE</div>
+      <div>SLEEPER</div>
+      <div>STIRS</div>
+    </aside>
+
+    <section class="featured-image" data-featured-image>
+      <div class="featured-image-wrapper" data-featured-wrapper>
+        <img src="https://assets.codepen.io/7558/horror-01.jpg"
+          alt="Awakening Abyss - Eldritch horror scene with cosmic entity emerging from dark abyss" />
+      </div>
+    </section>
+
+    <header class="slide-text" data-slide-text>
+      <div class="slide-number" data-slide-number>
+        <span>∅1</span>
+      </div>
+      <div class="slide-title" data-slide-title>
+        <h1>Awakening Abyss</h1>
+      </div>
+      <div class="slide-description" data-slide-description>
+        <p>Eldritch Emergence</p>
+      </div>
+    </header>
+
+    <div class="slide-paragraph" data-slide-paragraph>
+      <div class="slide-paragraph-line" data-paragraph-line-1>
+        <span>Archived VHS documentary footage captures the moment</span>
+      </div>
+      <div class="slide-paragraph-line" data-paragraph-line-2>
+        <span>an ancient cosmic entity ruptures frozen silence.</span>
+      </div>
+    </div>
+  </main>
+  <!-- partial -->
+  <script src='https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrambleTextPlugin.min.js'></script>
+  <script type="module" src="./js/script.js"></script>
+
+</body>
+</html>
