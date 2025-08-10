@@ -951,3 +951,4 @@
 |945| [Sound Color Picker](https://github.com/xml12333/HTML_CSS_JS/tree/main/945.Sound%20Color%20Picker)| [Demo](https://nikt.com.ua/projects/htmlCssJs/945.Sound%20Color%20Picker/)|
 |946| [Pixeled Loader](https://github.com/xml12333/HTML_CSS_JS/tree/main/946.Pixeled%20Loader)| [Demo](https://nikt.com.ua/projects/htmlCssJs/946.Pixeled%20Loader/)|
 |947| [Cinematic Slideshow](https://github.com/xml12333/HTML_CSS_JS/tree/main/947.Cinematic%20Slideshow)| [Demo](https://nikt.com.ua/projects/htmlCssJs/947.Cinematic%20Slideshow/)|
+|948| [Glass](https://github.com/xml12333/HTML_CSS_JS/tree/main/948.Glass)| [Demo](https://nikt.com.ua/projects/htmlCssJs/948.Glass/)|

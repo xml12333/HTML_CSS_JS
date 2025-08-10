@@ -1,0 +1,107 @@
+:root {
+  --bgImage: url(https://512pixels.net/wp-content/uploads/2025/06/11-0-Color-Day-thumbnails.jpg);
+  --sizeVar: 25vmin;
+  --animSpeed: 4000ms;
+}
+
+#wrapper {
+  position: absolute;
+  inset: 0;
+  background-image: var(--bgImage);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.glass {
+  position: absolute;
+  width: var(--sizeVar);
+  height: var(--sizeVar);
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0.1vw 0.1vw 0 #ffffff33;
+  -webkit-animation: glassAnim var(--animSpeed) cubic-bezier(0.6, 0, 0.4, 1) infinite;
+          animation: glassAnim var(--animSpeed) cubic-bezier(0.6, 0, 0.4, 1) infinite;
+}
+.glass::after {
+  content: "";
+  position: absolute;
+  height: 90%;
+  width: 90%;
+  top: 5%;
+  left: 5%;
+  border-radius: inherit;
+  background-image: var(--bgImage);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  filter: blur(calc(var(--sizeVar) / 10));
+}
+.glass::before {
+  content: "";
+  position: absolute;
+  height: 150%;
+  width: 150%;
+  top: -25%;
+  left: -25%;
+  -webkit-backdrop-filter: blur(calc(var(--sizeVar) / 10)) contrast(500%);
+          backdrop-filter: blur(calc(var(--sizeVar) / 10)) contrast(500%);
+}
+.glass:nth-of-type(2) {
+  -webkit-animation-delay: calc(var(--animSpeed) / 4 * -3);
+          animation-delay: calc(var(--animSpeed) / 4 * -3);
+}
+.glass:nth-of-type(3) {
+  -webkit-animation-delay: calc(var(--animSpeed) / 4 * -2);
+          animation-delay: calc(var(--animSpeed) / 4 * -2);
+}
+.glass:nth-of-type(4) {
+  -webkit-animation-delay: calc(var(--animSpeed) / 4 * -1);
+          animation-delay: calc(var(--animSpeed) / 4 * -1);
+}
+
+@-webkit-keyframes glassAnim {
+  0% {
+    top: 10%;
+    left: 10%;
+  }
+  25% {
+    top: 10%;
+    left: calc(90% - var(--sizeVar));
+  }
+  50% {
+    top: calc(90% - var(--sizeVar));
+    left: calc(90% - var(--sizeVar));
+  }
+  75% {
+    top: calc(90% - var(--sizeVar));
+    left: 10%;
+  }
+  100% {
+    top: 10%;
+    left: 10%;
+  }
+}
+
+@keyframes glassAnim {
+  0% {
+    top: 10%;
+    left: 10%;
+  }
+  25% {
+    top: 10%;
+    left: calc(90% - var(--sizeVar));
+  }
+  50% {
+    top: calc(90% - var(--sizeVar));
+    left: calc(90% - var(--sizeVar));
+  }
+  75% {
+    top: calc(90% - var(--sizeVar));
+    left: 10%;
+  }
+  100% {
+    top: 10%;
+    left: 10%;
+  }
+}
