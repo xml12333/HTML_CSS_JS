@@ -13,8 +13,9 @@
 <body>
   <!-- HEADER -->
   <header>
-    <nav class="navbar flex between">
+    <nav class="navbar flex between wrapper">
       <a href="#" class="logo">Foodie.</a>
+      <!-- DESKTOP MENU -->
       <ul class="navlist flex gap-3">
         <li>
           <a href="#">Home</a>
@@ -29,13 +30,14 @@
           <a href="#">Contacts</a>
         </li>
       </ul>
-      <div class="desktop-action">
+      <div class="desktop-action flex gap-2">
         <a href="#" class="cart-icon">
           <i class="fa-solid fa-bag-shopping"></i>
           <span class="cart-value">0</span>
         </a>
         <a href="#" class="btn">
           Sign in
+          &nbsp;
           <i class="fa-solid fa-arrow-right-from-bracket"></i>
         </a>
 
@@ -43,6 +45,26 @@
           <i class="fa-solid fa-bars"></i>
         </a>
       </div>
+      <!-- MOBILE MENU -->
+      <ul class="mobile-menu">
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">Services</a>
+        </li>
+        <li>
+          <a href="#">About us</a>
+        </li>
+        <li>
+          <a href="#">Contacts</a>
+        </li>
+        <li><a href="#" class="btn">
+            Sign in
+            &nbsp;
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          </a></li>
+      </ul>
     </nav>
   </header>
   <!-- SECTIONS -->
