@@ -49,6 +49,17 @@ img {
   margin: auto;
   display: block;
 }
+.p-top {
+  padding-top: 10rem;
+}
+.text-center {
+  text-align: center;
+}
+
+.mt-4{
+  margin-top: 4rem;
+}
+
 /* HEADER */
 .navbar {
   min-height: 14vh;
@@ -96,11 +107,13 @@ img {
   display: none;
 }
 /* SECTIONS */
+/* HERO SECTION */
 .hero-section {
   min-height: calc(100vh - 14vh);
 }
 .content,
-.image-container {
+.image-container,
+.service-card {
   flex: 1;
   flex-basis: 300px;
 }
@@ -135,6 +148,27 @@ p {
 .social-icon:hover {
   background: var(--lead);
   color: var(--pure-white);
+}
+/* SECTION 01 */
+h5 {
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+  color: var(--gold-finger);
+  text-transform: uppercase;
+}
+h2 {
+  font-size: 3.7rem;
+  text-transform: capitalize;
+  color: var(--lead);
+}
+h3 {
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: var(--lead);
+}
+.service-card h3{
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
 }
 /* FOOTER */
 /* MEDIA QUERIES */
@@ -180,7 +214,11 @@ p {
   .gap-2 {
     gap: 1.4rem;
   }
-  .gap-4{
+  .gap-4 {
     gap: 4rem;
+  }
+  /* SECTION 01 */
+  h2{
+    font-size: 3rem;
   }
 }
