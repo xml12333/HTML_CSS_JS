@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="css/style.css" />
   <title>Food Website</title>
 </head>
@@ -148,13 +149,97 @@
             <a href="#" class="btn">Add to card</a>
 
           </div> -->
-       
+
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrapper p-top flex gap-3">
+        <div class="image-container">
+          <img src="./img/delivery-boy-with-phone.png" alt="img">
+        </div>
+        <div class="content">
+          <h5>Our reviews</h5>
+          <h2>What they say?</h2>
+
+          <div class="review-container">
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper mt-4">
+                <div class="swiper-slide">
+                  <div class="flex gap-2">
+                    <div class="profile">
+                      <img src="./img/profile1.jpeg" alt="img">
+                    </div>
+                    <div>
+                      <h4>Guy Hawkins</h4>
+                      <div class="mt-half">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="para">
+                    Foodie is the best. Besides the many delicious meal the service is also very good, espacially very
+                    fast delivery. I highly recomend Foodie to you.
+                  </p>
+                </div>
+                <div class="swiper-slide">
+                  <div class="flex gap-2">
+                    <div class="profile">
+                      <img src="./img/profile2.jpeg" alt="img">
+                    </div>
+                    <div>
+                      <h4>Sophia Anderson</h4>
+                      <div class="mt-half">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="para">
+                    Fresh ingredients, creative menu, and warm service make this spot a hidden gem. Perfect for casual
+                    dinners or special nights out. Truly a foodie's paradiese!
+                  </p>
+                </div>
+                <div class="swiper-slide">
+                  <div class="flex gap-2">
+                    <div class="profile">
+                      <img src="./img/profile3.jpeg" alt="img">
+                    </div>
+                    <div>
+                      <h4>Olivia Sheppard</h4>
+                      <div class="mt-half">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="para">
+                    Delicious dishes, cozy ambiance, and exceptional service. A must-visit for food lovers seeking bold
+                    flavors and unforgettable dining experiences. Hightly recomended, every bite delights!
+                  </p>
+                </div>
+              </div>
+              <div class="flex between">
+                <a href="#" class="arrow" id="prev"><i class="fa-solid fa-arrow-left"></i></a>
+                <a href="#" class="arrow" id="next"><i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
   <!-- FOOTER -->
   <footer></footer>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
