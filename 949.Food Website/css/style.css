@@ -202,6 +202,74 @@ h4 {
   color: var(--gold-finger);
   padding: 1.3rem 0 2rem 0;
 }
+/* CART TAB */
+.cart-tab {
+  background: var(--hint-yellow);
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: 25rem;
+  padding-block: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cart-list {
+  flex: 1;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+.total-container {
+  width: 100%;
+  background: var(--gold-finger);
+  text-align: center;
+  margin-block: 1rem;
+  padding-block: 1rem;
+}
+.total-container h4 {
+  display: inline-block;
+  font: 1.3rem;
+  font-weight: 400;
+}
+.btn-container .btn {
+  background: var(--lead);
+  transition: 0.3s ease-in-out;
+}
+.btn-container .btn:hover {
+  background: var(--gold-finger);
+  color: var(--lead);
+}
+.item {
+  display: flex;
+  align-items: center;
+  gap: .2rem;
+  padding: 0.7rem 1rem;
+}
+.item .item-image img {
+  width: 5rem;
+}
+.item h4 {
+  font-size: 1.3rem;
+  color: var(--lead);
+}
+.item .item-total {
+  font-weight: 400;
+  margin-top: 0.3rem;
+}
+.quantity-btn {
+  background: var(--lead);
+  color: var(--pure-white);
+  width: 1.7rem;
+  aspect-ratio: 1;
+  border-radius: 100vw;
+  text-align: center;
+  line-height: 1.7rem;
+}
+.quantity-value {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-inline: 0.6rem;
+}
 /* SECTION 03 */
 .review-container {
   width: 650px;
