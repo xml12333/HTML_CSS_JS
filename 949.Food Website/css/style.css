@@ -206,18 +206,27 @@ h4 {
 .cart-tab {
   background: var(--hint-yellow);
   position: fixed;
-  inset: 0 0 0 auto;
+  inset: 0 -500px 0 auto;
   width: 25rem;
   padding-block: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 99;
+  box-shadow: rgba(0, 0, 0, 0.1) -10px -10px 20px;
+}
+.cart-tab-active{
+  inset: 0 0 0 auto;
 }
 .cart-list {
   flex: 1;
   width: 100%;
   margin-top: 1.5rem;
+  overflow: auto;
+}
+.cart-list::-webkit-scrollbar {
+  width: 0;
 }
 .total-container {
   width: 100%;
@@ -242,8 +251,11 @@ h4 {
 .item {
   display: flex;
   align-items: center;
-  gap: .2rem;
-  padding: 0.7rem 1rem;
+  gap: 0.9rem;
+  padding: 0.7rem 0.3rem;
+}
+.cart-list .item:nth-child(even) {
+  background: var(--eye-ball);
 }
 .item .item-image img {
   width: 5rem;
