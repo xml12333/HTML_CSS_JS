@@ -19,9 +19,9 @@
   },
   {
     "id": 4,
-    "name": "Double Beef Burger",
-    "price": "$200",
-    "image": "img/burger.png"
+    "name": "Chicken Roll",
+    "price": "$7.50",
+    "image": "img/chicken-roll.png"
   },
   {
     "id": 5,
@@ -31,9 +31,9 @@
   },
   {
     "id": 6,
-    "name": "Double Beef Burger",
-    "price": "$200",
-    "image": "img/burger.png"
+    "name": "Chicken Lasagna",
+    "price": "$16.45",
+    "image": "img/lasagna.png"
   },
   {
     "id": 7,
