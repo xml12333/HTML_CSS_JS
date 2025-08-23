@@ -215,9 +215,9 @@ h4 {
   align-items: center;
   z-index: 99;
   box-shadow: rgba(0, 0, 0, 0.1) -10px -10px 20px;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
-.cart-tab-active{
+.cart-tab-active {
   inset: 0 0 0 auto;
 }
 .cart-list {
@@ -254,6 +254,9 @@ h4 {
   align-items: center;
   gap: 0.9rem;
   padding: 0.7rem 0.3rem;
+}
+.item .detail {
+  flex: 2;
 }
 .cart-list .item:nth-child(even) {
   background: var(--eye-ball);
