@@ -952,3 +952,4 @@
 |946| [Pixeled Loader](https://github.com/xml12333/HTML_CSS_JS/tree/main/946.Pixeled%20Loader)| [Demo](https://nikt.com.ua/projects/htmlCssJs/946.Pixeled%20Loader/)|
 |947| [Cinematic Slideshow](https://github.com/xml12333/HTML_CSS_JS/tree/main/947.Cinematic%20Slideshow)| [Demo](https://nikt.com.ua/projects/htmlCssJs/947.Cinematic%20Slideshow/)|
 |948| [Glass](https://github.com/xml12333/HTML_CSS_JS/tree/main/948.Glass)| [Demo](https://nikt.com.ua/projects/htmlCssJs/948.Glass/)|
+|949| [Food Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/949.Food%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/949.Food%20Website/)|
