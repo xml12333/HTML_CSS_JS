@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>corner-shape superellipse() generator</title>
+	<link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+	<!-- partial:index.partial.html -->
+	<header>
+		<h1><code>corner-shape</code> <code>superellipse()</code> generator</h1>
+		<p>See the latest, updated version on <a href="https://www.corner-shape.com/"
+				target="_blank">https://www.corner-shape.com
+			</a></p>
+	</header>
+	<section class="wrapper">
+		<div id="shape" class="shape"></div>
+
+		<div class="controls">
+			<!-- titles -->
+			<div>
+				<p>Element</p>
+				<p>
+					<span>Radius 1</span>
+					<span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+							stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+							<path d="M9 15l6 -6" />
+							<path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464" />
+							<path
+								d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463" />
+						</svg></span>
+
+					<span>Radius 2</span>
+				</p>
+				<p>superellipse</p>
+			</div>
+			<!-- global -->
+			<div>
+				<p>Global</p>
+				<p>
+					<span>
+						<label for="corner-radius">Global corner radius 1</label>
+						<input type="range" id="corner-radius" min="0" max="100" step="1" value="40">
+					</span>
+					<span>
+						<label for="link-radius">Global link radii</label>
+						<input type="checkbox" id="link-radius" title="Both radius values the same">
+					</span>
+					<span>
+						<label for="corner-radius-2">Global corner radius 2</label>
+						<input type="range" id="corner-radius-2" min="0" max="100" step="1" value="10">
+					</span>
+				</p>
+				<p>
+					<label for="corner-ellipse">Global superellpise</label>
+					<input type="range" id="corner-ellipse" min="-10" max="10" step="0.1" value="-2">
+				</p>
+			</div>
+
+			<!-- top left -->
+			<div>
+				<p>Top Left</p>
+				<p>
+					<span>
+						<label for="corner-radius-tl">Top Left corner radius 1</label>
+						<input type="range" id="corner-radius-tl" min="0" max="100" step="1" value="30">
+					</span>
+					<span>
+						<label for="link-radius-tl">Top Left link radii</label>
+						<input type="checkbox" id="link-radius-tl" title="Both radius values the same">
+					</span>
+					<span>
+						<label for="corner-radius-tl-2">Top Left corner radius 2</label>
+						<input type="range" id="corner-radius-tl-2" min="0" max="100" step="1" value="20">
+					</span>
+				</p>
+				<p>
+					<label for="corner-ellipse-tl">Top Left superellpise</label>
+					<input type="range" id="corner-ellipse-tl" min="-10" max="10" step="0.1" value="-2">
+				</p>
+			</div>
+
+			<!-- top right -->
+			<div>
+				<p>Top Right</p>
+				<p>
+					<span>
+						<label for="corner-radius-tr">Top Right corner radius 1</label>
+						<input type="range" id="corner-radius-tr" min="0" max="100" step="1" value="20">
+					</span>
+					<span>
+						<label for="link-radius-tr">Top Right link radii</label>
+						<input type="checkbox" id="link-radius-tr" title="Both radius values the same">
+					</span>
+					<span>
+						<label for="corner-radius-tr-2">Top Left corner radius 2</label>
+						<input type="range" id="corner-radius-tr-2" min="0" max="100" step="1" value="20">
+					</span>
+				</p>
+				<p>
+					<label for="corner-ellipse-tr">Top right superellpise</label>
+					<input type="range" id="corner-ellipse-tr" min="-10" max="10" step="0.1" value="1">
+				</p>
+			</div>
+
+			<!-- bottom right -->
+			<div>
+				<p>Bottom right</p>
+				<p>
+					<span>
+						<label for="corner-radius-br">Bottom Right corner radius 1</label>
+						<input type="range" id="corner-radius-br" min="0" max="100" step="1" value="50">
+					</span>
+					<span>
+						<label for="link-radius-br">Bottom Right link radii</label>
+						<input type="checkbox" id="link-radius-br" title="Both radius values the same">
+					</span>
+					<span>
+						<label for="corner-radius-br-2">Bottom Right corner radius 2</label>
+						<input type="range" id="corner-radius-br-2" min="0" max="100" step="1" value="50">
+					</span>
+				</p>
+				<p>
+					<label for="corner-ellipse-br">Bottom right superellpise</label>
+					<input type="range" id="corner-ellipse-br" min="-10" max="10" step="0.1" value="-5">
+				</p>
+			</div>
+
+			<!-- bottom left -->
+			<div>
+				<p>Bottom Left</p>
+				<p>
+					<span>
+						<label for="corner-radius-bl">Bottom left corner radius 1</label>
+						<input type="range" id="corner-radius-bl" min="0" max="100" step="1" value="20">
+					</span>
+					<span>
+						<label for="link-radius-bl">Bottom Left link radii</label>
+						<input type="checkbox" id="link-radius-bl">
+					</span>
+					<span>
+						<label for="corner-radius-bl-2">Bottom Left corner radius 2</label>
+						<input type="range" id="corner-radius-bl-2" min="0" max="100" step="1" value="45">
+					</span>
+				</p>
+				<p>
+					<label for="corner-ellipse-bl">Bottom Left</label>
+					<input type="range" id="corner-ellipse-bl" min="-10" max="10" step="0.1" value="-.1">
+				</p>
+			</div>
+
+		</div>
+		<code class="display-code">
+		<span id="display-code"></span>
+		<button type="button" id="btn-copy-code" class="btn-copy-code" aria-label="Copy Code">&#x2750;</button>
+	</code>
+		<p id="msg" class="msg"></p>
+	</section>
+	<p class="msg-supports">Sorry, your browser doesn't support the <code>corner-shape<code> property</p>
+<!-- partial -->
+  <script  src="./js/script.js"></script>
+
+</body>
+</html>

@@ -953,3 +953,4 @@
 |947| [Cinematic Slideshow](https://github.com/xml12333/HTML_CSS_JS/tree/main/947.Cinematic%20Slideshow)| [Demo](https://nikt.com.ua/projects/htmlCssJs/947.Cinematic%20Slideshow/)|
 |948| [Glass](https://github.com/xml12333/HTML_CSS_JS/tree/main/948.Glass)| [Demo](https://nikt.com.ua/projects/htmlCssJs/948.Glass/)|
 |949| [Food Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/949.Food%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/949.Food%20Website/)|
+|950| [Corner Shape Generator](https://github.com/xml12333/HTML_CSS_JS/tree/main/950.Corner%20Shape%20Generator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/950.Corner%20Shape%20Generator/)|
