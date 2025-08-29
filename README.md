@@ -955,3 +955,4 @@
 |949| [Food Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/949.Food%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/949.Food%20Website/)|
 |950| [Corner Shape Generator](https://github.com/xml12333/HTML_CSS_JS/tree/main/950.Corner%20Shape%20Generator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/950.Corner%20Shape%20Generator/)|
 |951| [Pen Drawing](https://github.com/xml12333/HTML_CSS_JS/tree/main/951.Pen%20Drawing)| [Demo](https://nikt.com.ua/projects/htmlCssJs/951.Pen%20Drawing/)|
+|952| [Electric Border SVG](https://github.com/xml12333/HTML_CSS_JS/tree/main/952.Electric%20Border%20SVG)| [Demo](https://nikt.com.ua/projects/htmlCssJs/952.Electric%20Border%20SVG/)|
