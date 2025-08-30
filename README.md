@@ -956,3 +956,4 @@
 |950| [Corner Shape Generator](https://github.com/xml12333/HTML_CSS_JS/tree/main/950.Corner%20Shape%20Generator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/950.Corner%20Shape%20Generator/)|
 |951| [Pen Drawing](https://github.com/xml12333/HTML_CSS_JS/tree/main/951.Pen%20Drawing)| [Demo](https://nikt.com.ua/projects/htmlCssJs/951.Pen%20Drawing/)|
 |952| [Electric Border SVG](https://github.com/xml12333/HTML_CSS_JS/tree/main/952.Electric%20Border%20SVG)| [Demo](https://nikt.com.ua/projects/htmlCssJs/952.Electric%20Border%20SVG/)|
+|953| [Reflective Ripples](https://github.com/xml12333/HTML_CSS_JS/tree/main/953.Reflective%20Ripples)| [Demo](https://nikt.com.ua/projects/htmlCssJs/953.Reflective%20Ripples/)|
