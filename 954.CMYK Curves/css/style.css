@@ -1,0 +1,191 @@
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --trans-dur: 0.3s;
+  color-scheme: light dark;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+}
+
+body {
+  background-color: light-dark(var(--white), var(--black));
+  color: light-dark(var(--black), var(--white));
+  display: grid;
+  place-items: center;
+  font: 1em/1.5 sans-serif;
+  height: 100vh;
+  transition: background-color var(--trans-dur), color var(--trans-dur);
+}
+
+.pl {
+  display: block;
+  isolation: isolate;
+  width: 10em;
+  height: auto;
+}
+.pl__blend {
+  mix-blend-mode: multiply;
+}
+.pl__curve {
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1);
+  animation-iteration-count: infinite;
+}
+.pl__curve--cyan {
+  stroke: #36bdf7;
+}
+.pl__curve--magenta {
+  stroke: #fb189d;
+}
+.pl__curve--yellow {
+  stroke: #fccf03;
+}
+.pl__curve--rotate1 {
+  animation-name: rotate1;
+}
+.pl__curve--rotate2 {
+  animation-name: rotate2;
+}
+.pl__curve--rotate3 {
+  animation-name: rotate3;
+}
+.pl__curve--rotate4 {
+  animation-name: rotate4;
+}
+.pl__curve--rotate5 {
+  animation-name: rotate5;
+}
+.pl__curve--rotate6 {
+  animation-name: rotate6;
+}
+.pl__curve--rotate7 {
+  animation-name: rotate7;
+}
+.pl__curve--rotate8 {
+  animation-name: rotate8;
+}
+
+@keyframes rotate1 {
+  from {
+    animation-timing-function: cubic-bezier(0.12, 0, 0.39, 0);
+    transform: rotate(0);
+  }
+  17% {
+    animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
+    transform: rotate(0.525turn) translate(4px, 0);
+  }
+  34% {
+    animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1);
+    transform: rotate(1.05turn);
+  }
+  46%, to {
+    transform: rotate(1turn);
+  }
+}
+@keyframes rotate2 {
+  from, 8% {
+    transform: rotate(0);
+  }
+  36% {
+    transform: rotate(-1.05turn);
+  }
+  48%, to {
+    transform: rotate(-1turn);
+  }
+}
+@keyframes rotate3 {
+  from, 3% {
+    animation-timing-function: cubic-bezier(0.12, 0, 0.39, 0);
+    transform: rotate(0);
+  }
+  22.5% {
+    animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
+    transform: rotate(0.525turn) translate(3px, 0);
+  }
+  42% {
+    animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1);
+    transform: rotate(1.05turn);
+  }
+  54%, to {
+    transform: rotate(1turn);
+  }
+}
+@keyframes rotate4 {
+  from {
+    transform: rotate(0);
+  }
+  34% {
+    transform: rotate(-1.08turn);
+  }
+  46%, to {
+    transform: rotate(-1turn);
+  }
+}
+@keyframes rotate5 {
+  from, 12% {
+    animation-timing-function: cubic-bezier(0.12, 0, 0.39, 0);
+    transform: rotate(0);
+  }
+  31% {
+    animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
+    transform: rotate(0.525turn) translate(5px, 0);
+  }
+  50% {
+    animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1);
+    transform: rotate(1.05turn);
+  }
+  62%, to {
+    transform: rotate(1turn);
+  }
+}
+@keyframes rotate6 {
+  from {
+    transform: rotate(0);
+  }
+  34% {
+    transform: rotate(-1.05turn);
+  }
+  46%, to {
+    transform: rotate(-1turn);
+  }
+}
+@keyframes rotate7 {
+  from, 18% {
+    animation-timing-function: cubic-bezier(0.12, 0, 0.39, 0);
+    transform: rotate(0);
+  }
+  34% {
+    animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
+    transform: rotate(0.53turn) translate(4px, 0);
+  }
+  50% {
+    animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1);
+    transform: rotate(1.06turn);
+  }
+  62%, to {
+    transform: rotate(1turn);
+  }
+}
+@keyframes rotate8 {
+  from, 10% {
+    animation-timing-function: cubic-bezier(0.12, 0, 0.39, 0);
+    transform: rotate(0);
+  }
+  29% {
+    animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
+    transform: rotate(-0.54turn) translate(-4px, 0);
+  }
+  48% {
+    animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1);
+    transform: rotate(-1.08turn);
+  }
+  60%, to {
+    transform: rotate(-1turn);
+  }
+}
