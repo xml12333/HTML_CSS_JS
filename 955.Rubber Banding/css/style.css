@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+canvas {
+  background: #E6E6E6;
+  /* image-rendering: pixelated; */
+  width: 100vw;
+}
