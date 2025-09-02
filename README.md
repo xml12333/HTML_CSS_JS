@@ -959,3 +959,4 @@
 |953| [Reflective Ripples](https://github.com/xml12333/HTML_CSS_JS/tree/main/953.Reflective%20Ripples)| [Demo](https://nikt.com.ua/projects/htmlCssJs/953.Reflective%20Ripples/)|
 |954| [CMYK Curves](https://github.com/xml12333/HTML_CSS_JS/tree/main/954.CMYK%20Curves)| [Demo](https://nikt.com.ua/projects/htmlCssJs/954.CMYK%20Curves/)|
 |955| [Rubber Banding](https://github.com/xml12333/HTML_CSS_JS/tree/main/955.Rubber%20Banding)| [Demo](https://nikt.com.ua/projects/htmlCssJs/955.Rubber%20Banding/)|
+|956| [Rainbow Loop](https://github.com/xml12333/HTML_CSS_JS/tree/main/956.Rainbow%20Loop)| [Demo](https://nikt.com.ua/projects/htmlCssJs/956.Rainbow%20Loop/)|

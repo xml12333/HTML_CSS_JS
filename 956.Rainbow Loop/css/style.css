@@ -1,0 +1,13 @@
+body {
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#211e1a;
+}
+
+svg {
+  width:80%;
+  max-height:80%;
+  filter:saturate(1);
+}
