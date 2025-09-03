@@ -960,3 +960,4 @@
 |954| [CMYK Curves](https://github.com/xml12333/HTML_CSS_JS/tree/main/954.CMYK%20Curves)| [Demo](https://nikt.com.ua/projects/htmlCssJs/954.CMYK%20Curves/)|
 |955| [Rubber Banding](https://github.com/xml12333/HTML_CSS_JS/tree/main/955.Rubber%20Banding)| [Demo](https://nikt.com.ua/projects/htmlCssJs/955.Rubber%20Banding/)|
 |956| [Rainbow Loop](https://github.com/xml12333/HTML_CSS_JS/tree/main/956.Rainbow%20Loop)| [Demo](https://nikt.com.ua/projects/htmlCssJs/956.Rainbow%20Loop/)|
+|957| [Orbs N Ringz](https://github.com/xml12333/HTML_CSS_JS/tree/main/957.Orbs%20N%20Ringz)| [Demo](https://nikt.com.ua/projects/htmlCssJs/957.Orbs%20N%20Ringz/)|

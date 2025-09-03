@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Orbs N Ringz</title>
+	<link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+	<!-- partial:index.partial.html -->
+	<canvas id="canvas"></canvas>
+	<textarea id="codeEditor" class="editor" spellcheck="false" autocorrect="off" autocapitalize="off" translate="no"
+		oninput="render()"></textarea>
+	<pre id="error"></pre>
+	<div id="indicator"></div>
+	<div id="controls">
+		<div class="controls">
+			<input id="btnToggleView" class="icon" type="checkbox" name="toggleView" onclick="toggleView()">
+			<input id="btnToggleResolution" class="icon" type="checkbox" name="toggleResolution"
+				onchange="toggleResolution()">
+			<input id="btnReset" class="icon" type="checkbox" name="reset" onclick="reset()">
+		</div>
+	</div>
+	<script type="x-shader/x-fragment">#version 300 es
+/*********
+* made by Matthias Hurrle (@atzedent)
+*/
+precision highp float;
+out vec4 O;
+uniform float time;
+uniform vec2 resolution;
+uniform vec2 move;
+#define FC gl_FragCoord.xy
+#define R resolution
+#define T (.4*time)
+#define N normalize
+#define S smoothstep
+#define MN min(R.x,R.y)
+#define SE(v,a,k) S(a+k/MN,a-k/MN,v)
+#define rot(a) mat2(cos((a)-vec4(0,11,33,0)))
+#define hue(a) (.5+.5*sin(3.14*(a)+vec3(1,2,3)))
+#define PI radians(180.)
+#define TAU (2.*PI)
+float pmod(inout vec2 p, float n) {
+  float angle=TAU/n,
+  a=atan(p.y,p.x)+angle/2.,
+  r=length(p),
+  c=floor(a/angle);
+  a=mod(a,angle)-angle/2.;
+  p=vec2(cos(a),sin(a))*r;
+  if (abs(c)>=(n/2.)) c=abs(c);
+  return c;
+}
+float tor(vec3 p, float r1, float r2) {
+	vec2 c=vec2(length(p.xy)-r1, p.z);
+	return length(c)-r2;
+}
+float map(vec3 p) {
+	p.xz*=rot(T);
+	vec3 q=p;
+	q.xz*=rot(T*PI/2.-1.2);
+	float g=3., id=pmod(p.xz,24.);
+	pmod(q.xz,4.);
+	p.x-=g;
+	q.x-=g;
+	float k=sin(T*TAU+id)*.3+.6;
+	k=S(.0,1.,max(k,.2));
+	float d=min(tor(p,1.-k,.125),length(q)-.5);
+	return d*.6;
+}
+vec3 norm(vec3 p) {
+	const vec2 e=vec2(1e-1,0);
+	return N(vec3(
+		map(p+e.xyy)-map(p-e.xyy),
+		map(p+e.yxx)-map(p-e.yxy),
+		map(p+e.yyx)-map(p-e.yyx))
+	);
+}
+float shadow(vec3 p, vec3 lp) {
+	float shd=1., maxd=length(lp-p);
+	vec3 l=N(lp-p);
+	for (float i=1e-3; i<maxd;) {
+		float d=map(p+l*i);
+		if (abs(d)<5e-3) {
+			shd=.0;
+			break;
+		}
+		shd=min(shd,8.*d/i);
+		i+=d;
+	}
+	return shd;
+}
+void cam(inout vec3 p) {
+	p.yz*=rot(-(sin(move.y*6.3/MN+.4)*.7-.7));
+}
+bool march(inout vec3 p, vec3 rd, bool refl) {
+	int maxd=refl?30:400;
+	for (int i; i++<maxd;) {
+		float d=map(p);
+		if (abs(d)<5e-3) return true;
+		if (d>9.) return false;
+		p+=rd*d;
+	}
+	return false;
+}
+vec3 render(inout vec3 p, vec3 rd, vec3 rdd, bool refl) {
+	vec3 col=vec3(0);
+	if (march(p,rd,refl)) {
+		vec3 n=norm(p), lp=vec3(1,2,-3), l=N(lp-p),
+		hal=N(lp-n);
+		float dif=clamp(dot(l,n),.0,1.),
+		spes=pow(clamp(dot(hal,rd),.0,1.),2.),
+		spec=pow(clamp(dot(reflect(rd,n),l),.0,1.),32.),
+		shd=shadow(p+n*5e-2,lp);
+		vec3 c=hue(p.y);
+		col+=c;
+		col=mix(col,c,.1+dif);
+		if (!refl) col=mix(col*.6,col,shd);
+		col+=c*spec*.5+spes*.5;
+	} else  {
+		float t=.8;
+		col=mix(hue(.8+t),hue(.07+t),dot(rdd.y,rdd.y*(R.x>R.y?3.:.8)));
+		col=vec3(dot(col,vec3(.21,.71,.07)));
+	}
+	return col;
+}
+void main() {
+	vec2 uv=(FC-.5*R)/MN;
+	vec3 col=vec3(0),
+	p=vec3(0,0,-6.+(R.x>R.y?-3.:.0)),
+	rd=N(vec3(uv,.4+(R.x>R.y?.8:.0))), rdd=rd;
+	cam(p); cam(rd);
+	col=render(p,rd,rdd,false);
+	vec3 n=norm(p);
+	float fres=clamp(1.+dot(rd,n),.0,1.);
+	rd=reflect(rd,n);
+	p+=n*5e-2;
+	col=mix(col,render(p,rd,rdd,true),fres*.4);
+  O=vec4(col,1);
+}</script>
+	<!-- partial -->
+	<script src="./js/script.js"></script>
+
+</body>
+</html>
