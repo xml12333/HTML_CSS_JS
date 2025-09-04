@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Portuguese Tiles 🟦 (1205 bytes) #PetitePatterns</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    body>svg {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .bmc {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+    }
+  </style>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+  <!-- partial:index.partial.html -->
+  <svg xmlns="http://www.w3.org/2000/svg">
+    <linearGradient id="m" x1=".5">
+      <stop stop-color="#808080" />
+      <stop offset="1" stop-color="#fff" />
+    </linearGradient>
+    <linearGradient id="sm" href="#m" x1="0" x2="-.4" y2=".8" />
+    <linearGradient id="p" x1="-.6" y1=".8">
+      <stop />
+      <stop offset="1" stop-color="#fff" />
+    </linearGradient>
+    <mask id="mask">
+      <use href="#r" transform="rotate(90 25 25)" />
+      <path id="s" d="M25 25L0 50V0" fill="url(#sm)" />
+      <use href="#s" x="-50" transform="scale(-1 1)" />
+    </mask>
+    <pattern id="pattern" width="50" height="50" patternUnits="userSpaceOnUse">
+      <g mask="url(#mask)">
+        <rect id="r" width="50" height="50" fill="url(#m)" />
+        <path id="u" d="M25 25L50 0V25H0V0" fill="url(#p)" />
+        <use href="#u" y="-50" transform="scale(1 -1)" />
+        <path d="M51 50V0H0V50" fill="none" stroke="red" />
+      </g>
+    </pattern>
+    <filter id="filter" color-interpolation-filters="sRGB">
+      <feColorMatrix values="0 0 0 0 .5
+                               0 0 0 0 .5
+                               0 0 0 0 .5
+                               9 -9 0 0 0" result="g" />
+      <feTurbulence type="fractalNoise" baseFrequency=".1" numOctaves="5" />
+      <feColorMatrix values="0 0 0 -10 6
+                               0 0 0 -10 6
+                               0 0 0 0 1
+                               0 0 0 0 1" />
+      <feDisplacementMap in2="SourceGraphic" xChannelSelector="R" scale="-100" />
+      <feBlend in="g" />
+    </filter>
+    <rect width="100%" height="100%" fill="url(#pattern)" filter="url(#filter)" />
+  </svg>
+  <script src="./js/script.js"></script>
+
+</body>
+</html>
