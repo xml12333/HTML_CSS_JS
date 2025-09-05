@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weird Little Shader / Bayer Texture - WebGL</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+  <!-- partial:index.partial.html -->
+  <canvas id="canvas"></canvas>
+  <!-- VertexShader code here -->
+  <script id="vertexShader" type="x-shader/x-vertex">#version 300 es
+precision highp float;
+  in vec4 position;
+  void main() {
+    gl_Position = vec4( position );
+  }
+</script>
+
+  <script id="mainShader" type="x-shader/x-fragment">#version 300 es
+  #if __VERSION__ < 130
+  #define TEXTURE2D texture2D
+  #else
+  #define TEXTURE2D texture
+  #endif
+  precision highp float;
+  out vec4 fragColor;
+  
+  uniform vec4 u_mouse;
+  uniform vec2 u_resolution;
+  uniform float u_time;
+  uniform sampler2D iChannel0;
+
+  #define R u_resolution
+
+void main() {
+    vec2 F = gl_FragCoord.xy; 
+    vec2 uv = F.xy/R.xy;
+    vec3 color = texture(iChannel0,uv).rgb;
+    color = pow(color, vec3(0.4545));
+    fragColor = vec4(color,1.);
+}
+</script>
+
+  <!-- FragmentShader code here -->
+  <script id="fragmentShader" type="x-shader/x-fragment">#version 300 es
+precision highp float;
+out vec4 fragColor;
+
+// our basic uniforms
+uniform vec4 u_mouse;
+uniform vec2 u_resolution;
+uniform float u_time;
+uniform float u_delta;
+uniform sampler2D u_texture;
+uniform sampler2D iChannel0;
+  
+#define R u_resolution
+#define T u_time
+#define M u_mouse
+
+#define P 6.2831853
+  
+float time;
+
+mat2 rot(float g) {return mat2(cos(g), sin(g),-sin(g), cos(g));}
+float hash21( vec2 p ) {return fract(sin(dot(p,vec2(293.4833,8434.521)))*4832.3234);}
+
+vec3 hue(float t){ 
+    const vec3 c = vec3(2,1,0);
+    return .4 + .4*cos(P*t+3.14*(c+vec3(0.,.475,.84))); 
+}
+
+void main() {
+    vec2 F = gl_FragCoord.xy; 
+    float t = texture(u_texture,F/8.).r * u_delta;
+    
+    float ft= time+T;
+    vec2 uv=(2.*F-R)/max(R.x,R.y);
+    uv*=mat2(cos(t*.02),-sin(t*.02),sin(t*.02),cos(t*.02));
+    uv+=vec2(.3*sin(ft*.5),ft*.1);
+    vec3 C=texture(iChannel0,F/R).rgb*exp2(-8.*t);
+    vec2 vv=fract(uv*6.)-.5,id=floor(uv*6.);
+    float px=4./R.x;
+    for(int y=-1;y<2;y++)for(int x=-1;x<2;x++){
+        float hs=hash21(id+vec2(x,y));
+        float g=length(vv-vec2(x,y))-(.45+.45*sin(hs*P+ft));
+        C=mix(C,hue(.3*t+.03*T+.4*hs),smoothstep(px,-px,abs(abs(abs(g)-.08)-.04)-((.08+hs)*.04)));
+    }
+    fragColor = vec4(C,1.);
+}
+
+
+</script>
+  <!-- partial -->
+  <script src='./js/twgl.min.js'></script>
+  <script src="./js/script.js"></script>
+
+</body>
+</html>

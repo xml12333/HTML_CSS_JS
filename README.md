@@ -962,3 +962,4 @@
 |956| [Rainbow Loop](https://github.com/xml12333/HTML_CSS_JS/tree/main/956.Rainbow%20Loop)| [Demo](https://nikt.com.ua/projects/htmlCssJs/956.Rainbow%20Loop/)|
 |957| [Orbs N Ringz](https://github.com/xml12333/HTML_CSS_JS/tree/main/957.Orbs%20N%20Ringz)| [Demo](https://nikt.com.ua/projects/htmlCssJs/957.Orbs%20N%20Ringz/)|
 |958| [Portuguese Tiles](https://github.com/xml12333/HTML_CSS_JS/tree/main/958.Portuguese%20Tiles)| [Demo](https://nikt.com.ua/projects/htmlCssJs/958.Portuguese%20Tiles/)|
+|959| [Circle Shader](https://github.com/xml12333/HTML_CSS_JS/tree/main/959.Circle%20Shader)| [Demo](https://nikt.com.ua/projects/htmlCssJs/959.Circle%20Shader/)|
