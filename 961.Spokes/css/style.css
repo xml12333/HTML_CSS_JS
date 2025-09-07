@@ -1,0 +1,11 @@
+#grid {
+  display: grid;
+  grid-template-columns: repeat(19, 1fr);
+}
+
+#grid > * {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+}
