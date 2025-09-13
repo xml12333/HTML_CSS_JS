@@ -22,7 +22,23 @@ animate(chars2, {
   loop: true,
 });
 /*=============== SWIPER PROJECTS ===============*/
+const swiperProjects = new Swiper(".projects__swiper", {
+  loop: true,
+  spaceBetween: 24,
+  slidesPerView: "auto",
+  grabCursor: true,
+  speed: 600,
 
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+
+  autoplay: {
+    delay: 3000,
+    desableOnInteraction: false,
+  },
+});
 /*=============== WORK TABS ===============*/
 
 /*=============== SERVICES ACCORDION ===============*/
