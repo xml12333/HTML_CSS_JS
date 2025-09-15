@@ -40,7 +40,22 @@ const swiperProjects = new Swiper(".projects__swiper", {
   },
 });
 /*=============== WORK TABS ===============*/
+const tabs = document.querySelectorAll("[data-target]"),
+  tabContents = document.querySelectorAll("[data-content]");
 
+tabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    const targetSelector = tab.dataset.target,
+      targetContent = document.querySelector(targetSelector);
+    // Disable all content and active tabs
+    tabContents.forEach((content) => content.classList.remove("work-active"));
+    tabs.forEach((t) => t.classList.remove("work-active"));
+
+    // Active the tab and corresponding content
+    tab.classList.add("work-active");
+    targetContent.classList.add("work-active");
+  });
+});
 /*=============== SERVICES ACCORDION ===============*/
 
 /*=============== TESTIMONIALS OF DUPLICATE CARDS ===============*/
