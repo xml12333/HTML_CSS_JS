@@ -766,7 +766,66 @@ img {
   }
 }
 /*=============== CONTACT ===============*/
-
+.contact__container{
+  row-gap: 4rem;
+  padding-bottom: 2rem;
+}
+.contact .section__title{
+  margin-bottom: 1rem;
+}
+.contact__data{
+  text-align: center;
+}
+.contact__description{
+  font-family: var(--second-font);
+  margin-bottom: 1.5rem;
+}
+.contact__emial{
+  display: none;
+}
+.contact__button{
+  cursor: pointer;
+}
+.contact__content{
+  row-gap: 3rem;
+}
+.contact__info{
+  row-gap: 1rem;
+}
+.contact__title{
+  font-size: var(--h3-font-size);
+  color: var(--first-color);
+  text-align: center;
+  margin-bottom: .5rem;
+}
+.contact__address{
+  color: var(--title-color);
+  font-style: normal;
+  font-weight: var(--font-medium);
+  text-align: center;
+}
+.contact__links{
+  display: grid;
+  grid-template-columns: max-content;
+  justify-content: center;
+  row-gap: .25rem;
+}
+.contact__link{
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: .5rem;
+  transition: transform .4s, color .4s;
+}
+.contact__link i{
+  font-size: 1.5rem;
+}
+.contact__link:hover{
+  transform: translateX(.35rem);
+  color: var(--text-color);
+}
 /*=============== FOOTER ===============*/
 
 /*=============== SCROLL BAR ===============*/
@@ -1065,6 +1124,35 @@ img {
   .testimonials__number{
     font-size: var(--normal-font-size);
   }
+  .contact{
+    padding-block: 9rem 4rem;
+  }
+  .contact__container{
+    row-gap: 8rem;
+  }
+  .contact__description{
+    font-size: var(--h2-font-size);
+  }
+  .contact__content{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .contact__info{
+    row-gap: 1.5rem;
+    justify-self: flex-start;
+  }
+  .contact__write{
+    justify-self: flex-end;
+  }
+  .contact__title{
+    margin-bottom: .75rem;
+  }
+  .contact__links{
+    row-gap: .5rem;
+  }
+  .contact__link{
+    font-size: 1.25rem;
+  }
+  
 }
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
 
