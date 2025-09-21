@@ -185,9 +185,26 @@ img {
   z-index: -1;
 }
 /*=============== CUSTOM CURSOR ===============*/
-
+.cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  width: 50px;
+  height: 50px;
+  background-color: var(--first-color-light);
+  border-radius: 50%;
+  box-shadow: 0 0 30px var(--first-color);
+  mix-blend-mode: difference;
+  pointer-events: none;
+  transition: transform 0.3s ease-out, left 0.2s ease-out, top 0.2s ease-out,
+    width 0.3s, height 0.3s;
+}
 /* Hide the custom cursor */
-
+.hide-cursor {
+  width: 0;
+  height: 0;
+}
 /*=============== HEADER & NAV ===============*/
 .header {
   position: fixed;
@@ -237,7 +254,7 @@ img {
 }
 
 /* Active link */
-.active-link{
+.active-link {
   color: var(--first-color);
   text-shadow: 0 8px 16px var(--first-color);
 }
@@ -769,99 +786,99 @@ img {
   }
 }
 /*=============== CONTACT ===============*/
-.contact__container{
+.contact__container {
   row-gap: 4rem;
   padding-bottom: 2rem;
 }
-.contact .section__title{
+.contact .section__title {
   margin-bottom: 1rem;
 }
-.contact__data{
+.contact__data {
   text-align: center;
 }
-.contact__description{
+.contact__description {
   font-family: var(--second-font);
   margin-bottom: 1.5rem;
 }
-.contact__emial{
+.contact__emial {
   display: none;
 }
-.contact__button{
+.contact__button {
   cursor: pointer;
 }
-.contact__content{
+.contact__content {
   row-gap: 3rem;
 }
-.contact__info{
+.contact__info {
   row-gap: 1rem;
 }
-.contact__title{
+.contact__title {
   font-size: var(--h3-font-size);
   color: var(--first-color);
   text-align: center;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
-.contact__address{
+.contact__address {
   color: var(--title-color);
   font-style: normal;
   font-weight: var(--font-medium);
   text-align: center;
 }
-.contact__links{
+.contact__links {
   display: grid;
   grid-template-columns: max-content;
   justify-content: center;
-  row-gap: .25rem;
+  row-gap: 0.25rem;
 }
-.contact__link{
+.contact__link {
   color: var(--title-color);
   font-weight: var(--font-medium);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  column-gap: .5rem;
-  transition: transform .4s, color .4s;
+  column-gap: 0.5rem;
+  transition: transform 0.4s, color 0.4s;
 }
-.contact__link i{
+.contact__link i {
   font-size: 1.5rem;
 }
-.contact__link:hover{
-  transform: translateX(.35rem);
+.contact__link:hover {
+  transform: translateX(0.35rem);
   color: var(--text-color);
 }
 /*=============== FOOTER ===============*/
-.footer{
+.footer {
   position: relative;
   padding-block: 4rem 2rem;
   text-align: center;
   row-gap: 1rem;
   overflow: hidden;
 }
-.footer .blob-animate{
+.footer .blob-animate {
   right: -3rem;
   bottom: -3rem;
 }
-.footer__copy{
+.footer__copy {
   color: var(--title-color);
 }
-.footer__copy span{
+.footer__copy span {
   color: var(--first-color);
 }
-.footer__year span{
+.footer__year span {
   font-family: var(--second-font);
 }
 /*=============== SCROLL BAR ===============*/
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 0.6rem;
-  background-color: hsl(240,6%,12%);
-  border-radius: .5rem;
+  background-color: hsl(240, 6%, 12%);
+  border-radius: 0.5rem;
 }
-::-webkit-scrollbar-thumb{
-  background-color: hsl(240,6%,20%);
-  border-radius: .5rem;
+::-webkit-scrollbar-thumb {
+  background-color: hsl(240, 6%, 20%);
+  border-radius: 0.5rem;
 }
-::-webkit-scrollbar-thumb:hover{
-  background-color: hsl(240,6%,24%);
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(240, 6%, 24%);
 }
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
@@ -1149,43 +1166,42 @@ img {
       hsl(0, 0%, 0%) 100%
     );
   }
-  .testimonials__card{
+  .testimonials__card {
     width: 370px;
     padding: 3rem 2rem;
     border-radius: 4rem;
   }
-  .testimonials__number{
+  .testimonials__number {
     font-size: var(--normal-font-size);
   }
-  .contact{
+  .contact {
     padding-block: 9rem 4rem;
   }
-  .contact__container{
+  .contact__container {
     row-gap: 8rem;
   }
-  .contact__description{
+  .contact__description {
     font-size: var(--h2-font-size);
   }
-  .contact__content{
+  .contact__content {
     grid-template-columns: repeat(3, 1fr);
   }
-  .contact__info{
+  .contact__info {
     row-gap: 1.5rem;
     justify-self: flex-start;
   }
-  .contact__write{
+  .contact__write {
     justify-self: flex-end;
   }
-  .contact__title{
-    margin-bottom: .75rem;
+  .contact__title {
+    margin-bottom: 0.75rem;
   }
-  .contact__links{
-    row-gap: .5rem;
+  .contact__links {
+    row-gap: 0.5rem;
   }
-  .contact__link{
+  .contact__link {
     font-size: 1.25rem;
   }
-  
 }
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
 
