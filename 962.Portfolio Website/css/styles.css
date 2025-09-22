@@ -18,7 +18,7 @@
          -> Choose any color 
          -> Copy the color mode (HSL)
   */
-  --hue: 255;
+  --hue: 358;
   --first-color: hsl(var(--hue), 60%, 64%);
   --first-color-alt: hsl(var(--hue), 80%, 56%);
   --first-color-alt-2: hsl(var(--hue), 60%, 56%);
@@ -1204,5 +1204,14 @@ img {
   }
 }
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
-
+@media screen and (min-width: 2048px) {
+  body {
+    zoom: 1.4;
+  }
+}
 /* Custom cursor is hidden for mobile devices */
+@media (pointer:coarse){
+  .cursor{
+    display: none;
+  }
+}
