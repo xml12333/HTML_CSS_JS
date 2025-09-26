@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Bezier on HSL (Poline for end-users)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://public.codepenassets.com/css/normalize-5.0.0.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+  <article class="container">
+    <div class="canvas-container" id="canvasContainer">
+      <canvas id="canvas"></canvas>
+    </div>
+    <aside class="controls" aria-label="controls">
+      <div class="color-strip" id="colorStrip"></div>
+      <label class="control-label">
+        <span>Colors</span>
+        <input type="range" data-state="numColorStops" data-type="int" min="3" max="30" value="9">
+        <strong data-label="numColorStops">9</strong>
+      </label>
+      <label class="control-label">
+        <span><abbr title="Saturation">Sat</abbr> Start</span>
+        <input type="range" data-state="startSaturation" data-type="percent" min="0" max="100" value="55">
+        <strong data-label="startSaturation">55</strong>
+      </label>
+      <label class="control-label">
+        <span><abbr title="Saturation">Sat</abbr> End</span>
+        <input type="range" data-state="endSaturation" data-type="percent" min="0" max="100" value="80">
+        <strong data-label="endSaturation">80</strong>
+      </label>
+      <label class="control-label">
+        <span>Distribution</span>
+        <select data-state="positionFunction">
+          <option value="linear">Linear</option>
+          <option value="exponential">Exponential</option>
+          <option value="quadratic">Quadratic</option>
+          <option value="sinusoidal">Sinusoidal</option>
+          <option value="asinusoidal">Asinusoidal</option>
+          <option value="smoothStep" selected="selected">Smooth Step</option>
+          <option value="arc">Arc</option>
+        </select>
+        <i></i>
+      </label>
+      <label class="control-label">
+        <span>Invert Lightness</span>
+        <input type="checkbox" data-state="invertLightness" checked>
+      </label>
+      <label class="control-label">
+        <span>Invert S/L</span>
+        <input type="checkbox" data-state="invertXY">
+      </label>
+      <label class="control-label">
+        <span>Color Mode</span>
+        <select data-state="colorMode">
+          <option value="lch">lch</option>
+          <option value="oklch">okLch</option>
+          <option value="hsl" selected="selected">hsl</option>
+          <option value="hwb">hwb</option>
+        </select>
+        <i></i>
+      </label>
+    </aside>
+  </article>
+
+  <aside class="names" aria-label="Color Names">
+    <div class="names__list" data-colornames></div>
+  </aside>
+  <script type="module" src="./js/script.js"></script>
+
+</body>
+
+</html>
