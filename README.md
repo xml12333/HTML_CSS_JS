@@ -970,3 +970,4 @@
 |964| [Login Form](https://github.com/xml12333/HTML_CSS_JS/tree/main/964.Login%20Form)| [Demo](https://nikt.com.ua/projects/htmlCssJs/964.Login%20Form/)|
 |965| [Card Beem Animation](https://github.com/xml12333/HTML_CSS_JS/tree/main/965.Card%20Beem%20Animation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/965.Card%20Beem%20Animation/)|
 |966| [Bezier on HSL](https://github.com/xml12333/HTML_CSS_JS/tree/main/966.Bezier%20on%20HSL)| [Demo](https://nikt.com.ua/projects/htmlCssJs/966.Bezier%20on%20HSL/)|
+|967| [Canvas Hexagons](https://github.com/xml12333/HTML_CSS_JS/tree/main/967.Canvas%20Hexagons)| [Demo](https://nikt.com.ua/projects/htmlCssJs/967.Canvas%20Hexagons/)|
