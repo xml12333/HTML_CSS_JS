@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Impressive</title>
+	<link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+	<canvas id="canvas"></canvas>
+	<textarea id="codeEditor" class="editor" spellcheck="false" autocorrect="off" autocapitalize="off" translate="no"
+		oninput="render()"></textarea>
+	<pre id="error"></pre>
+	<div id="indicator"></div>
+	<div id="controls">
+		<div class="controls">
+			<input id="btnToggleView" class="icon" type="checkbox" name="toggleView" onclick="toggleView()">
+			<input id="btnToggleResolution" class="icon" type="checkbox" name="toggleResolution"
+				onchange="toggleResolution()">
+			<input id="btnReset" class="icon" type="checkbox" name="reset" onclick="reset()">
+		</div>
+	</div>
+	<script type="x-shader/x-fragment">#version 300 es
+/*********
+* made by Matthias Hurrle (@atzedent)
+*/
+precision highp float;
+out vec4 O;
+uniform float time;
+uniform vec2 resolution;
+#define FC gl_FragCoord.xy
+#define R resolution
+#define T time
+#define N normalize
+#define S smoothstep
+#define SE(v,a,h) S(a+h/MN,a-h/MN,v)
+#define MN min(R.x,R.y)
+#define hue(a) (.5+.5*sin(3.14*(a)+vec3(1,2,3)))
+#define rot(a) mat2(cos((a)-vec4(0,11,33,0)))
+float rnd(vec2 p) {
+	p=fract(p*vec2(12.9898,78.233));
+	p+=dot(p,p+34.56);
+	return fract(p.x*p.y);
+}
+float noise(vec2 p) {
+	vec2 i=floor(p), f=fract(p), u=f*f*(3.-2.*f), k=vec2(1,0);
+	float
+	a=rnd(i),
+	b=rnd(i+k),
+	c=rnd(i+k.yx),
+	d=rnd(i+k.xx);
+	return mix(mix(a,b,u.x),mix(c,d,u.x),u.y);
+}
+float fbm(vec2 p) {
+	float t=.0, a=1.;
+	for (int i; i++<5;) {
+		t+=a*noise(p);
+		p*=2.;
+		a/=2.;
+	}
+	return t;
+}
+float smin(float a, float b, float k) {
+	float h=clamp(.5+.5*(b-a)/k,.0,1.);
+	return mix(b,a,h)-k*h*(1.-h);
+}
+float bmap(vec2 uv) {
+	vec3 col=vec3(0);
+	float k=22., d=dot(sin(1.5707+uv*k),1.+uv-uv);
+	d=SE(d,.0,100.);
+	col+=max(vec3(.8,.75,.72),d);
+	col=max(col,.7);
+	col=hue(col+2.1);
+	return clamp(dot(col,vec3(.21,.71,.07))+.9,.0,1.);
+}
+float poly(vec2 p, float n) {
+	float
+	a=atan(p.x,p.y),
+	b=6.28318/n,
+	c=.5+a/b;
+	return cos(floor(c)*b-a)*length(p);
+}
+float grid(vec3 p, float s) {
+	vec2 uv=p.xy;
+	uv*=.75;
+	vec3 col=vec3(0);
+	float d=.0;
+	uv.y-=.5;
+	for (float i=.0; i<2.; i++) {
+		vec2 st=fract(uv+i*.5)-.5;
+		d=max(d,SE(abs(poly(st,8.)-.42)-.03,.0,20.));
+	}
+	d=S(1.,.0,d);
+	vec2 c=vec2(d,abs(p.z)-s);
+	d=length(max(c,.0))+min(.0,max(c.x,c.y));
+	return d;
+}
+float tor(vec3 p, vec2 s) {
+	vec2 c=vec2(length(p.xy)-s.x,p.z);
+	return length(c)-s.y;
+}
+float disc(vec3 p, vec2 s) {
+	vec2 c=vec2(length(p.xy)-s.x, abs(p.z)-s.y);
+	return length(max(c,.0))+min(.0,max(c.x,c.y));
+}
+float map(vec3 p) {
+	vec3 q=p;
+	q.xy*=rot(pow(sin(T*.5+noise(p.xy+T*.5+10.)*.25),5.));
+	vec3 off=vec3(0,0,pow(sin(T)*.5-.5,5.));
+	float d=-(p.z),
+	a=tor(p+off,vec2(.5+.2*S(.0,1.,length(p.xy)-.25)*cos(8.*atan(q.x,q.y)),.25));
+	a=smin(a,disc(p+off,vec2(.5,.125)),.27);
+	a=smin(a,grid(p+vec3(0,0,-.45+.1*sin(T)),.125),.4);
+	d=smin(d,a,.3-.1*sin(T));
+	d-=bmap(p.xy)*.02;
+	return d;
+}
+vec3 norm(vec3 p) {
+	float h=1e-3; vec2 k=vec2(-1,1);
+	return N(
+		k.xyy*map(p+k.xyy*h)+
+		k.yxy*map(p+k.yxy*h)+
+		k.yyx*map(p+k.yyx*h)+
+		k.xxx*map(p+k.xxx*h)
+	);
+}
+bool march(inout vec3 p, vec3 rd) {
+	for (int i; i++<200;) {
+		float d=map(p);
+		if (abs(d)<1e-3) return true;
+		if (d>10.) return false;
+		p+=rd*d;
+	}
+}
+void cam(inout vec3 p) {
+	// Mac hack.
+	p.yz*=rot(-.0);
+}
+void main() {
+	vec2 uv=(FC-.5*R)/MN;
+	vec3 col=vec3(0),
+	p=vec3(0,0,-2),
+	rd=N(vec3(uv,.7));
+	cam(p); cam(rd);
+	if (march(p,rd)) {
+		vec3 n=norm(p), lp=vec3(0,5,-3), l=N(lp-p), hal=N(lp)-n;
+		float dif=clamp(dot(l,n),.0,1.), spes=pow(clamp(dot(N(hal),rd),.0,1.),2.);
+		col+=dif*vec3(1,.82,.8);
+		col+=mix(.7,1.,noise(uv*122.))*fbm(T*.25+vec2(noise(rd.xy-rd.xy+10.)*2.2,T*.5)+reflect(rd,n).xy*5.)*.2;
+		col+=.25*spes;
+	}
+  O=vec4(col,1);
+}</script>
+	<script src="./js/script.js"></script>
+
+</body>
+
+</html>
