@@ -1,0 +1,117 @@
+@import "https://unpkg.com/open-props" layer(design.system);
+@import "https://unpkg.com/open-props/normalize.min.css" layer(demo.support);
+
+@keyframes slide-in {
+  from {
+    scale: .85;
+    rotate: calc((var(--side, 1) * (5deg * var(--amp, 1))));
+  }
+}
+
+@layer demo {
+  .card-animation-layer {
+    @media (prefers-reduced-motion: no-preference) {
+      @supports (animation-timeline: view()) {
+        animation: slide-in linear both;
+        animation-timeline: view();
+        animation-range: cover 0% contain 15%;
+      }
+    }
+  } 
+}
+
+@layer demo.support {
+  body {
+    display: grid;
+    place-content: end center;
+    padding: var(--size-5);
+    gap: var(--size-5);
+  } 
+  
+  main {
+    --cols: 2;
+    display: grid;
+    grid-template-columns: repeat(var(--cols), minmax(0, var(--size-content-1)));
+    gap: var(--size-5);
+    padding-inline: var(--size-5);
+    padding-block: 75svh 50svh;
+    place-items: start;
+    
+    @media (width >= 720px)  { --cols: 4 }
+    @media (width >= 1200px) { --cols: 6 }
+    @media (width >= 1920px) { --cols: 8 }
+    
+    & > .card-animation-layer {
+      display: grid;
+      gap: var(--size-2);
+      
+      &:nth-of-type(2n + 1) { transform-origin: 25vw 100%; --side: -1; }
+      &:nth-of-type(2n)     { transform-origin: -25vw 100%; --side: 1; }
+      
+      @media (width >= 720px) {
+        &:nth-of-type(4n + 1) { transform-origin: 50vw 100%; --side: -1; --amp: 2; }
+        &:nth-of-type(4n + 2) { transform-origin: 25vw 100%; --side: -1; }
+        &:nth-of-type(4n + 3) { transform-origin: -25vw 100%; --side: 1 }
+        &:nth-of-type(4n)     { transform-origin: -50vw 100%; --side: 1; --amp: 2; }
+      }
+      
+      @media (width >= 1200px) {
+        &:nth-of-type(6n + 1) { transform-origin: 75vw 100%; --side: -1; --amp: 3; }
+        &:nth-of-type(6n + 2) { transform-origin: 50vw 100%; --side: -1; --amp: 2; }
+        &:nth-of-type(6n + 3) { transform-origin: 25vw 100%; --side: -1; }
+        &:nth-of-type(6n + 4) { transform-origin: -25vw 100%; --side: 1; }
+        &:nth-of-type(6n + 5) { transform-origin: -50vw 100%; --side: 1; --amp: 2; }
+        &:nth-of-type(6n)     { transform-origin: -75vw 100%; --side: 1; --amp: 3; }
+      }
+      
+      @media (width >= 1920px) {
+        &:nth-of-type(8n + 1) { transform-origin: 100vw 100%; --side: -1; --amp: 4; }
+        &:nth-of-type(8n + 2) { transform-origin: 75vw 100%; --side: -1; --amp: 3; }
+        &:nth-of-type(8n + 3) { transform-origin: 50vw 100%; --side: -1; --amp: 2; }
+        &:nth-of-type(8n + 4) { transform-origin: 25vw 100%; --side: -1; }
+        &:nth-of-type(8n + 5) { transform-origin: -25vw 100%; --side: 1; }
+        &:nth-of-type(8n + 6) { transform-origin: -50vw 100%; --side: 1; --amp: 2; }
+        &:nth-of-type(8n + 7) { transform-origin: -75vw 100%; --side: 1; --amp: 3; }
+        &:nth-of-type(8n)     { transform-origin: -100vw 100%; --side: 1; --amp: 4; }
+      }
+    }
+  }
+  
+  .card {
+    background: var(--surface-2);
+    border: 1px solid color-mix(in srgb, var(--surface-4), #0000 50%);
+    padding-block: var(--size-3) var(--size-2);
+    padding-inline: var(--size-3);
+    border-radius: var(--radius-4);
+    box-shadow: var(--shadow-4);
+    
+    &.landscape img { aspect-ratio: var(--ratio-landscape) }
+    &.portrait img { aspect-ratio: var(--ratio-portrait) }
+    &.square img { aspect-ratio: var(--ratio-square) }
+    
+    & > p {
+      color: var(--text-2);
+      line-clamp: 2;
+    }
+    
+    & > :is(a, p) {
+      font-size: var(--font-size-1);
+      line-height: 1.25;
+    }
+    
+    img {
+      background-color: var(--surface-3);
+      border-radius: var(--radius-3);
+      margin-block-end: var(--size-2);
+    }
+    
+    @media (prefers-color-scheme: light) {
+      background: white;
+    }
+  }
+  
+  h5 {
+    max-inline-size: 100%;
+    text-align: center;
+  }
+}
