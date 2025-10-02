@@ -975,3 +975,4 @@
 |969| [Elastic Checkboxes](https://github.com/xml12333/HTML_CSS_JS/tree/main/969.Elastic%20Checkboxes)| [Demo](https://nikt.com.ua/projects/htmlCssJs/969.Elastic%20Checkboxes/)|
 |970| [Impressive](https://github.com/xml12333/HTML_CSS_JS/tree/main/970.Impressive)| [Demo](https://nikt.com.ua/projects/htmlCssJs/970.Impressive/)|
 |971| [Scroll To Bloom](https://github.com/xml12333/HTML_CSS_JS/tree/main/971.Scroll%20To%20Bloom)| [Demo](https://nikt.com.ua/projects/htmlCssJs/971.Scroll%20To%20Bloom/)|
+|972| [Anchor Slider](https://github.com/xml12333/HTML_CSS_JS/tree/main/972.Anchor%20Slider)| [Demo](https://nikt.com.ua/projects/htmlCssJs/972.Anchor%20Slider/)|

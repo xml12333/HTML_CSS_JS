@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Anchor Positioned Popover with Contrast Slider</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://public.codepenassets.com/css/normalize-5.0.0.min.css">
+    <link rel='stylesheet' href='./css/63809857734821de257097bf620e7121.css'>
+    <link rel='stylesheet'
+        href='https://fonts.bunny.net/css?family=amaranth:400,400i,700,700i|asap-condensed:200,300i,400,400i,600,600i,700,700i,900,900i|asap:200,300i,400,400i,600,600i,700,700i,900,900i|kode-mono:400,500,600,700|fredoka:400,500'>
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+    <main id="app">
+
+
+        <button type="button" popovertarget="contrast-popover" title="Edit contrast">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                <g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="4">
+                    <path stroke-linecap="round" d="M24 4C12.954 4 4 12.954 4 24s8.954 20 20 20z" clip-rule="evenodd" />
+                    <path d="M24 4c11.046 0 20 8.954 20 20s-8.954 20-20 20z" />
+                    <path stroke-linecap="round" d="M24 36H9m15-8H5m19-8H5m19-8H9" />
+                </g>
+            </svg>
+        </button>
+
+        <div popover id="contrast-popover">
+            <div class="contrast-buttons">
+                <button type="button" id="up">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+                        <path fill="currentColor"
+                            d="M6 4c-.2 0-.4.1-.5.2L2.2 7.5c-.3.3-.3.8 0 1.1s.8.3 1.1 0L6 5.9l2.7 2.7c.3.3.8.3 1.1 0s.3-.8 0-1.1L6.6 4.3Q6.3 4 6 4" />
+                    </svg>
+                </button>
+                <span class="">0</span>
+                <button type="button" id="down">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+                        <path fill="currentColor"
+                            d="M6 8.825c-.2 0-.4-.1-.5-.2l-3.3-3.3c-.3-.3-.3-.8 0-1.1s.8-.3 1.1 0l2.7 2.7l2.7-2.7c.3-.3.8-.3 1.1 0s.3.8 0 1.1l-3.2 3.2q-.3.3-.6.3" />
+                    </svg>
+                </button>
+            </div>
+            <div id="contrast-slider">
+
+            </div>
+        </div>
+
+
+    </main>
+
+    <svg class="arrow" xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 320 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+        <path
+            d="M0 55.2L0 426c0 12.2 9.9 22 22 22c6.3 0 12.4-2.7 16.6-7.5L121.2 346l58.1 116.3c7.9 15.8 27.1 22.2 42.9 14.3s22.2-27.1 14.3-42.9L179.8 320l118.1 0c12.2 0 22.1-9.9 22.1-22.1c0-6.3-2.7-12.3-7.4-16.5L38.6 37.9C34.3 34.1 28.9 32 23.2 32C10.4 32 0 42.4 0 55.2z" />
+    </svg>
+    <script type="module" src="./js/script.js"></script>
+
+</body>
+
+</html>
