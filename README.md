@@ -977,3 +977,4 @@
 |971| [Scroll To Bloom](https://github.com/xml12333/HTML_CSS_JS/tree/main/971.Scroll%20To%20Bloom)| [Demo](https://nikt.com.ua/projects/htmlCssJs/971.Scroll%20To%20Bloom/)|
 |972| [Anchor Slider](https://github.com/xml12333/HTML_CSS_JS/tree/main/972.Anchor%20Slider)| [Demo](https://nikt.com.ua/projects/htmlCssJs/972.Anchor%20Slider/)|
 |973| [Tubes Cursor](https://github.com/xml12333/HTML_CSS_JS/tree/main/973.Tubes%20Cursor)| [Demo](https://nikt.com.ua/projects/htmlCssJs/973.Tubes%20Cursor/)|
+|974| [Neon Radio Buttons](https://github.com/xml12333/HTML_CSS_JS/tree/main/974.Neon%20Radio%20Buttons)| [Demo](https://nikt.com.ua/projects/htmlCssJs/974.Neon%20Radio%20Buttons/)|
