@@ -979,3 +979,4 @@
 |973| [Tubes Cursor](https://github.com/xml12333/HTML_CSS_JS/tree/main/973.Tubes%20Cursor)| [Demo](https://nikt.com.ua/projects/htmlCssJs/973.Tubes%20Cursor/)|
 |974| [Neon Radio Buttons](https://github.com/xml12333/HTML_CSS_JS/tree/main/974.Neon%20Radio%20Buttons)| [Demo](https://nikt.com.ua/projects/htmlCssJs/974.Neon%20Radio%20Buttons/)|
 |975| [Alarm](https://github.com/xml12333/HTML_CSS_JS/tree/main/975.Alarm)| [Demo](https://nikt.com.ua/projects/htmlCssJs/975.Alarm/)|
+|976| [Menu](https://github.com/xml12333/HTML_CSS_JS/tree/main/976.Menu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/976.Menu/)|
