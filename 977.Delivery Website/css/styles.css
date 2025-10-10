@@ -408,7 +408,52 @@ img {
   margin-bottom: 0.5rem;
 }
 /*=============== MENU ===============*/
-
+.menu__container {
+  grid-template-columns: repeat(2, 1fr);
+}
+.menu__card {
+  position: relative;
+  display: grid;
+  row-gap: 0.5rem;
+  background-color: var(--container-color);
+  box-shadow: var(--shadow-small);
+  padding: 0.5rem 1rem 1rem;
+  border-radius: 1.5rem;
+  transition: background-color 0.4s;
+}
+.menu__img {
+  width: 100px;
+  justify-self: center;
+  filter: var(--shadow-img-small);
+  transition: transform 0.4s;
+}
+.menu__card:hover .menu__img {
+  transform: translateY(-0.25rem);
+}
+.menu__name {
+  font-size: var(--h3-font-size);
+}
+.menu__amount {
+  font-size: var(--small-font-size);
+  margin-block: 0.25rem 0.5rem;
+}
+.menu__price {
+  font-size: var(--h3-font-size);
+  color: var(--first-color);
+}
+.menu__button {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  width: 32px;
+  height: 32px;
+  background-color: var(--first-color);
+  box-shadow: 0 4px 8px var(--shadow-first-color);
+  border-radius: 0.75rem;
+  font-size: 1.5rem;
+  color: var(--title-color);
+  cursor: pointer;
+}
 /*=============== REVIEWS ===============*/
 
 /* Swiper class */
@@ -434,6 +479,10 @@ img {
   .home__image {
     width: 100%;
   }
+  .menu__container {
+    grid-template-columns: 180px;
+    justify-content: center;
+  }
 }
 
 /* For medium devices */
@@ -445,11 +494,18 @@ img {
     grid-template-columns: 380px;
     justify-content: center;
   }
+  .menu__container {
+    grid-template-columns: repeat(2, 180px);
+    justify-content: center;
+  }
 }
 
 @media screen and (min-width: 768px) {
   .service__container {
     grid-template-columns: repeat(2, 220px);
+  }
+  .menu__container {
+    grid-template-columns: repeat(3, 180px);
   }
 }
 /* For large devices */
@@ -545,9 +601,36 @@ img {
     grid-template-columns: repeat(3, 220px);
     column-gap: 10rem;
   }
-  .service__img{
+  .service__img {
     width: 180px;
     margin-bottom: 2rem;
+  }
+  .menu__container {
+    grid-template-columns: repeat(4, 260px);
+    row-gap: 2rem;
+  }
+  .menu__card {
+    padding: 1rem 1.5rem 2rem;
+    border-radius: 2rem;
+  }
+  .menu__img {
+    width: 160px;
+  }
+  .menu__name,
+  .menu__price {
+    font-size: var(--h2-font-size);
+  }
+  .menu__amount {
+    font-size: var(--normal-font-size);
+    margin-block: 0.5rem 1rem;
+  }
+  .menu__button {
+    right: 1.5rem;
+    bottom: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 1rem;
+    font-size: 2rem;
   }
 }
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
