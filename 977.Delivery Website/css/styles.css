@@ -455,7 +455,88 @@ img {
   cursor: pointer;
 }
 /*=============== REVIEWS ===============*/
-
+.reviews__container {
+  row-gap: 6rem;
+}
+.reviews__content {
+  display: grid; /* For swiper */
+}
+.reviews__swiper {
+  margin-inline: initial;
+  padding-bottom: 6rem;
+}
+.reviews__card {
+  display: grid;
+  row-gap: 1rem;
+}
+.reviews__profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+.reviews__photo {
+  width: 60px;
+  border-radius: 50%;
+}
+.reviews__data {
+  display: grid;
+  row-gap: 0.25rem;
+}
+.reviews__name,
+.reviews__number {
+  font-size: var(--h3-font-size);
+}
+.reviews__stars {
+  display: flex;
+  column-gap: 0.25rem;
+}
+.reviews__stars i {
+  font-size: 1rem;
+  color: var(--first-color);
+}
+.reviews__comment {
+  position: relative;
+  width: 280px;
+  justify-self: center;
+  text-align: center;
+}
+.reviews__comment::before {
+  content: open-quote;
+  position: absolute;
+  left: -1rem;
+  top: -0.5rem;
+}
+.reviews__content::after {
+  content: close-quote;
+  position: absolute;
+  right: -1rem;
+  bottom: -2rem;
+}
+.reviews__comment::before,
+.reviews__comment::after {
+  font-size: 2.5rem;
+  font-weight: var(--font-semi-bold);
+  color: var(--first-color);
+}
+.reviews__image {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  background: var(--gradient-color);
+  border-radius: 6rem;
+  justify-self: center;
+}
+.reviews__img {
+  width: 270px;
+  position: absolute;
+  bottom: 0;
+  left: 2rem;
+  right: 0;
+  margin: 0 auto;
+  mask-image: linear-gradient(var(--first-color) 80%, transparent 95%);
+  filter: var(--shadow-img-big);
+}
 /* Swiper class */
 
 /*=============== APP ===============*/
