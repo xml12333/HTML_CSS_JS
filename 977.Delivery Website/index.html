@@ -11,7 +11,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 
    <!--=============== SWIPER CSS ===============-->
-   <link rel="stylesheet" href="">
+   <link rel="stylesheet" href="./css/swiper-bundle.min.css">
 
    <!--=============== CSS ===============-->
    <link rel="stylesheet" href="./css/styles.css">
@@ -243,9 +243,9 @@
             <div class="reviews__content">
                <h4 class="section__subtitle">OUR REVIEWS</h4>
                <h2 class="section__title">What They Say?</h2>
-               <div class="reviews__swiper">
-                  <div>
-                     <article class="reviews__card">
+               <div class="reviews__swiper swiper">
+                  <div class="swiper-wrapper">
+                     <article class="reviews__card swiper-slide">
                         <div class="reviews__profile">
                            <img src="./img/reviews-img-1.png" alt="img" class="reviews__photo">
                            <div class="reviews__data">
@@ -268,7 +268,7 @@
                            delivery. I highly recommend food to you.
                         </p>
                      </article>
-                     <article class="reviews__card">
+                     <article class="reviews__card swiper-slide">
                         <div class="reviews__profile">
                            <img src="./img/reviews-img-2.png" alt="img" class="reviews__photo">
                            <div class="reviews__data">
@@ -291,7 +291,7 @@
                            delivery. I highly recommend food to you.
                         </p>
                      </article>
-                     <article class="reviews__card">
+                     <article class="reviews__card swiper-slide">
                         <div class="reviews__profile">
                            <img src="./img/reviews-img-3.png" alt="img" class="reviews__photo">
                            <div class="reviews__data">
@@ -314,6 +314,13 @@
                            delivery. I highly recommend food to you.
                         </p>
                      </article>
+                  </div>
+                  <!-- Navigation buttons -->
+                  <div class="swiper-button-prev">
+                     <i class="ri-arrow-left-s-line"></i>
+                  </div>
+                  <div class="swiper-button-next">
+                     <i class="ri-arrow-right-s-line"></i>
                   </div>
                </div>
             </div>
@@ -343,10 +350,10 @@
 
 
    <!--=============== SCROLLREVEAL ===============-->
-   <script src=""></script>
+   <script src="./js/scrollreveal.min.js"></script>
 
    <!--=============== SWIPER JS ===============-->
-   <script src=""></script>
+   <script src="./js/swiper-bundle.min.js"></script>
 
    <!--=============== MAIN JS ===============-->
    <script src="./js/main.js"></script>

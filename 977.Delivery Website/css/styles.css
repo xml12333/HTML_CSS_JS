@@ -487,6 +487,11 @@ img {
 .reviews__number {
   font-size: var(--h3-font-size);
 }
+.reviews__rating {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
 .reviews__stars {
   display: flex;
   column-gap: 0.25rem;
@@ -538,7 +543,31 @@ img {
   filter: var(--shadow-img-big);
 }
 /* Swiper class */
-
+.reviews .swiper-navigation-icon {
+  display: none;
+}
+.reviews :is(.swiper-button-prev, .swiper-button-next) {
+  top: initial;
+  bottom: 1.5rem;
+  width: 40px;
+  height: 40px;
+  background-color: var(--container-color);
+  box-shadow: var(--shadow-small);
+  color: var(--title-color);
+  border-radius: 0.75rem;
+  font-size: 1.5rem;
+  transition: background-color 0.4s, box-shadow 0.4s, color 0.4s;
+}
+.reviews :is(.swiper-button-prev, .swiper-button-next):hover {
+  background-color: var(--first-color);
+  box-shadow: 0 4px 8px var(--shadow-first-color);
+}
+.reviews .swiper-button-prev {
+  left: calc(50% - 3rem);
+}
+.reviews .swiper-button-next {
+  right: calc(50% - 3rem);
+}
 /*=============== APP ===============*/
 
 /*=============== MAP ===============*/
@@ -557,12 +586,22 @@ img {
   .container {
     margin-inline: 1rem;
   }
-  .home__image {
+  .home__image,
+  .reviews__image {
     width: 100%;
   }
   .menu__container {
     grid-template-columns: 180px;
     justify-content: center;
+  }
+  .reviews__container {
+    row-gap: 4rem;
+  }
+  .reviews__img {
+    left: 1rem;
+  }
+  .reviews__comment {
+    width: 85%;
   }
 }
 
@@ -571,7 +610,8 @@ img {
   .nav__menu {
     width: 50%;
   }
-  .home__container {
+  .home__container,
+  .reviews__container {
     grid-template-columns: 380px;
     justify-content: center;
   }
@@ -712,6 +752,63 @@ img {
     height: 48px;
     border-radius: 1rem;
     font-size: 2rem;
+  }
+  .reviews__container {
+    grid-template-columns: 450px 560px;
+    column-gap: 5rem;
+    padding-block: 7rem 3rem;
+  }
+  .reviews__image {
+    width: 450px;
+    height: 450px;
+    border-radius: 9rem;
+    order: -1;
+  }
+  .reviews__img {
+    width: 380px;
+  }
+  .reviews__content {
+    display: initial;
+  }
+  .reviews__content :is(.section__title, .section__subtitle) {
+    text-align: initial;
+  }
+  .reviews__swiper {
+    padding-bottom: 8rem;
+  }
+  .reviews__card {
+    row-gap: 3rem;
+  }
+  .reviews__profile {
+    justify-content: initial;
+    column-gap: 1rem;
+  }
+  .reviews__photo {
+    width: 80px;
+  }
+  .reviews__data {
+    row-gap: 0.5rem;
+  }
+  .reviews__comment {
+    width: 450px;
+    text-align: initial;
+  }
+  .reviews__comment::before,
+  .reviews__comment::after {
+    font-size: 5rem;
+  }
+  .reviews__comment::before {
+    top: -1.5rem;
+  }
+  .reviews__comment::after {
+    right: -3.5rem;
+    bottom: -3rem;
+  }
+  .reviews .swiper-button-prev {
+    left: 0.5rem;
+  }
+  .reviews .swiper-button-next {
+    left: 4rem;
   }
 }
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
