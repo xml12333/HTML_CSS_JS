@@ -569,7 +569,32 @@ img {
   right: calc(50% - 3rem);
 }
 /*=============== APP ===============*/
-
+.app__container {
+  background-color: var(--first-color-light);
+  padding: 3rem 1.5rem 0;
+  border-radius: 2rem;
+  row-gap: 3rem;
+  overflow: hidden;
+  transition: background-color 0.4s;
+}
+.app__data .section__title {
+  margin-bottom: 0.5rem;
+}
+.app__data {
+  text-align: center;
+}
+.app__description {
+  margin-bottom: 2rem;
+}
+.app__image {
+  width: 260px;
+  height: 310px;
+  justify-self: center;
+}
+.app__img {
+  border-radius: 1.5rem;
+  filter: var(--shadow-img-small);
+}
 /*=============== MAP ===============*/
 
 /*=============== FOOTER ===============*/
@@ -587,7 +612,8 @@ img {
     margin-inline: 1rem;
   }
   .home__image,
-  .reviews__image {
+  .reviews__image,
+  .app__image {
     width: 100%;
   }
   .menu__container {
@@ -618,6 +644,10 @@ img {
   .menu__container {
     grid-template-columns: repeat(2, 180px);
     justify-content: center;
+  }
+  .app__container {
+    width: 380px;
+    margin-inline: auto;
   }
 }
 
@@ -809,6 +839,32 @@ img {
   }
   .reviews .swiper-button-next {
     left: 4rem;
+  }
+  .app {
+    padding-bottom: 4rem;
+  }
+  .app__container {
+    width: initial;
+    grid-template-columns: 420px 360px;
+    justify-content: center;
+    column-gap: 8rem;
+    padding-block: 6rem;
+    border-radius: 4rem;
+  }
+  .app__data,
+  .app__data :is(.section__title, .section__subtitle) {
+    text-align: initial;
+  }
+  .app__description {
+    margin-block: 0.5rem 3rem;
+    padding-right: 2rem;
+  }
+  .app__image {
+    width: 360px;
+    height: 330px;
+  }
+  .app__img{
+    border-radius: 2rem;
   }
 }
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
