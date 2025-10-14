@@ -596,6 +596,58 @@ img {
   filter: var(--shadow-img-small);
 }
 /*=============== MAP ===============*/
+.map__container {
+  row-gap: 3rem;
+  padding-bottom: 3rem;
+}
+.map__area {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 6rem;
+  box-shadow: var(--shadow-small);
+  justify-self: center;
+}
+.map__content {
+  row-gap: 2rem;
+}
+.map__card {
+  text-align: center;
+  display: grid;
+  row-gap: 1rem;
+}
+.map__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.5rem;
+  font-size: var(--h3-font-size);
+}
+.map__title i {
+  font-size: 1.5rem;
+  font-weight: initial;
+  color: var(--first-color);
+}
+.map__info {
+  font-style: initial;
+}
+.map__area iframe {
+  width: 100%;
+  height: 100%;
+}
+.map__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: transform 0.4s;
+}
+.map__area:hover .map__img {
+  transform: translateX(-100%);
+}
 
 /*=============== FOOTER ===============*/
 
@@ -613,7 +665,8 @@ img {
   }
   .home__image,
   .reviews__image,
-  .app__image {
+  .app__image,
+  .map__area {
     width: 100%;
   }
   .menu__container {
@@ -863,8 +916,24 @@ img {
     width: 360px;
     height: 330px;
   }
-  .app__img{
+  .app__img {
     border-radius: 2rem;
+  }
+  .map__container {
+    grid-template-columns: 450px 400px;
+    justify-content: center;
+    align-items: center;
+    column-gap: 6.5rem;
+    padding-bottom: 5rem;
+  }
+  .map__area {
+    width: 450px;
+    height: 450px;
+    border-radius: 9rem;
+  }
+  .map__content {
+    grid-template-columns: repeat(2, max-content);
+    gap: 4rem 5rem;
   }
 }
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
