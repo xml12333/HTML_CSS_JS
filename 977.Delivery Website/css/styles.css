@@ -650,7 +650,113 @@ img {
 }
 
 /*=============== FOOTER ===============*/
-
+.footer {
+  background-color: var(--first-color-light);
+  padding-block: 4rem 2rem;
+  transition: background-color 0.4s;
+}
+.footer__container {
+  row-gap: 3rem;
+}
+.footer__logo {
+  display: flex;
+  align-items: center;
+  justify-self: flex-start;
+  column-gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+.footer__logo i {
+  font-size: 1.5rem;
+  color: var(--title-color);
+  transition: color 0.4s;
+}
+.footer__logo span {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-bold);
+  color: var(--first-color);
+}
+.footer__description {
+  margin-bottom: 2rem;
+}
+.footer__social {
+  display: flex;
+  column-gap: 0.75rem;
+}
+.footer__social-link {
+  width: 40px;
+  height: 40px;
+  background-color: var(--container-color);
+  box-shadow: var(--shadow-small);
+  border-radius: 0.75rem;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  color: var(--title-color);
+  transition: background-color 0.4s, box-shadow 0.4s, color 0.4s;
+}
+.footer__social-link:hover {
+  background-color: var(--first-color);
+  box-shadow: 0 4px 8px var(--shadow-first-color);
+}
+.footer__content {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+.footer__newsletter {
+  grid-column: 1 / 3;
+}
+.footer__title {
+  font-size: var(--h3-font-size);
+  margin-bottom: 1rem;
+}
+.footer__links {
+  display: grid;
+  row-gap: 0.5rem;
+}
+.footer__link {
+  color: var(--text-color);
+  transition: color 0.4s;
+}
+.footer__link:hover {
+  color: var(--title-color);
+}
+.footer__form {
+  margin-top: 1rem;
+  background-color: var(--container-color);
+  box-shadow: var(--shadow-small);
+  padding: 0.75rem 0.5rem;
+  border-radius: 1rem;
+  display: flex;
+  column-gap: 0.5rem;
+  transition: background-color 0.4s, color 0.4s;
+}
+.footer__input {
+  width: 100%;
+  background: transparent;
+  color: var(--title-color);
+  padding-left: 0.75rem;
+}
+.footer__button {
+  width: 48px;
+  height: 40px;
+  background-color: var(--first-color);
+  box-shadow: 0 4px 8px var(--shadow-first-color);
+  border-radius: 0.75rem;
+  font-size: 1.5rem;
+  color: var(--white-color);
+  cursor: pointer;
+  transition: background-color 0.4s, color 0.4s;
+}
+.footer__button:hover {
+  background-color: var(--first-color-alt);
+}
+.footer__copy {
+  display: block;
+  margin-top: 5rem;
+  text-align: center;
+  color: var(--text-color-light);
+  font-size: var(--small-font-size);
+}
 /*=============== SCROLL BAR ===============*/
 
 /*=============== SCROLL UP ===============*/
