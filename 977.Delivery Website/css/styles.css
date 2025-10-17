@@ -119,12 +119,46 @@ img {
 
 /*=============== THEME ===============*/
 /*========== Variables Dark theme ==========*/
-
+.dark-theme {
+  --first-color-light: hsl(45, 48%, 16%);
+  --title-color: hsl(45, 4%, 95%);
+  --text-color: hsl(45, 4%, 60%);
+  --body-color: hsl(45, 8%, 8%);
+  --container-color: hsl(45, 8%, 12%);
+  --shadow-small: 0 4px 8px hsla(45, 50%, 2%, 0.2);
+  --shadow-big: 0 2px 16px hsla(45, 50%, 2%, 0.6);
+}
 /*========== 
 	Color changes in some parts of 
 	the website, in dark theme
 ==========*/
-
+.dark-theme
+  :is(
+    .button,
+    .home__link:hover,
+    .menu__button,
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover,
+    .footer__social-link:hover,
+    .footer__button:hover
+  ) {
+  color: var(--dark-color);
+}
+.dark-theme .footer {
+  background-color: var(--container-color);
+}
+.dark-theme :is(.footer__social-link, .footer__form) {
+  background-color: var(--body-color);
+}
+.dark-theme::-webkit-scrollbar {
+  background-color: hsl(45, 8%, 12%);
+}
+.dark-theme::-webkit-scrollbar-thumb {
+  background-color: hsl(45, 8%, 20%);
+}
+.dark-theme::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(45, 8%, 24%);
+}
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1120px;
@@ -1094,5 +1128,13 @@ img {
   .footer__form {
     width: 330px;
   }
+  .scrollup {
+    right: 3rem;
+  }
 }
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
+@media screen and (min-width: 2048px) {
+  body {
+    zoom: 1.4;
+  }
+}
