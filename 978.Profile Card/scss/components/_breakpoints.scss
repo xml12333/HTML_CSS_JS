@@ -1,0 +1,51 @@
+/*=============== BREAKPOINTS ===============*/
+/* For medium devices */
+@media screen and (min-width: 540px){
+   .profile__card{
+      justify-self: center;
+   }
+}
+
+@media screen and (min-width: 768px){
+   .profile{
+      margin-inline: auto;
+
+      &__card{
+         width: 320px;
+         height: 100px;
+      }
+      &__content{
+         column-gap: .75rem;
+      }
+      &__img{
+         width: 100px;
+         height: 100px;
+      }
+      &__button{
+         margin-right: .75rem;
+      }
+      &__social{
+         width: 125px;
+         height: 125px;
+         right: -2rem;
+      }
+   }
+
+   .show-social .profile__link{
+      &:nth-child(1){
+         transform: rotate(-85deg) translateX(96px) rotate(85deg);
+      }
+      &:nth-child(2){
+         transform: rotate(-45deg) translateX(96px) rotate(45deg);
+      }
+      &:nth-child(3){
+         transform: rotate(0) translateX(96px) rotate(0);
+      }
+      &:nth-child(4){
+         transform: rotate(45deg) translateX(96px) rotate(-45deg);
+      }
+      &:nth-child(5){
+         transform: rotate(85deg) translateX(96px) rotate(-85deg);
+      }
+   }
+}
