@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Juicy</title>
+	<link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+	<canvas id="canvas"></canvas>
+	<textarea id="codeEditor" class="editor" spellcheck="false" autocorrect="off" autocapitalize="off" translate="no"
+		oninput="render()"></textarea>
+	<pre id="error"></pre>
+	<div id="indicator"></div>
+	<div id="controls">
+		<div class="controls">
+			<input id="btnToggleView" class="icon" type="checkbox" name="toggleView" onclick="toggleView()">
+			<input id="btnToggleResolution" class="icon" type="checkbox" name="toggleResolution"
+				onchange="toggleResolution()">
+			<input id="btnReset" class="icon" type="checkbox" name="reset" onclick="reset()">
+		</div>
+	</div>
+	<script type="x-shader/x-fragment">#version 300 es
+/*********
+* made by Matthias Hurrle (@atzedent)
+*/
+precision highp float;
+out vec4 O;
+uniform float time;
+uniform vec2 resolution;
+#define FC gl_FragCoord.xy
+#define R resolution
+#define T mod(time,32.)
+#define N normalize
+#define S smoothstep
+#define MN min(R.x,R.y)
+#define rot(a) mat2(cos((a)-vec4(0,11,33,0)))
+#define hue(a) (.6+.4*sin(2.7*(a)+vec3(1,2,2.5)))
+#define NUM 2.4
+#define grid(p) (clamp(round(p/NUM),-1.,1.)*NUM)
+#define procd (T*.125)
+#define scene int(floor(mod(procd, 4.)))
+#define light pow(S(.0,1.,sin(-1.57+6.28318*fract(procd))*.5+.5),.2)
+#define PI radians(180.)
+float rnd(vec3 p) {
+	p=fract(p*vec3(12.9898,78.233,156.345));
+	p+=dot(p,p+12.56);
+	return fract(p.x*p.y*p.z);
+}
+float noise(vec3 p) {
+	const vec3 s=vec3(7,157,113);
+	vec3 ip=floor(p);
+	vec4 h=vec4(0,s.yz,s.y+s.z)+dot(ip,s);
+	p-=ip; 
+	p=p*p*(3.-2.*p);
+	h=mix(fract(sin(h)*43758.5453),fract(sin(h+s.x)*43758.5453),p.x);
+	h.xy=mix(h.xz,h.yw,p.y);
+	return mix(h.x,h.y,p.z); 
+}
+float box(vec3 p, vec3 s) {
+	p=abs(p)-s;
+	return length(max(p,.0))+min(.0,max(max(p.x,p.y),p.z))-.05;
+}
+vec4 map(vec3 p, out vec3 q) {
+	int sc=scene;
+	float t=3.14-mix(T,T+1.,pow(sin(T*PI/4.-PI/2.)*.5+.5,5.));
+	if (sc==0 && abs(p.y)<NUM/2.) p.xz*=rot(t);
+	if (sc==1 && abs(p.x)<NUM/2.) p.yz*=rot(t);
+	if (sc==3 && p.x>(NUM-NUM/2.)) p.yz*=rot(t);
+	q=p;
+	vec3 id=round(p/NUM);
+	p-=grid(p);
+	return vec4(box(p,vec3(1))*.5-8e-3*(noise(p*24.)+noise(p*48.)),id);
+}
+vec3 norm(vec3 p) {
+	float h=1e-3; vec2 k=vec2(-1,1)*.5773; vec3 q=p;
+	return N(
+		k.xyy*map(p+k.xyy*h,q).x+
+		k.yxy*map(p+k.yxy*h,q).x+
+		k.yyx*map(p+k.yyx*h,q).x+
+		k.xxx*map(p+k.xxx*h,q).x
+	);
+}
+float getsss(vec3 p, vec3 rd, float dist, float k) {
+	if (dist<5e-5) return .0;
+  float ddist=dist*k; vec3 q=p;
+  return
+  	clamp(map(p+rd*dist,q).x/dist,.0,1.)+
+  	clamp(map(p+rd*ddist,q).x/ddist,.0,1.);
+}
+vec3 aces(const vec3 x) {
+	const float a=2.51, b=.03, c=2.43, d=.59, e=.14;
+	return (x*(a*x+b))/(x*(c*x+d)+e);
+}
+void cam(inout vec3 p) {
+	int sc=scene;
+	float yz=.0, xz=.0;
+	switch(sc) {
+		case 0:
+			yz=.0, xz=.0; break;
+		case 1:
+			yz=.56, xz=-.2; break;
+		case 2:
+			yz=-.78, xz=.98; break;
+		case 3:
+			yz=.0, xz=-.36; break;
+	}
+	p.yz*=rot(yz);
+	p.xz*=rot(xz);
+}
+void main() {
+	vec2 uv=(FC-.5*R)/MN;
+	vec3 col=vec3(0),
+	p=vec3(0,0,-14),
+	rd=N(vec3(uv,1.1));
+	cam(p); cam(rd);
+	bool hit; float dd; vec3 id, q;
+	for (int i; i++<200;) {
+		vec4 d=map(p,q);
+		if (abs(d.x)<1e-3) {
+			hit=true;
+			id =d.yzw;
+			break;
+		}
+		if (dd>100.) break;
+		p+=rd*d.x;
+		dd+=d.x;
+	}
+	if (hit) {
+		vec3 n=norm(p), lp=vec3(1,12,-14); cam(lp); vec3 l=N(lp-p);
+		float dif=clamp(dot(l,n),.0,1.), spec=pow(clamp(dot(reflect(rd,n),l),.0,1.),32.);
+		float steps=10., sss=.0, k=mix(.8,1.,rnd(rd+T));
+		for (float i=.0; i<steps; i++) {
+			float dist=i/steps*k;
+			sss+=getsss(p,N(lp),dist,12.);
+		}
+		sss*=.21;
+		float f=rnd(id*1.5-12.);
+		vec3 mat=hue(.5+f*.26+.08*noise(q.zyz*(2.-f)));
+		col+=sss*mat;
+		col+=.1*mat+.02*dif*mat;
+		col+=spec*.5*mat+spec*.75;
+		col=tanh(col*col*col);
+		col=sqrt(col);
+	}
+	col=mix(vec3(0),aces(col),light);
+	col=S(.0,1.,col);
+  O=vec4(col,1);
+}</script>
+	<script src="./js/script.js"></script>
+
+</body>
+
+</html>

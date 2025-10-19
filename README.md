@@ -982,3 +982,4 @@
 |976| [Menu](https://github.com/xml12333/HTML_CSS_JS/tree/main/976.Menu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/976.Menu/)|
 |977| [Delivery Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/977.Delivery%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/977.Delivery%20Website/)|
 |978| [Profile Card](https://github.com/xml12333/HTML_CSS_JS/tree/main/978.Profile%20Card)| [Demo](https://nikt.com.ua/projects/htmlCssJs/978.Profile%20Card/)|
+|979| [Juicy](https://github.com/xml12333/HTML_CSS_JS/tree/main/979.Juicy)| [Demo](https://nikt.com.ua/projects/htmlCssJs/979.Juicy/)|
