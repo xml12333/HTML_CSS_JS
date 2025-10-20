@@ -1,0 +1,284 @@
+:root {
+  --title: "Ghost Train Schedule";
+  --author: "Matt Cannon";
+  --contact: "mc@mattcannon.design";
+  --description: "A hauntingly animated split-flap board that displays arrivals and departures from the underworld's most trusted railway, Damnedtrak®.";
+  --keywords: "ghost train, split-flap, schedule board, arrivals departures, halloween, animation, css grid, javascript animation, spooky ui, codepenchallenge, cpc-halloween-time, ui design, front-end, rubik font, motion design";
+  --last-modified: "2025-10-06";
+  --content-language: "en";
+  --generator: "HTML5, CSS3, JavaScript";
+
+  --bg: #0b0e13;
+  --ink: #e8f0ff;
+  --muted: #8d98ad;
+  --ontime: #8cffd5;
+  --arrived: #00c673;
+  --warn: #ffcc33;
+  --bad: #ff4b61;
+  --weird: #66e7ff;
+  --gap: 17px;
+  --cell-h: 25px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+  background: radial-gradient(
+      1200px 600px at 70% -10%,
+      #1b2230 0%,
+      var(--bg) 60%
+    )
+    no-repeat;
+  color: var(--ink);
+}
+
+.station-bg {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  min-height: 100dvh;
+  max-height: 90vh;
+  overflow: hidden;
+  padding-top: 85px;
+}
+
+.bezel {
+  width: 92%;
+  max-width: 880px;
+  border-radius: 20px;
+  background: linear-gradient(#0d1116, #0b0e13);
+  box-shadow: 0 25px 70px #000a, inset 0 1px 0 #ffffff12;
+  padding: 18px 20px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bezel__plate {
+  position: relative;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: #0d1116;
+  border: 1px solid #1b2433;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  padding: 0 16px;
+}
+
+.logo-img {
+  width: 300px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+  opacity: 0.95;
+  margin: 0;
+}
+
+.mast {
+  position: absolute;
+  right: 7px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+}
+
+.mode select {
+  background: #0c1015;
+  color: var(--ink);
+  border: 1px solid #f15f0a;
+  border-radius: 8px;
+  padding: 6px 44px 6px 14px;
+  font-family: "Rubik", sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23b4b6bb' xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path d='M6 9l6 6 6-6z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 20px;
+}
+
+.marquee {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid #1c2432;
+  border-bottom: 1px solid #1c2432;
+  margin: 10px 0 14px;
+  height: 28px;
+}
+
+.marquee__track {
+  position: absolute;
+  inset: 0;
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform;
+  animation: scroll 50s linear infinite;
+}
+
+.marquee__track span {
+  display: inline-block;
+  font-size: 14px;
+  color: #b4b6bb;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding-right: 60px;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.board {
+  background: linear-gradient(#0e141b, #0b0f14);
+  border: 1px solid #1b2633;
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(110px, 1fr));
+  gap: var(--gap);
+  padding: 14px;
+  box-shadow: inset 0 1px 2px #ffffff10;
+}
+
+.board__head {
+  text-transform: uppercase;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  padding-bottom: 4px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.cell {
+  position: relative;
+  height: var(--cell-h);
+  perspective: 800px;
+}
+
+.slot {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: #0c1117;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: inset 0 -1px 6px #000a;
+}
+
+.slot::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #000 20%,
+    #000 80%,
+    transparent
+  );
+  opacity: 0.6;
+  transform: translateY(-0.5px);
+}
+
+.slot .half {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50%;
+  overflow: hidden;
+}
+
+.slot .half .txt {
+  display: block;
+  height: var(--cell-h);
+  line-height: var(--cell-h);
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.top {
+  top: 0;
+  background: #0f141b;
+}
+
+.bottom {
+  bottom: 0;
+  background: #0c1117;
+}
+
+.bottom .txt {
+  transform: translateY(calc(var(--cell-h) * -0.5));
+}
+
+.top-flip {
+  top: 0;
+  background: #0f141b;
+  transform-origin: bottom;
+  animation: flipTop 0.42s ease-in forwards;
+  z-index: 2;
+}
+
+.bottom-flip {
+  bottom: 0;
+  background: #0c1117;
+  transform-origin: top;
+  animation: flipBottom 0.42s ease-out 0.42s forwards;
+  z-index: 1;
+}
+
+.bottom-flip .txt {
+  transform: translateY(calc(var(--cell-h) * -0.5));
+}
+
+@keyframes flipTop {
+  to {
+    transform: rotateX(-90deg);
+  }
+}
+
+@keyframes flipBottom {
+  from {
+    transform: rotateX(90deg);
+  }
+  to {
+    transform: rotateX(0);
+  }
+}
+
+.cell[data-col="Time"] .txt,
+.cell[data-col="Status"] .txt {
+  font-weight: 700;
+}
+
+.cell[data-col="Status"][data-status="On time"] .slot {
+  color: var(--ontime);
+}
+.cell[data-col="Status"][data-status="Arrived"] .slot {
+  color: var(--arrived);
+}
+.cell[data-col="Status"][data-status="Boarding"] .slot {
+  color: var(--warn);
+}
+.cell[data-col="Status"][data-status="Delayed"] .slot {
+  color: var(--bad);
+}
+.cell[data-col="Status"][data-status="Manifesting"] .slot {
+  color: var(--weird);
+}

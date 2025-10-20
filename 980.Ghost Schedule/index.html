@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ghost Train Schedule 👻🚂</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&amp;display=swap'>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+  <div class="station-bg">
+    <div class="bezel">
+      <div class="bezel__plate">
+        <img src="https://mattcannon.games/codepen/halloween-time/damnedtrak-logo.png" alt="Logo" class="logo-img" />
+        <header class="mast">
+          <label class="mode">
+            <select id="modeSelect">
+              <option value="arrivals" selected>Arrivals</option>
+              <option value="departures">Departures</option>
+            </select>
+          </label>
+        </header>
+      </div>
+
+      <div class="marquee">
+        <div class="marquee__track" id="marqueeTrack">
+          <span></span><span></span>
+        </div>
+      </div>
+
+      <section class="board" id="board" role="table" aria-label="Train board">
+        <div class="board__head">Time</div>
+        <div class="board__head">From</div>
+        <div class="board__head">To</div>
+        <div class="board__head">Platform</div>
+        <div class="board__head">Status</div>
+      </section>
+    </div>
+  </div>
+  <script src="./js/script.js"></script>
+
+</body>
+
+</html>
