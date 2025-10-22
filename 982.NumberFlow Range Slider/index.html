@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>NumberFlow Range Slider</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://public.codepenassets.com/css/normalize-5.0.0.min.css">
+  <link rel='stylesheet' href='https://codepen.io/simeydotme/pen/jEOaeNd/63809857734821de257097bf620e7121.css'>
+  <link rel='stylesheet' href='https://fonts.bunny.net/css?family=jersey-10:400'>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+  <main id="app">
+
+    <h1>NumberFlow Slider</h1>
+
+    <div id="slider">
+      <number-flow data-will-change></number-flow>
+    </div>
+
+    <div id="toggle" class="group">
+      <input type="checkbox" class="toggle single" id="flowToggle" name="flowToggle" checked>
+      <label for="flowToggle">Toggle NumberFlow</label>
+    </div>
+
+
+
+
+  </main>
+
+
+
+
+
+
+
+
+
+  <div class="group theme-toggle" title="toggle theme">
+    <label for="theme-toggle">
+      <span class="sr-only">Light Theme</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <g fill="none">
+          <path d="M17 12a5 5 0 1 1-10 0a5 5 0 0 1 10 0Z" />
+          <path stroke-linecap="round"
+            d="M12 2c-.377.333-.905 1.2 0 2m0 16c.377.333.906 1.2 0 2m7.5-17.497c-.532-.033-1.575.22-1.496 1.495M5.496 17.5c.033.532-.22 1.575-1.496 1.496M5.003 4.5c-.033.532.22 1.576 1.497 1.497M18 17.503c.532-.032 1.575.208 1.496 1.414M22 12c-.333-.377-1.2-.905-2 0m-16-.5c-.333.377-1.2.906-2 0" />
+        </g>
+      </svg>
+    </label>
+    <input type="checkbox" class="toggle dual" id="theme-toggle" name="theme">
+    <label for="theme-toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="none" stroke-linecap="round" stroke-linejoin="round"
+          d="M21.5 14.078A8.557 8.557 0 0 1 9.922 2.5C5.668 3.497 2.5 7.315 2.5 11.873a9.627 9.627 0 0 0 9.627 9.627c4.558 0 8.376-3.168 9.373-7.422" />
+      </svg>
+      <span class="sr-only">Dark Theme</span>
+    </label>
+  </div>
+
+
+  <script type="module" src="./js/script.js"></script>
+
+</body>
+
+</html>

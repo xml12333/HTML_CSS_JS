@@ -985,3 +985,4 @@
 |979| [Juicy](https://github.com/xml12333/HTML_CSS_JS/tree/main/979.Juicy)| [Demo](https://nikt.com.ua/projects/htmlCssJs/979.Juicy/)|
 |980| [Ghost Schedule](https://github.com/xml12333/HTML_CSS_JS/tree/main/980.Ghost%20Schedule)| [Demo](https://nikt.com.ua/projects/htmlCssJs/980.Ghost%20Schedule/)|
 |981| [Infinite Scroll](https://github.com/xml12333/HTML_CSS_JS/tree/main/981.Infinite%20Scroll)| [Demo](https://nikt.com.ua/projects/htmlCssJs/981.Infinite%20Scroll/)|
+|982| [NumberFlow Range Slider](https://github.com/xml12333/HTML_CSS_JS/tree/main/982.NumberFlow%20Range%20Slider)| [Demo](https://nikt.com.ua/projects/htmlCssJs/982.NumberFlow%20Range%20Slider/)|

@@ -1,0 +1,309 @@
+:root {
+    /* vars */
+}
+
+
+#slider {
+    position: relative;
+}
+
+#app {
+    
+    --range-slider: light-dark( hsl(212, 22%, 86%), hsl(212, 16%, 10%) );
+    --range-bar: light-dark( hsl(212, 30%, 95%), hsl(212, 16%, 32%) );
+    --range-range-inactive: var(--range-bar);
+    --range-range: var(--range-bar);
+    --range-nub: light-dark( hsl(212, 15%, 60%), hsl(212, 16%, 10%) );
+    --range-handle-inactive: var(--range-nub);
+    --range-handle: var(--range-nub);
+    --range-pip: light-dark( hsl(212, 15%, 40%), hsl(212, 12%, 80%) );
+    --flow-text: light-dark( hsl(212, 20%, 34%), hsl(212, 15%, 80%) );
+    
+    --track-padding: 3px;
+    --handle-padding: 1em;
+    
+    & #slider {
+        
+        background: var(--range-slider);
+        padding: var(--track-padding);
+        padding-inline: calc(var(--handle-padding) + var(--track-padding));
+        border-radius: 0.5em;
+        margin-bottom: 1em;
+        
+    }
+    
+    & .rangeSlider {
+        height: 2.75em;
+        border-radius: 0.5em;
+        margin: 0;
+    }
+    
+    & .rangeSlider::before {
+        /* this is just to make the end padding click-able */
+        content: "";
+        position: absolute;
+        inset: 0;
+        left: auto;
+        right: calc(var(--handle-padding) * -1);
+        width: var(--handle-padding);
+        z-index: 1;
+        border-radius: inherit;
+    }
+    
+    & .rangeBar {
+        
+        --padding: calc(var(--handle-padding) - ((var(--range-size) / 100 * var(--handle-padding))));
+        
+        width: calc(
+            var(--handle-padding) + var(--handle-padding) + var(--slider-length) *
+                (var(--range-size) / 100 * 1px)
+        );
+        padding-left: var(--padding);
+        margin-left: calc(var(--handle-padding) * -1);
+        
+        height: inherit;
+        top: 0;
+        border-radius: calc( 0.5em - var(--track-padding) );
+        box-shadow:
+            inset 0 1px 1px hsl( from var(--range-bar) h s calc(l + 5) ),
+            0 1px 0 1px hsl( from var(--range-bar) h 10% calc(l - 50) / 0.2 ),
+            0 1px 3px hsl( from var(--range-bar) h 20% calc(l - 25) / 0.1 ),
+            0 3px 6px hsl( from var(--range-bar) h 20% calc(l - 35) / 0.1 ),
+            0 4px 8px hsl( from var(--range-bar) h 20% calc(l - 40) / 0.1 );
+    }
+    
+    & .rangeLimit {
+        display: none;
+    }
+    
+    & .rangeHandle {
+        width: calc(var(--handle-padding) * 2);
+        height: 100%;
+        top: 0;
+        right: 100%;
+        transform: translateX(50%);
+        &::before {
+            display: none;
+        }
+    }
+    
+    & .rangeNub {
+        width: 2px;
+        height: 40%;
+        top: 50%;
+        left: calc( 50% - 2px);
+        transform: translate(-50%, -50%);
+        background: var(--range-nub);
+        border-radius: 99vh;
+        opacity: 0.5;
+        
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: inherit;
+            translate: 5px 0;
+            border-radius: inherit;
+        }
+    }
+    
+        
+    & .rangeHandle:hover .rangeNub,
+    & .rangeHandle.rsActive .rangeNub {
+        opacity: 1;
+    }
+    
+    & .rsPip {
+        
+        font-family: "Jersey 10", monospace;
+        font-size: 1.2em;
+        display: none;
+        background: transparent;
+        opacity: 0.5;
+        
+        &[data-val="5"],
+        &[data-val="60"] {
+            display: block;
+        }
+        &[data-val="5"] {
+            left: 0!important;
+        }
+        
+        &.rsSelected {
+            opacity: 1;
+        }
+        
+        &.rsSelected,
+        &:hover {
+            & .rsPipVal {
+                font-weight: normal;
+            }
+        }
+    }
+    
+    & .rsPipVal {
+        top: 0;
+        gap: 0.25em;
+        transform: none;
+        color: var(--range-pip);
+        left: calc(var(--handle-padding) * -1);
+    }
+    
+    
+    & [data-val="60"] .rsPipVal {
+        right: calc(var(--handle-padding) * -1 );
+        left: auto;
+    }
+}
+
+number-flow {
+    
+    --offset: calc(var(--handle-padding)/2);
+    
+    font-family: "Jersey 10", monospace;
+    font-size: 1.4em;
+    font-variant: tabular-nums;
+    color: var(--flow-text);
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    translate: calc((var(--slider-length) * (var(--handle-pos) / 100) * 1px) + var(--offset)) -50%;
+    transition: translate 0.15s var(--cubic-out), opacity 0.5s var(--cubic-out) 0.15s; 
+    opacity: 0;
+    pointer-events: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    
+    &.on-left {
+        --offset: calc(-100% - var(--track-padding) * 2 - var(--handle-padding) * 2);
+    }
+    
+    &.initialised {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* demo styles */
+
+:root {
+    
+    color-scheme: light dark;
+    
+    --bg-light: hsl(220, 16%, 94%);
+    --bg-light2: hsl(212, 50%, 92%);
+    --bg-dark: hsl(222, 16%, 16%);
+    --bg-dark2: hsl(222, 20%, 18%);
+    --fg-light: hsl(212 22% 26%);
+    --fg-dark: hsl(222, 39%, 95%);
+    --link-light: hsl(222, 95%, 60%);
+    --link-dark: hsl(222, 95%, 70%);
+    --link-light-hover: hsl(150, 90%, 50%);
+    --link-dark-hover: hsl(150, 95%, 70%);
+    --input-bg-light: hsl(from var(--bg-light) h 15% 100%);
+    --input-bg-dark: hsl(from var(--bg-dark) h 15% 10%);
+    --input-border-light: hsl(from var(--bg-light) h 15% 85%);
+    --input-border-dark: hsl(from var(--bg-light) h 15% 35%);
+    --labels-light: hsl(from var(--fg-light) h 20% 55%);
+    --labels-dark: hsl(from var(--fg-dark) h 20% 55%);
+    
+    /* color-scheme */
+    --bg: light-dark( var(--bg-light), var(--bg-dark) );
+    --bg2: light-dark( var(--bg-light2), var(--bg-dark2) );
+    --fg: light-dark( var(--fg-light), var(--fg-dark) ) ;
+    --link: light-dark( var(--link-light), var(--link-dark) );
+    --linkh: light-dark( var(--link-light-hover), var(--link-dark-hover) );
+    --labels: light-dark( var(--labels-light), var(--labels-dark) );  /* form labels */
+    --b: light-dark( var(--input-bg-light), var(--input-bg-dark) ); /* form element backgrounds */
+    --bor: light-dark( var(--input-border-light), var(--input-border-dark) ); /* form element shadows */
+    --tint: light-dark( hsl(160, 85%, 60%), hsl(260, 85%, 60%) );
+    --tint2: light-dark( hsl(200, 85%, 60%), hsl(300, 85%, 60%) );
+    
+    /* ease */
+    --cubic: cubic-bezier(0.66, 0, 0.34, 1);
+    --cubic-in: cubic-bezier(0.32, 0, 0.67, 0);
+    --cubic-out: cubic-bezier(0.33, 1, 0.68, 1);
+    --spring: linear(0, 0.008 1.1%, 0.034 2.3%, 0.134 4.9%, 0.264 7.3%, 0.683 14.3%, 0.797 16.5%, 0.89 18.6%, 0.967 20.7%, 1.027 22.8%, 1.073 25%, 1.104 27.3%, 1.123 30.6%, 1.119 34.3%, 1.018 49.5%, 0.988 58.6%, 0.985 65.2%, 1 84.5%, 1);
+    
+}
+
+/** extra stuff **/
+
+body, html, #app {
+    display: grid;
+    min-height: 100%;
+}
+
+body {
+    --dot-color: light-dark( 
+        hsl( from var(--bg) h s calc(l - 7) / 90%),
+        hsl( from var(--bg2) h s calc(l + 2) / 90%)
+    );
+    --bg-fade: light-dark(
+        var(--bg2),
+        var(--bg)
+    );
+    
+    background-color: var(--bg2);
+    background-image: 
+        radial-gradient( var(--dot-color) 1.25px, transparent 0px ),
+        linear-gradient(160deg, var(--bg), var(--bg-fade));
+    background-repeat: repeat, no-repeat;
+    background-size: 24px 24px, cover;
+    background-position: center;
+    min-width: 100svw;
+    min-height: 100svh;
+    padding: 0;
+}
+
+#app {
+    min-height: 90svh;
+    width: min( calc(100svw - var(--pads) * 4), 640px );
+    margin: auto;
+    grid-template-rows:
+        auto -webkit-min-content -webkit-min-content auto;
+    grid-template-rows:
+        auto min-content min-content auto;
+}
+
+aside, #toggle {
+    margin-top: auto;
+    transition: opacity 0.3s var(--cubic-out);
+    &:not(:hover):not(:focus-within) {
+        opacity: 0.35;
+    }
+}
+body[is-dark] {
+    aside:not(:hover):not(:focus-within) { opacity: 0.2; }
+}
+
+h1 {
+    place-content: end;
+    margin-bottom: 0;
+}
+
+p {
+    margin: 0.5em 0;
+}
+
+.toggle {
+    margin-bottom: auto;
+}
