@@ -1,0 +1,339 @@
+:root {
+	--speed: 2.5s;
+	--delay: calc(var(--speed) / 12 );
+	--shadow: 1vmin;
+	--w: 60;
+	--h: 25;
+	--sat: 80%;
+	--hue: 210;
+	--bg: #212121;
+	--bar-1: hsl(var(--hue), var(--sat), 30%); 
+	--bar-2: hsl(var(--hue), var(--sat), 35%); 
+	--bar-3: hsl(var(--hue), var(--sat), 40%); 
+	--bar-4: hsl(var(--hue), var(--sat), 45%); 
+	--bar-5: hsl(var(--hue), var(--sat), 50%); 
+	--bar-6: hsl(var(--hue), var(--sat), 55%);
+	--bar-7: hsl(var(--hue), var(--sat), 60%);
+	--bar-8: hsl(var(--hue), var(--sat), 65%);
+}
+
+@property --shadow {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 1vmin;
+}
+
+* {
+	transform-style: preserve-3d;
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	perspective: 80vmin;
+	background: var(--bg);
+}
+
+body:hover input[type=range] {
+	/*opacity: 1;*/
+}
+
+.content {
+	width: calc(var(--w) * 1vmin);
+	height: calc(var(--h) * 1vmin);
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	animation: spin 20s linear 0s infinite;
+}
+
+.content:hover {
+	animation-play-state: paused;
+}
+
+.pair {
+	width: 1vmin;
+	height: calc(calc(var(--h) * 1vmin) - 10vmin);
+	position: relative;
+	transform: rotateX(180deg);
+	animation: pair-move var(--speed) linear 0s infinite;
+}
+
+@keyframes spin {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes pair-move {
+	100% {
+		transform: rotateX(540deg);
+	}
+}
+@keyframes ball-move {
+	100% {
+		transform: rotateX(-360deg);
+	}
+}
+@keyframes ball-color {
+	50% {
+		background: orange;
+	}
+}
+@keyframes ball-color2 {
+	50% {
+		background: red;
+	}
+}
+@keyframes ball-shadow {
+	50% {
+		--shadow: -1vmin;
+	}
+}
+
+.pair::before,
+.pair::after {
+	content: "";
+	position: absolute;
+	width: 5vmin;
+	height: 5vmin;
+	background: red;
+	border-radius: 100%;
+	left: -2vmin;
+	top: -5vmin;
+	transform: rotateX(0deg);
+	animation: 
+		ball-move var(--speed) linear 0s infinite,  
+		ball-color var(--speed) linear 0s infinite,  
+		ball-shadow var(--speed) linear 0s infinite;
+	box-shadow: 0 var(--shadow) 1vmin 0 #0008 inset;
+}
+	
+.pair::after {
+	background: orange;
+	top: initial;
+	bottom: -5vmin;
+	animation-name: ball-move, ball-color2 ;
+}
+
+.pair:nth-child(2),
+.pair:nth-child(2):before,
+.pair:nth-child(2):after {
+	animation-delay: calc(var(--delay) * -1);
+}
+
+.pair:nth-child(3),
+.pair:nth-child(3):before,
+.pair:nth-child(3):after {
+	animation-delay: calc(var(--delay) * -2);
+}
+
+.pair:nth-child(4),
+.pair:nth-child(4):before,
+.pair:nth-child(4):after {
+	animation-delay: calc(var(--delay) * -3);
+}
+
+.pair:nth-child(5),
+.pair:nth-child(5):before,
+.pair:nth-child(5):after {
+	animation-delay: calc(var(--delay) * -4);
+}
+
+.pair:nth-child(6),
+.pair:nth-child(6):before,
+.pair:nth-child(6):after {
+	animation-delay: calc(var(--delay) * -5);
+}
+
+.pair:nth-child(7),
+.pair:nth-child(7):before,
+.pair:nth-child(7):after {
+	animation-delay: calc(var(--delay) * -6);
+}
+
+.pair:nth-child(8),
+.pair:nth-child(8):before,
+.pair:nth-child(8):after {
+	animation-delay: calc(var(--delay) * -7);
+}
+
+.pair:nth-child(9),
+.pair:nth-child(9):before,
+.pair:nth-child(9):after {
+	animation-delay: calc(var(--delay) * -8);
+}
+
+.pair:nth-child(10),
+.pair:nth-child(10):before,
+.pair:nth-child(10):after {
+	animation-delay: calc(var(--delay) * -9);
+}
+
+.pair:nth-child(11),
+.pair:nth-child(11):before,
+.pair:nth-child(11):after {
+	animation-delay: calc(var(--delay) * -10);
+}
+
+.pair:nth-child(12),
+.pair:nth-child(12):before,
+.pair:nth-child(12):after {
+	animation-delay: calc(var(--delay) * -11);
+}
+
+.cylinder {
+  --height: 1;
+  --width: 1;
+  --depth: calc((var(--h) * 1) - 10);
+  height: calc(var(--height) * 1vmin);
+  width: calc(var(--width) * 1vmin);
+  position: absolute;
+  bottom: calc(50% - 0.5vmin);
+  transform: rotateX(90deg);
+  transition: all 0.25s ease-in-out 0s;
+}
+
+.cylinder .side {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  opacity: 0.85;
+}
+
+.cylinder .side:nth-of-type(1) {
+  width: calc(var(--depth) * 1vmin);
+  height: calc(calc(calc(var(--width) * 41.17) / 100) * 1vmin);
+  transform: translate(-50%, -50%) rotateY(90deg) translate3d(0, 0, calc(var(--width) * 0.5vmin));
+  background-color: var(--bar-4);
+}
+
+.cylinder .side:nth-of-type(2) {
+  width: calc(var(--depth) * 1vmin);
+  height: calc(calc(calc(var(--width) * 41.17) / 100) * 1vmin);
+  transform: translate(-50%, -50%) rotateY(-90deg) translate3d(0, 0, calc(var(--width) * 0.5vmin));
+  background-color: var(--bar-5);
+}
+
+.cylinder .side:nth-of-type(3) {
+  height: calc(var(--depth) * 1vmin);
+  width: calc(calc(calc(var(--width) * 41.17) / 100) * 1vmin);
+  transform: translate(-50%, -50%) rotateX(90deg) translate3d(0, 0, calc(var(--height) * 0.5vmin));
+  background-color: var(--bar-8);
+}
+
+.cylinder .side:nth-of-type(4) {
+  height: calc(var(--depth) * 1vmin);
+  width: calc(calc(calc(var(--width) * 41.17) / 100) * 1vmin);
+  transform: translate(-50%, -50%) rotateX(-90deg) translate3d(0, 0, calc(var(--height) * 0.5vmin));
+  background-color: var(--bar-2);
+}
+.cylinder .side:nth-of-type(5) {
+  height: calc(var(--depth) * 1vmin);
+  width: calc(calc(calc(var(--width) * 41.17) / 100) * 1vmin);
+  transform: translate(-50%, -50%) rotateX(-90deg) rotateY(45deg) translate3d(0, 0, calc(var(--height) * 0.5vmin));
+  background-color: var(--bar-3);
+}
+
+.cylinder .side:nth-of-type(6) {
+  height: calc(var(--depth) * 1vmin);
+  width: calc(calc(calc(var(--width) * 41.17) / 100) * 1vmin);
+  transform: translate(-50%, -50%) rotateX(-90deg) rotateY(-45deg) translate3d(0, 0, calc(var(--height) * 0.5vmin));
+  background-color: var(--bar-1);
+}
+
+.cylinder .side:nth-of-type(7) {
+  height: calc(var(--depth) * 1vmin);
+  width: calc(calc(calc(var(--width) * 41.17) / 100) * 1vmin);
+  transform: translate(-50%, -50%) rotateX(-90deg) rotateY(135deg) translate3d(0, 0, calc(var(--height) * 0.5vmin));
+  background-color: var(--bar-6);
+}
+
+.cylinder .side:nth-of-type(8) {
+  height: calc(var(--depth) * 1vmin);
+  width: calc(calc(calc(var(--width) * 41.17) / 100) * 1vmin);
+  transform: translate(-50%, -50%) rotateX(-90deg) rotateY(-135deg) translate3d(0, 0, calc(var(--height) * 0.5vmin));
+  background-color: var(--bar-7);
+}
+
+.selector {
+	position: absolute;
+}
+
+#h-vertical {
+	transform: rotate(270deg) rotateY(180deg);
+    width: calc(90vh);
+    bottom: 5vmin;
+    transform-origin: calc(100% - 2px) 0;
+    right: 5vmin;
+}
+
+#w-horizontal {
+	bottom: 5vmin;
+    width: calc(100vw - 10vmin);
+}
+
+input[type=range] {
+	/*opacity: 0;*/
+	transition: all 0.5s ease 0s;
+  background: #3c3c3c;
+}
+
+input[type=range]:hover {
+  cursor: pointer;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range],
+input[type=range]::-webkit-slider-runnable-track,
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  background-color: #3c3c3c;
+  width: 4vmin;
+  height: 4vmin;
+  border: 0.6vmin solid var(--bg);
+  border-radius: 50%;
+  margin-top: -1.8vmin;
+  transition: all 0.5s ease 0s;
+}
+
+input[type=range]::-moz-range-thumb {
+  background-color: #3c3c3c;
+  width: 4vmin;
+  height: 4vmin;
+  border: 0.6vmin solid var(--bg);
+  border-radius: 50%;
+  transition: all 0.5s ease 0s;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  background-color: #3c3c3c;
+  transition: all 0.5s ease 0s;
+  height: 3px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  outline: none;
+}
+
+input[type=range]::-moz-range-track {
+  background-color: #3c3c3c;
+  transition: all 0.5s ease 0s;
+  height: 3px;
+  border-color: #3c3c3c;
+}
