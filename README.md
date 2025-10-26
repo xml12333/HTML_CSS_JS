@@ -989,3 +989,4 @@
 |983| [Card Preloader](https://github.com/xml12333/HTML_CSS_JS/tree/main/983.Card%20Preloader)| [Demo](https://nikt.com.ua/projects/htmlCssJs/983.Card%20Preloader/)|
 |984| [DNA](https://github.com/xml12333/HTML_CSS_JS/tree/main/984.DNA)| [Demo](https://nikt.com.ua/projects/htmlCssJs/984.DNA/)|
 |985| [Pagination](https://github.com/xml12333/HTML_CSS_JS/tree/main/985.Pagination)| [Demo](https://nikt.com.ua/projects/htmlCssJs/985.Pagination/)|
+|986| [Electric Border](https://github.com/xml12333/HTML_CSS_JS/tree/main/986.Electric%20Border)| [Demo](https://nikt.com.ua/projects/htmlCssJs/986.Electric%20Border/)|
