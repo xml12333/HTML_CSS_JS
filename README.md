@@ -991,3 +991,4 @@
 |985| [Pagination](https://github.com/xml12333/HTML_CSS_JS/tree/main/985.Pagination)| [Demo](https://nikt.com.ua/projects/htmlCssJs/985.Pagination/)|
 |986| [Electric Border](https://github.com/xml12333/HTML_CSS_JS/tree/main/986.Electric%20Border)| [Demo](https://nikt.com.ua/projects/htmlCssJs/986.Electric%20Border/)|
 |987| [Variant Picker](https://github.com/xml12333/HTML_CSS_JS/tree/main/987.Variant%20Picker)| [Demo](https://nikt.com.ua/projects/htmlCssJs/987.Variant%20Picker/)|
+|988| [Cercular Ranges](https://github.com/xml12333/HTML_CSS_JS/tree/main/988.Cercular%20Ranges)| [Demo](https://nikt.com.ua/projects/htmlCssJs/988.Cercular%20Ranges/)|
