@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap");
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #3d3e4a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #a3a7ad;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 12px;
+  flex-direction: column;
+  margin: 0;
+}
+
+h1 {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #76b3fa;
+  font-size: 20px;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 300;
+  margin-bottom: 30px;
+  padding: 20px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px;
+}
+
+.input-container {
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px 20px;
+  position: relative;
+}
+
+label {
+  align-items: center;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+
+  span {
+    margin-top: 15px;
+  }
+}
+
+.svg-wrap {
+  border: 2px solid #575969;
+  border-radius: 4px;
+  display: flex;
+  overflow: hidden;
+  transition: border-color 300ms ease-in-out, box-shadow 300ms ease-in-out;
+}
+
+svg g.switch rect {
+  fill: #484a57;
+  transition: fill 300ms ease-in-out;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+}
+
+input[type="checkbox"]:checked + .svg-wrap {
+  border-color: #76b3fa;
+  box-shadow: 0 0 20px 0 #0763f7;
+
+  svg g.switch rect {
+    fill: #76b3fa;
+  }
+}
+
+input[type="checkbox"]:focus-visible + .svg-wrap {
+  border-color: #faed76;
+  box-shadow: 0 0 20px 0 #c96220;
+}
