@@ -994,3 +994,4 @@
 |988| [Cercular Ranges](https://github.com/xml12333/HTML_CSS_JS/tree/main/988.Cercular%20Ranges)| [Demo](https://nikt.com.ua/projects/htmlCssJs/988.Cercular%20Ranges/)|
 |989| [Details&Summary](https://github.com/xml12333/HTML_CSS_JS/tree/main/989.Details&Summary)| [Demo](https://nikt.com.ua/projects/htmlCssJs/989.Details&Summary/)|
 |990| [Checkboxes](https://github.com/xml12333/HTML_CSS_JS/tree/main/990.Checkboxes)| [Demo](https://nikt.com.ua/projects/htmlCssJs/990.Checkboxes/)|
+|991| [Dithering Background](https://github.com/xml12333/HTML_CSS_JS/tree/main/991.Dithering%20Background)| [Demo](https://nikt.com.ua/projects/htmlCssJs/991.Dithering%20Background/)|

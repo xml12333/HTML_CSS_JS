@@ -1,0 +1,37 @@
+:root {
+  --c1: #99d4d8;
+  --c2: #2889ac;
+  --c3: #48678f;
+  --c4: #8478ac;
+  --c5: #fd98b3;
+  --co1: 20;
+  --co2: 40;
+  --co3: 60;
+  --co4: 80;
+  //--sl: #00aab7 0 50%, #fd98b3 0;
+  --s2: var(--c1) 0% calc(var(--co1) * 1%), var(--c2) 0 calc(var(--co2) * 1%), var(--c3) 0 calc(var(--co3) * 1%), var(--c4) 0 calc(var(--co4) * 1%), var(--c5) 0
+}
+body {
+  // background: linear-gradient(var(--sl));
+  // filter: url(#dither);
+  overflow-x: hidden;
+  &::before {
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		background: linear-gradient(var(--s2));
+		filter: url(#dither);
+		content: '';
+    transform: scale(1.12);
+	}
+}
+
+img {
+  mix-blend-mode: multiply;
+}
+
+body {
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+}
