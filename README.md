@@ -995,3 +995,4 @@
 |989| [Details&Summary](https://github.com/xml12333/HTML_CSS_JS/tree/main/989.Details&Summary)| [Demo](https://nikt.com.ua/projects/htmlCssJs/989.Details&Summary/)|
 |990| [Checkboxes](https://github.com/xml12333/HTML_CSS_JS/tree/main/990.Checkboxes)| [Demo](https://nikt.com.ua/projects/htmlCssJs/990.Checkboxes/)|
 |991| [Dithering Background](https://github.com/xml12333/HTML_CSS_JS/tree/main/991.Dithering%20Background)| [Demo](https://nikt.com.ua/projects/htmlCssJs/991.Dithering%20Background/)|
+|992| [Efflorescence](https://github.com/xml12333/HTML_CSS_JS/tree/main/992.Efflorescence)| [Demo](https://nikt.com.ua/projects/htmlCssJs/992.Efflorescence/)|
