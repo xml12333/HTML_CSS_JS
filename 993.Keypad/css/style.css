@@ -1,0 +1,449 @@
+@import url('https://unpkg.com/normalize.css') layer(normalize);
+
+@layer normalize, base, demo, debug, exploding;
+
+@layer exploding {
+  [data-exploded='true'] {
+    section {
+      transition-delay: 0s;
+    }
+    .keypad {
+      translate: calc(-50% - 1rem) 0;
+      transition-delay: 0s, 0.26s;
+      @media (max-width: 768px) {
+        translate: 0 calc(50% + 1rem);
+      }
+    }
+    .keypad__base {
+      --depth: 2.5;
+    }
+    .keypad__single {
+      --depth: -1;
+    }
+    .keypad__single--left {
+      --depth: -2;
+    }
+    .keypad__double {
+      --depth: 0;
+    }
+
+    .keypad__base,
+    .key {
+      translate: 0 calc(var(--depth) * 10vh);
+      transition-delay: 0.52s;
+    }
+  }
+
+  .keypad {
+    transition-delay: 0.26s, 0.52s;
+  }
+
+  .key,
+  .keypad__base {
+    transition-property: translate;
+    transition-duration: 0.26s;
+    transition-timing-function: ease-out;
+  }
+
+  [data-exploded='true'] .key::after {
+    opacity: 1;
+    transition-delay: 0.52s;
+  }
+
+  .key::after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    opacity: 0;
+    inset: 0;
+    transition-property: opacity;
+    transition-duration: 0.26s;
+    transition-timing-function: ease-out;
+    background: repeating-linear-gradient(
+      -45deg,
+      #0000 0 5px,
+      hsl(220 100% 70%) 5px 6px
+    );
+  }
+  /* timings */
+}
+
+@layer debug {
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      letter-spacing: -0.05rem;
+      line-height: 1;
+    }
+
+    p {
+      opacity: 0.7;
+      font-weight: 300;
+    }
+
+    form {
+      display: flex;
+      gap: 0.5rem;
+
+      input {
+        flex: 1;
+        padding: 0.5rem 0.75rem;
+        background: canvas;
+        border: 1px solid color-mix(in oklch, canvasText, #0000 75%);
+        border-radius: 6px;
+        outline-color: red;
+      }
+
+      button {
+        padding-inline: 1.5rem;
+        border-radius: 6px;
+        background: canvas;
+        border: 1px solid color-mix(in oklch, canvasText, #0000 75%);
+        cursor: pointer;
+        color: canvasText;
+        font-size: 0.875rem;
+      }
+    }
+
+    section {
+      transition-property: opacity, filter;
+      transition-duration: 0.26s;
+      transition-delay: 0.26s;
+      transition-timing-function: ease-out;
+    }
+  }
+
+  [data-exploded='true'] section {
+    opacity: 0;
+    filter: blur(4px);
+  }
+
+  @media (max-width: 768px) {
+    .keypad {
+      order: 1;
+    }
+    section {
+      order: 2;
+    }
+  }
+
+  section,
+  section > div {
+    width: 50ch;
+    max-width: calc(100vw - 2rem);
+  }
+}
+
+@layer demo {
+  :root {
+    --travel: 20;
+  }
+  .keypad {
+    position: relative;
+    /* outline: 4px dashed red;
+    outline-offset: 2px; */
+    aspect-ratio: 400 / 310;
+    display: flex;
+    place-items: center;
+    width: clamp(280px, 35vw, 400px);
+    -webkit-tap-highlight-color: #0000;
+    transition-property: translate, transform;
+    transition-duration: 0.26s;
+    transition-timing-function: ease-out;
+    transform-style: preserve-3d;
+
+    .key {
+      transform-style: preserve-3d;
+      border: 0;
+      background: #0000;
+      padding: 0;
+      cursor: pointer;
+      outline: none;
+
+      &[data-pressed='true'],
+      &:active {
+        .key__content {
+          translate: 0 calc(var(--travel) * 1%);
+        }
+      }
+    }
+
+    .key__content {
+      width: 100%;
+      display: inline-block;
+      height: 100%;
+      transition: translate 0.12s ease-out;
+      container-type: inline-size;
+    }
+
+    .keypad__single .key__text {
+      width: 52%;
+      height: 62%;
+      translate: 45% -16%;
+    }
+
+    .key__text {
+      height: 46%;
+      width: 86%;
+      position: absolute;
+      font-size: 12cqi;
+      z-index: 21;
+      top: 5%;
+      left: 0;
+      mix-blend-mode: normal;
+      /* mix-blend-mode: overlay soft-light; */
+      color: hsl(0 0% 94%);
+      translate: 8% 10%;
+      transform: rotateX(36deg) rotateY(45deg) rotateX(-90deg) rotate(0deg);
+      text-align: left;
+      padding: 1ch;
+    }
+
+    .keypad__single {
+      position: absolute;
+      width: 40.5%;
+      left: 54%;
+      bottom: 36%;
+      height: 46%;
+      -webkit-clip-path: polygon(
+        0 0,
+        54% 0,
+        89% 24%,
+        100% 70%,
+        54% 100%,
+        46% 100%,
+        0 69%,
+        12% 23%,
+        47% 0%
+      );
+              clip-path: polygon(
+        0 0,
+        54% 0,
+        89% 24%,
+        100% 70%,
+        54% 100%,
+        46% 100%,
+        0 69%,
+        12% 23%,
+        47% 0%
+      );
+      -webkit-mask: url(https://assets.codepen.io/605876/keypad-single.png?format=auto&quality=86) 50% 50% / 100% 100%;
+              mask: url(https://assets.codepen.io/605876/keypad-single.png?format=auto&quality=86) 50% 50% / 100% 100%;
+
+      &.keypad__single--left {
+        left: 29.3%;
+        bottom: 54.2%;
+      }
+
+      .key__text {
+        font-size: 18cqi;
+      }
+
+      img {
+        top: 0;
+        opacity: 1;
+        width: 96%;
+        position: absolute;
+        left: 50%;
+        translate: -50% 1%;
+      }
+    }
+
+    .key__mask {
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+    }
+
+    .keypad__double {
+      position: absolute;
+      background: hsl(10 100% 50% / 0);
+      width: 64%;
+      height: 65%;
+      left: 6%;
+      bottom: 17.85%;
+      -webkit-clip-path: polygon(
+        34% 0,
+        93% 44%,
+        101% 78%,
+        71% 100%,
+        66% 100%,
+        0 52%,
+        0 44%,
+        7% 17%,
+        30% 0
+      );
+              clip-path: polygon(
+        34% 0,
+        93% 44%,
+        101% 78%,
+        71% 100%,
+        66% 100%,
+        0 52%,
+        0 44%,
+        7% 17%,
+        30% 0
+      );
+      -webkit-mask: url(https://assets.codepen.io/605876/keypad-double.png?format=auto&quality=86) 50% 50% / 100% 100%;
+              mask: url(https://assets.codepen.io/605876/keypad-double.png?format=auto&quality=86) 50% 50% / 100% 100%;
+      img {
+        top: 0;
+        opacity: 1;
+        width: 99%;
+        position: absolute;
+        left: 50%;
+        translate: -50% 1%;
+      }
+    }
+
+    .key img {
+      filter: hue-rotate(calc(var(--hue, 0) * 1deg))
+        saturate(var(--saturate, 1)) brightness(var(--brightness, 1));
+    }
+
+    .keypad__base {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+    img {
+      transition: translate 0.12s ease-out;
+      width: 100%;
+    }
+  }
+  .reference {
+    pointer-events: none;
+    opacity: 0;
+    z-index: 2;
+  }
+}
+
+@layer base {
+  :root {
+    --font-size-min: 16;
+    --font-size-max: 20;
+    --font-ratio-min: 1.2;
+    --font-ratio-max: 1.33;
+    --font-width-min: 375;
+    --font-width-max: 1500;
+  }
+
+  html {
+    color-scheme: light dark;
+  }
+
+  [data-theme='light'] {
+    color-scheme: light only;
+  }
+
+  [data-theme='dark'] {
+    color-scheme: dark only;
+  }
+
+  :where(.fluid) {
+    --fluid-min: calc(
+      var(--font-size-min) * pow(var(--font-ratio-min), var(--font-level, 0))
+    );
+    --fluid-max: calc(
+      var(--font-size-max) * pow(var(--font-ratio-max), var(--font-level, 0))
+    );
+    --fluid-preferred: calc(
+      (var(--fluid-max) - var(--fluid-min)) /
+        (var(--font-width-max) - var(--font-width-min))
+    );
+    --fluid-type: clamp(
+      (var(--fluid-min) / 16) * 1rem,
+      ((var(--fluid-min) / 16) * 1rem) -
+        (((var(--fluid-preferred) * var(--font-width-min)) / 16) * 1rem) +
+        (var(--fluid-preferred) * var(--variable-unit, 100vi)),
+      (var(--fluid-max) / 16) * 1rem
+    );
+    font-size: var(--fluid-type);
+  }
+
+  *,
+  *:after,
+  *:before {
+    box-sizing: border-box;
+  }
+
+  body {
+    background: light-dark(#fff, #000);
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: 'SF Pro Text', 'SF Pro Icons', 'AOS Icons', 'Helvetica Neue',
+      Helvetica, Arial, sans-serif, system-ui;
+  }
+
+  body::before {
+    --size: 45px;
+    --line: color-mix(in hsl, canvasText, transparent 80%);
+    content: '';
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background: linear-gradient(
+          90deg,
+          var(--line) 1px,
+          transparent 1px var(--size)
+        )
+        calc(var(--size) * 0.36) 50% / var(--size) var(--size),
+      linear-gradient(var(--line) 1px, transparent 1px var(--size)) 0%
+        calc(var(--size) * 0.32) / var(--size) var(--size);
+    -webkit-mask: linear-gradient(-20deg, transparent 50%, white);
+            mask: linear-gradient(-20deg, transparent 50%, white);
+    top: 0;
+    transform-style: flat;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .bear-link {
+    color: canvasText;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    width: 48px;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    opacity: 0.8;
+  }
+
+  :where(.x-link, .bear-link):is(:hover, :focus-visible) {
+    opacity: 1;
+  }
+
+  .bear-link svg {
+    width: 75%;
+  }
+
+  /* Utilities */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}
+
+div.tp-dfwv {
+  width: 280px;
+}
+
+
+.keypad {
+  opacity: 0;
+}

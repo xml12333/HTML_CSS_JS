@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>interactive keypad with key recorder + sfx</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+  <main>
+    <section>
+
+    </section>
+    <div class="keypad">
+      <div class="keypad__base">
+        <img src="./img/keypad-base.webp" alt="" />
+      </div>
+      <button id="one" class="key keypad__single keypad__single--left">
+        <span class="key__mask">
+          <span class="key__content">
+            <span class="key__text">ok</span>
+            <img src="./img/keypad-single.webp" alt="" />
+          </span>
+        </span>
+      </button>
+      <button id="two" class="key keypad__single">
+        <span class="key__mask">
+          <span class="key__content">
+            <span class="key__text">go</span>
+            <img src="./img/keypad-single.webp" alt="" />
+          </span>
+        </span>
+      </button>
+      <button id="three" class="key keypad__double">
+        <span class="key__mask">
+          <span class="key__content">
+            <span class="key__text">create.</span>
+            <img src="./img/keypad-double.webp" alt="" />
+          </span>
+        </span>
+      </button>
+    </div>
+  </main>
+
+  <script type="module" src="./js/script.js"></script>
+
+</body>
+
+</html>
