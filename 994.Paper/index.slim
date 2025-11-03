@@ -1,0 +1,118 @@
+canvas#view
+
+#info
+  h2 tr.Paper
+  p tr.Paper draws glowing circuit-like traces with crisp, uniform angles. Tweak settings, export wallpaper, or export the code with your current settings baked in.
+
+  hr
+  h3 Export Types
+  ul
+    li
+      strong Normal:
+      |  Readable IIFE with settings baked in. Good for tweaking.
+    li
+      strong Slim (Raw):
+      |  Minified source with line breaks. Good for embedding.
+    li
+      strong Slim (Eval):
+      |  Single-line eval(atob(...)) for fast drop-in.
+
+  hr
+  p Concept by me (Built with AI)
+
+#settings
+  .tabs
+    .tab(data-target="lines") Lines
+    .tab(data-target="dots") Dots
+    .tab(data-target="branching") Branching
+    .tab(data-target="camera") Camera
+    .tab(data-target="exports") Exports
+
+  //- Panels
+  .tab-panel#lines.active
+    .field
+      label for="lim" Max Trails
+      input#lim(type="number" value="200" min="20" max="400")
+    .field.inline2
+      .col
+        label for="color" Line Color
+        input#color(type="color" value="#FF0077")
+			.col
+        label for="circleColor" Circle Color
+        input#circleColor(type="color" value="#FF0077")
+    .field.inline2
+      .col
+        label
+          input#lineGlow(type="checkbox" checked)
+          | Glow Lines
+      .col
+        label for="glowStrength" Glow Strength
+        input#glowStrength(type="range" min="0" max="40" step="1" value="12")
+    .field.inline2
+      .col
+        label
+          input#lineMulticolor(type="checkbox" checked)
+          | Multicolor Lines
+      .col
+        label
+          input#circleMulticolor(type="checkbox" checked)
+          | Multicolor Circles
+    .field
+      label for="spawn" Spawn Chance
+      input#spawn(type="range" min="0" max="0.2" step="0.001" value="0.02")
+    .field
+      label for="circleMode" Circle Mode
+      select#circleMode
+        option(value="stroke" selected) Stroke
+        option(value="fill") Fill
+        option(value="both") Both
+        option(value="none") None
+
+  .tab-panel#dots
+    .field
+      label
+        input#hideCircles(type="checkbox")
+        | Hide Circles
+    .field
+      label for="circleSize" Circle Size
+      input#circleSize(type="range" min="1" max="14" step="1" value="5")
+
+  .tab-panel#branching
+    .field
+      label
+        input#alwaysBranch(type="checkbox")
+        | Always Branch (auto-capped to protect FPS)
+
+  .tab-panel#camera
+    .field
+      label
+        input#lockTilt(type="checkbox" checked)
+        | Lock Tilt (no rotation)
+    .field.inline2
+      .col
+        label for="driftX" Drift X
+        input#driftX(type="range" min="0" max="400" step="5" value="200")
+      .col
+        label for="driftY" Drift Y
+        input#driftY(type="range" min="0" max="400" step="5" value="150")
+
+  .tab-panel#exports
+    .field
+      .buttons
+        button#btnSnapPNG Export PNG
+    .field
+      h4 Code Exporter
+      .inline2
+        .col
+          label for="outputMode" Output Mode
+          select#outputMode
+            option(value="normal" selected) Normal
+            option(value="slimRaw") Slim (Raw)
+            option(value="slimEval") Slim (Eval)
+          button#btnExportCode Export
+      .field
+        label for="codeOut" Generated Code (click inside to copy)
+        textarea#codeOut(rows="10" spellcheck="false")
+        .helper-row
+          span#copyHelper
+

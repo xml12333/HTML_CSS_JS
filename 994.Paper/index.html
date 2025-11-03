@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>tr.Paper (circuit style wallpaper generator)</title>
+  <link rel="stylesheet" href="https://public.codepenassets.com/css/normalize-5.0.0.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+  <canvas id="view"></canvas>
+  <div id="info">
+    <h2>
+      tr.Paper
+    </h2>
+    <p>
+      tr.Paper draws glowing circuit-like traces with crisp, uniform angles. Tweak settings, export wallpaper, or export
+      the code with your current settings baked in.
+    </p>
+    <hr />
+    <h3>
+      Export Types
+    </h3>
+    <ul>
+      <li>
+        <strong>Normal:</strong> Readable IIFE with settings baked in. Good for tweaking.
+      </li>
+      <li>
+        <strong>Slim (Raw):</strong> Minified source with line breaks. Good for embedding.
+      </li>
+      <li>
+        <strong>Slim (Eval):</strong> Single-line eval(atob(...)) for fast drop-in.
+      </li>
+    </ul>
+    <hr />
+    <p>
+      Concept by me (Built with AI)
+    </p>
+  </div>
+  <div id="settings">
+    <div class="tabs">
+      <div class="tab" data-target="lines">
+        Lines
+      </div>
+      <div class="tab" data-target="dots">
+        Dots
+      </div>
+      <div class="tab" data-target="branching">
+        Branching
+      </div>
+      <div class="tab" data-target="camera">
+        Camera
+      </div>
+      <div class="tab" data-target="exports">
+        Exports
+      </div>
+    </div>
+    <div class="tab-panel active" id="lines">
+      <div class="field">
+        <label for="lim">Max Trails</label><input id="lim" max="400" min="20" type="number" value="200" />
+      </div>
+      <div class="field inline2">
+        <div class="col">
+          <label for="color">Line Color</label><input id="color" type="color" value="#FF0077">
+          <div class="col"></div>
+          </input><label for="circleColor">Circle Color</label><input id="circleColor" type="color" value="#FF0077" />
+        </div>
+      </div>
+      <div class="field inline2">
+        <div class="col">
+          <label><input checked="" id="lineGlow" type="checkbox" />Glow Lines</label>
+        </div>
+        <div class="col">
+          <label for="glowStrength">Glow Strength</label><input id="glowStrength" max="40" min="0" step="1" type="range"
+            value="12" />
+        </div>
+      </div>
+      <div class="field inline2">
+        <div class="col">
+          <label><input checked="" id="lineMulticolor" type="checkbox" />Multicolor Lines</label>
+        </div>
+        <div class="col">
+          <label><input checked="" id="circleMulticolor" type="checkbox" />Multicolor Circles</label>
+        </div>
+      </div>
+      <div class="field">
+        <label for="spawn">Spawn Chance</label><input id="spawn" max="0.2" min="0" step="0.001" type="range"
+          value="0.02" />
+      </div>
+      <div class="field">
+        <label for="circleMode">Circle Mode</label><select id="circleMode">
+          <option selected="" value="stroke">
+            Stroke
+          </option>
+          <option value="fill">
+            Fill
+          </option>
+          <option value="both">
+            Both
+          </option>
+          <option value="none">
+            None
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="tab-panel" id="dots">
+      <div class="field">
+        <label><input id="hideCircles" type="checkbox" />Hide Circles</label>
+      </div>
+      <div class="field">
+        <label for="circleSize">Circle Size</label><input id="circleSize" max="14" min="1" step="1" type="range"
+          value="5" />
+      </div>
+    </div>
+    <div class="tab-panel" id="branching">
+      <div class="field">
+        <label><input id="alwaysBranch" type="checkbox" />Always Branch (auto-capped to protect FPS)</label>
+      </div>
+    </div>
+    <div class="tab-panel" id="camera">
+      <div class="field">
+        <label><input checked="" id="lockTilt" type="checkbox" />Lock Tilt (no rotation)</label>
+      </div>
+      <div class="field inline2">
+        <div class="col">
+          <label for="driftX">Drift X</label><input id="driftX" max="400" min="0" step="5" type="range" value="200" />
+        </div>
+        <div class="col">
+          <label for="driftY">Drift Y</label><input id="driftY" max="400" min="0" step="5" type="range" value="150" />
+        </div>
+      </div>
+    </div>
+    <div class="tab-panel" id="exports">
+      <div class="field">
+        <div class="buttons">
+          <button id="btnSnapPNG">Export PNG</button>
+        </div>
+      </div>
+      <div class="field">
+        <h4>
+          Code Exporter
+        </h4>
+        <div class="inline2">
+          <div class="col">
+            <label for="outputMode">Output Mode</label><select id="outputMode">
+              <option selected="" value="normal">
+                Normal
+              </option>
+              <option value="slimRaw">
+                Slim (Raw)
+              </option>
+              <option value="slimEval">
+                Slim (Eval)
+              </option>
+            </select><button id="btnExportCode">Export</button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="codeOut">Generated Code (click inside to copy)</label><textarea id="codeOut" rows="10"
+            spellcheck="false"></textarea>
+          <div class="helper-row">
+            <span id="copyHelper"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="./js/script.js"></script>
+
+</body>
+
+</html>

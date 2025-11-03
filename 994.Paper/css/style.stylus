@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap')
+
+:root
+  --pink #FF0077
+  --bg1  #0a0a0a
+  --bg2  #111
+  --bg3  #1a1a1a
+  --fg   #eee
+  --muted #bbb
+  --border #333
+
+body
+  margin 0
+  background #000
+  color var(--fg)
+  font-family 'Montserrat', sans-serif
+  height 100vh
+  overflow hidden
+
+#view
+  position absolute
+  inset 0
+  width 100%
+  height 100%
+  background #000
+  z-index 0
+
+#info
+  position absolute
+  top 15px
+  left 15px
+  background rgba(10,10,10,.7)
+  padding .6rem .8rem
+  border 1px solid var(--border)
+  border-radius 6px
+  z-index 10
+  width 300px
+  font-size .75rem
+  line-height 1.45
+  max-height 80vh
+  overflow-y auto
+
+  h2
+    margin 0 0 .4rem 0
+    font-size .95rem
+    color var(--pink)
+    text-transform uppercase
+    letter-spacing .05em
+  h3
+    margin .5rem 0 .3rem 0
+    font-size .8rem
+    color var(--pink)
+    text-transform uppercase
+    letter-spacing .03em
+  ul
+    margin 0
+    padding-left 1rem
+    li
+      margin .3rem 0
+      color var(--muted)
+      strong
+        color var(--pink)
+  hr
+    border 0
+    border-top 1px solid var(--border)
+    margin .6rem 0
+
+#settings
+  position absolute
+  top 15px
+  right 15px
+  background rgba(10,10,10,.7)
+  padding .6rem .8rem
+  border 1px solid var(--border)
+  border-radius 12px
+  z-index 10
+  display flex
+  flex-direction column
+  width 320px
+  font-size .75rem
+  color var(--fg)
+  max-height 80vh
+  overflow-y auto
+
+  .tabs
+    display flex
+    gap .35rem
+    margin-bottom .55rem
+    .tab
+      flex 1
+      text-align center
+      background var(--bg2)
+      border 1px solid var(--border)
+      border-radius 6px
+      padding .3rem .35rem
+      font-size .72rem
+      cursor pointer
+      transition background .25s ease
+      &.active
+        background var(--pink)
+        color #fff
+      &:hover
+        background #222
+
+  .tab-panel
+    display none
+    flex-direction column
+    gap .6rem
+    &.active
+      display flex
+
+  .field
+    display flex
+    flex-direction column
+    gap .25rem
+    label
+      font-size .72rem
+      display flex
+      align-items center
+      gap .35rem
+    input, select, textarea
+      background var(--bg3)
+      border 1px solid #444
+      color var(--fg)
+      padding .35rem
+      font-size .72rem
+      border-radius 12px
+			&:focus
+        border-color var(--pink)
+        outline none
+    textarea
+      resize none
+      min-height 7rem
+      line-height 1.2
+      font-family 'Montserrat', sans-serif
+
+    &.inline2
+      flex-direction row
+      gap .5rem
+      .col
+        flex 1
+				display flex
+        justify-content center
+        align-items center
+        gap 5px
+				button
+					flex 1
+					background transparent
+					box-shadow inset 1px 1px 0 rgba(255,255,255,.25), inset -1px -1px 0 rgba(255,255,255,.05)
+					color var(--fg)
+					border none
+					padding .45rem
+					font-size .72rem
+					border-radius 12px
+					cursor pointer
+					transition background .3s
+					&:hover
+						background #e6006d
+				#btnExportCode
+          margin-left 15px
+
+    input[type="color"]
+      padding 0
+      border none
+      background none
+      width 42px
+      height 24px
+      cursor pointer
+      overflow hidden
+      &::-webkit-color-swatch
+        border-radius 12px
+
+    input[type="range"]
+      -webkit-appearance none
+      height 4px
+      background #333
+      border-radius 12px
+      outline none
+      &::-webkit-slider-thumb
+        -webkit-appearance none
+        width 12px
+        height 12px
+        border-radius 50%
+        background var(--pink)
+        cursor pointer
+      &::-moz-range-thumb
+        width 12px
+        height 12px
+        border-radius 50%
+        background var(--pink)
+        cursor pointer
+
+  .buttons
+    display flex
+    justify-content space-between
+    gap .5rem
+    button
+      flex 1
+      background transparent
+      box-shadow inset 1px 1px 0 rgba(255,255,255,.25), inset -1px -1px 0 rgba(255,255,255,.05)
+      color var(--fg)
+      border none
+      padding .45rem
+      font-size .72rem
+      border-radius 12px
+      cursor pointer
+      transition background .3s
+      &:hover
+        background #e6006d
+
+  .helper-row
+    min-height 1.1rem
+    color var(--pink)
+    font-size .72rem
+
+
+/* Scrollbars */
+#settings::-webkit-scrollbar, #info::-webkit-scrollbar
+  width 6px
+#settings::-webkit-scrollbar-thumb, #info::-webkit-scrollbar-thumb
+  background var(--pink)
+  border-radius 3px
+#settings::-webkit-scrollbar-track, #info::-webkit-scrollbar-track
+  background #222
+
+@media (max-width: 1200px)
+  #settings, #info
+    transform scale(.85)

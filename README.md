@@ -997,3 +997,4 @@
 |991| [Dithering Background](https://github.com/xml12333/HTML_CSS_JS/tree/main/991.Dithering%20Background)| [Demo](https://nikt.com.ua/projects/htmlCssJs/991.Dithering%20Background/)|
 |992| [Efflorescence](https://github.com/xml12333/HTML_CSS_JS/tree/main/992.Efflorescence)| [Demo](https://nikt.com.ua/projects/htmlCssJs/992.Efflorescence/)|
 |993| [Keypad](https://github.com/xml12333/HTML_CSS_JS/tree/main/993.Keypad)| [Demo](https://nikt.com.ua/projects/htmlCssJs/993.Keypad/)|
+|994| [Paper](https://github.com/xml12333/HTML_CSS_JS/tree/main/994.Paper)| [Demo](https://nikt.com.ua/projects/htmlCssJs/994.Paper/)|
