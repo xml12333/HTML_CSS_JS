@@ -998,3 +998,4 @@
 |992| [Efflorescence](https://github.com/xml12333/HTML_CSS_JS/tree/main/992.Efflorescence)| [Demo](https://nikt.com.ua/projects/htmlCssJs/992.Efflorescence/)|
 |993| [Keypad](https://github.com/xml12333/HTML_CSS_JS/tree/main/993.Keypad)| [Demo](https://nikt.com.ua/projects/htmlCssJs/993.Keypad/)|
 |994| [Paper](https://github.com/xml12333/HTML_CSS_JS/tree/main/994.Paper)| [Demo](https://nikt.com.ua/projects/htmlCssJs/994.Paper/)|
+|995| [Trail Grid](https://github.com/xml12333/HTML_CSS_JS/tree/main/995.Trail%20Grid)| [Demo](https://nikt.com.ua/projects/htmlCssJs/995.Trail%20Grid/)|
