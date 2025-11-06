@@ -1,0 +1,291 @@
+/* --- 1. PROPERTY REGISTRATION --- */
+/* scroll properties */
+@property --scroll-position {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+@property --scroll-position-delayed {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+@property --scroll-direction {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+/* property that the setter animations will change. */
+@property --anim-direction {
+  syntax: "normal | reverse"; /* allowed keywords */
+  inherits: true;
+  initial-value: normal;
+}
+
+/* --- 2. SCROLL TRACKING & STATE SETUP --- */
+@-webkit-keyframes track-scroll {
+  to {
+    --scroll-position: 1;
+    --scroll-position-delayed: 1;
+  }
+}
+@keyframes track-scroll {
+  to {
+    --scroll-position: 1;
+    --scroll-position-delayed: 1;
+  }
+}
+:root {
+  -webkit-animation: track-scroll linear;
+          animation: track-scroll linear;
+  animation-timeline: scroll(root);
+}
+
+body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  --mb-height-codepen: /*calc(1px * infinity)*/ round(
+    to-zero,
+    calc(500dvh * 10),
+    1px
+  );
+  min-height: var(--mb-height-codepen);
+  @media (any-pointer: fine) {
+    --mb-height-codepen: calc(infinity * 1vh);
+  }
+  background: #e5e5e5;
+  font-family: sans-serif;
+  container-type: inline-size;
+  transition: --scroll-position-delayed 0.2s linear;
+  --scroll-velocity: calc(
+    var(--scroll-position) - var(--scroll-position-delayed)
+  );
+  --scroll-direction: sign(var(--scroll-velocity));
+
+  --when-scrolling: abs(var(--scroll-direction));
+  --when-not-scrolling: calc(1 - var(--when-scrolling));
+}
+
+@-webkit-keyframes move-along-path {
+  0% {
+    opacity: 0;
+  }
+  10%,
+  70% {
+    opacity: 1;
+  }
+  94% {
+    opacity: 0;
+  }
+  to {
+    offset-distance: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes move-along-path {
+  0% {
+    opacity: 0;
+  }
+  10%,
+  70% {
+    opacity: 1;
+  }
+  94% {
+    opacity: 0;
+  }
+  to {
+    offset-distance: 100%;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes set-direction-normal {
+  to {
+    --anim-direction: normal;
+  }
+}
+
+@keyframes set-direction-normal {
+  to {
+    --anim-direction: normal;
+  }
+}
+@-webkit-keyframes set-direction-reverse {
+  to {
+    --anim-direction: reverse;
+  }
+}
+@keyframes set-direction-reverse {
+  to {
+    --anim-direction: reverse;
+  }
+}
+
+/* --- MARQUEE & ITEMS SETUP --- */
+.marquee-container {
+  position: /*relative*/ sticky;
+  top: 30vh;
+  width: 100vmax;
+  height: 200px;
+  min-width: 100vw;
+  max-width: 100vw;
+  overflow-x: clip;
+}
+#marquee-items {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  --siblings-number: 15;
+  --spacing: 1;
+  transform: scale(0.3);
+  transform-origin: left;
+
+  --duration-idle: 25s;
+  --duration-fast: 8s;
+}
+@media (width > 1100px) {
+  #marquee-items {
+    transform: scale(1);
+  }
+}
+
+.marquee-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(80px - -2vw);
+  height: calc(80px - -2vw);
+  offset-path: path(
+    "M 0 386.544 C 471.489 386.544 828.997 452.932 902.881 141.608 C 1001.08 -272.18 -71.355 375.057 1649.36 386.544 L 2000 386.544"
+  );
+  offset-rotate: auto;
+  transform: scale(2);
+  transform-origin: left;
+  --duration: calc(
+    var(--when-not-scrolling) * var(--duration-idle) + var(--when-scrolling) *
+      var(--duration-fast)
+  );
+  -webkit-animation-name: move-along-path, set-direction-normal, set-direction-reverse;
+          animation-name: move-along-path, set-direction-normal, set-direction-reverse;
+  -webkit-animation-duration: var(--duration), 0.1s, 0.1s;
+          animation-duration: var(--duration), 0.1s, 0.1s;
+  -webkit-animation-timing-function: linear, linear, linear;
+          animation-timing-function: linear, linear, linear;
+  -webkit-animation-fill-mode: none, forwards, forwards;
+          animation-fill-mode: none, forwards, forwards;
+  -webkit-animation-iteration-count: infinite, 1, 1;
+          animation-iteration-count: infinite, 1, 1;
+  -webkit-animation-play-state: running, paused, paused;
+          animation-play-state: running, paused, paused;
+  -webkit-animation-direction: var(--anim-direction);
+          animation-direction: var(--anim-direction);
+  -webkit-animation-delay: calc(
+    (var(--sibling-index) / var(--siblings-number)) * var(--spacing) *
+      var(--duration) * -1
+  );
+          animation-delay: calc(
+    (var(--sibling-index) / var(--siblings-number)) * var(--spacing) *
+      var(--duration) * -1
+  );
+  @supports (offset-path: shape()) {
+    offset-path: shape(
+      from 0% 98.47%,
+      curve to 45.14% 35.49% with 23.57% 98.47%/41.45% 115.54%,
+      curve to 82.47% 98.47% with 50.05% -70.9%/-3.57% 95.52%,
+      line to 100% 98.47%
+    );
+  }
+
+  @media (width > 1100px) {
+    transform: scale(1);
+  }
+
+  /* --- SIBLING INDEX & CARD STYLES (withing for siblig-index() support) --- */
+  &:nth-child(1) {
+    --sibling-index: 1;
+  }
+  &:nth-child(2) {
+    --sibling-index: 2;
+  }
+  &:nth-child(3) {
+    --sibling-index: 3;
+  }
+  &:nth-child(4) {
+    --sibling-index: 4;
+  }
+  &:nth-child(5) {
+    --sibling-index: 5;
+  }
+  &:nth-child(6) {
+    --sibling-index: 6;
+  }
+  &:nth-child(7) {
+    --sibling-index: 7;
+  }
+  &:nth-child(8) {
+    --sibling-index: 8;
+  }
+  &:nth-child(9) {
+    --sibling-index: 9;
+  }
+  &:nth-child(10) {
+    --sibling-index: 10;
+  }
+  &:nth-child(11) {
+    --sibling-index: 11;
+  }
+  &:nth-child(12) {
+    --sibling-index: 12;
+  }
+  &:nth-child(13) {
+    --sibling-index: 13;
+  }
+  &:nth-child(14) {
+    --sibling-index: 14;
+  }
+  &:nth-child(15) {
+    --sibling-index: 15;
+  }
+}
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+
+@container style(--scroll-direction: 1) {
+  .marquee-item {
+    --anim-direction: normal;
+    -webkit-animation-play-state: running, running, paused;
+            animation-play-state: running, running, paused;
+  }
+}
+
+/* When scrolling UP, run the 'set-reverse' animation once. */
+@container style(--scroll-direction: -1) {
+  .marquee-item {
+    --anim-direction: reverse;
+    -webkit-animation-play-state: running, paused, running;
+            animation-play-state: running, paused, running;
+  }
+}
+
+/*test*/
+@container style(--scroll-direction: 0) {
+  /* Scroll is idle, so we keep the current header position by setting the transition-delay to infinity */
+  .marquee-item {
+    transition-delay: calc(infinity * 1s);
+  }
+}
