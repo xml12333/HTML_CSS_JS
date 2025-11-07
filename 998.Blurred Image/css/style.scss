@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100dvh;
+  padding: 24px;
+  @include flexCenter;
+  
+  color: #222;
+  background-color: #ececec;
+  background: linear-gradient(45deg, #bdbdfa, #efe2dc) no-repeat center / auto;
+  font-family: "Aboreto", system-ui;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  
+}
+
+.image-wrapper {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  @include flexCenter;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 5px 5px 20px #0005;
+  
+  .image-bg {
+    position: absolute;
+    inset: 0;
+    background: no-repeat center / cover;
+    
+    // blur the expanded bg
+    filter: blur(10px) brightness(0.8) contrast(0.7);
+  }
+  
+  --mask-gradient: transparent, rgb(255, 255, 255) 20% 80%, transparent;
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    
+    // add fade-out edges
+    mask: linear-gradient(0deg, var(--mask-gradient));
+    
+    &.vertical {
+      mask: linear-gradient(90deg, var(--mask-gradient));
+    }
+  }
+}
+.image-list {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  
+  .thumbnail {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    background: #fffa no-repeat center / contain;
+    transition: all 0.2s;
+    box-shadow: 2px 2px 10px #0005;
+    cursor: pointer;
+    
+    &:hover {
+      box-shadow: 5px 5px 15px #000a;
+      
+    }
+  }
+}
