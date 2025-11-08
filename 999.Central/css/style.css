@@ -1,0 +1,8 @@
+body {
+  background: rgb(75, 85, 95);
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}

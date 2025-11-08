@@ -1002,3 +1002,4 @@
 |996| [Helmet Reveal](https://github.com/xml12333/HTML_CSS_JS/tree/main/996.Helmet%20Reveal)| [Demo](https://nikt.com.ua/projects/htmlCssJs/996.Helmet%20Reveal/)|
 |997| [Cards Path](https://github.com/xml12333/HTML_CSS_JS/tree/main/997.Cards%20Path)| [Demo](https://nikt.com.ua/projects/htmlCssJs/997.Cards%20Path/)|
 |998| [Blurred Image](https://github.com/xml12333/HTML_CSS_JS/tree/main/998.Blurred%20Image)| [Demo](https://nikt.com.ua/projects/htmlCssJs/998.Blurred%20Image/)|
+|999| [Central](https://github.com/xml12333/HTML_CSS_JS/tree/main/999.Central)| [Demo](https://nikt.com.ua/projects/htmlCssJs/999.Central/)|
