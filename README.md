@@ -1003,3 +1003,4 @@
 |997| [Cards Path](https://github.com/xml12333/HTML_CSS_JS/tree/main/997.Cards%20Path)| [Demo](https://nikt.com.ua/projects/htmlCssJs/997.Cards%20Path/)|
 |998| [Blurred Image](https://github.com/xml12333/HTML_CSS_JS/tree/main/998.Blurred%20Image)| [Demo](https://nikt.com.ua/projects/htmlCssJs/998.Blurred%20Image/)|
 |999| [Central](https://github.com/xml12333/HTML_CSS_JS/tree/main/999.Central)| [Demo](https://nikt.com.ua/projects/htmlCssJs/999.Central/)|
+|1000| [Text Animation](https://github.com/xml12333/HTML_CSS_JS/tree/main/1000.Text%20Animation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1000.Text%20Animation/)|

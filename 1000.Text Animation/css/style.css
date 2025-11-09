@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+@property --s {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 0%;
+}
+@property --sm {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 0%;
+}
+@property --x {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: -180%;
+}
+@property --x2 {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 0%;
+}
+@property --sc {
+	syntax: '<numbers>';
+	inherits: false;
+	initial-value: 1;
+}
+@property --ry {
+	syntax: '<degrees>';
+	inherits: false;
+	initial-value: -33deg;
+}
+@property --ry2 {
+	syntax: '<angle>';
+	inherits: false;
+	initial-value: 0deg;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Fjalla One', sans-serif;
+}
+
+html, body {
+	width: 100%;
+	height: 100svh;
+	background: #000;
+	display: grid;
+	place-items: center;
+	overflow: hidden;
+}
+
+.scene,
+.scene2 {
+	position: relative;
+	color: #fff;
+	font-size: 10rem;
+	transform-style: preserve-3d;
+	perspective: 1000px;
+}
+
+.scene2 {
+	position: absolute;
+}
+
+.scene {
+	width: fit-content;
+}
+
+.scene span {
+	display: block;
+}
+
+.move-number {
+	position: absolute;
+	right: 0;
+	transform-style: preserve-3d;
+	perspective: 1000px;
+	transform: translateX(var(--x));
+	animation: move 9s linear forwards;
+	will-change: transform;
+}
+
+.move-letter {
+	position: absolute;
+	left: var(--x2);
+	right: 0;
+	opacity: 0;
+	transform: rotate(var(--ry2));
+	animation: moveletter .9s 4s ease-in-out forwards;
+	display: inline-block;
+	width: fit-content;
+}
+
+.last-item {
+	transform: scale(1, var(--sc)) rotateY(var(--ry)) translateZ(-3px);
+	color: red;
+	transition: transform 0.3s linear;
+}
+
+.number-container {
+	mask: linear-gradient(to right, transparent 0%, black 0%, black var(--s), transparent var(--s));
+	transform: translateZ(2px);
+	animation: move2 9s ease-in-out forwards;
+}
+
+.msn-container {
+	mask: linear-gradient(to right, transparent 0%, black 0%, black var(--sm), transparent var(--sm));
+	animation: msn-container 9s 4.07s ease-in-out forwards;
+}
+
+.mask-number {
+	display: flex;
+}
+
+.mask-number span {
+	color: red;
+}
+
+@keyframes move {
+	0% {
+		--x: -180%;
+		--sc: 1;
+		--ry: -33deg;
+	}
+	1% {
+		--sc: 2;
+	}
+	10%, 100% {
+		--sc: 2;
+		--x: 94%;
+	}
+	22%, 100% {
+		--sc: 1;
+		--ry: 0deg;
+	}
+	30.2%, 40% {
+		--x: 94%;
+		--ry: -33deg;
+		--sc: 2;
+	}
+	40%, 100% {
+		--x: -180%;
+		--sc: 1;
+	}
+	40% {
+		opacity: 1;
+	}
+	42% {
+		opacity: 0;
+	}
+	100% {
+		--x: -187%;
+		--sc: 1;
+		--ry: -33deg;
+		opacity: 0;
+	}
+}
+
+@keyframes move2 {
+	0% {
+		--s: 0%;
+	}
+	11%, 100% {
+		--s: 100%;
+	}
+	19%, 30% {
+		--s: 100%;
+	}
+	39%, 100% {
+		--s: 0%;
+	}
+}
+
+@keyframes msn-container {
+	0% {
+		filter: blur(30px) contrast(10);  
+		--sm: 0%;
+	}
+	11%, 100% {
+		filter: blur(0px) contrast(10);  
+		--sm: 100%;
+	}
+}
+
+@keyframes moveletter {
+	0% {
+		opacity: 0;
+		--x2: 0%;
+		--ry2: 0deg; 
+	}
+	2%, 100% {
+		opacity: 1;
+	}
+	100% {
+		--x2: 87%;
+		--ry2: 720deg;
+	}
+}
