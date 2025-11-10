@@ -1,0 +1,503 @@
+@layer reset, theme, layout, components;
+
+@layer reset {
+	*,
+	*::after,
+	*::before {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	body,
+	html {
+		block-size: 100%;
+		color-scheme: light dark;
+	}
+}
+
+@layer theme {
+	:root {
+		--sky-color-1: hsl(15 100% 50%);
+		--sky-color-2: hsl(39 100% 70%);
+		--sky-color-3: hsl(200 70% 60%);
+		--sky-color-4: hsl(39 100% 50%);
+		--sky-color-5: hsl(15 100% 40%);
+		--sky-color-6: hsl(220 50% 10%);
+		--wave-color-1: hsl(15 80% 30%);
+		--wave-color-2: hsl(39 80% 55%);
+		--wave-color-3: hsl(200 50% 45%);
+		--wave-color-4: hsl(39 80% 35%);
+		--wave-color-5: hsl(15 80% 30%);
+		--wave-color-6: hsl(220 40% 40%);
+		--footer-bg: color-mix(in srgb, var(--sky-color-6), transparent 20%);
+		--footer-text: hsl(39 100% 85%);
+		--footer-text-hover: hsl(39 100% 95%);
+	}
+}
+
+@layer layout {
+	body {
+		align-items: center;
+		animation: skyCycle 24s infinite;
+		background-color: var(--sky-color-1);
+		display: flex;
+		height: 100svh;
+		justify-content: center;
+		margin: 0;
+		overflow: hidden;
+		font-family: system-ui, -apple-system, sans-serif;
+	}
+
+	.container {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+	}
+}
+
+@layer components {
+	.wave {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 200%;
+		height: 100%;
+		background: var(--wave-color-1);
+		transform-origin: center bottom;
+		will-change: transform, background;
+	}
+
+	.wave-1 {
+		--ty: 0;
+		opacity: 0.55;
+		animation: waveMoveReverse 7s ease-in-out infinite,
+			waveFill 24s ease-in-out infinite;
+		clip-path: shape(
+			from 0% 66.67%,
+			curve to 75% 66.67% with 25% 50% / 50% 83.33%,
+			curve to 150% 66.67% with 100% 50% / 125% 83.33%,
+			line to 150% 100%,
+			line to 0% 100%,
+			close
+		);
+	}
+
+	.wave-2 {
+		--ty: 2.5%;
+		opacity: 0.5;
+		animation: waveMove 9s ease-in-out infinite, waveFill 24s ease-in-out infinite;
+		width: 300%;
+		clip-path: shape(
+			from 0% 75%,
+			curve to 50% 75% with 16.67% 58.33% / 33.33% 91.67%,
+			curve to 100% 75% with 66.67% 58.33% / 83.33% 91.67%,
+			curve to 150% 75% with 116.67% 58.33% / 133.33% 91.67%,
+			line to 150% 100%,
+			line to 0% 100%,
+			close
+		);
+	}
+
+	.wave-3 {
+		--ty: 5%;
+		opacity: 0.45;
+		animation: waveMoveReverse 9s ease-in-out infinite,
+			waveFill 24s ease-in-out infinite;
+		clip-path: shape(
+			from 0% 83.33%,
+			curve to 75% 83.33% with 25% 66.67% / 50% 100%,
+			curve to 150% 83.33% with 100% 66.67% / 125% 100%,
+			line to 150% 100%,
+			line to 0% 100%,
+			close
+		);
+	}
+
+	.wave-4 {
+		--ty: 7.5%;
+		opacity: 0.4;
+		animation: waveMove 7s ease-in-out infinite, waveFill 24s ease-in-out infinite;
+		width: 300%;
+		clip-path: shape(
+			from 0% 58.33%,
+			curve to 50% 58.33% with 16.67% 41.67% / 33.33% 75%,
+			curve to 100% 58.33% with 66.67% 41.67% / 83.33% 75%,
+			curve to 150% 58.33% with 116.67% 41.67% / 133.33% 75%,
+			line to 150% 100%,
+			line to 0% 100%,
+			close
+		);
+	}
+
+	.interference {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 400%;
+		height: 100%;
+		opacity: 0.12;
+		transform-origin: center bottom;
+		will-change: transform, background;
+	}
+
+	.interference-1 {
+		background: var(--wave-color-1);
+		clip-path: shape(
+			from 0% 71%,
+			curve to 16.67% 70% with 5.56% 71% / 11.11% 69.5%,
+			curve to 33.33% 71% with 22.22% 69.5% / 27.78% 71%,
+			curve to 50% 70% with 38.89% 71% / 44.44% 69.5%,
+			curve to 66.67% 71% with 55.56% 69.5% / 61.11% 71%,
+			curve to 83.33% 70% with 72.22% 71% / 77.78% 69.5%,
+			curve to 100% 71% with 88.89% 69.5% / 94.44% 71%,
+			curve to 116.67% 70% with 105.56% 71% / 111.11% 69.5%,
+			curve to 133.33% 71% with 122.22% 69.5% / 127.78% 71%,
+			curve to 150% 70% with 138.89% 71% / 144.44% 69.5%,
+			curve to 166.67% 71% with 155.56% 69.5% / 161.11% 71%,
+			curve to 183.33% 70% with 172.22% 71% / 177.78% 69.5%,
+			curve to 200% 71% with 188.89% 69.5% / 194.44% 71%,
+			line to 200% 100%,
+			line to 0% 100%,
+			close
+		);
+		animation: interferenceMove1 10s ease-in-out infinite,
+			waveFill 24s ease-in-out infinite;
+	}
+
+	.interference-2 {
+		background: var(--wave-color-1);
+		opacity: 0.1;
+		clip-path: shape(
+			from 0% 76%,
+			curve to 12.5% 77% with 4.17% 75.5% / 8.33% 77.5%,
+			curve to 25% 76% with 16.67% 77.5% / 20.83% 75.5%,
+			curve to 37.5% 77% with 29.17% 75.5% / 33.33% 77.5%,
+			curve to 50% 76% with 41.67% 77.5% / 45.83% 75.5%,
+			curve to 62.5% 77% with 54.17% 75.5% / 58.33% 77.5%,
+			curve to 75% 76% with 66.67% 77.5% / 70.83% 75.5%,
+			curve to 87.5% 77% with 79.17% 75.5% / 83.33% 77.5%,
+			curve to 100% 76% with 91.67% 77.5% / 95.83% 75.5%,
+			curve to 112.5% 77% with 104.17% 75.5% / 108.33% 77.5%,
+			curve to 125% 76% with 116.67% 77.5% / 120.83% 75.5%,
+			curve to 137.5% 77% with 129.17% 75.5% / 133.33% 77.5%,
+			curve to 150% 76% with 141.67% 77.5% / 145.83% 75.5%,
+			curve to 162.5% 77% with 154.17% 75.5% / 158.33% 77.5%,
+			curve to 175% 76% with 166.67% 77.5% / 170.83% 75.5%,
+			curve to 187.5% 77% with 179.17% 75.5% / 183.33% 77.5%,
+			curve to 200% 76% with 191.67% 77.5% / 195.83% 75.5%,
+			line to 200% 100%,
+			line to 0% 100%,
+			close
+		);
+		animation: interferenceMove2 15s ease-in-out infinite,
+			waveFill 24s ease-in-out infinite;
+	}
+
+	.interference-3 {
+		background: var(--wave-color-1);
+		opacity: 0.08;
+		clip-path: shape(
+			from 0% 81%,
+			curve to 10% 80.5% with 3.33% 81.25% / 6.67% 80.25%,
+			curve to 20% 81% with 13.33% 80.25% / 16.67% 81.25%,
+			curve to 30% 80.5% with 23.33% 81.25% / 26.67% 80.25%,
+			curve to 40% 81% with 33.33% 80.25% / 36.67% 81.25%,
+			curve to 50% 80.5% with 43.33% 81.25% / 46.67% 80.25%,
+			curve to 60% 81% with 53.33% 80.25% / 56.67% 81.25%,
+			curve to 70% 80.5% with 63.33% 81.25% / 66.67% 80.25%,
+			curve to 80% 81% with 73.33% 80.25% / 76.67% 81.25%,
+			curve to 90% 80.5% with 83.33% 81.25% / 86.67% 80.25%,
+			curve to 100% 81% with 93.33% 80.25% / 96.67% 81.25%,
+			curve to 110% 80.5% with 103.33% 81.25% / 106.67% 80.25%,
+			curve to 120% 81% with 113.33% 80.25% / 116.67% 81.25%,
+			curve to 130% 80.5% with 123.33% 81.25% / 126.67% 80.25%,
+			curve to 140% 81% with 133.33% 80.25% / 136.67% 81.25%,
+			curve to 150% 80.5% with 143.33% 81.25% / 146.67% 80.25%,
+			curve to 160% 81% with 153.33% 80.25% / 156.67% 81.25%,
+			curve to 170% 80.5% with 163.33% 81.25% / 166.67% 80.25%,
+			curve to 180% 81% with 173.33% 80.25% / 176.67% 81.25%,
+			curve to 190% 80.5% with 183.33% 81.25% / 186.67% 80.25%,
+			curve to 200% 81% with 193.33% 80.25% / 196.67% 81.25%,
+			line to 200% 100%,
+			line to 0% 100%,
+			close
+		);
+		animation: interferenceMove3 19s ease-in-out infinite,
+			waveFill 24s ease-in-out infinite;
+	}
+
+	.interference-4 {
+		background: var(--wave-color-1);
+		opacity: 0.06;
+		clip-path: shape(
+			from 0% 84%,
+			curve to 8.33% 84.3% with 2.78% 83.85% / 5.56% 84.45%,
+			curve to 16.67% 84% with 11.11% 84.45% / 13.89% 83.85%,
+			curve to 25% 84.3% with 19.44% 83.85% / 22.22% 84.45%,
+			curve to 33.33% 84% with 27.78% 84.45% / 30.56% 83.85%,
+			curve to 41.67% 84.3% with 36.11% 83.85% / 38.89% 84.45%,
+			curve to 50% 84% with 44.44% 84.45% / 47.22% 83.85%,
+			curve to 58.33% 84.3% with 52.78% 83.85% / 55.56% 84.45%,
+			curve to 66.67% 84% with 61.11% 84.45% / 63.89% 83.85%,
+			curve to 75% 84.3% with 69.44% 83.85% / 72.22% 84.45%,
+			curve to 83.33% 84% with 77.78% 84.45% / 80.56% 83.85%,
+			curve to 91.67% 84.3% with 86.11% 83.85% / 88.89% 84.45%,
+			curve to 100% 84% with 94.44% 84.45% / 97.22% 83.85%,
+			curve to 108.33% 84.3% with 102.78% 83.85% / 105.56% 84.45%,
+			curve to 116.67% 84% with 111.11% 84.45% / 113.89% 83.85%,
+			curve to 125% 84.3% with 119.44% 83.85% / 122.22% 84.45%,
+			curve to 133.33% 84% with 127.78% 84.45% / 130.56% 83.85%,
+			curve to 141.67% 84.3% with 136.11% 83.85% / 138.89% 84.45%,
+			curve to 150% 84% with 144.44% 84.45% / 147.22% 83.85%,
+			curve to 158.33% 84.3% with 152.78% 83.85% / 155.56% 84.45%,
+			curve to 166.67% 84% with 161.11% 84.45% / 163.89% 83.85%,
+			curve to 175% 84.3% with 169.44% 83.85% / 172.22% 84.45%,
+			curve to 183.33% 84% with 177.78% 84.45% / 180.56% 83.85%,
+			curve to 191.67% 84.3% with 186.11% 83.85% / 188.89% 84.45%,
+			curve to 200% 84% with 194.44% 84.45% / 197.22% 83.85%,
+			line to 200% 100%,
+			line to 0% 100%,
+			close
+		);
+		animation: interferenceMove4 23s ease-in-out infinite,
+			waveFill 24s ease-in-out infinite;
+	}
+
+	.interference-5 {
+		background: var(--wave-color-1);
+		opacity: 0.05;
+		clip-path: shape(
+			from 0% 87%,
+			curve to 6.67% 87.2% with 2.22% 86.9% / 4.44% 87.3%,
+			curve to 13.33% 87% with 8.89% 87.3% / 11.11% 86.9%,
+			curve to 20% 87.2% with 15.56% 86.9% / 17.78% 87.3%,
+			curve to 26.67% 87% with 22.22% 87.3% / 24.44% 86.9%,
+			curve to 33.33% 87.2% with 28.89% 86.9% / 31.11% 87.3%,
+			curve to 40% 87% with 35.56% 87.3% / 37.78% 86.9%,
+			curve to 46.67% 87.2% with 42.22% 86.9% / 44.44% 87.3%,
+			curve to 53.33% 87% with 48.89% 87.3% / 51.11% 86.9%,
+			curve to 60% 87.2% with 55.56% 86.9% / 57.78% 87.3%,
+			curve to 66.67% 87% with 62.22% 87.3% / 64.44% 86.9%,
+			curve to 73.33% 87.2% with 68.89% 86.9% / 71.11% 87.3%,
+			curve to 80% 87% with 75.56% 87.3% / 77.78% 86.9%,
+			curve to 86.67% 87.2% with 82.22% 86.9% / 84.44% 87.3%,
+			curve to 93.33% 87% with 88.89% 87.3% / 91.11% 86.9%,
+			curve to 100% 87.2% with 95.56% 86.9% / 97.78% 87.3%,
+			curve to 106.67% 87% with 102.22% 87.3% / 104.44% 86.9%,
+			curve to 113.33% 87.2% with 108.89% 86.9% / 111.11% 87.3%,
+			curve to 120% 87% with 115.56% 87.3% / 117.78% 86.9%,
+			curve to 126.67% 87.2% with 122.22% 86.9% / 124.44% 87.3%,
+			curve to 133.33% 87% with 128.89% 87.3% / 131.11% 86.9%,
+			curve to 140% 87.2% with 135.56% 86.9% / 137.78% 87.3%,
+			curve to 146.67% 87% with 142.22% 87.3% / 144.44% 86.9%,
+			curve to 153.33% 87.2% with 148.89% 86.9% / 151.11% 87.3%,
+			curve to 160% 87% with 155.56% 87.3% / 157.78% 86.9%,
+			curve to 166.67% 87.2% with 162.22% 86.9% / 164.44% 87.3%,
+			curve to 173.33% 87% with 168.89% 87.3% / 171.11% 86.9%,
+			curve to 180% 87.2% with 175.56% 86.9% / 177.78% 87.3%,
+			curve to 186.67% 87% with 182.22% 87.3% / 184.44% 86.9%,
+			curve to 193.33% 87.2% with 188.89% 86.9% / 191.11% 87.3%,
+			curve to 200% 87% with 195.56% 87.3% / 197.78% 86.9%,
+			line to 200% 100%,
+			line to 0% 100%,
+			close
+		);
+		animation: interferenceMove5 29s ease-in-out infinite,
+			waveFill 24s ease-in-out infinite;
+	}
+
+	.unsupported-message {
+		display: none;
+		position: fixed;
+		top: 1rem;
+		left: 50%;
+		transform: translateX(-50%);
+		background: color-mix(in srgb, var(--sky-color-6), transparent 10%);
+		color: var(--footer-text);
+		padding: 0.75rem 1.5rem;
+		border-radius: 0.5rem;
+		font-size: 0.875rem;
+		backdrop-filter: blur(0.5rem);
+		z-index: 1000;
+		text-align: center;
+		max-width: 90%;
+	}
+
+	.resources-layer {
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		z-index: 1000;
+		pointer-events: none;
+	}
+
+	.resources {
+		backdrop-filter: blur(0.375rem);
+		background: var(--footer-bg);
+		display: grid;
+		grid-auto-flow: column;
+		gap: 0;
+		font-size: 0.75rem;
+		line-height: 1.3;
+		padding: 0.375rem 0.625rem;
+		pointer-events: auto;
+	}
+
+	.resources a {
+		color: var(--footer-text);
+		text-decoration: none;
+		padding: 0 0.5rem;
+		border-left: thin solid color-mix(in srgb, currentColor, transparent 50%);
+		transition: color 0.25s ease, opacity 0.25s ease;
+	}
+
+	.resources a:first-child {
+		border: none;
+	}
+
+	.resources a:hover,
+	.resources a:focus-visible {
+		color: var(--footer-text-hover);
+		opacity: 0.85;
+	}
+
+	@keyframes skyCycle {
+		0% {
+			background-color: var(--sky-color-1);
+		}
+		16.6% {
+			background-color: var(--sky-color-2);
+		}
+		33.3% {
+			background-color: var(--sky-color-3);
+		}
+		50% {
+			background-color: var(--sky-color-4);
+		}
+		66.6% {
+			background-color: var(--sky-color-5);
+		}
+		83.3% {
+			background-color: var(--sky-color-6);
+		}
+		100% {
+			background-color: var(--sky-color-1);
+		}
+	}
+
+	@keyframes waveMoveReverse {
+		0% {
+			transform: translate3d(-50%, var(--ty), 0);
+		}
+		50% {
+			transform: translate3d(0, var(--ty), 0);
+		}
+		100% {
+			transform: translate3d(-50%, var(--ty), 0);
+		}
+	}
+
+	@keyframes waveMove {
+		0% {
+			transform: translate3d(0, var(--ty), 0);
+		}
+		50% {
+			transform: translate3d(-50%, var(--ty), 0);
+		}
+		100% {
+			transform: translate3d(0, var(--ty), 0);
+		}
+	}
+
+	@keyframes interferenceMove1 {
+		0% {
+			transform: translate3d(0, 0, 0);
+		}
+		100% {
+			transform: translate3d(-25%, 0, 0);
+		}
+	}
+
+	@keyframes interferenceMove2 {
+		0% {
+			transform: translate3d(-25%, 0, 0);
+		}
+		100% {
+			transform: translate3d(-50%, 0, 0);
+		}
+	}
+
+	@keyframes interferenceMove3 {
+		0% {
+			transform: translate3d(0, 0, 0);
+		}
+		100% {
+			transform: translate3d(-50%, 0, 0);
+		}
+	}
+
+	@keyframes interferenceMove4 {
+		0% {
+			transform: translate3d(-50%, 0, 0);
+		}
+		100% {
+			transform: translate3d(-75%, 0, 0);
+		}
+	}
+
+	@keyframes interferenceMove5 {
+		0% {
+			transform: translate3d(-25%, 0, 0);
+		}
+		100% {
+			transform: translate3d(-75%, 0, 0);
+		}
+	}
+
+	@keyframes waveFill {
+		0% {
+			background: var(--wave-color-1);
+		}
+		16.6% {
+			background: var(--wave-color-2);
+		}
+		33.3% {
+			background: var(--wave-color-3);
+		}
+		50% {
+			background: var(--wave-color-4);
+		}
+		66.6% {
+			background: var(--wave-color-5);
+		}
+		83.3% {
+			background: var(--wave-color-6);
+		}
+		100% {
+			background: var(--wave-color-1);
+		}
+	}
+
+	@supports not (clip-path: shape(from 0% 0%, line to 100% 0%)) {
+		.unsupported-message {
+			display: block;
+		}
+
+		.wave {
+			clip-path: polygon(
+				0 70%,
+				20% 60%,
+				40% 70%,
+				60% 60%,
+				80% 70%,
+				100% 60%,
+				100% 100%,
+				0 100%
+			);
+		}
+	}
+}
