@@ -1,0 +1,392 @@
+@use "sass:list";
+@use "sass:math";
+
+* {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--hue: 223;
+	--gray50: hsl(var(--hue) 10% 95%);
+	--gray100: hsl(var(--hue) 10% 90%);
+	--gray150: hsl(var(--hue) 10% 85%);
+	--gray200: hsl(var(--hue) 10% 80%);
+	--gray300: hsl(var(--hue) 10% 70%);
+	--gray400: hsl(var(--hue) 10% 60%);
+	--gray500: hsl(var(--hue) 10% 50%);
+	--gray600: hsl(var(--hue) 10% 40%);
+	--gray700: hsl(var(--hue) 10% 30%);
+	--gray750: hsl(var(--hue) 10% 25%);
+	--gray800: hsl(var(--hue) 10% 20%);
+	--gray850: hsl(var(--hue) 10% 15%);
+	--gray900: hsl(var(--hue) 10% 10%);
+	--trans-dur: 0.3s;
+	color-scheme: light dark;
+	font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+}
+
+body {
+	background: {
+		color: light-dark(var(--gray100), var(--gray750));
+		image: linear-gradient(41deg, hsl(0 0% 0% / 0.08), hsl(0 0% 0% / 0));
+		position: center;
+	};
+	color: light-dark(var(--gray900), var(--gray100));
+	font: 1em / 1.5 sans-serif;
+	display: grid;
+	place-items: center;
+	height: 100vh;
+	min-height: 13.5em;
+	transition:
+		background-color var(--trans-dur),
+		color var(--trans-dur);
+}
+
+.board {
+	$animations:
+		(diagonal-left, diagonal-down)
+		(straight-left, straight-no-y)
+		(diagonal-left, diagonal-up)
+		(none, straight-up)
+		(diagonal-right, diagonal-up)
+		(straight-right, straight-no-y)
+		(diagonal-right, diagonal-down)
+		(none, straight-down);
+	$ball-hues: 225 45 0 315 30 180 270 120;
+	$balls: 8;
+	$fakes: 2;
+	$duration: 1s;
+	$hole-distance: 9em;
+	$hole-distance-offset: 1.5em;
+	$hole-size: 1.5em;
+	$sector-distance: 8.25em;
+
+	border-radius: 50%;
+	position: relative;
+	width: 13.5em;
+	height: 13.5em;
+	transform: rotateX(30deg);
+
+	&__ball,
+	&__hole,
+	&__sector {
+		position: absolute;
+		inset: 0;
+	}
+
+	&__ball,
+	&__hole {
+		width: $hole-size;
+		height: $hole-size;
+	}
+
+	&__ball {
+		animation-timing-function: linear;
+		transition: box-shadow var(--trans-dur);
+
+		&,
+		&::before {
+			animation: {
+				duration: $duration;
+				iteration-count: infinite;
+			};
+		}
+
+		&::before {
+			border-radius: 50%;
+			content: "";
+			display: block;
+			position: absolute;
+			inset: 0;
+		}
+	}
+
+	&__hole {
+		background-color: light-dark(var(--gray500), var(--gray900));
+		border-radius: 50%;
+		box-shadow:
+			0 -0.0625em 0.125em light-dark(var(--gray50), var(--gray700)),
+			0 0.125em 0.125em light-dark(var(--gray50), var(--gray700)) inset,
+			0 0.625em 0.375em light-dark(var(--gray150), var(--gray800)) inset;
+		margin: auto;
+		transition:
+			background-color var(--trans-dur),
+			box-shadow var(--trans-dur);
+
+		@for $h from 1 through $balls * 2 {
+			$angle: 45 * (math.$pi / 180) * math.floor(($h / 2));
+			$distance: $hole-distance-offset + $hole-distance * ((($h % 2) + 1) / 2);
+
+			&:nth-child(#{$h}) {
+				bottom: math.cos($angle) * $distance;
+				left: math.sin($angle) * $distance;
+			}
+		}
+	}
+
+	&__sector {
+		margin: auto;
+		overflow: hidden;
+		width: 3.75em;
+		height: 7.5em;
+
+		&:nth-child(2n + 1) {
+			top: -$hole-size * 1;
+			width: $hole-size * 2;
+			height: $hole-size * 3
+		}
+
+		&:nth-child(2n + 2) {
+			top: -$hole-size * 1.5;
+			width: $hole-size * 2.5;
+			height: $hole-size * 2.5;
+		}
+
+		&:nth-child(4n),
+		&:nth-child(n + 9) {
+			animation: {
+				duration: $duration;
+				timing-function: step-start;
+				iteration-count: infinite
+			};
+			top: -$hole-size * 0.75;
+			width: $hole-size;
+			height: $hole-size * 3.25;
+		}
+
+		&:nth-child(4n + 1) {
+			clip-path: url(#ball-clip-diagonal1);
+		}
+
+		&:nth-child(4n + 2) {
+			clip-path: url(#ball-clip-x);
+		}
+
+		&:nth-child(4n + 3) {
+			clip-path: url(#ball-clip-diagonal2);
+		}
+
+		&:nth-child(4),
+		&:nth-child(10) {
+			animation-name: straight-clip-y-a;
+			clip-path: url(#ball-clip-y-a);
+		}
+
+		&:nth-child(8),
+		&:nth-child(9) {
+			animation-name: straight-clip-y-b;
+			clip-path: url(#ball-clip-y-b);
+		}
+	}
+
+	@for $b from 1 through $balls + $fakes {
+		$rotateTimes: $b;
+
+		@if ($b == 9) {
+			$rotateTimes: 4;
+		}
+
+		@else if ($b == 10) {
+			$rotateTimes: 8;
+		}
+
+		$angle: 45 * (math.$pi / 180) * $rotateTimes;
+
+		&__sector:nth-child(#{$b}) {
+			bottom: math.cos($angle) * $sector-distance;
+			left: math.sin($angle) * $sector-distance;
+		}
+
+		&__sector:nth-child(#{$b}) &__ball {
+			animation-name: list.nth(list.nth($animations, $rotateTimes), 1);
+
+			&,
+			&::before {
+				animation-delay: -$duration * (1 - 0.125 * $rotateTimes);
+			}
+
+			&::before {
+				animation-name: list.nth(list.nth($animations, $rotateTimes), 2);
+				background-color: hsl(list.nth($ball-hues, $rotateTimes) 75% 60%);
+				background-image:
+					radial-gradient(
+						25% 35% at 75% 45%,
+						hsl(list.nth($ball-hues, $rotateTimes) 75% 85%) 20%,
+						hsl(list.nth($ball-hues, $rotateTimes) 75% 85% / 0) 50%
+					),
+					radial-gradient(
+						100% 130% at 0 60%,
+						hsl(list.nth($ball-hues, $rotateTimes) 75% 40%) 25%,
+						hsl(list.nth($ball-hues, $rotateTimes) 75% 40% / 0) 50%
+					);
+				box-shadow: 0 0 0.1875em light-dark(hsl(list.nth($ball-hues, $rotateTimes) 70% 100%), hsl(list.nth($ball-hues, $rotateTimes) 75% 70%)) inset;
+			}
+		}
+	}
+}
+
+// Animations
+$ease-in: cubic-bezier(0.32, 0, 0.67, 0);
+$ease-out: cubic-bezier(0.33, 1, 0.68, 1);
+$ball-scale-x: 0.9;
+$ball-scale-y: 1.05;
+
+@keyframes diagonal-down {
+	from {
+		animation-timing-function: $ease-out;
+		transform: translateY(200%) scale($ball-scale-x, $ball-scale-y);
+	}
+
+	50% {
+		animation-timing-function: $ease-in;
+		transform: translateY(5%) scale($ball-scale-x, $ball-scale-y);
+	}
+
+	to {
+		transform: translateY(300%) scale($ball-scale-x, $ball-scale-y);
+	}
+}
+
+@keyframes diagonal-left {
+	from,
+	8% {
+		transform: translateX(100%);
+	}
+
+	92%,
+	to {
+		transform: translateX(0);
+	}
+}
+
+@keyframes diagonal-right {
+	from,
+	8% {
+		transform: translateX(0);
+	}
+
+	92%,
+	to {
+		transform: translateX(100%);
+	}
+}
+
+@keyframes diagonal-up {
+	from {
+		animation-timing-function: $ease-out;
+		transform: translateY(300%) scale($ball-scale-x, $ball-scale-y);
+	}
+
+	50% {
+		animation-timing-function: $ease-in;
+		transform: translateY(5%) scale($ball-scale-x, $ball-scale-y);
+	}
+
+	to {
+		transform: translateY(200%) scale($ball-scale-x, $ball-scale-y);
+	}
+}
+
+@keyframes straight-left {
+	from,
+	8% {
+		transform: translateX(150%);
+	}
+
+	92%,
+	to {
+		transform: translateX(0);
+	}
+}
+
+@keyframes straight-right {
+	from,
+	8% {
+		transform: translateX(0);
+	}
+
+	92%,
+	to {
+		transform: translateX(150%);
+	}
+}
+
+@keyframes straight-clip-y-a {
+	from,
+	to {
+		// using opacity instead of visibility fixes flickering in Firefox
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
+}
+
+@keyframes straight-clip-y-b {
+	from,
+	to {
+		// same here
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+}
+
+@keyframes straight-down {
+	from {
+		// using 0 opacity and immediately changing it to 1 fixes flickering in Safari
+		animation-timing-function: step-start;
+		opacity: 0;
+		transform: translateY(175%) scale($ball-scale-x, $ball-scale-y);
+	}
+
+	0.001% {
+		animation-timing-function: $ease-out;
+		opacity: 1;
+		transform: translateY(175%) scale($ball-scale-x, $ball-scale-y);
+	}
+
+	50% {
+		animation-timing-function: $ease-in;
+		transform: translateY(5%) scale($ball-scale-x, $ball-scale-y);
+	}
+
+	to {
+		transform: translateY(325%) scale($ball-scale-x, $ball-scale-y);
+	}
+}
+
+@keyframes straight-up {
+	from {
+		animation-timing-function: $ease-out;
+		transform: translateY(325%) scale($ball-scale-x, $ball-scale-y);
+	}
+
+	50% {
+		animation-timing-function: $ease-in;
+		transform: translateY(5%) scale($ball-scale-x, $ball-scale-y);
+	}
+
+	to {
+		transform: translateY(175%) scale($ball-scale-x, $ball-scale-y);
+	}
+}
+
+@keyframes straight-no-y {
+	from,
+	to {
+		animation-timing-function: $ease-out;
+		transform: translateY(250%) scale($ball-scale-x, $ball-scale-y);
+	}
+
+	50% {
+		animation-timing-function: $ease-in;
+		transform: translateY(5%) scale($ball-scale-x, $ball-scale-y);
+	}
+}

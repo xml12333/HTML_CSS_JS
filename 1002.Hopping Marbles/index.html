@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Hopping Marbles</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" /><link rel="stylesheet" href="./css/style.css">
+
+  </head>
+    
+  <body>
+  <div class="board">
+	<svg width="0" height="0">
+		<!-- d values must be between 0–1 for the clip to work -->
+		<clipPath id="ball-clip-diagonal1" clipPathUnits="objectBoundingBox">
+			<path d="M 0.75 0.667 C 0.612 0.667 0.5 0.592 0.5 0.5 L 0.5 0.833 C 0.5 0.925 0.388 1 0.25 1 C 0.112 1 0 0.925 0 0.833 L 0 0 L 1 0 L 1 0.5 C 1 0.592 0.888 0.667 0.75 0.667 Z" />
+		</clipPath>
+		<clipPath id="ball-clip-diagonal2" clipPathUnits="objectBoundingBox">
+			<path d="M 0.25 0.667 C 0.113 0.667 0 0.591 0 0.5 L 0 0.5 L 0 0 L 1 0 L 1 0.833 L 1 0.833 C 1 0.922 0.884 1 0.75 1 C 0.616 1 0.5 0.922 0.5 0.833 L 0.5 0.833 L 0.5 0.5 L 0.5 0.5 C 0.5 0.591 0.387 0.667 0.25 0.667 Z" />
+		</clipPath>
+		<clipPath id="ball-clip-x" clipPathUnits="objectBoundingBox">
+			<path d="M 0.2 1 C 0.0896 1 0 0.9104 0 0.8 L 0 0 L 1 0 L 1 0.8 C 1 0.9104 0.9104 1 0.8 1 C 0.6896 1 0.6 0.9104 0.6 0.8 L 0.4 0.8 C 0.4 0.9104 0.3104 1 0.2 1 Z" />
+		</clipPath>
+		<clipPath id="ball-clip-y-a" clipPathUnits="objectBoundingBox">
+			<path d="M 0.5 1 C 0.229 1 0 0.923 0 0.85 L 0 0.85 L 0 0 L 1 0 L 1 0.85 L 1 0.85 C 1 0.923 0.771 1 0.5 1 Z" />
+		</clipPath>
+		<clipPath id="ball-clip-y-b" clipPathUnits="objectBoundingBox">
+			<path d="M 0.5 0.538 C 0.224 0.538 0 0.47 0 0.385 C 0 0.377 0 0.369 0 0.36 L 0 0 L 1 0 L 1 0.386 L 1 0.386 C 1 0.47 0.775 0.538 0.5 0.538 Z" />
+		</clipPath>
+	</svg>
+	<div>
+		<div class="board__hole"></div>
+		<div class="board__hole"></div>
+		<div class="board__hole"></div>
+		<div class="board__hole"></div>
+		<div class="board__hole"></div>
+		<div class="board__hole"></div>
+		<div class="board__hole"></div>
+		<div class="board__hole"></div>
+		<div class="board__hole"></div>
+		<div class="board__hole"></div>
+		<div class="board__hole"></div>
+		<div class="board__hole"></div>
+		<div class="board__hole"></div>
+		<div class="board__hole"></div>
+		<div class="board__hole"></div>
+		<div class="board__hole"></div>
+	</div>
+	<div>
+		<div class="board__sector">
+			<div class="board__ball"></div>
+		</div>
+		<div class="board__sector">
+			<div class="board__ball"></div>
+		</div>
+		<div class="board__sector">
+			<div class="board__ball"></div>
+		</div>
+		<div class="board__sector">
+			<div class="board__ball"></div>
+		</div>
+		<div class="board__sector">
+			<div class="board__ball"></div>
+		</div>
+		<div class="board__sector">
+			<div class="board__ball"></div>
+		</div>
+		<div class="board__sector">
+			<div class="board__ball"></div>
+		</div>
+		<div class="board__sector">
+			<div class="board__ball"></div>
+		</div>
+		<!-- fake ones to fix 12 and 6 o’clock animations in Safari -->
+		<div class="board__sector">
+			<div class="board__ball"></div>
+		</div>
+		<div class="board__sector">
+			<div class="board__ball"></div>
+		</div>
+	</div>
+</div>
+    
+  </body>
+  
+</html>
