@@ -1,0 +1,277 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(218, 94%, 45%);
+  --first-color-alt: hsl(218, 100%, 40%);
+  --second-color: hsl(200, 85%, 64%);
+  --title-color: hsl(218, 48%, 22%);
+  --text-color: hsl(218, 8%, 36%);
+  --text-color-light: hsl(218, 8%, 54%);
+  --white-color: hsl(218, 100%, 98%);
+  --white-color-light: hsl(218, 48%, 80%);
+  --dark-color: hsl(218, 68%, 18%);
+  --gray-color: hsl(0, 0%, 92%);
+  --body-color: hsl(0, 0%, 100%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", sans-serif;
+  --biggest-font-size: 2.25rem;
+  --bigger-font-size: 1.75rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --biggest-font-size: 3.5rem;
+    --bigger-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: background-color 0.4s;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== THEME ===============*/
+/*========== Variables Dark theme ==========*/
+
+/*========== 
+	Color changes in some parts of 
+	the website, in dark theme
+==========*/
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding-block: 5rem 1rem;
+}
+
+.section__title {
+  text-align: center;
+  font-size: var(--bigger-font-size);
+  margin-bottom: 1rem;
+}
+
+.section__title span {
+  font-weight: var(--font-regular);
+}
+
+.main {
+  overflow: hidden;
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: var(--body-color);
+  z-index: var(--z-fixed);
+  transition: backgroun-color 0.4s, box-shadow 0.4s;
+}
+.nav {
+  position: relative;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__logo {
+  display: flex;
+  align-items: center;
+  column-gap: 0.25rem;
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  transition: color 0.4s;
+}
+.nav__logo i {
+  font-weight: initial;
+  font-size: 1.5rem;
+  color: var(--first-color);
+}
+.nav__logo:hover {
+  color: var(--first-color);
+}
+.nav__toggle,
+.nav__close,
+.nav__theme {
+  display: inline-flex;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--title-color);
+  transition: color 0.4s;
+}
+.nav__buttons {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+/* Navigation for mobile devices */
+@media screen and (max-width: 1150px) {
+  .nav__menu {
+    position: fixed;
+    top: -120%;
+    left: 0;
+    width: 100%;
+    background-color: var(--body-color);
+    box-shadow: 0 4px 16px hsla(218, 68%, 18%, 0.1);
+    padding-block: 5rem;
+    transition: top 0.4s;
+  }
+}
+.nav__list {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+.nav__link {
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+  transition: color 0.4s;
+}
+.nav__link:hover {
+  color: var(--first-color);
+}
+.nav__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+}
+/* Show menu */
+.show-menu {
+  top: 0;
+}
+/* Add shadow header */
+
+/* Active link */
+
+/*=============== BUTTON ===============*/
+
+/*=============== HOME ===============*/
+
+/*=============== DELIVERY ===============*/
+
+/*=============== ABOUT ===============*/
+
+/*=============== PRICES ===============*/
+
+/* Swiper class */
+
+/*=============== GALLERY ===============*/
+
+/*=============== CONTACT ===============*/
+
+/*=============== FOOTER ===============*/
+
+/*=============== SCROLL BAR ===============*/
+
+/*=============== SCROLL UP ===============*/
+
+/* Show Scroll Up */
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+/* For medium devices */
+
+/* For large devices */
+@media screen and (min-width: 1150px) {
+  .container {
+    margin-inline: auto;
+  }
+  .section {
+    padding-block: 7rem 2rem;
+  }
+  .section__title {
+    margin-bottom: 1.5rem;
+  }
+  .nav {
+    height: calc(var(--header-height) + 2rem);
+  }
+  .nav__toggle,
+  .nav__close {
+    display: none;
+  }
+  .nav__list {
+    flex-direction: none;
+    column-gap: 4rem;
+  }
+  /* .dark-theme .nav__menu{
+    box-shadow: none;
+  } */
+}
+/* For 2K resolutions (2048 x 1152, 2048 x 1536) */
