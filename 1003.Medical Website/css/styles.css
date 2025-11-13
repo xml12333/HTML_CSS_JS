@@ -220,9 +220,113 @@ img {
 /* Active link */
 
 /*=============== BUTTON ===============*/
-
+.button {
+  display: inline-flex;
+  background-color: var(--first-color);
+  color: var(--white-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 16px hsla(218, 94%, 45%, 0.3);
+  transition: background-color 0.4s;
+}
+.button:hover {
+  background-color: var(--first-color-alt);
+}
+.button-dark {
+  position: relative;
+  background: linear-gradient(var(--dark-color), var(--dark-color)),
+    linear-gradient(225deg, var(--second-color) 0%, var(--dark-color) 25%);
+  border: 3px solid transparent;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  color: var(--white-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 16px hsla(218, 60%, 18%, 0.4);
+  overflow: hidden;
+}
+.button-dark::after {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background-color: var(--second-color);
+  border-radius: 50%;
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  filter: blur(25px);
+}
+.button-dark i {
+  font-size: 1.5rem;
+  transition: transform 0.4s;
+}
+.button-dark:hover i {
+  transform: translateX(0.25rem);
+}
 /*=============== HOME ===============*/
-
+.home__container {
+  row-gap: 4rem;
+  padding-top: 2rem;
+}
+.home__data {
+  text-align: center;
+}
+.home__title {
+  font-size: var(--biggest-font-size);
+  margin-bottom: 1rem;
+}
+.home__title span {
+  font-weight: var(--font-regular);
+}
+.home__description {
+  margin-bottom: 2rem;
+}
+.home__content {
+  background-color: var(--first-color);
+  padding: 3rem 1.5rem 0 1rem;
+  border-radius: 2rem;
+  box-shadow: 0 8px 16px hsla(218, 94%, 45%, 0.2);
+  row-gap: 2rem;
+}
+.home__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 0.75rem;
+}
+.home__name {
+  font-size: var(--h2-font-size);
+  color: var(--white-color);
+  margin-bottom: 0.5rem;
+}
+.home__profession {
+  font-size: var(--small-font-size);
+  font-weight: var(--font-regular);
+  margin-bottom: 2rem;
+}
+.home__icons {
+  display: flex;
+  gap: 0.75rem;
+}
+.home__box {
+  background-color: var(--first-color-alt);
+  color: var(--white-color);
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 0.75rem;
+  font-size: 2rem;
+}
+.home__button {
+  flex-direction: row;
+  padding: 4rem 1rem;
+}
 /*=============== DELIVERY ===============*/
 
 /*=============== ABOUT ===============*/
