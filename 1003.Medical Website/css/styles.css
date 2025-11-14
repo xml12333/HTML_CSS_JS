@@ -216,7 +216,9 @@ img {
   top: 0;
 }
 /* Add shadow header */
-
+.shadow-header {
+  box-shadow: 0 2px 16px hsla(218, 68%, 18%, 0.1);
+}
 /* Active link */
 
 /*=============== BUTTON ===============*/
@@ -324,9 +326,19 @@ img {
   font-size: 2rem;
 }
 .home__button {
-  flex-direction: row;
+  flex-direction: column;
   padding: 4rem 1rem;
 }
+.home__button i {
+  font-weight: initial;
+  font-size: 2rem;
+}
+.home__img {
+  width: 220px;
+  justify-self: center;
+  filter: drop-shadow(0 0 16px hsla(218, 60%, 18%, 0.3));
+}
+
 /*=============== DELIVERY ===============*/
 
 /*=============== ABOUT ===============*/
@@ -349,9 +361,49 @@ img {
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-
+@media screen and (max-width: 330px) {
+  .home__title {
+    font-size: 1.8rem;
+  }
+  .home__icons {
+    flex-direction: column;
+  }
+}
 /* For medium devices */
-
+@media screen and (min-width: 440px) {
+  .home__container {
+    grid-template-columns: 350px;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  .home__container {
+    grid-template-columns: repeat(2, 350px);
+    row-gap: 2rem;
+  }
+  .home__data {
+    grid-column: 2/3;
+    text-align: initial;
+  }
+  .home__content {
+    grid-column: 1/3;
+    grid-row: 2/3;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 5rem;
+  }
+  .home__info {
+    order: 1;
+    padding-block: 2rem;
+  }
+  .home__image {
+    position: relative;
+  }
+  .home__img {
+    position: absolute;
+    bottom: 0;
+    width: 300px;
+  }
+}
 /* For large devices */
 @media screen and (min-width: 1150px) {
   .container {
@@ -377,5 +429,43 @@ img {
   /* .dark-theme .nav__menu{
     box-shadow: none;
   } */
+
+  .home__container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    padding-top: 4rem;
+  }
+  .home__title {
+    margin-bottom: 1.5rem;
+  }
+  .home__description {
+    padding-right: 10rem;
+    margin-bottom: 3rem;
+  }
+  .home__content {
+    column-gap: 3rem;
+  }
+  .home__img {
+    width: 440px;
+  }
+  .home__info {
+    padding-block: 3rem;
+  }
+  .home__name {
+    font-size: var(--h1-font-size);
+  }
+  .home__profession {
+    font-size: var(--normal-font-size);
+    margin-bottom: 3rem;
+  }
+  .home__box {
+    width: 88px;
+    height: 88px;
+    font-size: 2.5rem;
+  }
+  .home__button {
+    padding: 7rem 2rem;
+    border-radius: 1rem;
+  }
 }
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
