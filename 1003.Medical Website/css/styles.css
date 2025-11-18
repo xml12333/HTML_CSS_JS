@@ -566,7 +566,29 @@ img {
   padding-bottom: 1.5rem;
 }
 /* Swiper class */
-
+.prices .swiper {
+  width: 320px;
+  overflow: initial;
+  padding-block: 2rem 5rem;
+}
+.prices :is(.swiper-slide-next, .swiper-slide-prev) {
+  opacity: 0;
+  pointer-events: none;
+  transform: opacity 0.4s;
+}
+.prices .swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: -4rem;
+}
+.prices .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: var(--gray-color);
+  opacity: 1;
+  transition: background-color 0.4s;
+}
+.prices .swiper-pagination-bullet-active {
+  background-color: var(--first-color);
+}
 /*=============== GALLERY ===============*/
 
 /*=============== CONTACT ===============*/
@@ -588,6 +610,9 @@ img {
   .section__title {
     font-size: 1.5rem;
   }
+  .prices .swiper {
+    width: 280px;
+  }
 }
 @media screen and (max-width: 330px) {
   .home__title {
@@ -602,6 +627,9 @@ img {
   .about__container {
     padding-inline: 1rem;
   }
+  .prices .swiper {
+    width: 250px;
+  }
 }
 /* For medium devices */
 @media screen and (min-width: 440px) {
@@ -610,7 +638,8 @@ img {
     grid-template-columns: 350px;
     justify-content: center;
   }
-  .about__container {
+  .about__container,
+  .prices__container {
     width: 350px;
     margin-inline: auto;
   }
@@ -670,6 +699,19 @@ img {
   }
   .about__button {
     justify-self: flex-start;
+  }
+  .prices__container {
+    width: 700px;
+  }
+  .prices__description {
+    width: 540px;
+    margin-inline: auto;
+  }
+  .prices__box {
+    width: 460px;
+  }
+  .prices__content {
+    overflow-x: clip;
   }
 }
 /* For large devices */
@@ -786,6 +828,39 @@ img {
   }
   .about__img {
     width: 320px;
+  }
+  .prices__container {
+    row-gap: 4rem;
+  }
+  .prices__box {
+    width: 660px;
+    border-radius: 2rem;
+  }
+  .prices__details {
+    font-size: var(--normal-font-size);
+    padding-bottom: 2.5rem;
+  }
+  .prices .swiper {
+    width: 400px;
+    padding-block: 2.5rem 7rem;
+  }
+  .prices__heading {
+    padding: 1.5rem;
+  }
+  .prices__number {
+    font-size: var(--h1-font-size);
+  }
+  .prices__list {
+    padding: 2rem 1.5rem 3.5rem;
+    row-gap: 1rem;
+  }
+  .prices__item {
+    font-size: var(--normal-font-size);
+  }
+  .prices__box::after {
+    width: 100px;
+    height: 100px;
+    filter: blur(60px);
   }
 }
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */

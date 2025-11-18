@@ -40,9 +40,23 @@ const shadowHeader = () => {
 window.addEventListener("scroll", shadowHeader);
 
 /*=============== SWIPER PRICES ===============*/
+const swiperPrices = new Swiper(".prices__swiper", {
+  loop: true,
+  grabCursor: true,
+  spaceBetween: 24,
 
+  // If we need pagination
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+});
 
-/*=============== SHOW SCROLL UP ===============*/ 
+/*=============== SHOW SCROLL UP ===============*/
 const scrollUp = () => {
   const scrollUp = document.getElementById("scroll-up");
   // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
@@ -75,7 +89,7 @@ const scrollActive = () => {
 };
 window.addEventListener("scroll", scrollActive);
 
-/*=============== DARK LIGHT THEME ===============*/ 
+/*=============== DARK LIGHT THEME ===============*/
 const themeButton = document.getElementById("theme-button");
 const darkTheme = "dark-theme";
 const iconTheme = "ri-sun-line";
@@ -112,4 +126,3 @@ themeButton.addEventListener("click", () => {
 });
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
-
