@@ -127,6 +127,7 @@ img {
 .dark-theme::-webkit-scrollbar-thumb:hover {
   background-color: hsl(218, 8%, 30%);
 }
+
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1120px;
@@ -964,7 +965,7 @@ img {
     display: none;
   }
   .nav__list {
-    flex-direction: none;
+    flex-direction: row;
     column-gap: 4rem;
   }
   .dark-theme .nav__menu {

@@ -126,3 +126,28 @@ themeButton.addEventListener("click", () => {
 });
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+const sr = ScrollReveal({
+  origin: "top",
+  distance: "60px",
+  duration: 2000,
+  // reset: true, // Animation repeat
+});
+
+sr.reveal(`.home__content`, { origin: "bottom" });
+sr.reveal(`.home__info`, { origin: "bottom", delay: 800 });
+sr.reveal(`.home__data`, { delay: 1400 });
+sr.reveal(`.home__button`, { origin: "left", delay: 1800 });
+
+sr.reveal(`.delivery__data`, { origin: "right" });
+sr.reveal(`.delivery__content`, { origin: "left", delay: 600 });
+sr.reveal(`.delivery__img`, { delay: 1200 });
+
+sr.reveal(`.about__data, .contact__map`, { origin: "left" });
+sr.reveal(`.about__img, .contact__data`, { origin: "right" });
+
+sr.reveal(`.prices__box`, { origin: "right" });
+sr.reveal(`.prices__swiper`, { origin: "bottom", delay: 600 });
+
+sr.reveal(`.gallery__image`, { interval: 100 });
+
+sr.reveal(`.footer__container`);
