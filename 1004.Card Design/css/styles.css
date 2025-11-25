@@ -1,0 +1,209 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(150, 62%, 48%);
+  --white-color: hsl(150, 62%, 96%);
+  --body-color: hsl(150, 100%, 98%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Unbounded", sans-serif;
+  --h3-font-size: 1.25rem;
+  --small-font-size: .875rem;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--body-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== CARD ===============*/
+.card {
+  max-width: 1120px;
+  height: 100vh;
+  margin-inline: auto;
+  display: grid;
+  place-items: center;
+}
+
+.card__article {
+  position: relative;
+  width: 320px;
+  box-shadow: 0 8px 24px hsla(150, 62%, 16%, .2);
+  border: 8px solid var(--white-color);
+  border-radius: 5.5rem;
+  padding: 2rem 1rem 1.5rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.card__bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .4s;
+}
+
+.card__data, 
+.card__actions {
+  position: relative;
+  z-index: 10;
+  color: var(--white-color);
+}
+
+.card__perfil {
+  width: 80px;
+  border: 4px solid var(--white-color);
+  border-radius: 50%;
+  margin: 0 auto .5rem;
+}
+
+.card__name {
+  font-size: var(--h3-font-size);
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+
+.card__description {
+  font-size: var(--small-font-size);
+  font-weight: 300;
+  margin-bottom: 1.75rem;
+}
+
+.card__actions {
+  display: grid;
+  justify-content: center;
+}
+
+.card__button {
+  width: 48px;
+  height: 48px;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  background-color: var(--first-color);
+  color: var(--white-color);
+  font-size: 1.5rem;
+  box-shadow: 0 4px 12px hsla(150, 62%, 8%, .7);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.card__more, 
+.card__close {
+  position: absolute;
+  transition: opacity .1s, transform .4s;
+}
+
+.card__close {
+  opacity: 0;
+}
+
+.card__article:hover .card__bg {
+  transform: scale(1.2);
+}
+
+.card__menu {
+  background-color: var(--first-color);
+  padding: .35rem 1rem;
+  border-radius: 4rem;
+  box-shadow: 0 4px 12px hsla(150, 62%, 8%, .7);
+  display: flex;
+  column-gap: 5rem;
+  position: absolute;
+  justify-self: center;
+  align-self: center;
+  overflow: hidden;
+  width: 48px;
+  transition: width .4s;
+}
+
+.card__icons {
+  display: flex;
+  column-gap: .5rem;
+}
+
+.card__icon {
+  font-size: 1.25rem;
+  cursor: pointer;
+  transform: scale(0);
+  pointer-events: none;
+  opacity: 0;
+  transition: transform .4s;
+}
+
+.card__icons:nth-child(1) .card__icon:nth-child(2) {
+  transition-delay: .2s;
+}
+
+.card__icons:nth-child(1) .card__icon:nth-child(1) {
+  transition-delay: .4s;
+}
+
+.card__icons:nth-child(2) .card__icon:nth-child(1) {
+  transition-delay: .2s;
+}
+
+.card__icons:nth-child(2) .card__icon:nth-child(2) {
+  transition-delay: .4s;
+}
+
+/* Show social */
+.show-menu {
+  width: 212px;
+}
+
+.show-menu .card__icon {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: initial;
+}
+
+/* Show icon */
+.show-icon .card__more {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+.show-icon .card__close {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 330px) {
+  .card {
+    margin-inline: 1rem;
+  }
+  .card__article {
+    width: 100%;
+  }
+}

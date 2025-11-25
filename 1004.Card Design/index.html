@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!--=============== REMIXICONS ===============-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="./css/styles.css">
+
+      <title>Card design with quick action button </title>
+   </head>
+   <body>
+      <div class="card">
+         <article class="card__article">
+            <img src="./img/bg-img.png" alt="image" class="card__bg">
+
+            <div class="card__data">
+               <img src="./img/perfil.png" alt="image" class="card__perfil">
+               <h3 class="card__name">Kamik Xans</h3>
+               <p class="card__description">Creative in developing professional web interfaces with UI/UX themes.</p>
+            </div>
+
+            
+            <div class="card__actions">
+               <button class="card__button" id="card-btn">
+                  <i class="ri-more-fill card__more"></i>
+                  <i class="ri-close-line card__close"></i>
+               </button>
+
+               <div class="card__menu" id="card-menu">
+                  <div class="card__icons">
+                     <span class="card__icon">
+                        <i class="ri-message-3-line"></i>
+                     </span>
+
+                     <span class="card__icon">
+                        <i class="ri-arrow-down-box-line"></i>
+                     </span>
+                  </div>
+
+                  <div class="card__icons">
+                     <span class="card__icon">
+                        <i class="ri-heart-3-line"></i>
+                     </span>
+
+                     <span class="card__icon">
+                        <i class="ri-share-line"></i>
+                     </span>
+                  </div>
+               </div>
+            </div>
+         </article>
+      </div>
+      
+      <!--=============== MAIN JS ===============-->
+      <script src="./js/main.js"></script>
+   </body>
+</html>

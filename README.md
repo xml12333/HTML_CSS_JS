@@ -1007,3 +1007,4 @@
 |1001| [Day-Night Waves](https://github.com/xml12333/HTML_CSS_JS/tree/main/1001.Day-Night%20Waves)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1001.Day-Night%20Waves/)|
 |1002| [Hopping Marbles](https://github.com/xml12333/HTML_CSS_JS/tree/main/1002.Hopping%20Marbles)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1002.Hopping%20Marbles/)|
 |1003| [Medical Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/1003.Medical%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1003.Medical%20Website/)|
+|1004| [Card Design](https://github.com/xml12333/HTML_CSS_JS/tree/main/1004.Card%20Design)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1004.Card%20Design/)|
