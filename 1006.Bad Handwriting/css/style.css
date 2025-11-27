@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Cedarville+Cursive&family=Indie+Flower&family=Nothing+You+Could+Do&family=Oooh+Baby&family=Reenie+Beanie&family=Shadows+Into+Light&display=swap');
+
+body {
+  margin: 0;
+  background-color: #FFFDF3;
+}
+
+div {
+  padding: 0rem 5rem;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  max-width: 900px;
+  min-height: 100vh;
+}
+
+p {
+  font-size: 4rem;
+  color: red;
+  line-height: 3.4rem;
+}
+
+@media only screen and (max-width: 800px) {
+  p {
+    font-size: 3rem;
+    line-height: 2.55rem;
+  }
+}
+
+.caveat {
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.shadows-into-light {
+  font-family: "Shadows Into Light", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.indie-flower {
+  font-family: "Indie Flower", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.nothing-you-could-do {
+  font-family: "Nothing You Could Do", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.oooh-baby {
+  font-family: "Oooh Baby", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.reenie-beanie {
+  font-family: "Reenie Beanie", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cedarville-cursive {
+  font-family: "Cedarville Cursive", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
