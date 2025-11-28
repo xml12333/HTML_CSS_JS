@@ -1010,3 +1010,4 @@
 |1004| [Card Design](https://github.com/xml12333/HTML_CSS_JS/tree/main/1004.Card%20Design)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1004.Card%20Design/)|
 |1005| [Navbar](https://github.com/xml12333/HTML_CSS_JS/tree/main/1005.Navbar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1005.Navbar/)|
 |1006| [Bad Handwriting](https://github.com/xml12333/HTML_CSS_JS/tree/main/1006.Bad%20Handwriting)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1006.Bad%20Handwriting/)|
+|1007| [Glass Clock](https://github.com/xml12333/HTML_CSS_JS/tree/main/1007.Glass%20Clock)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1007.Glass%20Clock/)|
