@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>The corner-shape property in CSS</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+  </head>
+    
+  <body>
+  <div class="container">
+  <h1>corner-shape playground</h1>
+  <p style="margin-bottom: 20px; color: #b8c0ff;">
+    Try different shapes. Browsers without <a href="https://amitmerchant.com/the-modern-way-to-draw-squircles-using-corner-shape-in-css/" target="_blank">corner-shape</a> support will show classic rounded corners via border-radius.
+  </p>
+
+  <div class="grid">
+    <div class="card round">
+      <span class="label">round</span>
+      <div class="stripe"></div>
+      <div class="content">Default geometry—behaves like standard border-radius.</div>
+    </div>
+
+    <div class="card scoop">
+      <span class="label">scoop</span>
+      <div class="stripe"></div>
+      <div class="content">Concave corners; feels “carved in”.</div>
+    </div>
+
+    <div class="card bevel">
+      <span class="label">bevel</span>
+      <div class="stripe"></div>
+      <div class="content">Straight chamfer instead of a curve.</div>
+    </div>
+
+    <div class="card notch">
+      <span class="label">notch</span>
+      <div class="stripe"></div>
+      <div class="content">Inset cut at the corner—retro UI vibes.</div>
+    </div>
+
+    <div class="card squircle">
+      <span class="label">squircle</span>
+      <div class="stripe"></div>
+      <div class="content">Superellipse-based corners (smooth, modern).</div>
+    </div>
+
+    <div class="card square">
+      <span class="label">square</span>
+      <div class="stripe"></div>
+      <div class="content">Cancels the rounding even with border-radius set.</div>
+    </div>
+
+    <div class="card mixed">
+      <span class="label">mixed (TL TR BR BL)</span>
+      <div class="stripe"></div>
+      <div class="content">Per-corner shapes: scoop, bevel, round, notch.</div>
+    </div>
+
+    <div class="card super4">
+      <span class="label">superellipse(4)</span>
+      <div class="stripe"></div>
+      <div class="content">Numeric control—classic squircle feel.</div>
+    </div>
+
+    <div class="card super8">
+      <span class="label">superellipse(8)</span>
+      <div class="stripe"></div>
+      <div class="content">Higher exponent → corners trend toward square.</div>
+    </div>
+  </div>
+</div>
+    
+  </body>
+  
+</html>

@@ -1,0 +1,156 @@
+/* Page scaffold */
+:root {
+  --bg: #0f1220;
+  --card-bg: #161a2f;
+  --text: #e6e9ff;
+  --muted: #9aa3ff;
+  --accent: #6ea8ff;
+  --border: #2b3157;
+  --shadow: rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: radial-gradient(
+    1200px circle at 20% 10%,
+    #121633 0%,
+    #0f1220 55%,
+    #0b0e19 100%
+  );
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+a {
+  color: white;
+}
+
+h1,
+h2 {
+  margin: 0 0 12px;
+}
+p {
+  margin: 0;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 40px 20px;
+  padding: 0 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+/* Card base styles: border-radius fallback */
+.card {
+  position: relative;
+  height: 180px;
+  padding: 20px;
+  background: linear-gradient(180deg, var(--card-bg), #1a1f3a);
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 30px var(--shadow);
+  overflow: hidden;
+
+  /* Fallback everyone supports */
+  border-radius: 28px;
+
+  /* A subtle shiny overlay to show how shadows/borders follow the corner */
+  isolation: isolate;
+}
+
+.card .label {
+  position: absolute;
+  top: 32px;
+  left: 16px;
+  font-size: 13px;
+  letter-spacing: 0.2px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.card .content {
+  position: absolute;
+  bottom: 34px;
+  left: 16px;
+  right: 16px;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #dbe1ff;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    600px 200px at 20% 0%,
+    rgba(255, 255, 255, 0.12),
+    transparent 60%
+  );
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* Enhance with corner-shape where supported */
+@supports (corner-shape: round) {
+  .round {
+    corner-shape: round;
+  }
+  .scoop {
+    corner-shape: scoop;
+  }
+  .bevel {
+    corner-shape: bevel;
+  }
+  .notch {
+    corner-shape: notch;
+  }
+  .square {
+    corner-shape: square;
+  } /* cancels rounding even if radius set */
+  .squircle {
+    corner-shape: squircle;
+  }
+
+  /* Mixed per-corner shapes (clockwise: TL TR BR BL) */
+  .mixed {
+    corner-shape: scoop bevel round notch;
+  }
+
+  /* Superellipse numeric control (squircle-like when n≈4) */
+  .super4 {
+    corner-shape: superellipse(4);
+  }
+  .super8 {
+    corner-shape: superellipse(8);
+  } /* tighter, more square-ish curve */
+}
+
+/* Optional hover demo: show hit area vs. visual corner */
+.card:hover {
+  outline: 2px dashed rgba(110, 168, 255, 0.35);
+  outline-offset: 3px;
+  cursor: pointer;
+}
+
+/* Little accent stripe to highlight contour-following */
+.stripe {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 10px;
+  height: 100%;
+  background: linear-gradient(180deg, #79b4ff, #7a5cff);
+  opacity: 0.8;
+  filter: saturate(120%);
+}
