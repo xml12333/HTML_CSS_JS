@@ -1,0 +1,20 @@
+#eyes {
+  --size: clamp(64px, 30vi, 256px);
+  block-size: var(--size);
+  inline-size: var(--size);
+}
+
+body {
+  background: wheat;
+  block-size: 100vb;
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  place-items: center;
+  text-align: center;
+}
+
+a {
+  font-family: sans-serif;
+  font-size: 2rem;
+  color: #333;
+}
