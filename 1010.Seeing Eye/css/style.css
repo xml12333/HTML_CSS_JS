@@ -1,0 +1,12 @@
+.s2 {
+  background:#eee;
+}
+
+canvas, body {
+  width: 100%;
+  background: #000;
+}
+
+#code {
+  height: 400px;
+}
