@@ -1016,3 +1016,4 @@
 |1010| [Seeing Eye](https://github.com/xml12333/HTML_CSS_JS/tree/main/1010.Seeing%20Eye)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1010.Seeing%20Eye/)|
 |1011| [Sparkling Boxes](https://github.com/xml12333/HTML_CSS_JS/tree/main/1011.Sparkling%20Boxes)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1011.Sparkling%20Boxes/)|
 |1012| [Wavy Cube](https://github.com/xml12333/HTML_CSS_JS/tree/main/1012.Wavy%20Cube)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1012.Wavy%20Cube/)|
+|1013| [Keypad](https://github.com/xml12333/HTML_CSS_JS/tree/main/1013.Keypad)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1013.Keypad/)|

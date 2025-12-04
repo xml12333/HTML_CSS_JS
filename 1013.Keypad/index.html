@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Interactive Keypad | Osu sayo device inspired (CSS/JS)</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+  </head>
+    
+  <body>
+  <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Osu! Sayo Keyboard</title>
+</head>
+<body>
+  <div class="scene-container">
+    <div class="keyboard-base">
+      <!-- Device edges for more depth -->
+      <div class="device-edge edge-front"></div>
+      <div class="device-edge edge-back"></div>
+      <div class="device-edge edge-left"></div>
+      <div class="device-edge edge-right"></div>
+      
+      <!-- Top LED strip -->
+      <div class="led-strip top-led"></div>
+      
+      <!-- Main keyboard body -->
+      <div class="keyboard-body">
+        <!-- Volume knob assembly -->
+        <div class="knob-assembly">
+          <div class="knob-base"></div>
+          <div class="volume-knob">
+            <div class="knob-top">
+              <div class="knob-indicator"></div>
+              <div class="knob-texture"></div>
+            </div>
+            <div class="knob-side"></div>
+          </div>
+          <div class="knob-label">VOL</div>
+        </div>
+        
+        <!-- Screen/display area -->
+        <div class="display-panel">
+          <div class="display-screen">
+            <span class="display-text">SAYO DEVICE</span>
+            <span class="display-info">144Hz • 1ms • 72dB</span>
+            <div class="spectrum-visualizer">
+              <div class="spectrum-bar"></div>
+              <div class="spectrum-bar"></div>
+              <div class="spectrum-bar"></div>
+              <div class="spectrum-bar"></div>
+              <div class="spectrum-bar"></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Keys container with 2 keys layout -->
+        <div class="keys-container">
+          <!-- Key Z -->
+          <div class="key-wrapper">
+            <div class="key main-key" data-key="Z">
+              <div class="key-top">
+                <span class="key-label">Z</span>
+              </div>
+              <div class="key-side key-side-front"></div>
+              <div class="key-side key-side-back"></div>
+              <div class="key-side key-side-left"></div>
+              <div class="key-side key-side-right"></div>
+              <div class="key-shadow"></div>
+            </div>
+          </div>
+          
+          <!-- Key X -->
+          <div class="key-wrapper">
+            <div class="key main-key" data-key="X">
+              <div class="key-top">
+                <span class="key-label">X</span>
+              </div>
+              <div class="key-side key-side-front"></div>
+              <div class="key-side key-side-back"></div>
+              <div class="key-side key-side-left"></div>
+              <div class="key-side key-side-right"></div>
+              <div class="key-shadow"></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Cable port with more detail -->
+        <div class="cable-assembly">
+          <div class="cable-port">
+            <div class="port-inner"></div>
+          </div>
+          <div class="cable">
+            <div class="cable-texture"></div>
+          </div>
+        </div>
+        
+        <!-- Bottom details -->
+        <div class="bottom-details">
+          <div class="port usb-port">
+            <div class="port-pins"></div>
+          </div>
+          <div class="brand-logo">SAYO</div>
+          <div class="port audio-port">
+            <div class="port-ring"></div>
+          </div>
+        </div>
+        
+        <!-- Surface texture overlay -->
+        <div class="surface-texture"></div>
+      </div>
+      
+      <!-- Bottom LED strip -->
+      <div class="led-strip bottom-led"></div>
+      
+      <!-- More detailed rubber feet -->
+      <div class="rubber-foot foot-1">
+        <div class="foot-inner"></div>
+      </div>
+      <div class="rubber-foot foot-2">
+        <div class="foot-inner"></div>
+      </div>
+      <div class="rubber-foot foot-3">
+        <div class="foot-inner"></div>
+      </div>
+      <div class="rubber-foot foot-4">
+        <div class="foot-inner"></div>
+      </div>
+    </div>
+    
+    <!-- Reflection on surface -->
+    <div class="surface-reflection"></div>
+  </div>
+  
+  <!-- Performance overlay -->
+  <div class="performance-overlay">
+    <div class="stat">
+      <span class="stat-label">APM</span>
+      <span class="stat-value" id="apm">0</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">KPS</span>
+      <span class="stat-value" id="kps">0</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">VOL</span>
+      <span class="stat-value" id="volume">50</span>
+    </div>
+  </div>
+  
+  <!-- Ambient particles -->
+  <div class="particle-container">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+</body>
+</html>
+    <script  src="./js/script.js"></script>
+
+  </body>
+  
+</html>
