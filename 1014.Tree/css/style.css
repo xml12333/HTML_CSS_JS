@@ -1,0 +1,46 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background:#000;
+}
+
+#fixed-bg {
+  position: fixed;
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%);
+  width:100vw;
+  height:100vh;
+}
+
+canvas {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);  
+  aspect-ratio: 1;
+}
+
+#c {
+  width: auto;
+  height: 100%;
+}
+
+#c2 {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-aspect-ratio: 1) {
+  #c {
+    width: 100%;
+    height: auto;
+  }
+  
+  #c2 {
+    width: auto;
+    height: 100%;
+  }
+}
