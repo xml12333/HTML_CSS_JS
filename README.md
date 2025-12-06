@@ -1018,3 +1018,4 @@
 |1012| [Wavy Cube](https://github.com/xml12333/HTML_CSS_JS/tree/main/1012.Wavy%20Cube)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1012.Wavy%20Cube/)|
 |1013| [Keypad](https://github.com/xml12333/HTML_CSS_JS/tree/main/1013.Keypad)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1013.Keypad/)|
 |1014| [Tree](https://github.com/xml12333/HTML_CSS_JS/tree/main/1014.Tree)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1014.Tree/)|
+|1015| [Liquid Effect](https://github.com/xml12333/HTML_CSS_JS/tree/main/1015.Liquid%20Effect)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1015.Liquid%20Effect/)|
