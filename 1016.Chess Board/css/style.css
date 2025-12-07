@@ -1,0 +1,406 @@
+/* in need of heavy cleanup */
+
+body {
+  margin: 0;
+  height: 100dvh;
+  overflow: hidden;
+  perspective: 100vmin;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle, #1d1e22, #1c1c1c);
+}
+body *, body *::before, body *::after { transform-style: preserve-3d }
+
+chessboard{
+  --dark: #3a3634;
+  --light: #eacba8;
+  --black: #333333;
+  --white: #f8d6a2;
+  animation: rotateBoard 20s linear infinite;
+  display: grid;
+  width: 65vmin;
+  aspect-ratio: 1/1;
+  grid-auto-rows: 1fr;
+  grid-auto-columns: 1fr;
+  grid-template-areas:
+    'a8 b8 c8 d8 e8 f8 g8 h8'
+    'a7 b7 c7 d7 e7 f7 g7 h7'
+    'a6 b6 c6 d6 e6 f6 g6 h6'
+    'a5 b5 c5 d5 e5 f5 g5 h5'
+    'a4 b4 c4 d4 e4 f4 g4 h4'
+    'a3 b3 c3 d3 e3 f3 g3 h3'
+    'a2 b2 c2 d2 e2 f2 g2 h2'
+    'a1 b1 c1 d1 e1 f1 g1 h1'
+  ;
+  place-items: center;
+  background: 0 0 / 25% 25% repeating-conic-gradient(var(--dark) 0 25%, var(--light) 25% 50%);
+  transform: rotateX(75deg) ;
+  position: relative;
+  container-type: inline-size;
+  &::after{
+    content: "";
+    position: absolute;
+    inset: -50%;
+    border-radius: 50%;
+    mask-image: radial-gradient(black, transparent 50%);
+    background:  0 0 / 12.5% 12.5% repeating-conic-gradient(var(--dark) 0 25%, var(--light) 25% 50%);;
+    transform: translateZ(-5cqi)
+  }
+  > sides {
+    display: contents;
+    > x { 
+      position: absolute;
+      inset: var(--i);
+      transform-origin: var(--o);
+      transform: rotateX(var(--x, 0deg)) rotateY(var(--y, 0deg));
+      background: 
+        linear-gradient(hsl(0 0 0 / var(--l))),
+        repeating-linear-gradient(var(--d), var(--dark) 0 12.5%, var(--light) 0% 25%);
+      &[f] { --i: 100% 0 -5% 0; --o:  50%   0%; --d:  90deg; --x: -90deg; --l: .50 }
+      &[b] { --i: -5% 0 100% 0; --o:  50% 100%; --d: 270deg; --x:  90deg; --l: .50 }
+      &[l] { --i: 0 100% 0 -5%; --o: 100%  50%; --d:   0deg; --y: -90deg; --l: .25 }
+      &[r] { --i: 0 -5% 0 100%; --o:   0%  50%; --d: 180deg; --y:  90deg; --l: .25 }
+    }
+  }
+  > piece{
+    --s: 7cqi;
+    --band-gradient: 
+      #0000 calc(100% - var(--s) * .20),
+      var(--clr-opp) 0 calc(100% - var(--s) * .15),
+      #0000 0;
+    grid-area: attr(pos type(<custom-ident>));
+    width: var(--s);
+    aspect-ratio: 1/1;
+    position: relative;
+    background: var(--clr);
+    &[white] { --clr: var(--white); --clr-opp: var(--black) }
+    &[black] { --clr: var(--black); --clr-opp: var(--white); transform: rotate(180deg) }
+
+    &[pawn]{
+      &::before, &::after, >x::before, x::after{
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: 
+          linear-gradient(hsl(0 0 0 / .2) 0 0), 
+          linear-gradient(var(--bd), var(--band-gradient)),
+          var(--clr);
+        transform-origin: var(--to);
+        transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+      }
+      &::before{ --bd: 180deg; --to: bottom; --rx: -90deg }
+      &::after { --bd: 0deg; --to: top; --rx: 90deg }
+      > x{ position: absolute; inset: 0; background: var(--clr); transform: translateZ(var(--s)) }
+      > x::before { --bd: 90deg; --to: left; --ry: 90deg }
+      > x::after { --bd: -90deg; --to: right; --ry: -90deg }
+    }
+    
+    &[rook]{
+      &::before, &::after, >x::before, >x::after{
+        content: "";
+        position: absolute;
+        inset: var(--in);
+        background:
+          linear-gradient(hsl(0 0 0 / .2) 0 0), 
+          linear-gradient(var(--bd), var(--band-gradient)),
+          var(--clr);
+        transform-origin: var(--to);
+        transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+      }
+      &::before{ --in: -100% 0 0 0; --bd: 180deg; --to: bottom; --rx: -90deg }
+      &::after{ --in: 0 0 -100% 0; --bd: 0deg; --to: top; --rx: 90deg }
+      >x { position: absolute; inset: 0; background: var(--clr); transform: translateZ(calc(var(--s) * 2)) }
+      >x::before { --in: 0 -100% 0 0; --bd: 90deg; --to: left; --ry: 90deg }
+      >x::after{ --in: 0 0 0 -100% ; --bd: -90deg; --to: right; --ry: -90deg }
+    }
+    &[knight]{
+      &::before{ /* front */
+        content: "";
+        position: absolute;
+        inset: calc(var(--s) * -1) 0 0 0;
+        background: 
+          linear-gradient(hsl(0 0 0 / .2) 0 0), 
+          linear-gradient(var(--band-gradient))
+          var(--clr);
+        transform-origin: bottom;
+        transform: rotateX(-90deg);
+      }
+      &::after{ /* back */
+        content: "";
+        position: absolute;
+        inset: 0 0 0 0;
+        background: 
+          linear-gradient(hsl(0 0 0 / .2) 0 0), 
+          linear-gradient(to top, var(--band-gradient))
+          var(--clr);
+        transform-origin: top;
+        transform: rotateX(90deg);
+      }
+      > x { /* top */
+        position: absolute;
+        inset: 50% 0 0 0;
+        background: var(--clr);
+        transform: translateZ(calc(var(--s) * 2));
+        &::before { /* left */
+          content: "";
+          position: absolute;
+          inset: -100% -100% 0 0;
+          background: 
+            linear-gradient(hsl(0 0 0 / .1) 0 0), 
+            linear-gradient(to right, var(--band-gradient)),
+            var(--clr);
+          transform-origin: left;
+          transform: rotateY(90deg);
+          clip-path: polygon(0 50%, 0 100%, 100% 100%, 100% 0%, 50% 0, 50% 50%)
+        }
+        &::after{ /* right */
+          content: "";
+          position: absolute;
+          inset: -100% 0 0 -100%;
+          background: 
+            linear-gradient(hsl(0 0 0 / .1) 0 0), 
+            linear-gradient(to left, var(--band-gradient)),
+            var(--clr);
+          transform-origin: right;
+          transform: rotateY(-90deg);
+          clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 50%, 50% 50%, 50% 0)
+        }
+      }
+      > y {
+        position: absolute;
+        inset: 0 0 50% 0;
+        background: var(--clr);
+        transform: translateZ(var(--s));
+        &::before {
+          content: "";
+          position: absolute;
+          inset: -100% 0 0 0;
+          transform-origin: bottom;
+          transform: rotateX(-90deg);
+          background: linear-gradient(hsl(0 0 0 / .2) 0 0), var(--clr);
+        }
+      }
+    }
+    &[bishop]{
+      &::before{ /* front */
+        content: "";
+        position: absolute;
+        inset: calc(var(--s) * -1) 0 0 0;
+        background: 
+          linear-gradient(hsl(0 0 0 / .2) 0 0), 
+          linear-gradient(var(--band-gradient)),
+          var(--clr);
+        transform-origin: bottom;
+        transform: rotateX(-90deg);
+      }
+      &::after{ /* back */
+        content: "";
+        position: absolute;
+        inset: 0 0 0 0;
+        background: 
+          linear-gradient(hsl(0 0 0 / .2) 0 0), 
+          linear-gradient(to top, var(--band-gradient)),
+          var(--clr);
+        transform-origin: top;
+        transform: rotateX(90deg);
+      }
+      > x { /* top */
+        position: absolute;
+        inset: 100% 0 0 0;
+        background: var(--clr);
+        transform: translateZ(calc(var(--s) * 2));
+        &::before { /* left */
+          content: "";
+          position: absolute;
+          inset: calc(var(--s) * -1) calc(var(--s) * -1) 0 0;
+          background: 
+            linear-gradient(hsl(0 0 0 / .1) 0 0), 
+            linear-gradient(to right, var(--band-gradient)),
+            var(--clr);
+          transform-origin: left;
+          transform: rotateY(90deg);
+          clip-path: polygon(0 100%, 100% 100%, 100% 0%, 50% 0)
+        }
+        &::after{ /* right */
+          content: "";
+          position: absolute;
+          inset: calc(var(--s) * -1) 0 0 calc(var(--s) * -1);
+          background: 
+            linear-gradient(hsl(0 0 0 / .1) 0 0), 
+            linear-gradient(to left, var(--band-gradient)),
+            var(--clr);
+          transform-origin: right;
+          transform: rotateY(-90deg);
+          clip-path: polygon(0 0, 0 100%, 100% 100%, 50% 0)
+        }
+      }
+      > y {
+        position: absolute;
+        inset: calc(var(--s) / -2.3) 0 0 0;
+        background: var(--clr);
+        transform: translateZ(calc(var(--s) * 2)) rotateX(45deg);
+        transform-origin: bottom;
+        background: var(--clr);
+      }
+    }
+    &[queen]{
+      &::before{ /* front */
+        content: "";
+        position: absolute;
+        inset: -125% 0 0 0;
+        background: 
+          linear-gradient(hsl(0 0 0 / .2) 0 0), 
+          linear-gradient(var(--band-gradient)),
+          var(--clr);
+        transform-origin: bottom;
+        transform: rotateX(-90deg);
+        clip-path: polygon(0 0, 50% 20%, 100% 0, 100% 100%, 0 100%)
+      }
+      &::after{ /* back */
+        content: "";
+        position: absolute;
+        inset: 0 0 -125% 0;
+        background: 
+          linear-gradient(hsl(0 0 0 / .2) 0 0), 
+          linear-gradient(to top, var(--band-gradient)),
+          var(--clr);
+        transform-origin: top;
+        transform: rotateX(90deg);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%)
+      }
+      > x {
+        position: absolute;
+        inset: 0;
+
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0 -125% 0 0;
+          transform-origin: left;
+          transform: rotateY(-90deg);
+          background: 
+            linear-gradient(hsl(0 0 0 / .1) 0 0), 
+            linear-gradient(to left, var(--band-gradient)),
+            var(--clr);
+        }
+        &::after{
+          content: "";
+          position: absolute;
+          inset: 0 0 0 -125%;
+          transform-origin: right;
+          transform: rotateY(90deg);
+          background: 
+            linear-gradient(hsl(0 0 0 / .1) 0 0), 
+            linear-gradient(to right, var(--band-gradient)),
+            var(--clr);
+        }
+      }
+      > y {
+        position: absolute;
+        inset: 0;
+        transform: translateZ(calc(var(--s) * 2.25));
+        &::before{
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: blue;
+          transform-origin: left;
+          transform: rotateY(45deg);
+          background: var(--clr);
+        }
+        &::after{
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: green;
+          transform-origin: right;
+          transform: rotateY(-45deg);
+          background: var(--clr);
+        }
+
+      }
+    }
+    &[king]{
+      &::before{ /* front */
+        content: "";
+        position: absolute;
+        inset: -175% 0 0 0;
+        background: 
+          linear-gradient(hsl(0 0 0 / .2) 0 0), 
+          linear-gradient(var(--band-gradient)),
+          var(--clr);
+        transform-origin: bottom;
+        transform: rotateX(-90deg);
+        clip-path: polygon(0 20%, 50% 0%, 100% 20%, 100% 100%, 0 100%)
+      }
+      &::after{ /* back */
+        content: "";
+        position: absolute;
+        inset: 0 0 -175% 0;
+        background: 
+          linear-gradient(hsl(0 0 0 / .2) 0 0), 
+          linear-gradient(to top, var(--band-gradient)),
+          var(--clr);
+        transform-origin: top;
+        transform: rotateX(90deg);
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%)
+      }
+      > x {
+        position: absolute;
+        inset: 0;
+
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0 -125% 0 0;
+          transform-origin: left;
+          transform: rotateY(-90deg);
+          background: 
+            linear-gradient(hsl(0 0 0 / .1) 0 0), 
+            linear-gradient(to left, var(--band-gradient)),
+            var(--clr);
+        }
+        &::after{
+          content: "";
+          position: absolute;
+          inset: 0 0 0 -125%;
+          transform-origin: right;
+          transform: rotateY(90deg);
+          background: 
+            linear-gradient(hsl(0 0 0 / .1) 0 0), 
+            linear-gradient(to right, var(--band-gradient)),
+            var(--clr);
+        }
+      }
+      > y {
+        position: absolute;
+        inset: 0;
+        transform: translateZ(calc(var(--s) * 2.25));
+        &::before{
+          content: "";
+          position: absolute;
+          inset: 0 calc(var(--s) * .29) 0 0;
+          background: blue;
+          transform-origin: left;
+          transform: rotateY(-45deg);
+          background: var(--clr);
+        }
+        &::after{
+          content: "";
+          position: absolute;
+          inset: 0 0 0 calc(var(--s) * .29);
+          background: green;
+          transform-origin: right;
+          transform: rotateY(45deg);
+          background: var(--clr);
+        }
+
+      }
+    }
+  }
+}
+
+label { font-family: system-ui, sans-serif; position: fixed; top: 1em; right: 1em; color: white }
+body:not(:has(input:checked)) > chessboard { animation-play-state: paused }
+@keyframes rotateBoard { to { transform: rotateX(75deg) rotateZ(360deg) } }
+@keyframes piece-jump { 4% { translate: 0 0 5cqi } 8% { translate: 0 } }
