@@ -1,0 +1,113 @@
+@function pxToRem($pixel) {
+  @return $pixel / 16 + rem;
+}
+
+:root {
+  --black: #1f1f1f;
+  --white: #fff;
+}
+
+body {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.hero__content {
+  height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.hero__bg {
+  background-image: url("https://assets.codepen.io/204808/hobbiton.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(3px) brightness(1.5); /* initial fog */
+  height: 100vh;
+  width: 100%;
+  will-change: filter;
+}
+
+.hero__title {
+  color: var(--black);
+  filter: blur(10px);
+  font-size: clamp(3.125rem, 17.321vw + -1.357rem, 12.5rem);
+  line-height: clamp(4.688rem, 21.363vw + -0.84rem, 16.25rem);
+  left: 50%;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  position: absolute;
+  top: 50vh;
+  transform: translate(-50%, -50%) scale(0.5);
+  z-index: 100;
+}
+
+.hero__cover {
+  --overlay-opacity: 1;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  perspective: 500px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.hero__cover {
+  &::after {
+    background: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0) 20%,
+      rgba(0, 0, 0, 1) 90%
+    );
+    content: "";
+    inset: 0;
+    opacity: var(--overlay-opacity);
+    position: absolute;
+    pointer-events: none;
+  }
+}
+
+.hero__cover-img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+  pointer-events: none;
+}
+
+.section {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+.hobbiton {
+  position: relative;
+
+  &::after {
+    background: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0) 40%,
+      rgba(0, 0, 0, 0.7) 90%
+    );
+    content: "";
+    inset: 0;
+    opacity: var(--overlay-opacity);
+    position: absolute;
+    pointer-events: none;
+  }
+}
+
+.hobbiton-img {
+  height: 100vh;
+  object-fit: cover;
+  width: 100%;
+}
