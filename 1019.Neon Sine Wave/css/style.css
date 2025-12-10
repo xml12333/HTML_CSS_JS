@@ -1,0 +1,15 @@
+html,body{height:100%;margin:0;background:#0b0b0b;color:#ddd;font-family:sans-serif;}
+  canvas{width:100vw;height:100vh;display:block;}
+  .ui {
+	position:absolute; left:12px; top:12px;
+	background: rgba(255,255,255,0.06); padding:10px 12px; border-radius:10px;
+	box-shadow:0 6px 18px rgba(0,0,0,0.6); backdrop-filter: blur(6px);
+  }
+  .ui button { background:transparent; border:1px solid rgba(255,255,255,0.06); color:#fff; padding:6px 10px; border-radius:8px; cursor:pointer; }
+  .ui button:hover { border-color: #8bd3ff; box-shadow:0 4px 10px rgba(139,211,255,0.08)}
+  .meta { font-size:13px; color:#bbb; margin-top:6px; }
+  #log {
+	position:absolute; right:12px; top:12px; max-width:40vw;
+	background: rgba(0,0,0,0.6); color:#ffdddd; padding:10px; border-radius:8px; font-family:monospace; font-size:13px;
+	display:none; white-space:pre-wrap; z-index:1000;
+  }

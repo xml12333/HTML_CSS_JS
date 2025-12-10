@@ -1022,3 +1022,4 @@
 |1016| [Chess Board](https://github.com/xml12333/HTML_CSS_JS/tree/main/1016.Chess%20Board)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1016.Chess%20Board/)|
 |1017| [Animated SVG](https://github.com/xml12333/HTML_CSS_JS/tree/main/1017.Animated%20SVG)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1017.Animated%20SVG/)|
 |1018| [Image Zoom](https://github.com/xml12333/HTML_CSS_JS/tree/main/1018.Image%20Zoom)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1018.Image%20Zoom/)|
+|1019| [Neon Sine Wave](https://github.com/xml12333/HTML_CSS_JS/tree/main/1019.Neon%20Sine%20Wave)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1019.Neon%20Sine%20Wave/)|
