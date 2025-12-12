@@ -245,9 +245,28 @@ img {
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-
+@media screen and (max-width:320px) {
+  .container{
+    margin-inline: 1rem;
+  }
+}
 /* For medium devices */
 
 /* For large devices */
-
+@media screen and (min-width:1150px) {
+  .container{
+    margin-inline: auto;
+  }
+  .nav{
+    height: calc(var(--header-height) + 2rem);
+  }
+  .nav__toggle,
+  .nav__close{
+    display: none;
+  }
+  .nav__list{
+    flex-direction: row;
+    column-gap: 4rem;
+  }
+}
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
