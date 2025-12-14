@@ -19,7 +19,6 @@ if (navClose) {
   });
 }
 
-
 /*=============== REMOVE MENU MOBILE ===============*/
 const navLink = document.querySelectorAll(".nav__link");
 
@@ -31,18 +30,21 @@ const linkAction = () => {
 navLink.forEach((n) => n.addEventListener("click", linkAction));
 
 /*=============== HOME TYPED JS ===============*/
-
+const typedHome = new Typed("#home-typed", {
+  strings: ["Web Developer", "Freelancer", "Designer"],
+  typeSpeed: 80,
+  backspeed: 40,
+  backDelay: 2000,
+  loop: true,
+  cursorChar: "_",
+});
 
 /*=============== ADD SHADOW HEADER ===============*/
 
+/*=============== CONTACT EMAIL JS ===============*/
 
-/*=============== CONTACT EMAIL JS ===============*/ 
-
-
-/*=============== SHOW SCROLL UP ===============*/ 
-
+/*=============== SHOW SCROLL UP ===============*/
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
-
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
