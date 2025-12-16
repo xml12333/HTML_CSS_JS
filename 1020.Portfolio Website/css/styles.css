@@ -220,8 +220,8 @@ img {
   top: 0;
 }
 /* Add shadow header */
-.show-header{
-  box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.5)
+.show-header {
+  box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.5);
 }
 /* Active link */
 
@@ -309,7 +309,68 @@ img {
   color: var(--first-color);
 }
 /*=============== ABOUT ===============*/
-
+.about__container {
+  row-gap: 4rem;
+}
+.about__content {
+  display: grid;
+  row-gap: 3rem;
+}
+.about__data {
+  text-align: center;
+}
+.about__description {
+  margin-bottom: 3rem;
+}
+.about__subtitle {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  font-size: var(--h3-font-size);
+  color: var(--first-color);
+  margin-bottom: 1rem;
+}
+.about__subtitle i {
+  font-size: 1.5rem;
+  font-weight: initial;
+}
+.about__items {
+  display: flex;
+  font-weight: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+.about__item {
+  background-color: var(--first-color);
+  padding: 0.5rem 0.75rem;
+  border-radius: 2rem;
+  color: var(--black-color);
+  font-weight: var(--font-regular);
+  border: 2px solid var(--body-color);
+  cursor: default;
+  transition: background-color 0.4s, color 0.4s, border-color 0.4s;
+}
+.about__item:hover {
+  background-color: var(--body-color);
+  color: var(--white-color);
+  border-color: var(--first-color);
+}
+.about__image {
+  width: 240px;
+  height: 240px;
+  background-color: var(--white-color);
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  justify-self: center;
+  box-shadow: 0 8px 32px hsla(var(--hue), 80%, 48%, 0.3);
+}
+.about__img {
+  width: 200px;
+  filter: drop-shadow(0 4px 16px hsla(0, 0%, 0%, 0.2));
+}
 /*=============== PROJECTS ===============*/
 
 /*=============== RESUME ===============*/
@@ -330,27 +391,33 @@ img {
   .container {
     margin-inline: 1rem;
   }
-  .home__image {
+  .home__image,
+  .about__image {
     width: 200px;
     height: 200px;
   }
-  .home__img {
+  .home__img,
+  .about__img {
     width: 170px;
   }
 }
 /* For medium devices */
 @media screen and (min-width: 540px) {
-  .home__container {
+  .home__container,
+  .about__container {
     grid-template-columns: 400px;
     justify-content: center;
   }
 }
 @media screen and (min-width: 768px) {
-  .home__container {
+  .home__container,
+  .about__container {
     grid-template-columns: repeat(2, 350px);
     align-items: center;
   }
-  .home__data {
+  .home__data,
+  .about__data
+  .about__data .section__title {
     text-align: initial;
   }
   .home__buttons {
@@ -402,6 +469,24 @@ img {
     margin-top: 3.5rem;
     column-gap: 1.5rem;
   }
-  
+  .about__container{
+    grid-template-columns: 540px 400px;
+    column-gap: 6rem;
+    padding-block: 5rem 3rem;
+  }
+  .about__content{
+    row-gap: 5rem;
+  }
+  .about__data .section__title{
+    margin-bottom: 1.5rem;
+  }
+  .about__image{
+    width: 400px;
+    height: 400px;
+    border-radius: 1.5rem;
+  }
+  .about__img{
+    width: 350px;
+  }
 }
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
