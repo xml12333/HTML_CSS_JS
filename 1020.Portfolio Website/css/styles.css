@@ -336,7 +336,7 @@ img {
 }
 .about__items {
   display: flex;
-  font-weight: wrap;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.5rem;
 }
