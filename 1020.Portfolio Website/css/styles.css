@@ -495,6 +495,7 @@ img {
   position: absolute;
   bottom: -2rem;
   font-size: var(--small-font-size);
+  
 }
 .contact__data {
   row-gap: 1rem;
@@ -558,7 +559,8 @@ img {
   .home__container,
   .about__container,
   .projects__container,
-  .resume__container {
+  .resume__container,
+  .contact__container {
     grid-template-columns: 400px;
     justify-content: center;
   }
@@ -577,8 +579,15 @@ img {
     justify-content: initial;
   }
   .projects__container,
-  .resume__container {
+  .resume__container,
+  .contact__container {
     grid-template-columns: repeat(2, 350px);
+  }
+  .contact__content{
+    align-content: flex-start;
+  }
+  .contact__form{
+    order: 1;
   }
 }
 /* For large devices */
@@ -667,6 +676,26 @@ img {
   }
   .resume__list {
     row-gap: 3rem;
+  }
+  .contact{
+    padding-block: 8rem 4rem;
+  }
+  .contact__container{
+    grid-template-columns: 310px 450px;
+    column-gap: 10rem;
+  }
+  .contact__content{
+    row-gap: 2rem;
+  }
+  .contact__data{
+    row-gap: 1.5rem;
+  }
+  .contact__form .button{
+    justify-self: center;
+    margin-top: 1rem;
+  }
+  .contact__area{
+    height: 14rem;
   }
 }
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
