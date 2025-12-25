@@ -495,7 +495,6 @@ img {
   position: absolute;
   bottom: -2rem;
   font-size: var(--small-font-size);
-  
 }
 .contact__data {
   row-gap: 1rem;
@@ -525,7 +524,56 @@ img {
 }
 
 /*=============== FOOTER ===============*/
-
+.footer {
+  padding-block: 5rem 2rem;
+}
+.footer__container {
+  row-gap: 2rem;
+}
+.footer__links,
+.footer__social {
+  display: flex;
+  justify-content: center;
+}
+.footer__logo {
+  color: var(--white-color);
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-semi-bold);
+  justify-self: center;
+  margin-bottom: 1rem;
+  transition: color 0.4s;
+}
+.footer__logo:hover {
+  color: var(--first-color);
+}
+.footer__links {
+  column-gap: 2rem;
+}
+.footer__link {
+  color: var(--white-color);
+  transition: color 0.4s;
+}
+.footer__link:hover {
+  color: var(--first-color);
+}
+.footer__social {
+  column-gap: 1.5rem;
+}
+.footer__social-link {
+  color: var(--first-color);
+  font-size: 1.5rem;
+  transition: transfrom 0.4s;
+}
+.footer__social-link:hover {
+  transform: translateY(-0.25rem);
+}
+.footer__copy {
+  display: block;
+  margin-top: 5rem;
+  text-align: center;
+  font-size: var(--small-font-size);
+  color: var(--gray-color);
+}
 /*=============== SCROLL BAR ===============*/
 
 /*=============== SCROLL UP ===============*/
@@ -583,10 +631,10 @@ img {
   .contact__container {
     grid-template-columns: repeat(2, 350px);
   }
-  .contact__content{
+  .contact__content {
     align-content: flex-start;
   }
-  .contact__form{
+  .contact__form {
     order: 1;
   }
 }
@@ -677,25 +725,45 @@ img {
   .resume__list {
     row-gap: 3rem;
   }
-  .contact{
+  .contact {
     padding-block: 8rem 4rem;
   }
-  .contact__container{
+  .contact__container {
     grid-template-columns: 310px 450px;
     column-gap: 10rem;
   }
-  .contact__content{
+  .contact__content {
     row-gap: 2rem;
   }
-  .contact__data{
+  .contact__data {
     row-gap: 1.5rem;
   }
-  .contact__form .button{
+  .contact__form .button {
     justify-self: center;
     margin-top: 1rem;
   }
-  .contact__area{
+  .contact__area {
     height: 14rem;
+  }
+  .footer__container {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+  }
+  .footer__logo {
+    font-size: var(--h2-font-size);
+    justify-self: flex-start;
+    margin-bottom: 0;
+  }
+  .footer__links {
+    column-gap: 3rem;
+  }
+  .footer__social {
+    justify-self: flex-end;
   }
 }
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
+@media screen and (min-width: 2048px) {
+  body {
+    zoom: 1.2;
+  }
+}
