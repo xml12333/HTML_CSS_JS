@@ -224,6 +224,9 @@ img {
   box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.5);
 }
 /* Active link */
+.active-link::after {
+  width: 60%;
+}
 
 /*=============== HOME ===============*/
 .home__container {
@@ -575,11 +578,40 @@ img {
   color: var(--gray-color);
 }
 /*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: hsl(0, 0%, 15%);
+  border-radius: 0.5rem;
+}
+::-webkit-scrollbar-thumb {
+  background-color: hsl(0, 0%, 25%);
+  border-radius: 0.5rem;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(0, 0%, 35%);
+}
 
 /*=============== SCROLL UP ===============*/
-
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -50%;
+  background-color: var(--body-color);
+  box-shadow: 0 4px 16px hsla(0, 0%, 0%, 0.5);
+  display: inline-flex;
+  padding: 6px;
+  color: var(--white-color);
+  font-size: 1.25rem;
+  z-index: var(--z-tooltip);
+  transition: bottom 0.4s, transform 0.4s;
+}
+.scrollup:hover {
+  transform: translateY(-0.5rem);
+}
 /* Show Scroll Up */
-
+.show-scroll {
+  bottom: 3rem;
+}
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 @media screen and (max-width: 320px) {
@@ -759,6 +791,9 @@ img {
   }
   .footer__social {
     justify-self: flex-end;
+  }
+  .scrollup {
+    right: 3rem;
   }
 }
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
