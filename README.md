@@ -1027,3 +1027,4 @@
 |1021| [Input](https://github.com/xml12333/HTML_CSS_JS/tree/main/1021.Input)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1021.Input/)|
 |1022| [Sidebar](https://github.com/xml12333/HTML_CSS_JS/tree/main/1022.Sidebar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1022.Sidebar/)|
 |1023| [CyberPopover](https://github.com/xml12333/HTML_CSS_JS/tree/main/1023.CyberPopover)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1023.CyberPopover/)|
+|1024| [Baubles View](https://github.com/xml12333/HTML_CSS_JS/tree/main/1024.Baubles%20View)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1024.Baubles%20View/)|

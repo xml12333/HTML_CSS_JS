@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Baubles View</title>
+	<link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+	<canvas id="canvas"></canvas>
+	<textarea id="codeEditor" class="editor" spellcheck="false" autocorrect="off" autocapitalize="off" translate="no"
+		oninput="render()"></textarea>
+	<pre id="error"></pre>
+	<div id="indicator"></div>
+	<div id="controls">
+		<div class="controls">
+			<input id="btnToggleView" class="icon" type="checkbox" name="toggleView" onclick="toggleView()">
+			<input id="btnToggleResolution" class="icon" type="checkbox" name="toggleResolution"
+				onchange="toggleResolution()">
+			<input id="btnReset" class="icon" type="checkbox" name="reset" onclick="reset()">
+		</div>
+	</div>
+	<script type="x-shader/x-fragment">#version 300 es
+/*********
+* made by Matthias Hurrle (@atzedent)
+*/
+precision highp float;
+out vec4 O;
+uniform float time;
+uniform vec2 resolution;
+uniform vec2 move;
+#define FC gl_FragCoord.xy
+#define R resolution
+#define T floor(-3.+time*.5)
+#define S smoothstep
+#define N normalize
+#define pR(p,a) (p=cos(a)*p+sin(a)*vec2(-p.y,p.x))
+#define hue(a) (.24+.4*cos(6.3*(a)+vec3(0,83,21)))
+float rnd(vec3 p) {
+	p=fract(p*vec3(12.9898,78.233,156.345));
+	p+=dot(p,p+34.56);
+	return fract(p.x*p.y*p.z);
+}
+vec4 map(vec3 p) {
+	const float k=9.;
+	return vec4(length(mod(p,k)-k/2.)-k/4.,round(p/k+.5));
+}
+vec3 dir(vec2 uv, vec3 p, vec3 t, float z) {
+	vec3 up=vec3(0,1,0),
+	f=N(t-p),
+	r=N(cross(up,f)),
+	u=N(cross(f,r));
+	return N(mat3(r,u,f)*vec3(uv,z));
+}
+vec3 norm(vec3 p) {
+	float h=1e-3; vec2 k=vec2(-1,1);
+	return N(
+		k.xyy*map(p+k.xyy*h).x+
+		k.yxy*map(p+k.yxy*h).x+
+		k.yyx*map(p+k.yyx*h).x+
+		k.xxx*map(p+k.xxx*h).x
+	);
+}
+void cam(inout vec3 p) {
+	pR(p.yz,.42-move.y*6.3/min(R.x,R.y)+T*.2);
+	pR(p.xz,move.x*6.3/min(R.x,R.y)+T*.2);
+}
+vec3 render(inout vec3 p, vec3 rd, float steps, out float dd, out float at) {
+	vec3 col=vec3(0);
+	vec3 id=vec3(0);
+	for (float i; i++<steps;) {
+		vec4 d=map(p);
+		if (d.x<1e-3 || dd>120.) {
+			id=d.yzw;
+			break;
+		}
+		p+=rd*d.x;
+		dd+=d.x;
+		at+=.05*(.05/dd);
+	}
+	if (dd<120.) {
+		vec3 n=norm(p);
+		float fres=pow(clamp(1.+dot(rd,n)*.5+.5,.0,1.),5.);
+		col=mix(col,hue(rnd(id))*3.*clamp(dot(N(rd-p),n)*.5+.5,.0,1.),fres);
+	}
+	col=mix(vec3(0),col,exp(-125e-7*dd*dd*dd));	
+	return col;
+}
+void main() {
+	vec2 uv=(FC-.5*R)/min(R.x,R.y);
+	vec3 col=vec3(0),
+	t=vec3(0);
+	t.z+=T*10.2;
+	vec3 p=vec3(0,0,t.z-20.), ro=p,
+	rd=dir(uv,p,t,2.);
+	cam(rd); cam(ro);
+	float dd=.0, at=.0;
+	col=render(p,rd,400.,dd,at);
+	vec3 n=norm(p);
+	float fres=clamp(1.+dot(rd,n),.0,1.),
+	spec=pow(clamp(dot(reflect(rd,n),N(ro-p)),.0,1.),32.);
+	rd=reflect(rd,n);
+	p+=5e-2*n;
+	float d0=.0,at0=.0; 
+	vec3 c=S(-.5,2.5,render(p,rd,80.,d0,at0));
+	col=mix(1.7*mix(col,mix(c,vec3(dot(c,vec3(.21,.71,.07))),.65),.75),col,pow(fres,1.2));
+	fres=clamp(1.+dot(rd,n),.0,1.);
+	n=norm(p);
+	rd=reflect(rd,n);
+	p+=5e-2*n;
+	float d1=.0,at1=.0;
+	c=render(p,rd,40.,d1,at1);
+	col+=c*.05*fres;
+	col+=spec;
+	at*=5.;
+	col+=at*at+at0*at0;
+	col=tanh(col*col*col);
+	col=sqrt(col);
+	col=mix(vec3(0),col,exp(-125e-7*dd*dd*dd));
+  uv=FC/R;
+	uv*=1.-uv.yx;
+	float vig=uv.x*uv.y*25.;
+	vig=sqrt(vig);
+	col*=vig;
+	col=max(col,vec3(45)/255.);
+  O=vec4(col,1);
+}</script>
+	<script src="./js/script.js"></script>
+
+</body>
+
+</html>
