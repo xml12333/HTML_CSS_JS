@@ -1029,3 +1029,4 @@
 |1023| [CyberPopover](https://github.com/xml12333/HTML_CSS_JS/tree/main/1023.CyberPopover)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1023.CyberPopover/)|
 |1024| [Baubles View](https://github.com/xml12333/HTML_CSS_JS/tree/main/1024.Baubles%20View)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1024.Baubles%20View/)|
 |1025| [Postcard](https://github.com/xml12333/HTML_CSS_JS/tree/main/1025.Postcard)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1025.Postcard/)|
+|1026| [Select](https://github.com/xml12333/HTML_CSS_JS/tree/main/1026.Select)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1026.Select/)|

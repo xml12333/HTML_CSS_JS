@@ -1,0 +1,223 @@
+.sour-gummy-100 {
+  font-family: "Sour Gummy", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.cat {
+  select,
+  ::picker(select) {
+    appearance: base-select;
+
+    font-size: 18px;
+  }
+
+  select {
+    min-width: 400px;
+    padding: 16px;
+    border-radius: 8px;
+    min-height: 58px;
+    background-color: white;
+    cursor: pointer;
+
+    &:hover {
+      background-color: yellow;
+    }
+  }
+
+  ::picker(select) {
+    border-radius: 0px 0px 8px 8px;
+    border-top: none;
+  }
+
+  ::picker-icon,
+  ::checkmark {
+    display: none;
+  }
+
+  [hidden] {
+    display: none;
+  }
+
+  option {
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 10px;
+
+    &:hover {
+      background: yellow;
+    }
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .sleep-symbol {
+    margin-left: 260px;
+    font-weight: 600;
+    margin-bottom: -40px;
+
+    span {
+      position: relative;
+      display: inline-block;
+      opacity: 1;
+      transform: scale(1);
+      animation: sleep 4s ease-in-out infinite;
+    }
+
+    span:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    span:nth-child(2) {
+      animation-delay: 1s;
+      margin-left: -10px;
+    }
+
+    span:nth-child(3) {
+      animation-delay: 2s;
+      margin-left: -10px;
+    }
+  }
+
+  .thecat {
+    z-index: 2;
+    margin-left: 220px;
+    margin-bottom: -62px;
+    position: relative;
+    pointer-events: none;
+  }
+}
+
+#tail {
+  visibility: visible;
+}
+#longtail {
+  visibility: hidden;
+}
+
+option {
+  svg {
+    margin-right: -3px;
+  }
+}
+
+/* activate cat when mouse approaches! */
+.mouse-detector {
+  padding: 20px 30px 30px 30px;
+
+  &:hover {
+    #lefteyelid {
+      visibility: hidden;
+    }
+    .sleep-symbol {
+      visibility: hidden;
+    }
+  }
+}
+
+.cat {
+  padding: 30px;
+  &:hover {
+    #righteyelid {
+      visibility: hidden;
+    }
+  }
+}
+
+.thecat {
+  #eyesdown {
+    visibility: hidden;
+  }
+}
+
+.cat:has(.side-select:hover) {
+  #eyesdown {
+    visibility: visible;
+  }
+}
+
+select:open {
+  border-radius: 8px 8px 0px 0px;
+}
+
+.cat:has(option:hover) {
+  #righteyelid, #lefteyelid, .sleep-symbol {
+    visibility: hidden;
+  }
+  #eyesdown {
+    visibility: visible;
+  }
+}
+
+/* auto-cat tail assist */
+selectedcontent {
+  svg {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+.cat:has(option:hover) {
+  #tail {
+    visibility: hidden;
+  }
+  #longtail{
+    visibility: visible;
+  } 
+}
+
+option:has(~ option:hover) {
+  #tailpiece {
+      visibility: visible;
+  }
+}
+
+option {
+  min-height: 48px;
+  &:hover {
+    #endpiece {
+      visibility: visible;
+    }
+  }
+  #tailpiece {
+    visibility: hidden;
+  }
+  #endpiece {
+    visibility: hidden;
+  }
+}
+
+.instructions {
+  color: #444;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  flex-direction: column;
+
+  font-family: "Sour Gummy";
+
+  background-color: #ccc;
+}
+
+@keyframes sleep {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translate(-5px, -35px) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-60px) scale(1.5);
+  }
+}
