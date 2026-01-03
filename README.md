@@ -1030,3 +1030,4 @@
 |1024| [Baubles View](https://github.com/xml12333/HTML_CSS_JS/tree/main/1024.Baubles%20View)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1024.Baubles%20View/)|
 |1025| [Postcard](https://github.com/xml12333/HTML_CSS_JS/tree/main/1025.Postcard)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1025.Postcard/)|
 |1026| [Select](https://github.com/xml12333/HTML_CSS_JS/tree/main/1026.Select)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1026.Select/)|
+|1027| [Blackhole](https://github.com/xml12333/HTML_CSS_JS/tree/main/1027.Blackhole)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1027.Blackhole/)|
