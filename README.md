@@ -1032,3 +1032,4 @@
 |1026| [Select](https://github.com/xml12333/HTML_CSS_JS/tree/main/1026.Select)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1026.Select/)|
 |1027| [Blackhole](https://github.com/xml12333/HTML_CSS_JS/tree/main/1027.Blackhole)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1027.Blackhole/)|
 |1028| [Wheel of Fortune](https://github.com/xml12333/HTML_CSS_JS/tree/main/1028.Wheel%20of%20Fortune)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1028.Wheel%20of%20Fortune/)|
+|1029| [CSS Grid](https://github.com/xml12333/HTML_CSS_JS/tree/main/1029.CSS%20Grid)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1029.CSS%20Grid/)|
