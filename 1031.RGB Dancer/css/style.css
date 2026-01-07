@@ -1,0 +1,47 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.video-stack {
+  position: relative;
+  width: min(1200px, 90vw);
+  aspect-ratio: 16/9;
+  max-height: 90vh;
+  overflow: hidden;      
+  border-radius: 12px;
+}
+
+.layer {
+  position: absolute;
+  will-change: transform;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: screen;
+}
+
+.layer-green {
+  filter: invert(66%) sepia(95%) saturate(547%) hue-rotate(58deg) brightness(101%) contrast(96%);
+  z-index: 2;
+}
+
+.layer-red {
+  filter: invert(34%) sepia(89%) saturate(6196%) hue-rotate(351deg) brightness(114%) contrast(92%);
+  z-index: 3;
+}
+
+.layer-blue {
+  filter: invert(45%) sepia(73%) saturate(7498%) hue-rotate(220deg) brightness(99%) contrast(93%);
+  z-index: 4;
+}
