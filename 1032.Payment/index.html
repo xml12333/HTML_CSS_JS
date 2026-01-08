@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Payment Status Screen</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <section class="container">
+    <section class="invoice-container">
+      <div class="invoice-slot">
+        <div class="slot-hole"></div>
+      </div>
+      <div class="invoice">
+        <h2 class="title">Trip Invoice &mdash; Japan Summer 2025</h2>
+        <p class="amount">
+          Total <span class="value">$30,000</span>
+        </p>
+        <p class="amount">
+          Per Person <span class="value">$6,000</span>
+        </p>
+
+        <hr />
+
+        <ul class="payers-list">
+          <li>
+            <div class="payer-image-container">
+              <img src="https://res.cloudinary.com/dmuyehme1/image/upload/v1761081494/user1_okmfkd.png" />
+            </div>
+            <p>
+              You
+              <span class="pay-tag"><i class="fa-solid fa-circle-check"></i> Paid</span>
+            </p>
+          </li>
+          <li>
+            <div class="payer-image-container">
+              <img src="https://res.cloudinary.com/dmuyehme1/image/upload/v1761082627/user4_dujvoe.svg" />
+            </div>
+            <p>
+              Olabode
+              <span class="pay-tag"><i class="fa-solid fa-circle-check"></i> Paid</span>
+            </p>
+          </li>
+          <li>
+            <div class="payer-image-container">
+              <img src="https://res.cloudinary.com/dmuyehme1/image/upload/v1761082286/user3_ue0zzq.avif" />
+            </div>
+            <p>
+              Lukmon
+              <span class="pay-tag"><i class="fa-solid fa-circle-check"></i> Paid</span>
+            </p>
+          </li>
+          <li>
+            <div class="payer-image-container">
+              <img src="https://res.cloudinary.com/dmuyehme1/image/upload/v1761081494/user1_okmfkd.png" />
+            </div>
+            <p>
+              Hope
+              <span class="pay-tag"><i class="fa-solid fa-clock"></i> Unpaid</span>
+            </p>
+          </li>
+          <li>
+            <div class="payer-image-container">
+              <img src="https://res.cloudinary.com/dmuyehme1/image/upload/v1761082184/user2_b821x7.avif" />
+            </div>
+            <p>
+              Dara
+              <span class="pay-tag"><i class="fa-solid fa-clock"></i> Unpaid</span>
+            </p>
+          </li>
+        </ul>
+
+        <div class="payment-status">
+          <p class="heading">
+            Payment Status
+            <span>Unpaid</span>
+          </p>
+          <div class="status-progress">
+            <div class="checkpoint">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div class="checkpoint">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div class="checkpoint">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div class="checkpoint">
+              <span class="circle"></span>
+            </div>
+            <div class="checkpoint">
+              <i class="fa-solid fa-stamp"></i>
+            </div>
+          </div>
+        </div>
+        <div class="btn-group">
+          <button class="btn reminder-btn">Send Reminder</button>
+          <button class="btn download-btn">Download Invoice</button>
+        </div>
+      </div>
+    </section>
+    <hr />
+    <div class="payment-info">
+      <p>Payment Method</p>
+      <div class="card-info">
+        <p>Visa Ending 2986</p>
+        <span class="card-icon"></span>
+      </div>
+    </div>
+    <button class="pay-now-btn">Pay Now</button>
+  </section>
+
+</body>
+
+</html>

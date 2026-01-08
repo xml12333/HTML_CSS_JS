@@ -1035,3 +1035,4 @@
 |1029| [CSS Grid](https://github.com/xml12333/HTML_CSS_JS/tree/main/1029.CSS%20Grid)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1029.CSS%20Grid/)|
 |1030| [Electric Attractor](https://github.com/xml12333/HTML_CSS_JS/tree/main/1030.Electric%20Attractor)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1030.Electric%20Attractor/)|
 |1031| [RGB Dancer](https://github.com/xml12333/HTML_CSS_JS/tree/main/1031.RGB%20Dancer)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1031.RGB%20Dancer/)|
+|1032| [Payment](https://github.com/xml12333/HTML_CSS_JS/tree/main/1032.Payment)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1032.Payment/)|
