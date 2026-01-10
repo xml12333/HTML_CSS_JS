@@ -1,0 +1,89 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.app {
+  --clock-size: 3vw;
+  --gap: calc(var(--clock-size) * 0.05);
+  --clock-segment-w: calc(var(--clock-size) * 4 + var(--gap) * 5);
+  --clock-segment-h: calc(var(--clock-size) * 6 + var(--gap) * 5);
+  font-family: sans-serif;
+  text-align: center;
+  display: flex;
+  gap: var(--gap);
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding-left: calc(var(--clock-size) + var(--gap) * 2);
+}
+
+.app > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  width: var(--clock-segment-w);
+  height: var(--clock-segment-h);
+}
+
+.app > div:nth-of-type(even) {
+  margin-right: var(--clock-size);
+}
+
+.clock {
+  --w: 47%;
+  --h: 3px;
+  --dur: 0.4s;
+  position: relative;
+  width: var(--clock-size);
+  height: var(--clock-size);
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 2px solid white;
+  background: linear-gradient(225deg, #d0d0d0 10%, white);
+  box-shadow: -2px 2px 6px #d0d0d0,
+               2px -2px 6px #ffffff;
+}
+
+.clock::before,
+.clock::after {
+  position: absolute;
+  content: '';
+  top: calc(50% - var(--h) * 0.5);
+  left: 50%;
+  transform-origin: 0% 50%;
+  width: var(--w);
+  height: var(--h);
+  background: black;
+  border-radius: 9999px;
+  transition: calc(var(--dur) * 1s) ease-in-out;
+  transform: rotate(calc(var(--angle) * 1deg));
+}
+
+.clock::before {
+  --angle: var(--hour-angle);
+}
+
+.clock::after {
+  --angle: var(--minute-angle);
+}
+
+@media (max-width: 700px) {
+  .clock {
+    --h: 2px;
+    border: 1px solid white;
+  }
+}
+
+@media (max-width: 500px) {
+  .clock {
+    --h: 1px;
+    --w: 50%;
+  }
+}
