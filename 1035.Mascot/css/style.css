@@ -1,0 +1,3 @@
+body { margin: 0; overflow: hidden; background-color: #050505; font-family: sans-serif; }
+
+.lil-gui.root { position: absolute !important; bottom: 20px !important; right: 20px !important; top: auto !important; }
