@@ -1,0 +1,163 @@
+@import url(https://fonts.bunny.net/css?family=noto-sans-mono:400);
+@layer base, mouse, demo;
+
+@layer demo{
+  @property --rotate {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+  }
+  :root {
+		--cta: steelblue;
+    --mouse-color: var(--cta);
+		--first-word-color: var(--cta);
+		
+    --circle-size: 30vw;
+    --radius: calc(var(--circle-size) / 2);
+    --letter-spacing: 1ch;
+    --letter-angle-delta: 48deg; 
+  }
+  body {
+    height: 800svh;
+    font-family: 'Noto Sans Mono', monospace;
+  }
+  
+  ul {
+    --count: sibling-count();
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    display: block;
+    width: var(--circle-size);
+    height: var(--circle-size);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-radius: 50%;
+    transform: rotate(calc(var(--rotate) * 360deg));
+    animation: --scroll-rotate;
+    animation-timeline: scroll(root block);
+    > li {
+      --i: sibling-index();
+      position: absolute;
+      inset: 50%;
+      transform: rotate(calc(360deg / var(--count) * (var(--i) - 1)));
+			&:first-child{
+				color: var(--first-word-color);
+			}
+      > span {
+        --i: sibling-index();
+        --letter-rotate: var(--rotate);
+        /* calcualate initial offset for each letter  */
+        --letter-scramble-angle: calc(var(--i) * var(--letter-angle-delta));
+        --letter-angle: calc(var(--letter-scramble-angle) * (1 - var(--letter-rotate)));
+      
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: 0 0;
+        display: inline-block;
+        font-size: clamp(1rem, 3.5vw + .045rem,  3rem);
+        transform: 
+          rotate(var(--letter-angle))
+          translateX(var(--radius))
+          translateX(calc((var(--i) - 1) * var(--letter-spacing)));
+      }
+    }
+  }
+  
+  @keyframes --scroll-rotate {
+		100%{
+			--rotate: 1;
+		}
+  }
+}
+
+@layer mouse{
+  .mouse {
+		position: fixed;
+		top:50%;
+		left: 50%;
+    translate: -50% -50%;
+		display: block;
+		width: 50px;
+		height: 50px;
+		opacity: 1;
+    color:var(--mouse-color);
+     display: none;
+		animation-name: mouse;
+		animation-duration: 1s;
+		animation-timing-function: linear;
+		animation-fill-mode: forwards;
+		animation-timeline: scroll(root block);
+    @supports  (animation-timeline: scroll()) {
+      display: block;
+    }
+	}
+	@keyframes mouse {
+		95% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+}
+
+ /* general styling not relevant for this demo */
+@layer base {
+	* {
+		box-sizing: border-box;
+	}
+	:root {
+		color-scheme: light dark;
+		--bg-dark: rgb(12, 10, 9);
+		--bg-light: rgb(248, 244, 238);
+		--txt-light: rgb(10, 10, 10);
+		--txt-dark: rgb(245, 245, 245););
+		--line-light: rgba(0 0 0 / .25);
+		--line-dark: rgba(255 255 255 / .25);
+    
+    --clr-bg: light-dark(var(--bg-light), var(--bg-dark));
+    --clr-txt: light-dark(var(--txt-light), var(--txt-dark));
+    --clr-lines: light-dark(var(--line-light), var(--line-dark));
+	}
+ 
+	body {
+		background-color: var(--clr-bg);
+		color: var(--clr-txt);
+		min-height: 100svh;
+		margin: 0;
+		padding: 2rem;
+		font-family: system-ui, sans-serif;
+		font-size: 1rem;
+		line-height: 1.5;
+    display: grid;
+    place-items: center;
+    grid-template-rows: 1fr auto;
+	}
+
+  @supports not (animation-timeline: scroll()) {
+	 body::before {
+			content:"Sorry, your browser doesn't support animation-timeline";
+			position: fixed;
+			top: 2rem;
+			left: 50%;
+			translate: -50% 0;
+			font-size: 0.8rem;
+		}
+	}
+  footer a {
+    font-size: .8rem;
+    color: var(--cta);
+    z-index: 2;
+    underline: none;
+    display: block;
+    transition: scale 150ms ease-in-out;
+    &:hover{
+      scale: 1.12;
+    }
+    
+  }
+}
