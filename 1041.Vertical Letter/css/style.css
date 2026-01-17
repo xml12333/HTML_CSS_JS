@@ -1,0 +1,175 @@
+@import url(https://fonts.bunny.net/css?family=noto-sans-mono:400);
+@layer base, mouse, demo;
+
+@layer demo{
+  @property --page-offset {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 75;
+  }
+  :root {
+    --cta: rgb(94, 165, 0);
+    --mouse-color: var(--cta);
+		--first-word-color: var(--cta);
+    --letter-spacing: 1ch;
+    --f-size: clamp(1rem, 2.5vw + .045rem,  1.5rem);
+  }
+
+  body {
+    height: 800svh;
+    font-family: 'Noto Sans Mono', monospace;    
+  }
+  
+  .scramble {
+    --count: sibling-count();
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1ch;
+		
+		animation: --page-scroll 1s linear;
+    animation-timeline: scroll(root block);
+    animation-timing-function: steps(100);
+    
+    > * {
+      perspective: 300px;
+      transform-style: preserve-3d;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      &:nth-child(2){
+        color: var(--first-word-color);
+      }
+      > span {
+        --i: sibling-index();
+        --dir: calc(1 - 2 * mod(var(--i), 2));
+        --rand: calc(mod((var(--i) * 7 + 20), 4) - 4);
+        --wave: sin(calc(var(--i) * 17deg));
+        
+        /* y position */
+        --start-y: calc(
+          (var(--rand) + var(--wave) )
+          * var(--dir)
+          * var(--page-offset)
+          * 1px
+        );
+        
+        /* depth */
+        --z: calc(abs(var(--rand) * 2 + var(--wave)));
+        --depth-factor: calc(var(--page-offset) * 0.02);
+        --start-z: calc(var(--z) * var(--depth-factor) * 13px);
+      
+        transform:
+        translate3d(
+          0,
+          var(--start-y),
+          var(--start-z)
+        );
+        
+        display: inline-block;
+        position: relative;
+        font-size: var(--f-size);
+      }
+    }
+  }
+	
+	@keyframes --page-scroll {
+    to {
+      --page-offset: 0;
+    }
+  }
+}
+
+/* the mouse icon is just to indicate scroll, it is not relevant to the demo */
+@layer mouse{
+  .mouse {
+    pointer-events: none;
+		position: fixed;
+		bottom:10px;
+		left: 50%;
+    translate: -50% 0;
+		display: block;
+		width: 50px;
+		height: 50px;
+		opacity: 1;
+    color:var(--mouse-color);
+     display: none;
+		animation-name: mouse;
+		animation-duration: 1s;
+		animation-timing-function: linear;
+		animation-fill-mode: forwards;
+		animation-timeline: scroll(root block);
+    @supports  (animation-timeline: scroll()) {
+      display: block;
+    }
+	}
+	@keyframes mouse {
+		95% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+}
+
+ /* general styling not relevant for this demo */
+@layer base {
+	* {
+		box-sizing: border-box;
+	}
+	:root {
+		color-scheme: light dark;
+		--bg-dark: rgb(12, 10, 9);
+		--bg-light: rgb(248, 244, 238);
+		--txt-light: rgb(10, 10, 10);
+		--txt-dark: rgb(245, 245, 245););
+		--line-light: rgba(0 0 0 / .25);
+		--line-dark: rgba(255 255 255 / .25);
+    
+    --clr-bg: light-dark(var(--bg-light), var(--bg-dark));
+    --clr-txt: light-dark(var(--txt-light), var(--txt-dark));
+    --clr-lines: light-dark(var(--line-light), var(--line-dark));
+	}
+ 
+	body {
+		background-color: var(--clr-bg);
+		color: var(--clr-txt);
+		min-height: 100svh;
+		margin: 0;
+		padding: 1rem;
+		font-family: system-ui, sans-serif;
+		font-size: 1rem;
+		line-height: 1.5;
+    display: grid;
+    place-items: center;
+    grid-template-rows: 1fr auto;
+	}
+	@supports not (animation-timeline: scroll()) {
+	 body::before {
+			content:"Sorry, your browser doesn't support animation-timeline";
+			position: fixed;
+			top: 2rem;
+			left: 50%;
+			translate: -50% 0;
+			font-size: 0.8rem;
+		}
+	}
+  footer a {
+    font-size: .8rem;
+    color: var(--cta);
+    z-index: 2;
+    underline: none;
+    display: block;
+    transition: scale 150ms ease-in-out;
+    &:hover{
+      scale: 1.12;
+    }
+    
+  }
+}
