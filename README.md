@@ -1045,3 +1045,4 @@
 |1039| [Terminal Motherlode](https://github.com/xml12333/HTML_CSS_JS/tree/main/1039.Terminal%20Motherlode)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1039.Terminal%20Motherlode/)|
 |1040| [Round And Round](https://github.com/xml12333/HTML_CSS_JS/tree/main/1040.Round%20And%20Round)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1040.Round%20And%20Round/)|
 |1041| [Vertical Letter](https://github.com/xml12333/HTML_CSS_JS/tree/main/1041.Vertical%20Letter)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1041.Vertical%20Letter/)|
+|1042| [Live Chart](https://github.com/xml12333/HTML_CSS_JS/tree/main/1042.Live%20Chart)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1042.Live%20Chart/)|
