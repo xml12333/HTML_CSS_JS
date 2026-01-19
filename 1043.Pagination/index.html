@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>progressive anchor pagination 👨‍🍳</title>
+  <link rel="stylesheet" href="https://public.codepenassets.com/css/normalize-5.0.0.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+  <nav class="pagination" aria-label="Pagination navigation">
+    <ul class="pagination__list" role="list">
+      <li class="pagination__item">
+        <a href="#2" aria-label="Previous" class="pagination__link pagination__link--arrow">
+          <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 11L2 6L7 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </li>
+      <li class="pagination__item">
+        <a href="#1" aria-label="Page 1" class="pagination__link">
+          1
+        </a>
+      </li>
+      <li class="pagination__item pagination__gap pagination__item--mobile-only">
+        <span class="pagination__link--gap" aria-hidden="true">…</span>
+      </li>
+      <li class="pagination__item">
+        <a href="#4" aria-current="page" aria-label="Page 4" class="pagination__link pagination__link--current">4</a>
+      </li>
+      <li class="pagination__item">
+        <a href="#5" aria-label="Page 5" class="pagination__link">
+          5
+        </a>
+      </li>
+      <li class="pagination__item">
+        <a href="#6" aria-label="Page 6" class="pagination__link">
+          6
+        </a>
+      </li>
+      <li class="pagination__item pagination__gap pagination__item--mobile-only">
+        <span class="pagination__link--gap" aria-hidden="true">…</span>
+      </li>
+      <li class="pagination__item">
+        <a href="#10" aria-label="Page 10" class="pagination__link">
+          10
+        </a>
+      </li>
+      <li class="pagination__item">
+        <a href="#0" aria-label="Next" class="pagination__link pagination__link--arrow">
+          <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L6 6L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+ 
+  <script type="module" src="./js/script.js"></script>
+
+</body>
+
+</html>

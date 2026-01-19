@@ -1,0 +1,303 @@
+@import url('https://unpkg.com/normalize.css') layer(normalize);
+
+@layer normalize, base, prototype, bridge;
+
+@layer bridge {
+  @supports (anchor-name: --pagination) {
+      /* gap bridging... */
+    [data-bridge=true][data-debug=true] {
+      li:has(+ li.pagination__gap) a::after,
+      li.pagination__gap + li a::after {
+        opacity: 1;
+      }  
+    }
+    [data-bridge=true] {
+      li:has(+ li.pagination__gap) a::after,
+      li.pagination__gap + li a::after {
+        position: absolute;
+        content: '';
+        opacity: 0;    
+        border: 1px solid currentColor;
+        background: repeating-linear-gradient(45deg, color-mix(in hsl, currentColor, #0000) 0 1px, #0000 1px 5px);
+      }
+      li:has(+ li.pagination__gap) a::after {
+        inset: 0 -50% 0 100%;
+        color: hsl(320 90% 75%);
+      }
+      li.pagination__gap + li a::after {
+        color: hsl(220 90% 75%);
+        inset: 0 100% 0 -50%;
+      }
+    }
+  } 
+}
+
+@layer prototype {
+  .pagination {
+    --size: 36px;
+    --inset: 2px;
+    position: relative;
+
+    .pagination__list {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+
+      li {
+        width: var(--size);
+        aspect-ratio: 1;
+        display: grid;
+        place-items: center;
+
+        a {
+          display: grid;
+          place-items: center;
+          color: inherit;
+          text-decoration: none;
+          width: 100%;
+          height: 100%;
+          -webkit-user-select: none;
+             -moz-user-select: none;
+              -ms-user-select: none;
+                  user-select: none;
+          position: relative;
+          outline-color: canvasText;
+          -webkit-tap-highlight-color: #0000;
+          @media (prefers-reduced-motion: no-preference) {
+            transition: color 0.2s ease-out, opacity 0.2s ease-out;
+          }
+
+
+          &[aria-current=page] {
+            color: light-dark(#fff, #000);
+          }
+          
+          &.pagination__link--disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            pointer-events: none;
+          }
+        }
+      }
+    }
+  }
+  @supports not (anchor-name: --active-page) {
+    .pagination a.pagination__link:not(.pagination__link--arrow) {
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        inset: var(--inset);
+        border-radius: calc(var(--pagination-radius) * 1px);
+        background: light-dark(color-mix(in srgb, canvasText 10%, canvas), color-mix(in srgb, canvasText 20%, canvas));
+        z-index: -1;
+        opacity: 0;
+      }
+
+      &[aria-current=page]::before {
+        background: light-dark(#000, hsl(0, 0%, 80%));
+      }
+
+      &:hover:not([aria-current=page])::before,
+      &[aria-current=page]::before {
+        opacity: 1;
+      }
+      @media(prefers-reduced-motion: no-preference) {
+        &::before {
+          transition-property: background, opacity;
+          transition-duration: 0.2s;
+          transition-timing-function: ease-out;
+        }
+      }
+    }
+  }
+  @supports (anchor-name: --active-page) {
+    .pagination .pagination__list {
+      &::before,
+      &::after {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        width: calc(var(--size) - (2 * var(--inset)));
+        aspect-ratio: 1;
+        pointer-events: none;
+        opacity: 0;
+        border-radius: calc(var(--pagination-radius) * 1px);
+      }
+      &::before {
+        background: light-dark(color-mix(in srgb, canvasText 10%, canvas), color-mix(in srgb, canvasText 20%, canvas));
+      }
+      
+      @media (hover: none) and (pointer: coarse) {
+        &::before {
+          content: unset;
+        }
+      }
+      
+      &::after {
+        background: light-dark(#000, hsl(0, 0%, 80%));
+      }
+
+      &:is(:has(.pagination__link:hover), :has(:focus-visible)):not(:has(.pagination__link--arrow:is(:hover, :focus-visible))) {
+        &::before {
+          opacity: 1;
+        }
+      }
+      &::before, &::after {
+        @media (prefers-reduced-motion: no-preference) {
+          transition: inset 0.2s ease-out;
+        }
+      }
+      &::after {
+        opacity: 1;
+      }
+    }
+    .pagination__list {
+      [aria-current="page"] {
+        anchor-name: --pagination-active;
+      }
+      li:has([href]:not(.pagination__link--arrow):is(:hover, :focus-visible)) {
+        anchor-name: --pagination-hover;
+      }
+      &::before,
+      &::after {
+        left: calc((anchor(left)) + var(--inset));
+        translate: unset;
+      }
+      &::before {
+        position-anchor: --pagination-hover;
+      }
+      &::after {
+        position-anchor: --pagination-active;
+      }
+    }
+  }
+}
+
+@layer base {
+  :root {
+    --font-size-min: 16;
+    --font-size-max: 20;
+    --font-ratio-min: 1.2;
+    --font-ratio-max: 1.33;
+    --font-width-min: 375;
+    --font-width-max: 1500;
+  }
+
+  html {
+    color-scheme: light dark;
+  }
+
+  [data-theme='light'] {
+    color-scheme: light only;
+  }
+
+  [data-theme='dark'] {
+    color-scheme: dark only;
+  }
+
+  :where(.fluid) {
+    --fluid-min: calc(
+      var(--font-size-min) * pow(var(--font-ratio-min), var(--font-level, 0))
+    );
+    --fluid-max: calc(
+      var(--font-size-max) * pow(var(--font-ratio-max), var(--font-level, 0))
+    );
+    --fluid-preferred: calc(
+      (var(--fluid-max) - var(--fluid-min)) /
+        (var(--font-width-max) - var(--font-width-min))
+    );
+    --fluid-type: clamp(
+      (var(--fluid-min) / 16) * 1rem,
+      ((var(--fluid-min) / 16) * 1rem) -
+        (((var(--fluid-preferred) * var(--font-width-min)) / 16) * 1rem) +
+        (var(--fluid-preferred) * var(--variable-unit, 100vi)),
+      (var(--fluid-max) / 16) * 1rem
+    );
+    font-size: var(--fluid-type);
+  }
+
+  *,
+  *:after,
+  *:before {
+    box-sizing: border-box;
+  }
+
+  body {
+    background: light-dark(#fff, #000);
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    font-family: 'SF Pro Text', 'SF Pro Icons', 'AOS Icons', 'Helvetica Neue',
+      Helvetica, Arial, sans-serif, system-ui;
+  }
+
+  body::before {
+    --size: 45px;
+    --line: color-mix(in hsl, canvasText, transparent 80%);
+    content: '';
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background: linear-gradient(
+          90deg,
+          var(--line) 1px,
+          transparent 1px var(--size)
+        )
+        calc(var(--size) * 0.36) 50% / var(--size) var(--size),
+      linear-gradient(var(--line) 1px, transparent 1px var(--size)) 0%
+        calc(var(--size) * 0.32) / var(--size) var(--size);
+    -webkit-mask: linear-gradient(-20deg, transparent 50%, white);
+            mask: linear-gradient(-20deg, transparent 50%, white);
+    top: 0;
+    transform-style: flat;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .bear-link {
+    color: canvasText;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    width: 48px;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    opacity: 0.8;
+  }
+
+  :where(.x-link, .bear-link):is(:hover, :focus-visible) {
+    opacity: 1;
+  }
+
+  .bear-link svg {
+    width: 75%;
+  }
+
+  /* Utilities */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}
+
+div.tp-dfwv {
+  width: 280px;
+  position: fixed;
+}
+
+
+div.tp-dfwv {
+  width: 256px;
+  z-index: 999999;
+  position: fixed;
+}
