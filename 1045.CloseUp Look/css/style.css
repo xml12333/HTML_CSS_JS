@@ -1,0 +1,28 @@
+:root {
+  --tp-blade-value-width: 70%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #222222;
+}
+
+.webgl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #222222;
+}
+
+.tp-dfwv {
+  width: calc(100vw - 16px) !important;
+  max-width: 360px;
+}
+
+.tp-rotv.tp-rotv-expanded .tp-rotv_c {
+  transition: height .5s ease-in-out,opacity .5s linear .5s,padding .5s ease-in-out !important;
+}

@@ -1048,3 +1048,4 @@
 |1042| [Live Chart](https://github.com/xml12333/HTML_CSS_JS/tree/main/1042.Live%20Chart)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1042.Live%20Chart/)|
 |1043| [Pagination](https://github.com/xml12333/HTML_CSS_JS/tree/main/1043.Pagination)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1043.Pagination/)|
 |1044| [Plasma Sphere](https://github.com/xml12333/HTML_CSS_JS/tree/main/1044.Plasma%20Sphere)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1044.Plasma%20Sphere/)|
+|1045| [CloseUp Look](https://github.com/xml12333/HTML_CSS_JS/tree/main/1045.CloseUp%20Look)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1045.CloseUp%20Look/)|
