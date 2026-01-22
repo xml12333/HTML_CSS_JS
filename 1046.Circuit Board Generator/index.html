@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Circuit board pattern generator</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+  <div id="controls">
+    <h2>Circuit Generator</h2>
+    <div class="control-group"><label>Grid Columns <span id="val-cols">24</span></label><input type="range"
+        id="inp-cols" min="10" max="64" value="24" /></div>
+    <div class="control-group"><label>Grid Rows <span id="val-rows">24</span></label><input type="range" id="inp-rows"
+        min="10" max="64" value="24" /></div>
+    <div class="control-group"><label>Cell Size (px) <span id="val-size">20</span></label><input type="range"
+        id="inp-size" min="10" max="50" value="20" /></div>
+    <hr style="width: 100%; border: 0; border-top: 1px solid #444" />
+    <div class="control-group"><label>Density (Open Space) <span id="val-density">0.4</span></label><input type="range"
+        id="inp-density" min="0" max="1" step="0.05" value="0.4" /></div>
+    <div class="control-group"><label>Noise Scale (Clumping) <span id="val-noise">0.3</span></label><input type="range"
+        id="inp-noise" min="0.01" max="1.0" step="0.01" value="0.3" /></div>
+    <div class="control-group"><label>Animation Speed <span id="val-speed">20</span></label><input type="range"
+        id="inp-speed" min="1" max="100" value="20" /></div>
+    <hr style="width: 100%; border: 0; border-top: 1px solid #444" />
+    <div class="control-group"><label>Background Color</label><input type="color" id="col-bg" value="#757575" /></div>
+    <div class="control-group"><label>Trace Color</label><input type="color" id="col-trace" value="#929292" /></div>
+    <div class="control-group"><label>Pad Color</label><input type="color" id="col-pad" value="#DBDBDB" /></div>
+    <hr style="width: 100%; border: 0; border-top: 1px solid #444" />
+    <div class="control-group"><label>PNG Resolution <span id="val-resolution">2x</span></label><input type="range"
+        id="inp-resolution" min="1" max="4" step="1" value="2" /></div>
+    <div class="btn-row"><button class="primary" id="btn-generate">Regenerate</button></div>
+    <div class="btn-row"><button class="secondary" id="btn-svg">Save SVG</button><button class="secondary"
+        id="btn-png">Save PNG</button></div>
+    <div class="btn-row"><button class="secondary" id="btn-tile">Toggle Tile Preview</button></div>
+  </div>
+  <div id="viewport"></div><canvas id="exportCanvas"></canvas>
+  <div id="tile-preview"><button id="tile-preview-close">Close Preview (Esc)</button>
+    <div id="tile-preview-inner"></div>
+  </div>
+  <script src="./js/script.js"></script>
+
+</body>
+
+</html>

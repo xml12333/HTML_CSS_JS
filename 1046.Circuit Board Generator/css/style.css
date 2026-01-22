@@ -1,0 +1,163 @@
+:root {
+  --bg-color: #1a1a1a;
+  --panel-color: #2a2a2a;
+  --text-color: #eee;
+  --accent-color: #4caf50;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+
+/* --- Sidebar UI --- */
+#controls {
+  width: 300px;
+  background-color: var(--panel-color);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: auto;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #444;
+  padding-bottom: 10px;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+label {
+  font-size: 0.85rem;
+  color: #aaa;
+  display: flex;
+  justify-content: space-between;
+}
+input[type="range"] {
+  width: 100%;
+  cursor: pointer;
+}
+input[type="number"] {
+  background: #333;
+  border: 1px solid #555;
+  color: white;
+  padding: 4px;
+  border-radius: 4px;
+}
+input[type="color"] {
+  width: 100%;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+.btn-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+button.primary {
+  background-color: var(--accent-color);
+  color: white;
+}
+button.primary:hover {
+  background-color: #45a049;
+}
+button.secondary {
+  background-color: #444;
+  color: white;
+}
+button.secondary:hover {
+  background-color: #555;
+}
+
+/* --- Main View --- */
+#viewport {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(45deg, #222 25%, transparent 25%),
+    linear-gradient(-45deg, #222 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #222 75%),
+    linear-gradient(-45deg, transparent 75%, #222 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  position: relative;
+}
+
+svg {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  max-width: 95%;
+  max-height: 95%;
+}
+
+/* Helper for PNG export */
+#exportCanvas {
+  display: none;
+}
+
+/* Tile Preview */
+#tile-preview {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  overflow: auto;
+  background: var(--bg-color);
+}
+#tile-preview.active {
+  display: block;
+}
+#tile-preview-inner {
+  min-width: 200vw;
+  min-height: 200vh;
+  background-repeat: repeat;
+  background-size: auto;
+}
+#tile-preview-close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 101;
+  padding: 10px 20px;
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+#tile-preview-close:hover {
+  background: #45a049;
+}
