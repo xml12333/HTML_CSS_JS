@@ -1,0 +1,324 @@
+*:not(head, head *, style, script, svg, svg *),
+*:not(head, head *, style, script, svg, svg *)::before,
+*:not(head, head *, style, script, svg, svg *)::after {
+	appearance: none;
+	box-sizing: border-box;
+}
+
+:root {
+	--clock-size: min(70vmin, 55vh, 520px);
+	--rim-thickness: calc(var(--clock-size) * 0.05);
+	--count-size: min(clamp(84px, 18vmin, 128px), 20vh);
+	--arc-bg: #444;
+	--arc-inner: black;
+	--arc-start: #ff9b1f;
+	--arc-end: #ff5a0c;
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	margin: 0;
+	color: #fff;
+	font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+		"Helvetica Neue", Arial;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	min-height: 100vh;
+}
+
+figure {
+	margin: 0;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#halloween-clock {
+	position: relative;
+	background-image: radial-gradient(circle at center, #2c2c2c 0%, #050505 100%);
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	z-index: 1;
+}
+
+#halloween-clock::after {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	--s: 125px;
+	--c1: black;
+	--c2: #333;
+
+	--_g: var(--c1) 90deg, var(--c2) 0 135deg, #0000 0;
+	background: conic-gradient(
+			from -45deg at calc(100% / 3) calc(100% / 3),
+			var(--c1) 90deg,
+			#0000 0
+		),
+		conic-gradient(from -135deg at calc(100% / 3) calc(2 * 100% / 3), var(--_g)),
+		conic-gradient(
+			from 135deg at calc(2 * 100% / 3) calc(2 * 100% / 3),
+			var(--_g)
+		),
+		conic-gradient(
+			from 45deg at calc(2 * 100% / 3) calc(100% / 3),
+			var(--_g),
+			var(--c1) 0 225deg,
+			var(--c2) 0
+		);
+	background-size: var(--s) var(--s);
+	mix-blend-mode: color-dodge;
+	opacity: 0.4;
+	z-index: -1;
+	content: "";
+}
+
+.stage {
+	position: relative;
+	top: 2vh;
+	width: min(96vw, 1100px);
+	min-height: 100vh;
+	padding: clamp(12px, 2vmin, 24px);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: clamp(8vh, 3vmin, 32px);
+	z-index: 2;
+}
+
+.clock {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: var(--clock-size);
+	height: var(--clock-size);
+	border-radius: 50%;
+	background: radial-gradient(
+		circle at 50% 50%,
+		#fdfdfd 0%,
+		#ececec 52%,
+		#dadada 100%
+	);
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5),
+		inset 0 8px 12px rgba(255, 255, 255, 0.7),
+		inset 0 -8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.clock::before {
+	content: "";
+	position: absolute;
+	inset: calc(-1 * var(--rim-thickness));
+	border-radius: 50%;
+	background: linear-gradient(
+		145deg,
+		#c7c7c7,
+		#f9f9f9 40%,
+		#d3d3d3 60%,
+		#a5a5a5
+	);
+	box-shadow: inset 0 8px 12px rgba(255, 255, 255, 0.6),
+		inset 0 -8px 12px rgba(0, 0, 0, 0.4);
+	z-index: -1;
+}
+
+.clock::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: 50%;
+	pointer-events: none;
+	background: radial-gradient(
+		circle at 30% 25%,
+		rgba(255, 255, 255, 0.45) 0%,
+		rgba(255, 255, 255, 0.1) 40%,
+		rgba(255, 255, 255, 0) 75%
+	);
+	mix-blend-mode: screen;
+	z-index: 1;
+}
+
+.clock > svg {
+	position: absolute;
+	width: 50%;
+	height: auto;
+	fill: #ff921c;
+	opacity: 0.4;
+	transform-origin: center;
+	animation: pumpkin 12s linear infinite;
+}
+
+@keyframes pumpkin {
+	from {
+		transform: rotateZ(0deg);
+		filter: hue-rotate(0deg);
+	}
+	to {
+		transform: rotateZ(360deg);
+		filter: hue-rotate(360deg);
+	}
+}
+
+.clock-face {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1;
+}
+
+.clock-face::after {
+	position: absolute;
+	width: 65%;
+	height: 65%;
+	content: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576.454 576.453"%3E%3Cpath d="M288.227,559.506c-72.461,0-140.585-28.218-191.823-79.456S16.948,360.688,16.948,288.227s28.218-140.585,79.456-191.823S215.765,16.948,288.227,16.948s140.585,28.218,191.823,79.456,79.456,119.362,79.456,191.823-28.218,140.585-79.456,191.823-119.362,79.456-191.823,79.456ZM288.227,18.948C139.746,18.948,18.948,139.746,18.948,288.227s120.798,269.279,269.279,269.279,269.279-120.798,269.279-269.279S436.708,18.948,288.227,18.948Z" style="fill:%23231f20;"/%3E%3Cpath d="M288.227,535.978c-66.176,0-128.392-25.771-175.186-72.564s-72.564-109.01-72.564-175.187,25.771-128.392,72.564-175.186,109.01-72.564,175.186-72.564,128.393,25.771,175.187,72.564,72.564,109.01,72.564,175.186-25.771,128.393-72.564,175.187-109.01,72.564-175.187,72.564ZM288.227,42.476c-135.507,0-245.75,110.243-245.75,245.75s110.243,245.751,245.75,245.751,245.751-110.243,245.751-245.751S423.735,42.476,288.227,42.476Z" style="fill:%23231f20;"/%3E%3Cpath d="M575.454,286.866v2.721h-80.952v-2.721h80.952M576.454,285.866h-82.952v4.721h82.952v-4.721h0Z" style="fill:%23231f20;"/%3E%3Cpath d="M536.29,143.352l1.363,2.355-70.064,40.55-1.363-2.355,70.064-40.55M536.655,141.986l-.865.501-70.064,40.55-.865.501.501.865,1.363,2.355.501.865.866-.501,70.064-40.55.865-.501-.501-.865-1.363-2.355-.501-.866h0Z" style="fill:%23231f20;"/%3E%3Cpath d="M430.746,38.8l2.355,1.363-40.55,70.064-2.355-1.363,40.55-70.064M430.381,37.434l-.501.866-40.55,70.064-.501.865.865.501,2.355,1.363.865.501.501-.866,40.55-70.064.501-.865-.865-.501-2.355-1.363-.866-.501h0Z" style="fill:%23231f20;"/%3E%3Cpath d="M289.587,1v80.952h-2.721V1h2.721M290.587,0h-4.721v82.952h4.721V0h0Z" style="fill:%23231f20;"/%3E%3Cpath d="M145.708,38.8l40.55,70.064-2.355,1.363-40.55-70.064,2.355-1.363M146.072,37.434l-.865.501-2.355,1.363-.865.501.501.865,40.55,70.064.501.865.865-.501,2.355-1.363.865-.501-.501-.866-40.55-70.064-.501-.866h0Z" style="fill:%23231f20;"/%3E%3Cpath d="M40.163,143.352l70.064,40.55-1.363,2.355-70.064-40.55,1.363-2.355M39.799,141.986l-.501.866-1.363,2.355-.501.865.866.501,70.064,40.55.865.501.501-.865,1.363-2.355.501-.865-.866-.501-70.064-40.55-.865-.501h0Z" style="fill:%23231f20;"/%3E%3Cpath d="M81.952,286.866v2.721H1v-2.721h80.952M82.952,285.866H0v4.721h82.952v-4.721h0Z" style="fill:%23231f20;"/%3E%3Cpath d="M108.864,390.196l1.363,2.355-70.064,40.55-1.363-2.355,70.064-40.55M109.229,388.829l-.865.501-70.064,40.55-.866.501.501.866,1.363,2.355.501.865.865-.501,70.064-40.55.865-.501-.501-.865-1.363-2.355-.501-.865h0Z" style="fill:%23231f20;"/%3E%3Cpath d="M183.903,466.226l2.355,1.363-40.55,70.064-2.355-1.363,40.55-70.064M183.538,464.86l-.501.866-40.55,70.064-.501.865.865.501,2.355,1.363.865.501.501-.865,40.55-70.064.501-.865-.865-.501-2.355-1.363-.865-.501h0Z" style="fill:%23231f20;"/%3E%3Cpath d="M289.587,494.501v80.952h-2.721v-80.952h2.721M290.587,493.501h-4.721v82.952h4.721v-82.952h0Z" style="fill:%23231f20;"/%3E%3Cpath d="M392.551,466.226l40.55,70.064-2.355,1.363-40.55-70.064,2.355-1.363M392.915,464.86l-.866.501-2.355,1.363-.865.501.501.865,40.55,70.064.501.865.866-.501,2.355-1.363.866-.501-.501-.866-40.55-70.064-.501-.866h0Z" style="fill:%23231f20;"/%3E%3Cpath d="M467.589,390.196l70.064,40.55-1.363,2.355-70.064-40.55,1.363-2.355M467.225,388.829l-.501.865-1.363,2.355-.501.865.866.501,70.064,40.55.865.501.501-.865,1.363-2.355.501-.866-.865-.501-70.064-40.55-.865-.501h0Z" style="fill:%23231f20;"/%3E%3C/svg%3E');
+	z-index: -1;
+}
+
+.hand {
+	position: absolute;
+	bottom: 50%;
+	left: 50%;
+	transform-origin: bottom center;
+	transform: translateX(-50%) rotate(0deg);
+	border-radius: 4px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+	z-index: 2;
+}
+
+.hand.hour {
+	width: calc(var(--clock-size) * 0.026);
+	height: calc(var(--clock-size) * 0.26);
+	background: linear-gradient(to bottom, #555, #222);
+}
+
+.hand.minute {
+	width: calc(var(--clock-size) * 0.018);
+	height: calc(var(--clock-size) * 0.38);
+	background: linear-gradient(to bottom, #666, #333);
+}
+
+.hand.second {
+	width: calc(var(--clock-size) * 0.008);
+	height: calc(var(--clock-size) * 0.44);
+	background: linear-gradient(to bottom, #e74c3c, #b83a2a);
+}
+
+.pivot {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: calc(var(--clock-size) * 0.06);
+	height: calc(var(--clock-size) * 0.06);
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	background: radial-gradient(circle, #666 0%, #222 70%, #000 100%);
+	box-shadow: inset 0 4px 4px rgba(255, 255, 255, 0.5),
+		inset 0 -4px 4px rgba(0, 0, 0, 0.6);
+}
+
+.marker {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	font-size: calc(var(--clock-size) * 0.08);
+	line-height: 1;
+	pointer-events: none;
+	filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+.countdown-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: clamp(14px, 2.5vmin, 24px);
+	width: 100%;
+}
+
+.countdown-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.circle {
+	position: relative;
+	width: var(--count-size);
+	height: var(--count-size);
+	border-radius: 50%;
+	background: conic-gradient(
+		var(--arc-start) 0deg,
+		var(--arc-end) var(--value),
+		var(--arc-bg) var(--value) 360deg
+	);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.circle::before {
+	content: "";
+	position: absolute;
+	width: 80%;
+	height: 80%;
+	border-radius: 50%;
+	background: var(--arc-inner);
+	z-index: 1;
+}
+
+.inner {
+	position: relative;
+	z-index: 2;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.number {
+	font-size: clamp(18px, 4.2vmin, 28px);
+	line-height: 100%;
+	font-weight: 800;
+	color: white;
+}
+
+.label {
+	font-size: clamp(10px, 1.8vmin, 12px);
+	letter-spacing: 0.06em;
+	color: #ccc;
+	font-style: normal;
+}
+
+@media (max-height: 310px) {
+	.label span {
+		display: none;
+	}
+}
+
+@media (max-height: 210px) {
+	.circle {
+		background: unset;
+	}
+	.circle::before {
+		display: none;
+	}
+}
