@@ -1,0 +1,206 @@
+/* ===========================
+   ROOT VARIABLES
+=========================== */
+:root {
+  --red: #c62828;
+  --green: #2e7d32;
+  --gold: #f6c453;
+  --dark: #0f172a;
+  --light: #f8fafc;
+}
+
+/* ===========================
+   RESET & BASE
+=========================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top, #1e293b, #020617);
+  color: var(--light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+.wrapper {
+  max-width: 1100px;
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  font-family: "Mountains of Christmas", cursive;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, var(--red), var(--gold), var(--green));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* ===========================
+   GRID
+=========================== */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ===========================
+   BASE BUTTON
+=========================== */
+.xmas-btn {
+  position: relative;
+  border: none;
+  padding: 1.2rem 1.5rem;
+  border-radius: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--red), var(--green));
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.xmas-btn i {
+  margin-right: 0.5rem;
+}
+
+.xmas-btn:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6), 0 0 25px rgba(246, 196, 83, 0.6);
+}
+
+/* ===========================
+   SHIMMER BUTTON
+=========================== */
+.btn-shimmer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    left: 120%;
+  }
+}
+
+/* ===========================
+   GLOW BUTTON
+=========================== */
+.btn-glow {
+  background: linear-gradient(135deg, #7c2d12, var(--red));
+}
+
+.btn-glow::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  background: radial-gradient(circle, var(--gold), transparent 70%);
+  opacity: 0.6;
+  filter: blur(20px);
+  z-index: -1;
+}
+
+/* ===========================
+   SNOW BUTTON
+=========================== */
+.btn-snow {
+  background: linear-gradient(135deg, #1e3a8a, #0284c7);
+}
+
+.btn-snow span {
+  position: absolute;
+  top: -10px;
+  color: white;
+  animation: snow 4s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes snow {
+  to {
+    transform: translateY(120px);
+    opacity: 0;
+  }
+}
+
+/* ===========================
+   PULSE BUTTON
+=========================== */
+.btn-pulse {
+  background: linear-gradient(135deg, var(--green), #16a34a);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 18px rgba(22, 163, 74, 0);
+  }
+}
+
+/* ===========================
+   LIGHTS BUTTON
+=========================== */
+.btn-lights {
+  background: #020617;
+}
+
+.btn-lights::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    red 0 10px,
+    green 10px 20px,
+    gold 20px 30px
+  );
+  opacity: 0.25;
+  animation: lights 1.5s linear infinite;
+}
+
+@keyframes lights {
+  to {
+    background-position: 30px 0;
+  }
+}
+
+/* ===========================
+   RESPONSIVE TOUCH
+=========================== */
+@media (hover: none) {
+  .xmas-btn:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
