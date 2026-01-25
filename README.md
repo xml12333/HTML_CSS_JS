@@ -1052,3 +1052,4 @@
 |1046| [Circuit Board Generator](https://github.com/xml12333/HTML_CSS_JS/tree/main/1046.Circuit%20Board%20Generator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1046.Circuit%20Board%20Generator/)|
 |1047| [Halloween Time](https://github.com/xml12333/HTML_CSS_JS/tree/main/1047.Halloween%20Time)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1047.Halloween%20Time/)|
 |1048| [Christmas Buttons](https://github.com/xml12333/HTML_CSS_JS/tree/main/1048.Christmas%20Buttons)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1048.Christmas%20Buttons/)|
+|1049| [SVG gradient](https://github.com/xml12333/HTML_CSS_JS/tree/main/1049.SVG%20gradient)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1049.SVG%20gradient/)|
