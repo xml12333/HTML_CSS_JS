@@ -1053,3 +1053,4 @@
 |1047| [Halloween Time](https://github.com/xml12333/HTML_CSS_JS/tree/main/1047.Halloween%20Time)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1047.Halloween%20Time/)|
 |1048| [Christmas Buttons](https://github.com/xml12333/HTML_CSS_JS/tree/main/1048.Christmas%20Buttons)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1048.Christmas%20Buttons/)|
 |1049| [SVG gradient](https://github.com/xml12333/HTML_CSS_JS/tree/main/1049.SVG%20gradient)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1049.SVG%20gradient/)|
+|1050| [Wires](https://github.com/xml12333/HTML_CSS_JS/tree/main/1050.Wires)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1050.Wires/)|
