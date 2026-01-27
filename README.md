@@ -1054,3 +1054,4 @@
 |1048| [Christmas Buttons](https://github.com/xml12333/HTML_CSS_JS/tree/main/1048.Christmas%20Buttons)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1048.Christmas%20Buttons/)|
 |1049| [SVG gradient](https://github.com/xml12333/HTML_CSS_JS/tree/main/1049.SVG%20gradient)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1049.SVG%20gradient/)|
 |1050| [Wires](https://github.com/xml12333/HTML_CSS_JS/tree/main/1050.Wires)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1050.Wires/)|
+|1051| [Scaling Toggle](https://github.com/xml12333/HTML_CSS_JS/tree/main/1051.Scaling%20Toggle)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1051.Scaling%20Toggle/)|
