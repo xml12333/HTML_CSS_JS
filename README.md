@@ -1055,3 +1055,4 @@
 |1049| [SVG gradient](https://github.com/xml12333/HTML_CSS_JS/tree/main/1049.SVG%20gradient)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1049.SVG%20gradient/)|
 |1050| [Wires](https://github.com/xml12333/HTML_CSS_JS/tree/main/1050.Wires)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1050.Wires/)|
 |1051| [Scaling Toggle](https://github.com/xml12333/HTML_CSS_JS/tree/main/1051.Scaling%20Toggle)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1051.Scaling%20Toggle/)|
+|1052| [Periodic Table](https://github.com/xml12333/HTML_CSS_JS/tree/main/1052.Periodic%20Table)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1052.Periodic%20Table/)|
