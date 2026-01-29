@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Action bar - &quot;follow the leader&quot; magnifying lens</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+
+  <div class="action-bar">
+    <button>
+      <span class="material-symbols-outlined">person</span>
+    </button>
+    <button>
+      <span class="material-symbols-outlined">push_pin</span>
+    </button>
+    <button class="selected">
+      <span class="material-symbols-outlined">alternate_email</span>
+    </button>
+    <button>
+      <span class="material-symbols-outlined">mail</span>
+    </button>
+    <button>
+      <span class="material-symbols-outlined">edit</span>
+    </button>
+    <button>
+      <span class="material-symbols-outlined">cases</span>
+    </button>
+  </div>
+
+  <div class="anchored-pointer">
+  </div>
+
+  <!-- SVG filter -->
+  <svg width="0" height="0">
+    <filter id="filter" color-interpolation-filters="linearRGB" filterUnits="objectBoundingBox"
+      primitiveUnits="userSpaceOnUse">
+      <feDisplacementMap in="SourceGraphic" in2="SourceGraphic" scale="5" xChannelSelector="A" yChannelSelector="A"
+        x="5" y="-5" width="100%" height="100%" result="displacementMap" />
+    </filter>
+  </svg>
+  <script src="./js/script.js"></script>
+
+</body>
+
+</html>
