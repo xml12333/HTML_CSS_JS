@@ -1057,3 +1057,4 @@
 |1051| [Scaling Toggle](https://github.com/xml12333/HTML_CSS_JS/tree/main/1051.Scaling%20Toggle)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1051.Scaling%20Toggle/)|
 |1052| [Periodic Table](https://github.com/xml12333/HTML_CSS_JS/tree/main/1052.Periodic%20Table)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1052.Periodic%20Table/)|
 |1053| [Action Bar](https://github.com/xml12333/HTML_CSS_JS/tree/main/1053.Action%20Bar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1053.Action%20Bar/)|
+|1054| [Befor And After](https://github.com/xml12333/HTML_CSS_JS/tree/main/1054.Befor%20And%20After)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1054.Befor%20And%20After/)|
