@@ -1059,3 +1059,4 @@
 |1053| [Action Bar](https://github.com/xml12333/HTML_CSS_JS/tree/main/1053.Action%20Bar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1053.Action%20Bar/)|
 |1054| [Befor And After](https://github.com/xml12333/HTML_CSS_JS/tree/main/1054.Befor%20And%20After)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1054.Befor%20And%20After/)|
 |1055| [Leaf Generator](https://github.com/xml12333/HTML_CSS_JS/tree/main/1055.Leaf%20Generator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1055.Leaf%20Generator/)|
+|1056| [Linked List](https://github.com/xml12333/HTML_CSS_JS/tree/main/1056.Linked%20List)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1056.Linked%20List/)|
