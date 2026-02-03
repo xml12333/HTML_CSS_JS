@@ -1,0 +1,165 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: radial-gradient(#10151c, #05070a);
+  font-family: "Quicksand", system-ui;
+  overflow: hidden;
+}
+
+/* ROOM */
+.room {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 700px;
+  height: 600px;
+
+  background: linear-gradient(#1a212a, #0a0f14);
+  border-radius: 18px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.6);
+
+  /* ✅ allow window to extend OUTSIDE box */
+  overflow: visible;
+}
+
+/* HEARTH — anchor for window + fireplace */
+.hearth {
+  position: absolute;
+  bottom: 160px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  height: 360px;
+  pointer-events: none;
+}
+
+/* ✅ ROUND window */
+.window {
+  position: absolute;
+  bottom: 230px;
+  left: 50%;
+  width: 160px;
+  height: 160px;
+  transform: translateX(-50%);
+  object-fit: cover;
+  z-index: 2;
+  filter: drop-shadow(0 0 8px rgba(200, 220, 255, 0.3));
+}
+
+/* FIREPLACE */
+.fireplace {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 240px;
+  transform: translateX(-50%);
+  z-index: 3;
+  filter: drop-shadow(0 0 18px rgba(255, 160, 90, 0.45));
+  animation: fireGlow 3s ease-in-out infinite;
+}
+
+/* FIRE GLOW */
+.fire-glow {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  width: 520px;
+  height: 280px;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 170, 100, 0.35) 0%,
+    rgba(255, 140, 80, 0.18) 40%,
+    rgba(255, 140, 80, 0.06) 65%,
+    transparent 75%
+  );
+  filter: blur(10px);
+  z-index: 1;
+}
+
+/* Rug */
+.rug {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  width: 420px;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* Pudgy */
+.pudgy {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  width: 230px;
+  transform: translateX(-50%);
+  z-index: 4;
+}
+
+/* Caption */
+.caption {
+  position: absolute;
+  bottom: 24px;
+  width: 100%;
+  text-align: center;
+  font-family: "Cinzel", serif;
+  color: #f4e9d8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  opacity: 0.9;
+}
+
+/* Fire flicker */
+@keyframes fireGlow {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.15);
+  }
+}
+
+/* Music button */
+.music-btn {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.18);
+  color: white;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  z-index: 99;
+}
+
+/* ✅ Mobile scaling only — no repositioning */
+@media (max-width: 940px) {
+  .room {
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+}
+
+@media (max-width: 780px) {
+  .room {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+
+@media (max-width: 640px) {
+  .room {
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+}
+@media (max-width: 480px) {
+  .room {
+    transform: translate(-50%, -50%) scale(0.72);
+  }
+}

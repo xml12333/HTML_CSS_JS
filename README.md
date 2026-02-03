@@ -1061,3 +1061,4 @@
 |1055| [Leaf Generator](https://github.com/xml12333/HTML_CSS_JS/tree/main/1055.Leaf%20Generator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1055.Leaf%20Generator/)|
 |1056| [Linked List](https://github.com/xml12333/HTML_CSS_JS/tree/main/1056.Linked%20List)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1056.Linked%20List/)|
 |1057| [Action Menu](https://github.com/xml12333/HTML_CSS_JS/tree/main/1057.Action%20Menu)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1057.Action%20Menu/)|
+|1058| [Fireside](https://github.com/xml12333/HTML_CSS_JS/tree/main/1058.Fireside)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1058.Fireside/)|
