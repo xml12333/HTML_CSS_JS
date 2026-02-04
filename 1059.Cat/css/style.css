@@ -1,0 +1,389 @@
+@keyframes blink {
+  0%, 25%, 28%, 100% { height: 0 }
+  26.5% { height: 100% }
+}
+
+body {
+  font-size: 1vmin;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  background:
+    radial-gradient(circle at 20% 20%, #ffc8 0.20em, #0000 0),
+    radial-gradient(circle at 70% 50%, #ffc8 0.25em, #0000 0),
+    radial-gradient(circle at 10% 80%, #ffc8 0.20em, #0000 0),
+    radial-gradient(circle at 80% 30%, #ffc8 0.30em, #0000 0),
+    radial-gradient(circle at 80% 80%, #ffc8 0.23em, #0000 0),
+    radial-gradient(circle at 50% 10%, #ff8b 0.3em, #0000 0),
+    radial-gradient(circle at 40% 60%, #ffc8 0.20em, #0000 0),
+    radial-gradient(circle at 30% 30%, #ffc8 0.20em, #0000 0) 0 0 / 70% 70%,
+    radial-gradient(circle at 30% 30%, #ffc8 0.20em, #0000 0) 40% 30% / 50% 70%,
+    linear-gradient(#0002, #0000),
+    radial-gradient(at 50% 80%, #fcc2, #fff0),
+    #023;
+}
+
+figure {
+  margin: 0;
+  paddin: 0;
+  position: relative;
+  font-size: 1vmin;
+  width: 90em;
+  aspect-ratio: 1;
+/*   overflow: hidden; */
+  
+  *, *::before, *::after {
+    position: absolute;
+    box-sizing: border-box;
+  }
+  
+  figcaption {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  
+  .moon {
+    width: 120%;
+    height: 40%;
+    left: 50%;
+    bottom: 0;
+    translate: -50% 60%;
+    border-radius: 50% / 100% 100% 0 0;
+    box-shadow: 
+      0 0 3em #ffc,
+      0 0 9em #ffc8;
+    background: 
+      radial-gradient(at 38% 20%, #0001 2%, #0000 0),
+      radial-gradient(13% 8% at 50% 0, #0001 99%, #0000),
+      #ffc;
+    
+    &::before {
+      content:"";
+      width: 18%;
+      height: 15%;
+      background: #0001;
+      border-radius: 50%;
+      box-shadow: inset 0 1em #0002;
+      rotate: -15deg;
+      top: 15%;
+      left: 20%;
+      scale: 0.8;
+    }
+    
+    &::after {
+      content:"";
+      width: 4%;
+      height: 5%;
+      background: #0001;
+      border-radius: 50%;
+      box-shadow:  -7em 3em 0 2em #0001;
+      rotate: 30deg;
+      top: 25%;
+      left: 80%;
+      scale: 0.8;
+    }
+  }
+}
+
+.bubble {
+  width: 119%;
+  height: 103%;
+  border-radius: 50%;
+  bottom: 25%;
+  left: 49%;
+  translate: -50%;
+  background: 
+    radial-gradient(circle at 25% 25%, #fff3, #fff0 25%),
+    radial-gradient(circle at 15% 45%, #fff1, #fff0 15%),
+    radial-gradient(circle at 75% 35%, #fff1, #fff0 50%),
+    #fff1;
+  box-shadow:
+    inset 0 0 1em 1em #acf,
+    inset 0 0 5em #fff
+}
+
+.backpack {
+  width: 40%;
+  left: 50%;
+  height: 30%;
+  background: #bcd;
+  bottom: 0;
+  translate: -50%;
+  border-radius: 3em;
+}
+
+article.cat {
+  --fur: #111;
+  --fur-dark: #000;
+  --skin: pink;
+  --suit: #fff;
+  --suit-dark: #ddd;
+  font-size: 0.4vmin;
+  width: 80em;
+  aspect-ratio: 1;
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  translate: -50%;
+  
+  *, *::before, *::after {
+    position: absolute;
+    box-sizing: border-box;
+  }
+  
+  #alt {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+ 
+  .tail {
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    border: 7em solid #0000;
+    border-top-color: var(--suit-dark);
+    border-left-color: var(--suit-dark);
+    clip-path: polygon(100% 0, 100% 100%, 0 30%, 0 0);
+    top: 75%;
+    left: 52%;
+    
+    &::before {
+      content: "";
+      width: 7em;
+      aspect-ratio: 1;
+      background: var(--suit-dark);
+      border-radius: 50%;
+      left: 81%;
+      top: -9%;
+    }
+  }
+  
+  .body {
+    left: 50%;
+    translate: -50%;
+    bottom: 0;
+    width: 35%;
+    height: 40%;
+    background: 
+      radial-gradient(circle at 17% 55%, #36c 2em, #0000 0),
+      radial-gradient(100% 70% at 50% 0, var(--fur-dark) 50%, #0000 0),
+      radial-gradient(150% 70% at 49% 0, var(--fur) 50%, #d99 0 59%, #0000 calc(59% + 1px)),
+      var(--suit);
+    border-radius: 100% / 200% 200% 20% 20%;
+    
+    .leg {
+      width: 165%;
+      height:38%;
+      
+      bottom: 0;
+      left:50%;
+      translate: -50%;
+      border-radius: 8em 8em 100% 100% / 10em 10em 16em 16em;
+      scale: 1 -1;
+      background: 
+        radial-gradient(20% 200% at 2% 10%, var(--suit-dark) 20%, #0000 0),radial-gradient(20% 200% at 98% 10%, var(--suit-dark) 20%, #0000 0),
+        var(--suit);
+    }
+    
+    .paw {
+      width: 35%;
+      height: 49%;
+      border: 0.75em solid #777;
+      border-top: 0;
+      border-radius: 0 0 5em 5em;
+      top: 51%;
+      rotatE: -10deg;
+      left: 10%;
+      clip-path: polygon(0 20%, 100% 30%, 100% 100%, 0 100%);
+      
+      & + & {
+        right: 7%;
+        height: 50%;
+        left: auto;
+        rotate: 13deg;
+        scale: -1 1;
+        clip-path: polygon(0 25%, 100% 15%, 100% 100%, 0 100%);
+      }
+    }
+  }
+  
+  .ear {
+    width: 40%;
+    aspect-ratio: 1;
+    border: 4em solid var(--fur);
+    border-radius: 5% 90% 10% 80%;
+    background: var(--skin);
+    top: 5%;
+    left: 10%;
+    
+    & + & {
+      scale: -1 1;
+      left: auto;
+      right: 10%;
+    }
+  }
+  
+  .head {
+    width: 80%;
+    aspect-ratio: 1.1;
+    background: 
+      linear-gradient(#0003, #0000 50%),
+      var(--fur);
+    left: 50%;
+    translate: -50%;
+    border-radius: 100% / 125% 125% 80% 75%;
+    
+    .whisker {
+      width: 30%;
+      height: 30%;
+      border-radius: 50%;
+      border: 2em solid #0000;
+      border-top-color: var(--fur);
+      border-left-color: var(--fur);
+      clip-path: polygon(100% 0, 100% 100%, 0 30%, 0 0);
+      
+      &:nth-child(1) {
+        top: 45%;
+        translate: -65%;
+      }
+      &:nth-child(2) {
+        top: 55%;
+        translate: -40%;
+        rotate: -20deg
+      }
+      
+      &:nth-child(3) {
+        right: 0%;
+        top: 45%;
+        translate: 65%;
+        rotate: 10deg;
+      }
+      &:nth-child(4) {
+        right: -2%;
+        top: 55%;
+        translate: 40%;
+        rotate: 24deg
+      }
+    }
+    
+    .nose {
+      width: 10%;
+      height: 7%;
+      background: var(--skin);
+      border-radius: 50%;
+      top: 75%;
+      left: 50%;
+      translate: -50% -50%;
+      top: 55%;
+    }
+    
+    .eye {
+      --pos: 25%;
+      --x1: 50%;
+      --x2: 42%;
+      width: 35%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: 
+        radial-gradient(50% 50% at var(--x1) 32%, #fff 25%, #0000 calc(25% + 1px)),
+        radial-gradient(50% 50% at var(--x2) 51%, #fff 12%, #0000 calc(12% + 1px)),
+        radial-gradient(circle at 60% 40%, #000 35%, #0000 calc(35% + 1px)),
+        white;
+      left: var(--pos);
+      translate: -50% -50%;
+      top: 43%;
+      overflow: hidden;
+      
+      & + & {
+        --x1: 70%;
+        --x2: 78%;
+        left: calc(100% - var(--pos));
+        scale: -1 1;
+      }
+      
+      &::before {
+        top: -30%;
+        left: 50%;
+        translate: -50%;
+        width: 150%;
+        height: 0%;
+        content: "";
+        background: var(--fur);
+        rotate: -10deg;
+        animation: blink 10s linear infinite;
+      }
+      &::after {
+        bottom: -10%;
+        left: 0;
+        width: 150%;
+        height: 0%;
+        content: "";
+        background: var(--fur);
+        rotate: -10deg;
+        left: 50%;
+        translate: -50%;
+        animation: blink 10s linear infinite;
+      }
+    }
+  }
+}
+
+
+/***/
+
+#youtube {
+  z-index: 2;
+  display: block;
+  width: 100px;
+  height: 70px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: red;
+  border-radius: 50% / 11%;
+  transition: transform 0.5s;
+}
+
+#youtube:hover,
+#youtube:focus {
+  transform: scale(1.1);
+}
+
+#youtube::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 7.5%;
+  left: -6%;
+  width: 112%;
+  height: 85%;
+  background: red;
+  border-radius: 9% / 50%;
+}
+
+#youtube::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  width: 45px;
+  height: 30px;
+  border: 15px solid transparent;
+  box-sizing: border-box;
+  border-left: 30px solid white;
+}
+
+#youtube span {
+  font-size: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
