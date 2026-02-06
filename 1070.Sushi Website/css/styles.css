@@ -222,8 +222,131 @@ img {
 /* Active link */
 
 /*=============== HOME SECTION ===============*/
+.home__container {
+  padding-top: 1.5rem;
+  row-gap: 3rem;
+}
+.home__data {
+  position: relative;
+  text-align: center;
+}
+.home__title {
+  font-size: var(--biggest-font-size);
+}
+.home__title span {
+  color: var(--first-color);
+}
+.home__description {
+  margin-block: 1rem 2rem;
+}
+.home__data img,
+.home__text {
+  position: absolute;
+}
+.home__flower-1 {
+  width: 20px;
+  top: -1.5rem;
+  left: 4rem;
+}
+.home__flower-2 {
+  width: 20px;
+  left: 1.25rem;
+}
+.home__leaf-1 {
+  width: 30px;
+  top: 0;
+  right: 0;
+}
+.home__leaf-2 {
+  width: 30px;
+  left: 4rem;
+  bottom: -2rem;
+}
+.home__text {
+  left: 0;
+  top: -1.75rem;
+  font-size: 12rem;
+  font-weight: var(--font-medium);
+  color: var(--body-color-alt);
+  z-index: -1;
+}
+
+.home__images{
+  position: relative;
+  justify-self: center;
+}
+.home__blob{
+  width: 300px;
+  height: 300px;
+  background-color: var(--first-color);
+  border-radius: 50%;
+  justify-self: center;
+}
+.home__images img{
+  position: absolute;
+}
+.home__img-1{
+  width: 230px;
+  left: -1.5rem;
+  bottom: 3rem;
+}
+.home__img-2{
+  width: 120px;
+  top: 0.5rem;
+  left: 2rem;
+}
+.home__img-3{
+  width: 90px;
+  top: 5rem;
+  right: 3rem;
+}
+.home__img-4{
+  width: 60px;
+  top: 1.25rem;
+  right: 4.5rem;
+}
+.home__img-5{
+  width: 50px;
+  right: 1.5rem;
+  bottom: 7rem;
+}
+.home__img-6{
+  width: 150px;
+  right: 4rem;
+  bottom: -0.75rem;
+}
+.home__flower-3{
+  width: 20px;
+  top: -1rem;
+  right: 1rem;
+}
+.home__flower-4{
+  width: 20px;
+  left: 0;
+  bottom: 0;
+}
+.home__leaf-3{
+  width: 25px;
+  right: 1rem;
+  bottom: 1.5rem;
+}
 
 /*=============== BUTTON ===============*/
+.button {
+  display: inline-flex;
+  background-color: var(--first-color);
+  color: var(--white-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  transition:
+    backrgound-color 0.4s,
+    box-shadow 0.4s;
+}
+.button:hover {
+  background-color: var(--first-color-alt);
+  box-shadow: 0 8px 24px hsla(358, 54%, 24%, 0.3);
+}
 
 /*=============== ABOUT SECTION ===============*/
 
