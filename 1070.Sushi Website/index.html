@@ -14,7 +14,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 
    <!--=============== SWIPER CSS ===============-->
-   <link rel="stylesheet" href="">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
 
    <!--=============== CSS ===============-->
    <link rel="stylesheet" href="./css/styles.css">
@@ -103,34 +103,34 @@
          <div class="menu__container container ">
             <h2 class="menu__text-1">寿 <br> 司</h2>
             <h2 class="menu__text-2">拉 <br> 麺</h2>
-            <div class="menu__tabs">
-               <div class="menu__buttons">
-                  <button class="menu__button">
+            <div class="menu__tabs swiper" tumbsSlider="">
+               <div class="menu__buttons swiper-wrapper">
+                  <button class="menu__button swiper-slide">
                      <img src="./img/menu-btn-1.png" alt="img">
                      <span>Sushi</span>
                   </button>
-                  <button class="menu__button">
+                  <button class="menu__button swiper-slide">
                      <img src="./img/menu-btn-2.png" alt="img">
                      <span>Nigiri</span>
                   </button>
-                  <button class="menu__button">
+                  <button class="menu__button swiper-slide">
                      <img src="./img/menu-btn-3.png" alt="img">
                      <span>Ramen</span>
                   </button>
-                  <button class="menu__button">
+                  <button class="menu__button swiper-slide">
                      <img src="./img/menu-btn-4.png" alt="img">
                      <span>Udon</span>
                   </button>
-                  <button class="menu__button">
+                  <button class="menu__button swiper-slide">
                      <img src="./img/menu-btn-5.png" alt="img">
                      <span>Others</span>
                   </button>
                </div>
             </div>
-            <div class="menu__content">
-               <div>
+            <div class="menu__content swiper">
+               <div class="swiper-wrapper">
                   <!-- Menu cards 1 -->
-                  <div class="menu__cards">
+                  <div class="menu__cards swiper-slide">
                      <article class="menu__card">
                         <div class="menu__blob">
                            <img src="./img/menu-shusi-1.png" alt="img" class="menu__img">
@@ -163,7 +163,7 @@
                      </article>
                   </div>
                   <!-- Menu cards 2 -->
-                  <div class="menu__cards">
+                  <div class="menu__cards swiper-slide">
                      <article class="menu__card">
                         <div class="menu__blob">
                            <img src="./img/menu-nigiri-1.png" alt="img" class="menu__img">
@@ -196,7 +196,7 @@
                      </article>
                   </div>
                   <!-- Menu cards 3 -->
-                  <div class="menu__cards">
+                  <div class="menu__cards swiper-slide">
                      <article class="menu__card">
                         <div class="menu__blob">
                            <img src="./img/menu-ramen-1.png" alt="img" class="menu__img">
@@ -229,7 +229,7 @@
                      </article>
                   </div>
                   <!-- Menu cards 4 -->
-                  <div class="menu__cards">
+                  <div class="menu__cards swiper-slide">
                      <article class="menu__card">
                         <div class="menu__blob">
                            <img src="./img/menu-udon-1.png" alt="img" class="menu__img">
@@ -262,7 +262,7 @@
                      </article>
                   </div>
                   <!-- Menu cards 5 -->
-                  <div class="menu__cards">
+                  <div class="menu__cards swiper-slide">
                      <article class="menu__card">
                         <div class="menu__blob">
                            <img src="./img/menu-other-1.png" alt="img" class="menu__img">
@@ -322,7 +322,7 @@
    <script src=""></script>
 
    <!--=============== SWIPER JS ===============-->
-   <script src=""></script>
+   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
    <!--=============== MAIN JS ===============-->
    <script src="./js/main.js"></script>

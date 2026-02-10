@@ -29,7 +29,6 @@ const linkAction = () => {
 };
 navLink.forEach((n) => n.addEventListener("click", linkAction));
 
-
 /*=============== CHANGE HEADER STYLES ===============*/
 const scrollHeader = () => {
   const header = document.getElementById("header");
@@ -40,13 +39,19 @@ const scrollHeader = () => {
 };
 window.addEventListener("scroll", scrollHeader);
 
-/*=============== SWIPER MENU ===============*/ 
+/*=============== SWIPER MENU ===============*/
+const swiperTabs = new Swiper(".menu__tabs", {
+  slidesPerView: "auto",
+});
+const swiperMenu = new Swiper(".menu__content", {
+  loop: true,
+  thumbs: {
+    swiper: swiperTabs,
+  },
+});
 
-
-/*=============== SHOW SCROLL UP ===============*/ 
-
+/*=============== SHOW SCROLL UP ===============*/
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
-
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
