@@ -654,6 +654,99 @@ img {
   z-index: -1;
 }
 /*=============== CONTACT SECTION ===============*/
+.contact {
+  background-color: var(--first-color);
+}
+.contact .section__title {
+  color: var(--white-color);
+  margin-bottom: 2rem;
+}
+.contact__container {
+  position: relative;
+  row-gap: 5rem;
+  padding-bottom: 3rem;
+  color: var(--white-color);
+}
+.contact__text-1,
+.contact__text-2 {
+  position: absolute;
+  font-size: 6rem;
+  font-weight: var(--font-medium);
+  color: var(--first-color-alt);
+}
+.contact__text-1 {
+  top: -6rem;
+  left: 0;
+}
+.contact__text-2 {
+  right: 0;
+  bottom: 3rem;
+}
+.contact__content {
+  z-index: 10;
+  grid-template-columns: repeat(2, max-content);
+  justify-content: center;
+  gap: 2rem 3rem;
+}
+.contact__data {
+  text-align: center;
+}
+.contact__title {
+  color: var(--white-color);
+  font-size: var(--small-font-size);
+  margin-bottom: 0.25rem;
+}
+
+.contact__social {
+  display: flex;
+  justify-content: center;
+  column-gap: 0.75rem;
+}
+.contact__social-link {
+  color: var(--white-color);
+  font-size: 1.5rem;
+}
+.contact__address {
+  font-size: var(--small-font-size);
+  font-style: initial;
+}
+.contact__newsletter {
+  z-index: 10;
+  row-gap: 1rem;
+  text-align: center;
+}
+.contact__description {
+  font-size: var(--small-font-size);
+}
+.contact__form {
+  background-color: hsla(358, 54%, 98%, 0.2);
+  padding: 0.75rem;
+  border: 2px solid var(--white-color);
+  border-radius: 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+.contact__input {
+  width: 100%;
+  background: none;
+  color: var(--white-color);
+  font-size: var(--small-font-size);
+  padding-left: 0.5rem;
+}
+.contact__input::placeholder {
+  color: var(--white-color);
+}
+.contact__button {
+  background-color: var(--white-color);
+  color: var(--first-color);
+  padding: 0.75rem 1rem;
+  font-size: var(--small-font-size);
+  border-radius: 4rem;
+  cursor: pointer;
+}
+.contact__button:hover {
+  background-color: var(--white-color);
+}
 
 /*=============== FOOTER ===============*/
 
