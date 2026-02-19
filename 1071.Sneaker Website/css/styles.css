@@ -1,0 +1,128 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Syne:wght@400..800&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --blue-color: hsl(222, 50%, 45%);
+  --pink-color: hsl(311, 90%, 40%);
+  --purple-color: hsl(290, 80%, 32%);
+  --purple-color-light: hsl(290, 100%, 90%);
+  --purple-color-dark: hsl(277, 98%, 17%);
+  --white-color: hsl(290, 100%, 100%);
+  --linear-gradient-1: linear-gradient(180deg, hsl(290, 65%, 56%) 0%, hsl(290, 80%, 29%) 100%);
+  --linear-gradient-2: linear-gradient(90deg, hsl(290, 65%, 56%) 0%, hsl(290, 80%, 29%) 100%);
+  --linear-gradient-3: linear-gradient(270deg, hsl(290, 65%, 56%) 0%, hsl(290, 80%, 29%) 100%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", sans-serif;
+  --second-font: "Syne", sans-serif;
+  --biggest-font-size: 2.5rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+}
+
+/*========== Responsive typography ==========*/
+@media (width >= 1150px) {
+  :root {
+    --biggest-font-size: 4rem;
+    --h2-font-size: 1.5rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: var(--white-color);
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+  font-size: var(--normal-font-size);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--second-font);
+  font-weight: 700;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1rem;
+}
+
+.main {
+  overflow: hidden;
+}
+
+/*=============== HEADER & NAV ===============*/
+
+
+/* Navigation for mobile devices */
+
+
+/* Show menu */
+
+
+/* Change header styles */
+
+
+/*=============== HOME ===============*/
+
+
+/* Swiper class */
+
+
+/* Swiper thumbs */
+
+
+/* Swiper navigation & pagination */
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices <> */
+
+
+/* For medium devices <> */
+
+
+/* For large devices <> */
+
+
+/* For taller devices <> */
+
+
+/* For 2K resolutions <> */
