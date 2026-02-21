@@ -1,75 +1,97 @@
 <!DOCTYPE html>
-   <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="description" content="Discover our collection of sneakers for men and women. Modern designs, maximum comfort.">
-      <meta name="robots" content="index, follow">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="description"
+      content="Discover our collection of sneakers for men and women. Modern designs, maximum comfort.">
+   <meta name="robots" content="index, follow">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <!--=============== FAVICON ===============-->
-      <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+   <!--=============== FAVICON ===============-->
+   <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
 
-      <!--=============== REMIXICONS ===============-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+   <!--=============== REMIXICONS ===============-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 
-      <!--=============== SWIPER CSS ===============-->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+   <!--=============== SWIPER CSS ===============-->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
 
-      <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="./css/styles.css">
+   <!--=============== CSS ===============-->
+   <link rel="stylesheet" href="./css/styles.css">
 
-      <title>Modern and Comfortable Sneakers</title>
-   </head>
-   <body>
-      <!--==================== HEADER ====================-->
-      <header class="header" id="header">
-         <nav class="nav container">
-            <a href="#" class="nav__logo">
-               <img src="./img/logo-nike.svg" alt="img">
-            </a>
-            <div class="nav__menu" id="nav-menu">
-               <ul class="nav__list">
-                  <li><a href="#" class="nav__link">HOME</a></li>
-                  <li><a href="#" class="nav__link">MEN</a></li>
-                  <li><a href="#" class="nav__link">WOMEN</a></li>
-                  <li><a href="#" class="nav__link">EXPLORE</a></li>
-               </ul>
-               <!-- Close -->
-                <button class="nav__close" id="nav-close">
-                  <i class="ri-close-large-line"></i>
-                </button>
+   <title>Modern and Comfortable Sneakers</title>
+</head>
+<body>
+   <!--==================== HEADER ====================-->
+   <header class="header" id="header">
+      <nav class="nav container">
+         <a href="#" class="nav__logo">
+            <img src="./img/logo-nike.svg" alt="img">
+         </a>
+         <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+               <li><a href="#" class="nav__link">HOME</a></li>
+               <li><a href="#" class="nav__link">MEN</a></li>
+               <li><a href="#" class="nav__link">WOMEN</a></li>
+               <li><a href="#" class="nav__link">EXPLORE</a></li>
+            </ul>
+            <!-- Close -->
+            <button class="nav__close" id="nav-close">
+               <i class="ri-close-large-line"></i>
+            </button>
+         </div>
+         <div class="nav__buttons">
+            <button class="nav__search">
+               <i class="ri-search-2-line"></i>
+            </button>
+            <button class="nav__shop">
+               <i class="ri-shopping-bag-line"></i>
+            </button>
+            <!-- Toggle -->
+            <button class="nav__toggle" id="nav-toggle">
+               <i class="ri-menu-line"></i>
+            </button>
+         </div>
+
+      </nav>
+   </header>
+
+   <!--==================== MAIN ====================-->
+   <main class="main">
+      <!--==================== HOME ====================-->
+      <section class="home">
+         <div class="home__container container grid">
+            <div class="home__content">
+               <h1 class="home__title"><span>Supreme X <br> Nike MAG</span></h1>
+               <div class="home__data">
+                  <span class="home_label">PRICE</span>
+                  <h3 class="home__price">$350</h3>
+                  <p class="home__varian">Best Collectible Sneakers</p>
+                  <p class="home__date">Release Date: Oct 17 (Global)</p>
+                  <p class="home__description">Nike MAG is one of those rare sneakers to go beyound the simple framework
+                     of the basketball circle.</p>
+               </div>
+               <div class="home__buttons">
+                  <button class="home__button-bag">
+                     <i class="ri-shopping-bag-line"></i> ADD TO BAG
+                  </button>
+                  <button class="home__button-heart">
+                     <i class="ri-heart-3-line"></i>
+                  </button>
+               </div>
             </div>
-            <div class="nav__buttons">
-               <button class="nav__search">
-                  <i class="ri-search-2-line"></i>
-               </button>
-               <button class="nav__shop">
-                  <i class="ri-shopping-bag-line"></i>
-               </button>
-               <!-- Toggle -->
-                <button class="nav__toggle" id="nav-toggle">
-                  <i class="ri-menu-line"></i>
-                </button>
-            </div>
+            <div class="home__area"></div>
+         </div>
+      </section>
+   </main>
 
-         </nav>
-      </header>
+   <!--=============== GSAP ===============-->
+   <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
 
-      <!--==================== MAIN ====================-->
-      <main class="main">
-         <!--==================== HOME ====================-->
-         <section class="home">
-            
-         </section>
-      </main>
+   <!--=============== SWIPER JS ===============-->
+   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
-      <!--=============== GSAP ===============-->
-      <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
-      
-      <!--=============== SWIPER JS ===============-->
-      <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-
-      <!--=============== MAIN JS ===============-->
-      <script src="./js/main.js"></script>
-   </body>
+   <!--=============== MAIN JS ===============-->
+   <script src="./js/main.js"></script>
+</body>
 </html>
