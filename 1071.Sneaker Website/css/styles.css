@@ -178,7 +178,64 @@ img {
 /* Change header styles */
 
 /*=============== HOME ===============*/
-
+.home {
+  background-color: var(--purple-color-dark);
+  padding-block: 6.5rem;
+}
+.home__content {
+  display: grid;
+  row-gap: 1rem;
+}
+.home__title {
+  font-size: var(--biggest-font-size);
+}
+.home__data {
+  color: var(--purple-color-light);
+}
+.home__label {
+  font: 700 var(--small-font-size) var(--second-font);
+}
+.home__price {
+  font-size: var(--h2-font-size);
+  columns: var(--white-color);
+  margin-bottom: 1rem;
+}
+.home__variant {
+  font-family: var(--second-font);
+  font-weight: 600;
+  color: var(--white-color);
+}
+.home__data {
+  margin-block: 0.5rem;
+}
+.home__buttons {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  column-gap: 1.5rem;
+}
+.home__button-bag {
+  background: var(--linear-gradient-1);
+  color: var(--white-color);
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.2);
+  padding: 1rem;
+  border-radius: 4rem;
+  font-family: var(--second-font);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  column-gap: 0.75rem;
+  cursor: pointer;
+}
+.home__button-bag i {
+  font-size: 1.5rem;
+  font-weight: initial;
+}
+.home__button-heart {
+  color: var(--white-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
 /* Swiper class */
 
 /* Swiper thumbs */
