@@ -236,6 +236,99 @@ img {
   font-size: 1.5rem;
   cursor: pointer;
 }
+.home__area {
+  position: relative;
+}
+.home__blob-pink,
+.home__blob-blue,
+.home__logo,
+.home__name {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+}
+.home__blob-pink {
+  width: 300px;
+  height: 300px;
+  background-color: var(--pink-color);
+  border-radius: 50%;
+  top: 1rem;
+  filter: blur(88px);
+}
+.home__blob-blue {
+  width: 180px;
+  height: 180px;
+  background-color: var(--blue-color);
+  border-radius: 50%;
+  top: 7rem;
+  filter: blur(32px);
+}
+.home__logo {
+  width: 300px;
+  top: 6.5rem;
+  opacity: 0.2;
+  z-index: 2;
+}
+.home__name {
+  width: max-content;
+  font-size: var(--biggest-font-size);
+  top: 13rem;
+  z-index: 2;
+}
+.home__preview {
+  cursor: pointer;
+}
+.home__preview img {
+  width: 60px;
+  filter: drop-shadow(0 8px 16px hsla(0, 0%, 0%, 0.4));
+}
+.home__sneaker img {
+  width: 200px;
+  filter: drop-shadow(0 8px 16px hsla(0, 0%, 0%, 0.4));
+}
+.home__sizes {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: grid;
+  align-self: center;
+  row-gap: 1.5rem;
+  z-index: 10;
+}
+.home__guide {
+  writing-mode: vertical-rl;
+}
+.home__guide h3 {
+  font-size: var(--normal-font-size);
+}
+.home__guide p {
+  font: 600 var(--small-font-size) var(--second-font);
+  color: var(--purple-color-light);
+}
+.home__options {
+  display: grid;
+  justify-content: center;
+  row-gap: 0.75rem;
+}
+.home__radio input {
+  display: none;
+}
+.home__check {
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--purple-color);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font: 600 var(--smaller-font-size) var(--second-font);
+}
+.home__radio input:checked + .home__check {
+  background: var(--linear-gradient-1);
+  border: none;
+}
 /* Swiper class */
 
 /* Swiper thumbs */
