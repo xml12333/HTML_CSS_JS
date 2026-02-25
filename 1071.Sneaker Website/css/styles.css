@@ -330,11 +330,102 @@ img {
   border: none;
 }
 /* Swiper class */
-
+.home__swiper {
+  width: 300px;
+  height: 300px;
+  overflow: initial;
+  z-index: 5;
+}
+.home__swiper .swiper-slide {
+  display: grid;
+  overflow: initial;
+}
+.home__swiper .swiper-slide img {
+  margin-block: auto;
+}
 /* Swiper thumbs */
-
+.home__thumbs .swiper-wrapper {
+  display: grid;
+  align-content: center;
+  row-gap: 1.5rem;
+}
+.home__thumbs {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 3rem;
+  overflow: initial;
+  z-index: 10;
+}
+.home__thumbs .swiper-slide:nth-child(2) {
+  margin-left: 2rem;
+}
 /* Swiper navigation & pagination */
-
+.home .swiper-navigation-icon {
+  display: none;
+}
+.home :is(.swiper-button-prev, .swiper-button-next) {
+  top: initial;
+  left: initial;
+  bottom: -3rem;
+  margin: initial;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--purple-color);
+  border-radius: 50%;
+  color: var(--white-color);
+  font-size: 1.5rem;
+}
+.home .swiper-button-prev {
+  left: calc(50% - 3rem);
+}
+.home .swiper-button-prev::after {
+  content: "PREV";
+  font: 600 var(--small-font-size) var(--second-font);
+  position: absolute;
+  left: -3rem;
+  color: var(--purple-color-light);
+}
+.home .swiper-button-prev:hover {
+  background-image: var(--linear-gradient-3);
+  border-color: transparent;
+  background-clip: padding-box;
+}
+.home .swiper-button-next {
+  right: calc(50% - 3rem);
+}
+.home .swiper-button-next::after {
+  content: "NEXT";
+  font: 600 var(--small-font-size) var(--second-font);
+  position: absolute;
+  right: -3rem;
+  color: var(--purple-color-light);
+}
+.home .swiper-button-next:hover {
+  background-image: var(--linear-gradient-2);
+  border-color: transparent;
+  background-clip: padding-box;
+}
+.home .swiper-pagination-vertical.swiper-pagination-bullets {
+  top: initial;
+  left: 0;
+  right: 0;
+  bottom: -6rem;
+  display: flex;
+  justify-content: center;
+  column-gap: 1rem;
+}
+.home .swiper-pagination-bullet {
+  width: 30px;
+  height: 5px;
+  border-radius: 0.5rem;
+  background-color: var(--purple-color);
+  opacity: 1;
+  transition: background-color 0.4s;
+}
+.home .swiper-pagination-bullet-active {
+  background-color: var(--purple-color-light);
+}
 /*=============== BREAKPOINTS ===============*/
 /* For small devices <> */
 
