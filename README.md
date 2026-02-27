@@ -1064,3 +1064,4 @@
 |1058| [Fireside](https://github.com/xml12333/HTML_CSS_JS/tree/main/1058.Fireside)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1058.Fireside/)|
 |1059| [Cat](https://github.com/xml12333/HTML_CSS_JS/tree/main/1059.Cat)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1059.Cat/)|
 |1070| [Sushi Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/1070.Sushi%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1070.Sushi%20Website/)|
+|1071| [Sneaker Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/1071.Sneaker%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1071.Sneaker%20Website/)|
