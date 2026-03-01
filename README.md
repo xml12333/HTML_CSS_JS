@@ -1066,3 +1066,4 @@
 |1070| [Sushi Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/1070.Sushi%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1070.Sushi%20Website/)|
 |1071| [Sneaker Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/1071.Sneaker%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1071.Sneaker%20Website/)|
 |1072| [Cosmic Clock](https://github.com/xml12333/HTML_CSS_JS/tree/main/1072.Cosmic%20Clock)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1072.Cosmic%20Clock/)|
+|1073| [Wind Canvas](https://github.com/xml12333/HTML_CSS_JS/tree/main/1073.Wind%20Canvas)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1073.Wind%20Canvas/)|
