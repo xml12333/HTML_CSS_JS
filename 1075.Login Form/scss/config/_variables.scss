@@ -1,0 +1,32 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root{
+   /*========== Colors ==========*/
+   /*Color mode HSL(hue, saturation, lightness)*/
+   --first-color: hsl(263, 64%, 48%);
+   --first-color-alt: hsl(263, 64%, 44%);
+   --border-color: hsl(0, 0%, 45%);
+   --title-color: hsl(0, 0%, 95%);
+   --text-color: hsl(0, 0%, 55%);
+   --body-color: hsl(0, 0%, 4%);
+   --container-color: hsl(0, 0%, 8%);
+
+   /*========== Font and typography ==========*/
+   /*.5rem = 8px | 1rem = 16px ...*/
+   --body-font: "Syne", sans-serif;
+
+   --big-font-size: 1.5rem;
+   --normal-font-size: .938rem;
+   --small-font-size: .813rem;
+}
+
+/*========== Responsive typography ==========*/
+:root{
+   @media screen and (width >= 1150px){
+      --big-font-size: 2.25rem;
+      --normal-font-size: 1rem;
+      --small-font-size: .875rem;
+    }
+}
