@@ -1069,3 +1069,4 @@
 |1073| [Wind Canvas](https://github.com/xml12333/HTML_CSS_JS/tree/main/1073.Wind%20Canvas)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1073.Wind%20Canvas/)|
 |1074| [Gradient Mesh](https://github.com/xml12333/HTML_CSS_JS/tree/main/1074.Gradient%20Mesh)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1074.Gradient%20Mesh/)|
 |1075| [Login Form](https://github.com/xml12333/HTML_CSS_JS/tree/main/1075.Login%20Form)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1075.Login%20Form/)|
+|1076| [Jelly Text](https://github.com/xml12333/HTML_CSS_JS/tree/main/1076.Jelly%20Text)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1076.Jelly%20Text/)|

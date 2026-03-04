@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Sour+Gummy:wdth,wght@100..125,100..900&display=swap");
+:root {
+  /* Animation Physics */
+  --jelly-duration: 0.9s;
+  --stagger: 0.035s;
+  --easing: cubic-bezier(0.25, 1, 0.5, 1);
+  /* Transform Physics */
+  --squash-scale-x: 1.35;
+  --squash-scale-y: 0.65;
+  --squash-ty: 12%;
+  --stretch-scale-x: 0.75;
+  --stretch-scale-y: 1.35;
+  --stretch-ty: -22%;
+  --overshoot-scale-x: 1.15;
+  --overshoot-scale-y: 0.85;
+  --overshoot-ty: 6%;
+  --settle1-scale-x: 0.92;
+  --settle1-scale-y: 1.08;
+  --settle1-ty: -3%;
+  --settle2-scale-x: 1.03;
+  --settle2-scale-y: 0.97;
+  --settle2-ty: 1%;
+  /* Variable Font Physics */
+  --base-wght: 700;
+  --base-wdth: 85;
+  --squash-wght: 900;
+  --squash-wdth: 80;
+  --stretch-wght: 450;
+  --stretch-wdth: 90;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Sour Gummy", system-ui, sans-serif;
+  background: conic-gradient(oklch(100% 0 0/0.1) 90deg, transparent 90deg 180deg, oklch(100% 0 0/0.1) 180deg 270deg, transparent 270deg), linear-gradient(100deg, oklch(62% 0.16 250) 14%, oklch(38% 0.18 290) 98%);
+  background-size: 40px 40px, 100% 100%;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.hero h1 {
+  font-size: clamp(6rem, 12vw, 50rem);
+  letter-spacing: -0.03333em;
+  margin: 0;
+  user-select: none;
+  cursor: pointer;
+  line-height: 100%;
+}
+.hero h1.force-jelly .letter {
+  animation: jelly var(--jelly-duration) var(--easing) forwards;
+  animation-delay: calc(var(--i, 0) * var(--stagger));
+}
+
+.letter {
+  display: inline-block;
+  position: relative;
+  color: var(--c);
+  font-variation-settings: "wght" var(--base-wght), "wdth" var(--base-wdth);
+  opacity: 0.75;
+  text-shadow: -0.005em -0.005em 0 oklch(100% 0 0/0.4), 0.005em 0.01em 0 oklch(from var(--cs) l c h/0.3), 0.01em 0.03em 0 oklch(from var(--cs) l c h/0.3), 0.01em 0.02em 0.03em var(--c);
+}
+.letter::before {
+  content: attr(data-char);
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, transparent 35%, var(--cs) 110%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 1;
+}
+.letter::after {
+  content: attr(data-char);
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 20%, oklch(100% 0 0/0.9) 22%, oklch(100% 0 0/0.6) 24%, transparent 28%), radial-gradient(ellipse 35% 15% at 28% 18%, oklch(100% 0 0/0.8) 0%, oklch(100% 0 0/0.15) 35%, transparent 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  mix-blend-mode: color-dodge;
+  pointer-events: none;
+  z-index: 2;
+  filter: blur(0.04em);
+}
+.letter.is-jiggling {
+  animation: jelly var(--jelly-duration) var(--easing) forwards;
+  animation-delay: 0s;
+}
+
+@keyframes jelly {
+  0%, 100% {
+    transform: scale(1, 1) translateY(0);
+    font-variation-settings: "wght" var(--base-wght), "wdth" var(--base-wdth);
+    opacity: 0.75;
+  }
+  12% {
+    transform: scale(var(--squash-scale-x), var(--squash-scale-y)) translateY(var(--squash-ty));
+    font-variation-settings: "wght" var(--squash-wght), "wdth" var(--squash-wdth);
+    opacity: 0.9;
+  }
+  28% {
+    transform: scale(var(--stretch-scale-x), var(--stretch-scale-y)) translateY(var(--stretch-ty));
+    font-variation-settings: "wght" var(--stretch-wght), "wdth" var(--stretch-wdth);
+    opacity: 0.6;
+  }
+  45% {
+    transform: scale(var(--overshoot-scale-x), var(--overshoot-scale-y)) translateY(var(--overshoot-ty));
+    font-variation-settings: "wght" 800, "wdth" 110;
+    opacity: 0.75;
+  }
+  65% {
+    transform: scale(var(--settle1-scale-x), var(--settle1-scale-y)) translateY(var(--settle1-ty));
+    font-variation-settings: "wght" 200, "wdth" 100;
+    opacity: 0.75;
+  }
+  82% {
+    transform: scale(var(--settle2-scale-x), var(--settle2-scale-y)) translateY(var(--settle2-ty));
+    font-variation-settings: "wght" 600, "wdth" 105;
+    opacity: 0.75;
+  }
+}
+.tp-dfwv {
+  width: 248px !important;
+}
