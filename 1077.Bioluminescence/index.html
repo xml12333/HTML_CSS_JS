@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>bioluminescence</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+  <div id="map-container">
+    <canvas id="map"></canvas>
+    <div class="help-icon" onclick="document.getElementById('helpModal').classList.toggle('active')">?</div>
+    <div class="help-modal" id="helpModal">
+      <div class="count" id="totalCount">43,060 observations</div>
+      <div class="desc">Bioluminescent organism sightings from GBIF and OBIS, 1872-2025. Filter by phylum to isolate
+        taxonomic groups.</div>
+      <a href="https://lukesteuber.com" target="_blank">lukesteuber.com</a>
+      <a href="https://dr.eamer.dev" target="_blank">dr.eamer.dev</a>
+    </div>
+    <div class="fullscreen-btn"
+      onclick="document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen()">⛶
+    </div>
+    <div class="filters" id="filters">
+      <div class="filter-row"><button class="filter-btn all active" data-phylum="all"><span class="filter-dot"
+            style="background: rgba(192,200,208,0.5)"></span>all</button></div>
+      <div class="filter-row"><button class="filter-btn arthropoda" data-phylum="Arthropoda"><span class="filter-dot"
+            style="background: #00ffff"></span>arthropoda</button><a class="filter-wiki"
+          href="https://en.wikipedia.org/wiki/Arthropod" rel="noopener" target="_blank">wiki</a></div>
+      <div class="filter-row"><button class="filter-btn cnidaria" data-phylum="Cnidaria"><span class="filter-dot"
+            style="background: #4488ff"></span>cnidaria</button><a class="filter-wiki"
+          href="https://en.wikipedia.org/wiki/Cnidaria" rel="noopener" target="_blank">wiki</a></div>
+      <div class="filter-row"><button class="filter-btn myzozoa" data-phylum="Myzozoa"><span class="filter-dot"
+            style="background: #00ff88"></span>myzozoa</button><a class="filter-wiki"
+          href="https://en.wikipedia.org/wiki/Myzozoa" rel="noopener" target="_blank">wiki</a></div>
+      <div class="filter-row"><button class="filter-btn ctenophora" data-phylum="Ctenophora"><span class="filter-dot"
+            style="background: #cc44ff"></span>ctenophora</button><a class="filter-wiki"
+          href="https://en.wikipedia.org/wiki/Ctenophora" rel="noopener" target="_blank">wiki</a></div>
+      <div class="filter-row"><button class="filter-btn proteobacteria" data-phylum="Proteobacteria"><span
+            class="filter-dot" style="background: #ffdd00"></span>proteobacteria</button><a class="filter-wiki"
+          href="https://en.wikipedia.org/wiki/Pseudomonadota" rel="noopener" target="_blank">wiki</a></div>
+      <div class="filter-row"><button class="filter-btn mollusca" data-phylum="Mollusca"><span class="filter-dot"
+            style="background: #ff6688"></span>mollusca</button><a class="filter-wiki"
+          href="https://en.wikipedia.org/wiki/Mollusca" rel="noopener" target="_blank">wiki</a></div>
+      <div class="filter-row"><button class="filter-btn annelida" data-phylum="Annelida"><span class="filter-dot"
+            style="background: #ff8844"></span>annelida</button><a class="filter-wiki"
+          href="https://en.wikipedia.org/wiki/Annelid" rel="noopener" target="_blank">wiki</a></div>
+    </div>
+  </div>
+  <div class="tooltip" id="tooltip"></div>
+  <script src='https://d3js.org/d3.v7.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/topojson@3'></script>
+  <script src='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&amp;display=swap'></script>
+  <script src="./js/script.js"></script>
+
+</body>
+
+</html>
