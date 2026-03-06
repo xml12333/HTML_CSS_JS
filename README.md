@@ -1071,3 +1071,4 @@
 |1075| [Login Form](https://github.com/xml12333/HTML_CSS_JS/tree/main/1075.Login%20Form)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1075.Login%20Form/)|
 |1076| [Jelly Text](https://github.com/xml12333/HTML_CSS_JS/tree/main/1076.Jelly%20Text)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1076.Jelly%20Text/)|
 |1077| [Bioluminescence](https://github.com/xml12333/HTML_CSS_JS/tree/main/1077.Bioluminescence)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1077.Bioluminescence/)|
+|1078| [Loader Motion](https://github.com/xml12333/HTML_CSS_JS/tree/main/1078.Loader%20Motion)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1078.Loader%20Motion/)|
