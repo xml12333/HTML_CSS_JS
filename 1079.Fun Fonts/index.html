@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>More Fun with Fonts</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+  <nav>
+    <button class="active" data-stage="s1">Magnetic</button>
+    <button data-stage="s2">Glitch</button>
+    <button data-stage="s3">Wave</button>
+    <button data-stage="s4">Particles</button>
+    <button data-stage="s5">3D Flip</button>
+    <button data-stage="s6">Typewriter</button>
+  </nav>
+  <section class="stage active" id="s1">
+    <div class="stage-label">Drift your cursor close</div>
+    <div class="magnetic-wrap" id="magnetic">
+      <span>D</span><span>r</span><span>e</span><span>a</span><span>m</span><span>&nbsp;</span><span>B</span><span>i</span><span>g</span>
+    </div>
+    <p class="hint">The letters sense your presence & push back magnetically</p>
+  </section>
+  <section class="stage" id="s2">
+    <div class="stage-label">Hover or click</div>
+    <div class="glitch-wrap" id="glitch" data-text="Dream Big">Dream Big</div>
+    <p class="hint">Hover to briefly corrupt reality, click to scramble</p>
+  </section>
+  <section class="stage" id="s3">
+    <div class="stage-label">Click to trigger</div>
+    <div class="wave-wrap" id="wave">
+      <span>D</span><span>r</span><span>e</span><span>a</span><span>m</span><span>&nbsp;</span><span>B</span><span>i</span><span>g</span>
+    </div>
+    <p class="hint">Send a cascading wave of energy & color from end to end</p>
+  </section>
+  <section class="stage" id="s4">
+    <div class="stage-label">Click the text</div>
+    <div class="particle-container">
+      <canvas id="particle-canvas"></canvas>
+      <div class="particle-wrap" id="particle-text">Dream Big</div>
+    </div>
+    <p class="hint">Ignite a colorful burst of gravity-driven confetti with every click</p>
+  </section>
+  <section class="stage" id="s5">
+    <div class="stage-label">Hover and click</div>
+    <div class="flip-wrap"><span>D</span><span>r</span><span>e</span><span>a</span><span>m</span><span>&nbsp;
+      </span><span>B</span><span>i</span><span>g</span></div>
+    <p class="hint">Hover to spin letters in 3D space, click anywhere to toggle case</p>
+  </section>
+  <section class="stage" id="s6">
+    <div class="stage-label">Command the sequence</div>
+    <div class="typewriter-container"><span id="type-text"></span><span class="cursor"></span></div>
+    <div class="type-controls">
+      <button class="type-btn" id="btn-type">Type</button>
+      <button class="type-btn" id="btn-erase">Erase</button>
+      <button class="type-btn" id="btn-loop">Loop</button>
+    </div>
+    <p class="hint">Type it out, wipe it clean, or let it loop endlessly</p>
+  </section>
+  <script src="./js/script.js"></script>
+
+</body>
+
+</html>
