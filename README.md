@@ -1073,3 +1073,4 @@
 |1077| [Bioluminescence](https://github.com/xml12333/HTML_CSS_JS/tree/main/1077.Bioluminescence)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1077.Bioluminescence/)|
 |1078| [Loader Motion](https://github.com/xml12333/HTML_CSS_JS/tree/main/1078.Loader%20Motion)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1078.Loader%20Motion/)|
 |1079| [Fun Fonts](https://github.com/xml12333/HTML_CSS_JS/tree/main/1079.Fun%20Fonts)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1079.Fun%20Fonts/)|
+|1080| [Murmurations](https://github.com/xml12333/HTML_CSS_JS/tree/main/1080.Murmurations)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1080.Murmurations/)|
