@@ -1074,3 +1074,4 @@
 |1078| [Loader Motion](https://github.com/xml12333/HTML_CSS_JS/tree/main/1078.Loader%20Motion)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1078.Loader%20Motion/)|
 |1079| [Fun Fonts](https://github.com/xml12333/HTML_CSS_JS/tree/main/1079.Fun%20Fonts)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1079.Fun%20Fonts/)|
 |1080| [Murmurations](https://github.com/xml12333/HTML_CSS_JS/tree/main/1080.Murmurations)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1080.Murmurations/)|
+|1081| [Jumpy Triangle](https://github.com/xml12333/HTML_CSS_JS/tree/main/1081.Jumpy%20Triangle)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1081.Jumpy%20Triangle/)|
