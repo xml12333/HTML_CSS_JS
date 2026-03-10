@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Deco Tile Pattern using Log-polar coordinates</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+  <canvas id="canvas"></canvas>
+  <!-- VertexShader code here -->
+  <script id="vertexShader" type="x-shader/x-vertex">#version 300 es
+precision highp float;
+  in vec4 position;
+  void main() {
+    gl_Position = vec4( position );
+  }
+</script>
+
+  </script>
+
+  <!-- FragmentShader code here -->
+  <script id="fragmentShader" type="x-shader/x-fragment">#version 300 es
+#if __VERSION__ < 130
+#define TEXTURE2D texture2D
+#else
+#define TEXTURE2D texture
+#endif
+precision highp float;
+out vec4 fragColor;
+uniform vec2 u_resolution;
+uniform float u_time;
+uniform vec4 u_mouse;
+uniform sampler2D iChannel0;
+uniform sampler2D iChannel1;
+  
+#define R          u_resolution
+#define T          u_time
+#define M          u_mouse
+#define PI         3.141592653
+#define PI2        6.283185307
+#define PI    3.141592653
+#define PI2   6.283185307
+
+// number of tile rows in warp
+#define N     6.
+
+mat2 rot(float a) { return mat2(cos(a),sin(a),-sin(a),cos(a)); }
+
+float hash21(vec2 a) { 
+    a.y=mod(a.y,N);
+    return fract(sin(dot(a, vec2(27.609, 57.583)))*43758.5453); 
+}
+
+float box( in vec2 p, in vec2 b) {
+    vec2 q = abs(p)-b;
+    return min(max(q.x,q.y),0.0) + length(max(q,0.0));
+}
+
+//size is hight of tile - adjustable
+const float size = 2.;
+const float hlf = size/2.;
+const float dbl = size*2.;
+
+//@iq of hsv2rgb
+vec3 hsv( in vec3 c ) {
+    vec3 rgb = clamp( abs(mod(c.x*6.+vec3(0,4,2),6.)-3.)-1., 0., 1. );
+    return c.z * mix( vec3(1), rgb, c.y);
+}
+
+
+void main() {
+    vec2 F = gl_FragCoord.xy; 
+    vec2 uv = (2.*F.xy-R.xy)/max(R.x,R.y);
+
+    uv *= rot(-T*.08);
+    uv = -vec2(log(length(uv)),atan(uv.y,uv.x));
+    uv /= PI;
+    uv *= N;
+    
+    float px = fwidth(uv.x)*2.5;
+    uv.x += T*.4;
+
+    vec2 p = uv*size, q;
+    vec3 C = vec3(0);
+    
+    float sp =.45, sl =hlf*.975;
+    float t = 1e5,id,fd;
+    
+    for(int i = 0; i<2; i++) {
+        if(i==1) p.y+=.5;
+        float cnt = i<1 ? size : dbl;
+        q = vec2(p.x-cnt,p.y);
+        id = floor(q.x/dbl) + .5;
+        q.x -= (id)*dbl;
+        
+        fd = floor(q.y)+float(i);
+        q.y = fract(q.y)-.5;
+        t = box(q,vec2(sl,sp));
+        float tc = length(q-vec2(sl,0))-sp;
+        float bc = length(vec2(q.x,abs(q.y)-sp)+vec2(sl,0))-.5;
+
+        t = min(t,tc);
+        t = max(t,-bc);
+
+        float hs = hash21(vec2(id,fd));
+        float fs = fract(hs*4785.312);
+
+        vec3 h = hsv(vec3(hs*.5+T*.01,1,.6));
+        vec3 CC = mix(h,h*.3,.75-q.x*.5);
+        C = mix(C,CC,smoothstep(px,-px,t));
+
+        tc = length(q-vec2(sl*sin(hs+T*hs),0))-(sp*.8);
+        tc = max(tc,t);
+    
+        C = mix(C,hsv(vec3(fs*.5+T*.01,1,.2)),smoothstep(px,-px,tc));
+        C = mix(C,vec3(0),smoothstep(px,-px,abs(tc+.03)-.03));
+    }
+
+    C = pow(C,vec3(.4545));
+    fragColor = vec4(C,1.0);
+}
+
+
+</script>
+  <script src='./js/twgl.min.js'></script>
+  <script src="./js/script.js"></script>
+
+</body>
+
+</html>
