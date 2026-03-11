@@ -1,0 +1,127 @@
+body {
+  background: #000;
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+#charSelect {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.button {
+  width: 75px;
+  height: 75px;
+  position: relative;
+}
+.button.active:after {
+  top: 61px;
+  left: 15px;
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 15px;
+  border-radius: 50%;
+  z-index: -1;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+.sprite {
+  width: 320px;
+  height: 320px;
+  margin-top: -30px;
+  position: absolute;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+}
+.preload {
+  display: block;
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+}
+.container {
+  width: 198px;
+  height: 198px;
+  border-radius: 50%;
+  border: 2px solid #252525;
+  background: #000;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container:after {
+  content: "";
+  position: absolute;
+  width: 198px;
+  height: 198px;
+  border-radius: 50%;
+  z-index: -1;
+  background-size: 900px;
+  filter: blur(25px);
+  transform: translate3d(0, 0, 0);
+  background: linear-gradient(45deg, #222, #fff, #555, #666, #777, #888);
+  transition: filter 3s ease;
+  animation: glow 6s linear infinite;
+}
+.container.waiting:after {
+  background: linear-gradient(45deg, #000, #000, #000, #000, #000, #000);
+}
+.container.clicked:after {
+  background: linear-gradient(45deg, #ff595e, #ffca3a, #8ac926, #1982c4, #6a4c93, #ff6700);
+  animation: glow 3s linear infinite;
+}
+.blue .container.clicked:after {
+  background: linear-gradient(45deg, #000, #079efc, #000, #1982c4, #4fa2f5, #000);
+}
+.red .container.clicked:after {
+  background: linear-gradient(45deg, #000, #fc0707, #000, #c41969, #fe676f, #000);
+}
+.green .container.clicked:after {
+  background: linear-gradient(45deg, #000, #07fc71, #000, #19c460, #96f869, #000);
+}
+.yellow .container.clicked:after {
+  background: linear-gradient(45deg, #000, #fcdb07, #000, #c4b019, #fcf404, #000);
+}
+.question,
+.message {
+  font-family: arial, helvetica, san-serrif;
+  font-size: 20px;
+  color: #fff;
+  position: absolute;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  top: -20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 300ms ease-in-out;
+}
+.container.waiting > .question {
+  top: 15%;
+  opacity: 1;
+}
+.container.clicked > .message {
+  opacity: 1;
+  top: 15%;
+}
+.container.clicked > .question,
+.container > .question {
+  opacity: 0;
+  top: -20%;
+}
+@keyframes glow {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 900px 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}

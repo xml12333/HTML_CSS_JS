@@ -1076,3 +1076,4 @@
 |1080| [Murmurations](https://github.com/xml12333/HTML_CSS_JS/tree/main/1080.Murmurations)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1080.Murmurations/)|
 |1081| [Jumpy Triangle](https://github.com/xml12333/HTML_CSS_JS/tree/main/1081.Jumpy%20Triangle)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1081.Jumpy%20Triangle/)|
 |1082| [Tile Pattern](https://github.com/xml12333/HTML_CSS_JS/tree/main/1082.Tile%20Pattern)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1082.Tile%20Pattern/)|
+|1083| [Descision Sprites](https://github.com/xml12333/HTML_CSS_JS/tree/main/1083.Descision%20Sprites)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1083.Descision%20Sprites/)|
