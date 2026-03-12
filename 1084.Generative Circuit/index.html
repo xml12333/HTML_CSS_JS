@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Generative Circuit Grid</title>
+    
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generative Circuit Grid</title>
+    <style>
+        body { 
+            margin: 0; 
+            background: #E0E0E0;
+            display: flex; 
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            overflow: hidden; 
+        }
+        canvas { background: transparent; cursor: pointer; }
+        /* Removed text container */
+        .info-container { display: none; }
+    </style>
+</head>
+<body>
+
+<canvas id="frame"></canvas>
+
+<script>
+// STATE MANAGER
+let startTime = 0;
+const DURATION = 8000; // Build for 8 seconds before resetting
+
+var fieldMap = [], nodes = [], jumpWires = [], global = {}, ctx = null;
+var availableMoves = [{ x: 0, y:-1 }, { x:-1, y:-1 }, { x:-1, y: 0 }, { x:-1, y: 1 }, { x: 0, y: 1 }, { x: 1, y: 1 }, { x: 1, y: 0 }, { x: 1, y:-1 }];
+
+
+function isInsideShape(x, y) {
+    return true; 
+}
+
+function rnd(min, max) { return min + Math.floor(Math.random() * (max - min)); }
+
+function buildNewMap() {
+    fieldMap = new Array(global.fH);
+    for (var h = 0; h < global.fH; h++) {
+        fieldMap[h] = new Array(global.fW);
+        for (var w = 0; w < global.fW; w++) {
+            fieldMap[h][w] = 0; // Everything is open
+        }
+    }
+}
+
+function resetAnimation() {
+    ctx.clearRect(0, 0, global.w, global.h);
+    nodes = [];
+    jumpWires = [];
+    buildNewMap();
+    startTime = Date.now();
+}
+
+function buildNewNode(x, y, type) {
+    return {
+        pos: { x: x, y: y }, pre: { x: x, y: y }, stuckFactor: 0, tailLength: 0, turns: rnd(2, 5),
+        type: type || 'black', 
+        move: function() {
+            var moves = this.possibleMoves();
+            var curMove = moves[rnd(0, moves.length)];
+            var ox = this.pos.x, oy = this.pos.y, nx = this.pos.x + curMove.x, ny = this.pos.y + curMove.y;
+            this.stuckFactor -= 1;
+            if (nx < 0 || ny < 0 || nx >= global.fW || ny >= global.fH || fieldMap[ny][nx] == 1) return null;
+            fieldMap[ny][nx] = 1;
+            this.stuckFactor += 2; this.tailLength += 1;
+            this.turns += curMove.type == 't' ? -1 : 0;
+            this.pre = { x: ox, y: oy }; this.pos = { x: nx, y: ny };
+            return this.pos;
+        },
+        stuck: function() { return this.stuckFactor < -5; },
+        possibleMoves: function() {
+            var ax = this.pos.x - this.pre.x, ay = this.pos.y - this.pre.y;
+            if (ax == 0 && ay == 0) return [availableMoves[rnd(0, 7)]];
+            var index = -1;
+            for (var i = 0; i < availableMoves.length; i++) if (availableMoves[i].x == ax && availableMoves[i].y == ay) index = i;
+            var result = [availableMoves[index]];
+            if (this.turns > 0) {
+                var lIndex = (index == 0) ? availableMoves.length - 1 : index - 1;
+                var rIndex = (index == availableMoves.length - 1) ? 0 : index + 1;
+                result.push({...availableMoves[lIndex], type: 't'}); result.push({...availableMoves[rIndex], type: 't'});
+            }
+            return result;
+        }
+    };
+}
+
+function init() {
+    global = { w: 400, h: 500, s: 10 }; // Fixed 4:5 Ratio
+    global.fW = Math.floor(global.w / global.s); global.fH = Math.floor(global.h / global.s);
+    var canvas = document.getElementById('frame');
+    ctx = canvas.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = global.w * dpr;
+    canvas.height = global.h * dpr;
+    canvas.style.width = global.w + 'px';
+    canvas.style.height = global.h + 'px';
+    ctx.scale(dpr, dpr);
+    resetAnimation();
+    window.requestAnimationFrame(draw);
+}
+
+function draw() {
+    if (ctx == null) return;
+    let elapsed = Date.now() - startTime;
+
+    if (elapsed > DURATION) {
+        resetAnimation();
+        return window.requestAnimationFrame(draw);
+    }
+
+    var open = [];
+    for (var i = 0; i < fieldMap.length; i++) for (var j = 0; j < fieldMap[i].length; j++) if (fieldMap[i][j] == 0) open.push({ x:j, y:i });
+
+    if (nodes.length < 300) { // Increased density slightly for the full rectangle
+        for(let k = 0; k < 20; k++) {
+             if (nodes.length < 300) {
+                var next = open[rnd(0, open.length)];
+                if (next) nodes.push(buildNewNode(next.x, next.y, (Math.random() > 0.4) ? 'black' : 'grey'));
+             }
+        }
+    }
+
+    for (var i = 0; i < nodes.length; i++) {
+        var cur_p = {x: nodes[i].pos.x, y: nodes[i].pos.y};
+        var new_p = nodes[i].move();
+        var correct = global.s / 2;
+
+        if (new_p != null) {
+            ctx.beginPath();
+            ctx.lineWidth = 2.4;
+            ctx.strokeStyle = "#251b12";
+            ctx.moveTo(cur_p.x * global.s + correct, cur_p.y * global.s + correct);
+            ctx.lineTo(new_p.x * global.s + correct, new_p.y * global.s + correct);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.lineWidth = nodes[i].type === 'black' ? 1.2 : 0.8;
+            ctx.strokeStyle = nodes[i].type === 'black' ? "#020001" : "#CFCFCF"; 
+            ctx.moveTo(cur_p.x * global.s + correct, cur_p.y * global.s + correct);
+            ctx.lineTo(new_p.x * global.s + correct, new_p.y * global.s + correct);
+            ctx.stroke();
+        }
+        
+        if (nodes[i].tailLength <= 1 || nodes[i].stuck()) {
+            var rad = nodes[i].type === 'black' ? global.s / 3.2 : global.s / 4;
+            var cx = cur_p.x * global.s + correct;
+            var cy = cur_p.y * global.s + correct;
+            
+            ctx.beginPath();
+            ctx.arc(cx, cy, rad + 0.8, 0, Math.PI * 2);
+            ctx.fillStyle = "#251b12";
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(cx, cy, rad, 0, Math.PI * 2);
+            ctx.fillStyle = nodes[i].type === 'black' ? "#020001" : "#CFCFCF";
+            ctx.fill();
+
+            if (nodes[i].type === 'black' && jumpWires.length < 20 && Math.random() < 0.1) {
+                let nearby = nodes.filter(n => dist(n.pos.x, n.pos.y, nodes[i].pos.x, nodes[i].pos.y) < 12);
+                if (nearby.length > 1) {
+                    let target = nearby[rnd(0, nearby.length)];
+                    jumpWires.push({ x1: cx, y1: cy, x2: target.pos.x * global.s + correct, y2: target.pos.y * global.s + correct, h: rnd(25, 50) });
+                }
+            }
+        }
+    }
+
+    ctx.lineCap = "round";
+    for (let j = 0; j < jumpWires.length; j++) {
+        let w = jumpWires[j];
+        ctx.beginPath();
+        ctx.strokeStyle = `#B301FF`; 
+        ctx.lineWidth = 3.2;
+        ctx.moveTo(w.x1, w.y1); 
+        ctx.bezierCurveTo(w.x1, w.y1 - w.h, w.x2, w.y2 - w.h, w.x2, w.y2);
+        ctx.stroke();
+    }
+
+    nodes = nodes.filter(n => !n.stuck());
+    window.requestAnimationFrame(draw);
+}
+function dist(x1, y1, x2, y2) { return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2); }
+init();
+</script>
+</body>
+</html>
+    
+  </body>
+  
+</html>
