@@ -41,10 +41,22 @@ const scrollHeader = () => {
 window.addEventListener("scroll", scrollHeader);
 
 /*=============== SWIPER WORKS ===============*/
-
+const swiperWork = new Swiper(".work__swiper", {
+  loop: true,
+  slidesPerView: "auto",
+  spaceBeetween: 24,
+  grabCursor: true,
+  pagination: {
+    el: ".work__data .swiper-pagination",
+    type: "fraction",
+  },
+  navigation: {
+    nextEl: ".work__data .swiper-button-next",
+    prevEl: ".work__data .swiper-button-prev",
+  },
+});
 
 /*=============== SWIPER TESTIMONIAL ===============*/
-
 
 /*=============== SHOW SCROLL UP ===============*/
 const scrollUp = () => {
@@ -78,31 +90,22 @@ const scrollActive = () => {
 };
 window.addEventListener("scroll", scrollActive);
 
-/*=============== GSAP ANIMATION ===============*/ 
-
+/*=============== GSAP ANIMATION ===============*/
 
 /* Home animation */
 
-
 /* Home background animation */
-
 
 /* The nav animation only works in the home section */
 
-
 /* About animation */
-
 
 /* Work animation */
 
-
 /* Service animation */
-
 
 /* Expert animation */
 
-
 /* Contact animation */
-
 
 /* Footer animation */
