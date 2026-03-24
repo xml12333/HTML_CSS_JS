@@ -513,7 +513,66 @@ img {
 }
 
 /*=============== CONTACT SECTION ===============*/
-
+.contact__container {
+  row-gap: 4rem;
+  padding-bottom: 3rem;
+}
+.contact__map iframe {
+  width: 100%;
+  height: 100%;
+}
+.contact__map {
+  width: 320px;
+  height: 445px;
+  justify-self: center;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+.contact__data {
+  text-align: center;
+}
+.contact__description {
+  margin-bottom: 2.5rem;
+}
+.contact__content {
+  display: grid;
+  row-gap: 3rem;
+}
+.contact__card {
+  display: flex;
+  align-items: center;
+  column-gap: 1.5rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--border-color);
+}
+.contact__card:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.contact__icon {
+  width: 64px;
+  height: 64px;
+  background: var(--title-color);
+  border-radius: 0.75rem;
+  font-size: 0.25rem;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+}
+.contact__info {
+  display: grid;
+  row-gap: 0.5rem;
+}
+.contact__title {
+  font-size: var(--h2-font-size);
+}
+.contact__address {
+  font-style: initial;
+}
+.contact__address :is(span, a) {
+  display: block;
+  color: var(--title-color);
+}
 /*=============== FOOTER ===============*/
 
 /*=============== SCROLL BAR ===============*/
@@ -538,13 +597,17 @@ img {
   .expert__social {
     justify-content: center;
   }
+  .contact__map {
+    width: 100%;
+  }
 }
 /* For medium devices <> */
 @media (width >= 540px) {
   .home__container,
   .about__container,
   .service__container,
-  .expert__container {
+  .expert__container,
+  .contact__container {
     grid-template-columns: 400px;
     justify-content: center;
   }
@@ -722,6 +785,22 @@ img {
   .expert__social {
     flex-direction: column;
     justify-self: flex-end;
+  }
+  .contact__container{
+    grid-template-columns: 355px 320px 355px;
+    column-gap: 2.5rem;
+    align-items: center;
+    padding-top: 4rem;
+  }
+  .contact__data,
+  .contact__data .section__title{
+    text-align: initial;
+  }
+  .contact__description{
+    margin-bottom: 7rem;
+  }
+  .contact__title{
+    font-size: var(--h3-font-size);
   }
 }
 /* For 2K resolutions <> */
