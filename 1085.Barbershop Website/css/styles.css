@@ -574,7 +574,64 @@ img {
   color: var(--title-color);
 }
 /*=============== FOOTER ===============*/
-
+.footer {
+  padding-bottom: 2rem;
+}
+.footer__container {
+  row-gap: 4rem;
+}
+.footer__logo {
+  font: var(--font-bold) var(--h2-font-size) var(--second-font);
+  color: var(--title-color);
+}
+.footer__description {
+  margin-bottom: 1rem 0.5rem;
+}
+.footer__email {
+  font-style: initial;
+}
+.footer__email a {
+  color: var(--title-color);
+}
+.footer__content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem 2.5rem;
+}
+.footer__title {
+  font-size: var(--h3-font-size);
+  margin-bottom: 1rem;
+}
+.footer__links {
+  display: grid;
+  row-gap: 0.5rem;
+}
+.footer__link {
+  color: var(--text-color);
+  transition: color 0.4s;
+}
+.footer__link:hover {
+  color: var(--title-color);
+}
+.footer__social {
+  display: flex;
+  column-gap: 0.75rem;
+}
+.footer__social-link {
+  font-size: 1.5rem;
+  color: var(--title-color);
+  transition: color 0.4s;
+}
+.footer__social-link:hover {
+  color: var(--text-color);
+}
+.footer__copy {
+  display: block;
+  margin-top: 6rem;
+  text-align: center;
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+}
 /*=============== SCROLL BAR ===============*/
 
 /*=============== SCROLL UP ===============*/
@@ -600,6 +657,9 @@ img {
   .contact__map {
     width: 100%;
   }
+  .footer__content{
+    grid-template-columns: 1fr;
+  }
 }
 /* For medium devices <> */
 @media (width >= 540px) {
@@ -619,6 +679,10 @@ img {
 @media (width >= 768px) {
   .expert__content {
     grid-template-columns: repeat(2, max-content);
+  }
+  .footer__content{
+    grid-template-columns: repeat(3, max-content);
+    justify-content: space-between;
   }
 }
 /* For large devices <> */
@@ -786,21 +850,37 @@ img {
     flex-direction: column;
     justify-self: flex-end;
   }
-  .contact__container{
+  .contact__container {
     grid-template-columns: 355px 320px 355px;
     column-gap: 2.5rem;
     align-items: center;
     padding-top: 4rem;
   }
   .contact__data,
-  .contact__data .section__title{
+  .contact__data .section__title {
     text-align: initial;
   }
-  .contact__description{
+  .contact__description {
     margin-bottom: 7rem;
   }
-  .contact__title{
+  .contact__title {
     font-size: var(--h3-font-size);
+  }
+  .footer__container{
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+  }
+  .footer__logo{
+    font-size: var(--h3-font-size);
+  }
+  .footer__description{
+    margin-top: 1.5rem;
+  }
+  .footer__content{
+    column-gap: 10rem;
+  }
+  .footer__title{
+    margin-bottom: 1.5rem;
   }
 }
 /* For 2K resolutions <> */
