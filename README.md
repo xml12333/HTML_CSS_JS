@@ -1078,3 +1078,4 @@
 |1082| [Tile Pattern](https://github.com/xml12333/HTML_CSS_JS/tree/main/1082.Tile%20Pattern)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1082.Tile%20Pattern/)|
 |1083| [Descision Sprites](https://github.com/xml12333/HTML_CSS_JS/tree/main/1083.Descision%20Sprites)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1083.Descision%20Sprites/)|
 |1084| [Generative Circuit](https://github.com/xml12333/HTML_CSS_JS/tree/main/1084.Generative%20Circuit)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1084.Generative%20Circuit/)|
+|1085| [Barbershop Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/1085.Barbershop%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1085.Barbershop%20Website/)|
