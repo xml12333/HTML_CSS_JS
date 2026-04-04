@@ -1,0 +1,95 @@
+/*=============== CARD ===============*/
+.card{
+   height: 100vh;
+   margin-inline: 1rem;
+   padding-block: 3rem;
+   display: flex;
+   flex-direction: column;
+   row-gap: 1rem;
+
+   &__article{
+      position: relative;
+      border-radius: 3rem;
+      box-shadow: 0 4px 8px hsla(0, 0%, 0%, .5);
+      overflow: hidden;
+      flex: 0 0 64px;
+      transition: flex .5s ease;
+      cursor: pointer;
+   }
+   &__img,
+   &__shadow{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+   }
+   &__img{
+      object-fit: cover;
+      object-position: center;
+      transition: scale .4s;
+   }
+   &__shadow{
+      background: linear-gradient(180deg, hsla(0, 0%, 85%, 0) 50%, 
+                                          hsla(0, 0%, 0%, .3) 75%);
+   }
+   &__data{
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+      display: flex;
+      align-items: center;
+      column-gap: 1rem;
+      transform: translateY(2rem);
+      opacity: 0;
+      transition: opacity .4s ease .1s, transform .4s ease .1s;
+   }
+   &__icon{
+      width: 48px;
+      height: 48px;
+      background-color: var(--white-color);
+      border-radius: 50%;
+      color: var(--black-color);
+      font-size: 1.5rem;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+   }
+   &__title{
+      font-size: var(--h2-font-size);
+      margin-bottom: .25rem;
+   }
+   &__description{
+      font-size: var(--small-font-size);
+   }
+   // Card active by default, takes up more space
+   &__active{
+      flex: 5;
+
+      .card__data{
+         opacity: 1;
+         transform: translateY(0);
+      }
+   }
+   &__active:hover &__img{
+      scale: 1.1;
+   }
+   // Any card expands when you hover over it
+   &__article:hover{
+      flex: 5;
+   }
+   // If the hover is NOT on the card active, contract card active at base proportion
+   &:has(&__article:not(&__active):hover) &__active{
+      flex: 0 0 64px;
+   }
+   // If the hover is NOT in card active, it also hides its contents
+   &:has(&__article:not(&__active):hover) &__active &__data{
+      opacity: 0;
+      transform: translateY(2rem);
+   }
+   // Show content on the other cards
+   &__article:hover &__data{
+      opacity: 1;
+      transform: translateY(0);
+   }
+}

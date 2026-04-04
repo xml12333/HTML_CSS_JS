@@ -1,0 +1,45 @@
+/*=============== BREAKPOINTS ===============*/
+/* For medium devices <> */
+@media (width >= 540px){
+   .card{
+      align-items: center;
+
+      &__article{
+         width: 400px;
+         justify-self: center;
+      }
+   }
+}
+
+/* For large devices <> */
+@media (width >= 1150px){
+   .card{
+      max-width: 1120px;
+      margin-inline: auto;
+      flex-direction: row;
+      column-gap: 1.5rem;
+      
+      &__article{
+         flex: 0 0 80px;
+         height: 460px;
+      }
+      &__active,
+      &__article:hover{
+         flex: 5;
+      }
+      &:has(&__article:not(&__active):hover) &__active{
+         flex: 0 0 80px;
+      }
+      &__data{
+         left: 1.5rem;
+         bottom: 1.5rem;
+      }
+      &__title{
+         white-space: nowrap
+      }
+      &__description{
+         font-size: var(--normal-font-size);
+         white-space: nowrap
+      }
+   }
+}

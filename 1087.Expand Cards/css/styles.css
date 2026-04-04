@@ -1,0 +1,197 @@
+/*=============== GOOGLE FONTS - Insert link for typography ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --white-color: hsl(0, 0%, 100%);
+  --black-color: hsl(0, 0%, 0%);
+  --body-color: hsl(0, 0%, 8%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", sans-serif;
+  --h2-font-size: 1.25rem;
+  --small-font-size: .813rem;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (width >= 1150px) {
+  :root {
+    --h2-font-size: 1.5rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--body-color);
+  color: var(--white-color);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== CARD ===============*/
+.card {
+  height: 100vh;
+  margin-inline: 1rem;
+  padding-block: 3rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.card__article {
+  position: relative;
+  border-radius: 3rem;
+  box-shadow: 0 4px 8px hsla(0, 0%, 0%, .5);
+  overflow: hidden;
+  flex: 0 0 64px;
+  transition: flex .5s ease;
+  cursor: pointer;
+}
+
+.card__img,
+.card__shadow{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card__img{
+  object-fit: cover;
+  object-position: center;
+  transition: scale .4s;
+}
+
+.card__shadow{
+  background: linear-gradient(180deg, hsla(0, 0%, 85%, 0) 50%,
+                                      hsla(0, 0%, 0%, .3) 75%);
+}
+
+.card__data {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  transform: translateY(2rem);
+  opacity: 0;
+  transition: opacity .4s ease .1s, transform .4s ease .1s;
+}
+
+.card__icon {
+  width: 48px;
+  height: 48px;
+  background-color: var(--white-color);
+  border-radius: 50%;
+  color: var(--black-color);
+  font-size: 1.5rem;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.card__title {
+  font-size: var(--h2-font-size);
+  margin-bottom: .25rem;
+}
+
+.card__description {
+  font-size: var(--small-font-size);
+}
+
+/* Card active by default, takes up more space */
+.card__active {
+  flex: 5;
+}
+
+.card__active .card__data {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card__active:hover .card__img {
+  scale: 1.1;
+}
+
+/* Any card expands when you hover over it */
+.card__article:hover {
+  flex: 5;
+}
+
+/* If the hover is NOT on the card active, contract card active at base proportion */
+.card:has(.card__article:not(.card__active):hover) .card__active {
+  flex: 0 0 64px;
+}
+
+/* If the hover is NOT in card active, it also hides its contents */
+.card:has(.card__article:not(.card__active):hover) .card__active .card__data {
+  opacity: 0;
+  transform: translateY(2rem);
+}
+
+/* Show content on the other cards */
+.card__article:hover .card__data {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For medium devices <> */
+@media (width >= 540px) {
+  .card {
+    align-items: center;
+  }
+  .card__article {
+    width: 400px;
+    justify-self: center;
+  }
+}
+
+/* For large devices <> */
+@media (width >= 1150px) {
+  .card {
+    max-width: 1120px;
+    margin-inline: auto;
+    flex-direction: row;
+    column-gap: 1.5rem;
+  }
+  .card__article {
+    flex: 0 0 80px;
+    height: 460px;
+  }
+  .card__active, 
+  .card__article:hover {
+    flex: 5;
+  }
+  .card:has(.card__article:not(.card__active):hover) .card__active {
+    flex: 0 0 80px;
+  }
+  .card__data {
+    left: 1.5rem;
+    bottom: 1.5rem;
+  }
+  .card__title {
+    white-space: nowrap;
+  }
+  .card__description {
+    font-size: var(--normal-font-size);
+    white-space: nowrap;
+  }
+}
