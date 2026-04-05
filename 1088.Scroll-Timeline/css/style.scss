@@ -1,0 +1,168 @@
+:root {
+	--font-size-min: 14;
+	--font-size-max: 20;
+	--font-ratio-min: 1.1;
+	--font-ratio-max: 1.33;
+	--font-width-min: 375;
+	--font-width-max: 1500;
+
+	--start: 0;
+	--end: 360;
+	--lightness: 65%;
+	--base-chroma: 0.3;
+}
+
+html {
+	color-scheme: dark;
+}
+
+body {
+	background: black;
+	color: white;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	font-family: "webfont", sans-serif;
+	background-color: black;
+}
+
+.fluid {
+	--fluid-min: calc(
+		var(--font-size-min) * pow(var(--font-ratio-min), var(--font-level, 0))
+	);
+	--fluid-max: calc(
+		var(--font-size-max) * pow(var(--font-ratio-max), var(--font-level, 0))
+	);
+	--fluid-preferred: calc(
+		(var(--fluid-max) - var(--fluid-min)) /
+			(var(--font-width-max) - var(--font-width-min))
+	);
+
+	font-size: clamp(
+		(var(--fluid-min) / 16) * 1rem,
+		((var(--fluid-min) / 16) * 1rem) -
+			(((var(--fluid-preferred) * var(--font-width-min)) / 16) * 1rem) +
+			(var(--fluid-preferred) * 100vi),
+		(var(--fluid-max) / 16) * 1rem
+	);
+}
+
+.section-centered {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.word-scroll {
+	--font-level: 5;
+	width: 100%;
+}
+
+.word-scroll-inner {
+	display: flex;
+	justify-content: center;
+	line-height: 1.25;
+}
+
+.word-scroll-inner h2 {
+	position: sticky;
+	top: calc(50vh - 0.5lh);
+	margin: 0;
+	font-size: inherit;
+	font-weight: 500;
+	height: fit-content;
+}
+
+.word-scroll-inner ul {
+	font-weight: 500;
+	list-style: none;
+	margin: 0;
+	padding-block: calc(50vh - 0.5lh);
+	padding-left: 0;
+	--step: calc((var(--end) - var(--start)) / (var(--count) - 1));
+}
+
+.word-scroll[data-snap="true"] {
+	height: 100vh;
+	overflow-y: auto;
+	scroll-snap-type: y proximity;
+}
+
+.word-scroll[data-snap="true"] li {
+	scroll-snap-align: center;
+}
+
+[data-sync-scrollbar="true"] {
+	scrollbar-color: oklch(var(--lightness) var(--chroma, 0) var(--hue))
+		transparent;
+}
+
+.word-scroll li:not(:last-of-type) {
+	color: oklch(
+		var(--lightness) var(--base-chroma)
+			calc(var(--start) + (var(--step) * var(--i)))
+	);
+}
+
+.word-scroll h2,
+.word-scroll li:last-of-type {
+	background: linear-gradient(
+		canvasText 50%,
+		color-mix(in oklch, canvas, canvasText 25%)
+	);
+	background-clip: text;
+	color: #0000;
+}
+
+@supports (animation-timeline: scroll()) and (animation-range: 0% 100%) {
+	[data-animate="true"] li {
+		opacity: 0.2;
+		animation-name: brighten;
+		animation-fill-mode: both;
+		animation-timing-function: linear;
+		animation-range: cover calc(50% - 1lh) calc(50% + 1lh);
+		animation-timeline: view();
+	}
+
+	[data-animate="true"] li:first-of-type {
+		--start-opacity: 1;
+	}
+
+	[data-animate="true"] li:last-of-type {
+		--brightness: 1;
+		--end-opacity: 1;
+	}
+
+	@keyframes brighten {
+		0% {
+			opacity: var(--start-opacity, 0.2);
+		}
+		50% {
+			opacity: 1;
+			filter: brightness(var(--brightness, 1.2));
+		}
+		100% {
+			opacity: var(--end-opacity, 0.2);
+		}
+	}
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}

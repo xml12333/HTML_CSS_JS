@@ -1081,3 +1081,4 @@
 |1085| [Barbershop Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/1085.Barbershop%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1085.Barbershop%20Website/)|
 |1086| [Fractal Glass](https://github.com/xml12333/HTML_CSS_JS/tree/main/1086.Fractal%20Glass)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1086.Fractal%20Glass/)|
 |1087| [Expand Cards](https://github.com/xml12333/HTML_CSS_JS/tree/main/1087.Expand%20Cards)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1087.Expand%20Cards/)|
+|1088| [Scroll-Timeline](https://github.com/xml12333/HTML_CSS_JS/tree/main/1088.Scroll-Timeline)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1088.Scroll-Timeline/)|
