@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Loading Animations Gallery - 24 CSS + SVG Patterns (Global Controls)</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Loading Animations - Gallery</h1>
+      <div class="controls">
+        <label>Size
+          <input id="size" type="range" min="12" max="96" value="32">
+        </label>
+        <label>Speed
+          <input id="speed" type="range" min="0.4" max="2.5" step="0.1" value="1">
+        </label>
+        <label>Color
+          <input id="accent" type="color" value="#7bd88f">
+        </label>
+        <button id="pause" type="button" aria-pressed="false">Pause</button>
+        <button id="theme" type="button">Dark</button>
+      </div>
+    </header>
+
+    <main class="gallery">
+      <!-- 1. Spinner -->
+      <div class="card">
+        <div class="loader spinner" aria-hidden="true"></div>
+        <label>Spinner</label>
+      </div>
+
+      <!-- 2. Dual Ring -->
+      <div class="card">
+        <div class="loader dual-ring" aria-hidden="true"></div>
+        <label>Dual Ring</label>
+      </div>
+
+      <!-- 3. Dots Pulse -->
+      <div class="card">
+        <div class="loader dots-pulse" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <label>Dots Pulse</label>
+      </div>
+
+      <!-- 4. Dots Bounce -->
+      <div class="card">
+        <div class="loader dots-bounce" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <label>Dots Bounce</label>
+      </div>
+
+      <!-- 5. Bar (Indeterminate) -->
+      <div class="card">
+        <div class="loader bar-indeterminate" aria-hidden="true"></div>
+        <label>Bar (Indeterminate)</label>
+      </div>
+
+      <!-- 6. Bar Stripes -->
+      <div class="card">
+        <div class="loader bar-stripes" aria-hidden="true"></div>
+        <label>Bar Stripes</label>
+      </div>
+
+      <!-- 7. Ripple -->
+      <div class="card">
+        <div class="loader ripple" aria-hidden="true"></div>
+        <label>Ripple</label>
+      </div>
+
+      <!-- 8. Pulse -->
+      <div class="card">
+        <div class="loader pulse" aria-hidden="true"></div>
+        <label>Pulse</label>
+      </div>
+
+      <!-- 9. Ring Dash (SVG) -->
+      <div class="card">
+        <div class="loader ring-dash" aria-hidden="true">
+          <svg viewBox="0 0 44 44" aria-hidden="true">
+            <circle cx="22" cy="22" r="16" />
+          </svg>
+        </div>
+        <label>Ring Dash (SVG)</label>
+      </div>
+
+      <!-- 10. Infinity (SVG path) -->
+      <!-- 10. Infinity (SVG path) — ROBUST -->
+      <div class="card">
+        <div class="loader infinity" aria-hidden="true">
+          <svg viewBox="0 0 120 60" aria-hidden="true">
+            <path class="loop" d="M10,30
+           C10,15 30,15 45,30
+           C60,45 80,45 95,30
+           C110,15 110,45 95,30
+           C80,15 60,15 45,30
+           C30,45 10,45 10,30 Z" />
+          </svg>
+        </div>
+        <label>∞ Path (SVG)</label>
+      </div>
+
+
+
+      <!-- 11. Hourglass -->
+      <div class="card">
+        <div class="loader hourglass" aria-hidden="true"></div>
+        <label>Hourglass</label>
+      </div>
+
+      <!-- 12. Radar Sweep -->
+      <div class="card">
+        <div class="loader radar" aria-hidden="true"></div>
+        <label>Radar Sweep</label>
+      </div>
+
+      <!-- 13. Equalizer Bars -->
+      <div class="card">
+        <div class="loader equalizer" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <label>Equalizer</label>
+      </div>
+
+      <!-- 14. Typing Dots -->
+      <div class="card">
+        <div class="loader typing" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <label>Typing</label>
+      </div>
+
+      <!-- 15. Tiles (3x3) -->
+      <div class="card">
+        <div class="loader tiles" aria-hidden="true">
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
+        </div>
+        <label>Tiles 3×3</label>
+      </div>
+
+      <!-- 16. Coil -->
+      <div class="card">
+        <div class="loader coil" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <label>Coil</label>
+      </div>
+
+      <!-- 17. Comet -->
+      <div class="card">
+        <div class="loader comet" aria-hidden="true"></div>
+        <label>Comet</label>
+      </div>
+
+      <!-- 18. Arc Spinner (conic) -->
+      <div class="card">
+        <div class="loader arc" aria-hidden="true"></div>
+        <label>Arc Spinner</label>
+      </div>
+
+      <!-- 19. Skeleton Line (Shimmer) -->
+      <div class="card">
+        <div class="loader skeleton-line" aria-hidden="true"></div>
+        <label>Skeleton Line</label>
+      </div>
+
+      <!-- 20. Skeleton Card (Shimmer) -->
+      <div class="card">
+        <div class="loader skeleton-card" aria-hidden="true">
+          <div class="ph avatar"></div>
+          <div class="ph line w60"></div>
+          <div class="ph line"></div>
+          <div class="ph line w80"></div>
+        </div>
+        <label>Skeleton Card</label>
+      </div>
+
+      <!-- 21. Wave -->
+      <div class="card">
+        <div class="loader wave" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <label>Wave</label>
+      </div>
+
+      <!-- 22. Flip (3D square) -->
+      <div class="card">
+        <div class="loader flip3d" aria-hidden="true"></div>
+        <label>Flip 3D</label>
+      </div>
+
+      <!-- 23. Triangle Spin -->
+      <div class="card">
+        <div class="loader tri" aria-hidden="true"></div>
+        <label>Triangle Spin</label>
+      </div>
+
+      <!-- 24. Orbit -->
+      <div class="card">
+        <div class="loader orbit" aria-hidden="true">
+          <span class="p1"></span><span class="p2"></span><span class="p3"></span>
+        </div>
+        <label>Orbit</label>
+      </div>
+    </main>
+
+    <pre class="notes" aria-label="Notes">
+Tip: Use the controls to tweak size, speed, and color globally. 
+Respects ‘prefers-reduced-motion’. Pause toggles all animations.
+  </pre>
+  </div>
+  <script src="./js/script.js"></script>
+
+</body>
+
+</html>

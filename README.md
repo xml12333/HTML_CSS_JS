@@ -1083,3 +1083,4 @@
 |1087| [Expand Cards](https://github.com/xml12333/HTML_CSS_JS/tree/main/1087.Expand%20Cards)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1087.Expand%20Cards/)|
 |1088| [Scroll-Timeline](https://github.com/xml12333/HTML_CSS_JS/tree/main/1088.Scroll-Timeline)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1088.Scroll-Timeline/)|
 |1089| [Box Flow](https://github.com/xml12333/HTML_CSS_JS/tree/main/1089.Box%20Flow)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1089.Box%20Flow/)|
+|1090| [Loading](https://github.com/xml12333/HTML_CSS_JS/tree/main/1090.Loading)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1090.Loading/)|
