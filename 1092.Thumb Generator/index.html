@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Thumb Generator V2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>ThumbGen</h1>
+      <span>Crop · Scale · Convert · Zip</span>
+    </header>
+
+    <div class="intro">
+      <p>Drop images and export cropped, resized thumbnails as a ZIP. Everything runs locally in your browser. Your
+        images never leave your device.</p>
+      <p>Browsers use fast image scaling that can introduce blur or pixelation when resizing aggressively. This tool
+        controls that process by applying step-based downscaling for large reductions and direct scaling for smaller
+        ones, helping preserve edges and detail.</p>
+      <p class="intro-note">No setup or command line needed. Cropping follows the selected aspect ratio and anchor
+        point. PNG is lossless, JPG and WebP use adjustable compression.</p>
+    </div>
+
+    <div id="drop_zone" role="button" tabindex="0" aria-label="Upload images">
+      <span class="drop-icon">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="6" width="28" height="20" rx="2" stroke="currentColor" stroke-width="1.5" />
+          <path d="M2 12h28" stroke="currentColor" stroke-width="1.5" />
+          <circle cx="7" cy="9" r="1.25" fill="currentColor" />
+          <circle cx="11" cy="9" r="1.25" fill="currentColor" />
+          <path d="M8 22l4-5 3.5 4 2.5-3 4 5H8Z" fill="currentColor" opacity="0.5" />
+          <circle cx="22" cy="19" r="2" fill="currentColor" opacity="0.5" />
+        </svg>
+      </span>
+      <p>Drop images here or <label for="file_input">browse</label></p>
+      <p class="drop-hint">JPG · PNG · WebP · multi-select ok</p>
+      <input type="file" id="file_input" accept="image/*" multiple>
+    </div>
+
+    <section id="controls">
+      <div class="control-row">
+        <span class="control-label">Format</span>
+        <div>
+          <div class="seg-group" id="format_grid">
+            <button class="format-btn is-active" data-format="webp">WebP</button>
+            <button class="format-btn" data-format="jpeg">JPG</button>
+            <button class="format-btn" data-format="png">PNG</button>
+          </div>
+          <div id="format_hint"></div>
+        </div>
+      </div>
+
+      <div class="control-row">
+        <span class="control-label">Aspect</span>
+        <div class="seg-group" id="aspect_grid">
+          <button class="aspect-btn is-active" data-aspect="1:1">1:1</button>
+          <button class="aspect-btn" data-aspect="16:9">16:9</button>
+          <button class="aspect-btn" data-aspect="4:3">4:3</button>
+          <button class="aspect-btn" data-aspect="3:4">3:4</button>
+          <button class="aspect-btn" data-aspect="40:21">OG</button>
+          <button class="aspect-btn" data-aspect="original">Original</button>
+        </div>
+      </div>
+
+      <div class="control-row align-start">
+        <span class="control-label">Crop from</span>
+        <div id="anchor_grid">
+          <button class="anchor-btn" data-ax="0" data-ay="0" aria-label="Top left"></button>
+          <button class="anchor-btn" data-ax="0.5" data-ay="0" aria-label="Top center"></button>
+          <button class="anchor-btn" data-ax="1" data-ay="0" aria-label="Top right"></button>
+          <button class="anchor-btn" data-ax="0" data-ay="0.5" aria-label="Mid left"></button>
+          <button class="anchor-btn is-active" data-ax="0.5" data-ay="0.5" aria-label="Mid center"></button>
+          <button class="anchor-btn" data-ax="1" data-ay="0.5" aria-label="Mid right"></button>
+          <button class="anchor-btn" data-ax="0" data-ay="1" aria-label="Bot left"></button>
+          <button class="anchor-btn" data-ax="0.5" data-ay="1" aria-label="Bot center"></button>
+          <button class="anchor-btn" data-ax="1" data-ay="1" aria-label="Bot right"></button>
+        </div>
+      </div>
+
+      <div class="control-row" id="row_quality">
+        <label class="control-label" for="quality_range">Quality <span id="quality_readout">90</span></label>
+        <input type="range" id="quality_range" min="1" max="100" value="90">
+      </div>
+
+      <div class="control-row">
+        <label class="control-label" for="max_width_input">Max Width</label>
+        <div class="input-row">
+          <input type="number" id="max_width_input" value="1024" min="64" max="8192" step="1">
+          <span class="input-unit">px</span>
+        </div>
+      </div>
+
+      <div class="control-row align-start">
+        <span class="control-label">Naming</span>
+        <div>
+          <div class="seg-group" id="naming_grid">
+            <button class="naming-btn is-active" data-mode="num">Prefix + #</button>
+            <button class="naming-btn" data-mode="prefix-original">Prefix + Name + #</button>
+            <button class="naming-btn" data-mode="original">Original</button>
+          </div>
+          <div id="naming_preview"></div>
+        </div>
+      </div>
+
+      <div class="control-row" id="row_prefix">
+        <label class="control-label" for="prefix_input">Prefix</label>
+        <input type="text" id="prefix_input" value="thumb" placeholder="thumb">
+      </div>
+    </section>
+
+    <div id="preview_grid"></div>
+
+    <div id="action_bar">
+      <span id="status_bar"></span>
+      <button id="btn_clear" disabled>Clear</button>
+      <button id="btn_export" disabled>Export ZIP</button>
+    </div>
+  </div>
+  <script src="./js/script.js"></script>
+
+</body>
+
+</html>
