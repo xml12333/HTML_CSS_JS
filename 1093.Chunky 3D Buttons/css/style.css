@@ -1,0 +1,7 @@
+body {
+  font-family: "Inter", sans-serif;
+}
+.no-select {
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
