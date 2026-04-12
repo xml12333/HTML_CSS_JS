@@ -1088,3 +1088,4 @@
 |1092| [Thumb Generator](https://github.com/xml12333/HTML_CSS_JS/tree/main/1092.Thumb%20Generator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1092.Thumb%20Generator/)|
 |1093| [Chunky 3D Buttons](https://github.com/xml12333/HTML_CSS_JS/tree/main/1093.Chunky%203D%20Buttons)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1093.Chunky%203D%20Buttons/)|
 |1094| [Tension](https://github.com/xml12333/HTML_CSS_JS/tree/main/1094.Tension)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1094.Tension/)|
+|1095| [ASCI Wawes](https://github.com/xml12333/HTML_CSS_JS/tree/main/1095.ASCI%20Wawes)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1095.ASCI%20Wawes/)|
