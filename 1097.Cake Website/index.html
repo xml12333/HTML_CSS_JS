@@ -24,37 +24,79 @@
 <body>
    <!--==================== HEADER & NAV ====================-->
    <header class="header" id="header">
-
+      <nav class="nav container">
+         <a href="#" class="nav__logo">
+            <img src="./img/logo.svg" alt="img">
+            <span>Delizia</span>
+         </a>
+         <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+               <li><a href="#home" class="nav__link">Home</a></li>
+               <li><a href="#about" class="nav__link">About Us</a></li>
+               <li><a href="#product" class="nav__link">Products</a></li>
+               <li><a href="#new" class="nav__link">New</a></li>
+               <li><a href="#contact" class="nav__link">Contact</a></li>
+            </ul>
+            <!-- Close -->
+            <button class="nav__close" id="nav-close" aria-label="Close menu">
+               <i class="ri-close-large-line"></i>
+            </button>
+            <img src="./img/leaf-3.png" alt="img" class="nav__img">
+         </div>
+         <!-- Toggle -->
+         <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu">
+            <i class="ri-apps-2-line"></i>
+         </button>
+      </nav>
    </header>
 
    <!--==================== MAIN ====================-->
    <main class="main">
       <!--==================== HOME SECTION ====================-->
-      <section class="home" id="home">
-         <nav class="nav container">
-            <a href="#" class="nav__logo">
-               <img src="./img/logo.svg" alt="img">
-               <span>Delizia</span>
-            </a>
-            <div class="nav__menu" id="nav-menu">
-               <ul class="nav__list">
-                  <li><a href="#home" class="nav__link">Home</a></li>
-                  <li><a href="#about" class="nav__link">About Us</a></li>
-                  <li><a href="#product" class="nav__link">Products</a></li>
-                  <li><a href="#new" class="nav__link">New</a></li>
-                  <li><a href="#contact" class="nav__link">Contact</a></li>
-               </ul>
-               <!-- Close -->
-               <button class="nav__close" id="nav-close" aria-label="Close menu">
-                  <i class="ri-close-large-line"></i>
-               </button>
-               <img src="./img/leaf-3.png" alt="img" class="nav__img">
+      <section class="home section" id="home">
+         <div class="home__container container grid">
+            <div class="home__data">
+               <h1 class="home__title">
+                  Best Custom <span>Cakes Bakery</span>
+               </h1>
+               <p class="home__description">
+                  We create handcrafted cakes made with love, premium ingredients,
+                  and a touch of magic. Because life's sweetest moments deserve to be
+                  celebrated in a special way.
+               </p>
+               <a href="#new" class="button">Explore Our Cakes</a>
+               <img src="./img/home-slice-cake-1.png" alt="img" class="home__slice-1">
+               <img src="./img/home-slice-cake-2.png" alt="img" class="home__slice-2">
+               <img src="./img/home-balloons.png" alt="img" class="home__balloons">
+               <img src="./img/sticker-4.svg" alt="img" class="home__sticker-1">
+               <img src="./img/sticker-3.svg" alt="img" class="home__sticker-2">
             </div>
-            <!-- Toggle -->
-            <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu">
-               <i class="ri-apps-2-line"></i>
-            </button>
-         </nav>
+            <div class="home__images">
+               <img src="./img/home-blob.svg" alt="img" class="home__blob">
+               <img src="./img/home-base.png" alt="img" class="home__base">
+               <img src="./img/leaf-1.png" alt="img" class="home__leaf-1">
+               <img src="./img/leaf-3.png" alt="img" class="home__leaf-2">
+               <img src="./img/sticker-1.svg" alt="img" class="home__sticker-3">
+               <img src="./img/sticker-2.svg" alt="img" class="home__sticker-4">
+
+               <div class="home__swiper">
+                  <div>
+                     <article class="home__article">
+                        <img src="./img/home-cake-1.png" alt="img" class="home__cake">
+                     </article>
+                     <article class="home__article">
+                        <img src="./img/home-cake-2.png" alt="img" class="home__cake">
+                     </article>
+                     <article class="home__article">
+                        <img src="./img/home-cake-3.png" alt="img" class="home__cake">
+                     </article>
+                     <article class="home__article">
+                        <img src="./img/home-cake-4.png" alt="img" class="home__cake">
+                     </article>
+                  </div>
+               </div>
+            </div>
+         </div>
       </section>
 
       <!--==================== ABOUT SECTION ====================-->
