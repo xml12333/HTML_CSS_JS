@@ -183,20 +183,20 @@ img {
     transition: right 0.4s;
   }
 }
-.nav__list{
+.nav__list {
   display: flex;
   flex-direction: column;
   row-gap: 2.5rem;
 }
-.nav__link{
+.nav__link {
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
-  transition: color .4s;
+  transition: color 0.4s;
 }
-.nav__link:hover{
+.nav__link:hover {
   color: var(--first-color);
 }
-.nav__close{
+.nav__close {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -204,14 +204,14 @@ img {
   font-size: 1.5rem;
   cursor: pointer;
 }
-.nav__img{
+.nav__img {
   position: absolute;
   width: 100px;
   right: 1.5rem;
   bottom: 1.5rem;
 }
 /* Show menu */
-.show-menu{
+.show-menu {
   right: 0;
 }
 /* Change header styles */
@@ -219,11 +219,121 @@ img {
 /* Active link */
 
 /*=============== HOME SECTION ===============*/
-
+.home__container {
+  padding-block: 2.5rem;
+  row-gap: 3rem;
+}
+.home__data {
+  position: relative;
+  text-align: center;
+}
+.home__title {
+  font-size: var(--biggest-font-size);
+  margin-bottom: 1rem;
+}
+.home__title span {
+  display: block;
+  color: var(--first-color);
+}
+.home__description {
+  margin-bottom: 2rem;
+}
+.home__data img{
+  position: absolute;
+  z-index: -1;
+}
+.home__slice-1{
+  width: 50px;
+  left: -2rem;
+  top: -2rem;
+}
+.home__slice-2{
+  width: 80px;
+  right: -2rem;
+  bottom: -2.5rem;
+  filter: blur(2px);
+}
+.home__balloons{
+  width: 80px;
+  top: -3.5rem;
+  right: 1rem;
+}
+.home__sticker-1{
+  width: 30px;
+  top: 2.5rem;
+  right: -0.5rem;
+}
+.home__sticker-2{
+  width: 30px;
+  left: 1rem;
+  bottom: 2rem;
+}
+.home__images{
+  width: 340px;
+  height: 372px;
+  position: relative;
+  display: grid;
+  justify-self: center;
+  
+}
+.home__images img{
+  position: absolute;
+}
+.home__swiper .home__cake{
+  position: initial;
+  width: 300px;
+  margin-inline: auto;
+}
+.home__blob{
+  width: 300px;
+  top: -1.5rem;
+  justify-self: center;
+  z-index: -1;
+}
+.home__base{
+  width: 340px;
+  bottom: 0;
+  justify-self: center;
+  z-index: -1;
+}
+.home__leaf-1{
+  width: 40px;
+  bottom: 3rem;
+  right: 4.5rem;
+}
+.home__leaf-2{
+  width: 50px;
+  left: 0.5rem;
+  top: 2rem;
+}
+.home__sticker-3{
+  width: 30px;
+  left: 5rem;
+  bottom: 6.5rem;
+}
+.home__sticker-4{
+  width: 30px;
+  top: 6rem;
+  right: 1.25rem;
+}
 /* Swiper class */
 
 /*=============== BUTTON ===============*/
-
+.button {
+  display: inline-flex;
+  background-color: var(--first-color);
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1rem 2rem;
+  border-radius: 4rem;
+  transition:
+    background-color 0.4s,
+    box-shadow 0.4s;
+}
+.button:hover {
+  background-color: var(--first-color-alt);
+  box-shadow: 0 4px 24px hsla(350, 70%, 65%, 0.5);
+}
 /*=============== ABOUT SECTION ===============*/
 
 /*=============== PRODUCTS SECTION ===============*/
@@ -251,21 +361,21 @@ img {
 
 /* For large devices <> */
 @media (width >= 1150px) {
-  .container{
+  .container {
     margin-inline: auto;
   }
-  .section{
+  .section {
     padding-block: 7rem 2rem;
   }
-  .nav{
+  .nav {
     height: calc(var(--header-height) + 2rem);
   }
   .nav__toggle,
   .nav__close,
-  .nav__img{
+  .nav__img {
     display: none;
   }
-  .nav__list{
+  .nav__list {
     font-display: row;
     column-gap: 4rem;
   }
