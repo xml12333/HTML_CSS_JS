@@ -41,15 +41,33 @@ const scrollHeader = () => {
 window.addEventListener("scroll", scrollHeader);
 
 /*=============== PRODUCTS SWIPER ===============*/
-
+const swiperHome = new Swiper(".home__swiper", {
+  loop: true,
+  grabCursor: true,
+  speed: 800,
+  effect: "creative",
+  creativeEffect: {
+    prev: {
+      translate: ["-120%", 0, -500],
+      rotate: [0, 0, -45],
+      opacity: 0,
+    },
+    next: {
+      translate: ["120%", 0, -500],
+      rotate: [0, 0, 45],
+      opacity: 0,
+    },
+  },
+  // autoplay:{
+  //   delay: 300,
+  //   disableOnInteraction: false,
+  // }
+});
 
 /*=============== NEW SWIPER ===============*/
 
-
-/*=============== SHOW SCROLL UP ===============*/ 
-
+/*=============== SHOW SCROLL UP ===============*/
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
-
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
