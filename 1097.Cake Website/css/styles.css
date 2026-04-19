@@ -215,6 +215,9 @@ img {
   right: 0;
 }
 /* Change header styles */
+.scroll-header{
+  box-shadow: 0 2px 16px hsla(350, 70%, 20%, 0.1);
+}
 
 /* Active link */
 
