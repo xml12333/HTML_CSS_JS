@@ -426,9 +426,107 @@ img {
   );
 }
 /*=============== PRODUCTS SECTION ===============*/
-
+.product__button {
+  background-color: var(--white-color);
+  color: var(--title-color);
+  padding: 0.5rem 0.75rem;
+  box-shadow: 0 4px 24px hsla(350, 70%, 20%, 0.1);
+  font-weight: 600;
+  font-size: var(--small-font-size);
+  border-radius: 4rem;
+  cursor: pointer;
+  transition:
+    background-color 0.4s,
+    box-shadow 0.4s;
+}
+.product__button:hover {
+  background-color: var(--first-color);
+}
+.product__cards {
+  display: grid;
+  gap: 1.5rem;
+}
+.product__card {
+  position: relative;
+  background-color: var(--container-color);
+  padding: 14rem 1.5rem 2rem;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 8px 16px hsla(350, 70%, 20%, 0.1);
+  transition: transform 0.4s;
+}
+.product__images {
+  position: absolute;
+  top: -3.5rem;
+  left: -1rem;
+}
+.product__blob {
+  width: 260px;
+}
+.product__img {
+  position: absolute;
+  width: 190px;
+  top: 3.5rem;
+  right: 0;
+  left: 0;
+  margin-inline: auto;
+  filter: drop-shadow(0 8px 16px hsla(350, 70%, 8%, 0.2));
+  transition: transform .4s
+}
+.product__data{
+  text-align: center;
+}
+.product__name{
+  font-size: var(--h1-font-size);
+  margin-bottom: 0.5rem;
+}
+.product__price{
+  font-size: var(--bigger-font-size);
+  font-weight: var(--font-bold);
+  color: var(--first-color);
+}
+.product__buy{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--first-color);
+  color: var(--title-color);
+  font-size: 1.5rem;
+  border-radius: .75rem;
+  box-shadow: 0 4px 16px hsla(350, 70%, 65%, 0.3);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background-color .4s;
+}
+.product__buy:hover{
+  background-color: var(--first-color-alt);
+}
+.product__card:hover,
+.product__card:hover .product__img{
+  transform: translateY(-.5rem);
+}
 /* Swiper class */
-
+.product .swiper{
+  overflow: initial;
+}
+.product__tabs .swiper-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .5rem;
+  margin-bottom: 3rem;
+}
+.product__tabs .swiper-slide{
+  width: initial;
+  height: initial;
+}
+.product__tabs .swiper-slide-thumb-active{
+  background-color: var(--first-color);
+  box-shadow: 0 4px 16px hsla(350, 70%, 65%, 0.5);
+}
 /*=============== NEW SECTION ===============*/
 
 /* Swiper class */
@@ -553,54 +651,54 @@ img {
     width: 40px;
     top: 10rem;
   }
-  .about__cupcake-1{
+  .about__cupcake-1 {
     width: 150px;
     right: -2.5rem;
     top: -2.5rem;
   }
-  .about__cupcake-2{
+  .about__cupcake-2 {
     width: 150px;
     left: -2.5rem;
     bottom: -2.5rem;
   }
-  .about__container{
+  .about__container {
     grid-template-columns: 500px 480px;
     column-gap: 6rem;
     align-items: center;
     padding-block: 2rem 4rem;
   }
-  .about__images{
+  .about__images {
     order: -1;
   }
-  .about__blob{
+  .about__blob {
     width: 545px;
   }
-  .about__img{
+  .about__img {
     width: 485px;
   }
-  .about__leaf{
+  .about__leaf {
     width: 40px;
     top: 11rem;
     left: 4rem;
   }
-  .about__cupcake-3{
+  .about__cupcake-3 {
     width: 75px;
     right: 5rem;
   }
   .about__data,
-  .about__data .section__title{
+  .about__data .section__title {
     text-align: initial;
   }
-  .about__desctiption{
+  .about__desctiption {
     margin-bottom: 4rem;
   }
-  .about__sticker-1{
+  .about__sticker-1 {
     width: 40px;
     left: initial;
     top: 7rem;
     right: 2rem;
   }
-  .about__sticker-2{
+  .about__sticker-2 {
     width: 40px;
     right: 11rem;
     bottom: 2rem;

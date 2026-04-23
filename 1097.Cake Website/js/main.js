@@ -40,7 +40,7 @@ const scrollHeader = () => {
 };
 window.addEventListener("scroll", scrollHeader);
 
-/*=============== PRODUCTS SWIPER ===============*/
+/*=============== HOME SWIPER ===============*/
 const swiperHome = new Swiper(".home__swiper", {
   loop: true,
   grabCursor: true,
@@ -62,6 +62,17 @@ const swiperHome = new Swiper(".home__swiper", {
   //   delay: 300,
   //   disableOnInteraction: false,
   // }
+});
+/*=============== PRODUCTS SWIPER ===============*/
+const swiperTabs = new Swiper(".product__tabs", {
+  slidesPerView: "auto",
+});
+const swiperProducts = new Swiper(".product__content", {
+  loop: true,
+  spaceBetween: 32,
+  thumbs: {
+    swiper: swiperTabs,
+  },
 });
 
 /*=============== NEW SWIPER ===============*/
