@@ -563,7 +563,7 @@ img {
 }
 @media (width >=768px) {
   .product__cards {
-    grid-template-coluns: repeat(2, 350px);
+    grid-template-columns: repeat(2, 350px);
   }
 }
 /* For large devices <> */
