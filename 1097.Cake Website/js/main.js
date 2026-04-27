@@ -76,7 +76,33 @@ const swiperProducts = new Swiper(".product__content", {
 });
 
 /*=============== NEW SWIPER ===============*/
-
+const swiperNew = new Swiper(".new__swiper", {
+  loop: true,
+  grabCursor: true,
+  centeredSlides: "auto",
+  slidesPerView: "auto",
+  speed: 600,
+  effect: "creative",
+  creativeEffect: {
+    limitProgress: 2,
+    prev: {
+      translate: ["-32%", 0, 0],
+      scale: 0.58,
+    },
+    next: {
+      translate: ["32%", 0, 0],
+      scale: 0.58,
+    },
+  },
+  navigation: {
+    nextEl: ".new .swiper-button-next",
+    prevEl: ".new .swiper-button-prev",
+  },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+});
 /*=============== SHOW SCROLL UP ===============*/
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
