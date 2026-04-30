@@ -616,17 +616,84 @@ img {
   font-size: 1.5rem;
   transition: background-color 0.4s;
 }
-.new :is(.swiper-button-prev:hover, .swiper-button-next:hover){
+.new :is(.swiper-button-prev:hover, .swiper-button-next:hover) {
   background-color: var(--first-color);
 }
-.new .swiper-button-prev{
+.new .swiper-button-prev {
   left: calc(50% - 3rem);
 }
-.new .swiper-button-next{
+.new .swiper-button-next {
   right: calc(50% - 3rem);
 }
 
 /*=============== CONTACT SECTION ===============*/
+.contact {
+  background-color: var(--second-color);
+}
+.contact__container {
+  row-gap: 3rem;
+  padding-bottom: 3rem;
+}
+.contact__map iframe {
+  width: 100%;
+  height: 100%;
+}
+.contact__map {
+  width: 320px;
+  height: 280px;
+  justify-self: center;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+.contact__content .section__title {
+  color: var(--white-color);
+}
+.contact__data {
+  position: relative;
+  text-align: center;
+  display: grid;
+  row-gap: 2rem;
+}
+.contact__title {
+  color: var(--first-color);
+  font-size: var(--h3-font-size);
+  margin-bottom: 0.5rem;
+}
+.contact__address,
+.contact__address :is(span, a) {
+  display: block;
+  color: var(--white-color);
+  font-style: normal;
+}
+.contact__social{
+  display: flex;
+  justify-content: center;
+  column-gap: .75rem;
+}
+.contact__social-link{
+  color: var(--white-color);
+  font-size: 1.5rem;
+  transition: color .4s;
+}
+.contact__social-link:hover{
+  color: var(--first-color);
+}
+.contact__data img{
+  position: absolute;
+  width: 30px;
+}
+.contact__sticker-1{
+  right: 2rem;
+  top: 1rem;
+}
+.contact__sticker-2{
+  top: 6rem;
+  left: 3rem;
+}
+.contact__sticker-3{
+  right: 3rem;
+  bottom: -1rem;
+}
 
 /*=============== FOOTER ===============*/
 
@@ -851,41 +918,41 @@ img {
     top: 1.5rem;
     right: 1.5rem;
   }
-  .new__container{
+  .new__container {
     grid-template-columns: 400px 640px;
     column-gap: 5rem;
     align-items: center;
     padding-block: 3rem 4rem;
   }
   .new__data .section__title,
-  .new__data{
+  .new__data {
     text-align: initial;
   }
-  .new__description{
+  .new__description {
     margin-bottom: 4rem;
   }
-  .new__text{
+  .new__text {
     font-size: 6rem;
   }
-  .new__titles{
-    top: -.5rem;
+  .new__titles {
+    top: -0.5rem;
   }
-  .new__cakes{
+  .new__cakes {
     width: 420px;
   }
-  .new__name{
+  .new__name {
     padding-block: 2rem 3rem;
   }
-  .new__leaf-1{
+  .new__leaf-1 {
     width: 90px;
     right: 4rem;
   }
-  .new__leaf-2{
+  .new__leaf-2 {
     width: 90px;
     left: 5rem;
     bottom: 9rem;
   }
-  .new__leaf-3{
+  .new__leaf-3 {
     width: 130px;
     top: -4rem;
     left: 4rem;
