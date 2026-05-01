@@ -710,12 +710,16 @@ img {
     width: 250px;
     height: 290px;
   }
+  .contact__map{
+    width: 100%;
+  }
 }
 /* For medium devices <> */
 @media (width >= 540px) {
   .home__container,
   .about__container,
-  .new__container {
+  .new__container,
+  .contact__data {
     grid-template-columns: 400px;
     justify-content: center;
   }
@@ -956,6 +960,49 @@ img {
     width: 130px;
     top: -4rem;
     left: 4rem;
+  }
+  .contact__container{
+    grid-template-columns: 500px 520px;
+    column-gap: 6rem;
+    align-items: start;
+    padding-bottom: 8rem;
+  }
+  .contact__map{
+    order: -1;
+    width: 500px;
+    height: 440px;
+    border-radius: 3rem;
+  }
+  .contact__content .section__title{
+    text-align: initial;
+    margin-bottom: 3rem;
+  }
+  .contact__data{
+    grid-template-columns: repeat(2, max-content);
+    justify-content: initial;
+    gap: 4rem 6rem;
+  }
+  .contact__info{
+    text-align: initial;
+  }
+  .contact__title{
+    font-size: var(--h2-font-size);
+    margin-bottom: 1rem;
+  }
+  .contact__data img{
+    width: 40px;
+  }
+  .contact__sticker-1{
+    right: -2rem;
+    top: 0;
+  }
+  .contact__sticker-2{
+    top: -2rem;
+    left: -4rem;
+  }
+  .contact__sticker-3{
+    right: 14rem;
+    bottom: -5rem;
   }
 }
 /* For 2K resolutions <> */
