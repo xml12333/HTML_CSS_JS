@@ -135,3 +135,54 @@ const scrollActive = () => {
 };
 window.addEventListener("scroll", scrollActive);
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+const sr = ScrollReveal({
+  origin: "bottom",
+  distance: "60px",
+  duration: 1500,
+  delay: 300,
+  easing: "cubic-bezier(0.34, 1.56, 0.64, 1)",
+});
+sr.reveal(".home__title", { origin: "top" });
+sr.reveal(".home__description", { delay: 600, origin: "top" });
+sr.reveal(".home__data .button", {
+  delay: 900,
+  distance: 0,
+  scale: 0,
+  origin: "top",
+});
+sr.reveal(".home__base", { delay: 900 });
+sr.reveal(".home__swiper", { delay: 1200, origin: "top" });
+sr.reveal(".home__blob", { delay: 1500, scale: 0 });
+sr.reveal(".home__data img", {
+  delay: 1200,
+  distance: 0,
+  interval: 200,
+  scale: 0,
+});
+sr.reveal(".home__leaf-1, .home__leaf-2, .home__sticker-3, .home__sticker-4", {
+  delay: 2400,
+  distance: 0,
+  interval: 200,
+  scale: 0,
+});
+
+sr.reveal(".about__cupcake-1, .about__cupcake-2", {
+  rotate: { x: 0, y: 0, z: 120 },
+});
+sr.reveal(".about__data .section__title", { delay: 900 });
+sr.reveal(".about__description", { delay: 1200 });
+sr.reveal(".about__data .button", { delay: 1500, distance: 0, scale: 0 });
+sr.reveal(".about__blob", { delay: 1800, origin: "right" });
+sr.reveal(".about__img", { delay: 2100, origin: "left" });
+sr.reveal(".about__leaf, .about__cupcake-3", {
+  delay: 2700,
+  distance: 0,
+  interval: 200,
+  scale: 0,
+});
+sr.reveal(".about__data img", {
+  delay: 3000,
+  distance: 0,
+  interval: 200,
+  scale: 0,
+});
