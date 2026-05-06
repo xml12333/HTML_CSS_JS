@@ -186,3 +186,33 @@ sr.reveal(".about__data img", {
   interval: 200,
   scale: 0,
 });
+
+sr.reveal(".product .section__title", {});
+sr.reveal(".product__button", { delay: 600, interval: 100 });
+sr.reveal(".product__content", { delay: 900 });
+
+sr.reveal(".new__data .section__title", {});
+sr.reveal(".new__description", { delay: 600 });
+sr.reveal(".new__data .button", { delay: 900 });
+sr.reveal(".new__swiper", { delay: 1200 });
+sr.reveal(".new__leaf-1, .new__leaf-2, .new__leaf-3", {
+  delay: 1500,
+  distance: 0,
+  interval: 200,
+  scale: 0,
+});
+sr.reveal(".new__titles", { delay: 1800, scale: 0 });
+
+sr.reveal(".contact__content .section__title", {});
+sr.reveal(".contact__info", { delay: 600, interval: 100 });
+sr.reveal(".contact__map", { delay: 900, origin: "top" });
+sr.reveal(".contact__data img", {
+  delay: 1500,
+  distance: 0,
+  interval: 200,
+  scale: 0,
+});
+
+sr.reveal(".footer__container", {});
+sr.reveal(".footer__leaf-1, .footer__leaf-2", { delay: 600, interval: 200 });
+sr.reveal(".footer__blob", { delay: 600 });

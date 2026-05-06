@@ -1090,3 +1090,4 @@
 |1094| [Tension](https://github.com/xml12333/HTML_CSS_JS/tree/main/1094.Tension)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1094.Tension/)|
 |1095| [ASCI Wawes](https://github.com/xml12333/HTML_CSS_JS/tree/main/1095.ASCI%20Wawes)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1095.ASCI%20Wawes/)|
 |1096| [Frame Generator](https://github.com/xml12333/HTML_CSS_JS/tree/main/1096.Frame%20Generator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1096.Frame%20Generator/)|
+|1097| [Cake Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/1097.Cake%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1097.Cake%20Website/)|
