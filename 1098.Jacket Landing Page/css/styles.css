@@ -187,7 +187,26 @@ img {
 /* For medium devices <> */
 
 /* For large devices <> */
-
+@media (width >= 1150px){
+  .container{
+    margin-inline: auto;
+  }
+  .nav{
+    height: calc(var(--header-height) + 2rem);
+  }
+  .nav__logo img{
+    width: 70px;
+  }
+  .nav__toggle,
+  .nav__close{
+    display: none;
+  }
+  .nav__list{
+    flex-direction: row;
+    align-items: center;
+    column-gap: 4rem;
+  }
+}
 /* For lower-end devices <> */
 
 /* For taller devices <> */
