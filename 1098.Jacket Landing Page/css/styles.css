@@ -178,7 +178,56 @@ img {
   width: 100%;
 }
 /*=============== HOME ===============*/
-
+.home__slider{
+  position: relative;
+  height: 100vh;
+  padding-block: 9.5rem 3rem;
+  display: grid;
+  align-content: center;
+  row-gap: 4rem;
+}
+.home__logos{
+  position: absolute;
+  top: calc(50% - 12rem);
+  justify-self: center;
+  opacity: .4;
+}
+.home__logo-3{
+  width: 320px;
+}
+.home__logo-2{
+  width: 270px;
+  position: absolute;
+  right: 0;
+  bottom: 4rem;
+  rotate: 5deg;
+}
+.home__logo-1{
+  width: 220px;
+  position: absolute;
+  right: 0;
+  top: -5rem;
+  rotate: 5deg;
+}
+.home__image{
+  z-index: 10;
+  justify-self: center;
+}
+.home__img{
+  width: 320px;
+}
+.home-green{
+  background: var(--green-color-gradient);
+}
+.home-orange{
+  background: var(--orange-color-gradient);
+}
+.home-sky-blue{
+  background: var(--sky-blue-color-gradient);
+}
+.home-purple{
+  background: var(--purple-color-gradient);
+}
 /* Swiper class */
 
 /*=============== BREAKPOINTS ===============*/
