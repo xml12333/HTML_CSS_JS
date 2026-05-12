@@ -97,7 +97,7 @@ img {
   width: 100%;
   top: 0;
   left: 0;
-  background-color: var(--black-color);
+  background-color: transparent;
   z-index: 100;
 }
 .nav {
@@ -227,6 +227,38 @@ img {
 }
 .home-purple{
   background: var(--purple-color-gradient);
+}
+.home__data{
+  text-align: center;
+  color: var(--white-color);
+}
+.home__name{
+  font-size: var(--bigger-font-size);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.home__price{
+  font: 600 var(--bigger-font-size) var(--body-font);
+  margin-block: 1rem 2rem;
+}
+.home__button{
+  background-color: var(--white-color);
+  color: var(--black-color);
+  padding: 0.75rem 1rem;
+  border-radius: 4rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  column-gap: .5rem;
+  cursor: pointer;
+  transition: box-shadow .4s;
+}
+.home__button i{
+  font-weight: initial;
+  font-size: 1.5rem;
+}
+.home__button:hover{
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, .1);
 }
 /* Swiper class */
 
