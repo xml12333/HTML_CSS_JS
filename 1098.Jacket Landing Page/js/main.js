@@ -39,10 +39,10 @@ const swiperHome = new Swiper(".home__swiper", {
     el: ".swiper-pagination",
     clickable: true,
   },
-  // autoplay: {
-  //   delay: 3000,
-  //   disableonInteraction: false,
-  // },
+  autoplay: {
+    delay: 3000,
+    disableonInteraction: false,
+  },
 });
 /*=============== CHANGE HEADER STYLES ===============*/
 
