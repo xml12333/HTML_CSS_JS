@@ -172,7 +172,17 @@ img {
   top: 0;
 }
 /* Change header styles */
-
+.scroll-header::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(0, 0%, 0%, 0.1);
+  backdrop-filter: blur(16px);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 /* Active link */
 .active-link::after {
   width: 100%;
