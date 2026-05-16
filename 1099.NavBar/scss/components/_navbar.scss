@@ -1,0 +1,97 @@
+/*=============== HEADER & NAV ===============*/
+.section{
+   height: 100vh;
+   padding-top: 8rem;
+
+   & h1{
+      text-align: center;
+      font-size: 3rem;
+   }
+}
+
+.header{
+   background-color: var(--black-color);
+   border-radius: 4rem;
+   padding: 1rem;
+   position: fixed;
+   top: 1rem;
+   left: 1rem;
+   right: 1rem;
+   box-shadow: 0 2px 16px hsla(220, 90%, 8%, .3);
+   overflow: hidden;
+   transition: width .4s;
+}
+
+.nav{
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+   &__logo,
+   &__link{
+      color: var(--white-color);
+      white-space: nowrap;
+      transition: color .4s, opacity .4s;
+
+      &:hover{
+         color: var(--first-color);
+      }
+   }
+   &__toggle{
+      font-size: 1.5rem;
+      color: var(--white-color);
+      border: none;
+      background: none;
+      outline: none;
+      cursor: pointer;
+   }
+   // Navigation for mobile devices
+   &__menu{
+      @media (width <= 1150px){
+         position: fixed;
+         top: -120%;
+         left: 1rem;
+         right: 1rem;
+         background-color: var(--black-color);
+         padding-block: 4rem;
+         border-radius: 1.5rem;
+         box-shadow: 0 2px 16px hsla(220, 90%, 8%, .3);
+         z-index: 100;
+         transition: top .4s;
+      }
+   }
+   &__list{
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      row-gap: 1.5rem;
+   }
+   &__button{
+      background-color: var(--first-color);
+      color: var(--white-color);
+      padding: 1rem 2rem;
+      border-radius: 4rem;
+      margin-inline: auto;
+
+      &:hover{
+         color: var(--white-color);
+      }
+   }
+   &__close{
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      color: var(--white-color);
+      border: none;
+      background: none;
+      outline: none;
+      cursor: pointer;
+   }
+}
+
+/* Show-menu */
+.show-menu{
+   top: 1rem;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!--=============== REMIXICONS ===============-->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css">
+
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="./css/styles.css">
+
+      <title>Responsive navbar scrolling effect</title>
+   </head>
+   <body>
+      <header class="header" id="header">
+         <nav class="nav">
+            <a href="#" class="nav__logo">StepCode</a>
+
+            <div class="nav__menu" id="nav-menu">
+               <ul class="nav__list">
+                  <li>
+                     <a href="#home" class="nav__link">Home</a>
+                  </li>
+
+                  <li>
+                     <a href="#about" class="nav__link">About Us</a>
+                  </li>
+
+                  <li>
+                     <a href="#menu" class="nav__link">Menu</a>
+                  </li>
+
+                  <a href="#contact" class="nav__link nav__button">Contact</a>
+               </ul>
+
+               <!-- Close -->
+               <button class="nav__close" id="nav-close">
+                  <i class="ri-close-large-line"></i>
+               </button>
+            </div>
+
+            <!-- Toggle -->
+            <button class="nav__toggle" id="nav-toggle">
+               <i class="ri-menu-line"></i>
+            </button>
+         </nav>
+      </header>
+
+      <main>
+         <section class="section" id="home">
+            <h1>Home</h1>
+         </section>
+
+         <section class="section" id="about">
+            <h1>About</h1>
+         </section>
+
+         <section class="section" id="menu">
+            <h1>Menu</h1>
+         </section>
+
+         <section class="section" id="contact">
+            <h1>Contact</h1>
+         </section>
+      </main>
+      
+      <!--=============== MAIN JS ===============-->
+      <script src="./js/main.js"></script>
+   </body>
+</html>

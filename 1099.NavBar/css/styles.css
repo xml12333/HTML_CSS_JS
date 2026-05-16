@@ -1,0 +1,210 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(220, 90%, 52%);
+  --black-color: hsl(220, 16%, 12%);
+  --white-color: hsl(0, 0%, 100%);
+  --body-color: hsl(220, 48%, 99%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Syne", sans-serif;
+  --h1-font-size: 1.5rem;
+  --normal-font-size: .938rem;
+}
+
+/*========== Responsive typography ==========*/
+@media (width >= 1150px) {
+  :root {
+    --h1-font-size: 2.25rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font: 600 var(--normal-font-size) var(--body-font);
+  background-color: var(--body-color);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*=============== HEADER & NAV ===============*/
+.section {
+  height: 100vh;
+  padding-top: 8rem;
+}
+
+.section h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.header {
+  background-color: var(--black-color);
+  border-radius: 4rem;
+  padding: 1rem;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  box-shadow: 0 2px 16px hsla(220, 90%, 8%, 0.3);
+  overflow: hidden;
+  transition: width 0.4s;
+}
+
+.nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__logo, 
+.nav__link {
+  color: var(--white-color);
+  white-space: nowrap;
+  transition: color 0.4s, opacity 0.4s;
+}
+
+.nav__logo:hover, 
+.nav__link:hover {
+  color: var(--first-color);
+}
+
+.nav__toggle {
+  font-size: 1.5rem;
+  color: var(--white-color);
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Navigation for mobile devices */
+@media (width <= 1150px) {
+  .nav__menu {
+    position: fixed;
+    top: -120%;
+    left: 1rem;
+    right: 1rem;
+    background-color: var(--black-color);
+    padding-block: 4rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 2px 16px hsla(220, 90%, 8%, 0.3);
+    z-index: 100;
+    transition: top 0.4s;
+  }
+}
+
+.nav__list {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+
+.nav__button {
+  background-color: var(--first-color);
+  color: var(--white-color);
+  padding: 1rem 2rem;
+  border-radius: 4rem;
+  margin-inline: auto;
+}
+
+.nav__button:hover {
+  color: var(--white-color);
+}
+
+.nav__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  color: var(--white-color);
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Show-menu */
+.show-menu {
+  top: 1rem;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For medium devices <> */
+@media (width >= 540px) {
+  .header,
+  .nav__menu {
+    width: 500px;
+    margin-inline: auto;
+  }
+}
+
+/* For large devices <> */
+@media (width >= 1150px) {
+  .header {
+    width: 800px;
+    padding: 1.625rem 1.5rem;
+    top: 2rem;
+  }
+
+  .nav__logo {
+    position: relative;
+    z-index: 10;
+  }
+  .nav__menu {
+    width: initial;
+    margin: 0;
+  }
+  .nav__toggle, 
+  .nav__close {
+    display: none;
+  }
+  .nav__list {
+    flex-direction: row;
+    align-items: center;
+    column-gap: 3rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  /* Scroll nav */
+  .scroll-nav {
+    width: 500px;
+  }
+
+  .scroll-nav .nav__link {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .scroll-nav .nav__button {
+    opacity: 1;
+    pointer-events: initial;
+  }
+}

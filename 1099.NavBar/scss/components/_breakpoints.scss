@@ -1,0 +1,56 @@
+/*=============== BREAKPOINTS ===============*/
+/* For medium devices <> */
+@media (width >= 540px){
+   .header,
+   .nav__menu{
+      width: 500px;
+      margin-inline: auto;
+   }
+}
+
+/* For large devices <> */
+@media (width >= 1150px){
+   .header{
+      width: 800px;
+      padding: 1.625rem 1.5rem;
+      top: 2rem;
+   }
+
+   .nav{
+      &__logo{
+         position: relative;
+         z-index: 10;
+      }
+      &__menu{
+         width: initial;
+         margin: 0;
+      }
+      &__toggle,
+      &__close{
+         display: none;
+      }
+      &__list{
+         flex-direction: row;
+         align-items: center;
+         column-gap: 3rem;
+         position: absolute;
+         top: 0;
+         right: 0;
+         bottom: 0;
+      }
+   }
+
+   /* Scroll nav */ 
+   .scroll-nav{
+      width: 500px;
+
+      & .nav__link{
+         opacity: 0;
+         pointer-events: none;
+      }
+      & .nav__button{
+         opacity: 1;
+         pointer-events: initial;
+      }
+   }
+}

@@ -1092,3 +1092,4 @@
 |1096| [Frame Generator](https://github.com/xml12333/HTML_CSS_JS/tree/main/1096.Frame%20Generator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1096.Frame%20Generator/)|
 |1097| [Cake Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/1097.Cake%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1097.Cake%20Website/)|
 |1098| [Jacket Landing Page](https://github.com/xml12333/HTML_CSS_JS/tree/main/1098.Jacket%20Landing%20Page)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1098.Jacket%20Landing%20Page/)|
+|1099| [NavBar](https://github.com/xml12333/HTML_CSS_JS/tree/main/1099.NavBar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1099.NavBar/)|
