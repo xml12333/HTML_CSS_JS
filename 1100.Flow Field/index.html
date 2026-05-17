@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Flow-field on encoded SVG</title>
+	<link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+	<canvas id="canvas"></canvas>
+	<div class="controls">
+		<button id="pauseBtn">Pause</button>
+		<button id="resetBtn">Reset Particles</button>
+
+		<label>
+			Particles: <span id="particleCount">3000</span>
+			<input type="range" id="particleSlider" min="500" max="10000" value="3000" step="500">
+		</label>
+
+		<label>
+			Trail fade:
+			<input type="range" id="fadeSlider" min="10" max="120" value="85" step="5">
+		</label>
+
+		<label title="Base speed in dark areas">
+			Dark speed: <span id="darkSpeedVal">3.2</span>
+			<input type="range" id="darkSpeed" min="0.5" max="8" value="3.2" step="0.1">
+		</label>
+
+		<label title="Speed in bright areas (slower)">
+			Bright speed: <span id="brightSpeedVal">0.6</span>
+			<input type="range" id="brightSpeed" min="0.1" max="3" value="0.6" step="0.05">
+		</label>
+
+		<!-- Circular Angle Knob -->
+		<label style="flex-direction: column; gap: 4px;">
+			<div class="angle-knob" id="angleKnob">
+				<svg viewBox="0 0 100 100">
+					<circle class="knob-circle" cx="50" cy="50" r="42" />
+					<line id="indicator" class="knob-indicator" x1="50" y1="50" x2="82" y2="50" />
+					<circle class="center-dot" cx="50" cy="50" r="7" />
+				</svg>
+				<div class="angle-label" id="angleValue">0°</div>
+			</div>
+			<span style="font-size:11px; opacity:0.8;">Direction</span>
+		</label>
+	</div>
+	<script src="./js/script.js"></script>
+
+</body>
+
+</html>
