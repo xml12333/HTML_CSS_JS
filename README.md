@@ -1094,3 +1094,4 @@
 |1098| [Jacket Landing Page](https://github.com/xml12333/HTML_CSS_JS/tree/main/1098.Jacket%20Landing%20Page)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1098.Jacket%20Landing%20Page/)|
 |1099| [NavBar](https://github.com/xml12333/HTML_CSS_JS/tree/main/1099.NavBar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1099.NavBar/)|
 |1100| [Flow Field](https://github.com/xml12333/HTML_CSS_JS/tree/main/1100.Flow%20Field)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1100.Flow%20Field/)|
+|1101| [Canvas Grid Mouse Effect](https://github.com/xml12333/HTML_CSS_JS/tree/main/1101.Canvas%20Grid%20Mouse%20Effect)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1101.Canvas%20Grid%20Mouse%20Effect/)|
