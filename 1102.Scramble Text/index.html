@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Anime.js Scramble Text playground</title>
+  <link rel='stylesheet' href='https://codepen.io/juliangarnier/pen/PwzmygE.css'>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+  <main>
+    <h1 class="scramble">Anime.js Scramble Text</h1>
+    <p class="scramble">A lightweight text scramble effect built into anime.js v4. Hover over any element on this page
+      to see the scramble animation in action.</p>
+    <h2 class="scramble">Features</h2>
+    <ul>
+      <li class="scramble">Named character sets and range syntax for the chars parameter</li>
+      <li class="scramble">Directional reveal with the from parameter</li>
+      <li class="scramble">Adjustable interval between each character</li>
+      <li class="scramble">Per-character settle duration control</li>
+      <li class="scramble">Deterministic output with seeded random</li>
+      <li class="scramble">Cursor pattern for sweep-style effects</li>
+      <li class="scramble">Perturbation to randomize timing and order</li>
+      <li class="scramble">Fill character for different-length transitions</li>
+      <li class="scramble">Works with any easing function</li>
+    </ul>
+    <h2 class="scramble">How It Works</h2>
+    <p class="scramble">The scrambleText helper returns a function-based tween value. Each target element gets its own
+      closure that captures the original text content and computes a per-character reveal timeline. Characters
+      transition through random values before settling on their final position.</p>
+    <p class="scramble">The animation duration is automatically calculated from the text length and timing parameters,
+      ensuring consistent visual pacing regardless of content size, or use the duration parameter to set an exact
+      duration that overrides the computed value.</p>
+  </main>
+  <script type="module" src="./js/script.js"></script>
+
+</body>
+
+</html>
