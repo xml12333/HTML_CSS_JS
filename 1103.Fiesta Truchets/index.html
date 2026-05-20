@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Fiesta Truchets | WebGL Fragment Shader</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+  </head>
+    
+  <body>
+  <canvas id="canvas"></canvas>
+<!-- VertexShader code here -->
+<script id="vertexShader" type="x-shader/x-vertex">#version 300 es
+precision highp float;
+  in vec4 position;
+  void main() {
+    gl_Position = vec4( position );
+  }
+</script>
+
+</script>
+
+<!-- FragmentShader code here -->
+<script id="fragmentShader" type="x-shader/x-fragment">#version 300 es
+#if __VERSION__ < 130
+#define TEXTURE2D texture2D
+#else
+#define TEXTURE2D texture
+#endif
+precision highp float;
+out vec4 fragColor;
+uniform vec2 u_resolution;
+uniform float u_time;
+uniform vec4 u_mouse;
+uniform sampler2D iChannel0;
+uniform sampler2D iChannel1;
+  
+#define R          u_resolution
+#define T          u_time
+#define M          u_mouse
+#define PI          3.14159265
+#define PI2         6.28318530
+#define SQ3         1.73205
+
+#define MIN_DIST    1e-4
+#define MAX_DIST    20.
+
+// globals
+vec3 hp,hit;
+vec2 gid, sid, shx, ghx;
+float speed;
+
+// constants
+const float radi = .28867514;
+const float harc = .57735027;
+const vec2 s = vec2(1, 1.73205);
+
+float hash21(vec2 p) { return fract(sin(dot(p,vec2(26.37,35.93)))*4374.23); }
+mat2 rot(float a){ return mat2(cos(a),sin(a),-sin(a),cos(a)); }
+
+float box( in vec2 p, in vec2 b) {
+    vec2 q = abs(p)-b;
+    return min(max(q.x,q.y),0.0) + length(max(q,0.0));
+}
+
+// @IQ extrude & smooth min
+float opx(in float d, in float z, in float h){
+    vec2 w = vec2( d, abs(z) - h );
+  	return min(max(w.x, w.y), 0.) + length(max(w, 0.));
+}
+
+// @Shane hex grid
+vec4 grid(vec2 p) {
+    vec4 ip = floor(vec4(p/s, p/s - .5));
+    vec4 q = p.xyxy - vec4(ip.xy + .5, ip.zw + 1.)*s.xyxy;
+    return dot(q.xy, q.xy)<dot(q.zw, q.zw)? vec4(q.xy, ip.xy) : vec4(q.zw, ip.zw + .5);
+}
+
+float ab4(float d, float pz) {
+    float x = .02+.015*sin(pz*4.5);
+    float y = .02+.015*sin(pz*13.5);
+    return abs(d)-(x+y);
+}
+
+float ab5(float d, float pz) {
+    float x = .15+.05*sin(pz*3.5);
+    float y = .04+.025*sin(pz*12.5);
+    float z = .03+.02*sin(pz*8.5);
+    return abs(d)-(x+y-z);
+}
+
+float ab6(float d, float pz) {
+float xx = .15+.05*sin(pz*3.*PI);
+   d = abs(d)-(xx);
+   return abs(abs(d)-.05)-(xx*.1);
+}
+
+vec2 map(vec3 pos) {
+    vec2 res = vec2(1e5,0.);
+
+    vec4 h = grid(pos.xz);
+    vec2 p = h.xy;
+    sid = h.zw;
+    float rtd = hash21(h.zw);
+    float rnd = hash21(h.zw + vec2(5,2)); 
+    
+    rtd = floor(rtd*144.);
+    p.xy *= rot(rtd*PI/3.);
+    
+    vec3 d,py;
+    vec2 p0,p1,p2;
+ 
+    if (rnd>.94) { 
+        p0 = p;
+        p1 = rot(1.047)*p;
+        p2 = rot(2.*PI/3.)*p;
+
+        py = vec3(pos.y)-2.;
+        
+        d.x = length(vec2(abs(p0.x)-.5,p0.y));
+        d.y = length(vec2(abs(p1.x)-.5,p1.y));
+        d.z = length(vec2(abs(p2.x)-.5,p2.y));
+        d.z = abs(p2.y);
+
+    } else if (rnd>.74) {
+        p0 = p;
+        p1 = rot(1.047)*p;
+        p2 = rot(2.*PI/3.)*p;
+        
+        float b = .1 + .1*cos(p0.x*PI2);
+        float a = .1 + .1*cos(p2.x*PI2);
+        
+        py = vec3(pos.y-b,pos.y,pos.y+a)-2.;
+        
+        d.x = abs(p0.y);
+        d.y = abs(p1.y);
+        d.z = abs(p2.y);
+        
+    } else if (rnd>.64) {
+        p0 = p - vec2(0, -harc);
+        p1 = p - vec2(0, harc);
+        p2 = p;
+        
+        float a = .1 + .1*cos(p2.x*PI2);
+        
+        py = vec3(pos.y,pos.y,fract(rnd*57.31)>.5?pos.y-a:pos.y+a)-2.;
+        
+        d.x = length(p0) - radi;
+        d.y = length(p1) - radi;
+        d.z = abs(p2.y);
+        
+    } else {
+    
+        p0 = p - vec2(-.5, -radi);
+        p1 = p - vec2(.5, -radi);
+        p2 = p - vec2(0, harc);
+        py = vec3(pos.y-2.);
+        
+        d.x = length(p0) - radi;
+        d.y = length(p1) - radi;
+        d.z = length(p2) - radi;
+    }
+
+    float ph=.0075,th=.03,rd=.0075;
+
+    float pat1 = opx(ab5(d.x,pos.x),py.x,ph);
+    pat1 = min(pat1,opx(ab5(d.y,pos.x),py.y,ph));
+    pat1 = min(pat1,opx(ab5(d.z,pos.x),py.z,ph))-rd;
+
+
+    float pat4 = opx(ab4(d.x,pos.z),py.x-.02,th);
+    pat4 = min(pat4,opx(ab4(d.y,pos.z),py.y-.02,th));
+    pat4 = min(pat4,opx(ab4(d.z,pos.z),py.z-.02,th))-rd; 
+
+    float pat5 = length(p)-.5;
+    
+    float pft =clamp(rnd * sin(T+rnd+(h.w*h.z)*PI2),.0,.2);
+    vec2 mp = p+.1*sin(h.z+h.w*PI+T);
+    float pat6 = length(mp)-pft;
+    
+    pat6 = opx(abs(pat6)-.05,py.y-.25,.001)-rd;
+    pat5 = opx(abs(pat5+.1)-.075,py.y+.125,.015)-rd;
+    
+    
+    if(pat1<res.x) {
+        res=vec2(pat1,1.);
+        hit=vec3(p.x,py.x,p.y);
+    }
+    
+    if(pat4<res.x) {
+        res=vec2(pat4,2.);
+        hit=vec3(p.x,py.x,p.y);
+    }
+
+    if(pat5<res.x) {
+        res=vec2(pat5,3.);
+        hit=vec3(p.x,py.x,p.y);
+    }
+
+    if(pat6<res.x) {
+        res=vec2(pat6,4.);
+        hit=vec3(mp.x,py.x,mp.y);
+    }
+    return res;
+}
+
+vec3 normal(vec3 p, float t){
+    float e = MIN_DIST*t;
+    vec3 n =
+        vec3( 1,-1,-1)*map(p+vec3( 1,-1,-1)*e).x +
+        vec3(-1,-1, 1)*map(p+vec3(-1,-1, 1)*e).x +
+        vec3(-1, 1,-1)*map(p+vec3(-1, 1,-1)*e).x +
+        vec3( 1, 1, 1)*map(p+vec3( 1, 1, 1)*e).x;
+    return normalize(n);
+}
+
+mat2 rx,ry;
+
+void main() {
+    vec2 F = gl_FragCoord.xy; 
+
+
+    speed = T*.16;
+    
+    // mouse //
+    float x = M.xy == vec2(0) || M.z < 0. ? 0. : (M.y/R.y*.2-.1)*PI;
+    float y = M.xy == vec2(0) || M.z < 0. ? 0. : -(M.x/R.x*.2-.1)*PI;
+    rx = rot(-1.56-x);
+    ry = rot(y);
+    
+    vec2 uv = (2.*F.xy-R.xy)/max(R.x,R.y);
+    vec3 C = vec3(0), ref = vec3(0), fil = vec3(1);
+    vec3 ro = vec3(0,0,4.25+.75*sin(T*.05));
+    vec3 rd = normalize(vec3(uv, -1));
+
+    ro.zy*=rx, ro.xy*=ry;
+    rd.zy*=rx, rd.xy*=ry;
+ 
+    ro.x += speed;
+
+    float d = 0., m = 0.;
+    vec3 p = ro;
+    
+    for(int i=0;i<80;i++) {
+        p = ro + rd * d;
+        vec2 ray = map(p);
+        if(ray.x<MIN_DIST*d||d>MAX_DIST)break;
+        d += i<20 ? ray.x *.4 : ray.x*.8;
+        m  = ray.y;
+    } 
+    
+    gid=sid, ghx=shx, hp=hit;
+    
+    float alpha = 0.;
+    if(d<MAX_DIST)
+    {
+        vec3 n = normal(p,d);
+        vec3 lpos =  vec3(2.+speed,10,-5);
+        vec3 l = normalize(lpos-p);
+
+        float diff = clamp(dot(n,l),.1,.9);
+        float shdw = 1.;
+        
+        for( float t=.01;t<12.; ) {
+            float h = map(p + l*t).x;
+            if( h<MIN_DIST ) { shdw = 0.; break; }
+            shdw = min(shdw, 5.*h/t);
+            t += h;
+            if( shdw<MIN_DIST || t>12. ) break;
+        }
+
+        diff = mix(diff,diff*shdw,.4);
+
+        vec3 h = vec3(.4);
+        
+        if(m==1.) {
+            h = mix(vec3(0.137,0.984,0.545),vec3(0.286,0.067,0.894),.5+.5*sin(p.x*.25));
+            h = mix(h,h*.75,hash21(floor(hp.xz*240.)));
+        }
+        if(m==2.) h = mix(vec3(0.000,0.176,0.702),vec3(0.161,0.498,0.396),.5+.5*sin(p.x*.5));
+
+        if(m==3.){
+            h = mix(vec3(0.933,0.863,0.090),vec3(0.831,0.231,0.031),.5+.5*sin(p.x*.1));
+            h = mix(h,h*.9,hash21(floor(hp.xz*200.)));
+        }
+        if(m==4.) h = mix(vec3(0.933,0.216,0.090),vec3(0.949,0.008,0.604),.5+.5*sin(p.x*.4));
+
+        C = h* diff;
+
+    } 
+    
+    C = mix(vec3(0.169,0.082,0.255),C,exp(-.0005*d*d*d));
+
+    float hs = hash21(uv);
+    if(fract(hs*5.)>.65) C = clamp(C-.025,vec3(0),vec3(1));
+  
+    C = pow(C,vec3(.4545));
+    fragColor = vec4(C,1.0);
+}
+
+
+</script>
+    <script src='https://jhancock532.github.io/twgl.min.js'></script><script  src="./js/script.js"></script>
+
+  </body>
+  
+</html>

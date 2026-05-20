@@ -1096,3 +1096,4 @@
 |1100| [Flow Field](https://github.com/xml12333/HTML_CSS_JS/tree/main/1100.Flow%20Field)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1100.Flow%20Field/)|
 |1101| [Canvas Grid Mouse Effect](https://github.com/xml12333/HTML_CSS_JS/tree/main/1101.Canvas%20Grid%20Mouse%20Effect)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1101.Canvas%20Grid%20Mouse%20Effect/)|
 |1102| [Scramble Text](https://github.com/xml12333/HTML_CSS_JS/tree/main/1102.Scramble%20Text)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1102.Scramble%20Text/)|
+|1103| [Fiesta Truchets](https://github.com/xml12333/HTML_CSS_JS/tree/main/1103.Fiesta%20Truchets)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1103.Fiesta%20Truchets/)|
