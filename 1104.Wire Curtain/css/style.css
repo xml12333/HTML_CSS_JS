@@ -1,0 +1,75 @@
+/*
+global
+*/
+*, *::before, *::after {
+    margin: 0;
+    padding:  0;
+    border:  0;
+    box-sizing:  border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgb(35, 0, 0);
+}
+
+canvas {
+    touch-action: none;
+}
+
+/*
+stats
+*/
+#stats {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1 !important;
+}
+
+#stats #fps {
+    background-color: #000 !important;
+}
+
+#stats #fps #fpsText {
+    color: #eee !important;
+}
+
+#stats #fps #fpsGraph {
+    background-color: #2FA1D6 !important;
+}
+
+#stats #fps #fpsGraph span {
+    background-color: #303030 !important;
+}
+
+/*
+dat gui
+*/
+div.dg {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10px;
+}
+
+.dg.main {
+    margin-right: 0;
+}
+
+.dg li.folder {
+    background: #000;
+}
+
+.dg .cr,
+.dg .c .slider,
+.dg .c input[type=text] {
+    transition: background 0.33s ease;
+}
+
+.dg .cr:hover {
+    background: #111;
+}
