@@ -1,0 +1,116 @@
+.handwritten {
+  --duration: 700ms;
+  --delay: 200ms;
+  width: 80vmin;
+  height: auto;
+}
+
+.handwritten path:not(.handwritten__dot) {
+  stroke-dasharray: 100, 1000;
+  animation-name: draw-path;
+  animation-fill-mode: backwards;
+}
+
+.handwritten__good {
+  animation-duration: var(--duration);
+  animation-delay: var(--delay);
+  animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+.handwritten__design {
+  animation-duration: calc(var(--duration) * 1.5);
+  animation-delay: calc(var(--delay) + var(--duration) * 0.95);
+  animation-timing-function: ease-out;
+}
+
+.handwritten__dash {
+  animation-duration: calc(var(--duration) * 0.1);
+  animation-delay: calc(var(--delay) + var(--duration) * 2.6);
+  animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.handwritten__dot {
+  --delay-dot: calc(var(--delay) + var(--duration) * 2);
+  animation-name: draw-dot;
+  animation-duration: var(--duration);
+  animation-timing-function: steps(1);
+  animation-fill-mode: backwards;
+}
+
+.handwritten__dot--top {
+  animation-delay: var(--delay-dot);
+}
+
+.handwritten__dot--bottom {
+  animation-delay: calc(var(--delay-dot) * 1.1);
+}
+
+@keyframes draw-path {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes draw-dot {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: system-ui, sans-serif;
+    background: oklch(98.7% 0.002 197.1);
+    overflow: hidden;
+  }
+
+  button {
+    position: absolute;
+    bottom: 2rem;
+    margin-inline: auto;
+    padding: 0.4rem 0.8rem 0.5rem;
+    font: inherit;
+    font-size: 0.9em;
+    color: oklch(15.3% 0.006 107.1);
+    border: 1px solid oklch(88% 0.011 106.6);
+    background: oklch(98.8% 0.003 106.5);
+    border-radius: 0.25rem;
+    cursor: pointer;
+    opacity: 0;
+    scale: 0.98;
+    box-shadow: 0 2px 2px -1px oklch(0 0 0 / 0.1);
+    transition: opacity 200ms ease-out;
+    transition-property: opacity, scale;
+    pointer-events: none;
+    touch-action: manipulation;
+  }
+
+  button.fade-in {
+    opacity: 1;
+    scale: 1;
+    pointer-events: initial;
+
+    &:active {
+      translate: 0 1px;
+      box-shadow: 0 1px 1px -1px oklch(0 0 0 / 0.1);
+    }
+  }
+}
