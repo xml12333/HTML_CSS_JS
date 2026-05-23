@@ -1099,3 +1099,4 @@
 |1103| [Fiesta Truchets](https://github.com/xml12333/HTML_CSS_JS/tree/main/1103.Fiesta%20Truchets)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1103.Fiesta%20Truchets/)|
 |1104| [Wire Curtain](https://github.com/xml12333/HTML_CSS_JS/tree/main/1104.Wire%20Curtain)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1104.Wire%20Curtain/)|
 |1105| [Handwritten Animation](https://github.com/xml12333/HTML_CSS_JS/tree/main/1105.Handwritten%20Animation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1105.Handwritten%20Animation/)|
+|1106| [Grid Run](https://github.com/xml12333/HTML_CSS_JS/tree/main/1106.Grid%20Run)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1106.Grid%20Run/)|
