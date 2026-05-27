@@ -412,6 +412,7 @@ img {
   position: absolute;
   width: 100px;
   height: 100px;
+  animation: rotate-text 8s linear infinite;
 }
 .home__text span {
   position: absolute;
@@ -419,8 +420,21 @@ img {
   left: 50px;
   top: 5px;
 }
+.home__images .blob-big{
+  top: -1.5rem;
+  left: 0;
+  right: 0;
+  justify-self: center;
+}
 /* Circular text animation */
-
+@keyframes rotate-text {
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
 /*=============== BUTTON ===============*/
 
 /*=============== ABOUT SECTION ===============*/
