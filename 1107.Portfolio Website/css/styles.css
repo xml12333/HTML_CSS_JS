@@ -448,13 +448,13 @@ img {
   justify-content: center;
   column-gap: 0.5rem;
 }
-.button i{
+.button i {
   font-weight: initial;
   font-size: 1.5rem;
   transition: transform 0.4s;
 }
-.button:hover i{
-  transform: translateX(.5rem);
+.button:hover i {
+  transform: translateX(0.5rem);
 }
 /*=============== ABOUT SECTION ===============*/
 .about__container {
@@ -470,11 +470,69 @@ img {
 .about__description {
   margin-bottom: 1rem;
 }
-.about__button{
+.about__button {
   width: 100%;
 }
 /*=============== WORK SECTION ===============*/
-
+.work__card {
+  position: relative;
+  background-color: var(--container-color);
+  padding: 1rem 1rem 3rem;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+.work__link {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  z-index: 5;
+}
+.work__data{
+  z-index: 5;
+}
+.work__img {
+  border-radius: 1rem;
+  transition: transform 0.4s;
+}
+.work__arrow {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 48px;
+  height: 48px;
+  background-color: var(--gradient-color);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  color: var(--black-color);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.work__number {
+  display: block;
+  font: var(--font-semi-bold) var(--bigger-font-size) var(--second-font);
+  color: var(--first-color);
+  margin-bottom: 1rem;
+}
+.work__name {
+  font-size: var(--h2-font-size);
+  color: var(--white-color);
+  margin-bottom: 0.5rem;
+}
+.work__card:hover .work__img {
+  transform: scale(1.1);
+}
+.work__card:hover .work__arrow{
+  opacity: 1;
+}
+.work__card .blob-big{
+  top: 2rem;
+  right: -2rem;
+  z-index: 1;
+}
 /* Swiper class */
 
 /*=============== SERVICES SECTION ===============*/
@@ -585,17 +643,17 @@ img {
   .home .blob-small:nth-child(2) {
     top: 21rem;
   }
-  .about__container{
+  .about__container {
     grid-template-columns: 580px 380px;
     justify-content: space-between;
     align-items: center;
     text-align: initial;
   }
-  .about__description{
+  .about__description {
     font-size: var(--h3-font-size);
     margin-bottom: 2rem;
   }
-  .about__button{
+  .about__button {
     width: initial;
   }
 }
