@@ -534,7 +534,11 @@ img {
   z-index: 1;
 }
 /* Swiper class */
-
+.work__swiper{
+  width: 100%;
+  height: 100%;
+  padding-bottom: 4rem;
+}
 /*=============== SERVICES SECTION ===============*/
 
 /* Hide services info */

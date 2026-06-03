@@ -40,13 +40,13 @@ letters.forEach((char, i) => {
 });
 
 /*=============== HOME TYPED JS ===============*/
-const typedHome = new Typed('#home-typed',{
-  strings: ['Freelancer','Web Developer','SEO Specialist'],
+const typedHome = new Typed("#home-typed", {
+  strings: ["Freelancer", "Web Developer", "SEO Specialist"],
   typeSpeed: 60,
   backSpeed: 30,
   backDelay: 2000,
   loop: true,
-})
+});
 /*=============== CHANGE HEADER STYLES ===============*/
 const scrollHeader = () => {
   const header = document.getElementById("header");
@@ -58,7 +58,22 @@ const scrollHeader = () => {
 window.addEventListener("scroll", scrollHeader);
 
 /*=============== SWIPER WORK ===============*/
+const swiperWork = new Swiper(".work__swiper", {
+  loop: true,
+  spaceBetween: 24,
+  slidesPerView: "auto",
+  grabCursor: true,
+  speed: 600,
 
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+});
 /*=============== SERVICES ACCORDION ===============*/
 
 /*=============== TESTIMONIALS OF DUPLICATE CARDS ===============*/
