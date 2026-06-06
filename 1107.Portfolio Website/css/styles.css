@@ -547,11 +547,76 @@ img {
   transition: opacity 0.4s;
 }
 /*=============== SERVICES SECTION ===============*/
-
+.services__container {
+  row-gap: 2rem;
+}
+.services__card {
+  border-bottom: 2px solid var(--container-color);
+  padding-bottom: 1.5rem;
+  overflow: hidden;
+}
+.services__button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  cursor: pointer;
+}
+.services__icon {
+  color: var(--first-color);
+  font-size: 2rem;
+}
+.services__name {
+  font-size: var(--h2-font-size);
+  text-align: initial;
+}
+.services__arrow {
+  width: 32px;
+  height: 32px;
+  background-color: var(--container-color);
+  color: var(--white-color);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: grid;
+  place-items: center;
+  margin-left: auto;
+}
+.services__arrow i {
+  transition: rotate 0.4s;
+}
+.services__description {
+  margin-block: 1rem 2rem;
+}
+.services__list {
+  display: flex;
+  flex-wrap: wrap;
+  place-items: center;
+  gap: 0.5rem;
+}
+.services__item {
+  border: 2px solid var(--first-color);
+  border-radius: 4rem;
+  padding: 0.375rem 0.5rem;
+  color: var(--white-color);
+  font: var(--font-semi-bold) var(--h3-font-size) var(--second-font);
+}
+.services__data {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height 0.4s,
+    opacity 0.4s;
+}
 /* Hide services info */
-
+.services-open .services__data {
+  min-height: 500px;
+  opacity: 1;
+}
 /* Rotate icon */
-
+.services-open .services__arrow i {
+  rotate: -180deg;
+}
 /*=============== SKILLS SECTION ===============*/
 
 /*=============== TESTIMONIALS SECTION ===============*/
@@ -579,7 +644,7 @@ img {
     grid-template-columns: 400px;
     justify-content: center;
   }
-  .work__card{
+  .work__card {
     width: 350px;
   }
 }
@@ -670,21 +735,21 @@ img {
   .about__button {
     width: initial;
   }
-  .work__container{
+  .work__container {
     max-width: 1380px;
   }
-  .work__card{
+  .work__card {
     width: 440px;
     border-radius: 3rem;
     padding: 1.5rem 1.5rem 4rem;
   }
-  .work__img{
+  .work__img {
     border-radius: 2rem;
   }
-  .work__number{
+  .work__number {
     font-size: var(--bigger-font-size);
   }
-  .work .blob-big{
+  .work .blob-big {
     right: -6rem;
   }
 }

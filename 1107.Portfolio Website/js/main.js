@@ -75,7 +75,20 @@ const swiperWork = new Swiper(".work__swiper", {
   },
 });
 /*=============== SERVICES ACCORDION ===============*/
-
+const servicesCards = document.querySelectorAll(".services__card"),
+  servicesButtons = document.querySelectorAll(".services__button");
+servicesButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const currentCard = button.closest(".services__card");
+    isOpen = currentCard.classList.contains("services-open");
+    servicesCards.forEach((card) => {
+      card.classList.replace("services-open", "services-close");
+    });
+    if (!isOpen) {
+      currentCard.classList.replace("services-close", "services-open");
+    }
+  });
+});
 /*=============== TESTIMONIALS OF DUPLICATE CARDS ===============*/
 
 /*=============== CONTACT EMAIL JS ===============*/
