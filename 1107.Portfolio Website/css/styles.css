@@ -618,6 +618,71 @@ img {
   rotate: -180deg;
 }
 /*=============== SKILLS SECTION ===============*/
+.skills__description {
+  margin: 0 1rem 3rem;
+  text-align: center;
+}
+.skills__card {
+  position: relative;
+  background-color: var(--container-color);
+  padding: 1.5rem 1rem;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  overflow: hidden;
+}
+.skills__profession {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  justify-content: center;
+  z-index: 5;
+}
+.skills__icon {
+  font-size: 2rem;
+  color: var(--first-color);
+}
+.skills__title {
+  font-size: var(--h2-font-size);
+}
+.skills__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  z-index: 5;
+}
+.skills__item {
+  display: flex;
+  align-items: center;
+  column-gap: 0.25rem;
+  cursor: default;
+  transition: filter 0.4s;
+}
+.skills__img {
+  width: 16px;
+}
+.skills__name {
+  font-size: var(--small-font-size);
+  transition:
+    color 0.4s,
+    text-shadow 0.4s;
+}
+.skills__item:hover {
+  filter: drop-shadow(0 0 12px var(--first-color));
+}
+.skills__item:hover .skills__name {
+  color: var(--first-color);
+  text-shadow: var(--first-color) 0 0 12px;
+}
+.skills__card .blob-small {
+  z-index: 1;
+  top: -5rem;
+  left: 0;
+  right: 0;
+  justify-self: center;
+}
 
 /*=============== TESTIMONIALS SECTION ===============*/
 
@@ -753,20 +818,20 @@ img {
   .work .blob-big {
     right: -6rem;
   }
-  .services__container{
+  .services__container {
     grid-template-columns: 690px;
     row-gap: 3rem;
   }
-  .services__card{
+  .services__card {
     padding-bottom: 2rem;
   }
-  .services__button{
+  .services__button {
     column-gap: 3rem;
   }
-  .services__icon{
+  .services__icon {
     font-size: 2.5rem;
   }
-  .services__name{
+  .services__name {
     font-size: var(--h1-font-size);
   }
 }
