@@ -706,12 +706,17 @@ img {
   }
   .home__container,
   .about__container,
-  .services__container {
+  .services__container,
+  .skills__container {
     grid-template-columns: 400px;
     justify-content: center;
   }
   .work__card {
     width: 350px;
+  }
+  .skills__description{
+    width: 500px;
+    margin-inline: auto;
   }
 }
 
@@ -833,6 +838,32 @@ img {
   }
   .services__name {
     font-size: var(--h1-font-size);
+  }
+  .skills__description{
+    width: 700px;
+  }
+  .skills__container{
+    grid-template-columns: 700px;
+  }
+  .skills__card{
+    padding: 3.5rem 2rem;
+    flex-direction: row;
+    column-gap: 6rem;
+  }
+  .skills__icon{
+    font-size: 3rem;
+  }
+  .skills__title{
+    font-size: var(--h1-font-size);
+  }
+  .skills__img{
+    width: 20px;
+  }
+  .skills__name{
+    font-size: var(--normal-font-size);
+  }
+  .skills__card .blob-small{
+   top: -7.5rem; 
   }
 }
 
