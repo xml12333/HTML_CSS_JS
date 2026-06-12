@@ -90,7 +90,13 @@ servicesButtons.forEach((button) => {
   });
 });
 /*=============== TESTIMONIALS OF DUPLICATE CARDS ===============*/
-
+const tracks = document.querySelectorAll(".testimonials__content");
+tracks.forEach((track) => {
+  const cards = [...track.children];
+  for (const card of cards) {
+    track.appendChild(card.cloneNode(true));
+  }
+});
 /*=============== CONTACT EMAIL JS ===============*/
 
 /*=============== SHOW SCROLL UP ===============*/
