@@ -759,7 +759,103 @@ img {
   }
 }
 /*=============== CONTACT SECTION ===============*/
-
+.contact__container {
+  row-gap: 4rem;
+}
+.contact__form {
+  position: relative;
+  row-gap: 1rem;
+}
+.contact__group {
+  position: relative;
+}
+.contact__input {
+  width: 100%;
+  background: var(--container-color);
+  color: var(--white-color);
+  padding: 1.25rem;
+  border-radius: 4rem;
+  font-weight: var(--font-semi-bold);
+  font-family: var(--second-font);
+}
+.contact__label {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  pointer-events: none;
+  font-weight: var(--font-semi-bold);
+  font-family: var(--second-font);
+  transition: opacity 0.4s;
+}
+.contac__input:focus ~ .contact__label,
+.contact__input:valid ~ .contact__label {
+  opacity: 0;
+}
+.contact__input:autofill {
+  transition:
+    background-color 6000s,
+    color 6000s;
+}
+.contact__area{
+  height: 10rem;
+  border-radius: 1.5rem;
+  resize: none;
+}
+.contact__button{
+  margin-top: 1rem;
+  cursor: pointer;
+}
+.contact__message{
+  position: absolute;
+  bottom: -2rem;
+  color: var(--white-color);
+  font-size: var(--small-font-size);
+}
+.contact__container{
+  row-gap: 1rem;
+}
+.contact__link{
+  background-color: var(--container-color);
+  padding: 1rem;
+  border-radius: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contact__info{
+  display: flex;
+  column-gap: 0.5rem;
+  align-items: center;
+}
+.contact__icon{
+  font-size: 1.5rem;
+  color: var(--first-color);
+}
+.contact__title{
+  font-size: var(--normal-font-size);
+  margin-bottom: 0.25rem;
+}
+.contact__address{
+  color: var(--text-color);
+  font-weight: var(--font-semi-bold);
+  font-family: var(--second-font);
+  font-style: initial;
+}
+.contact__arrow{
+  width: 32px;
+  height: 32px;
+  background-color: var(--body-color);
+  border-radius: 50%;
+  color: var(--white-color);
+  font-size: 1.5rem;
+  display: grid;
+  place-items: center;
+  transition: background-color 0.4s, color 0.4s;
+}
+.contact__link:hover .contact__arrow{
+  background-color: var(--first-color);
+  color: var(--black-color);
+}
 /*=============== FOOTER ===============*/
 
 /*=============== SCROLL BAR ===============*/
