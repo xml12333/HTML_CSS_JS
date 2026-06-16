@@ -98,7 +98,23 @@ tracks.forEach((track) => {
   }
 });
 /*=============== CONTACT EMAIL JS ===============*/
+const contactForm = document.getElementById("contact-form"),
+  contactMessage = document.getElementById(".contact-message");
+const sendEmail = async (e) => {
+  e.preventDefault();
 
+  try {
+    // serviceID - templateID - #form - publicKey
+    await emailjs.sendForm("", "", "#contact-form", "");
+    contactMessage.textContent = "Message sent successfully ✅";
+    contactForm.reset();
+  } catch {
+    contactMessage.textContent = "Message not sent (service error) ❌";
+  } finally {
+    setTimeout(() => (contactMessage.textContent = ""), 5000);
+  }
+};
+contactForm.addEventListener("submit", sendEmail);
 /*=============== SHOW SCROLL UP ===============*/
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/

@@ -787,7 +787,7 @@ img {
   font-family: var(--second-font);
   transition: opacity 0.4s;
 }
-.contac__input:focus ~ .contact__label,
+.contact__input:focus ~ .contact__label,
 .contact__input:valid ~ .contact__label {
   opacity: 0;
 }
@@ -873,7 +873,8 @@ img {
   .home__container,
   .about__container,
   .services__container,
-  .skills__container {
+  .skills__container,
+  .contact__container {
     grid-template-columns: 400px;
     justify-content: center;
   }
@@ -1073,6 +1074,24 @@ img {
       hsla(0, 0%, 0%, 0) 0%,
       var(--body-color) 100%
     );
+  }
+  .contact__container{
+    grid-template-columns: 450px 380px;
+    align-items: center;
+    column-gap: 10rem;
+    padding-bottom: 3rem;
+  }
+  .contact__input{
+    padding-block: 1.5rem;
+  }
+  .contact__label{
+    top: 1.5rem;
+  }
+  .contact__area{
+    height: 14rem;
+  }
+  .contact__content{
+    row-gap: 2rem;
   }
 }
 
