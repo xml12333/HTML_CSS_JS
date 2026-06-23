@@ -1,78 +1,133 @@
 <!DOCTYPE html>
-   <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="description" content="Discover timeless Greek art, classical sculptures, and ancient masterpieces inspired by the golden age of civilization.">
-      <meta name="robots" content="index, follow">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="description"
+      content="Discover timeless Greek art, classical sculptures, and ancient masterpieces inspired by the golden age of civilization.">
+   <meta name="robots" content="index, follow">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <!--=============== FAVICON ===============-->
-      <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+   <!--=============== FAVICON ===============-->
+   <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
 
-      <!--=============== REMIXICONS - Insert link for icons ===============-->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css">
+   <!--=============== REMIXICONS - Insert link for icons ===============-->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css">
 
-      <!--=============== SWIPER CSS - Insert link for swiperjs ===============-->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+   <!--=============== SWIPER CSS - Insert link for swiperjs ===============-->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
 
-      <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="./css/styles.css">
+   <!--=============== CSS ===============-->
+   <link rel="stylesheet" href="./css/styles.css">
 
-      <title>Ancient Greek Art Gallery | Timeless Classical Masterpieces | Bedimcode</title>
-   </head>
-   <body>
-      <!--==================== HEADER ====================-->
-      <header class="header" id="header">
-         <nav class="nav container">
-            <a href="/index.html" class="nav__logo">Visual Art</a>
+   <title>Ancient Greek Art Gallery | Timeless Classical Masterpieces | Bedimcode</title>
+</head>
+<body>
+   <!--==================== HEADER ====================-->
+   <header class="header" id="header">
+      <nav class="nav container">
+         <a href="/index.html" class="nav__logo">Visual Art</a>
 
-            <div class="nav__menu" id="nav-menu">
-               <ul class="nav__list">
-                  <li>
-                     <a href="#" class="nav__link active-link">HOME</a>
-                  </li>
+         <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+               <li>
+                  <a href="#" class="nav__link active-link">HOME</a>
+               </li>
 
-                  <li>
-                     <a href="#" class="nav__link">PHOTOS</a>
-                  </li>
+               <li>
+                  <a href="#" class="nav__link">PHOTOS</a>
+               </li>
 
-                  <li>
-                     <a href="#" class="nav__link">GALLERY</a>
-                  </li>
+               <li>
+                  <a href="#" class="nav__link">GALLERY</a>
+               </li>
 
-                  <li>
-                     <a href="#" class="nav__link">ABOUT US</a>
-                  </li>
-               </ul>
+               <li>
+                  <a href="#" class="nav__link">ABOUT US</a>
+               </li>
+            </ul>
 
-               <!-- Close -->
-               <button class="nav__close" id="nav-close" aria-label="Close menu">
-                  <i class="ri-close-large-line"></i>
-               </button>
-            </div>
-
-            <!-- Toggle -->
-            <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu">
-               <i class="ri-menu-line"></i>
+            <!-- Close -->
+            <button class="nav__close" id="nav-close" aria-label="Close menu">
+               <i class="ri-close-large-line"></i>
             </button>
-         </nav>
-      </header>
+         </div>
 
-      <!--==================== MAIN ====================-->
-      <main class="main">
-         <!--==================== HOME ====================-->
-         <section class="home">
-            
-         </section>
-      </main>
+         <!-- Toggle -->
+         <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu">
+            <i class="ri-menu-line"></i>
+         </button>
+      </nav>
+   </header>
 
-      <!--=============== GSAP - Insert link for animations ===============-->
-      <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
-      
-      <!--=============== SWIPER JS - Insert link for swiperjs ===============-->
-      <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+   <!--==================== MAIN ====================-->
+   <main class="main">
+      <!--==================== HOME ====================-->
+      <section class="home">
+         <div class="home__swiper">
+            <div>
+               <article class="home__slider">
+                  <img src="./img/img-1.png" alt="img" class="home__img">
+                  <div class="home__data">
+                     <h3 class="home__subtitle">Visual Art</h3>
+                     <h1 class="home__title">THE ART <br> OF LINE</h1>
+                  </div>
+                  <div class="home__info">
+                     <p class="home__description">
+                        The art includes both antique and modern
+                        pieces that speak volumes just by looking at them.
 
-      <!--=============== MAIN JS ===============-->
-      <script src="./js/main.js"></script>
-   </body>
+                     </p>
+                     <a href="#" class="home__button">
+                        <i class="ri-arrow-down-long-line"></i>
+                     </a>
+                  </div>
+               </article>
+               <article class="home__slider">
+                  <img src="./img/img-2.png" alt="img" class="home__img">
+                  <div class="home__data">
+                     <h3 class="home__subtitle">Visual Art</h3>
+                     <h1 class="home__title">A WALK <br> IN NATURE</h1>
+                  </div>
+                  <div class="home__info">
+                     <p class="home__description">
+                        The art includes both antique and modern
+                        pieces that speak volumes just by looking at them.
+
+                     </p>
+                     <a href="#" class="home__button">
+                        <i class="ri-arrow-down-long-line"></i>
+                     </a>
+                  </div>
+               </article>
+               <article class="home__slider">
+                  <img src="./img/img-3.png" alt="img" class="home__img">
+                  <div class="home__data">
+                     <h3 class="home__subtitle">Visual Art</h3>
+                     <h1 class="home__title">THE ART <br> OF GOOD</h1>
+                  </div>
+                  <div class="home__info">
+                     <p class="home__description">
+                        The art includes both antique and modern
+                        pieces that speak volumes just by looking at them.
+
+                     </p>
+                     <a href="#" class="home__button">
+                        <i class="ri-arrow-down-long-line"></i>
+                     </a>
+                  </div>
+               </article>
+            </div>
+         </div>
+      </section>
+   </main>
+
+   <!--=============== GSAP - Insert link for animations ===============-->
+   <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+
+   <!--=============== SWIPER JS - Insert link for swiperjs ===============-->
+   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+   <!--=============== MAIN JS ===============-->
+   <script src="./js/main.js"></script>
+</body>
 </html>
