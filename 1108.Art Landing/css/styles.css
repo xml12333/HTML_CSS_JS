@@ -205,7 +205,20 @@ img {
 }
 
 /* Swiper class */
-
+.home .swiper-pagination{
+  top: initial;
+  bottom: 6rem;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: max-content;
+}
+.home .swiper-pagination-bullet{
+  background-color: var(--white-color);
+}
+.home .swiper-pagination-bullet-active{
+  background-color: var(--first-color);
+}
 
 /*=============== BREAKPOINTS ===============*/
 /* For medium devices <> */

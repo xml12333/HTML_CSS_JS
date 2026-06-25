@@ -63,11 +63,11 @@
    <main class="main">
       <!--==================== HOME ====================-->
       <section class="home">
-         <div class="home__swiper">
-            <div>
-               <article class="home__slider">
-                  <img src="./img/img-1.png" alt="img" class="home__img">
-                  <div class="home__data">
+         <div class="home__swiper swiper">
+            <div class="swiper-wrapper">
+               <article class="home__slider swiper-slide" >
+                  <img src="./img/img-1.png" alt="img" class="home__img" data-swiper-parallax-scale="5" data-swiper-parallax="600">
+                  <div class="home__data" data-swiper-parallax-scale="5" data-swiper-parallax="600">
                      <h3 class="home__subtitle">Visual Art</h3>
                      <h1 class="home__title">THE ART <br> OF LINE</h1>
                   </div>
@@ -82,9 +82,9 @@
                      </a>
                   </div>
                </article>
-               <article class="home__slider">
-                  <img src="./img/img-2.png" alt="img" class="home__img">
-                  <div class="home__data">
+               <article class="home__slider swiper-slide">
+                  <img src="./img/img-2.png" alt="img" class="home__img" data-swiper-parallax-scale="5" data-swiper-parallax="600">
+                  <div class="home__data" data-swiper-parallax-scale="5" data-swiper-parallax="600">
                      <h3 class="home__subtitle">Visual Art</h3>
                      <h1 class="home__title">A WALK <br> IN NATURE</h1>
                   </div>
@@ -99,9 +99,9 @@
                      </a>
                   </div>
                </article>
-               <article class="home__slider">
-                  <img src="./img/img-3.png" alt="img" class="home__img">
-                  <div class="home__data">
+               <article class="home__slider swiper-slide">
+                  <img src="./img/img-3.png" alt="img" class="home__img" data-swiper-parallax-scale="5" data-swiper-parallax="600">
+                  <div class="home__data" data-swiper-parallax-scale="5" data-swiper-parallax="600">
                      <h3 class="home__subtitle">Visual Art</h3>
                      <h1 class="home__title">THE ART <br> OF GOOD</h1>
                   </div>
@@ -117,6 +117,8 @@
                   </div>
                </article>
             </div>
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
          </div>
       </section>
    </main>
