@@ -1100,3 +1100,6 @@
 |1104| [Wire Curtain](https://github.com/xml12333/HTML_CSS_JS/tree/main/1104.Wire%20Curtain)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1104.Wire%20Curtain/)|
 |1105| [Handwritten Animation](https://github.com/xml12333/HTML_CSS_JS/tree/main/1105.Handwritten%20Animation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1105.Handwritten%20Animation/)|
 |1106| [Grid Run](https://github.com/xml12333/HTML_CSS_JS/tree/main/1106.Grid%20Run)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1106.Grid%20Run/)|
+|1107| [Portfolio Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/1107.Portfolio%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1107.Portfolio%20Website/)|
+|1108| [Art Landing](https://github.com/xml12333/HTML_CSS_JS/tree/main/1108.Art%20Landing)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1108.Art%20Landing/)|
+|1109| [Sidebar](https://github.com/xml12333/HTML_CSS_JS/tree/main/1109.Sidebar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1109.Sidebar/)|

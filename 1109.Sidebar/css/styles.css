@@ -1,0 +1,285 @@
+/*=============== GOOGLE FONTS - Insert link for typography ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(174, 90%, 46%);
+  --gradient-color: linear-gradient(90deg, hsl(176, 89%, 82%) 0%, 
+                                           hsl(173, 90%, 40%) 50%, 
+                                           hsl(178, 89%, 22%) 100%);
+  --white-color: hsl(0, 0%, 100%);
+  --text-color: hsl(0, 0%, 64%);
+  --border-color: hsl(0, 0%, 16%);
+  --body-color: hsl(0, 0%, 0%);
+  --container-color: hsl(0, 0%, 8%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", sans-serif;
+  --h2-font-size: 1.25rem;
+  --smaller-font-size: .75rem;
+  --tiny-font-size: .625rem;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--body-color);
+  color: var(--white-color);
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*=============== SIDEBAR ===============*/
+.header {
+  position: fixed;
+  width: 100%;
+  height: var(--header-height);
+  top: 0;
+  background-color: var(--body-color);
+  display: flex;
+  align-items: center;
+  padding-inline: 1rem;
+  z-index: 100;
+}
+
+.header__toggle {
+  color: var(--white-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -120%;
+  width: 300px;
+  height: 100%;
+  background-color: var(--container-color);
+  box-shadow: inset -8px 0px 16px hsl(0, 0%, 4%);
+  padding: 2rem 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+  z-index: 100;
+  transition: left 0.4s, width 0.3s, padding 0.3s;
+}
+
+.sidebar__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: var(--white-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.sidebar__toggle {
+  position: absolute;
+  top: 2.75rem;
+  right: -0.5rem;
+  color: var(--white-color);
+  font-size: 1.5rem;
+  cursor: e-resize;
+  display: none;
+}
+
+.sidebar__data {
+  text-align: center;
+}
+
+.sidebar__perfil {
+  width: 100px;
+  border-radius: 50%;
+  margin: 0 auto 0.5rem;
+  transition: width 0.4s;
+}
+
+.sidebar__name {
+  font-size: var(--h2-font-size);
+  font-weight: 600;
+  color: var(--first-color);
+  transition: font-size 0.4s;
+}
+
+.sidebar__status {
+  font-size: var(--smaller-font-size);
+  color: var(--text-color);
+  font-weight: 500;
+  transition: font-size 0.4s;
+}
+
+.sidebar__menu {
+  height: 100%;
+  display: grid;
+  align-content: space-between;
+}
+
+.sidebar__content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.sidebar__link {
+  position: relative;
+  width: 96px;
+  height: 80px;
+  background-color: var(--container-color);
+  color: var(--white-color);
+  box-shadow: inset 12px 12px 24px hsl(0, 0%, 12%), 
+              inset -12px -12px 24px hsl(0, 0%, 4%);
+  border-radius: 0.75rem;
+  transition: color 0.4s, width 0.4s, padding 0.4s;
+}
+
+.sidebar__box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.sidebar__glow {
+  width: 70px;
+  height: 70px;
+  background: var(--gradient-color);
+  border-radius: 50%;
+  position: absolute;
+  top: -2.5rem;
+  left: -1.5rem;
+  filter: blur(16px);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.sidebar__group {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+  z-index: 100;
+  display: grid;
+  row-gap: 0.5rem;
+  align-content: center;
+  text-align: center;
+}
+
+.sidebar__icon {
+  font-size: 1.5rem;
+}
+
+.sidebar__label {
+  font-size: var(--tiny-font-size);
+  font-weight: 600;
+  text-wrap: nowrap;
+}
+
+.sidebar__link-large {
+  width: 100%;
+  height: 48px;
+  padding: 0.75rem 1rem;
+}
+
+.sidebar__link-large .sidebar__group {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.sidebar__link:hover {
+  color: var(--first-color);
+}
+
+.sidebar__link:hover .sidebar__glow {
+  opacity: 1;
+}
+
+/* Show sidebar */
+.show-sidebar {
+  left: 0;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For large devices <> */
+@media (width >= 1150px) {
+  .header {
+    display: none;
+  }
+
+  .sidebar {
+    left: 0;
+  }
+  .sidebar__close {
+    display: none;
+  }
+  .sidebar__toggle {
+    display: block;
+  }
+
+  /* Sidebar expand */
+  .sidebar-expand {
+    width: 96px;
+    padding-inline: 1.5rem;
+  }
+  .sidebar-expand .sidebar__perfil {
+    width: 48px;
+  }
+  .sidebar-expand .sidebar__name, 
+  .sidebar-expand .sidebar__status {
+    font-size: 0;
+  }
+  .sidebar-expand .sidebar__content {
+    grid-template-columns: 1fr;
+  }
+  .sidebar-expand .sidebar__link {
+    width: 48px;
+    height: 48px;
+  }
+  .sidebar-expand .sidebar__label {
+    position: absolute;
+    left: 5rem;
+    align-self: center;
+    background-color: var(--container-color);
+    border: 1px solid var(--border-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .sidebar-expand .sidebar__link-large {
+    padding: 0.75rem;
+  }
+  .sidebar-expand .sidebar__link:hover .sidebar__label {
+    opacity: 1;
+  }
+}

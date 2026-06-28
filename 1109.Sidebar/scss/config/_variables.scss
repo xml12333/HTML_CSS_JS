@@ -1,0 +1,25 @@
+/*=============== GOOGLE FONTS - Insert link for typography ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root{
+   --header-height: 3.5rem;
+
+   /*========== Colors ==========*/
+   /*Color mode HSL(hue, saturation, lightness)*/
+   --first-color: hsl(174, 90%, 46%);
+   --gradient-color: linear-gradient(90deg, hsl(176, 89%, 82%) 0%, hsl(173, 90%, 40%) 50%, hsl(178, 89%, 22%) 100%);
+   --white-color: hsl(0, 0%, 100%);
+   --text-color: hsl(0, 0%, 64%);
+   --border-color: hsl(0, 0%, 16%);
+   --body-color: hsl(0, 0%, 0%);
+   --container-color: hsl(0, 0%, 8%);
+
+   /*========== Font and typography ==========*/
+   /*.5rem = 8px | 1rem = 16px ...*/
+   --body-font: "Montserrat", sans-serif;
+
+   --h2-font-size: 1.25rem;
+   --smaller-font-size: .75rem;
+   --tiny-font-size: .625rem;
+}
