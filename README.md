@@ -1103,3 +1103,4 @@
 |1107| [Portfolio Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/1107.Portfolio%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1107.Portfolio%20Website/)|
 |1108| [Art Landing](https://github.com/xml12333/HTML_CSS_JS/tree/main/1108.Art%20Landing)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1108.Art%20Landing/)|
 |1109| [Sidebar](https://github.com/xml12333/HTML_CSS_JS/tree/main/1109.Sidebar)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1109.Sidebar/)|
+|1110| [Symmetrish](https://github.com/xml12333/HTML_CSS_JS/tree/main/1110.Symmetrish)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1110.Symmetrish/)|
