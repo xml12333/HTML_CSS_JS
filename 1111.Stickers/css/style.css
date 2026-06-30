@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  color: #222;
+  background-color: #ececec;
+  font-size: clamp(1rem, 2vw + 0.5rem, 2rem);
+  font-family: "Cherry Bomb One", system-ui;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.sticker {
+  --text-color: #ffcc33;
+  --text-size: 100px;
+  --stroke-width: calc(var(--text-size) * 0.5);
+  --stroke-color: #fff;
+  --outline-width: 1px;
+  --outline-color: var(--text-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: calc(var(--stroke-width) * 0.5);
+  font-size: var(--text-size);
+  color: var(--text-color);
+  white-space: nowrap;
+  -webkit-text-stroke: var(--stroke-width) var(--stroke-color);
+  paint-order: stroke fill;
+  filter: drop-shadow(var(--outline-width) 0 var(--outline-color)) drop-shadow(calc(var(--outline-width) * -1) 0 var(--outline-color)) drop-shadow(0 var(--outline-width) var(--outline-color)) drop-shadow(0 calc(var(--outline-width) * -1) var(--outline-color));
+  transition: all 0.3s;
+}
+.sticker:hover {
+  scale: 1.07;
+  color: transparent;
+}
+.sticker:before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(40deg, var(--text-color) 30%, color-mix(var(--text-color), #fff 60%) 45% 55%, var(--text-color) 70%);
+  background-clip: text;
+  -webkit-text-stroke: initial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sticker.hello {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.sticker.blueming {
+  --text-color: #8fa0f8;
+  --text-size: 50px;
+  translate: -180% -100%;
+  rotate: -15deg;
+}
+.sticker.palette {
+  --text-color: #7ec27c;
+  --text-size: 45px;
+  translate: -80% -300%;
+  rotate: 10deg;
+}
+.sticker.lilac {
+  --text-color: #f1c1ff;
+  --text-size: 60px;
+  translate: 50% -230%;
+  rotate: 3deg;
+}
+.sticker.love {
+  --text-color: #ffd6d6;
+  --text-size: 50px;
+  translate: -160% 80%;
+}
+.sticker.eight {
+  --text-color: #c8e7ff;
+  --text-size: 50px;
+  translate: 150% 100%;
+  rotate: -10deg;
+}
+.sticker.good {
+  --text-color: #ffae57;
+  --text-size: 50px;
+  translate: 80% -50%;
+  rotate: 10deg;
+}
+.sticker.friday {
+  --text-color: #ff9797;
+  --text-size: 50px;
+  translate: -50% 150%;
+  rotate: -10deg;
+}
