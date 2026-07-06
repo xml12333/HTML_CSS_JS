@@ -296,7 +296,57 @@ img {
   background-color: var(--first-color);
   color: var(--dark-color);
 }
+.button__link{
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  color: var(--first-color);
+  font-weight: var(--font-semi-bold);
+  transition: color .4s;
+}
+.button__link i{
+  font-size: 1.5rem;
+  font-weight: initial;
+  transition: transform 0.4s;
+}
+.button__link:hover{
+  color: var(--first-color-alt);
+}
+.button__link:hover i{
+  transform: translateX(0.5rem);
+}
 /*=============== ABOUT SECTION ===============*/
+.about__container{
+  position: relative;
+  row-gap: 0;
+  padding-bottom: 2rem;
+}
+.about__flour{
+  width: 200px;
+  position: absolute;
+  top: 0;
+  left: -3rem;
+}
+.about__img{
+  position: relative;
+}
+.about__data{
+  position: relative;
+  background-color: var(--white-color);
+  color: var(--dark-color);
+  padding: 3rem 1rem;
+  text-align: center;
+}
+.about__description{
+  margin-bottom: 3rem;
+  color: var(--text-color);
+}
+.about__rosemary{
+  width: 150px;
+  position: absolute;
+  right: -3.5rem;
+  bottom: -2.5rem;
+}
 
 /*=============== MENU SECTION ===============*/
 
