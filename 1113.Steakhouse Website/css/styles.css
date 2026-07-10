@@ -450,6 +450,47 @@ img {
   left: -2rem;
 }
 /*=============== EVENTS SECTION ===============*/
+.events__container {
+  position: relative;
+  row-gap: 0;
+  padding-bottom: 2rem;
+}
+.events__flour {
+  width: 200px;
+  position: absolute;
+  top: 0;
+  left: -3rem;
+}
+.events__img {
+  position: relative;
+}
+.events__data {
+  position: relative;
+  background-color: var(--white-color);
+  color: var(--dark-color);
+  padding: 3rem 1rem;
+  text-align: center;
+}
+.events__description {
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}
+.events__info {
+  margin-bottom: 3rem;
+}
+.events__name {
+  font-size: var(--normal-font-size);
+  margin-bottom: 0.5rem;
+}
+.events__details {
+  color: var(--text-color);
+}
+.events__spoon {
+  width: 150px;
+  position: absolute;
+  right: -1.5rem;
+  bottom: -1rem;
+}
 
 /*=============== INGREDIENTS SECTION ===============*/
 
