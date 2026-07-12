@@ -493,7 +493,58 @@ img {
 }
 
 /*=============== INGREDIENTS SECTION ===============*/
-
+.ingredients__container{
+  row-gap: 5.5em;
+}
+.ingredients__description{
+  text-align: center;
+}
+.ingredients__images{
+  position: relative;
+  justify-self: center;
+}
+.ingredients__images img{
+  position: absolute;
+}
+.ingredients__images .ingredients__img-1{
+  position: relative;
+  width: 110px;
+}
+.ingredients__img-2{
+  width: 45px;
+  left: -3.5rem;
+  bottom: 0;
+}
+.ingredients__img-3{
+  width: 38px;
+  right: -3rem;
+  bottom: 0;
+}
+.ingredients__img-4{
+  width: 32px;
+  left: -6rem;
+  top: 2.5rem;
+}
+.ingredients__img-5{
+  width: 55px;
+  left: -6.5rem;
+  bottom: 0;
+}
+.ingredients__img-6{
+  width: 45px;
+  right: -3.5rem;
+  top: 0.5rem;
+}
+.ingredients__img-7{
+  width: 45px;
+  right: -6.5rem;
+  top: 3.5rem;
+}
+.ingredients__img-8{
+  width: 60px;
+  right: -7.5rem;
+  bottom: 0;
+}
 /*=============== CONTACT SECTION ===============*/
 
 /*=============== RESERVATION SECTION ===============*/
