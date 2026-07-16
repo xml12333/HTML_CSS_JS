@@ -595,7 +595,37 @@ img {
   font-style: normal;
 }
 /*=============== RESERVATION SECTION ===============*/
-
+.reservation__container{
+  position: relative;
+  height: 420px;
+  place-items: center;
+}
+.reservation__bg,
+.reservation__shadow{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.reservation__bg{
+  object-fit: cover;
+  object-position: center;
+}
+.reservation__shadow{
+  background-color: hsla(0,0%,0%,0.4);
+  z-index: 5;
+}
+.reservation__content{
+  position: relative;
+  z-index: 10;
+}
+.reservation__data{
+  margin-bottom: 3rem;
+}
+.reservation__data .section__subtitle{
+  color: var(--white-color);
+}
 /*=============== FOOTER ===============*/
 
 /*=============== SCROLL BAR ===============*/
