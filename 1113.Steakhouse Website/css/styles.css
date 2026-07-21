@@ -805,6 +805,103 @@ img {
     left: -6rem;
     bottom: 7rem;
   }
-  
+  .about__container{
+    width: initial;
+    grid-template-columns: 450px 670px;
+    column-gap: 0;
+    margin-block: 5rem 4rem;
+  }
+  .about__flour{
+    width: 450px;
+    left: 5.5rem;
+    top: -7rem;
+  }
+  .about__data{
+    padding: 0 6rem;
+    text-align: initial;
+    align-content: center;
+  }
+  .about__data :is(.section__subtitle, .section__title){
+    text-align: initial;
+  }
+  .about__rosemary{
+    width: 220px;
+    right: -4rem;
+    bottom: -4rem;
+  }
+  .menu__conainer{
+    row-gap: 6.5rem;
+    grid-template-columns: 850px;
+  }
+  .menu__header{
+    display: grid;
+    grid-template-columns: max-content 500px;
+    column-gap: 9rem;
+    align-items: center;
+  }
+  .menu__header .section__subtitle{
+    text-align: right;
+  }
+  .menu__description{
+    text-align: initial;
+  }
+  .menu__dish-1{
+    width: 250px;
+  }
+  .menu__rosemary{
+    width: 200px;
+    left: -3rem;
+    bottom: -3rem;
+  }
+  .menu__flour-1{
+    width: 250px;
+    top: -5.5rem;
+    right: -4.5rem;
+  }
+  .menu__dish-2{
+    width: 380px;
+  }
+  .menu__flour-2{
+    width: 380px;
+    top: -5.5rem;
+    left: -8rem;
+  }
+  .menu__pepper{
+    width: 270px;
+    right: 1.5rem;
+    bottom: -6rem;
+  }
+  .menu__dish-3{
+    width: 300px;
+  }
+  .menu__flour-3{
+    width: 380px;
+    top: -8rem;
+    right: -8rem;
+  }
+  .menu__tomato{
+    width: 130px;
+    bottom: -3.5rem;
+  }
+  .menu__dish-4{
+    width: 310px;
+  }
+  .menu__flour-4{
+    width: 370px;
+    top: -3rem;
+    left: -8rem;
+  }
+  .menu__info{
+    width: 300px;
+  }
+  .menu__card:nth-child(odd) .menu__info{
+    justify-self: flex-end;
+  }
+  .menu__card:nth-child(even) .menu__info{
+    justify-self: flex-start;
+  }
+  .menu__summary{
+    font-size: var(--normal-font-size);
+  }
 }
 /* For 2K resolutions <> */
