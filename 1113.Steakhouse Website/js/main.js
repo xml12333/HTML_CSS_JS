@@ -131,3 +131,8 @@ sr.reveal(".ingredients__images > img", {
   scale: 0.1,
 });
 sr.reveal(".ingredients_img-1", { delay: 600, distance: "0", scale: 1.5 });
+
+sr.reveal(".contact__map", { origin: "left" });
+sr.reveal(".contact__content", { origin: "right" });
+
+sr.reveal(".reservation__content, .footer__container");

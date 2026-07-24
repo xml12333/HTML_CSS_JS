@@ -1106,3 +1106,4 @@
 |1110| [Symmetrish](https://github.com/xml12333/HTML_CSS_JS/tree/main/1110.Symmetrish)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1110.Symmetrish/)|
 |1111| [Stickers](https://github.com/xml12333/HTML_CSS_JS/tree/main/1111.Stickers)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1111.Stickers/)|
 |1112| [Fluid Business Card](https://github.com/xml12333/HTML_CSS_JS/tree/main/1112.Fluid%20Business%20Card)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1112.Fluid%20Business%20Card/)|
+|1113| [Steakhouse Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/1113.Steakhouse%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1113.Steakhouse%20Website/)|
