@@ -158,44 +158,44 @@ img {
   object-position: center;
 }
 
-.home__images img{
+.home__images img {
   max-width: initial;
   width: 900px;
   right: -16rem;
   bottom: 0;
 }
-.home__title{
+.home__title {
   font-size: var(--biggest-font-size);
   bottom: 12rem;
   line-height: 120%;
   font-weight: 400;
 }
-.home__description{
+.home__description {
   bottom: 6rem;
 }
 /*=============== BREAKPOINTS ===============*/
 /* For small devices <> */
 @media (width <= 320px) {
-  .home__title{
+  .home__title {
     font-size: 6rem;
   }
 }
 /* For medium devices <> */
 @media (width >= 576px) {
-  .home__images img{
+  .home__images img {
     width: 100%;
     right: 0;
   }
-  .home__description{
+  .home__description {
     width: 450px;
   }
 }
 @media (width >= 768px) {
-  .home__title{
+  .home__title {
     width: 100%;
     display: grid;
   }
-  .home__title span{
+  .home__title span {
     justify-self: flex-end;
     padding-right: 4rem;
     text-align: right;
@@ -219,27 +219,27 @@ img {
     align-items: center;
     column-gap: 4rem;
   }
-  .home__container{
+  .home__container {
     height: 860px;
   }
-  .home__title{
+  .home__title {
     max-width: 1120px;
     bottom: initial;
     top: 11rem;
   }
-  .home__title span{
+  .home__title span {
     padding-right: 3rem;
   }
 }
 
 @media (width >= 1500px) {
-  .home__images img{
+  .home__images img {
     bottom: -4rem;
   }
 }
 /* For taller devices */
 @media (width >= 1150px) and (height >= 860px) {
-  .home__container{
+  .home__container {
     height: 100vh;
   }
 }
