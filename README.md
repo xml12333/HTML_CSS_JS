@@ -1108,3 +1108,4 @@
 |1112| [Fluid Business Card](https://github.com/xml12333/HTML_CSS_JS/tree/main/1112.Fluid%20Business%20Card)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1112.Fluid%20Business%20Card/)|
 |1113| [Steakhouse Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/1113.Steakhouse%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1113.Steakhouse%20Website/)|
 |1114| [Desert Landing](https://github.com/xml12333/HTML_CSS_JS/tree/main/1114.Desert%20Landing)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1114.Desert%20Landing/)|
+|1115| [Password Input](https://github.com/xml12333/HTML_CSS_JS/tree/main/1115.Password%20Input)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1115.Password%20Input/)|
