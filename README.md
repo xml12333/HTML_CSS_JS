@@ -1109,3 +1109,4 @@
 |1113| [Steakhouse Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/1113.Steakhouse%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1113.Steakhouse%20Website/)|
 |1114| [Desert Landing](https://github.com/xml12333/HTML_CSS_JS/tree/main/1114.Desert%20Landing)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1114.Desert%20Landing/)|
 |1115| [Password Input](https://github.com/xml12333/HTML_CSS_JS/tree/main/1115.Password%20Input)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1115.Password%20Input/)|
+|1116| [Not Mobius Knot](https://github.com/xml12333/HTML_CSS_JS/tree/main/1116.Not%20Mobius%20Knot)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1116.Not%20Mobius%20Knot/)|

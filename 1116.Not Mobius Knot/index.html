@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Not a Mobius Knot</title>
+	<link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+	<canvas id="canvas"></canvas>
+	<textarea id="codeEditor" class="editor" spellcheck="false" autocorrect="off" autocapitalize="off" translate="no"
+		oninput="render()"></textarea>
+	<pre id="error"></pre>
+	<div id="indicator"></div>
+	<div id="controls">
+		<div class="controls">
+			<input id="btnToggleView" class="icon" type="checkbox" name="toggleView" onclick="toggleView()">
+			<input id="btnToggleResolution" class="icon" type="checkbox" name="toggleResolution"
+				onchange="toggleResolution()">
+			<input id="btnReset" class="icon" type="checkbox" name="reset" onclick="reset()">
+			<input id="btnPlayStop" class="icon" type="checkbox" name="playStop" onclick="togglePlayStop()">
+		</div>
+	</div>
+	<script type="x-shader/x-fragment">#version 300 es
+/*********
+* made by Matthias Hurrle (@atzedent)
+*/
+precision highp float;
+out vec4 O;
+uniform float time;
+uniform vec2 resolution;
+uniform vec2 move;
+uniform vec2 wheel;
+#define FC gl_FragCoord.xy
+#define R resolution
+#define T (time+wheel.y/1e3)
+#define S smoothstep
+#define N normalize 
+#define MN min(R.x,R.y)
+#define PI radians(180.)
+#define rot(a) mat2(cos((a)-vec4(0,11,33,0)))
+#define hue(a) (.5+.5*sin(6.3*(a)+vec3(1,2,3)))
+float box(vec3 p, vec3 s, float r) {
+	p=abs(p)-s+r;
+	return length(max(p,.0))+min(.0,max(max(p.x,p.y),p.z))-r;
+}
+float smin(float a, float b, float k) {
+	float h=clamp(.5+.5*(b-a)/k,.0,1.);
+	return mix(b,a,h)-k*h*(1.-h);
+}
+float cuts(vec3 p, float k, float f) {
+	return min(
+		box(p,vec3(k,k,f),.05),
+		box(p.zyx,vec3(k,k,f),.05)
+	);
+}
+float map(vec3 p) {
+	float r=2.8, a=atan(p.x,p.z);
+	vec2 q=vec2(length(p.xz)-r,p.y);
+	q*=rot(.5*a+T);
+	q.y=abs(q.y)-.2;
+	q.y=abs(q.y)-.2;
+	float d=box(q.xyy,vec3(.7,.05,1.+sin(a)*.5+.5),.05);
+	return smin(-cuts(p,5.,.2),d,-.05);
+}
+vec3 norm(vec3 p) {
+	float h=1e-3; vec2 k=vec2(-1,1);
+	return N(
+		k.xyy*map(p+k.xyy*h)+
+		k.yxy*map(p+k.yxy*h)+
+		k.yyx*map(p+k.yyx*h)+
+		k.xxx*map(p+k.xxx*h)
+	);
+}
+bool march(inout vec3 p, vec3 rd, out float dd) {
+	for (float i; i++<400.;) {
+		float d=map(p);
+		if (abs(d)<1e-3) return true;
+		if (d>100.) return false;
+		p+=rd*d*.5;
+		dd+=d*.5;
+	}
+}
+float calcAO(vec3 p, vec3 n) {
+	float occ=.0, sca=1.;
+	for (float i=.0; i<5.; i++) {
+		float
+		h=.01+i*.05,
+		d=map(p+h*n);
+		occ+=(h-d)*sca;
+		sca*=.95;
+		if (occ>.35) break;
+	}
+	return clamp(1.-3.*occ,.0,1.)*(.5+.5*n.y);
+}
+float shadow(vec3 p, vec3 lp) {
+	float shd=1., maxd=distance(lp,p);
+	vec3 l=N(lp-p);
+	for (float i=1e-3; i<maxd;) {
+		float d=map(p+l*i);
+		if (d<1e-3) {
+			shd=.0;
+			break;
+		}
+		shd=min(shd,16.*d/i);
+		i+=d;
+	}
+	return shd;
+}
+vec3 org(inout vec3 t) {
+	vec3 p=t-vec3(0,-.5,12);
+	p.yz*=rot(.78-.5*sin(move.y*6.3/MN));
+	p.xz*=rot(.78-move.x*6.3/MN);
+	return p;
+}
+vec3 dir(vec2 uv, vec3 p, vec3 t, float z) {
+	vec3 up=vec3(0,1,0),
+	f=N(t-p),
+	r=N(cross(up,f)),
+	u=N(cross(f,r));
+	return mat3(r,u,f)*N(vec3(uv,z));
+}
+vec3 render(vec2 uv) {
+	vec3 col=vec3(0),
+	t=vec3(0,-.5,0), p=org(t), ro=p,
+	rd=dir(uv,p,t,2.);
+	float dd;
+	if (march(p,rd,dd)) {
+		vec3 n=norm(p), lp=vec3(0,3,0), l=N(lp-p),
+		e=N(ro-p), r=reflect(-l,n);
+		float ao=calcAO(p,n), amb=1.+10.*n.y, ld=distance(ro,p),
+		dif=clamp(dot(l,n),.0,1.), atten=1./(1.+ld*.25+ld*ld*.125),
+		shd=shadow(p+n*5e-2,lp), ref=pow(clamp(dot(r,e),.0,1.),8.);
+		col+=dif*shd;
+		col+=clamp(dot(-rd,l),.0,1.)*atten;
+		col+=ref;
+		col*=hue(T*.2-.4*length(p))+amb*ao*atten;
+		col=col*2./(2.+col);
+	}
+	return col;
+}
+void main() {
+	vec2 uv=(FC-.5*R)/MN;
+	vec3 col=render(uv);
+  O=vec4(col,1);
+}</script>
+	<script src="./js/script.js"></script>
+
+</body>
+
+</html>
