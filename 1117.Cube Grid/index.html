@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Only Image Cube Grid Gallery</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+ <p class="cube-scroll-gallery__unsupported" role="status">
+    Sorry, your browser does not support the modern CSS features required for this experiment. This demo uses CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/sibling-index" target="_blank" rel="noopener noreferrer">sibling functions</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@function" target="_blank" rel="noopener noreferrer">@function</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/if" target="_blank" rel="noopener noreferrer">if()</a>, advanced CSS math like <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/sqrt" target="_blank" rel="noopener noreferrer">sqrt()</a>, <a href="https://developer.mozilla.org/de/docs/Web/CSS/Reference/Values/round" target="_blank" rel="noopener noreferrer">round()</a>, and <a href="https://developer.mozilla.org/de/docs/Web/CSS/Reference/Values/mod" target="_blank" rel="noopener noreferrer">mod()</a>, plus native CSS carousel features such as <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-marker-group" target="_blank" rel="noopener noreferrer">::scroll-marker-group</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-marker" target="_blank" rel="noopener noreferrer">::scroll-marker</a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-button" target="_blank" rel="noopener noreferrer">::scroll-button()</a>.<br>Please try it in a browser with support for these features.
+</p>
+
+<p class="cube-scroll-gallery__info" role="note">
+    A CSS-only image gallery made of rotating 3D cubes in a dynamically arranged grid.<br>
+    Photos by <a href="https://picsum.photos/" target="_blank" rel="noopener noreferrer">Picsum Photos</a>.
+</p>
+
+<section class="cube-scroll-gallery">
+    <ul class="cube-scroll-gallery__scroller" aria-label="Image gallery navigation">
+        <li aria-label="Image 1"></li>
+        <li aria-label="Image 2"></li>
+        <li aria-label="Image 3"></li>
+        <li aria-label="Image 4"></li>
+        <li aria-label="Image 5"></li>
+        <li aria-label="Image 6"></li>
+    </ul>
+
+    <div class="cube-scroll-gallery__viewport" aria-hidden="true">
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cube-scroll-gallery__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+</section>
+
+
+</body>
+
+</html>

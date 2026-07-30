@@ -1,0 +1,603 @@
+/*
+global
+*/
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    height: 100vh;
+    background: radial-gradient(rgb(255, 255, 255), rgb(192, 192, 192));
+    display: grid;
+    place-content: center;
+    overflow: hidden;
+}
+
+/*
+properties
+*/
+@property --_nav-progress {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+}
+@property --_nav-index {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+}
+
+@property --_cols {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 1;
+}
+@property --_rows {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 1;
+}
+
+@property --_x {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+}
+@property --_y {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+}
+
+@property --_rx {
+    syntax: '<angle>';
+    inherits: true;
+    initial-value: 0deg;
+}
+@property --_ry {
+    syntax: '<angle>';
+    inherits: true;
+    initial-value: 0deg;
+}
+
+@property --_tz {
+    syntax: '<length>';
+    inherits: true;
+    initial-value: 0px;
+}
+
+/*
+functions
+*/
+@function --_calc-size-min(--s, --d, --p) {
+    result: calc(var(--s) * 2 + var(--d) * 2 + var(--p) * 2);
+}
+
+/*
+cube scroll gallery
+*/
+.cube-scroll-gallery {
+    --_gallery-image-1: url("https://picsum.photos/600/600?random=1&grayscale");
+    --_gallery-image-2: url("https://picsum.photos/600/600?random=2&grayscale");
+    --_gallery-image-3: url("https://picsum.photos/600/600?random=3&grayscale");
+    --_gallery-image-4: url("https://picsum.photos/600/600?random=4&grayscale");
+    --_gallery-image-5: url("https://picsum.photos/600/600?random=5&grayscale");
+    --_gallery-image-6: url("https://picsum.photos/600/600?random=6&grayscale"); 
+
+    --_gallery-slide-count: 6;
+
+    --_gallery-scroll-button-size: 2.5rem;
+    --_gallery-scroll-button-distance: .75rem;
+
+    --_gallery-scroll-marker-group-distance: .75rem;
+
+    --_gallery-scroll-marker-size: .75rem;
+    --_gallery-scroll-marker-size-active: 2.5rem;
+    --_gallery-scroll-marker-distance: .5rem;
+
+    --_gallery-padding: 1rem;
+    --_gallery-size-max: 600px;
+
+    --_gallery-size-min-x: --_calc-size-min(var(--_gallery-scroll-button-size), var(--_gallery-scroll-button-distance), var(--_gallery-padding));
+    --_gallery-size-min-y: --_calc-size-min(var(--_gallery-scroll-marker-size), var(--_gallery-scroll-marker-group-distance), var(--_gallery-padding));
+    --_gallery-size: min(var(--_gallery-size-max), calc(100vw - var(--_gallery-size-min-x)), calc(100vh - var(--_gallery-size-min-y)));
+    
+    --_gallery-control-bg-color-base:   rgb(0 0 0 / .5);
+    --_gallery-control-bg-color-active: rgb(0 0 0 / 1);
+
+    --_gallery-control-transition-duration: .25s;
+    --_gallery-control-transition-timing-function: ease-in-out;
+
+    --_gallery-cube-transition-duration: 750ms;
+    --_gallery-cube-transition-delay: 35ms;
+    --_gallery-cube-transition-timing-function: ease-in-out;
+
+    --_gallery-perspective: 800px;
+
+    --_gallery-cube-gap: 0px;
+
+    --_gallery-z-push-factor: -1.5;
+
+    width: var(--_gallery-size);
+    aspect-ratio: 1;
+    position: relative;
+
+    timeline-scope: --gallery-scroll;
+}
+
+/*
+native scroll controller
+*/
+.cube-scroll-gallery__scroller {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: auto;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    inset: 0;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scroll-marker-group: after;
+    scrollbar-width: none;
+
+    scroll-timeline-name: --gallery-scroll;
+    scroll-timeline-axis: inline;
+
+    pointer-events: none;
+}
+
+.cube-scroll-gallery__scroller::-webkit-scrollbar {
+    display: none;
+}
+
+.cube-scroll-gallery__scroller > li {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+
+    view-timeline: --item inline;
+}
+
+.cube-scroll-gallery__scroller > li:nth-child(1) {
+    scroll-initial-target: nearest;
+}
+
+/*
+scroll markers
+*/
+.cube-scroll-gallery__scroller::scroll-marker-group {
+    --_distance: calc(var(--_gallery-scroll-marker-group-distance) + var(--_gallery-scroll-marker-size));
+
+    position: relative;
+    height: var(--_gallery-scroll-marker-size);
+    display: inline-flex;
+    gap: var(--_gallery-scroll-marker-distance);
+    justify-content: center;
+    left: 50%;
+    top: 100%;
+    translate: -50% var(--_distance);
+}
+
+.cube-scroll-gallery__scroller > li::scroll-marker {
+    content: "";
+    flex: 0 0 auto;
+    width: var(--_gallery-scroll-marker-size);
+    height: var(--_gallery-scroll-marker-size);
+    border-radius: 999px;
+    background-color: var(--_gallery-control-bg-color-base);
+
+    transition-property: background-color;
+    transition-duration: var(--_gallery-control-transition-duration);
+    transition-timing-function: var(--_gallery-control-transition-timing-function);
+
+    animation-name: marker-expand-animation;
+    animation-duration: 1ms;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    animation-timeline: --item;
+    animation-range: cover;
+
+    pointer-events: auto;
+}
+
+.cube-scroll-gallery__scroller > li::scroll-marker:hover,
+.cube-scroll-gallery__scroller > li::scroll-marker:target-current {
+    background-color: var(--_gallery-control-bg-color-active);
+}
+.cube-scroll-gallery__scroller > li::scroll-marker:target-current {
+    cursor: auto;
+}
+
+.cube-scroll-gallery__scroller > li::scroll-marker:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px var(--_gallery-control-bg-color-base);
+}
+
+@keyframes marker-expand-animation {
+    0%,
+    100% {
+        width: var(--_gallery-scroll-marker-size);
+    }
+
+    50% {
+        width: var(--_gallery-scroll-marker-size-active);
+    }
+}
+
+/*
+scroll buttons
+*/
+.cube-scroll-gallery__scroller::scroll-button(*) {
+    --_distance: calc(100% + var(--_gallery-scroll-button-distance));
+
+    position: absolute;
+    top: 50%;
+    width: var(--_gallery-scroll-button-size);
+    aspect-ratio: 1;
+    cursor: pointer;
+    translate: 0 -50%;
+    background-color: var(--_gallery-control-bg-color-base);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cpath fill='%23fff' d='M225 132.3 207.3 150 357.3 300 207.3 450 225 467.65 392.65 300 225 132.3Z'/%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 50%;
+    border: 0;
+
+    transition-property: background-color, opacity;
+    transition-duration: var(--_gallery-control-transition-duration);
+    transition-timing-function: var(--_gallery-control-transition-timing-function);
+
+    pointer-events: auto;
+}
+
+.cube-scroll-gallery__scroller::scroll-button(left) {
+    content: "" / "Previous image";
+    right: var(--_distance);
+    rotate: 180deg;
+}
+
+.cube-scroll-gallery__scroller::scroll-button(right) {
+    content: "" / "Next image";
+    left: var(--_distance);
+}
+
+.cube-scroll-gallery__scroller::scroll-button(*):focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px var(--_gallery-control-bg-color-base);
+}
+
+.cube-scroll-gallery__scroller::scroll-button(*):not(:disabled):hover {
+    background-color: var(--_gallery-control-bg-color-active);
+}
+
+.cube-scroll-gallery__scroller::scroll-button(*):disabled {
+    opacity: .25;
+    cursor: auto;
+}
+
+/*
+cube viewport
+*/
+.cube-scroll-gallery__viewport {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    perspective: var(--_gallery-perspective);
+    transform-style: preserve-3d;
+
+    animation-name: gallery-nav-progress;
+    animation-duration: 1ms;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    animation-timeline: --gallery-scroll;
+
+    --_nav-position: calc(var(--_nav-progress) * (var(--_gallery-slide-count) - 1));
+    --_nav-index: round(var(--_nav-position), 1);
+
+    --_rx: if(
+        style(--_nav-index: 4): 90deg;
+        style(--_nav-index: 5): -90deg;
+        else: 0deg;
+    );
+
+    --_ry: if(
+        style(--_nav-index: 1): -90deg;
+        style(--_nav-index: 2): -180deg;
+        style(--_nav-index: 3): -270deg;
+        else: 0deg;
+    );
+}
+
+@keyframes gallery-nav-progress {
+    from {
+        --_nav-progress: 0;
+    }
+
+    to {
+        --_nav-progress: 1;
+    }
+}
+
+/*
+dynamic cube grid
+*/
+.cube-scroll-gallery__cube {
+    --_i: calc(sibling-index() - 1);
+    --_l: sibling-count();
+
+    --_cols: round(up, sqrt(var(--_l)), 1);
+    --_rows: round(up, calc(var(--_l) / var(--_cols)), 1);
+
+    --_x: mod(var(--_i), var(--_cols));
+    --_y: round(down, calc(var(--_i) / var( --_cols)), 1);
+
+    --_cx: calc((var(--_cols) - 1) * .5);
+    --_cy: calc((var(--_rows) - 1) * .5);
+
+    --_cube-size: calc(
+        (var(--_gallery-size) - ((var(--_cols) - 1) * var(--_gallery-cube-gap))) / var(--_cols)
+    );
+
+    --_translate-z: calc(var(--_cube-size) * .5);
+
+    --_transition-delay-current: calc((var(--_x) + var(--_y)) * var(--_gallery-cube-transition-delay));
+
+    --_z-base: calc(var(--_cube-size) * -.5);
+    --_z-push: calc(var(--_cube-size) * var(--_gallery-z-push-factor));
+    --_z-push-start-delay: calc(var(--_gallery-cube-transition-duration) * .15);
+    
+    --_step: calc(var(--_cube-size) + var(--_gallery-cube-gap));
+
+    width: var(--_cube-size);
+
+    aspect-ratio: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-style: inherit;
+
+    transform:
+        translate(-50%, -50%)
+        translate3d(
+            calc((var(--_x) - var(--_cx)) * var(--_step)),
+            calc((var(--_y) - var(--_cy)) * var(--_step)),
+            calc(var(--_z-base) + var(--_tz))
+        )
+        rotateX(var(--_rx, 0deg))
+        rotateY(var(--_ry, 0deg));
+
+    transition-property: --_rx, --_ry;
+    transition-duration: var(--_gallery-cube-transition-duration);
+    transition-timing-function: var(--_gallery-cube-transition-timing-function);
+    transition-delay: var(--_transition-delay-current);
+
+    animation-name: if(
+        style(--_nav-index: 0): cube-z-push-1-animation;
+        style(--_nav-index: 1): cube-z-push-2-animation;
+        style(--_nav-index: 2): cube-z-push-3-animation;
+        style(--_nav-index: 3): cube-z-push-4-animation;
+        style(--_nav-index: 4): cube-z-push-5-animation;
+        style(--_nav-index: 5): cube-z-push-6-animation;
+        else: cube-z-push-hover-animation;
+    );
+    animation-duration: var(--_gallery-cube-transition-duration);
+    animation-timing-function: var(--_gallery-cube-transition-timing-function);
+    animation-delay: calc(var(--_transition-delay-current) + var(--_z-push-start-delay));
+    animation-fill-mode: none;
+}
+
+@keyframes cube-z-push-1-animation {
+    0%, 100% {--_tz: 0px;}
+    50% {--_tz: var(--_z-push);}
+}
+@keyframes cube-z-push-2-animation {
+    0%, 100% {--_tz: 0px;}
+    50% {--_tz: var(--_z-push);}
+}
+@keyframes cube-z-push-3-animation {
+    0%, 100% {--_tz: 0px;}
+    50% {--_tz: var(--_z-push);}
+}
+@keyframes cube-z-push-4-animation {
+    0%, 100% {--_tz: 0px;}
+    50% {--_tz: var(--_z-push);}
+}
+@keyframes cube-z-push-5-animation {
+    0%, 100% {--_tz: 0px;}
+    50% {--_tz: var(--_z-push);}
+}
+@keyframes cube-z-push-6-animation {
+    0%, 100% {--_tz: 0px;}
+    50% {--_tz: var(--_z-push);}
+}
+
+@keyframes cube-z-push-hover-animation {
+    0% {--_tz: 0px;}
+    100% {--_tz: var(--_z-push);}
+}
+
+.cube-scroll-gallery__cube:hover {
+    --_transition-delay-current: 0s;
+    --_z-push-start-delay: 0s;
+    --_nav-index: -1;
+}
+
+.cube-scroll-gallery__cube > i {
+    --_bg-x: calc(var(--_x) / (var(--_cols) - 1) * 100%);
+    --_bg-y: calc(var(--_y) / (var(--_rows) - 1) * 100%);
+
+    position: absolute;
+    inset: 0;
+    display: block;
+    background-image: var( --_face-image );
+    background-size:
+        calc(100% * var(--_cols))
+        calc(100% * var(--_rows));
+    background-position: var(--_bg-x) var(--_bg-y);
+    background-repeat: no-repeat;
+    backface-visibility: hidden;
+}
+
+.cube-scroll-gallery__cube > i:nth-child(1) {
+    --_face-image: var( --_gallery-image-1 );
+    transform: translateZ(var(--_translate-z));
+}
+
+.cube-scroll-gallery__cube > i:nth-child(2) {
+    --_face-image: var( --_gallery-image-2 );
+    transform: rotateY(90deg) translateZ(var(--_translate-z));
+}
+
+.cube-scroll-gallery__cube > i:nth-child(3) {
+    --_face-image: var( --_gallery-image-3 );
+    transform: rotateY(180deg) translateZ(var(--_translate-z));
+}
+
+.cube-scroll-gallery__cube > i:nth-child(4) {
+    --_face-image: var( --_gallery-image-4 );
+    transform: rotateY(-90deg) translateZ(var(--_translate-z));
+}
+
+.cube-scroll-gallery__cube > i:nth-child(5) {
+    --_face-image: var( --_gallery-image-5 );
+    transform: rotateX(90deg) translateZ(var(--_translate-z));
+}
+
+.cube-scroll-gallery__cube > i:nth-child(6) {
+    --_face-image: var( --_gallery-image-6 );
+    transform: rotateX(-90deg) translateZ(var(--_translate-z));
+}
+
+/*
+info
+*/
+.cube-scroll-gallery__info {
+    position: absolute;
+    left: 0;
+    top: 1rem;
+    width: 100%;
+    padding: 0 1.25rem;
+    font: 1rem/1.5 system-ui, sans-serif;
+    text-align: center;
+    font-size: .875rem;
+    z-index: 1;
+}
+
+p a {
+    color: inherit;
+}
+
+/*
+support check
+*/
+@function --_supports-function-test() returns <length> {
+    result: 1px;
+}
+
+.cube-scroll-gallery__unsupported {
+    display: none;
+}
+
+@supports not (
+    (width: calc(sibling-index() * 1px)) and
+    (width: calc(sibling-count() * 1px)) and
+    (width: calc(sqrt(4) * 1px)) and
+    (width: round(up, 1.5px, 1px)) and
+    (width: round(down, 1.5px, 1px)) and
+    (width: mod(10px, 3px)) and
+    (width: --_supports-function-test()) and
+    (scroll-marker-group: after) and
+    selector(.cube-scroll-gallery__scroller::scroll-marker-group) and
+    selector(.cube-scroll-gallery__scroller > li::scroll-marker) and
+    selector(.cube-scroll-gallery__scroller::scroll-button(left)) and
+    selector(.cube-scroll-gallery__scroller::scroll-button(right))
+) {
+    .cube-scroll-gallery__info,
+    .cube-scroll-gallery {
+        display: none;
+    }
+    .cube-scroll-gallery__unsupported {
+        display: block;
+        max-width: 36rem;
+        padding: 1rem 1.25rem;
+        font: 1rem/1.5 system-ui, sans-serif;
+        text-align: center;
+        font-size: .875rem;
+        background-color: rgb(255 255 255 / 70%);
+    }
+}
+
+/*
+Author badge
+Small signature link back to niklasknaack.de.
+Not part of the actual experiment.
+*/
+.nk {
+    --_size: 48px;
+    --_padding: 1rem;
+    --_blur-filter: 3px;
+    --_color-bg-start: rgba(0,0,0,0.55);
+    --_color-bg-end: rgba(0,0,0,0.80);
+    --_color-bg: var(--_color-bg-start);
+    --_color-logo-start: rgba(255,255,255,0.33); 
+    --_color-logo-end: rgba(255,255,255,1.00); 
+    --_color-logo: var(--_color-logo-start);
+    --_logo-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 251 140'%3E%3Cpath fill='black' d='M 97.35 70 L 95.7 67.8 Q 95.421875 67.47421875 95.15 67.1 94.7875 66.66484375 94.4 66.2 92.9564453125 64.3546875 91.5 62.5 L 70 35.1 69.95 35 42.55 0 0 0 0 140 42.55 140 42.55 62.5 42.6 62.5 103.25 140 152.35 140 140 124.25 139.95 124.15 Q 136.15 119.4 132.4 114.6 131.45 113.4 130.55 112.2 129.8 111.3 129.15 110.4 L 97.55 70 152.35 0 97.35 0 97.35 70 M 201.3 0 L 198.05 4.2 Q 197.65 4.65 197.3 5.15 L 195 8.1 195 7.95 170.75 39.15 170.7 39.1 170.6 39.25 146.6 70 146.65 70.05 158.25 84.9 Q 163.1 91.15 168.05 97.4 168.3 97.75 168.6 98.15 168.8 98.4 169 98.7 L 170.25 100.3 170.6 100.85 170.7 100.95 170.75 100.9 171.6 102 Q 171.75 102.15 171.9 102.35 172.05 102.6 172.25 102.85 173 103.8 173.8 104.8 L 201.2 140 250.8 140 203.2 80.25 Q 202.95 79.95 202.75 79.7 L 201.3 77.95 201.3 77.85 195.1 70.05 195.1 70 250.75 0 201.3 0 Z'/%3E%3C/svg%3E");
+    --_logo-size: 56%;
+    position: fixed;
+    right: var(--_padding);
+    bottom: var(--_padding);
+    z-index: 9999;
+    display: block;
+    width: var(--_size);
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+.nk:before,
+.nk:after { 
+    content: ''; 
+    position: absolute; 
+    transition: background-color 250ms ease-in-out;
+}
+.nk:before {
+    inset: 0;
+    background-color: var(--_color-bg);
+    border-radius: inherit;
+    backdrop-filter: blur(var(--_blur-filter));
+    -webkit-backdrop-filter: blur(var(--_blur-filter));
+    mask:
+        linear-gradient(#000 0 0),
+        var(--_logo-url) center / var(--_logo-size) auto no-repeat;
+    -webkit-mask:
+        linear-gradient(#000 0 0),
+        var(--_logo-url) center / var(--_logo-size) auto no-repeat;
+    mask-composite: exclude;
+    -webkit-mask-composite: xor; 
+}
+.nk:after { 
+    inset: calc((100% - var(--_logo-size)) * .5);
+    background-color: var(--_color-logo);
+    mask: var(--_logo-url) center / contain no-repeat;
+    -webkit-mask: var(--_logo-url) center / contain no-repeat;
+}
+
+.nk:hover {
+    --_color-bg: var(--_color-bg-end);
+    --_color-logo: var(--_color-logo-end);
+}
