@@ -1,0 +1,680 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Faculty Glyphic', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            padding: 20px;
+        }
+        
+        .copy {
+          position: fixed;
+          top: 20px;
+          left: 20px;
+          color: #000;
+          background: rgb(255 255 255 / .7);
+          padding: 10px;
+          border-radius: 5px;
+          font-size: 12px;
+          z-index: 2
+          }
+
+        .buttons-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1200px;
+        }
+
+        .glow-button {
+            background: #11151c;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 12px 22px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 100px;
+            cursor: pointer;
+            outline: none;
+            position: relative;
+            overflow: visible;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s ease-in-out;
+            flex: 0 0 auto;
+            min-width: 100px;
+        }
+
+        .glow-button::before {
+            content: '';
+            position: absolute;
+            width: 45%;
+            height: 55%;
+            border-radius: 50%;
+            filter: blur(20px);
+            opacity: 0.6;
+            z-index: 1;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .glow-button span {
+            position: relative;
+            z-index: 2;
+            white-space: nowrap;
+        }
+
+        .glow-button:hover {
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .glow-button:hover::before {
+            width: 90%;
+            height: 90%;
+            filter: blur(15px);
+            opacity: 0.8;
+        }
+
+        /* Violet */
+        .btn-violet::before { background: #6c5ce7; }
+        .btn-violet:hover {
+            background: #5a4bd1;
+            box-shadow: 0 0 40px 10px rgba(108, 92, 231, 0.7),
+                        0 0 75px 20px rgba(108, 92, 231, 0.4),
+                        inset 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Green */
+        .btn-green::before { background: #00b894; }
+        .btn-green:hover {
+            background: #00a381;
+            box-shadow: 0 0 40px 10px rgba(0, 184, 148, 0.7),
+                        0 0 75px 20px rgba(0, 184, 148, 0.4),
+                        inset 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Pink */
+        .btn-pink::before { background: #fd79a8; }
+        .btn-pink:hover {
+            background: #e86a99;
+            box-shadow: 0 0 40px 10px rgba(253, 121, 168, 0.7),
+                        0 0 75px 20px rgba(253, 121, 168, 0.4),
+                        inset 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Yellow */
+        .btn-yellow::before { background: #fdcb6e; }
+        .btn-yellow:hover {
+            background: #f0b84d;
+            box-shadow: 0 0 40px 10px rgba(253, 203, 110, 0.7),
+                        0 0 75px 20px rgba(253, 203, 110, 0.4),
+                        inset 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+        .btn-yellow span { color: #ffffff; }
+
+        /* Light Violet */
+        .btn-light-violet::before { background: #a29bfe; }
+        .btn-light-violet:hover {
+            background: #8b84e8;
+            box-shadow: 0 0 40px 10px rgba(162, 155, 254, 0.7),
+                        0 0 75px 20px rgba(162, 155, 254, 0.4),
+                        inset 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Red */
+        .btn-red::before { background: #ff7675; }
+        .btn-red:hover {
+            background: #e86a69;
+            box-shadow: 0 0 40px 10px rgba(255, 118, 117, 0.7),
+                        0 0 75px 20px rgba(255, 118, 117, 0.4),
+                        inset 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Blue */
+        .btn-blue::before { background: #74b9ff; }
+        .btn-blue:hover {
+            background: #5a9fd9;
+            box-shadow: 0 0 40px 10px rgba(116, 185, 255, 0.7),
+                        0 0 75px 20px rgba(116, 185, 255, 0.4),
+                        inset 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Light Green */
+        .btn-light-green::before { background: #55efc4; }
+        .btn-light-green:hover {
+            background: #3dd4ab;
+            box-shadow: 0 0 40px 10px rgba(85, 239, 196, 0.7),
+                        0 0 75px 20px rgba(85, 239, 196, 0.4),
+                        inset 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Orange */
+        .btn-orange::before { background: #e17055; }
+        .btn-orange:hover {
+            background: #d63031;
+            box-shadow: 0 0 40px 10px rgba(225, 112, 85, 0.7),
+                        0 0 75px 20px rgba(225, 112, 85, 0.4),
+                        inset 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Turquoise */
+        .btn-turquoise::before { background: #00cec9; }
+        .btn-turquoise:hover {
+            background: #00b3b3;
+            box-shadow: 0 0 40px 10px rgba(0, 206, 201, 0.7),
+                        0 0 75px 20px rgba(0, 206, 201, 0.4),
+                        inset 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Cyan */
+        .btn-cyan::before { background: #0984e3; }
+        .btn-cyan:hover {
+            background: #0770c4;
+            box-shadow: 0 0 40px 10px rgba(9, 132, 227, 0.7),
+                        0 0 75px 20px rgba(9, 132, 227, 0.4),
+                        inset 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Magenta */
+        .btn-magenta::before { background: #e84393; }
+        .btn-magenta:hover {
+            background: #d63384;
+            box-shadow: 0 0 40px 10px rgba(232, 67, 147, 0.7),
+                        0 0 75px 20px rgba(232, 67, 147, 0.4),
+                        inset 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Dark Green */
+        .btn-dark-green::before { background: #00b894; }
+        .btn-dark-green:hover {
+            background: #00997a;
+            box-shadow: 0 0 40px 10px rgba(0, 184, 148, 0.7),
+                        0 0 75px 20px rgba(0, 184, 148, 0.4),
+                        inset 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Yellow-Orange */
+        .btn-yellow-orange::before { background: #fdcb6e; }
+        .btn-yellow-orange:hover {
+            background: #f0b84d;
+            box-shadow: 0 0 40px 10px rgba(253, 203, 110, 0.7),
+                        0 0 75px 20px rgba(253, 203, 110, 0.4),
+                        inset 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+        .btn-yellow-orange span { color: #ffffff; }
+
+        /* Dark Violet */
+        .btn-dark-violet::before { background: #6c5ce7; }
+        .btn-dark-violet:hover {
+            background: #5a4bd1;
+            box-shadow: 0 0 40px 10px rgba(108, 92, 231, 0.7),
+                        0 0 75px 20px rgba(108, 92, 231, 0.4),
+                        inset 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-flip-1::before { background: #f39c12; }
+        .btn-flip-1:hover {
+            background: #e67e22;
+            box-shadow: 0 0 40px 10px rgba(243, 156, 18, 0.7),
+                        0 0 75px 20px rgba(243, 156, 18, 0.4),
+                        inset 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-flip-2::before { background: #2ecc71; }
+        .btn-flip-2:hover {
+            background: #27ae60;
+            box-shadow: 0 0 40px 10px rgba(46, 204, 113, 0.7),
+                        0 0 75px 20px rgba(46, 204, 113, 0.4),
+                        inset 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-flip-3::before { background: #e74c3c; }
+        .btn-flip-3:hover {
+            background: #c0392b;
+            box-shadow: 0 0 40px 10px rgba(231, 76, 60, 0.7),
+                        0 0 75px 20px rgba(231, 76, 60, 0.4),
+                        inset 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .glow-button {
+                font-size: 12px;
+                padding: 8px 14px;
+                min-width: 70px;
+                letter-spacing: 1px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .glow-button {
+                font-size: 10px;
+                padding: 6px 10px;
+                min-width: 55px;
+                letter-spacing: 0.5px;
+            }
+            .buttons-container {
+                gap: 8px;
+            }
+        }
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+            z-index: 999;
+        }
+        .overlay.open {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* --- COMMON MODAL --- */
+        .modal {
+            background: #fff;
+            border-radius: 24px;
+            padding: 40px 48px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            position: relative;
+        }
+        .modal h2 {
+            font-size: 2rem;
+            color: #2d3436;
+            margin-bottom: 12px;
+        }
+        .modal p {
+            font-size: 1.1rem;
+            color: #636e72;
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+        .modal .close-btn {
+            padding: 12px 32px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+            background: #e17055;
+            border: none;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .modal .close-btn:hover {
+            background: #d63031;
+            transform: scale(1.04);
+        }
+
+        /* ============================================ 
+          					EFFECTS 
+           ============================================ */
+
+        /* 1. Top → Bottom */
+        .overlay-top { perspective: 800px; }
+        .overlay-top .modal {
+            transform: translate3d(0, 0, 0) rotateX(90deg);
+            transform-origin: top center;
+            transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .overlay-top.open .modal {
+            transform: translate3d(0, 0, 0) rotateX(0deg);
+        }
+
+        /* 2. Left → Right */
+        .overlay-left { perspective: 1000px; }
+        .overlay-left .modal {
+            transform: translate3d(0, 0, 0) rotateY(90deg);
+            transform-origin: left center;
+            transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .overlay-left.open .modal {
+            transform: translate3d(0, 0, 0) rotateY(0deg);
+        }
+        .overlay-left .modal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 24px;
+            background: linear-gradient(90deg, rgba(0,0,0,0.08) 0%, transparent 60%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+        .overlay-left.open .modal::before { opacity: 1; }
+
+        /* 3. Bottom → Top */
+        .overlay-bottom { perspective: 800px; }
+        .overlay-bottom .modal {
+            transform: translate3d(0, 0, 0) rotateX(-90deg);
+            transform-origin: bottom center;
+            transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .overlay-bottom.open .modal {
+            transform: translate3d(0, 0, 0) rotateX(0deg);
+        }
+
+        /* 4. Right → Left */
+        .overlay-right { perspective: 1000px; }
+        .overlay-right .modal {
+            transform: translate3d(0, 0, 0) rotateY(-90deg);
+            transform-origin: right center;
+            transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .overlay-right.open .modal {
+            transform: translate3d(0, 0, 0) rotateY(0deg);
+        }
+        .overlay-right .modal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 24px;
+            background: linear-gradient(270deg, rgba(0,0,0,0.08) 0%, transparent 60%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+        .overlay-right.open .modal::before { opacity: 1; }
+
+        /* 5. Slide Left → Right */
+        .overlay-slide-left { perspective: 1000px; }
+        .overlay-slide-left .modal {
+            transform: translate3d(-150%, 0, 0) rotateY(90deg);
+            transform-origin: left center;
+            transition: transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .overlay-slide-left.open .modal {
+            transform: translate3d(0, 0, 0) rotateY(0deg);
+        }
+        .overlay-slide-left .modal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 24px;
+            background: linear-gradient(90deg, rgba(0,0,0,0.08) 0%, transparent 60%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.9s ease;
+        }
+        .overlay-slide-left.open .modal::before { opacity: 1; }
+
+        /* 6. Slide Right → Left */
+        .overlay-slide-right { perspective: 1000px; }
+        .overlay-slide-right .modal {
+            transform: translate3d(150%, 0, 0) rotateY(-90deg);
+            transform-origin: right center;
+            transition: transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .overlay-slide-right.open .modal {
+            transform: translate3d(0, 0, 0) rotateY(0deg);
+        }
+        .overlay-slide-right .modal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 24px;
+            background: linear-gradient(270deg, rgba(0,0,0,0.08) 0%, transparent 60%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.9s ease;
+        }
+        .overlay-slide-right.open .modal::before { opacity: 1; }
+
+        /* 7. Slide Top → Bottom */
+        .overlay-slide-top { perspective: 800px; }
+        .overlay-slide-top .modal {
+            transform: translate3d(0, -150%, 0) rotateX(90deg);
+            transform-origin: top center;
+            transition: transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .overlay-slide-top.open .modal {
+            transform: translate3d(0, 0, 0) rotateX(0deg);
+        }
+
+        /* 8. Slide Bottom → Top */
+        .overlay-slide-bottom { perspective: 800px; }
+        .overlay-slide-bottom .modal {
+            transform: translate3d(0, 150%, 0) rotateX(-90deg);
+            transform-origin: bottom center;
+            transition: transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .overlay-slide-bottom.open .modal {
+            transform: translate3d(0, 0, 0) rotateX(0deg);
+        }
+
+        /* 9. Spring */
+        .overlay-spring .modal {
+            transform: scale(0) rotate(0deg);
+            transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        .overlay-spring.open .modal {
+            transform: scale(1) rotate(0deg);
+        }
+
+        /* 11. Zoom + Rotation */
+        .overlay-zoomrotate .modal {
+            transform: scale(0) rotate(45deg);
+            transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .overlay-zoomrotate.open .modal {
+            transform: scale(1) rotate(0deg);
+        }
+
+        /* 12. Perspective 3D */
+        .overlay-perspective { perspective: 600px; }
+        .overlay-perspective .modal {
+            transform: translateZ(-300px) rotateX(30deg);
+            transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .overlay-perspective.open .modal {
+            transform: translateZ(0) rotateX(0deg);
+        }
+
+        /* 13. Origami - Left → Right (existing) */
+        .overlay-origami .modal {
+            transform: rotate(-90deg) scale(0.3) skewX(20deg);
+            transform-origin: top left;
+            transition: transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .overlay-origami.open .modal {
+            transform: rotate(0deg) scale(1) skewX(0deg);
+        }
+
+        /* 14. Bounce */
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.1); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .overlay-bounce .modal {
+            transform: scale(0.3);
+            opacity: 0;
+        }
+        .overlay-bounce.open .modal {
+            animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+        }
+
+        /* 15. Diagonal - Top Left (existing) */
+        .overlay-diagonal .modal {
+            transform: translate3d(-200%, 200%, 0) rotate(45deg);
+            transition: transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .overlay-diagonal.open .modal {
+            transform: translate3d(0, 0, 0) rotate(0deg);
+        }
+
+        /* 16. Convex */
+        .overlay-convex { perspective: 800px; }
+
+        .overlay-convex .modal {
+            transform: scale(0.3) rotateX(20deg) rotateY(20deg);
+            border-radius: 50%;
+            opacity: 0;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 
+                        inset 0 -20px 40px rgba(0,0,0,0.1),
+                        inset 0 20px 40px rgba(255,255,255,0.3);
+            transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        border-radius 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        opacity 0.6s ease,
+                        box-shadow 0.8s ease;
+        }
+
+        .overlay-convex.open .modal {
+            transform: scale(1) rotateX(0deg) rotateY(0deg);
+            border-radius: 24px;
+            opacity: 1;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5),
+                        inset 0 -10px 30px rgba(0,0,0,0.05),
+                        inset 0 10px 30px rgba(255,255,255,0.2);
+        }
+
+        .overlay-convex .modal::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: inherit;
+            background: linear-gradient(145deg, rgba(255,255,255,0.1) 0%, transparent 50%, rgba(0,0,0,0.05) 100%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+
+        .overlay-convex.open .modal::before { opacity: 1; }
+
+        .overlay-convex .modal::after {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: 20%;
+            width: 60%;
+            height: 30%;
+            border-radius: 50%;
+            background: radial-gradient(ellipse, rgba(255,255,255,0.15) 0%, transparent 70%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.8s ease 0.3s;
+        }
+
+        .overlay-convex.open .modal::after { opacity: 1; }
+
+
+        /* 17. Diagonal - Top Right */
+        .overlay-diagonal-top-right .modal {
+            transform: translate3d(200%, -200%, 0) rotate(-45deg);
+            transition: transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .overlay-diagonal-top-right.open .modal {
+            transform: translate3d(0, 0, 0) rotate(0deg);
+        }
+
+        /* 18. Diagonal - Bottom Left */
+        .overlay-diagonal-bottom-left .modal {
+            transform: translate3d(-200%, -200%, 0) rotate(-45deg);
+            transition: transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .overlay-diagonal-bottom-left.open .modal {
+            transform: translate3d(0, 0, 0) rotate(0deg);
+        }
+
+        /* 19. Diagonal - Bottom Right */
+        .overlay-diagonal-bottom-right .modal {
+            transform: translate3d(200%, 200%, 0) rotate(45deg);
+            transition: transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .overlay-diagonal-bottom-right.open .modal {
+            transform: translate3d(0, 0, 0) rotate(0deg);
+        }
+       
+        /* 20. Origami - Right → Left */
+        .overlay-origami-right .modal {
+            transform: rotate(90deg) scale(0.3) skewX(-20deg);
+            transform-origin: top right;
+            transition: transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .overlay-origami-right.open .modal {
+            transform: rotate(0deg) scale(1) skewX(0deg);
+        }
+
+        /* 21. Flip X */
+        .overlay-flip-x { perspective: 800px; }
+        .overlay-flip-x .modal {
+            transform: rotateX(180deg);
+            transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .overlay-flip-x.open .modal {
+            transform: rotateX(0deg);
+        }
+
+        /* 22. Flip Y + Scale (left to right) */
+        .overlay-flip-ys { perspective: 800px; }
+        .overlay-flip-ys .modal {
+            transform: rotateY(180deg) scale(0.3);
+            transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .overlay-flip-ys.open .modal {
+            transform: rotateY(0deg) scale(1);
+        }
+
+        /* 23. Flip Y + Scale (right to left - reverse) */
+        .overlay-flip-ys-reverse { perspective: 800px; }
+        .overlay-flip-ys-reverse .modal {
+            transform: rotateY(-180deg) scale(0.3);
+            transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .overlay-flip-ys-reverse.open .modal {
+            transform: rotateY(0deg) scale(1);
+        }
+
+        /* 24. Flip Mix */
+        .overlay-flip-mix { perspective: 800px; }
+        .overlay-flip-mix .modal {
+            transform: rotateX(180deg) rotateY(180deg) scale(0.3);
+            transition: transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .overlay-flip-mix.open .modal {
+            transform: rotateX(0deg) rotateY(0deg) scale(1);
+        }
+
+        @media (max-width: 600px) {
+            .modal {
+                padding: 28px 20px;
+            }
+            .modal h2 {
+                font-size: 1.6rem;
+            }
+        }

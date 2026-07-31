@@ -1111,3 +1111,4 @@
 |1115| [Password Input](https://github.com/xml12333/HTML_CSS_JS/tree/main/1115.Password%20Input)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1115.Password%20Input/)|
 |1116| [Not Mobius Knot](https://github.com/xml12333/HTML_CSS_JS/tree/main/1116.Not%20Mobius%20Knot)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1116.Not%20Mobius%20Knot/)|
 |1117| [Cube Grid](https://github.com/xml12333/HTML_CSS_JS/tree/main/1117.Cube%20Grid)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1117.Cube%20Grid/)|
+|1118| [Modal Effects](https://github.com/xml12333/HTML_CSS_JS/tree/main/1118.Modal%20Effects)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1118.Modal%20Effects/)|
