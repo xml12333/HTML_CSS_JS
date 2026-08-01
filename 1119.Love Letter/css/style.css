@@ -1,0 +1,58 @@
+body {
+	background: #efefef;
+	overflow: hidden;
+	width: 100vw;
+	height: 100vh;
+}
+svg {
+	display: block;
+	width: 100vw;
+	height: 100vh; touch-action: none;
+	
+}
+#hint {
+	position: fixed;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: sans-serif;
+	font-size: 18px;
+	letter-spacing: 0.08em;
+	color: #999;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.6s ease;
+}
+#flash {
+	position: fixed;
+	inset: 0;
+	background: radial-gradient(
+		circle at 50%,
+		rgba(255, 255, 255, 1),
+		rgba(255, 255, 255, 0.6),
+		rgba(255, 255, 255, 0)
+	);
+	opacity: 0;
+	pointer-events: none;
+}
+.cut-line {
+	animation: dash-flow 0.3s linear infinite;
+}
+@keyframes dash-flow {
+	to {
+		stroke-dashoffset: -10;
+	}
+}
+
+button {
+  font: 13px monospace;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+#controls {
+  position: fixed;
+  top: 12px;
+   right: 12px;
+  z-index: 10;
+}
