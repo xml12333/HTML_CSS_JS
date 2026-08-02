@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=JetBrains+Mono:wght@400;600&display=swap");
+
+/* ------------------------------------------------------------------
+     Design tokens
+  ------------------------------------------------------------------ */
+:root {
+  --bg: #7f93b3;
+  --ink: #f4ede2;
+  --panel-bg: rgba(20, 24, 34, 0.55);
+  --panel-border: rgba(255, 255, 255, 0.14);
+  --accent: #e8863f;
+  --gold: #d4ab55;
+
+  --font-ui: "JetBrains Mono", monospace;
+  --font-display: "Luckiest Guy", cursive;
+
+  --radius-lg: 16px;
+  --radius-md: 10px;
+  --radius-sm: 8px;
+
+  --space-xs: 5px;
+  --space-sm: 8px;
+  --space-md: 14px;
+  --space-lg: 18px;
+  --space-xl: 22px;
+
+  --transition-fast: 0.2s ease;
+  --transition-med: 0.25s ease;
+}
+
+/* ------------------------------------------------------------------
+     Reset / base
+  ------------------------------------------------------------------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  font-family: var(--font-ui);
+  color: var(--ink);
+}
+
+button,
+select,
+input {
+  font-family: inherit;
+  color: inherit;
+}
+
+/* ------------------------------------------------------------------
+     Stage
+  ------------------------------------------------------------------ */
+#stage {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ------------------------------------------------------------------
+     Control panel — vertical, docked to the right edge
+  ------------------------------------------------------------------ */
+#panel {
+  position: fixed;
+  top: 50%;
+  right: var(--space-xl);
+  transform: translateY(-50%);
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  width: 170px;
+  max-height: calc(100vh - 2 * var(--space-xl));
+  overflow-y: auto;
+
+  padding: var(--space-xl) var(--space-lg);
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+#panel.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%) translateX(12px);
+}
+
+#panel::-webkit-scrollbar {
+  width: 6px;
+}
+#panel::-webkit-scrollbar-thumb {
+  background: var(--panel-border);
+  border-radius: 3px;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.control__label {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+
+.control input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 2px;
+  outline: none;
+}
+
+.control input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(232, 134, 63, 0.25);
+  cursor: pointer;
+}
+
+.control input[type="range"]::-moz-range-thumb {
+  width: 13px;
+  height: 13px;
+  border: none;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(232, 134, 63, 0.25);
+  cursor: pointer;
+}
+
+.control select {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-xs) var(--space-sm);
+  font-size: 12px;
+  outline: none;
+}
+
+.btn {
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm) var(--space-md);
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+.btn--accent {
+  background: var(--accent);
+  color: #1a1408;
+}
+.btn--accent:active {
+  transform: scale(0.97);
+}
+
+.btn--ghost {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  color: var(--ink);
+  backdrop-filter: blur(10px);
+}
+
+/* ------------------------------------------------------------------
+     Floating UI
+  ------------------------------------------------------------------ */
+#toggle {
+  position: fixed;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  z-index: 11;
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) 12px;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+
+#toast {
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
+  z-index: 12;
+
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(20, 24, 34, 0.85);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-med);
+}
+
+#toast.is-visible {
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  #panel {
+    width: 150px;
+    right: var(--space-md);
+    padding: var(--space-lg) var(--space-md);
+    gap: var(--space-md);
+  }
+}

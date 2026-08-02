@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Tunnel Echo — Ripple Text Animation in JavaScript</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+  </head>
+    
+  <body>
+  <body>
+
+  <canvas id="stage"></canvas>
+
+  <button id="toggle" class="btn btn--ghost" type="button">SHOW CONTROLS</button>
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <form id="panel" class="is-hidden">
+
+    <div class="control">
+      <label class="control__label" for="textset">Text (top / bottom)</label>
+      <select id="textset">
+        <option value="default">WHO CARES / TRY AGAIN</option>
+        <option value="custom1">DREAM BIG / WORK HARD</option>
+        <option value="custom2">STAY WEIRD / STAY TRUE</option>
+        <option value="custom3">NEVER QUIT / KEEP GOING</option>
+        <option value="custom4">FALL SEVEN / RISE EIGHT</option>
+        <option value="custom5">TRUST TIME / TRUST YOU</option>
+        <option value="custom6">MAKE MOVES / TAKE ACTION</option>
+        <option value="custom7">DOUBT KILLS / MORE DREAMS</option>
+        <option value="custom8">BE BRAVE / OWN HERO</option>
+      </select>
+    </div>
+
+    <div class="control">
+      <label class="control__label" for="palette">Palette</label>
+      <select id="palette">
+        <option value="retro">Retro Pop</option>
+        <option value="sunset">Sunset</option>
+        <option value="mono">Mono Gold</option>
+        <option value="acid">Acid</option>
+        <option value="candy">Candy</option>
+        <option value="ocean">Ocean</option>
+        <option value="neon">Neon Night</option>
+        <option value="earth">Earthtone</option>
+      </select>
+    </div>
+
+    <div class="control">
+      <label class="control__label" for="speed">Speed</label>
+      <input type="range" id="speed" min="0" max="200" value="70">
+    </div>
+
+    <div class="control">
+      <label class="control__label" for="density">Density</label>
+      <input type="range" id="density" min="20" max="140" value="22">
+    </div>
+
+    <div class="control">
+      <label class="control__label" for="wave">Wave</label>
+      <input type="range" id="wave" min="0" max="60" value="8">
+    </div>
+
+    <div class="control">
+      <label class="control__label" for="fontsize">Font size</label>
+      <input type="range" id="fontsize" min="4" max="22" value="19" step="0.5">
+    </div>
+
+    <div class="control">
+      <label class="control__label" for="linewidth">Line width</label>
+      <input type="range" id="linewidth" min="5" max="70" value="14">
+    </div>
+
+    <div class="control">
+      <label class="control__label" for="vanishshape">Vanish shape</label>
+      <select id="vanishshape">
+        <option value="point">Point</option>
+        <option value="line" selected>Line</option>
+      </select>
+    </div>
+
+    <div class="control">
+      <button id="copyparams" class="btn btn--accent" type="button">COPY PARAMS</button>
+    </div>
+  </form>
+
+</body>
+    <script  src="./js/script.js"></script>
+
+  </body>
+  
+</html>
