@@ -1114,3 +1114,4 @@
 |1118| [Modal Effects](https://github.com/xml12333/HTML_CSS_JS/tree/main/1118.Modal%20Effects)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1118.Modal%20Effects/)|
 |1119| [Love Letter](https://github.com/xml12333/HTML_CSS_JS/tree/main/1119.Love%20Letter)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1119.Love%20Letter/)|
 |1120| [Tunnel Echo](https://github.com/xml12333/HTML_CSS_JS/tree/main/1120.Tunnel%20Echo)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1120.Tunnel%20Echo/)|
+|1121| [Event Horizon](https://github.com/xml12333/HTML_CSS_JS/tree/main/1121.Event%20Horizon)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1121.Event%20Horizon/)|
