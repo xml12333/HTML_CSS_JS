@@ -1115,3 +1115,4 @@
 |1119| [Love Letter](https://github.com/xml12333/HTML_CSS_JS/tree/main/1119.Love%20Letter)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1119.Love%20Letter/)|
 |1120| [Tunnel Echo](https://github.com/xml12333/HTML_CSS_JS/tree/main/1120.Tunnel%20Echo)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1120.Tunnel%20Echo/)|
 |1121| [Event Horizon](https://github.com/xml12333/HTML_CSS_JS/tree/main/1121.Event%20Horizon)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1121.Event%20Horizon/)|
+|1122| [Rubik](https://github.com/xml12333/HTML_CSS_JS/tree/main/1122.Rubik)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1122.Rubik/)|

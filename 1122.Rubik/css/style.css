@@ -1,0 +1,305 @@
+/* ============================================================
+   RESET Y BASE
+   ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background: #e8edf2;
+    color: #1a2a3a;
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* ============================================================
+   CONTENEDOR PRINCIPAL (2 columnas)
+   ============================================================ */
+#app {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background: #e8edf2;
+}
+
+/* ============================================================
+   COLUMNA IZQUIERDA: MINIATURAS (mejorada)
+   ============================================================ */
+#image-gallery {
+    width: 180px;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.70);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-right: 1px solid rgba(0, 180, 255, 0.06);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.gallery-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 20px 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    flex-shrink: 0;
+}
+
+.gallery-icon {
+    font-size: 0.8rem;
+    color: #0099ff;
+}
+
+.gallery-header h3 {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: #1a2a3a;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+#gallery-grid {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px 12px 8px;
+    overflow-y: auto;
+}
+
+/* ============================================================
+   CADA ITEM DE LA GALERÍA (moderno)
+   ============================================================ */
+.gallery-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+    background: transparent;
+    border: 1px solid transparent;
+    position: relative;
+}
+
+.gallery-item:hover {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 180, 255, 0.04);
+}
+
+.gallery-item.active {
+    background: rgba(0, 180, 255, 0.06);
+    border-color: rgba(0, 180, 255, 0.12);
+    box-shadow: 0 0 20px rgba(0, 180, 255, 0.04);
+}
+
+.gallery-item.active .gallery-check {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.gallery-preview {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s;
+}
+
+.gallery-item:hover .gallery-preview {
+    transform: scale(1.05);
+}
+
+.gallery-item span {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #1a2a3a;
+    letter-spacing: 1px;
+    flex: 1;
+}
+
+.gallery-check {
+    font-size: 0.6rem;
+    color: #0099ff;
+    opacity: 0;
+    transform: scale(0.6);
+    transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+    width: 20px;
+    text-align: center;
+}
+
+.gallery-footer {
+    padding: 12px 20px 16px;
+    border-top: 1px solid rgba(0, 0, 0, 0.03);
+    flex-shrink: 0;
+}
+
+.status-text {
+    font-size: 0.6rem;
+    color: #88a8b8;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+.status-text.active {
+    color: #0099ff;
+}
+
+/* ============================================================
+   SCROLL DE GALERÍA
+   ============================================================ */
+#gallery-grid::-webkit-scrollbar {
+    width: 3px;
+}
+
+#gallery-grid::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#gallery-grid::-webkit-scrollbar-thumb {
+    background: rgba(0, 180, 255, 0.10);
+    border-radius: 10px;
+}
+
+/* ============================================================
+   COLUMNA DERECHA: CANVAS
+   ============================================================ */
+#canvas-container {
+    flex: 1;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================================================
+   CONTROLES
+   ============================================================ */
+#controls {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    display: flex;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.70);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 10px 18px;
+    border-radius: 40px;
+    border: 1px solid rgba(0, 180, 255, 0.04);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+#controls button {
+    background: rgba(0, 180, 255, 0.04);
+    border: 1px solid rgba(0, 180, 255, 0.04);
+    color: #4a6a7a;
+    padding: 8px 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+#controls button:hover {
+    background: rgba(0, 180, 255, 0.08);
+    border-color: rgba(0, 180, 255, 0.10);
+    color: #1a2a3a;
+}
+
+#controls button.active {
+    background: rgba(0, 180, 255, 0.10);
+    border-color: rgba(0, 180, 255, 0.15);
+    color: #0099ff;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 700px) {
+    #image-gallery {
+        width: 130px;
+    }
+
+    .gallery-preview {
+        width: 24px;
+        height: 24px;
+    }
+
+    .gallery-item {
+        padding: 6px 10px;
+        gap: 8px;
+    }
+
+    .gallery-item span {
+        font-size: 0.55rem;
+    }
+
+    .gallery-header h3 {
+        font-size: 0.5rem;
+        letter-spacing: 2px;
+    }
+
+    .gallery-header {
+        padding: 12px 12px 10px;
+    }
+
+    .gallery-footer {
+        padding: 8px 12px 12px;
+    }
+
+    .status-text {
+        font-size: 0.5rem;
+    }
+
+    #controls {
+        bottom: 10px;
+        padding: 6px 12px;
+        gap: 6px;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 90vw;
+    }
+
+    #controls button {
+        font-size: 0.55rem;
+        padding: 4px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    #image-gallery {
+        width: 100px;
+    }
+
+    .gallery-item span {
+        display: none;
+    }
+
+    .gallery-item {
+        justify-content: center;
+        padding: 6px 6px;
+    }
+
+    .gallery-check {
+        display: none;
+    }
+
+    .gallery-header h3 {
+        font-size: 0.4rem;
+        letter-spacing: 1px;
+    }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rubik Holographic Gallery</title>
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+    <div id="app">
+
+        <!-- ===== COLUMNA IZQUIERDA: MINIATURAS ===== -->
+        <aside id="image-gallery">
+            <div class="gallery-header">
+                <span class="gallery-icon">✦</span>
+                <h3>CARAS DEL CUBO</h3>
+            </div>
+            <div id="gallery-grid">
+                <div class="gallery-item" data-face="white">
+                    <div class="gallery-preview" style="background: #e8e8e8;"></div>
+                    <span>BLANCO</span>
+                    <div class="gallery-check">✓</div>
+                </div>
+                <div class="gallery-item" data-face="red">
+                    <div class="gallery-preview" style="background: #cc2222;"></div>
+                    <span>ROJO</span>
+                    <div class="gallery-check">✓</div>
+                </div>
+                <div class="gallery-item" data-face="blue">
+                    <div class="gallery-preview" style="background: #2244cc;"></div>
+                    <span>AZUL</span>
+                    <div class="gallery-check">✓</div>
+                </div>
+                <div class="gallery-item" data-face="green">
+                    <div class="gallery-preview" style="background: #22aa44;"></div>
+                    <span>VERDE</span>
+                    <div class="gallery-check">✓</div>
+                </div>
+                <div class="gallery-item" data-face="orange">
+                    <div class="gallery-preview" style="background: #dd8822;"></div>
+                    <span>NARANJA</span>
+                    <div class="gallery-check">✓</div>
+                </div>
+                <div class="gallery-item" data-face="yellow">
+                    <div class="gallery-preview" style="background: #ddcc22;"></div>
+                    <span>AMARILLO</span>
+                    <div class="gallery-check">✓</div>
+                </div>
+            </div>
+            <div class="gallery-footer">
+                <span class="status-text" id="status-text">✦ Listo</span>
+            </div>
+        </aside>
+
+        <!-- ===== COLUMNA DERECHA: CUBO 3D ===== -->
+        <div id="canvas-container"></div>
+
+        <!-- ===== CONTROLES ===== -->
+        <div id="controls">
+            <button id="btn-shuffle">🎲 Mezclar</button>
+            <button id="btn-reset">⟲ Reset</button>
+            <button id="btn-auto-spin">▶ Auto-giro</button>
+        </div>
+
+    </div>
+
+    <!-- ===== Three.js ===== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js">
+    </script>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
