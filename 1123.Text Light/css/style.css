@@ -1,0 +1,3 @@
+canvas {display:block;width:100%;height:100vh;position:fixed;pointer-events:none}
+div {position:fixed;top:0;left:0;padding:1em;margin:1em;background:#fffb;backdrop-filter:blur(2px)}
+h1 {font-size:2em}
