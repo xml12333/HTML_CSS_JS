@@ -1,0 +1,93 @@
+@property --amplitude {
+  syntax: "<length>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@property --scale {
+  syntax: "<number>";
+  initial-value: 1;
+  inherits: false;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #0d0f1e;
+  height: 100%;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  max-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  border-radius: 9999999px;
+  background: radial-gradient(
+    circle at 50% 0%,
+    oklch(0.1186 0.0248 260.66),
+    oklch(0.3133 0.1419 260.73),
+    oklch(0.6061 0.2122 260.66)
+  );
+  /*   background: linear-gradient(calc(-1 * var(--angle) + 17deg), oklch(0.6061 0.2122 260.66), oklch(0.3133 0.1419 260.73) 45%, oklch(0.1186 0.0248 260.66) 90%); */
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/sin */
+  --angle: 90deg;
+  --amplitude: 175px;
+  --scale: 1.5;
+  --offset: 30deg;
+  transform: translate(
+      calc(cos(var(--angle)) * var(--amplitude)),
+      calc(sin(var(--angle)) * var(--amplitude) * -1)
+    )
+    scale(var(--scale)) rotate(calc(-1 * var(--angle) + 17deg));
+  mix-blend-mode: lighten;
+  animation: expand 4.01s cubic-bezier(0.8, 0, 0.2, 1) infinite alternate;
+}
+
+.circle:nth-child(1) {
+  --angle: calc(0deg + var(--offset));
+}
+.circle:nth-child(2) {
+  --angle: calc(60deg + var(--offset));
+}
+.circle:nth-child(3) {
+  --angle: calc(120deg + var(--offset));
+}
+.circle:nth-child(4) {
+  --angle: calc(180deg + var(--offset));
+}
+.circle:nth-child(5) {
+  --angle: calc(240deg + var(--offset));
+}
+.circle:nth-child(6) {
+  --angle: calc(300deg + var(--offset));
+}
+
+@keyframes expand {
+  0% {
+    --amplitude: 150px;
+    --scale: 1;
+  }
+  50% {
+    --amplitude: 100px;
+    --scale: 3;
+  }
+  100% {
+    --amplitude: 150px;
+    --scale: 3;
+  }
+}

@@ -1117,3 +1117,4 @@
 |1121| [Event Horizon](https://github.com/xml12333/HTML_CSS_JS/tree/main/1121.Event%20Horizon)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1121.Event%20Horizon/)|
 |1122| [Rubik](https://github.com/xml12333/HTML_CSS_JS/tree/main/1122.Rubik)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1122.Rubik/)|
 |1123| [Text Light](https://github.com/xml12333/HTML_CSS_JS/tree/main/1123.Text%20Light)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1123.Text%20Light/)|
+|1124| [Circle Pattern](https://github.com/xml12333/HTML_CSS_JS/tree/main/1124.Circle%20Pattern)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1124.Circle%20Pattern/)|
