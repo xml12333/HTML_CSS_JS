@@ -1118,3 +1118,4 @@
 |1122| [Rubik](https://github.com/xml12333/HTML_CSS_JS/tree/main/1122.Rubik)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1122.Rubik/)|
 |1123| [Text Light](https://github.com/xml12333/HTML_CSS_JS/tree/main/1123.Text%20Light)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1123.Text%20Light/)|
 |1124| [Circle Pattern](https://github.com/xml12333/HTML_CSS_JS/tree/main/1124.Circle%20Pattern)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1124.Circle%20Pattern/)|
+|1125| [Bauhaus Variation](https://github.com/xml12333/HTML_CSS_JS/tree/main/1125.Bauhaus%20Variation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1125.Bauhaus%20Variation/)|
