@@ -1,0 +1,130 @@
+body {
+  height: 100%;
+  margin: 0;
+}
+#stage {
+  position: fixed;
+  inset: 0;
+  cursor: crosshair;
+  z-index: 2;
+}
+.hint {
+  position: fixed;
+  top: 16px;
+  color: #555;
+  text-align: center;
+  width: 100%;
+}
+
+@property --p {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+.sticker {
+  position: absolute;
+  user-select: none;
+  pointer-events: auto;
+  will-change: transform, opacity;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.16))
+    drop-shadow(0 5px 10px rgba(0, 0, 0, 0.01));
+
+  --fold: calc(var(--minp) + var(--span) * var(--p));
+  --half-plane: polygon(
+    calc((var(--fold) * var(--u0) + var(--big) * var(--w0)) * 1px)
+      calc((var(--fold) * var(--u1) + var(--big) * var(--w1)) * 1px),
+    calc((var(--fold) * var(--u0) - var(--big) * var(--w0)) * 1px)
+      calc((var(--fold) * var(--u1) - var(--big) * var(--w1)) * 1px),
+    calc(
+        (
+            var(--fold) * var(--u0) - var(--big) * var(--w0) - var(--big) *
+              var(--u0)
+          ) *
+          1px
+      )
+      calc(
+        (
+            var(--fold) * var(--u1) - var(--big) * var(--w1) - var(--big) *
+              var(--u1)
+          ) *
+          1px
+      ),
+    calc(
+        (
+            var(--fold) * var(--u0) + var(--big) * var(--w0) - var(--big) *
+              var(--u0)
+          ) *
+          1px
+      )
+      calc(
+        (
+            var(--fold) * var(--u1) + var(--big) * var(--w1) - var(--big) *
+              var(--u1)
+          ) *
+          1px
+      )
+  );
+}
+
+.sticker__layer {
+  position: absolute;
+  inset: 0;
+}
+
+.sticker__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.sticker__flat {
+  clip-path: var(--half-plane);
+}
+
+.sticker__flap-clip {
+  clip-path: var(--half-plane);
+}
+
+.sticker__flap-inner {
+  transform-origin: 0 0;
+  transform: matrix(
+    var(--a),
+    var(--b),
+    var(--b),
+    var(--d),
+    calc(2 * var(--fold) * var(--u0)),
+    calc(2 * var(--fold) * var(--u1))
+  );
+}
+
+.sticker__flap-fill {
+  -webkit-mask-image: var(--src);
+  mask-image: var(--src);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  mask-mode: alpha;
+  background-image: linear-gradient(
+    calc(var(--ca) * 1deg),
+    #cdcdcd calc(var(--p) * 100%),
+    #f3f3f3 calc((var(--p) + (1 - var(--p)) * 0.1) * 100%),
+    #ffffff calc((var(--p) + (1 - var(--p)) * 0.45) * 100%),
+    #f0f0f0 calc((var(--p) + (1 - var(--p)) * 0.82) * 100%),
+    #c6c6c6 100%
+  );
+}
+
+.sticker__flap-shadow {
+  filter: drop-shadow(
+    calc(var(--u0) * var(--s) * -0.05 * (1 - var(--p)) * 1px)
+      calc((var(--u1) * -0.05 + 0.04) * var(--s) * (1 - var(--p)) * 1px)
+      calc(var(--s) * 0.025 * 1px) rgba(0, 0, 0, calc(0.35 * (1 - var(--p))))
+  );
+}
