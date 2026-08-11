@@ -1122,3 +1122,4 @@
 |1126| [Sticker Slapper](https://github.com/xml12333/HTML_CSS_JS/tree/main/1126.Sticker%20Slapper)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1126.Sticker%20Slapper/)|
 |1127| [Bioelectric Engine](https://github.com/xml12333/HTML_CSS_JS/tree/main/1127.Bioelectric%20Engine)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1127.Bioelectric%20Engine/)|
 |1128| [Timeline Grid](https://github.com/xml12333/HTML_CSS_JS/tree/main/1128.Timeline%20Grid)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1128.Timeline%20Grid/)|
+|1129| [Gears](https://github.com/xml12333/HTML_CSS_JS/tree/main/1129.Gears)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1129.Gears/)|

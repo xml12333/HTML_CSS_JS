@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>24 teeth, 16 teeth, one motion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<div class="plate">
+
+  <div class="head">
+    <h1>24 teeth + 16 teeth<br>= <b>one motion</b></h1>
+  </div>
+  <p class="lede">Turn either gear. The other has no say in it, but the marked tooth and the marked gap only find each other again every second turn of the big wheel.</p>
+
+  <hr>
+
+  <svg class="stage" id="stage" viewBox="-88 -82 278 164" tabindex="0" role="img"
+       aria-label="Two meshed gears turning together, marked teeth realigning periodically">
+    <g id="flashwrap">
+      <line class="centres" x1="-70" y1="0" x2="152" y2="0"/>
+      <circle class="pip" cx="60" cy="0" r="2"/>
+    </g>
+    <g id="gearA"></g>
+    <g id="gearB"></g>
+  </svg>
+
+  <dl class="readout">
+    <div><dt>Big wheel</dt><dd id="ta">0.00</dd></div>
+    <div><dt>Small wheel</dt><dd id="tb">0.00</dd></div>
+    <div><dt>Marks meet in</dt><dd id="next">2.00</dd></div>
+    <div><dt>Met</dt><dd id="met" class="hot">0</dd></div>
+    <p class="hint">Drag a gear to turn it<br>&larr; and &rarr; nudge</p>
+  </dl>
+
+</div>
+
+<script type="text/javascript" src="./js/script.js"></script>
+	
+</body>
+</html>

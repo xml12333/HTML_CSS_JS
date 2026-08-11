@@ -1,0 +1,101 @@
+:root{
+    --sheet:    #15222e;
+    --line:     #a8c2d2;
+    --line-dim: #4b657a;
+    --mark:     #eb2893;
+    --font: "Helvetica Neue", Arial, sans-serif;
+  }
+
+  *{ box-sizing:border-box; margin:0; }
+
+  body{
+    min-height:100svh;
+    background:#1b1b1b;
+    color:var(--line);
+    font-family:var(--font);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:28px 22px;
+  }
+
+  .plate{ width:100%; max-width:680px; }
+
+  /* ---- drawing-sheet lettering ---- */
+
+  .head{ display:flex; align-items:baseline; gap:14px; }
+
+  .num{
+    font-size:11px; font-weight:600; letter-spacing:.22em;
+    color:var(--line-dim);
+  }
+
+  h1{
+    font-size:clamp(26px,6.2vw,44px);
+    font-weight:500;
+    letter-spacing:.02em;
+    text-transform:uppercase;
+    line-height:.98;
+  }
+  h1 b{ font-weight:600; color:var(--mark); }
+
+  .lede{
+    font-size:15px; font-weight:400; line-height:1.45;
+    color:var(--line-dim);
+    max-width:44ch;
+    margin-top:12px;
+  }
+
+  hr{
+    border:0; border-top:1px solid var(--line-dim);
+    opacity:.5; margin:20px 0 4px;
+  }
+
+  /* ---- the mechanism ---- */
+
+  .stage{
+    cursor:grab; touch-action:none;
+    display:block; width:100%; height:auto;
+    -webkit-user-select:none; user-select:none;
+  }
+  .stage.turning{ cursor:grabbing; }
+  .stage:focus-visible{ outline:2px solid var(--mark); outline-offset:6px; }
+
+  .tooth{ fill:none; stroke:var(--line); stroke-width:1.4; }
+  .guide{ fill:none; stroke:var(--line-dim); stroke-width:.7; }
+  .guide.dash{ stroke-dasharray:5 4; }
+  .hub{ fill:var(--sheet); stroke:var(--line); stroke-width:1.2; }
+  .mark{ fill:none; stroke:var(--mark); stroke-width:2.2; stroke-linejoin:round; }
+  .cap{ font-size:8px; font-weight:600; letter-spacing:.18em; fill:var(--line-dim); }
+
+  .pip{ fill:var(--mark); opacity:0; }
+  .centres{ stroke:var(--mark); stroke-width:1; opacity:0; }
+
+  .flash .pip{ animation:pip .9s ease-out; }
+  .flash .centres{ animation:beam .9s ease-out; }
+  @keyframes pip{ 0%{ opacity:.9; r:2 } 100%{ opacity:0; r:22 } }
+  @keyframes beam{ 0%,15%{ opacity:.8 } 100%{ opacity:0 } }
+
+  /* ---- readout ---- */
+
+  .readout{
+    display:flex; gap:26px; flex-wrap:wrap;
+    margin-top:6px; padding-top:14px;
+    border-top:1px solid var(--line-dim);
+  }
+  .readout div{ display:flex; flex-direction:column; gap:2px; }
+  .readout dt{
+    font-size:10px; font-weight:600; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--line-dim);
+  }
+  .readout dd{
+    font-size:19px; font-weight:500;
+    font-variant-numeric:tabular-nums;
+    min-width:4.4ch;
+  }
+  .readout dd.hot{ color:var(--mark); }
+
+  .hint{
+    font-size:12.5px; letter-spacing:.04em; color:var(--line-dim);
+    margin-left:auto; align-self:flex-end; text-align:right;
+  }
