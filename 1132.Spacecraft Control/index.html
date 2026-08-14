@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Skeuomorphic spacecraft control panel</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+  <div class="console">
+    <div class="screw tl"></div>
+    <div class="screw tr"></div>
+    <div class="screw bl"></div>
+    <div class="screw br"></div>
+
+    <div class="header">
+      <div class="ship-id">ISV Prometheus · Nav Console Mk.VII</div>
+      <div class="status-strip">
+        <div class="status-led green"></div>
+        <div class="status-led amber"></div>
+        <div class="status-led red"></div>
+      </div>
+    </div>
+
+    <!-- Main row -->
+    <div class="main-row">
+
+      <!-- Left panel -->
+      <div class="panel">
+        <div class="panel-label">Navigation</div>
+
+        <!-- Velocity gauge -->
+        <div class="gauge-wrap">
+          <div class="gauge" id="velocityGauge">
+            <div class="gauge-bg"></div>
+            <canvas class="gauge-ticks" id="gaugeTicks1" width="80" height="80"></canvas>
+            <div class="gauge-needle" id="needle1" style="--angle: 10deg;"></div>
+            <div class="gauge-center"></div>
+          </div>
+          <div class="gauge-name">Velocity</div>
+          <div class="gauge-val" id="velVal">0.78c</div>
+        </div>
+
+        <div class="readout">
+          <div class="readout-label">Distance Travelled</div>
+          <div class="readout-value" id="distVal">4.82</div>
+          <div class="readout-unit">Light Years</div>
+        </div>
+
+        <div class="slider-wrap">
+          <div class="slider-label">Thrust</div>
+          <input type="range" class="skeuo-slider" id="thrustSlider" min="0" max="100" value="65" style="--val: 65%"
+            oninput="this.style.setProperty('--val', this.value+'%')">
+        </div>
+      </div>
+
+      <!-- Center: porthole -->
+      <div class="porthole-wrap">
+        <div style="position:relative; display:inline-block;">
+          <div class="porthole">
+            <canvas id="warpCanvas" width="240" height="240"></canvas>
+          </div>
+          <!-- 8 bolts around the rim -->
+          <div class="porthole-ring" id="boltRing"></div>
+        </div>
+
+        <div class="warp-label" id="warpLabel">Warp Field Active</div>
+
+        <div class="waveform" id="waveform"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-label">Systems</div>
+
+        <div class="bar-meters">
+          <div class="bar-meter">
+            <div class="bar-track">
+              <div class="bar-fill cyan" id="bar1" style="height:78%"></div>
+            </div>
+            <div class="bar-id">SHD</div>
+          </div>
+          <div class="bar-meter">
+            <div class="bar-track">
+              <div class="bar-fill amber" id="bar2" style="height:62%"></div>
+            </div>
+            <div class="bar-id">PWR</div>
+          </div>
+          <div class="bar-meter">
+            <div class="bar-track">
+              <div class="bar-fill green" id="bar3" style="height:91%"></div>
+            </div>
+            <div class="bar-id">OXY</div>
+          </div>
+          <div class="bar-meter">
+            <div class="bar-track">
+              <div class="bar-fill cyan" id="bar4" style="height:45%"></div>
+            </div>
+            <div class="bar-id">COM</div>
+          </div>
+        </div>
+
+        <div class="switches-row">
+          <div class="switch-unit">
+            <div class="switch-guard">
+              <div class="switch-body on" onclick="this.classList.toggle('on')">
+                <div class="switch-toggle"></div>
+              </div>
+            </div>
+            <div class="switch-label">Cryo</div>
+          </div>
+          <div class="switch-unit">
+            <div class="switch-guard">
+              <div class="switch-body" onclick="this.classList.toggle('on')">
+                <div class="switch-toggle"></div>
+              </div>
+            </div>
+            <div class="switch-label">Aux</div>
+          </div>
+          <div class="switch-unit">
+            <div class="switch-guard">
+              <div class="switch-body on" onclick="this.classList.toggle('on')">
+                <div class="switch-toggle"></div>
+              </div>
+            </div>
+            <div class="switch-label">Nav</div>
+          </div>
+        </div>
+
+        <div class="readout">
+          <div class="readout-label">ETA Destination</div>
+          <div class="readout-value" id="etaVal">12:47</div>
+          <div class="readout-unit">Years · Ship Time</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-strip">
+      <div class="coord-display">
+        <div class="coord-label">Coordinates</div>
+        <span id="coordVal">α 14h29m 43° N</span>
+      </div>
+
+      <div class="launch-btn-wrap">
+        <button class="launch-btn" id="launchBtn">JUMP</button>
+        <div class="launch-label">Warp Drive</div>
+      </div>
+
+      <div class="coord-display" style="text-align:right;">
+        <div class="coord-label">Heading Vector</div>
+        <span id="headVal">Δ +0.003° / −0.011°</span>
+      </div>
+    </div>
+
+  </div>
+  <script src="./js/script.js"></script>
+
+</body>
+
+</html>
