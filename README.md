@@ -1126,3 +1126,4 @@
 |1130| [Dreamwave Galaxy](https://github.com/xml12333/HTML_CSS_JS/tree/main/1130.Dreamwave%20Galaxy)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1130.Dreamwave%20Galaxy/)|
 |1131| [360-Degree Navigation](https://github.com/xml12333/HTML_CSS_JS/tree/main/1131.360-Degree%20Navigation)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1131.360-Degree%20Navigation/)|
 |1132| [Spacecraft Control](https://github.com/xml12333/HTML_CSS_JS/tree/main/1132.Spacecraft%20Control)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1132.Spacecraft%20Control/)|
+|1133| [Car Animate](https://github.com/xml12333/HTML_CSS_JS/tree/main/1133.Car%20Animate)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1133.Car%20Animate/)|
