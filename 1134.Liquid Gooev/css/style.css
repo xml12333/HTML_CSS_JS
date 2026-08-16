@@ -1,0 +1,105 @@
+/* Loading Orb — CSS panel */
+
+:root { color-scheme: dark; }
+
+* { margin: 0; box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  background: #05060a;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* one full-window canvas renders the main orb AND every preset thumbnail
+   (each into its own scissor region) — pointer-events off so the buttons work */
+#orb {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading { animation: none; }
+}
+
+/* preset switcher — left column of live, animated orb thumbnails */
+#presets {
+  position: fixed;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+
+.preset {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* transparent window — the canvas draws this preset's orb behind it.
+   the outset box-shadow paints the page background over the square corners,
+   so the orb is visually clipped to the rounded border. */
+.preset__thumb {
+  width: clamp(46px, 8vh, 64px);
+  height: clamp(46px, 8vh, 64px);
+  border-radius: 14px;
+  border: 1px solid rgba(150, 160, 190, 0.3);
+  background: transparent;
+  box-shadow: 0 0 0 7px var(--page-bg, #05060a);
+  transition: border-color .25s, transform .25s;
+}
+
+.preset:hover .preset__thumb {
+  border-color: rgba(185, 205, 255, 0.65);
+  transform: translateY(-2px);
+}
+
+.preset.is-active .preset__thumb {
+  border-color: #ffffff;
+  box-shadow: inset 0 0 0 2px #fff, 0 0 0 7px var(--page-bg, #05060a);
+}
+
+.preset__name {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(200, 206, 228, 0.55);
+  transition: color .25s;
+}
+
+.preset:hover .preset__name,
+.preset.is-active .preset__name { color: #fff; }
+
+/* keep the dat.gui panel above the canvas */
+.dg.main { z-index: 10; }
+
+/* light-background presets: flip the chrome to dark ink so it stays readable */
+body.light-bg .loading { color: rgba(20, 24, 40, 0.7); }
+body.light-bg .preset__name { color: rgba(20, 24, 40, 0.5); }
+body.light-bg .preset:hover .preset__name,
+body.light-bg .preset.is-active .preset__name { color: #000; }
+body.light-bg .preset__thumb { border-color: rgba(40, 50, 80, 0.3); }
+body.light-bg .preset.is-active .preset__thumb {
+  border-color: #000;
+  box-shadow: inset 0 0 0 2px #000, 0 0 0 7px var(--page-bg, #eef2f8);
+}
+
+@media(max-height:640px) {
+  .preset__name {
+    display: none;  
+  }
+}
