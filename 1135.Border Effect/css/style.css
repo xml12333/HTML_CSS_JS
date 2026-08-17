@@ -1,0 +1,330 @@
+/*
+global
+*/
+@import url(//fonts.googleapis.com/css?family=Roboto+Mono);
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    height: 100vh;
+    background-color: rgb(22, 22, 22);
+
+    overflow: hidden;
+    position: relative;
+}
+
+/*
+marching ants
+*/
+.ma {
+    --_ma-color-a: #fff;
+    --_ma-color-b: #111;
+    --_ma-speed: 250ms;
+    --_ma-animation-direction: 1;
+    --_ma-animation-timing-function: linear;
+    --_ma-border-width: 1px;
+    --_ma-size-a: 4px;
+    --_ma-size-b: 4px;
+    --_ma-angle: 45deg;
+    --_ma-size: calc(var(--_ma-size-a) + var(--_ma-size-b));
+    --_ma-shift: calc(var(--_ma-size) / sin(var(--_ma-angle)));
+
+    position: relative;
+}
+
+.ma:before,
+.ma:after {
+    content: '';
+    position: absolute;
+    inset: calc(var(--_ma-border-width) * -1);
+    pointer-events: none;
+    border-radius: inherit;
+
+    background:
+        repeating-linear-gradient(
+            var(--_ma-angle),
+            var(--_ma-color-a) 0 var(--_ma-size-a),
+            var(--_ma-color-b) var(--_ma-size-a) var(--_ma-size)
+        );
+    background-size: var(--_ma-shift) 100%;
+
+    mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    mask-composite: exclude;
+}
+
+.ma:before {
+    padding: 0 var(--_ma-border-width) var(--_ma-border-width) 0;
+    animation: ma-animation-b var(--_ma-speed) var(--_ma-animation-timing-function) infinite;
+}
+
+.ma:after {
+    padding: var(--_ma-border-width) 0 0 var(--_ma-border-width);
+    animation: ma-animation-a var(--_ma-speed) var(--_ma-animation-timing-function) infinite;
+}
+
+.ma:hover:before,
+.ma:hover:after {
+    animation-play-state: paused;
+}
+
+@keyframes ma-animation-b {
+    to {
+        background-position: calc(var(--_ma-shift) * var(--_ma-animation-direction) * -1) 0;
+    }
+}
+
+@keyframes ma-animation-a {
+    to {
+        background-position: calc(var(--_ma-shift) * var(--_ma-animation-direction)) 0;
+    }
+}
+
+/*
+marching ants showcase examples
+*/
+.ma-example {
+    position: absolute;
+
+    width: clamp(11rem, 26vw, 27rem);
+    aspect-ratio: 2 / 1;
+    padding: clamp(.75rem, 2vw, 2rem);
+
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1rem;
+    color: #fff;
+    box-shadow: 0 1rem 3rem rgb(0 0 0 / .66);
+}
+
+.ma-example:hover {
+    z-index: 100;
+}
+
+.ma-example--1 {
+    top: 7%;
+    left: 5%;
+    background-color: rgb(78 61 39);
+    border-radius: 0;
+
+    --_ma-color-a: #fff;
+    --_ma-color-b: #000;
+    --_ma-speed: 550ms;
+    --_ma-animation-direction: 1;
+    --_ma-animation-timing-function: linear;
+    --_ma-border-width: 2px;
+    --_ma-size-a: 2px;
+    --_ma-size-b: 2px;
+}
+
+.ma-example--2 {
+    top: 11%;
+    right: 9%;
+    background-color: rgb(54 70 68);
+    border-radius: 4px;
+
+    --_ma-color-a: rgba(0, 255, 221, .75);
+    --_ma-color-b: transparent;
+    --_ma-speed: 800ms;
+    --_ma-animation-direction: 1;
+    --_ma-animation-timing-function: ease-in-out;
+    --_ma-border-width: 1px;
+    --_ma-size-a: 16px;
+    --_ma-size-b: 3px;
+}
+
+.ma-example--3 {
+    top: 31%;
+    left: 16%;
+    background-color: rgb(42 48 61);
+    border-radius: .25rem;
+
+    --_ma-color-a: #0ff;
+    --_ma-color-b: transparent;
+    --_ma-speed: 450ms;
+    --_ma-animation-direction: -1;
+    --_ma-animation-timing-function: linear;
+    --_ma-border-width: 1px;
+    --_ma-size-a: 4px;
+    --_ma-size-b: 3px;
+}
+
+.ma-example--4 {
+    top: 39%;
+    right: 18%;
+    background-color: rgb(77 54 58);
+    border-radius: .25rem;
+
+    --_ma-color-a: #f00;
+    --_ma-color-b: #111;
+    --_ma-speed: 400ms;
+    --_ma-animation-direction: 1;
+    --_ma-animation-timing-function: linear;
+    --_ma-border-width: 1px;
+    --_ma-size-a: 6px;
+    --_ma-size-b: 9px;
+}
+
+.ma-example--5 {
+    bottom: 9%;
+    left: 9%;
+    background-color: rgb(61 58 42);
+
+    --_ma-color-a: #fc0;
+    --_ma-color-b: #111;
+    --_ma-speed: 999ms;
+    --_ma-animation-direction: -1;
+    --_ma-animation-timing-function: steps(6);
+    --_ma-border-width: 2px;
+    --_ma-size-a: 8px;
+    --_ma-size-b: 4px;
+}
+
+.ma-example--6 {
+    bottom: 11%;
+    right: 6%;
+    background-color: rgb(42 63 72);
+    border-radius: .2rem;
+
+    --_ma-color-a: #fff;
+    --_ma-color-b: #111;
+    --_ma-speed: 750ms;
+    --_ma-animation-direction: 1;
+    --_ma-animation-timing-function: linear;
+    --_ma-border-width: 1px;
+    --_ma-size-a: 5px;
+    --_ma-size-b: 2px;
+}
+
+.ma-example--7 {
+    top: 58%;
+    left: 37%;
+    background-color: rgb(72 55 39);
+    border-radius: .5rem;
+
+    --_ma-color-a: #505050;
+    --_ma-color-b: #fff;
+    --_ma-speed: 300ms;
+    --_ma-animation-direction: -1;
+    --_ma-animation-timing-function: linear;
+    --_ma-border-width: 2px;
+    --_ma-size-a: 4px;
+    --_ma-size-b: 4px;
+}
+
+.ma-example--8 {
+    top: 21%;
+    left: 43%;
+    background-color: rgb(57 49 72);
+    border-radius: 5px;
+
+    --_ma-color-a: #f0f;
+    --_ma-color-b: transparent;
+    --_ma-speed: 400ms;
+    --_ma-animation-direction: 1;
+    --_ma-animation-timing-function: linear;
+    --_ma-border-width: 1px;
+    --_ma-size-a: 4px;
+    --_ma-size-b: 8px;
+}
+
+.ma-example--9 {
+    bottom: 36%;
+    right: 31%;
+    background-color: rgb(67 46 45);
+    border-radius: .15rem;
+
+    --_ma-color-a: rgb(187, 47, 40);
+    --_ma-color-b: rgb(67 46 45);
+    --_ma-speed: 200ms;
+    --_ma-animation-direction: -1;
+    --_ma-animation-timing-function: linear;
+    --_ma-border-width: 1px;
+    --_ma-size-a: 3px;
+    --_ma-size-b: 2px;
+}
+
+.ma-example--10 {
+    top: 38%;
+    left: 39%;
+    background-color: rgb(48 68 54);
+    border-radius: 0;
+
+    --_ma-color-a: #fff;
+    --_ma-color-b: #111;
+    --_ma-speed: 250ms;
+    --_ma-animation-direction: 1;
+    --_ma-animation-timing-function: linear;
+    --_ma-border-width: 1px;
+    --_ma-size-a: 4px;
+    --_ma-size-b: 4px;
+}
+
+/*
+Author badge
+Small signature link back to niklasknaack.de.
+Not part of the actual experiment.
+*/
+.nk {
+    --_size: 48px;
+    --_padding: 1rem;
+    --_blur-filter: 1px;
+    --_color-bg-start: rgba(255,255,255,0.45);
+    --_color-bg-end: rgba(255,255,255,0.80);
+    --_color-bg: var(--_color-bg-start);
+    --_color-logo-start: rgba(0,0,0,0.55); 
+    --_color-logo-end: rgba(0,0,0,1.00); 
+    --_color-logo: var(--_color-logo-start);
+    --_logo-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 251 140'%3E%3Cpath fill='black' d='M 97.35 70 L 95.7 67.8 Q 95.421875 67.47421875 95.15 67.1 94.7875 66.66484375 94.4 66.2 92.9564453125 64.3546875 91.5 62.5 L 70 35.1 69.95 35 42.55 0 0 0 0 140 42.55 140 42.55 62.5 42.6 62.5 103.25 140 152.35 140 140 124.25 139.95 124.15 Q 136.15 119.4 132.4 114.6 131.45 113.4 130.55 112.2 129.8 111.3 129.15 110.4 L 97.55 70 152.35 0 97.35 0 97.35 70 M 201.3 0 L 198.05 4.2 Q 197.65 4.65 197.3 5.15 L 195 8.1 195 7.95 170.75 39.15 170.7 39.1 170.6 39.25 146.6 70 146.65 70.05 158.25 84.9 Q 163.1 91.15 168.05 97.4 168.3 97.75 168.6 98.15 168.8 98.4 169 98.7 L 170.25 100.3 170.6 100.85 170.7 100.95 170.75 100.9 171.6 102 Q 171.75 102.15 171.9 102.35 172.05 102.6 172.25 102.85 173 103.8 173.8 104.8 L 201.2 140 250.8 140 203.2 80.25 Q 202.95 79.95 202.75 79.7 L 201.3 77.95 201.3 77.85 195.1 70.05 195.1 70 250.75 0 201.3 0 Z'/%3E%3C/svg%3E");
+    --_logo-size: 56%;
+    position: fixed;
+    right: var(--_padding);
+    bottom: var(--_padding);
+    z-index: 9999;
+    display: block;
+    width: var(--_size);
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+.nk:before,
+.nk:after { 
+    content: ''; 
+    position: absolute; 
+    transition: background-color 250ms ease-in-out;
+}
+.nk:before {
+    inset: 0;
+    background-color: var(--_color-bg);
+    border-radius: inherit;
+    backdrop-filter: blur(var(--_blur-filter));
+    -webkit-backdrop-filter: blur(var(--_blur-filter));
+    mask:
+        linear-gradient(#000 0 0),
+        var(--_logo-url) center / var(--_logo-size) auto no-repeat;
+    -webkit-mask:
+        linear-gradient(#000 0 0),
+        var(--_logo-url) center / var(--_logo-size) auto no-repeat;
+    mask-composite: exclude;
+    -webkit-mask-composite: xor; 
+}
+.nk:after { 
+    inset: calc((100% - var(--_logo-size)) * .5);
+    background-color: var(--_color-logo);
+    mask: var(--_logo-url) center / contain no-repeat;
+    -webkit-mask: var(--_logo-url) center / contain no-repeat;
+}
+
+.nk:hover {
+    --_color-bg: var(--_color-bg-end);
+    --_color-logo: var(--_color-logo-end);
+}
