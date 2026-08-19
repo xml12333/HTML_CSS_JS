@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Holographic Aizawa Attractor</title>
+
+
+</head>
+
+<body>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aizawa Attractor — Holographic Energy Flow</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Rajdhani:wght@500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #00eaff;
+            --secondary: #ff4df2;
+            --accent: #ffc45c;
+            --glass-bg: rgba(10, 15, 30, 0.45);
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #000000;
+            font-family: 'Space Mono', monospace;
+            color: white;
+            user-select: none;
+        }
+
+        #canvas-container {
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle at 50% 50%, rgba(15, 10, 35, 0.8) 0%, #000000 100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .scanlines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1));
+            background-size: 100% 4px;
+            pointer-events: none;
+            z-index: 5;
+            opacity: 0.4;
+        }
+
+        #ui-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        #formula-container {
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            width: max-content;
+            padding: 12px 16px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            box-shadow:
+                0 20px 40px rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                inset 0 0 20px rgba(0, 234, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            perspective: 1000px;
+            transform-style: preserve-3d;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .corner-accent {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border: 2px solid var(--primary);
+            opacity: 0.6;
+        }
+
+        .ca-tl {
+            top: -2px;
+            left: -2px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .ca-tr {
+            top: -2px;
+            right: -2px;
+            border-left: none;
+            border-bottom: none;
+        }
+
+        .ca-bl {
+            bottom: -2px;
+            left: -2px;
+            border-right: none;
+            border-top: none;
+        }
+
+        .ca-br {
+            bottom: -2px;
+            right: -2px;
+            border-left: none;
+            border-top: none;
+        }
+
+        #scanner-line {
+            position: absolute;
+            left: 0;
+            top: 10%;
+            width: 2px;
+            height: 20px;
+            background: var(--primary);
+            box-shadow: 0 0 15px 3px var(--primary);
+            border-radius: 4px;
+            opacity: 0.8;
+        }
+
+        #attractor-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin: 0 0 2px 0;
+            text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+        }
+
+        #parameter-tag {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--secondary);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .equation {
+            font-size: 0.75rem;
+            margin: 2px 0;
+            color: rgba(255, 255, 255, 0.6);
+            display: flex;
+            align-items: center;
+        }
+
+        .var {
+            color: #ffffff;
+            font-style: italic;
+        }
+
+        .operator {
+            color: rgba(255, 255, 255, 0.3);
+            margin: 0 6px;
+        }
+
+        .constant {
+            color: var(--accent);
+        }
+
+        #loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary);
+            letter-spacing: 8px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-shadow: 0 0 20px rgba(0, 234, 255, 0.8);
+            z-index: 20;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .loader-ring {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(0, 234, 255, 0.1);
+            border-top: 3px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            #formula-container {
+                top: 16px;
+                left: 16px;
+                width: max-content;
+                max-width: 90vw;
+                padding: 12px;
+            }
+
+            #attractor-title {
+                font-size: 0.85rem;
+            }
+
+            .equation {
+                font-size: 0.7rem;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+    }
+</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <div id="loading">
+        <div class="loader-ring"></div>
+        <span>INITIALIZING SEQUENCE</span>
+    </div>
+
+    <div class="scanlines"></div>
+
+    <div id="ui-layer">
+        <div id="formula-container">
+            <div class="corner-accent ca-tl"></div>
+            <div class="corner-accent ca-tr"></div>
+            <div class="corner-accent ca-bl"></div>
+            <div class="corner-accent ca-br"></div>
+
+            <div id="scanner-line"></div>
+
+            <div id="attractor-title">Aizawa System</div>
+            <div id="parameter-tag">Holographic Manifold</div>
+
+            <div class="equation">
+                <span class="var">dx</span><span class="operator">/</span><span class="var">dt</span>
+                <span class="operator">=</span>
+                <span class="operator">(</span><span class="var">z</span><span class="operator">-</span><span
+                    class="constant">b</span><span class="operator">)</span><span class="var">x</span>
+                <span class="operator">-</span><span class="constant">d</span><span class="var">y</span>
+            </div>
+            <div class="equation">
+                <span class="var">dy</span><span class="operator">/</span><span class="var">dt</span>
+                <span class="operator">=</span>
+                <span class="constant">d</span><span class="var">x</span>
+                <span class="operator">+</span>
+                <span class="operator">(</span><span class="var">z</span><span class="operator">-</span><span
+                    class="constant">b</span><span class="operator">)</span><span class="var">y</span>
+            </div>
+            <div class="equation">
+                <span class="var">dz</span><span class="operator">/</span><span class="var">dt</span>
+                <span class="operator">=</span>
+                <span class="constant">c</span>
+                <span class="operator">+</span><span class="constant">a</span><span class="var">z</span>
+                <span class="operator">-</span><span class="var">z</span><sup>3</sup><span
+                    class="operator">/</span><span class="constant">3</span>
+                <span class="operator">-</span>
+                <span class="operator">(</span><span class="var">x</span><sup>2</sup><span
+                    class="operator">+</span><span class="var">y</span><sup>2</sup><span class="operator">)</span><span
+                    class="operator">(</span><span class="constant">1</span><span class="operator">+</span><span
+                    class="constant">e</span><span class="var">z</span><span class="operator">)</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="canvas-container"></div>
+
+    <script type="x-shader/x-vertex" id="vertexshader">
+    attribute float lineDistance;
+    varying vec3 vPos;
+    varying float vDistance;
+
+    void main() {
+        vPos = position;
+        vDistance = lineDistance;
+        vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+        gl_Position = projectionMatrix * mvPosition;
+    }
+</script>
+
+    <script type="x-shader/x-fragment" id="fragmentshader">
+    uniform float time;
+    uniform float phase;
+    uniform float gain;
+
+    varying vec3 vPos;
+    varying float vDistance;
+
+    vec3 palette(float t) {
+        vec3 a = vec3(0.5, 0.5, 0.5);
+        vec3 b = vec3(0.5, 0.5, 0.5);
+        vec3 c = vec3(1.0, 1.0, 1.0);
+        vec3 d = vec3(0.00, 0.33, 0.67);
+        return a + b * cos(6.28318 * (c * t + d));
+    }
+
+    void main() {
+        float height = clamp((vPos.y + 19.0) / 43.0, 0.0, 1.0);
+        float radial = length(vPos.xz) * 0.02;
+
+        float microCell = fract(vDistance * 300.0 - time * 0.5);
+        float microBreak = smoothstep(0.1, 0.3, microCell) * (1.0 - smoothstep(0.7, 0.9, microCell));
+        
+        float dashCell = fract(vDistance * 20.0 - time * 0.1 + phase);
+        float dash = smoothstep(0.0, 0.1, dashCell) * (1.0 - smoothstep(0.8, 0.9, dashCell));
+
+        float mask = mix(1.0, dash * microBreak, 0.8);
+        if (mask < 0.05) discard;
+
+        float cometA = fract(vDistance * 12.0 - time * 0.6 + phase);
+        float cometB = fract(vDistance * 25.0 - time * 0.9 + phase * 1.5);
+
+        float packetA = pow(1.0 - abs(cometA - 0.5) * 2.0, 12.0);
+        float packetB = pow(1.0 - abs(cometB - 0.5) * 2.0, 24.0);
+
+        float wave = pow(sin(vDistance * 40.0 - time * 2.0) * 0.5 + 0.5, 2.0);
+
+        vec3 baseColor = palette(height - time * 0.05 + phase * 0.2);
+        vec3 coreGlow = vec3(1.0, 1.0, 1.0);
+        vec3 cyanAccent = vec3(0.0, 0.9, 1.0);
+        vec3 magentaAccent = vec3(1.0, 0.2, 0.8);
+
+        vec3 color = baseColor * (0.3 + wave * 0.5);
+        color += cyanAccent * packetA * 2.0;
+        color += magentaAccent * packetB * 2.5;
+        color += coreGlow * pow(packetA + packetB, 2.0) * 1.5;
+
+        color *= gain;
+
+        float alpha = mask * (0.5 + wave * 0.3 + packetA + packetB);
+        gl_FragColor = vec4(color, clamp(alpha, 0.0, 1.0));
+    }
+</script>
+
+    <script type="x-shader/x-vertex" id="baseVertexShader">
+    varying vec2 vUv;
+    void main() {
+        vUv = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    }
+</script>
+
+    <script type="x-shader/x-fragment" id="baseFragmentShader">
+    uniform float time;
+    varying vec2 vUv;
+
+    void main() {
+        vec2 uv = vUv * 2.0 - 1.0;
+        float r = length(uv);
+        float angle = atan(uv.y, uv.x);
+
+        if (r > 1.0) discard;
+
+        float rings = fract(r * 15.0 - time * 0.2);
+        float ringLines = smoothstep(0.85, 0.95, rings);
+        
+        float rays = fract(angle * 6.0 / 3.14159);
+        float rayLines = smoothstep(0.95, 1.0, rays) + smoothstep(0.05, 0.0, rays);
+
+        float sweep = mod(angle - time * 1.5, 6.28318) / 6.28318;
+        sweep = pow(1.0 - sweep, 6.0);
+
+        float edge = smoothstep(0.9, 1.0, r);
+        float centerGlow = exp(-r * 5.0);
+
+        vec3 cyan = vec3(0.0, 0.8, 1.0);
+        vec3 blue = vec3(0.1, 0.3, 0.8);
+        
+        vec3 color = cyan * (ringLines * 0.2 + rayLines * 0.1 * r) * (1.0 - r);
+        color += cyan * sweep * 0.5 * (1.0 - r);
+        color += blue * centerGlow * 0.8;
+        color += cyan * edge * 0.5;
+
+        float alpha = (ringLines * 0.3 + rayLines * 0.2 + sweep * 0.6 + centerGlow + edge) * (1.0 - r * 0.8);
+        gl_FragColor = vec4(color, alpha * 0.8);
+    }
+</script>
+
+    <script type="module">
+        import * as THREE from "three";
+        import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+        import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
+        import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
+        import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js";
+
+        const CONFIG = {
+            points: 120000,
+            burnIn: 3000,
+            dt: 0.0045,
+            scale: 16.0,
+            a: 0.95, b: 0.70, c: 0.60, d: 3.50, e: 0.25, f: 0.10
+        };
+
+        const container = document.getElementById("canvas-container");
+        const scene = new THREE.Scene();
+        scene.fog = new THREE.FogExp2(0x0a0515, 0.006);
+
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.set(0, -10, 20);
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.0;
+        container.appendChild(renderer.domElement);
+
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.04;
+        controls.autoRotate = true;
+        controls.autoRotateSpeed = 0.8;
+        controls.target.set(0, 4, 0);
+        controls.maxDistance = 150;
+        controls.minDistance = 20;
+
+        const renderScene = new RenderPass(scene, camera);
+        const bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 0.6, 0.5, 0.2);
+
+        const composer = new EffectComposer(renderer);
+        composer.addPass(renderScene);
+        composer.addPass(bloomPass);
+
+        function derivatives(x, y, z) {
+            const dx = (z - CONFIG.b) * x - CONFIG.d * y;
+            const dy = CONFIG.d * x + (z - CONFIG.b) * y;
+            const dz = CONFIG.c + CONFIG.a * z - (z * z * z) / 3.0 - (x * x + y * y) * (1.0 + CONFIG.e * z) + CONFIG.f * z * x * x * x;
+            return { dx, dy, dz };
+        }
+
+        function rk4Step(state) {
+            const { x, y, z } = state;
+            const dt = CONFIG.dt;
+            const k1 = derivatives(x, y, z);
+            const k2 = derivatives(x + k1.dx * dt * 0.5, y + k1.dy * dt * 0.5, z + k1.dz * dt * 0.5);
+            const k3 = derivatives(x + k2.dx * dt * 0.5, y + k2.dy * dt * 0.5, z + k2.dz * dt * 0.5);
+            const k4 = derivatives(x + k3.dx * dt, y + k3.dy * dt, z + k3.dz * dt);
+
+            state.x += (dt / 6.0) * (k1.dx + 2.0 * k2.dx + 2.0 * k3.dx + k4.dx);
+            state.y += (dt / 6.0) * (k1.dy + 2.0 * k2.dy + 2.0 * k3.dy + k4.dy);
+            state.z += (dt / 6.0) * (k1.dz + 2.0 * k2.dz + 2.0 * k3.dz + k4.dz);
+        }
+
+        function generateGeometry() {
+            const positions = new Float32Array(CONFIG.points * 3);
+            const lineDistances = new Float32Array(CONFIG.points);
+            const state = { x: 0.1, y: 0.0, z: 0.0 };
+
+            for (let i = 0; i < CONFIG.burnIn; i++) rk4Step(state);
+
+            for (let i = 0; i < CONFIG.points; i++) {
+                rk4Step(state);
+                positions[i * 3] = state.x * CONFIG.scale;
+                positions[i * 3 + 1] = state.z * CONFIG.scale;
+                positions[i * 3 + 2] = state.y * CONFIG.scale;
+                lineDistances[i] = i / CONFIG.points;
+            }
+
+            const geometry = new THREE.BufferGeometry();
+            geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+            geometry.setAttribute("lineDistance", new THREE.BufferAttribute(lineDistances, 1));
+
+            geometry.computeBoundingBox();
+            const center = new THREE.Vector3();
+            geometry.boundingBox.getCenter(center);
+            geometry.translate(-center.x, -center.y + 6, -center.z);
+
+            return geometry;
+        }
+
+        const attractorGeo = generateGeometry();
+
+        function createMaterial(phase, gain) {
+            return new THREE.ShaderMaterial({
+                uniforms: { time: { value: 0 }, phase: { value: phase }, gain: { value: gain } },
+                vertexShader: document.getElementById("vertexshader").textContent,
+                fragmentShader: document.getElementById("fragmentshader").textContent,
+                blending: THREE.AdditiveBlending,
+                depthWrite: false,
+                transparent: true
+            });
+        }
+
+        const attractorGroup = new THREE.Group();
+        scene.add(attractorGroup);
+
+        const lines = [
+            new THREE.Line(attractorGeo, createMaterial(0.0, 1.2)),
+            new THREE.Line(attractorGeo, createMaterial(0.3, 0.6)),
+            new THREE.Line(attractorGeo, createMaterial(0.6, 0.4))
+        ];
+
+        lines[1].scale.setScalar(1.01); lines[1].rotation.y = 0.01;
+        lines[2].scale.setScalar(0.99); lines[2].rotation.x = -0.01;
+        lines.forEach(l => attractorGroup.add(l));
+
+        const baseMaterial = new THREE.ShaderMaterial({
+            uniforms: { time: { value: 0 } },
+            vertexShader: document.getElementById("baseVertexShader").textContent,
+            fragmentShader: document.getElementById("baseFragmentShader").textContent,
+            transparent: true,
+            depthWrite: false,
+            blending: THREE.AdditiveBlending,
+            side: THREE.DoubleSide
+        });
+
+        const baseDisk = new THREE.Mesh(new THREE.PlaneGeometry(80, 80), baseMaterial);
+        baseDisk.rotation.x = -Math.PI / 2;
+        baseDisk.position.y = -18;
+        scene.add(baseDisk);
+
+        const pGeo = new THREE.BufferGeometry();
+        const pCount = 1500;
+        const pPos = new Float32Array(pCount * 3);
+        const pSizes = new Float32Array(pCount);
+        for (let i = 0; i < pCount; i++) {
+            pPos[i * 3] = (Math.random() - 0.5) * 200;
+            pPos[i * 3 + 1] = (Math.random() - 0.5) * 200;
+            pPos[i * 3 + 2] = (Math.random() - 0.5) * 200;
+            pSizes[i] = Math.random() * 2;
+        }
+        pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+        pGeo.setAttribute('size', new THREE.BufferAttribute(pSizes, 1));
+
+        const pMat = new THREE.PointsMaterial({
+            color: 0x00eaff,
+            size: 0.5,
+            transparent: true,
+            opacity: 0.4,
+            blending: THREE.AdditiveBlending,
+            depthWrite: false
+        });
+        const particles = new THREE.Points(pGeo, pMat);
+        scene.add(particles);
+
+        const uiContainer = document.getElementById("formula-container");
+        document.addEventListener("mousemove", (e) => {
+            const x = (e.clientX / window.innerWidth - 0.5) * 20;
+            const y = (e.clientY / window.innerHeight - 0.5) * -20;
+            gsap.to(uiContainer, { rotationY: x, rotationX: y, duration: 1, ease: "power2.out" });
+        });
+
+        window.addEventListener("resize", () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            composer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        const clock = new THREE.Clock();
+        function animate() {
+            requestAnimationFrame(animate);
+            const time = clock.getElapsedTime();
+
+            lines.forEach(l => l.material.uniforms.time.value = time);
+            baseMaterial.uniforms.time.value = time;
+
+            attractorGroup.rotation.y = Math.sin(time * 0.2) * 0.2;
+            attractorGroup.position.y = Math.sin(time * 0.5) * 1.5;
+
+            particles.rotation.y = time * 0.02;
+            particles.rotation.z = time * 0.01;
+
+            controls.update();
+            composer.render();
+        }
+
+        setTimeout(() => {
+            const loading = document.getElementById("loading");
+
+            gsap.to(loading, { opacity: 0, duration: 0.5, onComplete: () => loading.remove() });
+
+            gsap.to(camera.position, {
+                x: 0, y: 15, z: 80,
+                duration: 3.5,
+                ease: "power3.inOut"
+            });
+
+            gsap.to(uiContainer, {
+                opacity: 1,
+                y: 0,
+                duration: 1.5,
+                delay: 1.5,
+                ease: "back.out(1.2)"
+            });
+
+            gsap.to("#scanner-line", { top: "80%", duration: 3, ease: "sine.inOut", yoyo: true, repeat: -1 });
+            gsap.to(".corner-accent", { borderColor: "#ff4df2", duration: 2, ease: "sine.inOut", yoyo: true, repeat: -1 });
+
+            animate();
+        }, 1500);
+    </script>
+
+</body>
+
+</html>
