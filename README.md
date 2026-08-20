@@ -1131,3 +1131,4 @@
 |1135| [Border Effect](https://github.com/xml12333/HTML_CSS_JS/tree/main/1135.Border%20Effect)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1135.Border%20Effect/)|
 |1136| [Ephemeral Flower](https://github.com/xml12333/HTML_CSS_JS/tree/main/1136.Ephemeral%20Flower)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1136.Ephemeral%20Flower/)|
 |1137| [Holographic Aizawa Attractor](https://github.com/xml12333/HTML_CSS_JS/tree/main/1137.Holographic%20Aizawa%20Attractor)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1137.Holographic%20Aizawa%20Attractor/)|
+|1138| [Tooltips](https://github.com/xml12333/HTML_CSS_JS/tree/main/1138.Tooltips)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1138.Tooltips/)|
