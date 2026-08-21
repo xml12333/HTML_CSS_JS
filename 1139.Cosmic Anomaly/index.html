@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Cosmic Anomaly Visualizer</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+  <div id="swarm-container"></div>
+  <div class="vignette"></div>
+
+  <div id="info-panel">
+    <div class="info-header">
+      <div>
+        <div class="info-kicker">Telemetry Link</div>
+        <div id="info-title">Pulsar (Neutron Star)</div>
+      </div>
+      <button id="info-toggle" aria-label="Expand telemetry" aria-expanded="false">
+        <span id="info-icon">+</span>
+      </button>
+    </div>
+
+    <div id="info-body">
+      <p id="info-copy"></p>
+      <div class="info-grid">
+        <div class="info-row">
+          <span>Structure</span>
+          <strong id="info-form"></strong>
+        </div>
+        <div class="info-row">
+          <span>Emissions</span>
+          <strong id="info-palette"></strong>
+        </div>
+        <div class="info-row">
+          <span>Dynamics</span>
+          <strong id="info-motion"></strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="nav-container">
+    <button id="btn-prev" class="nav-btn" aria-label="Previous Anomaly">
+      <svg viewBox="0 0 24 24">
+        <path d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+    <div class="nav-label" id="nav-indicator">TARGET 1 / 3</div>
+    <button id="btn-next" class="nav-btn" aria-label="Next Anomaly">
+      <svg viewBox="0 0 24 24">
+        <path d="M9 19l7-7-7-7" />
+      </svg>
+    </button>
+  </div>
+  <script type="module" src="./js/script.js"></script>
+
+</body>
+
+</html>
