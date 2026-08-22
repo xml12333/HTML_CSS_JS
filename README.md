@@ -1133,3 +1133,4 @@
 |1137| [Holographic Aizawa Attractor](https://github.com/xml12333/HTML_CSS_JS/tree/main/1137.Holographic%20Aizawa%20Attractor)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1137.Holographic%20Aizawa%20Attractor/)|
 |1138| [Tooltips](https://github.com/xml12333/HTML_CSS_JS/tree/main/1138.Tooltips)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1138.Tooltips/)|
 |1139| [Cosmic Anomaly](https://github.com/xml12333/HTML_CSS_JS/tree/main/1139.Cosmic%20Anomaly)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1139.Cosmic%20Anomaly/)|
+|1140| [Email Signature](https://github.com/xml12333/HTML_CSS_JS/tree/main/1140.Email%20Signature)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1140.Email%20Signature/)|
