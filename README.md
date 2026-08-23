@@ -1134,3 +1134,4 @@
 |1138| [Tooltips](https://github.com/xml12333/HTML_CSS_JS/tree/main/1138.Tooltips)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1138.Tooltips/)|
 |1139| [Cosmic Anomaly](https://github.com/xml12333/HTML_CSS_JS/tree/main/1139.Cosmic%20Anomaly)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1139.Cosmic%20Anomaly/)|
 |1140| [Email Signature](https://github.com/xml12333/HTML_CSS_JS/tree/main/1140.Email%20Signature)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1140.Email%20Signature/)|
+|1141| [Verity Engine](https://github.com/xml12333/HTML_CSS_JS/tree/main/1141.Verity%20Engine)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1141.Verity%20Engine/)|
