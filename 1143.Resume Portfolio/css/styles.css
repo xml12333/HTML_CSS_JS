@@ -177,7 +177,10 @@ img {
   background-color: var(--first-color-alt);
 }
 /*============ SKILLS ============*/
-
+.skills__list{
+  list-style: initial;
+  padding-left: 2rem;
+}
 /*============ TOOLS ============*/
 
 /*============ EXPERIENCE ============*/
