@@ -177,12 +177,33 @@ img {
   background-color: var(--first-color-alt);
 }
 /*============ SKILLS ============*/
-.skills__list{
+.skills__list {
   list-style: initial;
   padding-left: 2rem;
 }
 /*============ TOOLS ============*/
-
+.tools__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+.tools__item {
+  display: flex;
+  align-items: center;
+  column-gap: 0.25rem;
+  cursor: default;
+  transition: transform 0.4s;
+}
+.tools__item:hover {
+  transform: translateX(0.5rem);
+}
+.tools__img{
+  width: 1rem;
+}
+.tools__name{
+  font-size: var(--small-font-size);
+}
 /*============ EXPERIENCE ============*/
 
 /*============ EDUCATION ============*/
