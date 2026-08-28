@@ -205,7 +205,23 @@ img {
   font-size: var(--small-font-size);
 }
 /*============ EXPERIENCE ============*/
-
+.experience__content{
+  display: grid;
+  row-gap: 2rem;
+}
+.experience__titles{
+  display: grid;
+  row-gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.experience__titles :is(p, h3){
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi-bold);
+}
+.experience__list{
+  list-style: initial;
+  padding-left: 2rem;
+}
 /*============ EDUCATION ============*/
 
 /*============ PROJECTS ============*/
