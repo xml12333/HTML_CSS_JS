@@ -198,32 +198,43 @@ img {
 .tools__item:hover {
   transform: translateX(0.5rem);
 }
-.tools__img{
+.tools__img {
   width: 1rem;
 }
-.tools__name{
+.tools__name {
   font-size: var(--small-font-size);
 }
 /*============ EXPERIENCE ============*/
-.experience__content{
+.experience__content {
   display: grid;
   row-gap: 2rem;
 }
-.experience__titles{
+.experience__titles {
   display: grid;
   row-gap: 0.5rem;
   margin-bottom: 1rem;
 }
-.experience__titles :is(p, h3){
+.experience__titles :is(p, h3) {
   font-size: var(--normal-font-size);
   font-weight: var(--font-semi-bold);
 }
-.experience__list{
+.experience__list {
   list-style: initial;
   padding-left: 2rem;
 }
 /*============ EDUCATION ============*/
-
+.education__list {
+  display: grid;
+  row-gap: 1.5rem;
+}
+.education__item {
+  display: grid;
+  row-gap: 0.25rem;
+}
+.education__item :is(p, h3) {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi-bold);
+}
 /*============ PROJECTS ============*/
 
 /*============ FOOTER ============*/
