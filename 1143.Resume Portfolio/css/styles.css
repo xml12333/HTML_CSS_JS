@@ -236,7 +236,21 @@ img {
   font-weight: var(--font-semi-bold);
 }
 /*============ PROJECTS ============*/
-
+.projects__link{
+  display: block;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.projects__img{
+  transition: transform 0.4s;
+}
+.projects__link:hover .projects__img{
+  transform: scale(1.1);
+}
+.projecs__name{
+  font-size: var(--normal-font-size);
+  margin-bottom: 0.5rem;
+}
 /*============ FOOTER ============*/
 
 /*============ BREAKPOINTS ============*/
