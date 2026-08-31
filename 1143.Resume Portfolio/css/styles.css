@@ -123,9 +123,26 @@ img {
 }
 
 /* Show & hide sections */
-
+.main__area [data-content] {
+  display: none;
+  opacity: 0;
+  transform: translateY(1rem);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+.main-active[data-content]{
+  display: grid;
+}
+.main-active[data-content].show{
+  opacity: 1;
+  transform: translateY(0);
+}
 /* Active button */
-
+.profile__button.main-active{
+  background-color: var(--first-color);
+  transition: background-color 0.3s ease;
+}
 /*============ PROFILE ============*/
 .profile__container {
   padding-top: 1.5rem;
@@ -236,23 +253,46 @@ img {
   font-weight: var(--font-semi-bold);
 }
 /*============ PROJECTS ============*/
-.projects__link{
+.projects__link {
   display: block;
   overflow: hidden;
   margin-bottom: 1rem;
 }
-.projects__img{
+.projects__img {
   transition: transform 0.4s;
 }
-.projects__link:hover .projects__img{
+.projects__link:hover .projects__img {
   transform: scale(1.1);
 }
-.projecs__name{
+.projecs__name {
   font-size: var(--normal-font-size);
   margin-bottom: 0.5rem;
 }
-/*============ FOOTER ============*/
 
+/*============ FOOTER ============*/
+.footer__container {
+  display: flex;
+  font-weight: wrap;
+  justify-content: center;
+  gap: 1rem 2rem;
+  padding-block: 2rem;
+}
+.footer__link {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  color: var(--title-color);
+  transition: transform 0.4s;
+}
+.footer__link i {
+  font-size: 1.5rem;
+}
+.footer__link span {
+  font-weight: var(--font-medium);
+}
+.footer__link:hover {
+  transform: translateY(-0.5rem);
+}
 /*============ BREAKPOINTS ============*/
 /* For medium devices <> */
 
