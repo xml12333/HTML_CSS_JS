@@ -131,15 +131,15 @@ img {
     opacity 0.4s ease,
     transform 0.4s ease;
 }
-.main-active[data-content]{
+.main-active[data-content] {
   display: grid;
 }
-.main-active[data-content].show{
+.main-active[data-content].show {
   opacity: 1;
   transform: translateY(0);
 }
 /* Active button */
-.profile__button.main-active{
+.profile__button.main-active {
   background-color: var(--first-color);
   transition: background-color 0.3s ease;
 }
@@ -175,7 +175,7 @@ img {
   display: flex;
   column-gap: 0.5rem;
   justify-self: center;
-  margin-bottom: 1rem 3rem;
+  margin-block: 1rem 3rem;
   border: 1px solid var(--black-color);
   box-shadow: 0 4px 0 var(--black-color);
   border-radius: 4rem;
@@ -295,5 +295,74 @@ img {
 }
 /*============ BREAKPOINTS ============*/
 /* For medium devices <> */
-
+@media (width >= 768px) {
+  .projects__content {
+    grid-template-columns: repeat(2, 350px);
+  }
+}
 /* For large devices <> */
+@media (width >= 1150px) {
+  .main__content {
+    max-width: 1120px;
+    margin: 4rem auto;
+    padding-inline: 10rem;
+    box-shadow: 0 0 16px hsla(0, 0%, 0%, 0.1);
+  }
+  .main__group {
+    display: grid;
+    grid-template-columns: 320px 530px;
+  }
+  .main__left {
+    border-right: 3px dashed var(--black-color);
+  }
+  .section {
+    padding-block: 2.5rem;
+  }
+  .profile__container {
+    grid-template-columns: 540px 260px;
+    column-gap: 2rem;
+    align-items: center;
+    padding-top: 2rem;
+  }
+  .profile__data {
+    order: -1;
+  }
+  .profile__greeting,
+  .profile__name {
+    text-align: initial;
+  }
+  .profile__buttons {
+    justify-self: flex-start;
+  }
+  .profile__image {
+    margin: 0;
+  }
+  .tools__list {
+    flex-direction: column;
+    align-items: initial;
+  }
+  .tools__item{
+    column-gap: 0.5rem;
+  }
+  .tools__img{
+    width: 1.5rem;
+  }
+  .tools__name{
+    font-size: var(--normal-font-size);
+  }
+  .experience__titles{
+    grid-template-columns: 120px max-content;
+    column-gap: 2rem;
+  }
+  .experience__list{
+    padding-left: 10.5rem;
+  }
+  .education__item{
+    grid-template-columns: 115px max-content;
+    column-gap: 2.5rem;
+  }
+  .footer__container{
+    justify-content: space-between;
+    padding-block: 3rem;
+  }
+}
