@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Little Creature</title>
+	<link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+	<canvas id="canvas"></canvas>
+	<textarea id="codeEditor" class="editor" spellcheck="false" autocorrect="off" autocapitalize="off" translate="no"
+		oninput="render()"></textarea>
+	<pre id="error"></pre>
+	<div id="indicator"></div>
+	<div id="controls">
+		<div class="controls">
+			<input id="btnToggleView" class="icon" type="checkbox" name="toggleView" onclick="toggleView()">
+			<input id="btnToggleResolution" class="icon" type="checkbox" name="toggleResolution"
+				onchange="toggleResolution()">
+			<input id="btnReset" class="icon" type="checkbox" name="reset" onclick="reset()">
+			<input id="btnPlayStop" class="icon" type="checkbox" name="playStop" onclick="togglePlayStop()">
+		</div>
+	</div>
+	<script type="x-shader/x-fragment">#version 300 es
+/*********
+* made by Matthias Hurrle (@atzedent)
+*/
+precision highp float;
+out vec4 O;
+uniform float time;
+uniform vec2 resolution;
+uniform vec2 wheel;
+#define FC gl_FragCoord.xy
+#define R resolution
+#define T (time+wheel.y/1e3)
+#define S smoothstep
+#define SE(v,a) S(a+1./MN,a-1./MN,v)
+#define MN min(R.x,R.y)
+#define hue(a) (.5+.5*sin(3.14*(a)+vec3(0,1,2)))
+vec3 render(vec2 uv, out float d) {
+	vec2 p=uv*6.;
+	float
+	r=length(p),
+	t=atan(p.x,p.y);
+	d=sin(p.x*t-.5)*.9;
+	d-=cos(t*12.-(p.x*.5*sin(T-p.y*1.6-.4*sin(p.x))));
+	float s=d;
+	d=SE(abs(d-r),1.);
+	return max(d*hue(S(.0,1.,s*s)+r),S(1.,.0,sqrt(r))*hue(6.*r));
+}
+void main(void) {
+	vec2 uv=(FC-.5*R)/MN,
+	w=.01*vec2(cos(uv.x+T*.5),cos(uv.y-T*.5-sin(T)));
+	float d, k=400., bg=sin(uv.x*k*2.-uv.y*k)-sin(uv.x*k*2.+uv.y*k);
+	uv*=mat2(cos(.2*sin(T*.1)-vec4(0,11,33,0)));
+	uv+=w-vec2(0,.05);
+	vec3 col=render(uv,d);
+	O=vec4(max(col,mix(.125*bg*clamp(dot(16.*uv,uv),.0,1.),.08,d)),1);
+	vec2 c=FC/R;
+	c*=1.-c.yx;
+	float v=c.x*c.y*25.;
+	O.rgb=tanh(O.rgb)*sqrt(v);
+}</script>
+	<script src="./js/script.js"></script>
+
+</body>
+
+</html>
