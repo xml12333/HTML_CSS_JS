@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hex Comb</title>
+  </head>
+  <body>
+     <main class="demo-shell">
+    <section class="preview-panel" aria-label="Interactive Hex Comb preview">
+      <div class="preview-panel__bar">
+        <div>
+          <strong>Hex Comb</strong>
+          <span>WebGL canvas · responsive · no dependencies</span>
+        </div>
+        <button class="button" id="resetButton" type="button">Reset</button>
+      </div>
+
+      <div class="hex-comb-stage">
+        <canvas
+          class="hex-comb"
+          id="hexComb"
+          data-hex-comb
+          data-background="#080A10"
+          data-base-color="#64C3B1"
+          data-accent-color="#FFFFFF"
+          data-density="15"
+          data-gap="7"
+          data-lift="75"
+          data-reach="18"
+          data-swell="100"
+          data-speed="100"
+          data-grain="3"
+          data-vignette="36"
+          aria-label="Interactive extruded honeycomb. Move the pointer over the canvas to lift nearby cells."
+        ></canvas>
+      </div>
+    </section>
+
+    <aside class="controls" aria-label="Hex Comb settings">
+      <header class="controls__header">
+        <h1>Custom Style</h1>
+        <p>The controls mirror the current canvas data attributes.</p>
+      </header>
+
+      <div class="controls__group controls__group--colors">
+        <label class="color-control">
+          <span>Background</span>
+          <span class="color-control__field">
+            <input type="color" value="#080A10" data-setting="background" aria-label="Background color">
+            <output data-value-for="background">#080A10</output>
+          </span>
+        </label>
+
+        <label class="color-control">
+          <span>Base Color</span>
+          <span class="color-control__field">
+            <input type="color" value="#64C3B1" data-setting="baseColor" aria-label="Base color">
+            <output data-value-for="baseColor">#64C3B1</output>
+          </span>
+        </label>
+
+        <label class="color-control">
+          <span>Accent Color</span>
+          <span class="color-control__field">
+            <input type="color" value="#FFFFFF" data-setting="accentColor" aria-label="Accent color">
+            <output data-value-for="accentColor">#FFFFFF</output>
+          </span>
+        </label>
+      </div>
+
+      <div class="controls__group">
+        <label class="range-control">
+          <span class="range-control__label">Density</span>
+          <input type="range" min="3" max="24" step="1" value="15" data-setting="density">
+          <output data-value-for="density">15</output>
+        </label>
+
+        <label class="range-control">
+          <span class="range-control__label">Gap (%)</span>
+          <input type="range" min="0" max="40" step="1" value="7" data-setting="gap">
+          <output data-value-for="gap">7</output>
+        </label>
+
+        <label class="range-control">
+          <span class="range-control__label">Lift (%)</span>
+          <input type="range" min="0" max="100" step="1" value="75" data-setting="lift">
+          <output data-value-for="lift">75</output>
+        </label>
+
+        <label class="range-control">
+          <span class="range-control__label">Reach (%)</span>
+          <input type="range" min="5" max="100" step="1" value="18" data-setting="reach">
+          <output data-value-for="reach">18</output>
+        </label>
+
+        <label class="range-control">
+          <span class="range-control__label">Swell (%)</span>
+          <input type="range" min="0" max="100" step="1" value="100" data-setting="swell">
+          <output data-value-for="swell">100</output>
+        </label>
+
+        <label class="range-control">
+          <span class="range-control__label">Speed</span>
+          <input type="range" min="0" max="100" step="1" value="100" data-setting="speed">
+          <output data-value-for="speed">100</output>
+        </label>
+      </div>
+
+      <section class="controls__group embed-control" aria-labelledby="embedTitle">
+        <div class="embed-control__header">
+          <div>
+            <h2 id="embedTitle">Canvas Markup</h2>
+            <p>Copy the current look as one canvas element with data parameters.</p>
+          </div>
+          <button class="button button--small" id="copyCanvasButton" type="button">Copy</button>
+        </div>
+
+        <textarea
+          class="embed-control__code"
+          id="canvasMarkup"
+          rows="13"
+          readonly
+          spellcheck="false"
+          aria-label="Canvas markup"
+        ></textarea>
+
+        <p class="embed-control__note">
+          Load <code>hex-comb.js</code> once on the page. Every
+          <code>canvas[data-hex-comb]</code> initializes automatically.
+        </p>
+      </section>
+    </aside>
+  </main>
+    <script src="./js/hex-comb.js"></script>
+  </body>
+</html>
