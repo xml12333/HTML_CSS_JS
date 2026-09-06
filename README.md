@@ -1140,3 +1140,4 @@
 |1144| [Little Creature](https://github.com/xml12333/HTML_CSS_JS/tree/main/1144.Little%20Creature)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1144.Little%20Creature/)|
 |1145| [Hex Comb](https://github.com/xml12333/HTML_CSS_JS/tree/main/1145.Hex%20Comb)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1145.Hex%20Comb/)|
 |1146| [Voxel City Generator](https://github.com/xml12333/HTML_CSS_JS/tree/main/1146.Voxel%20City%20Generator)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1146.Voxel%20City%20Generator/)|
+|1147| [Pendulum Wave](https://github.com/xml12333/HTML_CSS_JS/tree/main/1147.Pendulum%20Wave)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1147.Pendulum%20Wave/)|

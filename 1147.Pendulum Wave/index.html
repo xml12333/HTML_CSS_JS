@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pendulum Wave</title>
+
+
+</head>
+
+<body>
+  <!doctype html>
+  <!--
+  Quick Take: A sequence of pendulum waves tied to the clock: three groups of graded pendulums drift out of step and snap into flat alignment at…
+  Stack: Self-contained; no external libraries.
+  Source: https://datapoems.io/clocks/pendulum-wave/
+  License: MIT
+  Author: Luke Steuber
+-->
+  <html class="collection-export embed" lang="en">
+  <head>
+    <script>window.CLOCK_COLLECTION_EXPORT = true;</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Pendulum Wave</title>
+    <meta name="description"
+      content="A sequence of pendulum waves tied to the clock: three groups of graded pendulums drift out of step and snap into flat alignment at the top of the day, the hour, and the minute. The exact time runs below.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --bg-top: #f8f3e6;
+        --bg: #f3ecda;
+        --bg2: #ebe1c9;
+        --ink: rgba(36, 22, 18, 0.78);
+        --dim: rgba(36, 22, 18, 0.55);
+        --faint: rgba(36, 22, 18, 0.38);
+        --cyan: #241612;
+        --cyan-soft: rgba(36, 22, 18, 0.62);
+        --stage-bg: rgba(36, 22, 18, 0.04);
+        --glow: 0 1px 6px rgba(36, 22, 18, 0.30);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        min-height: 100%;
+        background: var(--bg);
+      }
+
+      body {
+        background: radial-gradient(120% 90% at 50% 0%, var(--bg-top) 0%, var(--bg) 45%, var(--bg2) 100%);
+        color: var(--ink);
+        font-family: 'JetBrains Mono', ui-monospace, monospace;
+        font-weight: 400;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        min-height: 100vh;
+        height: 100dvh;
+        min-height: 100dvh;
+      }
+
+      .frame {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        height: 100%;
+      }
+
+      .stage {
+        position: relative;
+        flex: 1;
+        min-height: 0;
+        box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+      }
+
+      canvas {
+        display: block;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+      }
+
+      .readout {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: max(clamp(24px, 4vw, 40px), env(safe-area-inset-bottom));
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        pointer-events: none;
+        text-shadow: var(--glow);
+      }
+
+      .readout .time {
+        display: flex;
+        align-items: baseline;
+        gap: 0.1ch;
+        font-weight: 700;
+        font-size: clamp(32px, 7vw, 72px);
+        letter-spacing: 0.05em;
+        color: var(--cyan);
+        line-height: 1;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .readout .sep {
+        color: var(--cyan-soft);
+        font-weight: 700;
+        font-size: clamp(26px, 5.5vw, 56px);
+        line-height: 1;
+        margin: 0 0.1ch;
+        animation: blip 1s steps(1, end) infinite;
+      }
+
+      @keyframes blip {
+        50% {
+          opacity: 0.32;
+        }
+      }
+
+      .readout .meta {
+        font-size: clamp(10px, 1.2vw, 14px);
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        color: var(--dim);
+        text-transform: uppercase;
+        text-shadow: none;
+        margin-top: 8px;
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      @media (max-height: 430px) {
+        .readout .meta {
+          display: none;
+        }
+      }
+    </style>
+    <style data-collection-chrome>
+      .dev-controls,
+      .study-controls,
+      .help,
+      .back,
+      .about-backdrop,
+      .about-modal,
+      .about-card,
+      .gate-controls,
+      a[aria-label*='about' i],
+      button[aria-label*='about' i],
+      a[aria-label*='help' i],
+      button[aria-label*='help' i],
+      a[aria-label*='all clocks' i],
+      button[aria-label*='all clocks' i],
+      a[aria-label*='clock gallery' i],
+      button[aria-label*='clock gallery' i] {
+        display: none !important
+      }
+    </style>
+  </head>
+  <body class="collection-export embed">
+    <div class="frame">
+      <div class="stage">
+        <canvas id="wave" role="img"
+          aria-label="A pendulum wave clock. Four complete rows of pendulums span the screen, layered from back to front. Because of their harmonic rates, the rows weave into chaotic crossing patterns and then perfectly align into a flat grid at the top of every minute."></canvas>
+        <div class="readout" aria-hidden="true">
+          <div class="time"><span id="t-h">--</span><span class="sep">:</span><span id="t-m">--</span><span
+              class="sep">:</span><span id="t-s">--</span></div>
+          <div class="meta" id="t-meta">Day -- &middot; Local Time</div>
+        </div>
+      </div>
+    </div>
+    <div class="sr-only" aria-live="polite" id="sr">Loading clock.</div>
+
+    <script>
+      (function () {
+        "use strict";
+
+        var canvas = document.getElementById('wave');
+        var ctx = canvas.getContext('2d', { alpha: true });
+        var elH = document.getElementById('t-h');
+        var elM = document.getElementById('t-m');
+        var elS = document.getElementById('t-s');
+        var elMeta = document.getElementById('t-meta');
+        var sr = document.getElementById('sr');
+
+        function pad2(n) { return n < 10 ? '0' + n : '' + n; }
+
+        var readoutEl = document.querySelector('.readout');
+        var DPR = 1, W = 0, H = 0, roTop = 0, roSlack = 0;
+        function resize() {
+          DPR = Math.min(window.devicePixelRatio || 1, 2);
+          var r = canvas.getBoundingClientRect();
+          W = Math.max(1, Math.round(r.width));
+          H = Math.max(1, Math.round(r.height));
+          canvas.width = Math.round(W * DPR);
+          canvas.height = Math.round(H * DPR);
+          ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+          var rr = readoutEl.getBoundingClientRect();
+          roTop = rr.top - r.top;
+          roSlack = (r.top + H) - rr.bottom;
+        }
+        window.addEventListener('resize', resize);
+        window.addEventListener('orientationchange', function () { requestAnimationFrame(resize); });
+
+        // Five distinct visual interpretations of the Wind Chime
+        var THEMES = [
+          { id: 'fog', name: 'Atmospheric Depth' },
+          { id: 'vol', name: 'Trompe L\'Oeil Volume' },
+          { id: 'glass', name: 'Glass & Brass' },
+          { id: 'blur', name: 'Long Exposure' },
+          { id: 'mobile', name: 'Circular Mobile' }
+        ];
+
+        var paletteIndex = parseInt(localStorage.getItem('pendulum-wave.theme') || '0', 10);
+        if (isNaN(paletteIndex) || paletteIndex < 0) paletteIndex = 0;
+        paletteIndex = paletteIndex % THEMES.length;
+
+        var CY = [36, 22, 18];
+        var BG = '#f3ecda';
+        function cy(a) { return 'rgba(' + CY[0] + ',' + CY[1] + ',' + CY[2] + ',' + a + ')'; }
+
+        function cyclePalette() {
+          paletteIndex = (paletteIndex + 1) % THEMES.length;
+          localStorage.setItem('pendulum-wave.theme', paletteIndex.toString());
+        }
+
+        function setupInteraction() {
+          var downX = 0, downY = 0, downTime = 0, moved = false;
+          document.addEventListener('pointerdown', function (e) {
+            downX = e.clientX; downY = e.clientY;
+            downTime = performance.now();
+            moved = false;
+          });
+          document.addEventListener('pointermove', function (e) {
+            var dx = e.clientX - downX, dy = e.clientY - downY;
+            if (dx * dx + dy * dy > 36) moved = true;
+          });
+          document.addEventListener('pointerup', function (e) {
+            if (moved) return;
+            if (performance.now() - downTime > 500) return;
+            if (e.target.closest('a')) return;
+            cyclePalette();
+          });
+          document.addEventListener('keydown', function (e) {
+            if (e.key === ' ' || e.key.toLowerCase() === 'p') cyclePalette();
+          });
+        }
+
+        // 4 Levels of wind chimes, N pendulums spanning the width per level.
+        var N = 15;
+        var LEVELS = 4;
+        var K_SWINGS = [33, 26, 20, 15];
+
+        // Physically accurate lengths (L ∝ 1/f²) matched to frequencies.
+        var LENGTH_SCALES = [0.25, 0.50, 0.75, 1.0];
+        var RADIUS_SCALES = [0.4, 0.6, 0.8, 1.0];
+        var AMP = 0.3; // radians
+
+        function geom(themeId) {
+          var marginX = Math.max(20, W * 0.04);
+          var maxSpan = W - 2 * marginX;
+
+          // Support beams high up on the screen
+          var bandTop = roSlack + 60;
+          var maxBobR = Math.min((maxSpan / N) * 0.45, 35);
+          // Longest pendulums reach down to just above the readout
+          var bandBot = roTop - roSlack - maxBobR * 1.5;
+          var Lmax = Math.max(80, bandBot - bandTop);
+
+          var levelsData = [];
+          var cX = W / 2;
+
+          for (var lvl = 0; lvl < LEVELS; lvl++) {
+            var L = Math.max(Lmax * LENGTH_SCALES[lvl], 30);
+            var R = Math.max(maxBobR * RADIUS_SCALES[lvl], 4);
+
+            var span = maxSpan;
+            var px = [];
+
+            for (var i = 0; i < N; i++) {
+              if (themeId === 'mobile') {
+                var maxAngle = Math.PI / 2.6;
+                var angle = -maxAngle + (i / Math.max(1, N - 1)) * (2 * maxAngle);
+                px.push(cX + (span / 2) * Math.sin(angle));
+              } else {
+                px.push(marginX + (i * span) / Math.max(1, N - 1));
+              }
+            }
+            levelsData.push({ px: px, span: span, L: L, R: R });
+          }
+          return { levelsData: levelsData, beamY: bandTop };
+        }
+
+        function drawScene(animate) {
+          var now = new Date();
+          var dd = now.getDate(), hh = now.getHours(), mm = now.getMinutes(), ss = now.getSeconds(), ms = now.getMilliseconds();
+          var values = [ss, mm, hh, dd];
+
+          var tcyc = ss + ms / 1000;
+          var theme = THEMES[paletteIndex].id;
+          var g = geom(theme);
+
+          ctx.clearRect(0, 0, W, H);
+
+          var flat = Math.max(0, 1 - Math.min(tcyc, 60 - tcyc) / 1.5);
+          var REWARD = [220, 90, 20];
+          var rR = Math.round(CY[0] + (REWARD[0] - CY[0]) * flat * 0.85);
+          var rG = Math.round(CY[1] + (REWARD[1] - CY[1]) * flat * 0.85);
+          var rB = Math.round(CY[2] + (REWARD[2] - CY[2]) * flat * 0.85);
+          var rC_solid = 'rgba(' + rR + ',' + rG + ',' + rB + ', 1.0)';
+
+          // Support beams
+          for (var lvl = 0; lvl < LEVELS; lvl++) {
+            var ld = g.levelsData[lvl];
+            var bY = g.beamY - (LEVELS - 1 - lvl) * 8;
+            if (theme === 'mobile') bY -= 15;
+
+            ctx.beginPath();
+            if (theme === 'mobile') {
+              ctx.ellipse(W / 2, bY, ld.span / 2 + 15, 12, 0, 0, Math.PI);
+            } else {
+              ctx.moveTo(ld.px[0] - 15, bY);
+              ctx.lineTo(ld.px[N - 1] + 15, bY);
+            }
+
+            if (theme === 'glass') {
+              ctx.strokeStyle = 'rgba(180, 150, 60, 0.5)'; // brass
+            } else if (theme === 'fog') {
+              ctx.strokeStyle = 'rgba(36, 22, 18, ' + (0.1 + lvl * 0.1) + ')';
+            } else if (theme === 'vol') {
+              ctx.shadowColor = 'rgba(0,0,0,0.15)';
+              ctx.shadowBlur = 8;
+              ctx.shadowOffsetY = 10;
+              ctx.strokeStyle = cy(0.3);
+            } else {
+              ctx.strokeStyle = cy(0.1 + lvl * 0.05);
+            }
+            ctx.lineWidth = theme === 'glass' ? 1.5 : 2;
+            ctx.stroke();
+            ctx.shadowColor = 'transparent'; // reset
+          }
+
+          // Header label
+          ctx.fillStyle = cy(0.4);
+          ctx.font = '700 ' + Math.max(9, W * 0.015) + 'px "JetBrains Mono", monospace';
+          ctx.textAlign = 'center'; ctx.textBaseline = 'bottom';
+          ctx.fillText("DAY \xB7 HOUR \xB7 MIN \xB7 SEC", W / 2, g.beamY - 32);
+
+          if (theme === 'glass') {
+            ctx.globalCompositeOperation = 'multiply';
+          }
+
+          for (var lvl = 0; lvl < LEVELS; lvl++) {
+            var ld = g.levelsData[lvl];
+            var rad = ld.R;
+            var isHollow = (lvl % 2 === 0);
+            var valText = pad2(values[lvl]);
+
+            var bY = g.beamY - (LEVELS - 1 - lvl) * 8;
+            if (theme === 'mobile') bY -= 15;
+
+            var baseAlpha = 1.0;
+            if (theme === 'fog') baseAlpha = 0.1 + (lvl * 0.3);
+            var rC = 'rgba(' + rR + ',' + rG + ',' + rB + ',' + (theme === 'glass' ? 0.3 : baseAlpha) + ')';
+
+            for (var i = 0; i < N; i++) {
+              var osc = K_SWINGS[lvl] + i;
+              var phase = 2 * Math.PI * osc * (tcyc / 60);
+              var ang = AMP * Math.sin(phase);
+
+              var startX = ld.px[i];
+              var startY = bY;
+              if (theme === 'mobile') {
+                var tVal = (startX - W / 2) / (ld.span / 2 + 15);
+                tVal = Math.max(-1, Math.min(1, tVal));
+                var tAngle = Math.acos(tVal);
+                startY = bY + 12 * Math.sin(tAngle);
+              }
+
+              var bx = startX + ld.L * Math.sin(ang);
+              var by = startY + ld.L * Math.cos(ang);
+
+              // Rod
+              ctx.beginPath();
+              ctx.moveTo(startX, startY);
+              ctx.lineTo(bx, by);
+
+              var rodThickness = Math.max(1, 4 - lvl);
+              if (theme === 'glass') {
+                ctx.strokeStyle = 'rgba(180, 150, 60, 0.6)';
+                rodThickness = 1.5;
+              } else if (theme === 'vol') {
+                var rgrad = ctx.createLinearGradient(startX - rodThickness, 0, startX + rodThickness, 0);
+                rgrad.addColorStop(0, 'rgba(0,0,0,0.2)');
+                rgrad.addColorStop(0.5, 'rgba(255,255,255,0.7)');
+                rgrad.addColorStop(1, 'rgba(0,0,0,0.4)');
+                ctx.strokeStyle = rgrad;
+                rodThickness += 1;
+              } else {
+                ctx.strokeStyle = 'rgba(36,22,18,' + (0.12 + lvl * 0.04) * baseAlpha + ')';
+              }
+              ctx.lineWidth = rodThickness;
+              ctx.stroke();
+
+              // Pivot
+              if (theme !== 'glass') {
+                ctx.beginPath();
+                ctx.arc(startX, startY, theme === 'vol' ? 3 : 2.5, 0, Math.PI * 2);
+                if (theme === 'vol') {
+                  var pgrad = ctx.createRadialGradient(startX - 1, startY - 1, 0, startX, startY, 3);
+                  pgrad.addColorStop(0, '#fff');
+                  pgrad.addColorStop(1, '#444');
+                  ctx.fillStyle = pgrad;
+                } else {
+                  ctx.fillStyle = 'rgba(36,22,18,' + 0.3 * baseAlpha + ')';
+                }
+                ctx.fill();
+              }
+
+              // Trail
+              if (animate && theme !== 'blur') {
+                ctx.beginPath();
+                for (var sg = 0; sg <= 4; sg++) {
+                  var tb = tcyc - sg * 0.04;
+                  var phaseT = 2 * Math.PI * osc * (tb / 60);
+                  var angT = AMP * Math.sin(phaseT);
+                  var txb = startX + ld.L * Math.sin(angT);
+                  var tyb = startY + ld.L * Math.cos(angT);
+                  if (sg === 0) ctx.moveTo(txb, tyb); else ctx.lineTo(txb, tyb);
+                }
+                if (theme === 'glass') {
+                  ctx.strokeStyle = 'rgba(180, 150, 60, 0.15)';
+                } else {
+                  ctx.strokeStyle = 'rgba(36,22,18,' + 0.05 * baseAlpha + ')';
+                }
+                ctx.lineWidth = rad * 0.7;
+                ctx.lineCap = 'round';
+                ctx.stroke();
+              } else if (animate && theme === 'blur') {
+                for (var sg = 1; sg <= 6; sg++) {
+                  var tb = tcyc - sg * 0.035;
+                  var phaseT = 2 * Math.PI * osc * (tb / 60);
+                  var angT = AMP * Math.sin(phaseT);
+                  var txb = startX + ld.L * Math.sin(angT);
+                  var tyb = startY + ld.L * Math.cos(angT);
+                  ctx.beginPath();
+                  ctx.arc(txb, tyb, rad, 0, Math.PI * 2);
+                  var alphaT = (1 - sg / 6) * 0.2;
+                  if (isHollow) {
+                    ctx.lineWidth = lvl === 0 ? 2.5 : 1.5;
+                    ctx.strokeStyle = 'rgba(' + rR + ',' + rG + ',' + rB + ',' + alphaT + ')';
+                    ctx.stroke();
+                  } else {
+                    ctx.fillStyle = 'rgba(' + rR + ',' + rG + ',' + rB + ',' + alphaT + ')';
+                    ctx.fill();
+                  }
+                }
+              }
+
+              // Bob
+              ctx.beginPath();
+              ctx.arc(bx, by, rad, 0, Math.PI * 2);
+
+              if (theme === 'vol') {
+                ctx.shadowColor = 'rgba(0,0,0,0.25)';
+                ctx.shadowBlur = 8 + flat * 5;
+                ctx.shadowOffsetY = 6;
+              } else if (theme !== 'glass') {
+                ctx.shadowColor = flat > 0.1 ? 'rgba(220,90,20,0.4)' : 'rgba(0,0,0,0.08)';
+                ctx.shadowBlur = animate ? (4 + flat * 10) : 4;
+              } else {
+                ctx.shadowBlur = 0;
+              }
+
+              if (isHollow) {
+                if (theme === 'glass') {
+                  ctx.fillStyle = 'rgba(243,236,218,0.1)';
+                  ctx.fill();
+                  ctx.lineWidth = lvl === 0 ? 3 : 2;
+                  ctx.strokeStyle = 'rgba(' + rR + ',' + rG + ',' + rB + ', 0.6)';
+                  ctx.stroke();
+                  ctx.fillStyle = 'rgba(' + rR + ',' + rG + ',' + rB + ', 0.8)';
+                } else if (theme === 'vol') {
+                  ctx.fillStyle = BG;
+                  ctx.fill();
+                  ctx.lineWidth = rad * 0.4;
+                  var tgrad = ctx.createLinearGradient(bx - rad, by - rad, bx + rad, by + rad);
+                  tgrad.addColorStop(0, 'rgba(255,255,255,0.9)');
+                  tgrad.addColorStop(0.5, rC_solid);
+                  tgrad.addColorStop(1, 'rgba(0,0,0,0.5)');
+                  ctx.strokeStyle = tgrad;
+                  ctx.stroke();
+                  ctx.fillStyle = rC_solid;
+                } else {
+                  ctx.fillStyle = BG;
+                  ctx.fill();
+                  ctx.lineWidth = lvl === 0 ? 2.5 : 1.5;
+                  ctx.strokeStyle = rC;
+                  ctx.stroke();
+                  ctx.fillStyle = rC;
+                }
+              } else {
+                if (theme === 'vol') {
+                  var sgrad = ctx.createRadialGradient(bx - rad * 0.3, by - rad * 0.3, 0, bx, by, rad);
+                  sgrad.addColorStop(0, 'rgba(255,255,255,0.8)');
+                  sgrad.addColorStop(0.6, rC_solid);
+                  sgrad.addColorStop(1, 'rgba(0,0,0,0.6)');
+                  ctx.fillStyle = sgrad;
+                  ctx.fill();
+                  ctx.fillStyle = BG;
+                } else {
+                  ctx.fillStyle = rC;
+                  ctx.fill();
+                  ctx.fillStyle = theme === 'glass' ? 'rgba(255,255,255,0.7)' : BG;
+                }
+              }
+              ctx.shadowColor = 'transparent';
+
+              // Numeric value
+              if (rad > 7) {
+                ctx.font = '700 ' + Math.max(7, Math.round(rad * 0.95)) + 'px "JetBrains Mono", monospace';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+
+                if (theme === 'glass' && !isHollow) {
+                  ctx.fillStyle = 'rgba(255,255,255,0.9)';
+                } else if (theme === 'glass' && isHollow) {
+                  ctx.fillStyle = 'rgba(' + rR + ',' + rG + ',' + rB + ', 1.0)';
+                }
+
+                if (theme === 'blur') ctx.globalAlpha = 0.8;
+                if (theme === 'fog') ctx.globalAlpha = Math.min(1.0, baseAlpha * 1.5);
+
+                ctx.fillText(valText, bx, by + 1);
+                ctx.globalAlpha = 1.0;
+              }
+            }
+          }
+
+          ctx.globalCompositeOperation = 'source-over';
+          return { dd: dd, hh: hh, mm: mm, ss: ss };
+        }
+
+        var lastMin = -1;
+        var lastTheme = -1;
+        var lastDay = -1;
+
+        function updateText(t, pIndex) {
+          elH.textContent = pad2(t.hh); elM.textContent = pad2(t.mm); elS.textContent = pad2(t.ss);
+
+          if (pIndex !== lastTheme || t.dd !== lastDay) {
+            elMeta.innerHTML = 'Day ' + pad2(t.dd) + ' &middot; Local Time &middot; <span style="color:var(--cyan)">' + THEMES[pIndex].name + '</span> &middot; Tap to cycle';
+            lastTheme = pIndex;
+            lastDay = t.dd;
+          }
+
+          if (t.mm !== lastMin) {
+            lastMin = t.mm;
+            sr.textContent = 'Day ' + t.dd + ' at ' + pad2(t.hh) + ':' + pad2(t.mm) + '. Four layers of pendulum waves swing in the ' + THEMES[pIndex].name + ' style.';
+          }
+        }
+
+        var rafId = null;
+        function loop() { var t = drawScene(true); updateText(t, paletteIndex); rafId = requestAnimationFrame(loop); }
+        function renderStatic() { var t = drawScene(false); updateText(t, paletteIndex); }
+        function start() {
+          if (rafId) cancelAnimationFrame(rafId);
+          rafId = requestAnimationFrame(loop);
+        }
+
+        document.addEventListener('visibilitychange', function () {
+          if (document.hidden) { if (rafId) { cancelAnimationFrame(rafId); rafId = null; } }
+          else if (!rafId) { rafId = requestAnimationFrame(loop); }
+        });
+
+        resize();
+        setupInteraction();
+        start();
+      })();
+    </script>
+
+  </body>
+  </html>
+
+</body>
+
+</html>
