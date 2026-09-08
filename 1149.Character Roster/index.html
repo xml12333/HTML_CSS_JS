@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Carve the Moon, Weave the Clouds // Character Roster.</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+  <div class="hsr-wrap">
+
+    <div class="hsr-header">
+      <div class="hsr-logo-box">
+        <svg viewBox="0 0 36 36" fill="none" width="36" height="36">
+          <circle cx="18" cy="18" r="14" fill="#0d2a50" stroke="#2a6aaa" stroke-width="1.5" />
+          <path d="M18 8 L20.5 14 L27 14 L21.5 18 L24 24 L18 20 L12 24 L14.5 18 L9 14 L15.5 14 Z" fill="#4ab3e0"
+            opacity="0.9" />
+          <circle cx="18" cy="18" r="3.5" fill="#00e8b0" opacity="0.9" />
+        </svg>
+      </div>
+      <div>
+        <p class="hsr-eyebrow">Trailblaze</p>
+        <h2 class="hsr-main-title">Character Roster</h2>
+      </div>
+    </div>
+
+    <div class="hsr-body">
+
+      <div class="hsr-sidebar">
+        <div class="hsr-sidebar-header">
+          <span id="sidebarLabel">The Hunt</span>
+          <span class="hsr-sidebar-arrows">>>></span>
+        </div>
+        <div id="countryList"></div>
+      </div>
+
+
+      <div class="hsr-right">
+
+        <div class="hsr-tabs-row" id="regionTabs">
+          <button class="hsr-tab active" data-region="HUNT" onclick="switchRegion('HUNT', this)">The Hunt</button>
+          <button class="hsr-tab" data-region="ERUDITION" onclick="switchRegion('ERUDITION', this)">Erudition</button>
+          <button class="hsr-tab" data-region="HARMONY" onclick="switchRegion('HARMONY', this)">Harmony</button>
+          <button class="hsr-tab" data-region="NIHILITY" onclick="switchRegion('NIHILITY', this)">Nihility</button>
+          <button class="hsr-tab" data-region="DESTRUCTION"
+            onclick="switchRegion('DESTRUCTION', this)">Destruction</button>
+        </div>
+
+
+        <div class="hsr-events" id="eventList"></div>
+
+      </div>
+    </div>
+
+    <p class="hsr-footnote">* Character data reflects current Trailblaze Level progression</p>
+  </div>
+  <script src="./js/script.js"></script>
+
+</body>
+
+</html>
