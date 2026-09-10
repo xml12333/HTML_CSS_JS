@@ -1144,3 +1144,4 @@
 |1148| [Coffee Supply Chain](https://github.com/xml12333/HTML_CSS_JS/tree/main/1148.Coffee%20Supply%20Chain)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1148.Coffee%20Supply%20Chain/)|
 |1149| [Character Roster](https://github.com/xml12333/HTML_CSS_JS/tree/main/1149.Character%20Roster)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1149.Character%20Roster/)|
 |1150| [Flowchart](https://github.com/xml12333/HTML_CSS_JS/tree/main/1150.Flowchart)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1150.Flowchart/)|
+|1151| [Puppet On Strings](https://github.com/xml12333/HTML_CSS_JS/tree/main/1151.Puppet%20On%20Strings)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1151.Puppet%20On%20Strings/)|
