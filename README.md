@@ -1145,3 +1145,4 @@
 |1149| [Character Roster](https://github.com/xml12333/HTML_CSS_JS/tree/main/1149.Character%20Roster)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1149.Character%20Roster/)|
 |1150| [Flowchart](https://github.com/xml12333/HTML_CSS_JS/tree/main/1150.Flowchart)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1150.Flowchart/)|
 |1151| [Puppet On Strings](https://github.com/xml12333/HTML_CSS_JS/tree/main/1151.Puppet%20On%20Strings)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1151.Puppet%20On%20Strings/)|
+|1152| [Water](https://github.com/xml12333/HTML_CSS_JS/tree/main/1152.Water)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1152.Water/)|
