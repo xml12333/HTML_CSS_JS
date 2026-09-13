@@ -1147,3 +1147,4 @@
 |1151| [Puppet On Strings](https://github.com/xml12333/HTML_CSS_JS/tree/main/1151.Puppet%20On%20Strings)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1151.Puppet%20On%20Strings/)|
 |1152| [Water](https://github.com/xml12333/HTML_CSS_JS/tree/main/1152.Water)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1152.Water/)|
 |1153| [Sand](https://github.com/xml12333/HTML_CSS_JS/tree/main/1153.Sand)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1153.Sand/)|
+|1154| [Ocean](https://github.com/xml12333/HTML_CSS_JS/tree/main/1154.Ocean)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1154.Ocean/)|

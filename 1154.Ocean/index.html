@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Ocean Shader 6-Scene Day Cycle (WebGL GLSL)</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Ocean Shader — Five Scenes</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Space+Mono:wght@400;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+	<canvas id="webgl_canvas"></canvas>
+
+	<!-- HUD -->
+	<div id="hud">
+		<div id="hud-top">
+			<div>
+				<div id="scene_name" class="mono">DAWN</div>
+			</div>
+			<div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.4rem;">
+				<div id="hud_pct" class="mono">000%</div>
+				<div id="prog_bar">
+					<div id="prog_fill"></div>
+				</div>
+			</div>
+		</div>
+		<div id="hud-bottom"></div>
+	</div>
+
+	<!-- Scene nav dots -->
+	<div id="scene_dots">
+		<div class="scene-dot active"></div>
+		<div class="scene-dot"></div>
+		<div class="scene-dot"></div>
+		<div class="scene-dot"></div>
+		<div class="scene-dot"></div>
+		<div class="scene-dot"></div>
+	</div>
+
+	<!-- Scroll track -->
+	<div id="scroll_track">
+		<div class="scene-section" id="s0">
+			<div class="h-line"></div>
+			<div class="scene-label">Scene 01 / 06</div>
+			<div class="scene-title">DAWN</div>
+			<div class="scene-desc">Gold floods the horizon. The ocean catches fire — warm amber and peach across every
+				swell.</div>
+		</div>
+		<div class="scene-section" id="s1">
+			<div class="h-line"></div>
+			<div class="scene-label">Scene 02 / 06</div>
+			<div class="scene-title">MIDDAY</div>
+			<div class="scene-desc">Full light. The sea turns a deep cerulean, scattering white specular across every
+				swell.</div>
+		</div>
+		<div class="scene-section" id="s2">
+			<div class="h-line"></div>
+			<div class="scene-label">Scene 03 / 06</div>
+			<div class="scene-title">DUSK</div>
+			<div class="scene-desc">The sun descends in copper and ember. Long reflections stretch across the darkening
+				water.</div>
+		</div>
+		<div class="scene-section" id="s3">
+			<div class="h-line"></div>
+			<div class="scene-label">Scene 04 / 06</div>
+			<div class="scene-title">STORM</div>
+			<div class="scene-desc">Waves amplify. The sky thickens. A darkness that isn't night — something coming from
+				the west.</div>
+		</div>
+		<div class="scene-section" id="s4">
+			<div class="h-line"></div>
+			<div class="scene-label">Scene 05 / 06</div>
+			<div class="scene-title">NIGHT</div>
+			<div class="scene-desc">Stars emerge. The moon leaves a silver path on the swells. Nothing moves but the
+				ocean.</div>
+		</div>
+		<div class="scene-section" id="s5">
+			<div class="h-line"></div>
+			<div class="scene-label">Scene 06 / 06</div>
+			<div class="scene-title">PRE-DAWN</div>
+			<div class="scene-desc">The last stars hold. A red-orange ember glows at the edge of the world, not yet a
+				sun.</div>
+		</div>
+	</div>
+	<script src="./js/script.js"></script>
+
+</body>
+
+</html>
