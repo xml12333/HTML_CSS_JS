@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Mediterranean Drift V3 (WebGL)</title>
+	<link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+	<div class="map">
+		<canvas id="wind_canvas"></canvas>
+		<div class="markers" id="markers"></div>
+	</div>
+	<div class="caption">
+		<div class="caption-title">mediterranean drift V3</div>
+		<div class="caption-hint">l = low pressure · h = high pressure · <span id="mode_label">Mistral</span></div>
+	</div>
+
+	<div class="mode-panel" aria-label="Mediterranean wind modes">
+		<button type="button" data-mode="summer">summer calm</button>
+		<button type="button" data-mode="levante">levante</button>
+		<button type="button" data-mode="mistral" class="is-active">mistral</button>
+		<button type="button" data-mode="tramontana">tramontana</button>
+		<button type="button" data-mode="sirocco">sirocco</button>
+		<button type="button" data-mode="winter">winter storm</button>
+	</div>
+
+	<div class="legend">
+		<div id="legend_bar"></div>
+		<div class="legend-scale">
+			<span>calm winds</span>
+			<span>strong winds</span>
+		</div>
+	</div>
+	<script src="./js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400&display=swap");
+
+@layer reset, base, layout, ui;
+
+@layer reset {
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+@layer base {
+	:root {
+		--bg: #0d141a;
+		--paper: #f0ece3;
+		--muted: #a3b0b8;
+		--low: #e0896a;
+		--high: #6a9fe0;
+		--font-mono: "DM Mono", ui-monospace, monospace;
+		--font-display: "Bebas Neue", system-ui, sans-serif;
+	}
+
+	html,
+	body {
+		block-size: 100%;
+	}
+
+	body {
+		background: var(--bg);
+		color: var(--paper);
+		font-family: var(--font-mono);
+		overflow: hidden;
+	}
+}
+
+@layer layout {
+	.map {
+		position: fixed;
+		inset: 0;
+		background: var(--bg);
+		isolation: isolate;
+	}
+
+	.map::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+		pointer-events: none;
+		background-image: repeating-linear-gradient(
+				to right,
+				color-mix(in oklab, var(--paper) 18%, transparent) 0 1px,
+				transparent 1px 84px
+			),
+			repeating-linear-gradient(
+				to bottom,
+				color-mix(in oklab, var(--paper) 18%, transparent) 0 1px,
+				transparent 1px 84px
+			);
+		opacity: 0.5;
+	}
+
+	#wind_canvas {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		inline-size: 100%;
+		block-size: 100%;
+	}
+
+	.markers {
+		position: absolute;
+		inset: 0;
+		z-index: 2;
+		pointer-events: none;
+	}
+}
+
+@layer ui {
+	.pressure-system {
+		position: absolute;
+		inset-block-start: 0;
+		inset-inline-start: 0;
+		inline-size: var(--pressure-size, 7rem);
+		block-size: var(--pressure-size, 7rem);
+		pointer-events: none;
+		will-change: transform;
+	}
+
+	.pressure-ring,
+	.pressure-marker {
+		position: absolute;
+		inset: 50% auto auto 50%;
+		border-radius: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.pressure-ring {
+		background: transparent;
+		box-shadow: none;
+		inline-size: calc(var(--pressure-size, 7rem) * var(--ring-scale, 1));
+		block-size: calc(var(--pressure-size, 7rem) * var(--ring-scale, 1));
+		border: 1px solid color-mix(in oklab, var(--paper) 46%, transparent);
+		opacity: calc(var(--pressure-opacity, 0.42) * var(--ring-opacity, 1));
+	}
+
+	.pressure-ring[data-ring="1"] {
+		--ring-scale: 0.72;
+		--ring-opacity: 0.24;
+	}
+
+	.pressure-ring[data-ring="2"] {
+		--ring-scale: 1.18;
+		--ring-opacity: 0.16;
+	}
+
+	.pressure-ring[data-ring="3"] {
+		--ring-scale: 1.72;
+		--ring-opacity: 0.09;
+	}
+
+	.pressure-marker {
+		display: grid;
+		place-items: center;
+		inline-size: 1.8rem;
+		block-size: 1.8rem;
+		border: 1px solid color-mix(in oklab, var(--paper) 42%, transparent);
+		font-family: var(--font-display);
+		font-size: 1.05rem;
+		line-height: 1;
+		color: color-mix(in oklab, var(--paper) 88%, transparent);
+		background: color-mix(in oklab, var(--bg) 76%, transparent);
+		box-shadow: 0 0 0 1px color-mix(in oklab, var(--bg) 60%, transparent);
+	}
+
+	.caption {
+		position: fixed;
+		z-index: 3;
+		inset-block-start: clamp(1rem, 3vmin, 2rem);
+		inset-inline-start: clamp(1rem, 3vmin, 2rem);
+		pointer-events: none;
+	}
+
+	.caption-title {
+		font-family: var(--font-display);
+		font-size: clamp(1.9rem, 5vmin, 3.2rem);
+		line-height: 0.9;
+		letter-spacing: 0.03em;
+	}
+
+	.caption-hint {
+		margin-block-start: 0.4rem;
+		font-size: 0.6rem;
+		letter-spacing: 0.24em;
+		text-transform: uppercase;
+		color: var(--muted);
+	}
+
+	.mode-panel {
+		position: fixed;
+		z-index: 3;
+		inset-block-end: clamp(1rem, 3vmin, 2rem);
+		inset-inline-end: clamp(1rem, 3vmin, 2rem);
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		gap: 0.35rem;
+		max-inline-size: min(34rem, calc(100vw - 2rem));
+	}
+
+	.mode-panel button {
+		appearance: none;
+		border: 1px solid color-mix(in oklab, var(--paper) 18%, transparent);
+		padding: 0.42rem 0.58rem;
+		font: inherit;
+		font-size: 0.55rem;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+		color: color-mix(in oklab, var(--paper) 68%, transparent);
+		background: color-mix(in oklab, var(--bg) 72%, transparent);
+		cursor: pointer;
+	}
+
+	.mode-panel button:hover,
+	.mode-panel button:focus-visible {
+		color: var(--paper);
+		border-color: color-mix(in oklab, var(--paper) 38%, transparent);
+	}
+
+	.mode-panel button.is-active {
+		color: var(--paper);
+		border-color: color-mix(in oklab, var(--paper) 58%, transparent);
+		background: color-mix(in oklab, var(--paper) 12%, var(--bg));
+	}
+
+	.legend {
+		position: fixed;
+		z-index: 3;
+		inset-block-end: clamp(1rem, 3vmin, 2rem);
+		inset-inline-start: clamp(1rem, 3vmin, 2rem);
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+		pointer-events: none;
+	}
+
+	.legend-scale {
+		display: flex;
+		justify-content: space-between;
+		font-size: 0.55rem;
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+		color: var(--muted);
+	}
+
+	#legend_bar {
+		inline-size: clamp(9rem, 22vw, 14rem);
+		block-size: 0.45rem;
+		border: 1px solid color-mix(in oklab, var(--paper) 16%, transparent);
+	}
+}
+
+@media (max-width: 46rem) {
+	@layer ui {
+		.mode-panel {
+			inset-block-end: clamp(4.2rem, 10vmin, 5.2rem);
+			inset-inline-start: clamp(1rem, 3vmin, 2rem);
+			inset-inline-end: auto;
+			justify-content: flex-start;
+		}
+
+		.mode-panel button {
+			font-size: 0.5rem;
+			padding: 0.36rem 0.48rem;
+		}
+	}
+}
