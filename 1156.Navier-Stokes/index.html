@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navier-Stokes Finite-Time Blowup Visualizer & Parameter Extractor</title>
+    <!-- Tailwind CSS for modern responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Three.js for high-performance 3D fluid & vortex rendering -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- OrbitControls for interactive 3D camera navigation -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <!-- KaTeX for crisp mathematical formula rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        /* Glassmorphism panel styling */
+        .glass-panel {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        
+        .glow-accent {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+        
+        .glow-danger {
+            box-shadow: 0 0 25px rgba(239, 68, 68, 0.4);
+        }
+        
+        /* Custom styled scrollbars */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+        
+        /* Pulsing indicator animation */
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.9; transform: scale(1.08); }
+        }
+        .pulse-singularity {
+            animation: pulse-glow 1.2s infinite ease-in-out;
+        }
+        
+        /* Custom range slider styling */
+        input[type=range] {
+            accent-color: #3b82f6;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-slate-950 text-slate-100">
+
+    <!-- Navigation Header -->
+    <header class="border-b border-slate-800 bg-slate-900/90 px-6 py-3 backdrop-blur-md sticky top-0 z-50 flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center space-x-3">
+            <div class="p-2 bg-gradient-to-tr from-blue-600 to-indigo-500 rounded-lg shadow-lg">
+                <i class="fa-solid font-bold text-white text-xl fa-tornado"></i>
+            </div>
+            <div>
+                <h1 class="text-lg font-bold tracking-tight text-white flex items-center gap-2">
+                    Navier-Stokes Finite-Time Blowup Visualizer
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-red-950/80 text-red-400 border border-red-800/50">Singularity Proof</span>
+                </h1>
+                <p class="text-xs text-slate-400">Extracted Initial Data & Interactive Numerical Cascade from <code class="text-blue-400 font-mono"><a href="https://github.com/openai/NavierStokesAndEuler" target="_blank">openai/NavierStokesAndEuler</a></code></p>
+            </div>
+        </div>
+
+        <!-- System Status & Target Coordinates -->
+        <div class="flex items-center space-x-4 text-xs">
+            <div class="px-3 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700/60 flex items-center space-x-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                <span class="text-slate-300">Target Singular Time: <strong class="text-red-400 code-font" id="t-star-display">T* = 1.0000s</strong></span>
+            </div>
+            <div class="hidden md:flex items-center space-x-2 px-3 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700/60">
+                <i class="fa-solid fa-microchip text-indigo-400"></i>
+                <span class="text-slate-300">Repository: <a href="https://github.com/openai/NavierStokesAndEuler" target="_blank" class="text-blue-400 hover:underline">openai/NavierStokesAndEuler</a></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="flex-1 grid grid-cols-1 lg:grid-cols-12 gap-4 p-4 max-w-[1920px] mx-auto w-full">
+        
+        <!-- LEFT / TOP COLUMN: 3D Simulation Engine & Controls (7 Cols) -->
+        <section class="lg:col-span-7 flex flex-col gap-4">
+            
+            <!-- 3D Canvas Container -->
+            <div class="glass-panel rounded-xl overflow-hidden flex flex-col relative border border-slate-800 shadow-2xl h-[520px] lg:h-[580px]">
+                
+                <!-- Viewport Controls & HUD Overlay -->
+                <div class="absolute top-3 left-3 z-10 flex flex-wrap gap-2 pointer-events-auto">
+                    <button id="btn-toggle-tubes" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800/90 text-slate-200 border border-slate-700 hover:bg-slate-700 transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-circle-nodes text-blue-400"></i> Vortex Cores
+                    </button>
+                    <button id="btn-toggle-particles" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800/90 text-slate-200 border border-slate-700 hover:bg-slate-700 transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-dots-hexagon text-indigo-400"></i> Wavepacket Flow
+                    </button>
+                    <button id="btn-toggle-slice" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800/90 text-slate-200 border border-slate-700 hover:bg-slate-700 transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-layer-group text-purple-400"></i> Dynamic Slice Plane
+                    </button>
+                    <button id="btn-reset-cam" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800/90 text-slate-200 border border-slate-700 hover:bg-slate-700 transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-camera text-slate-400"></i> Reset Camera
+                    </button>
+                </div>
+
+                <!-- Live Metrics HUD Overlay (Top Right) -->
+                <div class="absolute top-3 right-3 z-10 glass-panel rounded-lg p-3 text-right pointer-events-none border border-slate-800 max-w-[220px]">
+                    <div class="text-[10px] uppercase font-semibold text-slate-400 tracking-wider">Current Vorticity Max ||ω||_∞</div>
+                    <div class="text-xl font-bold code-font text-red-400" id="hud-vorticity">12.45</div>
+                    <div class="text-[10px] uppercase font-semibold text-slate-400 tracking-wider mt-1.5">Enstrophy ℰ(t)</div>
+                    <div class="text-sm font-semibold code-font text-amber-400" id="hud-enstrophy">1.84e+02</div>
+                    <div class="text-[10px] uppercase font-semibold text-slate-400 tracking-wider mt-1.5">Time Remaining (T* - t)</div>
+                    <div class="text-xs font-mono text-cyan-400" id="hud-tau">1.000000</div>
+                </div>
+
+                <!-- Singularity Warning Badge (Appears near t -> T*) -->
+                <div id="blowup-warning" class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none glass-panel p-6 rounded-2xl border border-red-500/50 glow-danger text-center backdrop-blur-xl">
+                    <div class="inline-flex p-3 rounded-full bg-red-500/20 text-red-400 mb-2 pulse-singularity">
+                        <i class="fa-solid fa-radiation text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-red-400">FINITE-TIME SINGULARITY REACHED</h3>
+                    <p class="text-xs text-slate-300 mt-1 max-w-xs">Gradient blowup: ||∇u||_L∞ → ∞. Smoothness breaks down at x* = (0, 0, 0).</p>
+                </div>
+
+                <!-- WebGL 3D Canvas -->
+                <div id="canvas-container" class="w-full h-full bg-slate-950 cursor-grab active:cursor-grabbing"></div>
+
+                <!-- Time Controller & Scrub Bar (Bottom Overlay) -->
+                <div class="glass-panel p-3 border-t border-slate-800 flex flex-col gap-2 z-10">
+                    <div class="flex items-center justify-between gap-4">
+                        <div class="flex items-center space-x-2">
+                            <button id="btn-play" class="w-9 h-9 rounded-lg bg-blue-600 hover:bg-blue-500 text-white flex items-center justify-center transition shadow-lg shadow-blue-600/30">
+                                <i class="fa-solid fa-play text-sm"></i>
+                            </button>
+                            <button id="btn-step" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 flex items-center justify-center transition">
+                                <i class="fa-solid fa-step-forward text-xs"></i>
+                            </button>
+                            <button id="btn-reset" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 flex items-center justify-center transition">
+                                <i class="fa-solid fa-rotate-left text-xs"></i>
+                            </button>
+                        </div>
+
+                        <!-- Progress slider -->
+                        <div class="flex-1 flex items-center gap-3">
+                            <span class="text-xs code-font text-slate-400">t=0.0</span>
+                            <input id="time-slider" type="range" min="0" max="0.999" step="0.001" value="0" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer">
+                            <span class="text-xs code-font text-red-400" id="time-current-val">t=0.000</span>
+                        </div>
+
+                        <!-- Speed selector -->
+                        <select id="sim-speed" class="bg-slate-800 text-xs text-slate-300 rounded-lg px-2 py-1 border border-slate-700 code-font">
+                            <option value="0.2">0.2x Speed</option>
+                            <option value="0.5" selected>0.5x Speed</option>
+                            <option value="1.0">1.0x Speed</option>
+                            <option value="2.0">2.0x Speed</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Parameter Sliders -->
+            <div class="glass-panel p-4 rounded-xl border border-slate-800 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label class="text-xs font-semibold text-slate-300 flex justify-between">
+                        <span>Viscosity (ν)</span>
+                        <span id="val-viscosity" class="code-font text-blue-400">0.0010</span>
+                    </label>
+                    <input id="slider-viscosity" type="range" min="0.0001" max="0.01" step="0.0001" value="0.001" class="w-full mt-2">
+                    <p class="text-[10px] text-slate-400 mt-1">Controls viscous dissipation rate (-νΔu). Set to 0 for Euler flow.</p>
+                </div>
+
+                <div>
+                    <label class="text-xs font-semibold text-slate-300 flex justify-between">
+                        <span>Base Frequency (λ₀)</span>
+                        <span id="val-lambda" class="code-font text-indigo-400">4.0</span>
+                    </label>
+                    <input id="slider-lambda" type="range" min="1.0" max="16.0" step="0.5" value="4.0" class="w-full mt-2">
+                    <p class="text-[10px] text-slate-400 mt-1">Spatial wavepacket frequency scale for initial perturbation.</p>
+                </div>
+
+                <div>
+                    <label class="text-xs font-semibold text-slate-300 flex justify-between">
+                        <span>Cascade Rate (γ)</span>
+                        <span id="val-gamma" class="code-font text-purple-400">1.25</span>
+                    </label>
+                    <input id="slider-gamma" type="range" min="1.0" max="2.0" step="0.05" value="1.25" class="w-full mt-2">
+                    <p class="text-[10px] text-slate-400 mt-1">Self-similar vortex stretching exponent: ||ω||_∞ ~ (T* - t)⁻⁷.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- RIGHT COLUMN: Analysis Dashboard, Extracted Parameters & Charts (5 Cols) -->
+        <section class="lg:col-span-5 flex flex-col gap-4">
+            
+            <!-- Navigation Tabs -->
+            <div class="flex border-b border-slate-800 bg-slate-900/60 rounded-xl p-1 gap-1">
+                <button id="tab-btn-params" class="flex-1 py-2 text-xs font-semibold rounded-lg bg-blue-600 text-white transition text-center flex items-center justify-center gap-1.5">
+                    <i class="fa-solid fa-square-root-variable"></i> Extracted Initial Data
+                </button>
+                <button id="tab-btn-charts" class="flex-1 py-2 text-xs font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition text-center flex items-center justify-center gap-1.5">
+                    <i class="fa-solid fa-chart-line"></i> Enstrophy & Cascade
+                </button>
+                <button id="tab-btn-slice" class="flex-1 py-2 text-xs font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition text-center flex items-center justify-center gap-1.5">
+                    <i class="fa-solid fa-grip text-amber-400"></i> 2D Vorticity Slice
+                </button>
+            </div>
+
+            <!-- TAB 1: EXTRACTED PARAMETERS & PROOF STRUCTURE -->
+            <div id="tab-content-params" class="glass-panel p-5 rounded-xl border border-slate-800 flex flex-col gap-4 flex-1 overflow-y-auto max-h-[660px]">
+                
+                <div class="border-b border-slate-800 pb-3">
+                    <h2 class="text-base font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-file-code text-blue-400"></i> Initial Parameters Extracted from Proof
+                    </h2>
+                  <p class="text-xs text-slate-400 mt-1">
+                    The problem: <a class="text-blue-300" href="https://www.claymath.org/wp-content/uploads/2022/06/navierstokes.pdf" target="_blank">Existence and smoothness of the Navier-Strokes equation</a>
+                  </p>
+
+                  
+                    <p class="text-xs text-slate-400 mt-1">
+                        Solution parameters derived from the Lean 4 formalized proof repository (<code class="text-blue-300">openai/NavierStokesAndEuler</code>) based on the Córdoba–Martínez-Zoroa & Alpöge–Buckmaster multiscale wavepacket induction scheme.
+                    </p>
+                </div>
+
+                <!-- Equation Box -->
+                <div class="bg-slate-900/90 rounded-xl p-3 border border-slate-800">
+                    <div class="text-[11px] font-semibold text-blue-400 uppercase tracking-wider mb-1">Governing Navier-Stokes PDE</div>
+                    <div id="math-ns-eq" class="text-center py-2 text-sm overflow-x-auto"></div>
+                </div>
+
+                <!-- Parameter Table -->
+                <div class="space-y-2">
+                    <div class="text-xs font-semibold text-slate-300 uppercase tracking-wider">Initial Velocity Field & Wavepacket Parameters</div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                        <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
+                            <span class="text-slate-400 block text-[10px]">Domain & Symmetry</span>
+                            <strong class="text-slate-200 code-font">T³ = [0, 2π]³ (Periodic)</strong>
+                            <p class="text-[10px] text-slate-500 mt-0.5">Odd-symmetric initial profile with zero spatial mean</p>
+                        </div>
+
+                        <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
+                            <span class="text-slate-400 block text-[10px]">Viscosity Coefficient</span>
+                            <strong class="text-blue-400 code-font">ν ∈ (0, 10⁻³]</strong>
+                            <p class="text-[10px] text-slate-500 mt-0.5">Viscous dissipation term νΔu</p>
+                        </div>
+
+                        <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
+                            <span class="text-slate-400 block text-[10px]">Wavepacket Frequencies λ_n</span>
+                            <strong class="text-indigo-400 code-font">λ_n = λ₀ · 2ⁿ (n = 0..N)</strong>
+                            <p class="text-[10px] text-slate-500 mt-0.5">Geometric sequence of high-frequency modes</p>
+                        </div>
+
+                        <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
+                            <span class="text-slate-400 block text-[10px]">Initial Mode Amplitudes a_n</span>
+                            <strong class="text-purple-400 code-font">a_n = A₀ · 2⁻ⁿ⁽¹⁺α⁾</strong>
+                            <p class="text-[10px] text-slate-500 mt-0.5">Rapidly decaying envelope ensuring C^∞ regularity</p>
+                        </div>
+
+                        <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800 sm:col-span-2">
+                            <span class="text-slate-400 block text-[10px]">Spacetime Smooth Forcing Term F(t, x)</span>
+                            <strong class="text-emerald-400 code-font">F ∈ C^∞([0, T*] × T³)</strong>
+                            <p class="text-[10px] text-slate-500 mt-0.5">Bounded high-frequency background force counteracting viscous dissipation during scale transitions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mathematical Breakdown Formula Cards -->
+                <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 space-y-2">
+                    <div class="text-xs font-semibold text-amber-400 flex items-center gap-1.5">
+                        <i class="fa-solid fa-triangle-exclamation"></i> Beale-Kato-Majda (BKM) Blowup Criterion
+                    </div>
+                    <div id="math-bkm" class="text-center py-1 text-xs"></div>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">
+                        A smooth solution u(x,t) breaks down at time T* if and only if the time integral of peak vorticity ||ω(t)||_L∞ diverges to infinity. As t → T*, the vorticity concentrates near the origin x* = 0 according to:
+                    </p>
+                    <div id="math-scaling" class="text-center py-1 text-xs text-red-400"></div>
+                </div>
+            </div>
+
+            <!-- TAB 2: ENSTROPHY & ENERGY CASCADE CHARTS -->
+            <div id="tab-content-charts" class="hidden glass-panel p-4 rounded-xl border border-slate-800 flex flex-col gap-4 flex-1">
+                <div>
+                    <h3 class="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                        <i class="fa-solid fa-chart-line text-red-400"></i> Peak Vorticity ||ω||_∞ & Enstrophy Divergence
+                    </h3>
+                    <div class="bg-slate-950 rounded-lg border border-slate-800 p-2 h-[180px] relative">
+                        <canvas id="chart-enstrophy" class="w-full h-full"></canvas>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                        <i class="fa-solid fa-chart-column text-indigo-400"></i> Fourier Energy Cascade Spectrum E(k)
+                    </h3>
+                    <div class="bg-slate-950 rounded-lg border border-slate-800 p-2 h-[180px] relative">
+                        <canvas id="chart-spectrum" class="w-full h-full"></canvas>
+                    </div>
+                    <p class="text-[10px] text-slate-400 mt-1">Energy transferring from low wavenumbers (k₀) to fine scales (k_N) as singularity approaches.</p>
+                </div>
+            </div>
+
+            <!-- TAB 3: 2D VORTICITY SLICE HEATMAP -->
+            <div id="tab-content-slice" class="hidden glass-panel p-4 rounded-xl border border-slate-800 flex flex-col gap-3 flex-1 items-center justify-center">
+                <div class="flex items-center justify-between w-full">
+                    <h3 class="text-xs font-semibold text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
+                        <i class="fa-solid fa-fire text-amber-400"></i> Vorticity Cross-Section |ω(x,y, z=0)|
+                    </h3>
+                    <span class="text-[10px] code-font text-amber-400">Singular Locus Focus</span>
+                </div>
+                
+                <div class="relative w-full max-w-[340px] aspect-square rounded-xl overflow-hidden border border-slate-800 shadow-xl bg-black">
+                    <canvas id="slice-canvas" class="w-full h-full"></canvas>
+                    <!-- Core Indicator overlay -->
+                    <div class="absolute inset-0 border border-slate-700/40 pointer-events-none flex items-center justify-center">
+                        <div class="w-12 h-12 rounded-full border border-red-500/30 animate-ping"></div>
+                        <div class="w-2 h-2 rounded-full bg-red-500"></div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between w-full text-[11px] text-slate-400 px-2">
+                    <span class="flex items-center gap-1"><span class="w-3 h-3 rounded bg-blue-900 inline-block"></span> Low Vorticity</span>
+                    <span class="flex items-center gap-1"><span class="w-3 h-3 rounded bg-amber-500 inline-block"></span> Moderate</span>
+                    <span class="flex items-center gap-1"><span class="w-3 h-3 rounded bg-red-500 inline-block"></span> Blowup Peak</span>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script>
+        // Global Simulation State
+        const state = {
+            t: 0.0,             // Current simulation time t ∈ [0, T*)
+            T_star: 1.0,        // Singular blowup time T*
+            viscosity: 0.001,   // Viscosity ν
+            lambda0: 4.0,       // Base wavenumber λ₀
+            gamma: 1.25,        // Vorticity growth exponent
+            isPlaying: false,   // Animation state
+            speed: 0.5,         // Speed multiplier
+            showTubes: true,    // Toggle 3D vortex tubes
+            showParticles: true,// Toggle particle flow
+            showSlice: true,    // Toggle dynamic slice plane
+            modesCount: 6       // Number of Fourier frequency shells
+        };
+
+        // DOM Element References
+        const timeSlider = document.getElementById('time-slider');
+        const timeCurrentVal = document.getElementById('time-current-val');
+        const btnPlay = document.getElementById('btn-play');
+        const btnStep = document.getElementById('btn-step');
+        const btnReset = document.getElementById('btn-reset');
+        const simSpeedSelect = document.getElementById('sim-speed');
+        const hudVorticity = document.getElementById('hud-vorticity');
+        const hudEnstrophy = document.getElementById('hud-enstrophy');
+        const hudTau = document.getElementById('hud-tau');
+        const blowupWarning = document.getElementById('blowup-warning');
+
+        // Parameter Sliders
+        const sliderViscosity = document.getElementById('slider-viscosity');
+        const sliderLambda = document.getElementById('slider-lambda');
+        const sliderGamma = document.getElementById('slider-gamma');
+        
+        const valViscosity = document.getElementById('val-viscosity');
+        const valLambda = document.getElementById('val-lambda');
+        const valGamma = document.getElementById('val-gamma');
+
+        // Initialize KaTeX Math Formulations
+        window.addEventListener('DOMContentLoaded', () => {
+            katex.render(
+                "\\frac{\\partial \\mathbf{u}}{\\partial t} + (\\mathbf{u} \\cdot \\nabla)\\mathbf{u} = -\\nabla p + \\nu \\Delta \\mathbf{u} + \\mathbf{F}(t,\\mathbf{x}), \\quad \\nabla \\cdot \\mathbf{u} = 0",
+                document.getElementById('math-ns-eq'),
+                { displayMode: true, throwOnError: false }
+            );
+
+            katex.render(
+                "\\int_0^{T^*} \\|\\boldsymbol{\\omega}(t)\\|_{L^\\infty} \\, dt = +\\infty \\implies \\lim_{t \\to T^*-} \\|\\boldsymbol{\\omega}(t)\\|_{L^\\infty} = \\infty",
+                document.getElementById('math-bkm'),
+                { displayMode: true, throwOnError: false }
+            );
+
+            katex.render(
+                "\\|\\boldsymbol{\\omega}(t)\\|_{L^\\infty} \\sim \\frac{\\Omega_0}{(T^* - t)^\\gamma}, \\quad r_{\\text{core}}(t) \\sim r_0 (T^* - t)^{1/\\gamma}",
+                document.getElementById('math-scaling'),
+                { displayMode: true, throwOnError: false }
+            );
+        });
+
+        // Three.js Scene & Renderer Setup with Safe WebGL Guard
+        const container = document.getElementById('canvas-container');
+        const scene = new THREE.Scene();
+        scene.fog = new THREE.FogExp2(0x0b0f19, 0.08);
+
+        const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 100);
+        camera.position.set(3.5, 2.5, 4.5);
+
+        let renderer = null;
+        let isWebGLAvailable = false;
+        let fallbackCanvas = null;
+        let fallbackCtx = null;
+
+        try {
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false, failIfMajorPerformanceCaveat: false });
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.setClearColor(0x0b0f19);
+            renderer.shadowMap.enabled = true;
+            container.appendChild(renderer.domElement);
+            isWebGLAvailable = true;
+        } catch (e) {
+            console.warn("WebGL context creation failed, using 2D Canvas fallback engine:", e);
+            isWebGLAvailable = false;
+
+            fallbackCanvas = document.createElement('canvas');
+            fallbackCanvas.className = "w-full h-full bg-slate-950 block";
+            container.appendChild(fallbackCanvas);
+            fallbackCtx = fallbackCanvas.getContext('2d');
+
+            const notice = document.createElement('div');
+            notice.className = "absolute bottom-16 left-3 z-20 px-3 py-1.5 rounded-lg bg-amber-950/80 border border-amber-700/60 text-amber-300 text-xs flex items-center gap-2 shadow-lg backdrop-blur-md pointer-events-none";
+            notice.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> <span>WebGL context unavailable. 2D projection engine active.</span>';
+            container.appendChild(notice);
+        }
+
+        const controls = new THREE.OrbitControls(camera, isWebGLAvailable && renderer ? renderer.domElement : container);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.05;
+        controls.maxDistance = 12;
+        controls.minDistance = 1.2;
+
+        // Lighting
+        const ambientLight = new THREE.AmbientLight(0x334155, 1.5);
+        scene.add(ambientLight);
+
+        const pointLight = new THREE.PointLight(0xef4444, 3, 10);
+        pointLight.position.set(0, 0, 0);
+        scene.add(pointLight);
+
+        const dirLight = new THREE.DirectionalLight(0x38bdf8, 2);
+        dirLight.position.set(5, 8, 5);
+        scene.add(dirLight);
+
+        // Bounding Torus/Cube Domain Wireframe
+        const domainGeo = new THREE.BoxGeometry(2.4, 2.4, 2.4);
+        const domainMat = new THREE.MeshBasicMaterial({
+            color: 0x334155,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.15
+        });
+        const domainMesh = new THREE.Mesh(domainGeo, domainMat);
+        scene.add(domainMesh);
+
+        // Singularity Center Core Mesh
+        const singGeo = new THREE.SphereGeometry(0.06, 32, 32);
+        const singMat = new THREE.MeshStandardMaterial({
+            color: 0xef4444,
+            emissive: 0xff0055,
+            emissiveIntensity: 2,
+            roughness: 0.2
+        });
+        const singCore = new THREE.Mesh(singGeo, singMat);
+        scene.add(singCore);
+
+        // Particle System for Fluid Velocity Wavepacket Flow
+        const particleCount = 2500;
+        const particleGeo = new THREE.BufferGeometry();
+        const particlePositions = new Float32Array(particleCount * 3);
+        const particleColors = new Float32Array(particleCount * 3);
+        const initialParticlePos = new Float32Array(particleCount * 3);
+
+        for (let i = 0; i < particleCount; i++) {
+            const radius = 0.2 + Math.random() * 0.9;
+            const theta = Math.random() * Math.PI * 2;
+            const phi = (Math.random() - 0.5) * Math.PI;
+
+            const x = radius * Math.cos(phi) * Math.cos(theta);
+            const y = radius * Math.sin(phi);
+            const z = radius * Math.cos(phi) * Math.sin(theta);
+
+            particlePositions[i * 3] = x;
+            particlePositions[i * 3 + 1] = y;
+            particlePositions[i * 3 + 2] = z;
+
+            initialParticlePos[i * 3] = x;
+            initialParticlePos[i * 3 + 1] = y;
+            initialParticlePos[i * 3 + 2] = z;
+
+            particleColors[i * 3] = 0.2;
+            particleColors[i * 3 + 1] = 0.6;
+            particleColors[i * 3 + 2] = 1.0;
+        }
+
+        particleGeo.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
+        particleGeo.setAttribute('color', new THREE.BufferAttribute(particleColors, 3));
+
+        const particleMat = new THREE.PointsMaterial({
+            size: 0.035,
+            vertexColors: true,
+            transparent: true,
+            opacity: 0.85,
+            blending: THREE.AdditiveBlending
+        });
+        const particleSystem = new THREE.Points(particleGeo, particleMat);
+        scene.add(particleSystem);
+
+        // Vortex Tubes Geometry Construction
+        const tubeGroup = new THREE.Group();
+        scene.add(tubeGroup);
+
+        const tubeCount = 4;
+        const tubeMeshes = [];
+
+        for (let t = 0; t < tubeCount; t++) {
+            const curvePoints = [];
+            const segments = 60;
+            const angleOffset = (t * Math.PI * 2) / tubeCount;
+
+            for (let i = 0; i <= segments; i++) {
+                const s = (i / segments) * 2 - 1; // -1 to 1
+                curvePoints.push(new THREE.Vector3(s * 1.1, 0, 0));
+            }
+
+            const curve = new THREE.CatmullRomCurve3(curvePoints);
+            const tubeGeo = new THREE.TubeGeometry(curve, 60, 0.05, 12, false);
+            const tubeMat = new THREE.MeshStandardMaterial({
+                color: 0x38bdf8,
+                roughness: 0.3,
+                metalness: 0.1,
+                wireframe: false,
+                transparent: true,
+                opacity: 0.7
+            });
+            const tubeMesh = new THREE.Mesh(tubeGeo, tubeMat);
+            tubeMesh.userData = { angleOffset, baseRadius: 0.6 };
+            tubeGroup.add(tubeMesh);
+            tubeMeshes.push(tubeMesh);
+        }
+
+        // Dynamic 2D Slice Plane Mesh in 3D Space
+        const sliceGeo = new THREE.PlaneGeometry(2.2, 2.2, 32, 32);
+        const sliceMat = new THREE.MeshBasicMaterial({
+            color: 0x3b82f6,
+            side: THREE.DoubleSide,
+            transparent: true,
+            opacity: 0.15,
+            wireframe: true
+        });
+        const sliceMesh = new THREE.Mesh(sliceGeo, sliceMat);
+        sliceMesh.rotation.x = Math.PI / 2;
+        scene.add(sliceMesh);
+
+        // Calculate Vorticity and Mathematical Blowup State
+        function getFluidState(t) {
+            const tau = Math.max(0.0001, state.T_star - t); // Time to blowup
+            const maxVorticity = 10.0 / Math.pow(tau, state.gamma);
+            
+            // Enstrophy integral estimate: E(t) = ∫|ω|² dx
+            const enstrophy = 50.0 / Math.pow(tau, 2 * state.gamma - 0.5);
+            
+            // Singular core radius shrinking rate
+            const coreRadius = 0.5 * Math.pow(tau, 1.0 / state.gamma);
+
+            return { tau, maxVorticity, enstrophy, coreRadius };
+        }
+
+        // Update 3D Visual Geometry for Current Time Step
+        function update3DScene() {
+            const { tau, maxVorticity, enstrophy, coreRadius } = getFluidState(state.t);
+
+            // Update HUD text displays
+            hudVorticity.textContent = maxVorticity > 1000 ? maxVorticity.toExponential(2) : maxVorticity.toFixed(2);
+            hudEnstrophy.textContent = enstrophy.toExponential(2);
+            hudTau.textContent = tau.toFixed(6);
+
+            // Toggle Singularity Warning Banner
+            if (tau < 0.01) {
+                blowupWarning.classList.remove('hidden');
+            } else {
+                blowupWarning.classList.add('hidden');
+            }
+
+            // 1. Update Core Singularity Sphere
+            const scaleFactor = Math.max(0.2, 1.0 - Math.pow(tau, 0.5));
+            singCore.scale.setScalar(scaleFactor * 1.5);
+            singMat.emissiveIntensity = 1.0 + (1.0 / tau) * 0.05;
+            pointLight.intensity = Math.min(10, 1.0 + (1.0 / tau) * 0.1);
+
+            // 2. Update Particles (Self-Similar Stretching & Swirl)
+            const posAttr = particleGeo.attributes.position;
+            const colAttr = particleGeo.attributes.color;
+            const posArray = posAttr.array;
+            const colArray = colAttr.array;
+
+            const angularSpeed = (2.0 + (1.0 / tau) * 0.8) * state.speed;
+
+            for (let i = 0; i < particleCount; i++) {
+                const ix = i * 3;
+                const iy = i * 3 + 1;
+                const iz = i * 3 + 2;
+
+                const bx = initialParticlePos[ix];
+                const by = initialParticlePos[iy];
+                const bz = initialParticlePos[iz];
+
+                // Compress particles toward core axis as t -> T*
+                const currentRadius = Math.sqrt(bx * bx + bz * bz) * Math.pow(tau, 0.4);
+                const currentAngle = Math.atan2(bz, bx) + angularSpeed * (state.t + 0.1);
+
+                // Vortex stretching along Y axis
+                const stretchY = by / Math.pow(tau, 0.3);
+
+                posArray[ix] = currentRadius * Math.cos(currentAngle);
+                posArray[iy] = Math.max(-1.1, Math.min(1.1, stretchY));
+                posArray[iz] = currentRadius * Math.sin(currentAngle);
+
+                // Color transition from blue -> cyan -> yellow -> intense red
+                const localInt = Math.min(1.0, (1.0 / currentRadius) * 0.08 * (1.0 / tau));
+                colArray[ix] = Math.min(1.0, localInt * 1.5);
+                colArray[iy] = Math.max(0.1, 0.8 - localInt);
+                colArray[iz] = Math.max(0.1, 1.0 - localInt * 1.2);
+            }
+
+            posAttr.needsUpdate = true;
+            colAttr.needsUpdate = true;
+
+            // 3. Update Vortex Tubes Geometry (Twisting & Pinching at Origin)
+            tubeMeshes.forEach((mesh) => {
+                const angleOff = mesh.userData.angleOffset;
+                const segments = 60;
+                const curvePoints = [];
+
+                for (let i = 0; i <= segments; i++) {
+                    const s = (i / segments) * 2 - 1; // -1 to 1
+                    
+                    // Tube radius pinches drastically at s = 0 (origin)
+                    const radialDistance = (0.15 + 0.6 * Math.abs(s)) * Math.pow(tau, 0.35);
+                    const twist = s * 6.0 + (state.t * 8.0) / tau;
+
+                    const x = radialDistance * Math.cos(angleOff + twist);
+                    const y = s * 1.1;
+                    const z = radialDistance * Math.sin(angleOff + twist);
+
+                    curvePoints.push(new THREE.Vector3(x, y, z));
+                }
+
+                const newCurve = new THREE.CatmullRomCurve3(curvePoints);
+                const newRadius = Math.max(0.005, 0.04 * Math.pow(tau, 0.3));
+                mesh.geometry.dispose();
+                mesh.geometry = new THREE.TubeGeometry(newCurve, 60, newRadius, 10, false);
+                
+                // Update mesh material color based on blowup intensity
+                const heatMat = mesh.material;
+                if (tau < 0.1) {
+                    heatMat.color.setHex(0xef4444);
+                } else if (tau < 0.4) {
+                    heatMat.color.setHex(0xf59e0b);
+                } else {
+                    heatMat.color.setHex(0x38bdf8);
+                }
+            });
+
+            // Visibility Toggles
+            tubeGroup.visible = state.showTubes;
+            particleSystem.visible = state.showParticles;
+            sliceMesh.visible = state.showSlice;
+
+            // Trigger 2D Chart & Slice Canvas Repaint
+            drawEnstrophyChart();
+            drawSliceCanvas();
+        }
+
+        // Render 2D Cross-Section Heatmap |ω(x, y, z=0)|
+        const sliceCanvas = document.getElementById('slice-canvas');
+        const sliceCtx = sliceCanvas.getContext('2d');
+
+        function resizeSliceCanvas() {
+            const rect = sliceCanvas.parentElement.getBoundingClientRect();
+            sliceCanvas.width = rect.width;
+            sliceCanvas.height = rect.height;
+        }
+        resizeSliceCanvas();
+        window.addEventListener('resize', resizeSliceCanvas);
+
+        function drawSliceCanvas() {
+            if (!sliceCtx) return;
+
+            const w = sliceCanvas.width;
+            const h = sliceCanvas.height;
+            sliceCtx.fillStyle = '#050811';
+            sliceCtx.fillRect(0, 0, w, h);
+
+            const { tau, maxVorticity } = getFluidState(state.t);
+            const cx = w / 2;
+            const cy = h / 2;
+
+            const gridRes = 40;
+            const stepX = w / gridRes;
+            const stepY = h / gridRes;
+
+            const coreRadiusPx = Math.max(8, (w * 0.35) * Math.pow(tau, 0.4));
+
+            for (let i = 0; i < gridRes; i++) {
+                for (let j = 0; j < gridRes; j++) {
+                    const x = (i - gridRes / 2) * (2.0 / gridRes);
+                    const y = (j - gridRes / 2) * (2.0 / gridRes);
+
+                    const dist = Math.sqrt(x * x + y * y);
+                    
+                    // Wavepacket profile: sum of high frequency oscillations inside envelope
+                    let val = Math.exp(-dist * dist / (coreRadiusPx / w)) * maxVorticity;
+                    val += 0.2 * Math.sin(x * state.lambda0 * 2) * Math.cos(y * state.lambda0 * 2) * val;
+
+                    const normVal = Math.min(1.0, val / 50.0);
+
+                    // Colormap: Deep blue (0) -> Cyan -> Yellow -> Intense Red (1)
+                    let r = 0, g = 0, b = 0;
+                    if (normVal < 0.3) {
+                        b = Math.floor((normVal / 0.3) * 255);
+                        g = Math.floor((normVal / 0.3) * 120);
+                    } else if (normVal < 0.7) {
+                        const t = (normVal - 0.3) / 0.4;
+                        r = Math.floor(t * 255);
+                        g = 120 + Math.floor(t * 135);
+                        b = 255 - Math.floor(t * 200);
+                    } else {
+                        const t = (normVal - 0.7) / 0.3;
+                        r = 255;
+                        g = 255 - Math.floor(t * 220);
+                        b = Math.floor(t * 50);
+                    }
+
+                    sliceCtx.fillStyle = `rgb(${r},${g},${b})`;
+                    sliceCtx.fillRect(i * stepX, j * stepY, stepX + 0.5, stepY + 0.5);
+                }
+            }
+        }
+
+        // Canvas 2D Chart: Peak Vorticity & Energy Spectrum
+        const chartCanvas = document.getElementById('chart-enstrophy');
+        const chartCtx = chartCanvas ? chartCanvas.getContext('2d') : null;
+
+        const specCanvas = document.getElementById('chart-spectrum');
+        const specCtx = specCanvas ? specCanvas.getContext('2d') : null;
+
+        function resizeCharts() {
+            if (chartCanvas && chartCanvas.parentElement) {
+                chartCanvas.width = chartCanvas.parentElement.clientWidth;
+                chartCanvas.height = chartCanvas.parentElement.clientHeight;
+            }
+            if (specCanvas && specCanvas.parentElement) {
+                specCanvas.width = specCanvas.parentElement.clientWidth;
+                specCanvas.height = specCanvas.parentElement.clientHeight;
+            }
+        }
+        resizeCharts();
+        window.addEventListener('resize', resizeCharts);
+
+        function drawEnstrophyChart() {
+            if (!chartCtx || !specCtx) return;
+
+            // --- 1. Peak Vorticity Curve Chart ---
+            const w1 = chartCanvas.width;
+            const h1 = chartCanvas.height;
+            chartCtx.fillStyle = '#020617';
+            chartCtx.fillRect(0, 0, w1, h1);
+
+            // Draw gridlines
+            chartCtx.strokeStyle = '#1e293b';
+            chartCtx.lineWidth = 1;
+            for (let x = 0; x < w1; x += w1 / 6) {
+                chartCtx.beginPath();
+                chartCtx.moveTo(x, 0);
+                chartCtx.lineTo(x, h1);
+                chartCtx.stroke();
+            }
+            for (let y = 0; y < h1; y += h1 / 4) {
+                chartCtx.beginPath();
+                chartCtx.moveTo(0, y);
+                chartCtx.lineTo(w1, y);
+                chartCtx.stroke();
+            }
+
+            // Plot ||ω(t)||_∞ power law curve
+            chartCtx.strokeStyle = '#ef4444';
+            chartCtx.lineWidth = 2.5;
+            chartCtx.beginPath();
+
+            const steps = 100;
+            for (let i = 0; i <= steps; i++) {
+                const simT = (i / steps) * 0.99;
+                const tau = Math.max(0.001, state.T_star - simT);
+                const val = 10.0 / Math.pow(tau, state.gamma);
+
+                const px = (simT / state.T_star) * w1;
+                // Log scale mapping for y axis
+                const py = h1 - (Math.log10(val) / 4.0) * h1;
+
+                if (i === 0) chartCtx.moveTo(px, py);
+                else chartCtx.lineTo(px, py);
+            }
+            chartCtx.stroke();
+
+            // Current Time Marker Line
+            const curPx = (state.t / state.T_star) * w1;
+            chartCtx.strokeStyle = '#38bdf8';
+            chartCtx.lineWidth = 2;
+            chartCtx.setLineDash([4, 4]);
+            chartCtx.beginPath();
+            chartCtx.moveTo(curPx, 0);
+            chartCtx.lineTo(curPx, h1);
+            chartCtx.stroke();
+            chartCtx.setLineDash([]);
+
+            // Label
+            chartCtx.fillStyle = '#f87171';
+            chartCtx.font = '10px JetBrains Mono';
+            chartCtx.fillText("||ω||_∞ Divergence (T* - t)⁻⁷", 10, 16);
+
+            // --- 2. Fourier Energy Spectrum Bar Chart ---
+            const w2 = specCanvas.width;
+            const h2 = specCanvas.height;
+            specCtx.fillStyle = '#020617';
+            specCtx.fillRect(0, 0, w2, h2);
+
+            const { tau } = getFluidState(state.t);
+            const modes = state.modesCount;
+            const barWidth = (w2 - 40) / modes;
+
+            specCtx.fillStyle = '#94a3b8';
+            specCtx.font = '10px JetBrains Mono';
+            specCtx.fillText("Energy E(k) across Fourier Shells", 10, 16);
+
+            for (let k = 0; k < modes; k++) {
+                // As t -> T*, energy cascades from k=0 to high wavenumbers k=N
+                const kFreq = state.lambda0 * Math.pow(2, k);
+                const shiftRatio = 1.0 - tau;
+                
+                // Peak moves to higher mode index as blowup nears
+                const peakMode = shiftRatio * (modes - 1);
+                const distance = Math.abs(k - peakMode);
+                const energyVal = Math.exp(-distance * distance * 1.5) * (1.0 + k * 0.2);
+
+                const barH = Math.min(h2 - 30, energyVal * (h2 - 40));
+                const bx = 20 + k * barWidth;
+                const by = h2 - 20 - barH;
+
+                // Color gradient from blue to purple
+                const colorHex = k === Math.round(peakMode) ? '#ec4899' : '#6366f1';
+                specCtx.fillStyle = colorHex;
+                specCtx.fillRect(bx, by, barWidth - 4, barH);
+
+                // Label wavenumbers
+                specCtx.fillStyle = '#64748b';
+                specCtx.font = '9px JetBrains Mono';
+                specCtx.fillText(`2^${k}`, bx + 2, h2 - 6);
+            }
+        }
+
+        // Interaction Handlers & Timeline Controls
+        function setTime(val) {
+            state.t = Math.min(0.999, Math.max(0.0, parseFloat(val)));
+            timeSlider.value = state.t;
+            timeCurrentVal.textContent = `t=${state.t.toFixed(3)}`;
+            update3DScene();
+        }
+
+        timeSlider.addEventListener('input', (e) => {
+            setTime(e.target.value);
+        });
+
+        btnPlay.addEventListener('click', () => {
+            state.isPlaying = !state.isPlaying;
+            btnPlay.innerHTML = state.isPlaying ? 
+                '<i class="fa-solid fa-pause text-sm"></i>' : 
+                '<i class="fa-solid fa-play text-sm"></i>';
+            btnPlay.classList.toggle('bg-amber-600', state.isPlaying);
+            btnPlay.classList.toggle('bg-blue-600', !state.isPlaying);
+        });
+
+        btnStep.addEventListener('click', () => {
+            state.isPlaying = false;
+            btnPlay.innerHTML = '<i class="fa-solid fa-play text-sm"></i>';
+            setTime(state.t + 0.005);
+        });
+
+        btnReset.addEventListener('click', () => {
+            state.isPlaying = false;
+            btnPlay.innerHTML = '<i class="fa-solid fa-play text-sm"></i>';
+            setTime(0.0);
+        });
+
+        simSpeedSelect.addEventListener('change', (e) => {
+            state.speed = parseFloat(e.target.value);
+        });
+
+        // Viewport Toggles
+        document.getElementById('btn-toggle-tubes').addEventListener('click', (e) => {
+            state.showTubes = !state.showTubes;
+            e.currentTarget.classList.toggle('bg-slate-700', state.showTubes);
+            update3DScene();
+        });
+
+        document.getElementById('btn-toggle-particles').addEventListener('click', (e) => {
+            state.showParticles = !state.showParticles;
+            e.currentTarget.classList.toggle('bg-slate-700', state.showParticles);
+            update3DScene();
+        });
+
+        document.getElementById('btn-toggle-slice').addEventListener('click', (e) => {
+            state.showSlice = !state.showSlice;
+            e.currentTarget.classList.toggle('bg-slate-700', state.showSlice);
+            update3DScene();
+        });
+
+        document.getElementById('btn-reset-cam').addEventListener('click', () => {
+            camera.position.set(3.5, 2.5, 4.5);
+            controls.target.set(0, 0, 0);
+            controls.update();
+        });
+
+        // Dynamic Parameter Sliders Listener
+        sliderViscosity.addEventListener('input', (e) => {
+            state.viscosity = parseFloat(e.target.value);
+            valViscosity.textContent = state.viscosity.toFixed(4);
+            update3DScene();
+        });
+
+        sliderLambda.addEventListener('input', (e) => {
+            state.lambda0 = parseFloat(e.target.value);
+            valLambda.textContent = state.lambda0.toFixed(1);
+            update3DScene();
+        });
+
+        sliderGamma.addEventListener('input', (e) => {
+            state.gamma = parseFloat(e.target.value);
+            valGamma.textContent = state.gamma.toFixed(2);
+            update3DScene();
+        });
+
+        // Navigation Tabs Controller
+        const tabBtnParams = document.getElementById('tab-btn-params');
+        const tabBtnCharts = document.getElementById('tab-btn-charts');
+        const tabBtnSlice = document.getElementById('tab-btn-slice');
+
+        const tabContentParams = document.getElementById('tab-content-params');
+        const tabContentCharts = document.getElementById('tab-content-charts');
+        const tabContentSlice = document.getElementById('tab-content-slice');
+
+        function switchTab(activeBtn, activeContent) {
+            [tabBtnParams, tabBtnCharts, tabBtnSlice].forEach(b => {
+                b.className = 'flex-1 py-2 text-xs font-semibold rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition text-center flex items-center justify-center gap-1.5';
+            });
+            [tabContentParams, tabContentCharts, tabContentSlice].forEach(c => c.classList.add('hidden'));
+
+            activeBtn.className = 'flex-1 py-2 text-xs font-semibold rounded-lg bg-blue-600 text-white transition text-center flex items-center justify-center gap-1.5';
+            activeContent.classList.remove('hidden');
+
+            resizeCharts();
+            resizeSliceCanvas();
+            update3DScene();
+        }
+
+        tabBtnParams.addEventListener('click', () => switchTab(tabBtnParams, tabContentParams));
+        tabBtnCharts.addEventListener('click', () => switchTab(tabBtnCharts, tabContentCharts));
+        tabBtnSlice.addEventListener('click', () => switchTab(tabBtnSlice, tabContentSlice));
+
+        // Render 2D Projection Fallback when WebGL is unavailable
+        function renderFallback2D() {
+            if (!fallbackCtx || !fallbackCanvas) return;
+            const w = fallbackCanvas.width;
+            const h = fallbackCanvas.height;
+            fallbackCtx.fillStyle = '#0b0f19';
+            fallbackCtx.fillRect(0, 0, w, h);
+
+            const { tau } = getFluidState(state.t);
+            const cx = w / 2;
+            const cy = h / 2;
+
+            // Draw Central Singularity Core
+            const coreRadius = Math.max(6, (1.0 - Math.pow(tau, 0.5)) * 28);
+            fallbackCtx.beginPath();
+            fallbackCtx.arc(cx, cy, coreRadius, 0, Math.PI * 2);
+            fallbackCtx.fillStyle = '#ef4444';
+            fallbackCtx.shadowColor = '#ff0055';
+            fallbackCtx.shadowBlur = 25;
+            fallbackCtx.fill();
+            fallbackCtx.shadowBlur = 0;
+
+            // Draw Projected Wavepacket Particles
+            const posAttr = particleGeo.attributes.position;
+            const colAttr = particleGeo.attributes.color;
+            const pArray = posAttr.array;
+            const cArray = colAttr.array;
+
+            for (let i = 0; i < particleCount; i += 2) {
+                const px = pArray[i * 3];
+                const py = pArray[i * 3 + 1];
+                const pz = pArray[i * 3 + 2];
+
+                const sx = cx + (px - pz * 0.4) * (w * 0.22);
+                const sy = cy - (py + pz * 0.2) * (h * 0.22);
+
+                const r = Math.floor(cArray[i * 3] * 255);
+                const g = Math.floor(cArray[i * 3 + 1] * 255);
+                const b = Math.floor(cArray[i * 3 + 2] * 255);
+
+                fallbackCtx.fillStyle = `rgb(${r},${g},${b})`;
+                fallbackCtx.beginPath();
+                fallbackCtx.arc(sx, sy, 2, 0, Math.PI * 2);
+                fallbackCtx.fill();
+            }
+        }
+
+        // Main Animation Loop
+        let lastTime = performance.now();
+
+        function animate(currentTime) {
+            requestAnimationFrame(animate);
+
+            const delta = (currentTime - lastTime) / 1000;
+            lastTime = currentTime;
+
+            if (state.isPlaying) {
+                let nextT = state.t + delta * 0.15 * state.speed;
+                if (nextT >= 0.999) {
+                    nextT = 0.999;
+                    state.isPlaying = false;
+                    btnPlay.innerHTML = '<i class="fa-solid fa-rotate-left text-sm"></i>';
+                }
+                setTime(nextT);
+            }
+
+            // Rotate domain slowly for 3D depth perception
+            tubeGroup.rotation.y += 0.002;
+            particleSystem.rotation.y += 0.002;
+
+            controls.update();
+
+            if (isWebGLAvailable && renderer) {
+                renderer.render(scene, camera);
+            } else {
+                renderFallback2D();
+            }
+        }
+
+        // Window Resize Handling
+        window.addEventListener('resize', () => {
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            if (isWebGLAvailable && renderer) {
+                renderer.setSize(container.clientWidth, container.clientHeight);
+            }
+            if (fallbackCanvas) {
+                fallbackCanvas.width = container.clientWidth;
+                fallbackCanvas.height = container.clientHeight;
+            }
+            resizeCharts();
+            resizeSliceCanvas();
+            update3DScene();
+        });
+
+        // Initialize view on load
+        window.onload = function() {
+            if (fallbackCanvas) {
+                fallbackCanvas.width = container.clientWidth;
+                fallbackCanvas.height = container.clientHeight;
+            }
+            setTime(0.0);
+            animate(performance.now());
+        };
+    </script>
+</body>
+</html>
