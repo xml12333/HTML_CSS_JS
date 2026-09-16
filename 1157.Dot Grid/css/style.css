@@ -1,0 +1,33 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { background: #000; overflow: hidden; min-height: 100vh; }
+
+#wrap {
+  position: fixed;
+  inset: 50px;
+  background: #000;
+  filter: blur(8px) contrast(28);
+}
+
+#cv {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#credit {
+  position: fixed;
+  bottom: 20px;
+  right: 24px;
+  font-family: 'DM Mono', monospace;
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  transition: color 0.2s;
+  z-index: 10;
+}
+#credit:hover { color: rgba(255,255,255,0.55); }
+#credit span { color: rgba(255,255,255,0.4); }
