@@ -6,9 +6,21 @@
   --header-height: 3.5rem;
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --red-color-gradient: linear-gradient(135deg, hsl(350, 90%, 55%) 0%, hsl(350, 98%, 68%) 100%);
-  --yellow-color-gradient: linear-gradient(135deg, hsl(40, 99%, 50%) 0%, hsl(40, 91%, 65%) 100%);
-  --purple-color-gradient: linear-gradient(135deg, hsl(291, 30%, 46%) 0%, hsl(292, 40%, 62%) 100%);
+  --red-color-gradient: linear-gradient(
+    135deg,
+    hsl(350, 90%, 55%) 0%,
+    hsl(350, 98%, 68%) 100%
+  );
+  --yellow-color-gradient: linear-gradient(
+    135deg,
+    hsl(40, 99%, 50%) 0%,
+    hsl(40, 91%, 65%) 100%
+  );
+  --purple-color-gradient: linear-gradient(
+    135deg,
+    hsl(291, 30%, 46%) 0%,
+    hsl(292, 40%, 62%) 100%
+  );
   --white-color: hsl(0, 0%, 100%);
   --black-color: hsl(0, 0%, 0%);
 
@@ -18,7 +30,7 @@
   --second-font: "Cherry Bomb One", system-ui;
   --biggest-font-size: 4rem;
   --h1-font-size: 1.5rem;
-  --normal-font-size: .938rem;
+  --normal-font-size: 0.938rem;
 }
 
 /*========== Responsive typography ==========*/
@@ -78,7 +90,7 @@ img {
   width: 100%;
   top: 0;
   left: 0;
-  background: var(--black-color);
+  background: transparent;
   z-index: 100;
 }
 
@@ -124,7 +136,7 @@ img {
 }
 
 .nav__link {
-  color: gray;
+  color: var(--white-color);
   font-weight: 600;
   transition: color 0.4s;
 }
@@ -145,19 +157,123 @@ img {
 
 /* Change header styles */
 
-
 /*=============== HOME ===============*/
+.home__slider {
+  position: relative;
+  height: 100vh;
+  padding-block: 8rem 4rem;
+  display: grid;
+  place-items: center;
+}
+.home__image {
+  position: relative;
+  z-index: 10;
+  justify-content: center;
+}
+.home__bowl {
+  width: 300px;
+  filter: drop-shadow(0 8px 24px hsla(0, 0%, 0%, 0.3));
+}
+.home__image :is(.home__piece-1, .home__piece-2, .home__piece-3) {
+  position: absolute;
+}
+.home__mango {
+  background: var(--yellow-color-gradient);
+}
+.home__blueberry {
+  background: var(--purple-color-gradient);
+}
+.home__strawberry {
+  background: var(--red-color-gradient);
+}
 
-
+.home__name {
+  font: 400 var(--biggest-font-size) var(--second-font);
+  color: var(--white-color);
+  line-height: 100%;
+  text-align: center;
+  margin-block: 0.5rem 1rem;
+}
+.home__info {
+  text-align: center;
+}
+.home__description {
+  color: var(--white-color);
+  margin-bottom: 2rem;
+}
+.home__group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1.5rem;
+}
+.home__price {
+  font: 400 var(--h1-font-size) var(--second-font);
+  color: var(--white-color);
+  line-height: 100%;
+}
+.home__button {
+  background-color: var(--white-color);
+  color: var(--black-color);
+  padding: 1rem 2rem;
+  border-radius: 4rem;
+  font-weight: 600;
+  transition: box-shadow 0.4s;
+}
+.home__button:hover {
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.1);
+}
+.home__mango .home__piece-1 {
+  width: 100px;
+  top: -3.5rem;
+  left: -2rem;
+}
+.home__mango .home__piece-2 {
+  width: 70px;
+  left: 1rem;
+  bottom: -0.5rem;
+}
+.home__mango .home__piece-3 {
+  width: 700px;
+  top: 5rem;
+  right: -2rem;
+}
+.home__blueberry .home__piece-1 {
+  width: 100px;
+  left: 0;
+  top: -3.5rem;
+}
+.home__blueberry .home__piece-2 {
+  width: 70px;
+  right: -2rem;
+  top: 8rem;
+}
+.home__blueberry .home__piece-3 {
+  width: 70px;
+  left: -2rem;
+  bottom: 2rem;
+}
+.home__strawberry .home__piece-1 {
+  width: 100px;
+  left: -4.5rem;
+  top: -1.5rem;
+}
+.home__strawberry .home__piece-2 {
+  width: 70px;
+  top: 1.5rem;
+  right: -0.5rem;
+}
+.home__strawberry .home__piece-3 {
+  width: 70px;
+  right: 4rem;
+  bottom: -0.5rem;
+}
 /* Swiper class */
-
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices <> */
 
-
 /* For medium devices <> */
-
 
 /* For large devices <> */
 @media (width >= 1150px) {
@@ -184,9 +300,6 @@ img {
 
 /* For lower-end devices <> */
 
-
 /* For taller devices <> */
 
-
 /* For 2K resolutions <> */
-
