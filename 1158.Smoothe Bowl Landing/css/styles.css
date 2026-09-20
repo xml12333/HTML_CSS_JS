@@ -173,6 +173,8 @@ img {
 .home__bowl {
   width: 300px;
   filter: drop-shadow(0 8px 24px hsla(0, 0%, 0%, 0.3));
+  rotate: 180deg;
+  transition: rotate 0.8s;
 }
 .home__image :is(.home__piece-1, .home__piece-2, .home__piece-3) {
   position: absolute;
@@ -234,7 +236,7 @@ img {
   bottom: -0.5rem;
 }
 .home__mango .home__piece-3 {
-  width: 700px;
+  width: 70px;
   top: 5rem;
   right: -2rem;
 }
@@ -269,7 +271,33 @@ img {
   bottom: -0.5rem;
 }
 /* Swiper class */
-
+.home__arrows {
+  position: relative;
+}
+.home .swiper-navigation-icon {
+  display: none;
+}
+.home :is(.swiper-button-prev, .swiper-button-next) {
+  top: initial;
+  left: initial;
+  bottom: 1.5rem;
+  margin: initial;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--white-color);
+  border-radius: 4rem;
+  color: var(--white-color);
+  font-size: 1.5rem;
+}
+.home .swiper-button-prev {
+  left: calc(50% - 3rem);
+}
+.home .swiper-button-next {
+  right: calc(50% - 3rem);
+}
+.home .swiper-slide-active .home__bowl{
+  rotate: 0deg;
+}
 /*=============== BREAKPOINTS ===============*/
 /* For small devices <> */
 

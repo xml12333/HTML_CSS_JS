@@ -67,18 +67,18 @@
    <main class="main">
       <!--==================== HOME ====================-->
       <section class="home">
-         <div class="home__swiper">
-            <div>
-               <article class="home__slider home__mango">
+         <div class="home__swiper swiper">
+            <div class="swiper-wrapper">
+               <article class="home__slider home__mango swiper-slide">
                   <div class="home__image">
-                     <div class="home__img">
+                     <div class="home__img" data-swiper-parallax="-800">
                         <img src="./img/bowl-mango.png" alt="img" class="home__bowl">
                      </div>
-                     <img src="./img/piece-mango-1.png" alt="img" class="home__piece-1">
-                     <img src="./img/piece-mango-2.png" alt="img" class="home__piece-2">
-                     <img src="./img/piece-mango-3.png" alt="img" class="home__piece-3">
+                     <img src="./img/piece-mango-1.png" alt="img" class="home__piece-1" data-swiper-parallax-y="700">
+                     <img src="./img/piece-mango-2.png" alt="img" class="home__piece-2" data-swiper-parallax-y="400">
+                     <img src="./img/piece-mango-3.png" alt="img" class="home__piece-3" data-swiper-parallax-y="200">
                   </div>
-                  <h1 class="home__name">Mango</h1>
+                  <h1 class="home__name" data-swiper-parallax="-500">Mango</h1>
                   <div class="home__data container">
                      <div class="home__info">
                         <p class="home__description">
@@ -92,16 +92,16 @@
                      </div>
                   </div>
                </article>
-               <article class="home__slider home__blueberry">
+               <article class="home__slider home__blueberry swiper-slide">
                   <div class="home__image">
-                     <div class="home__img">
+                     <div class="home__img" data-swiper-parallax="-800">
                         <img src="./img/bowl-blueberry.png" alt="img" class="home__bowl">
                      </div>
-                     <img src="./img/piece-blueberry-1.png" alt="img" class="home__piece-1">
-                     <img src="./img/piece-blueberry-2.png" alt="img" class="home__piece-2">
-                     <img src="./img/piece-blueberry-3.png" alt="img" class="home__piece-3">
+                     <img src="./img/piece-blueberry-1.png" alt="img" class="home__piece-1" data-swiper-parallax-y="700">
+                     <img src="./img/piece-blueberry-2.png" alt="img" class="home__piece-2" data-swiper-parallax-y="400">
+                     <img src="./img/piece-blueberry-3.png" alt="img" class="home__piece-3" data-swiper-parallax-y="200">
                   </div>
-                  <h1 class="home__name">Blueberry</h1>
+                  <h1 class="home__name" data-swiper-parallax="-500">Blueberry</h1>
                   <div class="home__data container">
                      <div class="home__info">
                         <p class="home__description">
@@ -115,16 +115,19 @@
                      </div>
                   </div>
                </article>
-               <article class="home__slider home__strawberry">
+               <article class="home__slider home__strawberry swiper-slide">
                   <div class="home__image">
-                     <div class="home__img">
+                     <div class="home__img" data-swiper-parallax="-800">
                         <img src="./img/bowl-strawberry.png" alt="img" class="home__bowl">
                      </div>
-                     <img src="./img/piece-strawberry-1.png" alt="img" class="home__piece-1">
-                     <img src="./img/piece-strawberry-2.png" alt="img" class="home__piece-2">
-                     <img src="./img/piece-strawberry-3.png" alt="img" class="home__piece-3">
+                     <img src="./img/piece-strawberry-1.png" alt="img" class="home__piece-1"
+                     data-swiper-parallax-y="700">
+                     <img src="./img/piece-strawberry-2.png" alt="img" class="home__piece-2"
+                     data-swiper-parallax-y="400">
+                     <img src="./img/piece-strawberry-3.png" alt="img" class="home__piece-3"
+                     data-swiper-parallax-y="200">
                   </div>
-                  <h1 class="home__name">Strawberry</h1>
+                  <h1 class="home__name" data-swiper-parallax="-500">Strawberry</h1>
                   <div class="home__data container">
                      <div class="home__info">
                         <p class="home__description">
@@ -140,7 +143,15 @@
                </article>
             </div>
          </div>
-         <div class="home__arrows"></div>
+         <div class="home__arrows">
+            <!-- Navigation buttons -->
+            <div class="swiper-button-prev">
+               <i class="ri-arrow-left-long-line"></i>
+            </div>
+            <div class="swiper-button-next">
+               <i class="ri-arrow-right-long-line"></i>
+            </div>
+         </div>
       </section>
    </main>
 
