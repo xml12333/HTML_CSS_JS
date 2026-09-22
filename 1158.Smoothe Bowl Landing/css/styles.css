@@ -311,16 +311,16 @@ img {
 /*=============== BREAKPOINTS ===============*/
 /* For small devices <> */
 @media (width <= 320px) {
-  .home__bowl{
+  .home__bowl {
     width: 280px;
   }
-  .home__name{
+  .home__name {
     font-size: 3rem;
   }
 }
 /* For medium devices <> */
 @media (width >= 540px) {
-  .home__slider{
+  .home__slider {
     grid-template-columns: 500px;
     justify-content: center;
   }
@@ -346,10 +346,111 @@ img {
     align-items: center;
     column-gap: 4rem;
   }
+  .home__slider {
+    height: initial;
+    grid-template-columns: initial;
+    justify-content: initial;
+    row-gap: 7rem;
+    padding-block: 6.5rem 4.5rem;
+  }
+  .home__bowl {
+    width: 450px;
+  }
+  .home__name {
+    position: absolute;
+    left: 0;
+    right: 0;
+    justify-self: center;
+    top: 24rem;
+  }
+  .home__data {
+    width: 1120px;
+  }
+  .home__info {
+    width: 390px;
+    text-align: initial;
+  }
+  .home__group {
+    justify-content: initial;
+    column-gap: 3rem;
+  }
+  .home :is(.swiper-button-prev, .swiper-button-next) {
+    bottom: 4.5rem;
+  }
+  .home .swiper-button-prev {
+    left: initial;
+    right: 4rem;
+  }
+  .home .swiper-button-next {
+    right: 0;
+  }
+  .home__mango .home__piece-1 {
+    width: 200px;
+    top: 3.5rem;
+    left: -17rem;
+  }
+  .home__mango .home__piece-2 {
+    width: 120px;
+    left: initial;
+    right: 6rem;
+    bottom: -13.5rem;
+  }
+  .home__mango .home__piece-3 {
+    width: 150px;
+    top: initial;
+    bottom: 4.5rem;
+    right: -12.5rem;
+  }
+  .home__blueberry .home__piece-1 {
+    width: 200px;
+    left: -18.5rem;
+    top: 0;
+  }
+  .home__blueberry .home__piece-2 {
+    width: 150px;
+    right: -11.5rem;
+    top: 4rem;
+  }
+  .home__blueberry .home__piece-3 {
+    width: 120px;
+    left: 4rem;
+    bottom: -10.5rem;
+  }
+  .home__strawberry .home__piece-1 {
+    width: 200px;
+    left: -18.5rem;
+    top: 8rem;
+  }
+  .home__strawberry .home__piece-2 {
+    width: 150px;
+    top: 2rem;
+    right: -13rem;
+  }
+  .home__strawberry .home__piece-3 {
+    width: 120px;
+    right: 0;
+    bottom: -9.5rem;
+  }
 }
 
 /* For lower-end devices <> */
-
+@media (width <= 420px) and (height<= 720px) {
+  .home__slider {
+    height: 780px;
+  }
+}
 /* For taller devices <> */
-
+@media (width>=1536px) and (height >= 864px) {
+  .home__slider {
+    height: 100vh;
+  }
+}
 /* For 2K resolutions <> */
+@media (width>= 2048px) {
+  .header,
+  .home__image,
+  .home__data,
+  .home__arrows {
+    zoom: 1.3;
+  }
+}
