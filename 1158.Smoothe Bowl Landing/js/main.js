@@ -56,3 +56,14 @@ const scrollHeader = () => {
 window.addEventListener("scroll", scrollHeader);
 
 /*=============== GSAP ANIMATION ===============*/
+gsap.defaults({ opacity: 0, ease: "back.out(1.6)", duration: 1.4 });
+const tl = gsap.timeline();
+tl.from(".nav > *", { y: -30 }, ".3")
+  .from(".home__image", { y: -200 }, ".9")
+  .from(".home__name", { y: -200 }, "1.3")
+  .from(".home__data", { y: 120 }, "1.8")
+  .from(
+    ".home .swiper-button-prev, .home .swiper-button-next",
+    { y: 120 },
+    "2.1",
+  );
