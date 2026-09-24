@@ -1,0 +1,268 @@
+/*=============== GOOGLE FONTS - Insert link for typography ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --blue-color: hsl(203, 100%, 52%);
+  --purple-color: hsl(256, 93%, 52%);
+  --green-color: hsl(126, 84%, 63%);
+  --black-color: hsl(0, 0%, 0%);
+  --white-color: hsl(0, 0%, 100%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Raleway", sans-serif;
+  --h1-font-size: 1.5rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body,
+button {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== CARD ===============*/
+.card {
+  padding-block: 4rem;
+  padding-inline: 1rem;
+  background-color: var(--black-color);
+  display: grid;
+  grid-template-columns: 330px;
+  justify-content: center;
+  gap: 3.5rem;
+  overflow: hidden;
+}
+
+.card__profile {
+  position: relative;
+  border-radius: 3rem;
+  border: 4px solid var(--white-color);
+  overflow: hidden;
+}
+
+.card-blue {
+  box-shadow: 0 0 48px var(--blue-color);
+}
+
+.card-purple {
+  box-shadow: 0 0 48px var(--purple-color);
+}
+
+.card-green {
+  box-shadow: 0 0 48px var(--green-color);
+}
+
+.card__chat {
+  position: absolute;
+  left: 2rem;
+  bottom: 2rem;
+  background-color: var(--white-color);
+  color: var(--black-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  z-index: 20;
+  transition: box-shadow 0.4s;
+}
+
+.card__chat:hover {
+  box-shadow: 0 0 32px var(--white-color);
+}
+
+.card__info {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  background-color: var(--white-color);
+  color: var(--black-color);
+  padding: 0.5rem 1rem;
+  border-radius: 4rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 0.5rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: box-shadow 0.4s;
+}
+
+.card__info i {
+  font-size: 1.5rem;
+  font-weight: initial;
+  transition: rotate 0.4s;
+}
+
+.card__info:hover {
+  box-shadow: 0 0 32px var(--white-color);
+}
+
+.card__bg {
+  transition: transform 0.4s;
+}
+
+.card__profile:hover .card__bg {
+  transform: scale(1.2);
+}
+
+.card__chat-social {
+  position: absolute;
+  top: 0;
+  transform: rotate3d(1, 1, 300, -180deg);
+  transform-origin: bottom left;
+  padding: 2rem;
+  height: 100%;
+  background-color: hsla(0, 0%, 100%, 0.1);
+  backdrop-filter: blur(24px);
+  border-radius: 0 1rem 1rem 0;
+  display: grid;
+  align-content: center;
+  row-gap: 1.5rem;
+  z-index: 10;
+  transition: transform 0.4s;
+}
+
+.card__chat-link {
+  color: var(--white-color);
+  font-size: 1.5rem;
+  transition: transform 0.4s;
+}
+
+.card__chat-link:hover {
+  transform: translateX(0.5rem);
+}
+
+.card__info-data {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(0, 0%, 100%, 0.1);
+  backdrop-filter: blur(24px);
+  border-radius: 2.5rem;
+  padding: 1.5rem 2rem;
+  transform: rotate3d(1, 1, 300, 180deg);
+  transform-origin: bottom right;
+  transition: transform 0.4s;
+}
+
+.card__info-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 50%;
+  box-shadow: 0 0 48px var(--white-color);
+  margin-bottom: 0.5rem;
+}
+
+.card__info-name {
+  font-size: var(--h1-font-size);
+}
+
+.card__info-profession {
+  font-weight: 500;
+  margin-block: 0.25rem 0.5rem;
+}
+
+.card__info-social {
+  display: flex;
+  column-gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.card__info-link {
+  color: var(--white-color);
+  font-size: 1.5rem;
+  transition: transform 0.4s;
+}
+
+.card__info-link:hover {
+  transform: translateY(-0.5rem);
+}
+
+/* Show chat */
+.show-chat {
+  transform: rotate3d(1, 1, 1, 0deg);
+}
+
+/* Show info */
+.show-info {
+  transform: rotate3d(1, 1, 1, 0deg);
+}
+
+/* Rotate info icon */
+.info-icon-rotate {
+  rotate: -135deg;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices <> */
+@media (width <= 348px) {
+  .card {
+    grid-template-columns: 300px;
+  }
+  .card__info-data {
+    padding: 1rem;
+  }
+  .card__info-img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* For medium devices <> */
+@media (width >= 768px) {
+  .card {
+    grid-template-columns: repeat(2, 330px);
+  }
+}
+
+/* For large devices <> */
+@media (width >= 1150px) {
+  .card {
+    height: 100vh;
+    grid-template-columns: repeat(3, 330px);
+    align-content: center;
+  }
+}

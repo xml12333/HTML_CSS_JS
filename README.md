@@ -1152,3 +1152,4 @@
 |1156| [Navier-Stokes](https://github.com/xml12333/HTML_CSS_JS/tree/main/1156.Navier-Stokes)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1156.Navier-Stokes/)|
 |1157| [Dot Grid](https://github.com/xml12333/HTML_CSS_JS/tree/main/1157.Dot%20Grid)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1157.Dot%20Grid/)|
 |1158| [Smoothe Bowl Landing](https://github.com/xml12333/HTML_CSS_JS/tree/main/1158.Smoothe%20Bowl%20Landing)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1158.Smoothe%20Bowl%20Landing/)|
+|1159| [Profile Card](https://github.com/xml12333/HTML_CSS_JS/tree/main/1159.Profile%20Card)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1159.Profile%20Card/)|

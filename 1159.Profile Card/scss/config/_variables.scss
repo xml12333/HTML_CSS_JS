@@ -1,0 +1,21 @@
+/*=============== GOOGLE FONTS - Insert link for typography ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root{
+   /*========== Colors ==========*/
+   /*Color mode HSL(hue, saturation, lightness)*/
+   --blue-color: hsl(203, 100%, 52%);
+   --purple-color: hsl(256, 93%, 52%);
+   --green-color: hsl(126, 84%, 63%);
+   --black-color: hsl(0, 0%, 0%);
+   --white-color: hsl(0, 0%, 100%);
+
+   /*========== Font and typography ==========*/
+   /*.5rem = 8px | 1rem = 16px ...*/
+   --body-font: "Raleway", sans-serif;
+
+   --h1-font-size: 1.5rem;
+   --normal-font-size: 1rem;
+   --small-font-size: 0.875rem;
+}
