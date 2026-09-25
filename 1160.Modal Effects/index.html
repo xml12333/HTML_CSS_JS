@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>20 New Modal Effects</title>
+</head>
+<body>
+  <div class="buttons-container">
+    <button class="glow-button btn-violet" id="openModalSwing"><span>Swing In</span></button>
+    <button class="glow-button btn-green" id="openModalRubber"><span>Rubber Band</span></button>
+    <button class="glow-button btn-pink" id="openModalRollLeft"><span>Roll In Left</span></button>
+    <button class="glow-button btn-yellow" id="openModalRollRight"><span>Roll In Right</span></button>
+    <button class="glow-button btn-light-violet" id="openModalSkew"><span>Skew Fade</span></button>
+    <button class="glow-button btn-red" id="openModalSlideRotate"><span>Slide + Rotate</span></button>
+    <button class="glow-button btn-blue" id="openModalHeartbeat"><span>Heartbeat</span></button>
+    <button class="glow-button btn-light-green" id="openModalJello"><span>Jello</span></button>
+    <button class="glow-button btn-orange" id="openModalFlipXY"><span>Flip X + Y</span></button>
+    <button class="glow-button btn-turquoise" id="openModalZoomCorner"><span>Zoom Corner</span></button>
+    <button class="glow-button btn-cyan" id="openModalSwingBottom"><span>Swing Bottom</span></button>
+    <button class="glow-button btn-magenta" id="openModalBounceDown"><span>Bounce Down</span></button>
+    <button class="glow-button btn-dark-green" id="openModalBounceUp"><span>Bounce Up</span></button>
+    <button class="glow-button btn-yellow-orange" id="openModalRotateDownLeft"><span>Rotate DL</span></button>
+    <button class="glow-button btn-dark-violet" id="openModalRotateDownRight"><span>Rotate DR</span></button>
+    <button class="glow-button btn-flip-1" id="openModalLightSpeed"><span>Light Speed</span></button>
+    <button class="glow-button btn-flip-2" id="openModalFadeScaleRotate"><span>Fade Scale Rotate</span></button>
+    <button class="glow-button btn-flip-3" id="openModalBlur"><span>Blur In</span></button>
+    <button class="glow-button btn-violet" id="openModalUnfoldVertical"><span>Unfold Vertical</span></button>
+    <button class="glow-button btn-green" id="openModalUnfoldHorizontal"><span>Unfold Horizontal</span></button>
+  </div>
+
+  <!-- 1. Swing In -->
+  <div class="overlay overlay-swing" id="overlaySwing">
+    <div class="modal">
+      <h2>Swing In</h2>
+      <p>The modal swings in from the top like a <strong>pendulum</strong> with <code>rotateX(-100deg)</code> and an
+        elastic bounce.</p>
+      <button class="close-btn" id="closeModalSwing">Close</button>
+    </div>
+  </div>
+
+  <!-- 2. Rubber Band -->
+  <div class="overlay overlay-rubber" id="overlayRubber">
+    <div class="modal">
+      <h2>Rubber Band</h2>
+      <p><strong>Elastic</strong> effect: the modal stretches and compresses like a rubber band using
+        <code>scaleX</code> and <code>scaleY</code>.</p>
+      <button class="close-btn" id="closeModalRubber">Close</button>
+    </div>
+  </div>
+
+  <!-- 3. Roll In Left -->
+  <div class="overlay overlay-roll-left" id="overlayRollLeft">
+    <div class="modal">
+      <h2>Roll In Left</h2>
+      <p>The modal <strong>rolls</strong> in from the left with a <code>-720deg</code> rotation and a horizontal
+        translation.</p>
+      <button class="close-btn" id="closeModalRollLeft">Close</button>
+    </div>
+  </div>
+
+  <!-- 4. Roll In Right -->
+  <div class="overlay overlay-roll-right" id="overlayRollRight">
+    <div class="modal">
+      <h2>Roll In Right</h2>
+      <p>The modal <strong>rolls</strong> in from the right with a <code>720deg</code> rotation and a horizontal
+        translation.</p>
+      <button class="close-btn" id="closeModalRollRight">Close</button>
+    </div>
+  </div>
+
+  <!-- 5. Skew Fade -->
+  <div class="overlay overlay-skew" id="overlaySkew">
+    <div class="modal">
+      <h2>Skew Fade</h2>
+      <p>The modal appears with a <strong>skew</strong> <code>skewX(40deg)</code> that gradually straightens out.</p>
+      <button class="close-btn" id="closeModalSkew">Close</button>
+    </div>
+  </div>
+
+  <!-- 6. Slide + Rotate -->
+  <div class="overlay overlay-slide-rotate" id="overlaySlideRotate">
+    <div class="modal">
+      <h2>Slide + Rotate</h2>
+      <p>The modal <strong>slides</strong> in from the bottom while <strong>rotating</strong> 15deg before straightening
+        up.</p>
+      <button class="close-btn" id="closeModalSlideRotate">Close</button>
+    </div>
+  </div>
+
+  <!-- 7. Heartbeat -->
+  <div class="overlay overlay-heartbeat" id="overlayHeartbeat">
+    <div class="modal">
+      <h2>Heartbeat</h2>
+      <p>The modal <strong>beats like a heart</strong> with two successive pulses before stabilizing.</p>
+      <button class="close-btn" id="closeModalHeartbeat">Close</button>
+    </div>
+  </div>
+
+  <!-- 8. Jello -->
+  <div class="overlay overlay-jello" id="overlayJello">
+    <div class="modal">
+      <h2>Jello</h2>
+      <p>The modal <strong>wobbles like jelly</strong> with damped <code>skewX</code> and <code>skewY</code>
+        oscillations.</p>
+      <button class="close-btn" id="closeModalJello">Close</button>
+    </div>
+  </div>
+
+  <!-- 9. Flip In X + Y -->
+  <div class="overlay overlay-flip-xy" id="overlayFlipXY">
+    <div class="modal">
+      <h2>Flip X + Y</h2>
+      <p>The modal <strong>flips on both axes</strong> simultaneously with <code>rotateX(90deg) rotateY(90deg)</code>.
+      </p>
+      <button class="close-btn" id="closeModalFlipXY">Close</button>
+    </div>
+  </div>
+
+  <!-- 10. Zoom Out From Corner -->
+  <div class="overlay overlay-zoom-corner" id="overlayZoomCorner">
+    <div class="modal">
+      <h2>Zoom Corner</h2>
+      <p>The modal <strong>bursts out of the top-left corner</strong> with
+        <code>scale(0) translate(-100%, -100%)</code>.</p>
+      <button class="close-btn" id="closeModalZoomCorner">Close</button>
+    </div>
+  </div>
+
+  <!-- 11. Swing Bottom -->
+  <div class="overlay overlay-swing-bottom" id="overlaySwingBottom">
+    <div class="modal">
+      <h2>Swing Bottom</h2>
+      <p>The modal swings in from the bottom like a <strong>pendulum</strong> with <code>rotateX(100deg)</code> and an
+        elastic bounce.</p>
+      <button class="close-btn" id="closeModalSwingBottom">Close</button>
+    </div>
+  </div>
+
+  <!-- 12. Bounce In Down -->
+  <div class="overlay overlay-bounce-down" id="overlayBounceDown">
+    <div class="modal">
+      <h2>Bounce In Down</h2>
+      <p>The modal <strong>falls from the top</strong> with a <code>bounceInDown</code> bounce over 0.9s.</p>
+      <button class="close-btn" id="closeModalBounceDown">Close</button>
+    </div>
+  </div>
+
+  <!-- 13. Bounce In Up -->
+  <div class="overlay overlay-bounce-up" id="overlayBounceUp">
+    <div class="modal">
+      <h2>Bounce In Up</h2>
+      <p>The modal <strong>rises from the bottom</strong> with a <code>bounceInUp</code> bounce over 0.9s.</p>
+      <button class="close-btn" id="closeModalBounceUp">Close</button>
+    </div>
+  </div>
+
+  <!-- 14. Rotate In Down Left -->
+  <div class="overlay overlay-rotate-down-left" id="overlayRotateDownLeft">
+    <div class="modal">
+      <h2>Rotate DL</h2>
+      <p>The modal <strong>rotates in from the bottom-left corner</strong> with <code>rotate(-90deg)</code> and
+        <code>translateY(100%)</code>.</p>
+      <button class="close-btn" id="closeModalRotateDownLeft">Close</button>
+    </div>
+  </div>
+
+  <!-- 15. Rotate In Down Right -->
+  <div class="overlay overlay-rotate-down-right" id="overlayRotateDownRight">
+    <div class="modal">
+      <h2>Rotate DR</h2>
+      <p>The modal <strong>rotates in from the bottom-right corner</strong> with <code>rotate(90deg)</code> and
+        <code>translateY(100%)</code>.</p>
+      <button class="close-btn" id="closeModalRotateDownRight">Close</button>
+    </div>
+  </div>
+
+  <!-- 16. Light Speed In -->
+  <div class="overlay overlay-light-speed" id="overlayLightSpeed">
+    <div class="modal">
+      <h2>Light Speed</h2>
+      <p>The modal arrives <strong>at the speed of light</strong> from the right with <code>skewX(-30deg)</code> and
+        <code>translateX(100%)</code>.</p>
+      <button class="close-btn" id="closeModalLightSpeed">Close</button>
+    </div>
+  </div>
+
+  <!-- 17. Fade + Scale + Rotate -->
+  <div class="overlay overlay-fade-scale-rotate" id="overlayFadeScaleRotate">
+    <div class="modal">
+      <h2>Fade Scale Rotate</h2>
+      <p>The modal <strong>appears while rotating</strong> with <code>scale(0.3) rotate(-180deg)</code> and a fade.</p>
+      <button class="close-btn" id="closeModalFadeScaleRotate">Close</button>
+    </div>
+  </div>
+
+  <!-- 18. Blur In -->
+  <div class="overlay overlay-blur" id="overlayBlur">
+    <div class="modal">
+      <h2>Blur In</h2>
+      <p>The modal <strong>emerges from blur</strong> with <code>filter: blur(20px)</code> that gradually resolves.</p>
+      <button class="close-btn" id="closeModalBlur">Close</button>
+    </div>
+  </div>
+
+  <!-- 19. Unfold Vertical -->
+  <div class="overlay overlay-unfold-vertical" id="overlayUnfoldVertical">
+    <div class="modal">
+      <h2>Unfold Vertical</h2>
+      <p>The modal <strong>unfolds vertically</strong> with <code>scaleY(0)</code> → <code>scaleY(1)</code> from the
+        top.</p>
+      <button class="close-btn" id="closeModalUnfoldVertical">Close</button>
+    </div>
+  </div>
+
+  <!-- 20. Unfold Horizontal -->
+  <div class="overlay overlay-unfold-horizontal" id="overlayUnfoldHorizontal">
+    <div class="modal">
+      <h2>Unfold Horizontal</h2>
+      <p>The modal <strong>unfolds horizontally</strong> with <code>scaleX(0)</code> → <code>scaleX(1)</code> from the
+        left.</p>
+      <button class="close-btn" id="closeModalUnfoldHorizontal">Close</button>
+    </div>
+  </div>
+
+ 
+  <script src="./js/script.js"></script>
+</body>
+</html>
