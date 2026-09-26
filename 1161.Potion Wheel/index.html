@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Potion Wheel</title>
+    <meta
+      name="description"
+      content="An interactive alchemy wheel that is, underneath all the brass and glass, a donut chart."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=JetBrains+Mono:wght@400;500&family=Spectral:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <main class="lab">
+      <div class="lab__motes" id="motes" aria-hidden="true"></div>
+
+      <header class="lab__head">
+        <h1 class="lab__title">Potion Wheel</h1>
+      </header>
+
+      <div class="bench">
+        <!-- ── Ingredient reading ─────────────────────────────── -->
+        <aside class="plate plate--ingredient" aria-labelledby="ing-heading">
+          <p class="plate__kicker" id="ing-heading">Ingredient</p>
+
+          <h2 class="plate__name" id="ing-name">Stardust</h2>
+
+          <p class="plate__share">
+            <span class="plate__share-num" id="ing-value">18</span>
+            <span class="plate__share-pct">%</span>
+            <span class="plate__share-label">of the measure</span>
+          </p>
+
+          <p class="plate__desc" id="ing-desc">
+            Gathered from the trails of fallen stars.
+          </p>
+
+          <dl class="readings">
+            <div class="reading">
+              <dt>Affinity</dt>
+              <dd id="ing-affinity">Celestial</dd>
+            </div>
+            <div class="reading">
+              <dt>Effect</dt>
+              <dd id="ing-effect">Clarity +4</dd>
+            </div>
+            <div class="reading">
+              <dt>Volatility</dt>
+              <dd id="ing-volatility">Moderate</dd>
+            </div>
+          </dl>
+
+          <p class="plate__hint" id="wheel-hint">
+            Hover to peek, click to lock an ingredient in. Arrow keys walk the
+            wheel.
+          </p>
+        </aside>
+
+        <!-- ── The wheel ──────────────────────────────────────── -->
+        <div class="stage" id="stage">
+          <div class="stage__burst" id="burst" aria-hidden="true"></div>
+
+          <div class="wheel">
+            <div class="halo" aria-hidden="true"></div>
+
+            <div class="ring ring--metal" aria-hidden="true"></div>
+            <div class="ring ring--ticks" aria-hidden="true"></div>
+            <div class="ring ring--ticks-major" aria-hidden="true"></div>
+            <div class="ring ring--groove" aria-hidden="true"></div>
+            <div class="ring ring--hairline" aria-hidden="true"></div>
+
+            <div
+              class="runes runes--outer"
+              id="runes-outer"
+              aria-hidden="true"
+            ></div>
+            <div
+              class="runes runes--inner"
+              id="runes-inner"
+              aria-hidden="true"
+            ></div>
+
+            <div class="cardinals" id="cardinals"></div>
+
+            <svg
+              class="chart"
+              viewBox="0 0 400 400"
+              role="img"
+              aria-labelledby="chart-title chart-desc"
+            >
+              <title id="chart-title">Potion composition</title>
+              <desc id="chart-desc">
+                A donut chart. Each segment is one ingredient's share of the
+                current measure.
+              </desc>
+              <defs id="chart-defs"></defs>
+              <g id="chart-shade" class="chart__shade" aria-hidden="true"></g>
+              <g
+                id="chart-segments"
+                class="chart__segments"
+                role="group"
+                aria-label="Ingredient segments"
+              ></g>
+              <g
+                id="chart-pointers"
+                class="chart__pointers"
+                aria-hidden="true"
+              ></g>
+            </svg>
+
+            <div class="core">
+              <div class="core__sigil" aria-hidden="true"></div>
+              <div class="core__vessel">
+                <div class="core__liquid" aria-hidden="true"></div>
+                <div class="core__bubbles" aria-hidden="true">
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                </div>
+                <div class="core__shimmer" aria-hidden="true"></div>
+                <div class="core__glass" aria-hidden="true"></div>
+                <div class="core__flash" aria-hidden="true"></div>
+                <p class="core__readout" aria-hidden="true">
+                  <span class="core__readout-num" id="core-value">18</span>
+                  <span class="core__readout-name" id="core-name">
+                    Stardust
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="labels" id="labels"></div>
+        </div>
+
+        <!-- ── Potion reading ─────────────────────────────────── -->
+        <aside class="plate plate--potion" aria-labelledby="potion-heading">
+          <p class="plate__kicker" id="potion-heading">Current brew</p>
+
+          <h2 class="plate__name plate__name--potion" id="potion-name">
+            Celestial Focus
+          </h2>
+
+          <dl class="stats" id="potion-stats"></dl>
+
+          <p class="plate__side">
+            <span class="plate__side-label">Side effect</span>
+            <span id="potion-side">
+              May cause excessive confidence in unfinished side projects.
+            </span>
+          </p>
+
+          <div class="history" hidden id="history-wrap">
+            <p class="history__label">Last brewed</p>
+            <ol class="history__list" id="history"></ol>
+          </div>
+        </aside>
+
+        <!-- ── Brew ───────────────────────────────────────────── -->
+        <div class="brew-bar">
+          <button
+            class="brew"
+            id="brew"
+            type="button"
+            aria-describedby="brew-note"
+          >
+            <span class="brew__glyph" aria-hidden="true"></span>
+            <span class="brew__label">Brew</span>
+          </button>
+          <p class="brew-bar__note" id="brew-note" aria-live="polite">
+            Fresh measures, new result.
+          </p>
+        </div>
+      </div>
+
+      <!-- ── Workbench scenery ────────────────────────────────── -->
+      <div class="decor" aria-hidden="true">
+        <div class="decor__bench"></div>
+
+        <div
+          class="candle"
+          style="--x: 27%; --h: 92px; --w: 26px; --flick: 1.15s"
+        ></div>
+        <div
+          class="candle candle--short"
+          style="--x: 33%; --h: 54px; --w: 20px; --flick: 0.86s"
+        ></div>
+        <div
+          class="candle"
+          style="--x: 92%; --h: 78px; --w: 23px; --flick: 1.34s"
+        ></div>
+
+        <div
+          class="bottle"
+          style="--x: 39%; --h: 70px; --w: 40px; --c: var(--ing-emberroot)"
+        ></div>
+        <div
+          class="bottle bottle--squat"
+          style="--x: 45%; --h: 50px; --w: 46px; --c: var(--ing-nightshade)"
+        ></div>
+        <div
+          class="bottle"
+          style="--x: 79%; --h: 62px; --w: 36px; --c: var(--ing-moonwater)"
+        ></div>
+        <div
+          class="bottle bottle--squat"
+          style="--x: 85%; --h: 44px; --w: 42px; --c: var(--ing-crystaldust)"
+        ></div>
+
+        <div
+          class="crystal"
+          style="--x: 51%; --h: 46px; --w: 22px; --c: var(--ing-crystaldust)"
+        ></div>
+        <div
+          class="crystal crystal--small"
+          style="--x: 54.5%; --h: 28px; --w: 15px; --c: var(--ing-stardust)"
+        ></div>
+        <div
+          class="crystal"
+          style="--x: 73%; --h: 38px; --w: 19px; --c: var(--ing-stardust)"
+        ></div>
+
+        <div class="herb" style="--x: 59%; --r: -14deg"></div>
+        <div class="herb herb--flip" style="--x: 67%; --r: 11deg"></div>
+      </div>
+
+      <table class="sr-only" id="data-table">
+        <caption>Potion composition by ingredient</caption>
+        <thead>
+          <tr>
+            <th scope="col">Ingredient</th>
+            <th scope="col">Share</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <p class="sr-only" id="live" role="status" aria-live="polite"></p>
+    </main>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

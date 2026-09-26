@@ -1154,3 +1154,4 @@
 |1158| [Smoothe Bowl Landing](https://github.com/xml12333/HTML_CSS_JS/tree/main/1158.Smoothe%20Bowl%20Landing)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1158.Smoothe%20Bowl%20Landing/)|
 |1159| [Profile Card](https://github.com/xml12333/HTML_CSS_JS/tree/main/1159.Profile%20Card)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1159.Profile%20Card/)|
 |1160| [Modal Effects](https://github.com/xml12333/HTML_CSS_JS/tree/main/1160.Modal%20Effects)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1160.Modal%20Effects/)|
+|1161| [Potion Wheel](https://github.com/xml12333/HTML_CSS_JS/tree/main/1161.Potion%20Wheel)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1161.Potion%20Wheel/)|
