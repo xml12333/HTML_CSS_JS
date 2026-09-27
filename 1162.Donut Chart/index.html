@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOUGHNOMICS — Where My Money Goes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="scene">
+      <!-- Header -->
+      <header class="head">
+        <span class="kicker">MONTHLY SPEND</span>
+        <h1>Doughnomics</h1>
+        <p>Everything I earn, glazed and itemised. Hover a slice.</p>
+      </header>
+
+      <!-- The donut -->
+      <div class="plate-wrap">
+        <div class="plate" aria-hidden="true"></div>
+        <div class="crumbs" id="crumbs"></div>
+
+        <div class="donut" id="donut">
+          <svg viewBox="0 0 400 400" class="rings">
+            <defs>
+              <!-- soft shadow under the donut -->
+              <filter id="drop" x="-40%" y="-40%" width="180%" height="180%">
+                <feDropShadow
+                  dx="0"
+                  dy="14"
+                  stdDeviation="14"
+                  flood-color="#5a3320"
+                  flood-opacity="0.35"
+                />
+              </filter>
+              <!-- glaze gloss -->
+              <radialGradient id="gloss" cx="34%" cy="26%" r="62%">
+                <stop offset="0%" stop-color="#fff" stop-opacity="0.75" />
+                <stop offset="38%" stop-color="#fff" stop-opacity="0.18" />
+                <stop offset="100%" stop-color="#fff" stop-opacity="0" />
+              </radialGradient>
+              <!-- dough gradient -->
+              <radialGradient id="dough" cx="38%" cy="32%" r="70%">
+                <stop offset="0%" stop-color="#f0bd77" />
+                <stop offset="55%" stop-color="#d9974c" />
+                <stop offset="100%" stop-color="#a86a2c" />
+              </radialGradient>
+              <!-- inner hole shading -->
+              <radialGradient id="hole" cx="50%" cy="38%" r="60%">
+                <stop offset="0%" stop-color="#8a5220" />
+                <stop offset="70%" stop-color="#b8763a" />
+                <stop offset="100%" stop-color="#e0a55e" />
+              </radialGradient>
+              <filter id="grain">
+                <feTurbulence
+                  type="fractalNoise"
+                  baseFrequency="0.9"
+                  numOctaves="3"
+                  result="n"
+                />
+                <feColorMatrix in="n" type="saturate" values="0" />
+                <feComponentTransfer>
+                  <feFuncA type="linear" slope="0.14" />
+                </feComponentTransfer>
+                <feComposite operator="in" in2="SourceGraphic" />
+              </filter>
+            </defs>
+
+            <!-- baked dough base -->
+            <g filter="url(#drop)">
+              <circle cx="200" cy="200" r="168" fill="url(#dough)" />
+              <circle
+                cx="200"
+                cy="200"
+                r="168"
+                fill="url(#dough)"
+                filter="url(#grain)"
+                opacity="0.6"
+              />
+            </g>
+
+            <!-- frosting slices injected here -->
+            <g id="slices"></g>
+
+            <!-- glaze gloss overlay -->
+            <circle
+              cx="200"
+              cy="200"
+              r="152"
+              fill="url(#gloss)"
+              pointer-events="none"
+            />
+
+            <!-- donut hole -->
+            <circle cx="200" cy="200" r="62" fill="url(#hole)" />
+            <circle
+              cx="200"
+              cy="200"
+              r="62"
+              fill="none"
+              stroke="#7a4518"
+              stroke-width="2"
+              opacity="0.4"
+            />
+          </svg>
+
+          <!-- sprinkles layer -->
+          <div class="sprinkles" id="sprinkles"></div>
+
+          <!-- center readout -->
+          <div class="readout" id="readout">
+            <span class="ro-val" id="ro-val">€3,240</span>
+            <span class="ro-lab" id="ro-lab">total monthly</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Legend -->
+      <ul class="legend" id="legend"></ul>
+
+      <!-- Controls -->
+      <div class="controls">
+        <button class="ctl" id="bite">🍩 Take a bite</button>
+        <button class="ctl" id="shuffle">↻ New month</button>
+      </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
