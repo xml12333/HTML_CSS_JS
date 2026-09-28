@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fruit Pie Sales — slice it, blend it</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Nunito+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --crust: #e8b872;
+        --crust-dark: #b8793b;
+        --bg: #faf3e6;
+        --card: #fffdf8;
+        --ink: #3a2a1e;
+        --ink-soft: #7a6650;
+        --line: #e4d5bc;
+        --shadow: rgba(90, 60, 20, 0.16);
+        --steel: #c7cbce;
+        --steel-dark: #7c8288;
+      }
+      :root:not([data-theme="light"]) {
+        @media (prefers-color-scheme: dark) {
+          --bg: #241a12;
+          --card: #2e2118;
+          --ink: #f3e7d6;
+          --ink-soft: #c4af94;
+          --line: #453422;
+          --shadow: rgba(0, 0, 0, 0.4);
+          --steel: #5a5f63;
+          --steel-dark: #34383b;
+        }
+      }
+      :root[data-theme="dark"] {
+        --bg: #241a12;
+        --card: #2e2118;
+        --ink: #f3e7d6;
+        --ink-soft: #c4af94;
+        --line: #453422;
+        --shadow: rgba(0, 0, 0, 0.4);
+        --steel: #5a5f63;
+        --steel-dark: #34383b;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Nunito Sans", system-ui, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 48px 20px;
+      }
+
+      .stand {
+        width: min(980px, 100%);
+        display: grid;
+        grid-template-columns: minmax(260px, 380px) 1fr;
+        gap: 40px 44px;
+      }
+
+      @media (max-width: 760px) {
+        .stand {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      header {
+        grid-column: 1 / -1;
+      }
+      h1 {
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-size: clamp(26px, 4vw, 38px);
+        margin: 0 0 6px;
+        line-height: 1.1;
+      }
+      .subtitle {
+        color: var(--ink-soft);
+        font-size: 15px;
+        margin: 0;
+        max-width: 52ch;
+      }
+
+      .plate {
+        position: relative;
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      svg {
+        overflow: visible;
+      }
+      #chart {
+        width: 100%;
+        height: 100%;
+      }
+
+      .slice {
+        cursor: pointer;
+        transition: transform 280ms cubic-bezier(0.2, 0.8, 0.2, 1);
+        transform-origin: 130px 130px;
+      }
+      .slice path {
+        stroke: var(--card);
+        stroke-width: 2.5;
+      }
+      .slice.pulled {
+        transform: translate(var(--dx), var(--dy));
+      }
+
+      .label {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 700;
+        font-size: 12px;
+        fill: #fffdf8;
+        text-anchor: middle;
+        pointer-events: none;
+      }
+
+      .legend {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .legend-item {
+        display: grid;
+        grid-template-columns: 22px 1fr 42px;
+        align-items: center;
+        column-gap: 12px;
+        row-gap: 6px;
+        padding: 12px 4px;
+      }
+      .legend-item + .legend-item {
+        border-top: 1px solid var(--line);
+      }
+
+      .swatch {
+        width: 18px;
+        height: 18px;
+        border-radius: 50% 50% 50% 4px;
+        transform: rotate(-45deg);
+        box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.35);
+      }
+      .flavor-name {
+        font-weight: 700;
+        font-size: 14.5px;
+      }
+      .pct {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 17px;
+        text-align: right;
+      }
+
+      .slider-row {
+        grid-column: 1 / -1;
+      }
+      input[type="range"] {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 6px;
+        border-radius: 4px;
+        background: var(--line);
+        outline: none;
+        cursor: pointer;
+      }
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        background: var(--thumb, var(--ink));
+        border: 2px solid var(--card);
+        box-shadow: 0 1px 4px var(--shadow);
+        cursor: grab;
+      }
+      input[type="range"]::-moz-range-thumb {
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        background: var(--thumb, var(--ink));
+        border: 2px solid var(--card);
+        box-shadow: 0 1px 4px var(--shadow);
+        cursor: grab;
+      }
+
+      /* --- Blender --- */
+      .blender-section {
+        grid-column: 1 / -1;
+        margin-top: 8px;
+      }
+      .blender-wrap {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 36px;
+        align-items: center;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 28px 30px;
+        box-shadow: 0 14px 34px -18px var(--shadow);
+      }
+      @media (max-width: 600px) {
+        .blender-wrap {
+          grid-template-columns: 1fr;
+          justify-items: center;
+          text-align: center;
+        }
+      }
+
+      .cup-stage {
+        position: relative;
+        width: 160px;
+        height: 220px;
+        margin: 0 auto;
+      }
+      #cup {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+      }
+      .liquid {
+        transition: fill 500ms ease;
+      }
+      .blade-group.spinning {
+        animation: spin 480ms linear;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .bubble {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.55);
+        opacity: 0;
+        pointer-events: none;
+      }
+      @keyframes bubbleUp {
+        0% {
+          transform: translateY(0) scale(0.4);
+          opacity: 0;
+        }
+        15% {
+          opacity: 0.8;
+        }
+        100% {
+          transform: translateY(-70px) scale(1);
+          opacity: 0;
+        }
+      }
+
+      .blend-info h2 {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 22px;
+        margin: 0 0 6px;
+      }
+      .blend-info p {
+        margin: 0 0 16px;
+        color: var(--ink-soft);
+        font-size: 14px;
+        max-width: 40ch;
+      }
+      .swatch-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .drink-swatch {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 3px solid var(--card);
+        box-shadow: 0 0 0 1.5px var(--line);
+        transition: background 500ms ease;
+      }
+      .hexcode {
+        font-family: "Nunito Sans", monospace;
+        font-size: 13px;
+        color: var(--ink-soft);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .slice,
+        .liquid,
+        .drink-swatch {
+          transition: none !important;
+        }
+        .blade-group.spinning {
+          animation: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stand">
+      <header>
+        <h1>Blend Pie Sales</h1>
+        <p class="subtitle">
+          Drag a flavor's share up or down — the pie redraws itself, and the
+          blender mixes whatever's left into today's smoothie.
+        </p>
+      </header>
+
+      <div class="plate">
+        <svg
+          id="chart"
+          viewBox="0 0 260 260"
+          role="img"
+          aria-label="Pie chart of fruit pie sales by flavor"
+        ></svg>
+      </div>
+
+      <div class="legend" id="legend"></div>
+
+      <div class="blender-section">
+        <div class="blender-wrap">
+          <div class="cup-stage">
+            <svg id="cup" viewBox="0 0 160 220">
+              <defs>
+                <clipPath id="cupClip">
+                  <path
+                    d="M42,14 L118,14 L108,178 Q108,192 94,192 L66,192 Q52,192 52,178 Z"
+                  />
+                </clipPath>
+              </defs>
+              <rect
+                class="liquid"
+                id="liquidFill"
+                x="42"
+                y="40"
+                width="76"
+                height="152"
+                clip-path="url(#cupClip)"
+                fill="#A8283F"
+              />
+              <path
+                d="M42,14 L118,14 L108,178 Q108,192 94,192 L66,192 Q52,192 52,178 Z"
+                fill="none"
+                stroke="var(--steel-dark)"
+                stroke-width="2.5"
+                opacity="0.55"
+              />
+              <ellipse
+                cx="80"
+                cy="14"
+                rx="38"
+                ry="7"
+                fill="var(--steel)"
+                stroke="var(--steel-dark)"
+                stroke-width="1.5"
+              />
+              <rect
+                x="56"
+                y="188"
+                width="48"
+                height="20"
+                rx="7"
+                fill="var(--steel-dark)"
+              />
+              <g class="blade-group" id="blade" transform-origin="80 198">
+                <line
+                  x1="62"
+                  y1="198"
+                  x2="98"
+                  y2="198"
+                  stroke="var(--steel)"
+                  stroke-width="3.5"
+                  stroke-linecap="round"
+                />
+                <line
+                  x1="80"
+                  y1="184"
+                  x2="80"
+                  y2="212"
+                  stroke="var(--steel)"
+                  stroke-width="3.5"
+                  stroke-linecap="round"
+                  transform="rotate(45 80 198)"
+                />
+              </g>
+            </svg>
+            <div
+              id="bubbleLayer"
+              style="position: absolute; inset: 0; pointer-events: none"
+            ></div>
+          </div>
+
+          <div class="blend-info">
+            <h2 id="blendName">Cherry Swirl</h2>
+            <p>
+              Whatever's left in the bowl after the pies are cut goes straight
+              into the blender — the color below is a true weighted mix of
+              today's flavors.
+            </p>
+            <div class="swatch-row">
+              <div class="drink-swatch" id="drinkSwatch"></div>
+              <span class="hexcode" id="drinkHex">#A8283F</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const data = [
+        { name: "Cherry", hex: "#A8283F" },
+        { name: "Apple", hex: "#8FA05C" },
+        { name: "Blueberry", hex: "#3D3462" },
+        { name: "Peach", hex: "#E8935B" },
+        { name: "Pumpkin", hex: "#C96A2B" }
+      ];
+      let values = [32, 24, 18, 15, 11]; // sums to 100
+
+      const cx = 130,
+        cy = 130,
+        r = 108,
+        pullDist = 14;
+      const svg = document.getElementById("chart");
+      const legend = document.getElementById("legend");
+
+      function polar(angleDeg, radius) {
+        const rad = ((angleDeg - 90) * Math.PI) / 180;
+        return {
+          x: cx + radius * Math.cos(rad),
+          y: cy + radius * Math.sin(rad)
+        };
+      }
+      function arcPath(startAngle, endAngle, radius) {
+        const start = polar(endAngle, radius);
+        const end = polar(startAngle, radius);
+        const largeArc = endAngle - startAngle > 180 ? 1 : 0;
+        return `M ${cx} ${cy} L ${start.x.toFixed(2)} ${start.y.toFixed(2)} A ${radius} ${radius} 0 ${largeArc} 0 ${end.x.toFixed(2)} ${end.y.toFixed(2)} Z`;
+      }
+      function angles() {
+        let a = 0;
+        return data.map((d, i) => {
+          const sweep = (values[i] / 100) * 360;
+          const start = a,
+            end = a + sweep;
+          a = end;
+          return { start, end, mid: (start + end) / 2 };
+        });
+      }
+
+      // crust ring (static)
+      const scallops = 22;
+      let dPath = "";
+      for (let i = 0; i <= scallops; i++) {
+        const a = (360 / scallops) * i;
+        const wobble = i % 2 === 0 ? r + 7 : r + 2;
+        const p = polar(a, wobble);
+        dPath +=
+          (i === 0 ? "M " : "L ") + p.x.toFixed(2) + " " + p.y.toFixed(2) + " ";
+      }
+      const crust = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "path"
+      );
+      crust.setAttribute("d", dPath + "Z");
+      crust.setAttribute("fill", "var(--crust)");
+      crust.setAttribute("stroke", "var(--crust-dark)");
+      crust.setAttribute("stroke-width", "2");
+      svg.appendChild(crust);
+
+      // build slice + label elements once
+      let current = angles();
+      const sliceEls = data.map((d, i) => {
+        const a = current[i];
+        const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        g.classList.add("slice");
+        const dir = polar(a.mid, 1);
+        g.style.setProperty(
+          "--dx",
+          ((dir.x - cx) * (pullDist / 40)).toFixed(2) + "px"
+        );
+        g.style.setProperty(
+          "--dy",
+          ((dir.y - cy) * (pullDist / 40)).toFixed(2) + "px"
+        );
+
+        const path = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "path"
+        );
+        path.setAttribute("fill", d.hex);
+        path.setAttribute("d", arcPath(a.start, a.end, r));
+        g.appendChild(path);
+
+        const label = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "text"
+        );
+        label.classList.add("label");
+        const lp = polar(a.mid, r * 0.62);
+        label.setAttribute("x", lp.x.toFixed(2));
+        label.setAttribute("y", lp.y.toFixed(2));
+        label.textContent = values[i] + "%";
+        g.appendChild(label);
+
+        svg.appendChild(g);
+
+        const setPulled = (on) => g.classList.toggle("pulled", on);
+        g.addEventListener("mouseenter", () => setPulled(true));
+        g.addEventListener("mouseleave", () => setPulled(false));
+
+        return { g, path, label, setPulled };
+      });
+
+      function easeOutCubic(t) {
+        return 1 - Math.pow(1 - t, 3);
+      }
+      function morphSlices() {
+        const from = current;
+        const to = angles();
+        const duration = 320;
+        const t0 = performance.now();
+        function frame(now) {
+          const t = Math.min(1, (now - t0) / duration);
+          const e = easeOutCubic(t);
+          to.forEach((target, i) => {
+            const f = from[i];
+            const start = f.start + (target.start - f.start) * e;
+            const end = f.end + (target.end - f.end) * e;
+            const mid = (start + end) / 2;
+            sliceEls[i].path.setAttribute("d", arcPath(start, end, r));
+            const lp = polar(mid, r * 0.62);
+            sliceEls[i].label.setAttribute("x", lp.x.toFixed(2));
+            sliceEls[i].label.setAttribute("y", lp.y.toFixed(2));
+            const dir = polar(mid, 1);
+            sliceEls[i].g.style.setProperty(
+              "--dx",
+              ((dir.x - cx) * (pullDist / 40)).toFixed(2) + "px"
+            );
+            sliceEls[i].g.style.setProperty(
+              "--dy",
+              ((dir.y - cy) * (pullDist / 40)).toFixed(2) + "px"
+            );
+          });
+          if (t < 1) requestAnimationFrame(frame);
+          else current = to;
+        }
+        requestAnimationFrame(frame);
+      }
+
+      // legend + sliders
+      const rows = data.map((d, i) => {
+        const item = document.createElement("div");
+        item.className = "legend-item";
+        item.innerHTML = `
+    <span class="swatch" style="background:${d.hex}"></span>
+    <span class="flavor-name">${d.name}</span>
+    <span class="pct" id="pct-${i}">${values[i]}%</span>
+    <div class="slider-row">
+      <input type="range" min="0" max="100" step="1" value="${values[i]}" id="slider-${i}"
+             style="--thumb:${d.hex}" aria-label="${d.name} share">
+    </div>
+  `;
+        legend.appendChild(item);
+        const setPulled = (on) => sliceEls[i].setPulled(on);
+        item.addEventListener("mouseenter", () => setPulled(true));
+        item.addEventListener("mouseleave", () => setPulled(false));
+        return item;
+      });
+
+      function hexToRgb(hex) {
+        const n = parseInt(hex.slice(1), 16);
+        return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+      }
+      function rgbToHex(r, g, b) {
+        const c = (v) =>
+          Math.round(Math.max(0, Math.min(255, v)))
+            .toString(16)
+            .padStart(2, "0");
+        return `#${c(r)}${c(g)}${c(b)}`.toUpperCase();
+      }
+
+      const liquidFill = document.getElementById("liquidFill");
+      const drinkSwatch = document.getElementById("drinkSwatch");
+      const drinkHex = document.getElementById("drinkHex");
+      const blendName = document.getElementById("blendName");
+      const blade = document.getElementById("blade");
+      const bubbleLayer = document.getElementById("bubbleLayer");
+
+      function updateBlend() {
+        let r = 0,
+          g = 0,
+          b = 0;
+        data.forEach((d, i) => {
+          const w = values[i] / 100;
+          const [rr, gg, bb] = hexToRgb(d.hex);
+          r += rr * w;
+          g += gg * w;
+          b += bb * w;
+        });
+        const hex = rgbToHex(r, g, b);
+        liquidFill.setAttribute("fill", hex);
+        drinkSwatch.style.background = hex;
+        drinkHex.textContent = hex;
+
+        const ranked = data
+          .map((d, i) => ({ name: d.name, v: values[i] }))
+          .sort((a, b) => b.v - a.v);
+        blendName.textContent =
+          ranked[1] && ranked[1].v > 0
+            ? `${ranked[0].name}–${ranked[1].name} Swirl`
+            : `Pure ${ranked[0].name}`;
+
+        blade.classList.remove("spinning");
+        void blade.offsetWidth; // restart animation
+        blade.classList.add("spinning");
+
+        for (let k = 0; k < 5; k++) {
+          const bub = document.createElement("div");
+          bub.className = "bubble";
+          const size = 4 + Math.random() * 6;
+          bub.style.width = size + "px";
+          bub.style.height = size + "px";
+          bub.style.left = 35 + Math.random() * 30 + "%";
+          bub.style.bottom = "20%";
+          bub.style.animation = `bubbleUp ${600 + Math.random() * 400}ms ease-out ${Math.random() * 150}ms`;
+          bubbleLayer.appendChild(bub);
+          setTimeout(() => bub.remove(), 1200);
+        }
+      }
+
+      function normalizeFrom(idx, newVal) {
+        newVal = Math.max(0, Math.min(100, newVal));
+        const old = values[idx];
+        const othersSum = 100 - old;
+        const scale = othersSum > 0.0001 ? (100 - newVal) / othersSum : 0;
+        const next = values.map((v, i) => (i === idx ? newVal : v * scale));
+        const drift = 100 - next.reduce((a, b) => a + b, 0);
+        let maxI = 0;
+        next.forEach((v, i) => {
+          if (i !== idx && v > next[maxI]) maxI = i;
+        });
+        if (maxI === idx) maxI = (idx + 1) % next.length;
+        next[maxI] += drift;
+        values = next;
+      }
+
+      data.forEach((d, i) => {
+        const slider = document.getElementById(`slider-${i}`);
+        slider.addEventListener("input", (e) => {
+          normalizeFrom(i, parseFloat(e.target.value));
+          data.forEach((_, j) => {
+            const rounded = Math.round(values[j]);
+            document.getElementById(`pct-${j}`).textContent = rounded + "%";
+            sliceEls[j].label.textContent = rounded + "%";
+            if (j !== i) document.getElementById(`slider-${j}`).value = rounded;
+          });
+          morphSlices();
+          updateBlend();
+        });
+      });
+
+      updateBlend();
+    </script>
+  </body>
+</html>
