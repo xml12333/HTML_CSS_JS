@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portion Planner — Drag-to-Slice Allocation Chart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,700&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css">
+        </head>
+
+<body>
+    <div class="app">
+        <header class="hero">
+            <div class="brand">
+                <div class="logo" aria-hidden="true"></div>
+                <div>
+                    <h1>Portion Planner</h1>
+                    <p class="tagline">Slice any whole into meaningful parts — budget, hours, equity, macros.</p>
+                </div>
+            </div>
+            <div class="hero-actions">
+                <button type="button" id="btnEqualize" class="ghost">Equalize</button>
+                <button type="button" id="btnBake" class="ghost">Bake again</button>
+                <button type="button" id="btnExportJson" class="ghost">Export JSON</button>
+                <button type="button" id="btnExportSvg" class="primary">Download SVG</button>
+            </div>
+        </header>
+
+        <main class="stage">
+            <aside class="card sidebar">
+                <p class="panel-label">Recipe card</p>
+                <div class="meta-grid">
+                    <label class="field title-field">Chart title
+                        <input id="fldTitle" type="text" maxlength="48" />
+                    </label>
+                    <label class="field">Whole amount
+                        <input id="fldTotal" type="number" min="0" step="any" />
+                    </label>
+                    <label class="field">Unit
+                        <input id="fldUnit" type="text" maxlength="8" placeholder="$, h, kcal" />
+                    </label>
+                </div>
+
+                <p class="panel-label">Slices</p>
+                <p class="hint">Lock a slice to keep it still. Drag the gold handles on the chart to trade portion
+                    between neighbors.</p>
+                <div class="item-list" id="itemList"></div>
+                <div class="row-actions">
+                    <button type="button" id="btnAdd" class="primary">+ Add slice</button>
+                    <button type="button" id="btnImport" class="ghost">Import JSON</button>
+                </div>
+                <div class="sum-bar" id="sumBar"><span>Allocated</span><span>100%</span></div>
+
+                <p class="panel-label" style="margin-top:16px">Starter fillings</p>
+                <div class="templates" id="templates"></div>
+            </aside>
+
+            <section class="card oven">
+                <div class="oven-toolbar">
+                    <div class="toggles" role="group" aria-label="Chart type">
+                        <button type="button" data-mode="pie" id="btnPie">Pie</button>
+                        <button type="button" data-mode="donut" id="btnDonut">Donut</button>
+                    </div>
+                    <div class="toggles">
+                        <button type="button" id="btnGaps" class="ghost">Gaps</button>
+                        <button type="button" id="btnSprinkles" class="ghost">Sprinkles</button>
+                        <button type="button" id="btnCrust" class="ghost">Crust</button>
+                        <button type="button" id="btnLabels" class="ghost">Labels</button>
+                    </div>
+                </div>
+                <div class="chart-wrap">
+                    <div id="chartHost" role="img" aria-label="Allocation chart"></div>
+                </div>
+                <div class="legend" id="legend"></div>
+            </section>
+        </main>
+
+        <p class="footer-note">
+            Keyboard: click a slice, then use <kbd>←</kbd> <kbd>→</kbd> to nudge 1%. Hold <kbd>Shift</kbd> for 5%.
+            Data stays in this browser until you export it.
+        </p>
+    </div>
+
+    <div class="tip" id="tip" role="tooltip"></div>
+    <input type="file" id="fileJson" accept="application/json" hidden />
+  <script>
+        /* ============================================================
+           BakedChart — reusable pie / donut renderer (vanilla SVG)
+           ------------------------------------------------------------
+           Drop this class into any page:
+    
+             const chart = new BakedChart(hostElement, {
+               data: [{ id, name, value, color, locked }],
+               mode: 'donut',          // 'pie' | 'donut'
+               unit: '$',
+               total: 4200,
+               title: 'Monthly Budget',
+               gaps: true,
+               sprinkles: true,
+               crust: true,
+               labels: true,
+               onSelect(item) {},
+               onChange(items) {},     // fired after a drag-resize
+               onHover(item, event) {}
+             });
+    
+             chart.setData(items);
+             chart.setMode('pie');
+             chart.setOptions({ sprinkles: false });
+             chart.select(id);
+             chart.bake();             // replay intro animation
+             chart.exportSVG();        // string
+             chart.destroy();
+           ============================================================ */
+    function refreshChart(bake) {
+    if (!chart) return;
+    chart.setOptions({
+        mode: state.mode,
+        gaps: state.gaps,
+        sprinkles: state.sprinkles,
+        crust: state.crust,
+        labels: state.labels,
+        title: state.title,
+        unit: state.unit,
+        total: Number(state.total) || 0
+    });
+    chart.setData(state.items);
+    if (state.selectedId) chart.select(state.selectedId);
+    if (bake) chart.bake();
+    renderLegend();
+}
+
+        class BakedChart {
+            constructor(host, options = {}) {
+                this.host = typeof host === 'string' ? document.querySelector(host) : host;
+                this.opts = {
+                    mode: 'donut',
+                    unit: '',
+                    total: 100,
+                    title: 'Allocation',
+                    gaps: true,
+                    sprinkles: true,
+                    crust: true,
+                    labels: true,
+                    onSelect: null,
+                    onChange: null,
+                    onHover: null,
+                    ...options
+                };
+                this.data = (options.data || []).map((d, i) => this._norm(d, i));
+                this.selectedId = null;
+                this._anim = 1;
+                this._raf = null;
+                this._drag = null;
+                this._display = [];
+                this._ns = 'http://www.w3.org/2000/svg';
+                this._id = 'bc-' + Math.random().toString(36).slice(2, 8);
+                this._bind = {
+                    down: this._onDown.bind(this),
+                    move: this._onMove.bind(this),
+                    up: this._onUp.bind(this),
+                    leave: this._onLeave.bind(this)
+                };
+                this._build();
+                this.bake();
+            }
+
+            /* ---------- public API ---------- */
+            setData(items) {
+                this.data = items.map((d, i) => this._norm(d, i));
+                this._syncDisplay(false);
+                this.render();
+            }
+
+            setMode(mode) {
+                this.opts.mode = mode;
+                this.render();
+            }
+
+            setOptions(partial) {
+                Object.assign(this.opts, partial);
+                this.render();
+            }
+
+            select(id) {
+                this.selectedId = id;
+                this.render();
+                const item = this.data.find(d => d.id === id) || null;
+                if (this.opts.onSelect) this.opts.onSelect(item);
+            }
+
+            bake() {
+                this._anim = 0;
+                this._syncDisplay(true);
+                this._tick();
+            }
+
+            exportSVG() {
+                const svg = this.svg.cloneNode(true);
+                svg.setAttribute('xmlns', this._ns);
+                svg.setAttribute('width', '800');
+                svg.setAttribute('height', '800');
+                return '<?xml version="1.0" encoding="UTF-8"?>\n' + svg.outerHTML;
+            }
+
+            destroy() {
+                cancelAnimationFrame(this._raf);
+                this.svg.removeEventListener('pointerdown', this._bind.down);
+                window.removeEventListener('pointermove', this._bind.move);
+                window.removeEventListener('pointerup', this._bind.up);
+                this.host.innerHTML = '';
+            }
+
+            /* ---------- internals ---------- */
+            _norm(d, i) {
+                return {
+                    id: d.id || 's' + i + '-' + d.name,
+                    name: d.name || 'Slice ' + (i + 1),
+                    value: Number(d.value) || 0,
+                    color: d.color || BakedChart.palette[i % BakedChart.palette.length],
+                    locked: !!d.locked
+                };
+            }
+
+            _syncDisplay(reset) {
+                if (reset || this._display.length !== this.data.length) {
+                    this._display = this.data.map(d => ({ id: d.id, value: 0 }));
+                }
+                this._display = this.data.map((d, i) => ({
+                    id: d.id,
+                    value: this._display[i] ? this._display[i].value : 0
+                }));
+            }
+
+            _build() {
+                this.host.innerHTML = '';
+                this.svg = document.createElementNS(this._ns, 'svg');
+                this.svg.setAttribute('viewBox', '0 0 400 400');
+                this.svg.setAttribute('role', 'presentation');
+                this.host.appendChild(this.svg);
+                this.svg.addEventListener('pointerdown', this._bind.down);
+                this.svg.addEventListener('pointerleave', this._bind.leave);
+                window.addEventListener('pointermove', this._bind.move);
+                window.addEventListener('pointerup', this._bind.up);
+            }
+
+            _tick() {
+                const speed = 0.16;
+                let still = false;
+                this.data.forEach((d, i) => {
+                    if (!this._display[i]) this._display[i] = { id: d.id, value: 0 };
+                    const cur = this._display[i].value;
+                    const next = cur + (d.value - cur) * speed;
+                    this._display[i].value = next;
+                    if (Math.abs(d.value - next) > 0.04) still = true;
+                    else this._display[i].value = d.value;
+                });
+                if (this._anim < 1) {
+                    this._anim = Math.min(1, this._anim + 0.055);
+                    still = true;
+                }
+                this.render();
+                if (still) this._raf = requestAnimationFrame(() => this._tick());
+            }
+
+            _sum(arr) {
+                return arr.reduce((a, b) => a + b.value, 0) || 1;
+            }
+
+            _angles(source) {
+                const gap = this.opts.gaps && source.length > 1 ? 2.4 : 0;
+                const totalGap = gap * source.length;
+                const usable = 360 - totalGap;
+                const sum = this._sum(source);
+                let a = -90 + gap / 2;
+                return source.map(d => {
+                    const sweep = (d.value / sum) * usable * this._anim;
+                    const start = a;
+                    const end = a + sweep;
+                    a = end + gap;
+                    return { ...d, start, end, mid: (start + end) / 2, sweep };
+                });
+            }
+
+            _pt(cx, cy, r, angle) {
+                const rad = (angle - 90) * Math.PI / 180;
+                /* Angles in this renderer are already stored as CSS-like
+                   degrees where -90 is 12 o'clock, so convert directly. */
+                const a = angle * Math.PI / 180;
+                return { x: cx + r * Math.cos(a), y: cy + r * Math.sin(a) };
+            }
+
+            _slicePath(cx, cy, outer, inner, start, end) {
+                const large = end - start > 180 ? 1 : 0;
+                const p1 = this._pt(cx, cy, outer, start);
+                const p2 = this._pt(cx, cy, outer, end);
+                if (inner <= 0.5) {
+                    return `M ${cx} ${cy} L ${p1.x} ${p1.y} A ${outer} ${outer} 0 ${large} 1 ${p2.x} ${p2.y} Z`;
+                }
+                const p3 = this._pt(cx, cy, inner, end);
+                const p4 = this._pt(cx, cy, inner, start);
+                return `M ${p1.x} ${p1.y} A ${outer} ${outer} 0 ${large} 1 ${p2.x} ${p2.y} L ${p3.x} ${p3.y} A ${inner} ${inner} 0 ${large} 0 ${p4.x} ${p4.y} Z`;
+            }
+
+            _crustPath(cx, cy, r, waves = 28, amp = 5) {
+                let d = '';
+                for (let i = 0; i <= 360; i += 3) {
+                    const wobble = Math.sin((i * waves * Math.PI) / 180) * amp
+                        + Math.sin((i * 7 * Math.PI) / 180) * 1.2;
+                    const p = this._pt(cx, cy, r + wobble, i - 90);
+                    d += (i === 0 ? 'M' : 'L') + p.x.toFixed(2) + ',' + p.y.toFixed(2);
+                }
+                return d + 'Z';
+            }
+
+            _seed(str) {
+                let h = 2166136261;
+                for (let i = 0; i < str.length; i++) {
+                    h ^= str.charCodeAt(i);
+                    h = Math.imul(h, 16777619);
+                }
+                return () => {
+                    h += 0x6D2B79F5;
+                    let t = Math.imul(h ^ (h >>> 15), 1 | h);
+                    t ^= t + Math.imul(t ^ (t >>> 7), 61 | t);
+                    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+                };
+            }
+
+            render() {
+                const ns = this._ns;
+                const svg = this.svg;
+                while (svg.firstChild) svg.removeChild(svg.firstChild);
+
+                const cx = 200, cy = 200;
+                const outer = 148;
+                const inner = this.opts.mode === 'donut' ? 78 : 0;
+                const slices = this._angles(this._display.map((d, i) => ({
+                    ...this.data[i],
+                    value: d.value
+                })));
+
+                /* defs: per-slice gradients + icing shine */
+                const defs = document.createElementNS(ns, 'defs');
+                slices.forEach((s, i) => {
+                    const g = document.createElementNS(ns, 'radialGradient');
+                    g.id = this._id + '-g' + i;
+                    g.setAttribute('cx', '42%');
+                    g.setAttribute('cy', '38%');
+                    g.setAttribute('r', '75%');
+                    const c1 = document.createElementNS(ns, 'stop');
+                    c1.setAttribute('offset', '0%');
+                    c1.setAttribute('stop-color', this._tint(s.color, 0.28));
+                    const c2 = document.createElementNS(ns, 'stop');
+                    c2.setAttribute('offset', '70%');
+                    c2.setAttribute('stop-color', s.color);
+                    const c3 = document.createElementNS(ns, 'stop');
+                    c3.setAttribute('offset', '100%');
+                    c3.setAttribute('stop-color', this._tint(s.color, -0.18));
+                    g.append(c1, c2, c3);
+                    defs.appendChild(g);
+                });
+                svg.appendChild(defs);
+
+                /* pie crust sitting under the filling */
+                if (this.opts.crust) {
+                    const crust = document.createElementNS(ns, 'path');
+                    crust.setAttribute('d', this._crustPath(cx, cy, outer + 10));
+                    crust.setAttribute('fill', '#c9894a');
+                    crust.setAttribute('stroke', '#8a4a22');
+                    crust.setAttribute('stroke-width', '3');
+                    svg.appendChild(crust);
+                    const innerCrust = document.createElementNS(ns, 'circle');
+                    innerCrust.setAttribute('cx', cx);
+                    innerCrust.setAttribute('cy', cy);
+                    innerCrust.setAttribute('r', outer + 3);
+                    innerCrust.setAttribute('fill', '#e8c899');
+                    svg.appendChild(innerCrust);
+                }
+
+                const group = document.createElementNS(ns, 'g');
+                group.setAttribute('class', 'slices');
+                svg.appendChild(group);
+
+                slices.forEach((s, i) => {
+                    if (s.sweep <= 0.05) return;
+                    const path = document.createElementNS(ns, 'path');
+                    const explode = this.selectedId === s.id ? 8 : 0;
+                    const midRad = s.mid * Math.PI / 180;
+                    const ox = Math.cos(midRad) * explode;
+                    const oy = Math.sin(midRad) * explode;
+                    path.setAttribute('d', this._slicePath(cx + ox, cy + oy, outer, inner, s.start, s.end));
+                    path.setAttribute('fill', `url(#${this._id}-g${i})`);
+                    path.setAttribute('data-id', s.id);
+                    path.style.cursor = 'pointer';
+                    path.style.filter = this.selectedId === s.id
+                        ? 'brightness(1.05)'
+                        : 'brightness(1)';
+                    path.addEventListener('pointerenter', (e) => this._hover(s, e));
+                    path.addEventListener('pointermove', (e) => this._hover(s, e));
+                    group.appendChild(path);
+
+                    /* sprinkles — seeded so they stay put while editing */
+                    if (this.opts.sprinkles && s.sweep > 8) {
+                        const rand = this._seed(s.name + s.color);
+                        const count = Math.min(18, 6 + Math.floor(s.sweep / 8));
+                        for (let n = 0; n < count; n++) {
+                            const t = rand();
+                            const ang = s.start + 6 + t * Math.max(0, s.sweep - 12);
+                            const rr = inner + 12 + rand() * (outer - inner - 24);
+                            const p = this._pt(cx + ox, cy + oy, rr, ang);
+                            const sp = document.createElementNS(ns, 'rect');
+                            const w = 3.2 + rand() * 2.2;
+                            const h = 1.4 + rand() * 0.8;
+                            sp.setAttribute('x', p.x - w / 2);
+                            sp.setAttribute('y', p.y - h / 2);
+                            sp.setAttribute('width', w);
+                            sp.setAttribute('height', h);
+                            sp.setAttribute('rx', 0.7);
+                            sp.setAttribute('fill', rand() > 0.5 ? '#fff8' : this._tint(s.color, 0.45));
+                            sp.setAttribute('transform', `rotate(${(rand() * 180 - 90).toFixed(1)} ${p.x} ${p.y})`);
+                            sp.setAttribute('pointer-events', 'none');
+                            group.appendChild(sp);
+                        }
+                    }
+
+                    if (this.opts.labels && s.sweep > 18) {
+                        const lr = inner > 0 ? (inner + outer) / 2 : outer * 0.62;
+                        const lp = this._pt(cx + ox, cy + oy, lr, s.mid);
+                        const label = document.createElementNS(ns, 'text');
+                        label.setAttribute('x', lp.x);
+                        label.setAttribute('y', lp.y);
+                        label.setAttribute('text-anchor', 'middle');
+                        label.setAttribute('dominant-baseline', 'middle');
+                        label.setAttribute('fill', this._contrast(s.color));
+                        label.setAttribute('font-size', '13');
+                        label.setAttribute('font-family', 'Outfit, sans-serif');
+                        label.setAttribute('font-weight', '700');
+                        label.setAttribute('pointer-events', 'none');
+                        const sum = this._sum(this.data);
+                        label.textContent = Math.round((s.value / sum) * 100) + '%';
+                        group.appendChild(label);
+                    }
+                });
+
+                /* icing highlight for donut mode */
+                if (this.opts.mode === 'donut') {
+                    const shine = document.createElementNS(ns, 'path');
+                    shine.setAttribute('d', this._slicePath(cx, cy, outer - 4, inner + 4, -150, -40));
+                    shine.setAttribute('fill', 'rgba(255,255,255,0.14)');
+                    shine.setAttribute('pointer-events', 'none');
+                    svg.appendChild(shine);
+                }
+
+                /* center well */
+                if (this.opts.mode === 'donut') {
+                    const hole = document.createElementNS(ns, 'circle');
+                    hole.setAttribute('cx', cx);
+                    hole.setAttribute('cy', cy);
+                    hole.setAttribute('r', inner - 2);
+                    hole.setAttribute('fill', '#fffaf3');
+                    hole.setAttribute('pointer-events', 'none');
+                    svg.appendChild(hole);
+                }
+
+                const selected = this.data.find(d => d.id === this.selectedId);
+                const centerLines = selected
+                    ? [selected.name, this._fmt(selected.value)]
+                    : [this.opts.title, this._fmtTotal()];
+
+                centerLines.forEach((line, idx) => {
+                    const t = document.createElementNS(ns, 'text');
+                    t.setAttribute('x', cx);
+                    t.setAttribute('y', cy + (idx === 0 ? -8 : 14));
+                    t.setAttribute('text-anchor', 'middle');
+                    t.setAttribute('fill', idx === 0 ? '#2a1810' : '#6b5348');
+                    t.setAttribute('font-size', idx === 0 ? (this.opts.mode === 'donut' ? 13 : 15) : 18);
+                    t.setAttribute('font-family', idx === 0 ? 'Outfit, sans-serif' : 'Fraunces, serif');
+                    t.setAttribute('font-weight', idx === 0 ? '600' : '700');
+                    t.setAttribute('pointer-events', 'none');
+                    if (this.opts.mode === 'pie' && idx === 0) {
+                        t.setAttribute('y', 4);
+                        t.setAttribute('font-size', '16');
+                    }
+                    if (this.opts.mode === 'pie' && idx === 1) {
+                        t.setAttribute('y', 30);
+                    }
+                    t.textContent = this._truncate(line, 22);
+                    svg.appendChild(t);
+                });
+
+                /* drag handles at unlocked boundaries */
+                const realAngles = this._angles(this.data);
+                realAngles.forEach((s, i) => {
+                    const next = realAngles[(i + 1) % realAngles.length];
+                    if (s.locked || next.locked) return;
+                    const handleAngle = s.end + (this.opts.gaps ? 1.2 : 0);
+                    const p = this._pt(cx, cy, outer + 2, handleAngle);
+                    const h = document.createElementNS(ns, 'circle');
+                    h.setAttribute('cx', p.x);
+                    h.setAttribute('cy', p.y);
+                    h.setAttribute('r', 7);
+                    h.setAttribute('fill', '#fffaf3');
+                    h.setAttribute('stroke', '#d9a441');
+                    h.setAttribute('stroke-width', '3');
+                    h.style.cursor = 'ew-resize';
+                    h.setAttribute('data-handle', i);
+                    svg.appendChild(h);
+                });
+            }
+
+            _fmt(percent) {
+                const sum = this._sum(this.data);
+                const pct = (percent / sum) * 100;
+                const amount = (this.opts.total * pct) / 100;
+                const unit = this.opts.unit || '';
+                const amountStr = this._num(amount);
+                return `${pct.toFixed(1)}% · ${unit}${amountStr}`;
+            }
+
+            _fmtTotal() {
+                const unit = this.opts.unit || '';
+                return unit + this._num(this.opts.total);
+            }
+
+            _num(n) {
+                if (Math.abs(n) >= 100) return Math.round(n).toLocaleString();
+                return Number(n.toFixed(2)).toLocaleString();
+            }
+
+            _truncate(s, n) {
+                return s.length > n ? s.slice(0, n - 1) + '…' : s;
+            }
+
+            _tint(hex, amt) {
+                const c = hex.replace('#', '');
+                const num = parseInt(c.length === 3 ? c.split('').map(ch => ch + ch).join('') : c, 16);
+                let r = (num >> 16) + Math.round(255 * amt);
+                let g = ((num >> 8) & 0xff) + Math.round(255 * amt);
+                let b = (num & 0xff) + Math.round(255 * amt);
+                r = Math.max(0, Math.min(255, r));
+                g = Math.max(0, Math.min(255, g));
+                b = Math.max(0, Math.min(255, b));
+                return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+            }
+
+            _contrast(hex) {
+                const c = hex.replace('#', '');
+                const full = c.length === 3 ? c.split('').map(ch => ch + ch).join('') : c;
+                const num = parseInt(full, 16);
+                const r = num >> 16, g = (num >> 8) & 255, b = num & 255;
+                const yiq = (r * 299 + g * 587 + b * 114) / 1000;
+                return yiq > 155 ? '#2a1810' : '#fffaf3';
+            }
+
+            _svgPoint(e) {
+                const pt = this.svg.createSVGPoint();
+                pt.x = e.clientX;
+                pt.y = e.clientY;
+                return pt.matrixTransform(this.svg.getScreenCTM().inverse());
+            }
+
+            _angleFromEvent(e) {
+                const p = this._svgPoint(e);
+                return Math.atan2(p.y - 200, p.x - 200) * 180 / Math.PI;
+            }
+
+            _hover(slice, event) {
+                if (this.opts.onHover) this.opts.onHover(slice, event);
+            }
+
+            _onLeave() {
+                if (this.opts.onHover) this.opts.onHover(null, null);
+            }
+
+            _onDown(e) {
+                const handle = e.target.getAttribute('data-handle');
+                if (handle !== null) {
+                    e.preventDefault();
+                    this.svg.setPointerCapture?.(e.pointerId);
+                    this._drag = { index: Number(handle), lastAngle: this._angleFromEvent(e) };
+                    return;
+                }
+                const id = e.target.getAttribute('data-id');
+                if (id) this.select(id);
+            }
+
+            _onMove(e) {
+                if (!this._drag) return;
+                const ang = this._angleFromEvent(e);
+                let delta = ang - this._drag.lastAngle;
+                if (delta > 180) delta -= 360;
+                if (delta < -180) delta += 360;
+                this._drag.lastAngle = ang;
+
+                const i = this._drag.index;
+                const j = (i + 1) % this.data.length;
+                const min = 2;
+                const di = this.data[i].value + (delta / 360) * 100;
+                const dj = this.data[j].value - (delta / 360) * 100;
+                if (di < min || dj < min) return;
+                this.data[i].value = di;
+                this.data[j].value = dj;
+                this._display[i].value = di;
+                this._display[j].value = dj;
+                this.render();
+                if (this.opts.onChange) this.opts.onChange(this.data);
+            }
+
+            _onUp() {
+                if (this._drag && this.opts.onChange) this.opts.onChange(this.data);
+                this._drag = null;
+            }
+        }
+
+        BakedChart.palette = [
+            '#c44536', '#e8a54b', '#6b8f71', '#4a5d9b',
+            '#9b3654', '#d4782a', '#6b3a2a', '#7b6ea8',
+            '#3e7c7c', '#c9894a', '#2f4858', '#b8572a'
+        ];
+
+        /* ============================================================
+           Application — Portion Planner shell around BakedChart
+           ============================================================ */
+        const STORAGE_KEY = 'portion-planner-v1';
+        const MIN_SLICES = 2;
+        const MAX_SLICES = 12;
+        const MIN_PCT = 1;
+
+        const TEMPLATES = [
+            {
+                id: 'budget',
+                label: 'Monthly budget',
+                title: 'Monthly Budget',
+                unit: '$',
+                total: 4200,
+                items: [
+                    { name: 'Housing', value: 35, color: '#c44536' },
+                    { name: 'Food', value: 16, color: '#e8a54b' },
+                    { name: 'Transport', value: 10, color: '#4a5d9b' },
+                    { name: 'Savings', value: 20, color: '#6b8f71' },
+                    { name: 'Fun', value: 8, color: '#9b3654' },
+                    { name: 'Other', value: 11, color: '#6b3a2a' }
+                ]
+            },
+            {
+                id: 'hours',
+                label: '24-hour day',
+                title: 'A Day in Hours',
+                unit: 'h',
+                total: 24,
+                items: [
+                    { name: 'Sleep', value: 33, color: '#4a5d9b' },
+                    { name: 'Deep work', value: 21, color: '#c44536' },
+                    { name: 'Meetings', value: 12, color: '#d4782a' },
+                    { name: 'Care / home', value: 17, color: '#6b8f71' },
+                    { name: 'Leisure', value: 17, color: '#e8a54b' }
+                ]
+            },
+            {
+                id: 'macros',
+                label: 'Calorie macros',
+                title: 'Daily Macros',
+                unit: 'kcal',
+                total: 2200,
+                items: [
+                    { name: 'Protein', value: 30, color: '#c44536' },
+                    { name: 'Carbs', value: 40, color: '#e8a54b' },
+                    { name: 'Fat', value: 30, color: '#6b8f71' }
+                ]
+            },
+            {
+                id: 'equity',
+                label: 'Startup equity',
+                title: 'Cap Table Split',
+                unit: '%',
+                total: 100,
+                items: [
+                    { name: 'Founders', value: 55, color: '#2f4858' },
+                    { name: 'Option pool', value: 15, color: '#6b8f71' },
+                    { name: 'Seed investors', value: 20, color: '#d4782a' },
+                    { name: 'Advisors', value: 10, color: '#7b6ea8' }
+                ]
+            },
+            {
+                id: 'content',
+                label: 'Content mix',
+                title: 'Editorial Mix',
+                unit: '%',
+                total: 100,
+                items: [
+                    { name: 'Tutorials', value: 40, color: '#3e7c7c' },
+                    { name: 'Stories', value: 25, color: '#9b3654' },
+                    { name: 'News', value: 20, color: '#4a5d9b' },
+                    { name: 'Opinion', value: 15, color: '#e8a54b' }
+                ]
+            }
+        ];
+
+        const state = {
+            title: '',
+            unit: '',
+            total: 100,
+            mode: 'donut',
+            gaps: true,
+            sprinkles: true,
+            crust: true,
+            labels: true,
+            items: [],
+            selectedId: null
+        };
+
+        let chart;
+        let uid = 1;
+
+        const $ = (id) => document.getElementById(id);
+        const tip = $('tip');
+
+        function newItem(partial = {}) {
+            return {
+                id: 'slice-' + uid++,
+                name: partial.name || 'New slice',
+                value: partial.value ?? 10,
+                color: partial.color || BakedChart.palette[(uid - 1) % BakedChart.palette.length],
+                locked: !!partial.locked
+            };
+        }
+
+        function applyTemplate(tpl) {
+            state.title = tpl.title;
+            state.unit = tpl.unit;
+            state.total = tpl.total;
+            state.items = tpl.items.map(i => newItem(i));
+            state.selectedId = null;
+            normalize(false);
+            persist();
+            syncForm();
+            refreshChart(true);
+            renderList();
+        }
+
+        function normalize(keepLocked) {
+            const items = state.items;
+            if (!items.length) return;
+            items.forEach(i => { if (i.value < MIN_PCT) i.value = MIN_PCT; });
+            const sum = items.reduce((a, b) => a + b.value, 0);
+            if (Math.abs(sum - 100) < 0.05) {
+                items.forEach(i => { i.value = +i.value.toFixed(2); });
+                return;
+            }
+            if (!keepLocked) {
+                items.forEach(i => { i.value = (i.value / sum) * 100; });
+            } else {
+                const locked = items.filter(i => i.locked);
+                const free = items.filter(i => !i.locked);
+                const lockedSum = locked.reduce((a, b) => a + b.value, 0);
+                const remain = Math.max(MIN_PCT * free.length, 100 - lockedSum);
+                const freeSum = free.reduce((a, b) => a + b.value, 0) || 1;
+                free.forEach(i => { i.value = (i.value / freeSum) * remain; });
+            }
+            /* dump rounding dust onto the last unlocked slice */
+            const dustTarget = [...items].reverse().find(i => !i.locked) || items[items.length - 1];
+            const s2 = items.reduce((a, b) => a + b.value, 0);
+            dustTarget.value += 100 - s2;
+            items.forEach(i => { i.value = +i.value.toFixed(2); });
+        }
+
+        function allocated() {
+            return state.items.reduce((a, b) => a + b.value, 0);
+        }
+
+        function persist() {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify({
+                    title: state.title,
+                    unit: state.unit,
+                    total: state.total,
+                    mode: state.mode,
+                    gaps: state.gaps,
+                    sprinkles: state.sprinkles,
+                    crust: state.crust,
+                    labels: state.labels,
+                    items: state.items
+                }));
+            } catch (err) { /* private mode — ignore */ }
+        }
+
+        function restore() {
+            try {
+                const raw = localStorage.getItem(STORAGE_KEY);
+                if (!raw) return false;
+                const saved = JSON.parse(raw);
+                Object.assign(state, saved);
+                state.items = (saved.items || []).map(i => newItem(i));
+                return state.items.length >= MIN_SLICES;
+            } catch (err) {
+                return false;
+            }
+        }
+
+        function syncForm() {
+            $('fldTitle').value = state.title;
+            $('fldTotal').value = state.total;
+            $('fldUnit').value = state.unit;
+            $('btnPie').classList.toggle('active', state.mode === 'pie');
+            $('btnDonut').classList.toggle('active', state.mode === 'donut');
+            $('btnGaps').classList.toggle('active', state.gaps);
+            $('btnSprinkles').classList.toggle('active', state.sprinkles);
+            $('btnCrust').classList.toggle('active', state.crust);
+            $('btnLabels').classList.toggle('active', state.labels);
+        }
+
+        function amountOf(item) {
+            return (state.total * item.value) / 100;
+        }
+
+        function renderList() {
+            const list = $('itemList');
+            list.innerHTML = '';
+            state.items.forEach(item => {
+                const row = document.createElement('div');
+                row.className = 'item' + (item.id === state.selectedId ? ' selected' : '') + (item.locked ? ' locked' : '');
+                row.innerHTML = `
+          <input class="swatch" type="color" value="${item.color}" aria-label="Color for ${item.name}" />
+          <input class="name" type="text" value="${escapeAttr(item.name)}" maxlength="24" aria-label="Name" />
+          <input class="pct" type="number" min="1" max="98" step="0.1" value="${item.value}" aria-label="Percent" />
+          <button type="button" class="icon-btn ${item.locked ? 'on' : ''}" data-act="lock" title="Lock slice" aria-pressed="${item.locked}">
+            ${item.locked ? lockIcon() : unlockIcon()}
+          </button>
+          <button type="button" class="icon-btn" data-act="del" title="Remove slice" ${state.items.length <= MIN_SLICES ? 'disabled' : ''}>×</button>
+        `;
+                row.addEventListener('click', () => {
+                    state.selectedId = item.id;
+                    chart.select(item.id);
+                    renderList();
+                    renderLegend();
+                });
+                row.querySelector('.swatch').addEventListener('input', e => {
+                    item.color = e.target.value;
+                    pushData();
+                });
+                row.querySelector('.name').addEventListener('input', e => {
+                    item.name = e.target.value;
+                    pushData();
+                });
+                row.querySelector('.pct').addEventListener('change', e => {
+                    setPercent(item.id, Number(e.target.value));
+                });
+                row.querySelector('[data-act="lock"]').addEventListener('click', e => {
+                    e.stopPropagation();
+                    item.locked = !item.locked;
+                    persist();
+                    renderList();
+                    pushData();
+                });
+                row.querySelector('[data-act="del"]').addEventListener('click', e => {
+                    e.stopPropagation();
+                    removeItem(item.id);
+                });
+                list.appendChild(row);
+            });
+
+            const sum = allocated();
+            const bar = $('sumBar');
+            bar.classList.toggle('warn', Math.abs(sum - 100) > 0.2);
+            bar.innerHTML = `<span>Allocated</span><span>${sum.toFixed(1)}%</span>`;
+            $('btnAdd').disabled = state.items.length >= MAX_SLICES;
+        }
+
+        function renderLegend() {
+            const el = $('legend');
+            el.innerHTML = '';
+            state.items.forEach(item => {
+                const b = document.createElement('button');
+                b.type = 'button';
+                b.setAttribute('aria-pressed', item.id === state.selectedId);
+                b.innerHTML = `<span class="dot" style="background:${item.color}"></span>${escapeHtml(item.name)} · ${item.value.toFixed(1)}%`;
+                b.addEventListener('click', () => {
+                    state.selectedId = item.id;
+                    chart.select(item.id);
+                    renderList();
+                    renderLegend();
+                });
+                el.appendChild(b);
+            });
+        }
+
+        function setPercent(id, next) {
+            const item = state.items.find(i => i.id === id);
+            if (!item || item.locked) return;
+            const others = state.items.filter(i => i.id !== id && !i.locked);
+            if (!others.length) return;
+            const lockedSum = state.items.filter(i => i.locked).reduce((a, b) => a + b.value, 0);
+            const max = 100 - lockedSum - others.length * MIN_PCT;
+            next = Math.max(MIN_PCT, Math.min(max, next));
+            const old = item.value;
+            const othersSum = others.reduce((a, b) => a + b.value, 0);
+            const diff = next - old;
+            item.value = next;
+            others.forEach(o => {
+                const share = o.value / othersSum;
+                o.value = Math.max(MIN_PCT, o.value - diff * share);
+            });
+            normalize(true);
+            persist();
+            renderList();
+            renderLegend();
+            pushData();
+        }
+
+        function removeItem(id) {
+            if (state.items.length <= MIN_SLICES) return;
+            state.items = state.items.filter(i => i.id !== id);
+            if (state.selectedId === id) state.selectedId = null;
+            normalize(false);
+            persist();
+            renderList();
+            renderLegend();
+            refreshChart(true);
+        }
+
+        function pushData() {
+            chart.opts.title = state.title;
+            chart.opts.unit = state.unit;
+            chart.opts.total = Number(state.total) || 0;
+            chart.setData(state.items);
+            persist();
+            renderLegend();
+        }
+
+        function refreshChart(bake) {
+            chart.setOptions({
+                mode: state.mode,
+                gaps: state.gaps,
+                sprinkles: state.sprinkles,
+                crust: state.crust,
+                labels: state.labels,
+                title: state.title,
+                unit: state.unit,
+                total: Number(state.total) || 0
+            });
+            chart.setData(state.items);
+            if (state.selectedId) chart.select(state.selectedId);
+            if (bake) chart.bake();
+            renderLegend();
+        }
+
+        function escapeHtml(s) {
+            return String(s).replace(/[&<>"']/g, ch => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            }[ch]));
+        }
+        function escapeAttr(s) { return escapeHtml(s); }
+
+        function lockIcon() {
+            return `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>`;
+        }
+        function unlockIcon() {
+            return `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8-1"/></svg>`;
+        }
+
+        function showTip(item, event) {
+            if (!item || !event) {
+                tip.classList.remove('show');
+                return;
+            }
+            const amt = amountOf(item);
+            const unit = state.unit || '';
+            tip.innerHTML = `<strong>${escapeHtml(item.name)}</strong><br>${item.value.toFixed(1)}% · ${unit}${amt.toLocaleString(undefined, { maximumFractionDigits: 2 })}`;
+            tip.style.left = event.clientX + 'px';
+            tip.style.top = event.clientY + 'px';
+            tip.classList.add('show');
+        }
+
+        /* ---------- boot ---------- */
+(function init() {
+    TEMPLATES.forEach(tpl => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'ghost';
+        b.textContent = tpl.label;
+        b.addEventListener('click', () => applyTemplate(tpl));
+        $('templates').appendChild(b);
+    });
+
+    // State'i chart oluşturmadan hazırla (chart'a dokunma)
+    if (!restore()) {
+        const tpl = TEMPLATES[0];
+        state.title = tpl.title;
+        state.unit = tpl.unit;
+        state.total = tpl.total;
+        state.items = tpl.items.map(i => newItem(i));
+        state.selectedId = null;
+        normalize(false);
+        persist();
+    }
+
+    syncForm();
+    renderList();
+
+    // Chart'ı state hazır olduktan SONRA oluştur
+    chart = new BakedChart($('chartHost'), {
+        data: state.items,
+        mode: state.mode,
+        unit: state.unit,
+        total: state.total,
+        title: state.title,
+        gaps: state.gaps,
+        sprinkles: state.sprinkles,
+        crust: state.crust,
+        labels: state.labels,
+        onSelect(item) {
+            state.selectedId = item ? item.id : null;
+            renderList();
+            renderLegend();
+        },
+        onChange(items) {
+            items.forEach((src, i) => {
+                state.items[i].value = +src.value.toFixed(2);
+            });
+            persist();
+            renderList();
+            renderLegend();
+        },
+        onHover: showTip
+    });
+    renderLegend();
+
+    $('fldTitle').addEventListener('input', e => { state.title = e.target.value; pushData(); });
+    $('fldUnit').addEventListener('input', e => { state.unit = e.target.value; pushData(); });
+    $('fldTotal').addEventListener('input', e => { state.total = Number(e.target.value) || 0; pushData(); });
+
+    $('btnPie').addEventListener('click', () => { state.mode = 'pie'; syncForm(); refreshChart(false); persist(); });
+    $('btnDonut').addEventListener('click', () => { state.mode = 'donut'; syncForm(); refreshChart(false); persist(); });
+    $('btnGaps').addEventListener('click', () => { state.gaps = !state.gaps; syncForm(); refreshChart(false); persist(); });
+    $('btnSprinkles').addEventListener('click', () => { state.sprinkles = !state.sprinkles; syncForm(); refreshChart(false); persist(); });
+    $('btnCrust').addEventListener('click', () => { state.crust = !state.crust; syncForm(); refreshChart(false); persist(); });
+    $('btnLabels').addEventListener('click', () => { state.labels = !state.labels; syncForm(); refreshChart(false); persist(); });
+
+    $('btnAdd').addEventListener('click', () => {
+        if (state.items.length >= MAX_SLICES) return;
+        state.items.push(newItem({ name: 'Slice ' + (state.items.length + 1), value: 8 }));
+        normalize(true);
+        persist();
+        renderList();
+        refreshChart(true);
+    });
+
+    $('btnEqualize').addEventListener('click', () => {
+        const free = state.items.filter(i => !i.locked);
+        const lockedSum = state.items.filter(i => i.locked).reduce((a, b) => a + b.value, 0);
+        const share = (100 - lockedSum) / (free.length || 1);
+        free.forEach(i => { i.value = share; });
+        normalize(true);
+        persist();
+        renderList();
+        refreshChart(true);
+    });
+
+    $('btnBake').addEventListener('click', () => chart.bake());
+
+    $('btnExportJson').addEventListener('click', () => {
+        const blob = new Blob([JSON.stringify({
+            title: state.title, unit: state.unit, total: state.total, items: state.items
+        }, null, 2)], { type: 'application/json' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = slug(state.title) + '.json';
+        a.click();
+        URL.revokeObjectURL(a.href);
+    });
+
+    $('btnExportSvg').addEventListener('click', () => {
+        const blob = new Blob([chart.exportSVG()], { type: 'image/svg+xml' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = slug(state.title) + '.svg';
+        a.click();
+        URL.revokeObjectURL(a.href);
+    });
+
+    $('btnImport').addEventListener('click', () => $('fileJson').click());
+    $('fileJson').addEventListener('change', async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        try {
+            const data = JSON.parse(await file.text());
+            if (!Array.isArray(data.items)) throw new Error('Missing items array');
+            state.title = data.title || 'Imported chart';
+            state.unit = data.unit || '';
+            state.total = Number(data.total) || 100;
+            state.items = data.items.map(i => newItem(i));
+            normalize(false);
+            persist();
+            syncForm();
+            renderList();
+            refreshChart(true);
+        } catch (err) {
+            alert('Could not import that JSON. Expect { title, unit, total, items:[{name,value,color}] }.');
+        }
+        e.target.value = '';
+    });
+
+    window.addEventListener('keydown', (e) => {
+        if (!state.selectedId) return;
+        if (e.target.matches('input, textarea')) return;
+        if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+        e.preventDefault();
+        const item = state.items.find(i => i.id === state.selectedId);
+        const step = e.shiftKey ? 5 : 1;
+        const dir = e.key === 'ArrowRight' ? step : -step;
+        setPercent(item.id, item.value + dir);
+        chart.bake();
+    });
+})();
+
+        function slug(s) {
+            return (s || 'portion-chart').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+        }
+    </script>
+    
+</body>
+
+</html>
