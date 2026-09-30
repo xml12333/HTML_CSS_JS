@@ -1158,3 +1158,4 @@
 |1162| [Donut Chart](https://github.com/xml12333/HTML_CSS_JS/tree/main/1162.Donut%20Chart)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1162.Donut%20Chart/)|
 |1163| [Blend it Pie](https://github.com/xml12333/HTML_CSS_JS/tree/main/1163.Blend%20it%20Pie)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1163.Blend%20it%20Pie/)|
 |1164| [Portion Planner](https://github.com/xml12333/HTML_CSS_JS/tree/main/1164.Portion%20Planner)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1164.Portion%20Planner/)|
+|1165| [Sock Caper](https://github.com/xml12333/HTML_CSS_JS/tree/main/1165.Sock%20Caper)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1165.Sock%20Caper/)|

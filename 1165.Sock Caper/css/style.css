@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&family=Nunito:wght@900&display=swap');
+
+* {
+	box-sizing: border-box; margin: 0; padding: 0px;
+}
+
+html,
+body {
+	overflow-x: clip;
+	overscroll-behavior: none;
+}
+
+body {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    padding: 10px;
+
+		@media (width > 768px) { padding: 20px; }
+		@media (width > 992px) { padding: 30px; }
+		@media (width > 1200px) { padding: 50px; }
+
+		background: #242424;
+		background-image: url("https://contestsystem.s3.amazonaws.com/chalkboard-bg-1.jpg");
+        background-size: cover;
+		color: #888c;
+		font-size: 20px;
+		line-height: 36px;
+		a { color: #888c; }
+
+      &:before {
+          @supports (corner-shape: scoop) {
+              position: absolute;
+              inset: 15px;
+              z-index: 0;
+              content: "";
+              border: 2px solid #fff3;
+              border-radius: 10px;
+              filter: url(#chalkLine);
+          }
+          @media ( width < 992px ) { content: none; }
+      }
+
+      &:after {
+          position: absolute;
+          inset: 30px;
+          z-index: 0;
+          content: "";
+          border: 6px solid #fff3;
+          filter: url(#chalkLine);
+          @supports (corner-shape: scoop) {
+              border-radius: 20px;
+              corner-shape: scoop;
+          }
+          @media( width < 992px ) { inset: 10px; }
+      }
+
+      h1 {
+          position: absolute;
+          display: block;
+          width: 300px;
+          top: 100px;
+          left: 30px;
+          font-family: "Cabin Sketch", sans-serif;
+          font-weight: 700;
+          font-style: normal;
+          font-size: 60px;
+          line-height: 55px;
+          text-align: center;
+          transform-origin: center;
+          transform: rotate(-30deg);
+          filter: url(#chalkHText);
+          @media (width < 992px) { font-size: 40px; line-height: 35px; top: 80px; left: 10px; }
+      }
+
+      svgWrapper {
+
+          position: relative;
+
+          @media (orientation: landscape) {
+              width: 50vh;
+              height: 50vh;
+          }
+
+          @media (orientation: portrait) {
+              width: 50vw;
+              height: 50vw;
+          }
+
+      }
+
+      svg#svg1 {
+
+          width: 100%;
+          height: 100%;
+          position: relative;
+          z-index: 10;
+          overflow: visible;
+
+          #background {
+              use {
+                  opacity: 0.1;
+                  fill: #FFF;
+                  filter: url(#chalkLine2);
+              }
+          }
+
+
+          a {
+
+              cursor: pointer;
+              pointer-events: fill;
+              transform-origin: 50% 50%;
+              transition: transform 0.25s;
+              will-change: transform;
+
+              &:hover { 
+                  transform: scale(1.1);
+                  use.strokeSpan { stroke-opacity: 0.8; }
+                  use.fillSpan { fill-opacity: 0.8; }
+                  text { transform: translate(0)!important; }
+                  tspan { opacity: 0.8; stroke-opacity: 0.8; }
+              }
+
+              use.strokeSpan {
+                  fill: none;
+                  stroke-width: 8px;
+                  filter: url(#chalkLine2);
+                  stroke-opacity: 0.6;
+                  transition: stroke-opacity 0.25s;
+              }
+
+              use.fillSpan {
+                  pointer-events: none;
+                  stroke: none;
+                  fill-opacity: 0.6;
+                  transition: fill-opacity 0.25s;
+                  filter: url(#chalk);
+              }
+              text {
+
+                  transition: transform 0.25s;
+                  will-change: transform;
+
+                  tspan {
+                      font-weight: bold;
+                      font-size: 40px;
+                      font-family: 'Cabin Sketch', sans-serif;
+                      stroke-width: 10px;
+                      stroke-opacity: 0.5;
+                      transition: opacity 0.25s, stroke-opacity 0.25s;
+                      will-change: opacity;
+                      filter: none;
+                      opacity: 0;
+
+                  }
+                  &:first-of-type {
+                      tspan {
+                          fill: #1a0b0b;
+                          paint-order: stroke fill;
+                          stroke: currentColor;
+                          font-size: 60px;
+                          opacity: 1;
+                          filter: url(#chalkHText);
+                      }
+                  }
+
+              }
+              &:nth-of-type(1) { text:nth-of-type(2) { transform: translate(-200px, 100px); } }
+              &:nth-of-type(2) { text:nth-of-type(2) { transform: translate(50px, -150px); } }
+              &:nth-of-type(3) { text:nth-of-type(2) { transform: translate(150px, 50px); } }
+              &:nth-of-type(4) { text:nth-of-type(2) { transform: translate(100px, 150px); } }
+              
+          }
+      }
+
+}
