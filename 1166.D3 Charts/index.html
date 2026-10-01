@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>D3 Charts</title>
+</head>
+
+<body>
+
+  <div class="wrap">
+    <div class="bar">
+      <span>
+        <b>AutonomousQ</b>
+        &nbsp;/&nbsp; Specimen Sheet No. 01
+      </span>
+      <button class="toggle" id="theme" aria-label="Toggle colour theme">
+        Dark
+      </button>
+    </div>
+
+    <header class="hero">
+      <h1>
+        D3.js
+        <em>Animated</em>
+        <span class="thin">Illustration</span>
+      </h1>
+      <p class="lede">
+        Fifteen looping motion studies built on
+        <a href="https://d3js.org">D3 v7</a>
+        — data joins, interpolators and easings doing the work. Every specimen
+        runs on synthetic in-file data, so nothing here touches a network after
+        load. Hit
+        <em>Copy</em>
+        on any card for a standalone, paste-ready HTML file.
+      </p>
+      <div class="facts">
+        <span>15 Specimens</span>
+        <span>D3 v7</span>
+        <span>Single File</span>
+        <span>Zero Dependencies</span>
+        <span>Loops Forever</span>
+      </div>
+    </header>
+
+    <main class="grid" id="grid"></main>
+
+    <footer>
+      <span>
+        Built with D3.js —
+        <a href="https://observablehq.com/@d3/gallery">gallery reference</a>
+      </span>
+      <span>github.com/AutonomousQ</span>
+    </footer>
+  </div>
+
+  <!-- lightbox -->
+  <div class="lightbox" id="lb" hidden>
+    <div class="lb-panel" id="lbPanel" role="dialog" aria-modal="true" aria-label="Specimen detail">
+      <div class="head">
+        <span class="idx" id="lbIdx"></span>
+        <h2 id="lbTitle"></h2>
+        <div class="actions">
+          <button class="btn" id="lbCopy" type="button">Copy</button>
+          <button class="btn" id="lbClose" type="button">Close ✕</button>
+        </div>
+      </div>
+      <div class="stage" id="lbStage"></div>
+      <div class="foot">
+        <p class="note" id="lbNote"></p>
+        <ul class="tags" id="lbTags"></ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>
