@@ -1160,3 +1160,4 @@
 |1164| [Portion Planner](https://github.com/xml12333/HTML_CSS_JS/tree/main/1164.Portion%20Planner)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1164.Portion%20Planner/)|
 |1165| [Sock Caper](https://github.com/xml12333/HTML_CSS_JS/tree/main/1165.Sock%20Caper)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1165.Sock%20Caper/)|
 |1166| [D3 Charts](https://github.com/xml12333/HTML_CSS_JS/tree/main/1166.D3%20Charts)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1166.D3%20Charts/)|
+|1167| [Circular Nav](https://github.com/xml12333/HTML_CSS_JS/tree/main/1167.Circular%20Nav)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1167.Circular%20Nav/)|

@@ -1,377 +1,341 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..700&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap");
+@import url(https://fonts.bunny.net/css?family=jura:300,500);
+@layer base, demo;
 
-:root {
-  --bg: #f4f1eb;
-  --panel: #fcfbf8;
-  --ink: #16130f;
-  --muted: #6e675c;
-  --rule: #dcd6ca;
-  --rule-strong: #c3bbaa;
-  --accent: #c6432a;
-  --shadow:
-    0 1px 0 rgba(22, 19, 15, 0.04), 0 12px 28px -20px rgba(22, 19, 15, 0.45);
-  --grain: 0.055;
-}
-[data-theme="dark"] {
-  --bg: #0d0d0f;
-  --panel: #141416;
-  --ink: #ece8e0;
-  --muted: #8c867c;
-  --rule: #26262a;
-  --rule-strong: #3a3a40;
-  --accent: #ff6a45;
-  --shadow: 0 1px 0 rgba(0, 0, 0, 0.4), 0 18px 40px -28px rgba(0, 0, 0, 0.9);
-  --grain: 0.035;
-}
+@layer demo {
+	body{
+		min-height: 100svh;
+		display: grid;
+		place-content: center;
+	}
+	/* register sibling-index() and sibling-count() as custom properties to allow the children to use their value*/
+	@property --i {
+	  syntax: '<number>';
+	  inherits: true;
+	  initial-value: 0;
+	}
+	@property --total-items {
+	  syntax: '<number>';
+	  inherits: true;
+	  initial-value: 0;
+	}
+	@property --wheel-index {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+	}
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-html {
-  -webkit-text-size-adjust: 100%;
-}
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 14px;
-  line-height: 1.55;
-  transition:
-    background 0.5s ease,
-    color 0.5s ease;
-  overflow-x: hidden;
-}
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 200;
-  pointer-events: none;
-  opacity: var(--grain);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-::selection {
-  background: var(--accent);
-  color: var(--panel);
-}
+	nav{
+		/* one day CSS might have a child-count() function - until then this uses a data attribute to define the number of items */
+		--total-items: attr(data-count type(<number>));
+	
+		--nav-radius: min(35vw,200px);
+		
+		/* prev & next buttons */
+	  --nav-btn-size: 40px;
+	  --nav-btn-bg: transparent;
+		--nav-btn-bg-hover: transparent;
+	  --nav-btn-text: var(--clr-text);
+		--nav-btn-text-hover: white;
+		--nav-btn-border: none;
+	
+		/* carousel buttons */
+		--btn-width: min(20vw,80px);
+		--btn-height: calc(var(--btn-width) * 2 / 3); /* aspect ratio 2/3*/
+		--btn-bg: var(--clr-bg);
+		--btn-bg-hover: var(--clr-bg);
+		--btn-bg-current: dodgerblue;
+		--btn-text: var(--clr-text);
+		--btn-text-hover: white;
+		--btn-text-current: white;
+		--btn-border: 1px solid var(--clr-lines);
+		--btn-radius: 9in;
+	
+		width: calc(var(--nav-radius) * 2  );
+		aspect-ratio: 1;
+		list-style: none;
+		display: grid;
+		grid-auto-flow: column;
+		grid-auto-columns: var(--btn-width); 
+		grid-auto-rows: var(--item-height);
+		place-items: center;
+		border: 1px solid var(--clr-lines);
+		border-radius: 9in;
+	
+		/* use the scroll timeline to calculate the rotation of the buttons */
+		scroll-timeline-name: --wheel-scroll;
+	  scroll-timeline-axis: x;
+		
+		animation-name: wheel-position;
+	  animation-duration: 1s;
+		animation-timing-function: steps(var(--total-items));
+	  animation-fill-mode: both;
+	  animation-timeline: --wheel-scroll;
+	
+		anchor-name: --a-nav;
+	  overflow-x: auto;
+		oveflow-y: hidden;
+	  scroll-snap-type: x mandatory;
+	  overscroll-behaviour-x: contain; 
+	  scroll-behavior: smooth; 
+	  scrollbar-width: none;
+	
+		scroll-marker-group: after; 
+		transition: 600ms ease;
+		transition-property: width,height;
+	
+		/* 2 empty pseudo elements to allow first and last items to be scrollable */
+		&::before,&::after{
+			content: '';
+			grid-column: span 2;/* this ensures that the end items are far enough acrosss the container to display properly */
+			width: var(--btn-width);
+		}
+	
+		
+	.scroll-item{
+		--i: sibling-index();
+		--btn-offset: calc(var(--i) * 100% / var(--total-items));
+		--angle: calc( (var(--i) - var(--wheel-index)) * 1turn / var(--total-items));
+	
+		width: var(--btn-width);
+		height: 100px;
+		scroll-snap-align: center;
+	  scroll-snap-stop: always;
+	  container-type: scroll-state; 
+		
+		/* center label on current button */
+		&::after{
+			content: attr(title);
+			position: absolute;
+			position-anchor: --a-nav;
+			position-area: span-all;
+			opacity:0;
+			transition:
+				opacity 150ms ease-in-out, 
+				translate 300ms ease-in-out;
+			font-size: clamp(.9rem, 2.5vw + .045rem,1.4rem);
+			font-weight: 500;
+			translate: 0 -2rem;
+			@container scroll-state(snapped: x) {
+				opacity: 1;
+				translate: 0 0;
+			}
+		}
+	
+	
+		button {
+			--wheel-rotation: calc(var(--wheel-index)  * 100% / var(--total-items));
+			--top-position: calc(50% + 100% / var(--total-items));
+	
+			position: absolute;
+			offset-path: circle(var(--nav-radius) at center);
+	    offset-rotate: 0deg;		
+	    offset-distance: calc(
+	        var(--top-position) +
+	        var(--btn-offset) -
+	        var(--wheel-rotation)
+	    );
+			
+	
+			transition-property: offset,outline,background-color;
+			transition-duration: 600ms,300ms,300ms;
+			transition-timing-function: ease-in-out;
+			transition-delay: 0ms,0ms, 300ms; /* delay on background color change */
+			
+			width: var(--btn-width);
+			height: var(--btn-height);
+			background-color: var(--btn-bg);
+			color: var(--btn-text);
+			border-radius: var(--btn-radius);
+			border: var(--btn-border);
+			display: grid;
+			place-content: center;
+			cursor: pointer;
+	
+			outline: 2px dashed transparent;
+			outline-offset: 0;
+			
+			/* current item */
+			@container scroll-state(snapped: x) {
+				background-color: var(--btn-bg-current);
+				color: var(--btn-text-current);
+			}
+			
+			/* hover or focus */
+			&:where(:hover,:focus-visible){
+				--icon-scale: .8;
+				--icon-y: -.75em;
+				--label-y: .75em;
+				--label: 1;
+				color: var(--btn-text-hover);
+				background-color: var(--btn-bg-hover);
+			}
+			&:focus-visible{
+				outline-color: dodgerblue;
+				outline-offset: 6px;
+			}
+			
+			svg,span{
+				grid-area: 1/1;
+				margin: auto;
+				transition: 150ms ease-in-out;
+				transition-property: scale, opacity,translate;
+			}
+			svg{
+				scale: var(--icon-scale,1);
+				translate: 0 var(--icon-y,0);
+			}
+			span{
+				display:block;
+				font-size: .7rem;
+				opacity: var(--label,0);
+				scale:var(--label,0);
+				translate: 0 var(--label-y,0);
+			}
+		} 
+	}
+	
 
-.wrap {
-  max-width: 1560px;
-  margin: 0 auto;
-  padding: 0 clamp(16px, 3vw, 48px);
-}
 
-/* ============================================================
-   MASTHEAD
-   ============================================================ */
-.bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  border-bottom: 1px solid var(--rule);
-  padding: 12px 0;
-  font-size: 10.5px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.bar b {
-  color: var(--ink);
-  font-weight: 600;
-}
-.toggle {
-  font: inherit;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  background: none;
-  color: var(--muted);
-  border: 1px solid var(--rule);
-  border-radius: 100px;
-  padding: 6px 14px;
-  cursor: pointer;
-  transition:
-    color 0.25s,
-    border-color 0.25s,
-    background 0.25s;
-}
-.toggle:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-}
+	/**************** MARKERS GROUP *******************/
+  /* the item nav buttons will be dynamically placed within this element */
+  .markers{
+		position: fixed;
+    position-anchor: --a-nav;
+		position-area: center;
+		background-color: light-dark(rgb(1 1 1 / .05), rgb(255 255 255 / .05));
+		border: 1px solid var(--clr-lines);
+		border-radius: 9in;
+		padding: 1rem;
+		width:var(--nav-radius);
+		aspect-ratio: 1;
+		anchor-name: --a-markers;
+   box-shadow: 0 0 10px 10px  rgba(0 0 0 / .05);
+	}
 
-.hero {
-  padding: clamp(8px, 7vw, 2px) 0 clamp(8px, 4vw, 4px);
-  border-bottom: 1px solid var(--rule);
-}
-.hero h1 {
-  font-family: "Fraunces", Georgia, serif;
-  font-weight: 340;
-  font-size: clamp(42px, 9.2vw, 102px);
-  line-height: 0.92;
-  letter-spacing: -0.028em;
-  margin: 0;
-  max-width: 16ch;
-}
-.hero h1 em {
-  font-style: italic;
-  font-weight: 600;
-  color: var(--accent);
-}
-.hero h1 .thin {
-  opacity: 0.42;
-}
-.lede {
-  max-width: 122ch;
-  color: var(--muted);
-  font-size: 13.5px;
-}
-.lede a {
-  color: var(--ink);
-  text-decoration-color: var(--rule-strong);
-  text-underline-offset: 3px;
-}
-.facts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 26px;
-  margin-top: 26px;
-  font-size: 10.5px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.facts span::before {
-  content: "◆";
-  color: var(--accent);
-  margin-right: 8px;
-  font-size: 8px;
-  vertical-align: 2px;
-}
-
-/* ============================================================
-   PINTEREST / MASONRY FLOW
-   ============================================================ */
-.grid {
-  columns: 1;
-  column-gap: 22px;
-  padding: 34px 0 60px;
-}
-@media (min-width: 760px) {
-  .grid {
-    columns: 2;
+  /************* NAV BUTTONS (left and right) ************/
+  &::scroll-button(*){
+    position: absolute;
+    position-anchor: --a-markers;
+		position-area: center ;
+    translate: 0 0;
+    width: var(--nav-btn-size);
+    aspect-ratio: 1/1;
+    font: inherit;
+    background-color: var(--nav-btn-bg);
+    display: grid;
+    place-content: center;
+    color: var(--nav-btn-text);
+    border: var(--nav-btn-border);
+    border-radius: 50%;
+    cursor: pointer;
+    transition-property: background-color,color,scale,outline;
+		transition-duration: 150ms;
+		transition-timing-function: ease-in-out;
+		outline: dashed 1px transparent;
+  }
+  /* button - prev */
+  &::scroll-button(inline-start){
+    content: '❮';
+		left: calc(anchor(left) - 2rem);
+  }
+  /* button - next */
+  &::scroll-button(inline-end){
+    content: '❯';
+		right: calc(anchor(right) - 2rem);
+  }
+  /* hover and keyboard focus */
+  &::scroll-button(*):hover {
+	  background-color: var(--nav-btn-bg-hover);
+		color: var(--nav-btn-text-hover);
+		scale: 1.5;
+	}
+	/* 
+	this should not be needed but the current implementation of :not(:disabled) doesn't appear to be working on these pseudo buttons 
+	*/
+	&::scroll-button(*):disabled:hover {
+	  background-color: var(--nav-btn-bg);
+	  color: var(--nav-btn-txt);
+		scale: 1;
+	}
+  /* keyboard focus*/
+	&::scroll-button(*):focus-visible {
+		outline-color: var(--nav-btn-bg-hover);
+			scale: 1.5;
+	}
+  /* disabled */
+  &::scroll-button(*):disabled{
+    opacity: .15;
+    cursor: unset;
   }
 }
-@media (min-width: 1240px) {
-  .grid {
-    columns: 3;
-  }
-}
-@media (min-width: 1800px) {
-  .grid {
-    columns: 4;
-  }
+
+@keyframes wheel-position {
+    from {
+        --wheel-index: 0;
+    }
+    to {
+        --wheel-index: var(--total-items);
+    }
 }
 
-.card {
-  break-inside: avoid;
-  -webkit-column-break-inside: avoid;
-  page-break-inside: avoid;
-  display: inline-block;
-  width: 100%;
-  margin: 0 0 22px;
-  background: var(--panel);
-  border: 1px solid var(--rule);
-  border-radius: 3px;
-  box-shadow: var(--shadow);
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(22px);
-  animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.25, 1) forwards;
-  animation-delay: calc(var(--i) * 70ms + 120ms);
-  transition:
-    border-color 0.35s ease,
-    transform 0.35s ease;
-}
-.card:hover {
-  border-color: var(--rule-strong);
-  transform: translateY(-2px);
-}
-@keyframes rise {
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .card {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-}
 
-.head {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-  flex-wrap: wrap;
-  padding: 14px 16px 12px;
-  border-bottom: 1px solid var(--rule);
-}
-.idx {
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  color: var(--accent);
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  padding-top: 2px;
-}
-.head h2 {
-  margin: 0;
-  flex: 1 1 130px;
-  min-width: 0;
-  font-family: "Fraunces", Georgia, serif;
-  font-weight: 500;
-  font-size: 17px;
-  letter-spacing: -0.01em;
-}
-.actions {
-  display: flex;
-  gap: 6px;
-  flex-shrink: 0;
-}
-.btn {
-  font: inherit;
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  background: none;
-  border: 1px solid var(--rule);
-  color: var(--muted);
-  padding: 5px 10px;
-  border-radius: 100px;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: all 0.25s ease;
-}
-.btn:hover {
-  color: var(--panel);
-  background: var(--ink);
-  border-color: var(--ink);
-}
-.btn.ok {
-  color: var(--panel);
-  background: var(--accent);
-  border-color: var(--accent);
-}
 
-/* ---- lightbox ------------------------------------------------- */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 150;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: clamp(10px, 3vw, 44px);
-  background: rgba(24, 20, 14, 0.5);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  opacity: 0;
-  transition: opacity 0.34s ease;
-}
-[data-theme="dark"] .lightbox {
-  background: rgba(0, 0, 0, 0.68);
-}
-.lightbox[hidden] {
-  display: none;
-}
-.lightbox.on {
-  opacity: 1;
-}
-.lb-panel {
-  width: min(1180px, 100%);
-  max-height: 100%;
-  overflow: auto;
-  background: var(--panel);
-  border: 1px solid var(--rule-strong);
-  border-radius: 4px;
-  box-shadow: 0 50px 90px -50px rgba(0, 0, 0, 0.75);
-  transform-origin: 50% 50%;
-  will-change: transform, opacity;
-}
-.lb-panel .stage {
-  padding: 16px 20px 4px;
-}
-.lb-panel .stage svg {
-  width: 100%;
-  height: min(70vh, 700px);
-  max-height: none;
-}
-.lb-panel .note {
-  font-size: 13px;
-  max-width: 78ch;
-}
-.lb-panel .head h2 {
-  font-size: 22px;
-}
+	
+/* general styling not relevant for this demo */
+@layer base {
+	* {
+		box-sizing: border-box;
+	}
+	:root {
+		color-scheme: dark;
+		--bg-dark: rgb(41 37 36);
+		--bg-light: rgb(248, 244, 238);
+		--txt-light: rgb(10, 10, 10);
+		--txt-dark: rgb(245, 245, 245););
+		--line-light: rgba(0 0 0 / .25);
+		--line-dark: rgba(255 255 255 / .25);
+    
+    --clr-bg: light-dark(var(--bg-light), var(--bg-dark));
+    --clr-txt: light-dark(var(--txt-light), var(--txt-dark));
+    --clr-lines: light-dark(var(--line-light), var(--line-dark));
+	}
 
-.stage {
-  padding: 6px 10px 2px;
-  color: var(--ink);
-}
-.stage svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-}
-
-.foot {
-  padding: 10px 16px 16px;
-}
-.note {
-  margin: 0 0 10px;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.5;
-}
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.tags li {
-  font-size: 9.5px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-  border: 1px solid var(--rule);
-  border-radius: 2px;
-  padding: 3px 7px;
-}
-
-footer {
-  border-top: 1px solid var(--rule);
-  padding: 26px 0 60px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 28px;
-  justify-content: space-between;
-  font-size: 10.5px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-footer a {
-  color: var(--ink);
-  text-decoration: none;
-  border-bottom: 1px solid var(--rule-strong);
+	body {
+		background-color: var(--clr-bg);
+		color: var(--clr-txt);
+		min-height: 100svh;
+		margin: 0;
+		padding: 0;
+		font-family: "Jura", sans-serif;
+		font-size: 1rem;
+		line-height: 1.5;
+		--supports-warning-show: 0;
+		--supports-warning-animation: "";
+		--supports-warning-scroll: "";
+		
+		@supports not (animation-timeline: auto) {
+	    --supports-warning-show: 1;
+	    --supports-warning-animation: "\A animation-timeline";
+	  }
+		@supports not (scroll-marker-group: after) {
+	    --supports-warning-show: 1;
+	    --supports-warning-scroll: "\A  ::scroll-*";
+		}
+		@container style(--supports-warning-show: 1) {
+		  &::before {
+				content:
+			  "Missing support for:"
+			  var(--supports-warning-animation)
+			  var(--supports-warning-scroll);
+				position: fixed;
+				top: 1rem;
+				left: 50%;
+				translate: -50% 0;
+				font-size: 0.8rem;
+				color: red;
+				z-index: 999;
+				white-space: pre-wrap;
+			}
+		}
+	}
 }
