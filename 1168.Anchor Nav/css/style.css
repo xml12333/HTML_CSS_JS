@@ -1,0 +1,83 @@
+:root {
+  --spring-easing: linear(0, .0018, .0069 1.15%, .026 2.3%, .0637, .1135 5.18%, .2229 7.78%, .5977 15.84%, .7014, .7904, .8641, .9228, .9676 28.8%, 1.0032 31.68%, 1.0225, 1.0352 36.29%, 1.0431 38.88%, 1.046 42.05%, 1.0448 44.35%, 1.0407 47.23%, 1.0118 61.63%, 1.0025 69.41%, .9981 80.35%, .9992 99.94%);
+}
+
+@keyframes dip-and-rise {
+  0% {
+    translate: 0 1.25rem;
+  }
+  40% {
+    translate: 0 1.25rem;
+  }
+  100% {
+    translate: 0 0;
+  }
+}
+body {
+  align-items: center;
+  background-color: oklch(0.95 0 0);
+  display: flex;
+  font-family: sans-serif;
+  justify-content: center;
+  margin: 0;
+  min-block-size: 100vh;
+}
+
+.menu {
+  align-items: center;
+  background-color: oklch(0.99 0 0);
+  border: 0.0625rem solid oklch(0.85 0.01 240);
+  border-radius: 1rem;
+  box-shadow: 0 0.25rem 0.625rem oklch(0 0 0/0.1);
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 1rem;
+}
+.menu:not(:has(.menu--link:hover, .menu--link:focus-visible)) li:first-of-type > .menu--link {
+  anchor-name: --selected;
+  color: oklch(0.63 0.26 29);
+}
+.menu:has(.menu--link:hover, .menu--link:focus-visible) + .menu--pointer {
+  animation: dip-and-rise 1s ease-out;
+}
+.menu--item {
+  display: flex;
+}
+.menu--link {
+  align-items: center;
+  border-radius: 0.3125rem;
+  color: oklch(0.45 0.2 260);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin-inline: 0.25rem;
+  padding: 0.625rem;
+  position: relative;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.menu--link:is(:hover, :focus-visible) {
+  anchor-name: --selected;
+  background-color: oklch(0.94 0 0);
+  color: oklch(0.63 0.26 29);
+}
+.menu--link:focus-visible {
+  outline: 0.125rem solid oklch(0.63 0.26 29);
+  outline-offset: 0.125rem;
+}
+.menu--pointer {
+  background-image: radial-gradient(oklch(0.63 0.26 29), oklch(1 0 0));
+  block-size: 0.625rem;
+  border-radius: 50%;
+  inline-size: 0.625rem;
+  inset-block-start: calc(anchor(center) - 0.3125rem);
+  inset-inline-start: calc(anchor(start) - 0.75rem);
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  position-anchor: --selected;
+  transition: inset-inline-start 1s var(--spring-easing);
+  translate: 0 0;
+  will-change: inset-inline-start, transform;
+}
