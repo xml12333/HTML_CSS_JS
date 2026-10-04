@@ -1,0 +1,823 @@
+@layer reset, tokens, base, layout, components, utilities, overrides;
+
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+  }
+}
+
+@layer tokens {
+  :root {
+    --color-page: oklch(22% 0.02 200);
+    --color-sky-1: oklch(74.6% 0.102 191.1);
+    --color-sky-2: oklch(77.5% 0.07 175.9);
+    --color-sky-3: oklch(81.1% 0.044 143.1);
+    --color-sky-4: oklch(83.9% 0.045 97.3);
+    --color-sky-5: oklch(86.3% 0.058 70.3);
+    --color-sky-6: oklch(87.5% 0.072 61.9);
+    --color-sun-0: oklch(94.7% 0.075 95.1);
+    --color-sun-1: oklch(93.1% 0.076 91);
+    --color-sun-2: oklch(91.2% 0.081 81);
+    --color-sun-3: oklch(88.8% 0.088 71.3);
+    --color-sun-4: oklch(87.7% 0.092 68.8);
+    --color-sun-5: oklch(88.4% 0.095 76.4);
+    --color-cloud: oklch(97.7% 0.051 100);
+    --color-ember: oklch(78.2% 0.13 50.3);
+    --color-plum: oklch(31% 0.029 290.4);
+    --color-mauve: oklch(43.7% 0.035 350.7);
+    --color-teal: oklch(72.6% 0.094 175.9);
+    --color-teal-shade: oklch(51.4% 0.059 190.9);
+    --color-teal-mid: oklch(58.8% 0.069 187.9);
+    --color-pine: oklch(42.8% 0.054 200.6);
+    --color-pine-deep: oklch(39.1% 0.044 206.6);
+    --color-rose: oklch(58% 0.152 22.6);
+    --color-rose-light: oklch(70.5% 0.151 29.7);
+    --color-crimson: oklch(45.8% 0.157 19.3);
+    --color-flame: oklch(71.1% 0.168 41.6);
+    --color-apricot: oklch(78.6% 0.13 51.5);
+    --color-lagoon: oklch(56.3% 0.087 182.8);
+    --color-lagoon-mid: oklch(53.7% 0.059 191);
+    --color-dusk-teal: oklch(38.4% 0.039 213.7);
+    --color-dusk-plum: oklch(42.1% 0.019 319.5);
+    --color-mirror-1: oklch(69.2% 0.157 30.9);
+    --color-mirror-2: oklch(76.4% 0.144 56.2);
+    --color-mirror-3: oklch(82.5% 0.149 74.5);
+    --color-mirror-cream: oklch(97.6% 0.044 97.2);
+    --color-ink: oklch(35.2% 0.046 227.2);
+    --color-reed: oklch(59.3% 0.071 188.1);
+    --color-crown-1: oklch(87.7% 0.139 90);
+    --color-crown-2: oklch(80.6% 0.138 65.5);
+    --color-crown-3: oklch(67.6% 0.145 28.6);
+    --color-bark: oklch(33.2% 0.019 351.2);
+    --color-blossom-1: oklch(94.6% 0.07 90.3);
+    --color-blossom-2: oklch(91% 0.097 85);
+    --color-ember-light: oklch(75.9% 0.152 55.3);
+    --color-ember-deep: oklch(68% 0.171 35.5);
+
+    --scene-size: min(100dvi, 100dvb * 1296 / 1081, 81rem);
+    --scene-grid: 1296;
+  }
+}
+
+@layer base {
+  body {
+    display: grid;
+    place-items: center;
+    min-block-size: 100dvh;
+    background: var(--color-page);
+  }
+}
+
+@layer components {
+  .lake {
+    --u: calc(100cqi / var(--scene-grid));
+
+    position: relative;
+    container-type: inline-size;
+    isolation: isolate;
+    inline-size: var(--scene-size);
+    aspect-ratio: 1296 / 1081;
+    overflow: clip;
+    background: linear-gradient(
+      in srgb to bottom,
+      var(--color-sky-1),
+      var(--color-sky-2) 17%,
+      var(--color-sky-3) 33%,
+      var(--color-sky-4) 50%,
+      var(--color-sky-5) 67%,
+      var(--color-sky-6) 83%
+    );
+
+    & > * {
+      position: absolute;
+    }
+  }
+
+  .sun {
+    inset-inline-start: calc(376 * var(--u));
+    inset-block-start: calc(131 * var(--u));
+    inline-size: calc(608 * var(--u));
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: linear-gradient(
+      in srgb to bottom,
+      var(--color-sun-0),
+      var(--color-sun-1) 6%,
+      var(--color-sun-2) 16%,
+      var(--color-sun-3) 31%,
+      var(--color-sun-4) 41%,
+      var(--color-sun-5) 56%
+    );
+  }
+
+  .cloud,
+  .trail {
+    inset-inline-start: calc(var(--x) * var(--u));
+    inset-block-start: calc(var(--y) * var(--u));
+    inline-size: calc(var(--w) * var(--u));
+    block-size: calc(var(--h) * var(--u));
+  }
+
+  .cloud {
+    overflow: clip;
+
+    &[data-cloud="west"] {
+      --x: 228;
+      --y: 140;
+      --w: 296;
+      --h: 65;
+
+      background:
+        radial-gradient(calc(150 * var(--u)) calc(11 * var(--u)) at calc(150 * var(--u)) calc(65 * var(--u)), var(--color-cloud) 98%, transparent),
+        radial-gradient(calc(36 * var(--u)) calc(22 * var(--u)) at calc(78 * var(--u)) calc(65 * var(--u)), var(--color-cloud) 98%, transparent),
+        radial-gradient(calc(58 * var(--u)) calc(13 * var(--u)) at calc(222 * var(--u)) calc(65 * var(--u)), var(--color-cloud) 98%, transparent),
+        radial-gradient(circle calc(38 * var(--u)) at calc(130 * var(--u)) calc(43 * var(--u)), var(--color-cloud) 98%, transparent),
+        radial-gradient(circle calc(20 * var(--u)) at calc(185 * var(--u)) calc(58 * var(--u)), var(--color-cloud) 98%, transparent),
+        radial-gradient(circle calc(16 * var(--u)) at calc(229 * var(--u)) calc(65 * var(--u)), var(--color-cloud) 98%, transparent);
+    }
+
+    &[data-cloud="east"] {
+      --x: 780;
+      --y: 245;
+      --w: 246;
+      --h: 61;
+
+      background:
+        radial-gradient(calc(122 * var(--u)) calc(10 * var(--u)) at calc(122 * var(--u)) calc(61 * var(--u)), var(--color-cloud) 98%, transparent),
+        radial-gradient(calc(40 * var(--u)) calc(16 * var(--u)) at calc(70 * var(--u)) calc(61 * var(--u)), var(--color-cloud) 98%, transparent),
+        radial-gradient(circle calc(35 * var(--u)) at calc(117 * var(--u)) calc(43 * var(--u)), var(--color-cloud) 98%, transparent),
+        radial-gradient(circle calc(22 * var(--u)) at calc(65 * var(--u)) calc(55 * var(--u)), var(--color-cloud) 98%, transparent),
+        radial-gradient(circle calc(18 * var(--u)) at calc(162 * var(--u)) calc(53 * var(--u)), var(--color-cloud) 98%, transparent),
+        radial-gradient(circle calc(13 * var(--u)) at calc(192 * var(--u)) calc(60 * var(--u)), var(--color-cloud) 98%, transparent);
+    }
+
+    &[data-cloud="low"] {
+      --x: 605;
+      --y: 400;
+      --w: 165;
+      --h: 32;
+
+      background:
+        radial-gradient(calc(82 * var(--u)) calc(7 * var(--u)) at calc(83 * var(--u)) calc(32 * var(--u)), var(--color-cloud) 98%, transparent),
+        radial-gradient(circle calc(23 * var(--u)) at calc(99 * var(--u)) calc(27 * var(--u)), var(--color-cloud) 98%, transparent),
+        radial-gradient(circle calc(13 * var(--u)) at calc(63 * var(--u)) calc(30 * var(--u)), var(--color-cloud) 98%, transparent);
+    }
+  }
+
+  .trail {
+    border-radius: calc(var(--h) * var(--u));
+    background: var(--color-cloud);
+
+    &[data-trail="west"] {
+      --x: 335;
+      --y: 215;
+      --w: 160;
+      --h: 4;
+    }
+
+    &[data-trail="east"] {
+      --x: 710;
+      --y: 316;
+      --w: 157;
+      --h: 4;
+    }
+  }
+
+  .motes {
+    inset: 0;
+    background:
+      radial-gradient(circle calc(8 * var(--u)) at calc(430 * var(--u)) calc(108 * var(--u)), var(--color-cloud) 96%, transparent),
+      radial-gradient(circle calc(11 * var(--u)) at calc(477 * var(--u)) calc(130 * var(--u)), var(--color-cloud) 96%, transparent),
+      radial-gradient(circle calc(6.7 * var(--u)) at calc(1047.5 * var(--u)) calc(206.5 * var(--u)), var(--color-cloud) 96%, transparent),
+      radial-gradient(circle calc(8 * var(--u)) at calc(854 * var(--u)) calc(347 * var(--u)), var(--color-cloud) 96%, transparent),
+      radial-gradient(circle calc(6.3 * var(--u)) at calc(1134 * var(--u)) calc(828 * var(--u)), var(--color-cloud) 96%, transparent),
+      radial-gradient(circle calc(11 * var(--u)) at calc(391 * var(--u)) calc(919 * var(--u)), var(--color-cloud) 96%, transparent),
+      radial-gradient(circle calc(4.3 * var(--u)) at calc(848 * var(--u)) calc(976 * var(--u)), var(--color-cloud) 96%, transparent),
+      radial-gradient(circle calc(10.7 * var(--u)) at calc(152 * var(--u)) calc(807 * var(--u)), var(--color-ember) 96%, transparent),
+      radial-gradient(circle calc(8 * var(--u)) at calc(480 * var(--u)) calc(369 * var(--u)), var(--color-ember) 96%, transparent),
+      radial-gradient(circle calc(10.7 * var(--u)) at calc(1163.5 * var(--u)) calc(629 * var(--u)), var(--color-ember) 96%, transparent);
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: calc(205 * var(--u));
+      inset-block-start: calc(476.5 * var(--u));
+      inline-size: calc(45 * var(--u));
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: linear-gradient(225deg, var(--color-ember-light) 25%, var(--color-ember-deep) 75%);
+    }
+  }
+
+  .facet {
+    inset: 0;
+    background: var(--tone);
+
+    &[data-facet$="shade"] {
+      background: linear-gradient(to bottom, var(--tone), var(--color-teal) 140%);
+    }
+
+    &[data-facet$="fall"] {
+      background: linear-gradient(to bottom right, var(--tone) 30%, var(--color-crimson) 85%);
+    }
+
+    &[data-facet="plum"] {
+      --tone: var(--color-plum);
+
+      clip-path: polygon(30.86% 51.80%, 30.86% 37.93%, 32.95% 34.32%, 36.27% 38.58%, 37.58% 38.76%, 39.51% 39.69%, 42.90% 44.77%, 42.90% 51.80%);
+    }
+
+    &[data-facet="plum-face"] {
+      --tone: var(--color-mauve);
+
+      clip-path: polygon(33.10% 34.60%, 36.27% 38.58%, 37.42% 47.64%, 34.49% 44.22%);
+    }
+
+    &[data-facet="plum-ledge"] {
+      --tone: var(--color-mauve);
+
+      clip-path: polygon(37.58% 38.85%, 39.51% 39.78%, 41.13% 44.59%, 39.12% 45.98%);
+    }
+
+    &[data-facet="ridge"] {
+      --tone: var(--color-pine);
+
+      clip-path: polygon(57.48% 64.75%, 57.48% 50.88%, 62.50% 45.98%, 65.97% 46.25%, 71.14% 43.20%, 74.46% 45.51%, 78.70% 40.80%, 85.65% 47.18%, 89.51% 52.73%, 92.98% 61.52%, 92.98% 64.75%);
+    }
+
+    &[data-facet="ridge-shadow"] {
+      --tone: var(--color-pine-deep);
+
+      clip-path: polygon(60.03% 51.80%, 62.50% 45.98%, 65.97% 46.25%, 66.51% 51.80%);
+    }
+
+    &[data-facet="ridge-glint"] {
+      --tone: var(--color-teal-mid);
+
+      clip-path: polygon(67.90% 50.69%, 73.30% 48.10%, 71.60% 55.50%);
+    }
+
+    &[data-facet="ridge-slope"] {
+      --tone: var(--color-teal-mid);
+
+      clip-path: polygon(74.46% 45.51%, 78.70% 40.80%, 78.32% 53.65%, 73.69% 54.58%);
+    }
+
+    &[data-facet="ridge-flank"] {
+      --tone: var(--color-teal);
+
+      clip-path: polygon(81.02% 43.85%, 85.65% 47.18%, 89.51% 52.73%, 92.98% 61.52%, 86.42% 61.05%, 83.95% 52.73%);
+    }
+
+    &[data-facet="west-peak"] {
+      --tone: var(--color-teal);
+
+      clip-path: polygon(30.63% 52.54%, 34.10% 43.20%, 34.88% 54.12%, 31.64% 54.58%);
+    }
+
+    &[data-facet="west-peak-shade"] {
+      --tone: var(--color-teal-shade);
+
+      clip-path: polygon(34.10% 43.20%, 37.50% 47.83%, 38.27% 54.12%, 34.88% 54.12%);
+    }
+
+    &[data-facet="mid-peak"] {
+      --tone: var(--color-teal);
+
+      clip-path: polygon(37.42% 47.83%, 39.12% 45.88%, 41.05% 48.10%, 41.51% 51.80%, 37.96% 51.80%);
+    }
+
+    &[data-facet="main-peak-shade"] {
+      --tone: var(--color-teal-shade);
+
+      clip-path: polygon(38.97% 50.14%, 43.21% 44.59%, 45.60% 55.23%, 40.12% 55.50%);
+    }
+
+    &[data-facet="main-peak"] {
+      --tone: var(--color-teal);
+
+      clip-path: polygon(43.21% 44.59%, 52.55% 52.45%, 50.93% 55.50%, 45.60% 55.23%);
+    }
+
+    &[data-facet="rose-west"] {
+      --tone: var(--color-rose);
+
+      clip-path: polygon(31.25% 55.50%, 36.81% 48.47%, 45.52% 55.04%, 42.59% 59.39%, 42.59% 62.90%, 31.25% 62.90%);
+    }
+
+    &[data-facet="rose-west-fall"] {
+      --tone: var(--color-rose);
+
+      clip-path: polygon(36.81% 48.47%, 45.52% 55.04%, 42.59% 59.39%, 38.58% 56.15%);
+    }
+
+    &[data-facet="rose-east"] {
+      --tone: var(--color-rose);
+
+      clip-path: polygon(57.48% 53.65%, 61.88% 50.88%, 69.44% 54.76%, 73.46% 52.73%, 77.78% 56.61%, 77.78% 62.90%, 57.48% 62.90%);
+    }
+
+    &[data-facet="rose-east-face"] {
+      --tone: var(--color-rose-light);
+
+      clip-path: polygon(58.64% 53.19%, 61.88% 50.88%, 63.43% 59.20%, 59.80% 59.20%);
+    }
+
+    &[data-facet="rose-east-fall"] {
+      --tone: var(--color-rose);
+
+      clip-path: polygon(61.88% 50.88%, 69.44% 54.76%, 66.51% 59.67%, 63.43% 59.67%);
+    }
+
+    &[data-facet="rose-east-hollow"] {
+      --tone: var(--color-crimson);
+
+      clip-path: polygon(73.46% 52.73%, 77.78% 56.61%, 75.23% 58.46%, 71.37% 55.32%);
+    }
+
+    &[data-facet="flame-west"] {
+      --tone: var(--color-flame);
+
+      clip-path: polygon(28.16% 52.27%, 32.18% 54.58%, 38.58% 56.15%, 42.59% 59.39%, 42.59% 62.90%, 28.16% 62.90%);
+    }
+
+    &[data-facet="flame-west-face"] {
+      --tone: var(--color-apricot);
+
+      clip-path: polygon(28.16% 52.27%, 32.79% 59.94%, 32.79% 62.90%, 28.16% 62.90%);
+    }
+
+    &[data-facet="flame-peak"] {
+      --tone: var(--color-flame);
+
+      clip-path: polygon(42.59% 59.39%, 55.32% 50.42%, 54.01% 62.90%, 41.67% 62.90%);
+    }
+
+    &[data-facet="flame-peak-face"] {
+      --tone: var(--color-apricot);
+
+      clip-path: polygon(55.32% 50.42%, 60.34% 55.32%, 61.88% 56.61%, 63.43% 62.90%, 54.01% 62.90%);
+    }
+
+    &[data-facet="flame-east"] {
+      --tone: var(--color-apricot);
+
+      clip-path: polygon(67.13% 62.90%, 69.83% 57.82%, 74.07% 58.09%, 78.70% 55.23%, 83.95% 60.13%, 83.95% 62.90%);
+    }
+  }
+
+  .shore {
+    inset: 0;
+    background: var(--tone);
+
+    &[data-shore="dome"] {
+      --tone: var(--color-lagoon);
+
+      clip-path: polygon(6.64% 65.31%, 6.68% 64.89%, 6.81% 63.94%, 7.04% 63.01%, 7.35% 62.10%, 7.73% 61.24%, 8.19% 60.43%, 8.73% 59.68%, 9.34% 58.99%, 10.01% 58.38%, 10.73% 57.85%, 11.49% 57.41%, 12.28% 57.07%, 13.12% 56.82%, 13.96% 56.66%, 14.81% 56.61%, 15.67% 56.66%, 16.51% 56.82%, 17.35% 57.07%, 18.14% 57.41%, 18.90% 57.85%, 19.62% 58.38%, 20.29% 58.99%, 20.90% 59.68%, 21.44% 60.43%, 21.90% 61.24%, 22.28% 62.10%, 22.59% 63.01%, 22.82% 63.94%, 22.95% 64.89%, 22.99% 65.31%);
+    }
+
+    &[data-shore="ridge"] {
+      --tone: var(--color-plum);
+
+      clip-path: polygon(6.79% 65.31%, 7.41% 62.16%, 11.19% 60.59%, 20.06% 61.24%, 26.23% 61.52%, 28.70% 58%, 32.41% 58.46%, 37.04% 59.39%, 40.90% 60.68%, 44.75% 61.79%, 47.22% 61.79%, 50.15% 59.94%, 55.94% 58.28%, 59.80% 61.52%, 65.59% 61.24%, 69.44% 60.59%, 78.70% 61.05%, 81.79% 60.13%, 84.88% 56.43%, 88.73% 60.59%, 92.98% 63.83%, 92.98% 65.49%);
+    }
+
+    &[data-shore="wave"] {
+      --tone: var(--color-lagoon);
+
+      clip-path: polygon(6.79% 64.75%, 11.57% 63.83%, 19.29% 63.64%, 29.32% 62.90%, 34.34% 62.16%, 38.58% 62.53%, 42.44% 63.09%, 46.30% 62.16%, 54.01% 62.72%, 61.73% 62.16%, 67.13% 62.53%, 73.30% 63.09%, 77.93% 62.16%, 81.79% 60.59%, 84.88% 59.20%, 87.96% 60.31%, 92.98% 63.09%, 92.98% 65.49%, 6.79% 65.22%);
+    }
+
+    &[data-shore="wave-flank"] {
+      --tone: var(--color-lagoon-mid);
+
+      clip-path: polygon(84.88% 59.20%, 87.96% 60.31%, 92.98% 63.09%, 92.98% 65.49%, 88.73% 65.49%);
+    }
+
+    &[data-shore="silt"] {
+      background: linear-gradient(to right, var(--color-dusk-teal), var(--color-dusk-plum));
+      clip-path: polygon(6.79% 64.38%, 15.43% 64.57%, 23.15% 64.48%, 32.41% 64.20%, 38.58% 64.48%, 46.30% 64.01%, 54.01% 63.83%, 61.73% 63.64%, 69.44% 63.46%, 77.16% 63.83%, 84.88% 64.20%, 92.98% 64.57%, 92.98% 65.68%, 6.79% 65.22%);
+    }
+  }
+
+  .water {
+    inset: 0;
+
+    &[data-water="cream"] {
+      background: var(--color-mirror-cream);
+      clip-path: polygon(7.10% 64.75%, 7.10% 65.22%, 7.12% 65.58%, 7.15% 66.09%, 7.20% 66.68%, 7.33% 67.25%, 7.55% 67.84%, 7.85% 68.47%, 8.18% 69.07%, 8.49% 69.57%, 8.78% 69.93%, 9.07% 70.19%, 9.35% 70.39%, 9.65% 70.58%, 9.92% 70.75%, 10.20% 70.87%, 10.49% 70.99%, 10.80% 71.14%, 11.17% 71.33%, 11.57% 71.54%, 11.98% 71.77%, 12.35% 71.97%, 12.67% 72.16%, 12.97% 72.35%, 13.25% 72.53%, 13.50% 72.71%, 13.73% 72.87%, 13.91% 73.01%, 14.09% 73.18%, 14.27% 73.45%, 14.47% 73.86%, 14.66% 74.37%, 14.85% 74.90%, 15.05% 75.39%, 15.21% 75.83%, 15.36% 76.24%, 15.54% 76.63%, 15.82% 76.97%, 16.23% 77.23%, 16.76% 77.45%, 17.29% 77.62%, 17.75% 77.80%, 18.09% 77.94%, 18.38% 78.04%, 18.64% 78.16%, 18.90% 78.35%, 19.18% 78.60%, 19.46% 78.89%, 19.71% 79.26%, 19.91% 79.74%, 20.02% 80.41%, 20.06% 81.22%, 20.11% 82.05%, 20.22% 82.79%, 20.42% 83.42%, 20.66% 84.01%, 20.94% 84.51%, 21.22% 84.92%, 21.50% 85.22%, 21.79% 85.42%, 22.08% 85.53%, 22.38% 85.57%, 22.68% 85.53%, 22.98% 85.42%, 23.27% 85.22%, 23.53% 84.92%, 23.77% 84.50%, 23.97% 83.96%, 24.15% 83.37%, 24.31% 82.79%, 24.41% 82.24%, 24.48% 81.67%, 24.55% 81.12%, 24.69% 80.57%, 24.92% 80%, 25.22% 79.40%, 25.54% 78.88%, 25.85% 78.54%, 26.14% 78.45%, 26.43% 78.53%, 26.71% 78.70%, 27.01% 78.82%, 27.30% 78.90%, 27.58% 78.99%, 27.87% 79.07%, 28.16% 79.09%, 28.46% 79.07%, 28.74% 79.01%, 29.03% 78.93%, 29.32% 78.82%, 29.61% 78.69%, 29.90% 78.53%, 30.19% 78.35%, 30.48% 78.17%, 30.77% 77.97%, 31.06% 77.78%, 31.34% 77.56%, 31.64% 77.34%, 31.93% 77.08%, 32.21% 76.80%, 32.50% 76.54%, 32.79% 76.32%, 33.09% 76.15%, 33.37% 76.02%, 33.66% 75.92%, 33.95% 75.86%, 34.24% 75.83%, 34.53% 75.84%, 34.81% 75.88%, 35.11% 75.95%, 35.40% 76.05%, 35.69% 76.19%, 35.97% 76.34%, 36.27% 76.50%, 36.56% 76.69%, 36.84% 76.89%, 37.13% 77.10%, 37.42% 77.24%, 37.72% 77.34%, 38% 77.40%, 38.29% 77.43%, 38.58% 77.43%, 38.87% 77.42%, 39.16% 77.39%, 39.44% 77.32%, 39.74% 77.15%, 40.03% 76.85%, 40.33% 76.47%, 40.62% 76.04%, 40.90% 75.67%, 41.14% 75.29%, 41.37% 74.88%, 41.59% 74.60%, 41.82% 74.56%, 42.05% 74.89%, 42.28% 75.50%, 42.53% 76.19%, 42.82% 76.78%, 43.18% 77.26%, 43.59% 77.72%, 44% 78.11%, 44.37% 78.35%, 44.68% 78.42%, 44.97% 78.33%, 45.25% 78.18%, 45.52% 77.98%, 45.82% 77.76%, 46.10% 77.47%, 46.39% 77.17%, 46.68% 76.87%, 46.98% 76.57%, 47.26% 76.25%, 47.55% 75.97%, 47.84% 75.76%, 48.13% 75.65%, 48.42% 75.60%, 48.70% 75.62%, 49% 75.67%, 49.29% 75.78%, 49.58% 75.94%, 49.86% 76.15%, 50.15% 76.41%, 50.45% 76.73%, 50.73% 77.11%, 51.02% 77.51%, 51.31% 77.89%, 51.60% 78.25%, 51.89% 78.61%, 52.18% 78.96%, 52.47% 79.28%, 52.76% 79.57%, 53.05% 79.84%, 53.33% 80.09%, 53.63% 80.30%, 53.92% 80.46%, 54.21% 80.59%, 54.49% 80.68%, 54.78% 80.76%, 55.08% 80.80%, 55.36% 80.81%, 55.65% 80.80%, 55.94% 80.76%, 56.23% 80.69%, 56.52% 80.59%, 56.81% 80.48%, 57.10% 80.39%, 57.39% 80.30%, 57.68% 80.19%, 57.96% 80.13%, 58.26% 80.11%, 58.55% 80.15%, 58.83% 80.22%, 59.12% 80.36%, 59.41% 80.57%, 59.71% 80.87%, 59.99% 81.24%, 60.28% 81.67%, 60.57% 82.15%, 60.86% 82.70%, 61.15% 83.34%, 61.44% 83.95%, 61.73% 84.46%, 62.02% 84.83%, 62.31% 85.12%, 62.59% 85.34%, 62.89% 85.48%, 63.18% 85.55%, 63.46% 85.55%, 63.75% 85.47%, 64.04% 85.29%, 64.34% 85.01%, 64.62% 84.63%, 64.91% 84.19%, 65.20% 83.72%, 65.49% 83.18%, 65.78% 82.57%, 66.06% 81.98%, 66.36% 81.50%, 66.65% 81.20%, 66.94% 81.04%, 67.22% 80.84%, 67.52% 80.48%, 67.81% 79.82%, 68.09% 78.98%, 68.38% 78.14%, 68.67% 77.52%, 68.97% 77.13%, 69.25% 76.88%, 69.54% 76.79%, 69.83% 76.87%, 70.12% 77.16%, 70.41% 77.62%, 70.69% 78.22%, 70.99% 78.91%, 71.28% 79.77%, 71.57% 80.80%, 71.85% 81.79%, 72.15% 82.52%, 72.44% 82.89%, 72.72% 83.02%, 73.01% 83.05%, 73.30% 83.07%, 73.60% 83.12%, 73.88% 83.12%, 74.17% 83.07%, 74.46% 82.98%, 74.75% 82.84%, 75.04% 82.65%, 75.32% 82.41%, 75.62% 82.05%, 75.91% 81.54%, 76.20% 80.91%, 76.48% 80.27%, 76.77% 79.74%, 77.07% 79.37%, 77.35% 79.10%, 77.64% 78.87%, 77.93% 78.63%, 78.23% 78.40%, 78.51% 78.20%, 78.80% 77.97%, 79.09% 77.71%, 79.38% 77.35%, 79.67% 76.94%, 79.95% 76.51%, 80.25% 76.13%, 80.54% 75.79%, 80.83% 75.46%, 81.11% 75.16%, 81.40% 74.93%, 81.70% 74.77%, 81.98% 74.68%, 82.27% 74.62%, 82.56% 74.56%, 82.85% 74.51%, 83.14% 74.48%, 83.43% 74.44%, 83.72% 74.38%, 84.01% 74.27%, 84.30% 74.15%, 84.58% 74%, 84.88% 73.82%, 85.17% 73.61%, 85.46% 73.38%, 85.74% 73.11%, 86.03% 72.80%, 86.33% 72.41%, 86.61% 71.97%, 86.90% 71.54%, 87.19% 71.23%, 87.48% 71.04%, 87.77% 70.93%, 88.06% 70.90%, 88.35% 70.95%, 88.64% 71.17%, 88.93% 71.53%, 89.21% 71.86%, 89.51% 71.97%, 89.80% 71.84%, 90.08% 71.54%, 90.37% 71.12%, 90.66% 70.58%, 90.97% 69.85%, 91.29% 68.94%, 91.58% 68.02%, 91.82% 67.25%, 92% 66.66%, 92.12% 66.16%, 92.21% 65.77%, 92.28% 65.49%, 92.28% 64.75%);
+    }
+
+    &[data-water="ember"] {
+      background: linear-gradient(
+        to right,
+        var(--color-mirror-1) 7%,
+        var(--color-mirror-2) 35%,
+        var(--color-mirror-3) 55%
+      );
+      clip-path: polygon(7.10% 64.75%, 7.10% 65.22%, 7.12% 65.58%, 7.15% 66.09%, 7.20% 66.68%, 7.33% 67.25%, 7.55% 67.84%, 7.85% 68.47%, 8.18% 69.07%, 8.49% 69.57%, 8.78% 69.93%, 9.07% 70.19%, 9.35% 70.39%, 9.65% 70.58%, 9.92% 70.75%, 10.20% 70.87%, 10.49% 70.99%, 10.80% 71.14%, 11.17% 71.33%, 11.57% 71.54%, 11.98% 71.77%, 12.35% 71.97%, 12.67% 72.16%, 12.97% 72.35%, 13.25% 72.53%, 13.50% 72.71%, 13.73% 72.87%, 13.91% 73.01%, 14.09% 73.18%, 14.27% 73.45%, 14.47% 73.86%, 14.66% 74.37%, 14.85% 74.90%, 15.05% 75.39%, 15.21% 75.83%, 15.36% 76.24%, 15.54% 76.63%, 15.82% 76.97%, 16.23% 77.23%, 16.76% 77.45%, 17.29% 77.62%, 17.75% 77.80%, 18.09% 77.94%, 18.38% 78.04%, 18.64% 78.16%, 18.90% 78.35%, 19.18% 78.60%, 19.46% 78.89%, 19.71% 79.26%, 19.91% 79.74%, 20.02% 80.41%, 20.06% 81.22%, 20.11% 82.05%, 20.22% 82.79%, 20.42% 83.42%, 20.66% 84.01%, 20.94% 84.51%, 21.22% 84.92%, 21.50% 85.22%, 21.79% 85.42%, 22.08% 85.53%, 22.38% 85.57%, 22.68% 85.53%, 22.98% 85.42%, 23.27% 85.22%, 23.53% 84.92%, 23.77% 84.50%, 23.97% 83.96%, 24.15% 83.37%, 24.31% 82.79%, 24.41% 82.24%, 24.48% 81.67%, 24.55% 81.12%, 24.69% 80.57%, 24.92% 80%, 25.22% 79.40%, 25.54% 78.88%, 25.85% 78.54%, 26.14% 78.45%, 26.43% 78.53%, 26.71% 78.70%, 27.01% 78.82%, 27.30% 78.90%, 27.58% 78.99%, 27.87% 79.07%, 28.16% 79.09%, 28.46% 79.07%, 28.74% 79.01%, 29.03% 78.93%, 29.32% 78.82%, 29.61% 78.69%, 29.90% 78.53%, 30.19% 78.35%, 30.48% 78.17%, 30.77% 77.97%, 31.06% 77.78%, 31.34% 77.56%, 31.64% 77.34%, 31.93% 77.08%, 32.21% 76.80%, 32.50% 76.54%, 32.79% 76.32%, 33.09% 76.15%, 33.37% 76.02%, 33.66% 75.92%, 33.95% 75.86%, 34.24% 75.83%, 34.53% 75.84%, 34.81% 75.88%, 35.11% 75.95%, 35.40% 76.05%, 35.69% 76.19%, 35.97% 76.34%, 36.27% 76.50%, 36.56% 76.69%, 36.84% 76.89%, 37.13% 77.10%, 37.42% 77.24%, 37.72% 77.34%, 38% 77.40%, 38.29% 77.43%, 38.58% 77.43%, 38.90% 77.38%, 39.23% 77.30%, 39.53% 77.22%, 39.74% 77.15%, 39.35% 77.15%, 39.50% 77.06%, 39.71% 76.92%, 39.93% 76.76%, 40.12% 76.60%, 40.28% 76.42%, 40.42% 76.23%, 40.54% 76.04%, 40.66% 75.86%, 40.78% 75.67%, 40.90% 75.49%, 41.01% 75.30%, 41.13% 75.12%, 41.25% 74.93%, 41.38% 74.75%, 41.52% 74.56%, 41.67% 74.38%, 41.82% 74.19%, 41.98% 74%, 42.15% 73.81%, 42.36% 73.64%, 42.58% 73.46%, 42.81% 73.28%, 43.10% 73.12%, 43.52% 72.99%, 44.08% 72.90%, 44.76% 72.84%, 45.51% 72.78%, 46.30% 72.71%, 47.18% 72.62%, 48.15% 72.52%, 49.08% 72.40%, 49.85% 72.25%, 50.37% 72.08%, 50.74% 71.90%, 51.05% 71.67%, 51.39% 71.42%, 51.79% 71.09%, 52.19% 70.71%, 52.58% 70.32%, 52.93% 69.94%, 53.23% 69.57%, 53.48% 69.20%, 53.71% 68.83%, 53.94% 68.46%, 54.15% 68.09%, 54.35% 67.72%, 54.54% 67.35%, 54.71% 66.98%, 54.85% 66.59%, 54.98% 66.19%, 55.08% 65.81%, 55.17% 65.49%, 55.22% 65.24%, 55.24% 65.03%, 55.24% 64.87%, 55.25% 64.75%, 55.25% 64.75%);
+    }
+  }
+
+  .isle {
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      var(--color-dusk-teal) 18%,
+      var(--color-dusk-plum) 32%
+    );
+    clip-path: polygon(17.59% 72.25%, 17.84% 72.17%, 18.20% 72.07%, 18.58% 71.94%, 18.90% 71.79%, 19.14% 71.58%, 19.34% 71.34%, 19.51% 71.09%, 19.68% 70.86%, 19.82% 70.65%, 19.95% 70.44%, 20.08% 70.26%, 20.22% 70.12%, 20.36% 70.02%, 20.52% 69.95%, 20.68% 69.93%, 20.83% 69.94%, 21% 69.99%, 21.16% 70.09%, 21.31% 70.20%, 21.45% 70.31%, 21.56% 70.42%, 21.65% 70.55%, 21.74% 70.62%, 21.84% 70.58%, 21.94% 70.37%, 22.06% 70.04%, 22.19% 69.68%, 22.38% 69.38%, 22.62% 69.16%, 22.92% 68.97%, 23.23% 68.83%, 23.53% 68.73%, 23.83% 68.70%, 24.12% 68.74%, 24.41% 68.82%, 24.69% 68.92%, 24.97% 69.07%, 25.24% 69.27%, 25.49% 69.48%, 25.69% 69.66%, 25.83% 69.82%, 25.92% 69.99%, 25.99% 70.11%, 26.08% 70.12%, 26.20% 69.98%, 26.31% 69.72%, 26.45% 69.44%, 26.62% 69.20%, 26.84% 69.02%, 27.09% 68.86%, 27.35% 68.73%, 27.62% 68.64%, 27.89% 68.58%, 28.16% 68.57%, 28.43% 68.58%, 28.70% 68.64%, 28.98% 68.72%, 29.26% 68.84%, 29.54% 69%, 29.78% 69.20%, 30% 69.44%, 30.19% 69.71%, 30.38% 70.02%, 30.56% 70.31%, 30.73% 70.59%, 30.90% 70.89%, 31.07% 71.17%, 31.25% 71.42%, 31.44% 71.62%, 31.63% 71.79%, 31.83% 71.93%, 32.02% 72.06%, 32.23% 72.16%, 32.45% 72.24%, 32.65% 72.30%, 32.79% 72.34%, 17.59% 72.34%);
+  }
+
+  .ripple {
+    inset-inline-start: calc(var(--x) * var(--u));
+    inset-block-start: calc(var(--y) * var(--u));
+    inline-size: calc(var(--w) * var(--u));
+    block-size: calc(var(--h) * var(--u));
+    border-radius: calc(var(--h) * var(--u));
+    background: var(--tone);
+
+    &[data-ripple="ink-wide"] {
+      --x: 445;
+      --y: 728;
+      --w: 219;
+      --h: 6;
+      --tone: var(--color-ink);
+    }
+
+    &[data-ripple="cream-high"] {
+      --x: 524;
+      --y: 741.5;
+      --w: 157;
+      --h: 3;
+      --tone: var(--color-mirror-cream);
+    }
+
+    &[data-ripple="reed"] {
+      --x: 622;
+      --y: 745.5;
+      --w: 136;
+      --h: 4;
+      --tone: var(--color-reed);
+    }
+
+    &[data-ripple="ink-east"] {
+      --x: 842;
+      --y: 733.5;
+      --w: 126;
+      --h: 3;
+      --tone: var(--color-ink);
+    }
+
+    &[data-ripple="rose"] {
+      --x: 931;
+      --y: 728.5;
+      --w: 125;
+      --h: 4;
+      --tone: var(--color-rose-light);
+    }
+
+    &[data-ripple="cream-isle"] {
+      --x: 340;
+      --y: 787.5;
+      --w: 125;
+      --h: 4;
+      --tone: var(--color-mirror-cream);
+    }
+
+    &[data-ripple="gold"] {
+      --x: 895;
+      --y: 794.5;
+      --w: 155;
+      --h: 4;
+      --tone: var(--color-mirror-3);
+    }
+
+    &[data-ripple="cream-drift-1"] {
+      --x: 524;
+      --y: 904.5;
+      --w: 157;
+      --h: 3;
+      --tone: var(--color-mirror-cream);
+    }
+
+    &[data-ripple="cream-drift-2"] {
+      --x: 459;
+      --y: 914.5;
+      --w: 155;
+      --h: 3;
+      --tone: var(--color-mirror-cream);
+    }
+
+    &[data-ripple="cream-drift-3"] {
+      --x: 569;
+      --y: 930.5;
+      --w: 157;
+      --h: 3;
+      --tone: var(--color-mirror-cream);
+    }
+  }
+
+  .crown {
+    inset-inline-start: calc(265 * var(--u));
+    inset-block-start: calc(258 * var(--u));
+    inline-size: calc(180 * var(--u));
+    block-size: calc(300 * var(--u));
+    background: linear-gradient(
+      to bottom left,
+      var(--color-crown-1) 20%,
+      var(--color-crown-2) 50%,
+      var(--color-crown-3) 88%
+    );
+    mask:
+      radial-gradient(circle calc(39 * var(--u)) at calc(95 * var(--u)) calc(42 * var(--u)), black 98%, transparent),
+      radial-gradient(circle calc(36 * var(--u)) at calc(65 * var(--u)) calc(104 * var(--u)), black 98%, transparent),
+      radial-gradient(circle calc(36 * var(--u)) at calc(127 * var(--u)) calc(104 * var(--u)), black 98%, transparent),
+      radial-gradient(circle calc(35 * var(--u)) at calc(95 * var(--u)) calc(110 * var(--u)), black 98%, transparent),
+      radial-gradient(circle calc(42 * var(--u)) at calc(50 * var(--u)) calc(170 * var(--u)), black 98%, transparent),
+      radial-gradient(circle calc(40 * var(--u)) at calc(135 * var(--u)) calc(170 * var(--u)), black 98%, transparent),
+      radial-gradient(circle calc(40 * var(--u)) at calc(93 * var(--u)) calc(174 * var(--u)), black 98%, transparent),
+      radial-gradient(circle calc(46 * var(--u)) at calc(48 * var(--u)) calc(247 * var(--u)), black 98%, transparent),
+      radial-gradient(circle calc(44 * var(--u)) at calc(130 * var(--u)) calc(247 * var(--u)), black 98%, transparent),
+      radial-gradient(circle calc(45 * var(--u)) at calc(90 * var(--u)) calc(250 * var(--u)), black 98%, transparent);
+  }
+
+  .spine {
+    inset: 0;
+    background: var(--color-bark);
+    clip-path: polygon(26.31% 65.86%, 26.63% 54.04%, 23.07% 46.44%, 26.65% 53.30%, 26.75% 49.74%, 23.53% 42.83%, 26.77% 49%, 26.88% 45.39%, 23.84% 38.85%, 26.89% 44.65%, 26.99% 41.17%, 24.54% 35.80%, 27.01% 40.43%, 27.16% 35.12%, 25.77% 31.91%, 27.18% 34.38%, 27.28% 30.99%, 26.70% 29.42%, 27.30% 30.25%, 27.55% 26.83%, 27.67% 30.91%, 28.55% 29.51%, 27.69% 31.65%, 27.81% 35.03%, 29.48% 32.01%, 27.83% 35.77%, 27.98% 40.38%, 30.86% 34.88%, 28% 41.12%, 28.13% 45.15%, 31.40% 38.85%, 28.16% 45.89%, 28.26% 48.95%, 31.48% 42.74%, 28.28% 49.69%, 28.41% 53.75%, 32.18% 46.44%, 28.43% 54.49%, 28.78% 65.86%);
+  }
+
+  .sapling {
+    inset-inline-start: calc(215 * var(--u));
+    inset-block-start: calc(535 * var(--u));
+    inline-size: calc(130 * var(--u));
+    block-size: calc(130 * var(--u));
+    background: linear-gradient(to bottom, var(--color-blossom-1) 15%, var(--color-blossom-2) 60%);
+    mask:
+      radial-gradient(circle calc(40 * var(--u)) at calc(77 * var(--u)) calc(43 * var(--u)), black 98%, transparent),
+      radial-gradient(circle calc(34 * var(--u)) at calc(37 * var(--u)) calc(93 * var(--u)), black 98%, transparent),
+      radial-gradient(circle calc(34 * var(--u)) at calc(93 * var(--u)) calc(93 * var(--u)), black 98%, transparent),
+      radial-gradient(circle calc(38 * var(--u)) at calc(65 * var(--u)) calc(85 * var(--u)), black 98%, transparent);
+  }
+
+  .sapling-spine {
+    inset: 0;
+    background: var(--color-bark);
+    clip-path: polygon(21.88% 65.86%, 21.96% 62.04%, 19.75% 59.02%, 21.98% 61.49%, 22.03% 59.59%, 20.60% 57.54%, 22.04% 59.04%, 22.08% 57.51%, 21.22% 56.15%, 22.10% 56.96%, 22.14% 55.72%, 21.45% 54.58%, 22.15% 55.16%, 22.24% 52.17%, 22.33% 55.12%, 22.99% 54.58%, 22.35% 55.67%, 22.38% 57%, 23.30% 56.15%, 22.40% 57.56%, 22.44% 58.90%, 23.77% 57.54%, 22.45% 59.45%, 22.51% 61.44%, 24.69% 59.02%, 22.52% 62%, 22.61% 65.86%);
+  }
+
+  .pine {
+    inset: 0;
+
+    &[data-pine="near"] {
+      background: var(--color-plum);
+      clip-path: polygon(47.84% 44.13%, 48.53% 45.61%, 48.15% 45.61%, 48.84% 47.36%, 48.46% 47.36%, 49.15% 49.21%, 48.77% 49.21%, 49.31% 51.06%, 46.37% 51.06%, 46.91% 49.21%, 46.53% 49.21%, 47.22% 47.36%, 46.84% 47.36%, 47.53% 45.61%, 47.15% 45.61%);
+    }
+
+    &[data-pine="far"] {
+      background: var(--color-mauve);
+      clip-path: polygon(50.77% 45.61%, 51.70% 47.46%, 51.31% 47.46%, 52.08% 49.21%, 51.70% 49.21%, 52.39% 52.45%, 49.15% 52.45%, 49.85% 49.21%, 49.46% 49.21%, 50.23% 47.46%, 49.85% 47.46%);
+    }
+  }
+
+  .pad,
+  .limb,
+  .bole {
+    inset-inline-start: calc(var(--x) * var(--u));
+    inset-block-start: calc(var(--y) * var(--u));
+    inline-size: calc(var(--w) * var(--u));
+    block-size: calc(var(--h) * var(--u));
+  }
+
+  .pad {
+    border-radius: calc(var(--h) * var(--u));
+    background: var(--tone);
+
+    &[data-pad="crest"] {
+      --x: 1034;
+      --y: 279;
+      --w: 53;
+      --h: 25;
+      --tone: var(--color-mauve);
+    }
+
+    &[data-pad="crest-east"] {
+      --x: 1092;
+      --y: 319;
+      --w: 37;
+      --h: 17;
+      --tone: var(--color-mauve);
+    }
+
+    &[data-pad="tier-west"] {
+      --x: 1009;
+      --y: 348;
+      --w: 37;
+      --h: 17;
+      --tone: var(--color-mauve);
+    }
+
+    &[data-pad="tier-east"] {
+      --x: 1073;
+      --y: 348;
+      --w: 37;
+      --h: 17;
+      --tone: var(--color-mauve);
+    }
+
+    &[data-pad="bough-west"] {
+      --x: 976;
+      --y: 371;
+      --w: 61;
+      --h: 24;
+      --tone: var(--color-mauve);
+    }
+
+    &[data-pad="spur-east"] {
+      --x: 1078;
+      --y: 436;
+      --w: 38;
+      --h: 16;
+      --tone: var(--color-plum);
+    }
+
+    &[data-pad="shelf-west"] {
+      --x: 976;
+      --y: 470;
+      --w: 64;
+      --h: 23;
+      --tone: var(--color-plum);
+    }
+
+    &[data-pad="shelf-east"] {
+      --x: 1078;
+      --y: 470;
+      --w: 64;
+      --h: 23;
+      --tone: var(--color-plum);
+    }
+
+    &[data-pad="ledge-west"] {
+      --x: 944;
+      --y: 506;
+      --w: 106;
+      --h: 25;
+      --tone: var(--color-plum);
+    }
+
+    &[data-pad="ledge-east"] {
+      --x: 1081;
+      --y: 544;
+      --w: 96;
+      --h: 24;
+      --tone: var(--color-plum);
+    }
+  }
+
+  .limb {
+    --stroke: calc(7 * var(--u));
+
+    &[data-limb="crest-arm"] {
+      --x: 1058.5;
+      --y: 304;
+      --w: 35.5;
+      --h: 25.5;
+      --tone: var(--color-mauve);
+
+      border-block-end: var(--stroke) solid var(--tone);
+      border-inline-start: var(--stroke) solid var(--tone);
+      border-end-start-radius: calc(12 * var(--u));
+    }
+
+    &[data-limb="crest-hook"] {
+      --x: 1088;
+      --y: 334;
+      --w: 25;
+      --h: 22;
+      --tone: var(--color-mauve);
+
+      border-block-end: var(--stroke) solid var(--tone);
+      border-inline-end: var(--stroke) solid var(--tone);
+      border-end-end-radius: calc(14 * var(--u));
+    }
+
+    &[data-limb="tier-west-arm"] {
+      --x: 1026.5;
+      --y: 365;
+      --w: 23.5;
+      --h: 36.5;
+      --tone: var(--color-mauve);
+
+      border-block-end: var(--stroke) solid var(--tone);
+      border-inline-start: var(--stroke) solid var(--tone);
+      border-end-start-radius: calc(14 * var(--u));
+    }
+
+    &[data-limb="tier-east-arm"] {
+      --x: 1071;
+      --y: 365;
+      --w: 19.5;
+      --h: 36.5;
+      --tone: var(--color-mauve);
+
+      border-block-end: var(--stroke) solid var(--tone);
+      border-inline-end: var(--stroke) solid var(--tone);
+      border-end-end-radius: calc(14 * var(--u));
+    }
+
+    &[data-limb="bough-arm"] {
+      --x: 1003.5;
+      --y: 395;
+      --w: 46.5;
+      --h: 50.5;
+      --tone: var(--color-mauve);
+
+      border-block-end: var(--stroke) solid var(--tone);
+      border-inline-start: var(--stroke) solid var(--tone);
+      border-end-start-radius: calc(18 * var(--u));
+    }
+
+    &[data-limb="spur-stem"] {
+      --x: 1093.5;
+      --y: 452;
+      --w: 7;
+      --h: 18;
+      --tone: var(--color-plum);
+
+      background: var(--tone);
+    }
+
+    &[data-limb="shelf-east-stem"] {
+      --x: 1071;
+      --y: 482.5;
+      --w: 7;
+      --h: 7;
+      --tone: var(--color-plum);
+
+      background: var(--tone);
+    }
+
+    &[data-limb="shelf-west-stem"] {
+      --x: 1040;
+      --y: 478.5;
+      --w: 10;
+      --h: 7;
+      --tone: var(--color-plum);
+
+      background: var(--tone);
+    }
+
+    &[data-limb="shelf-arm"] {
+      --x: 1071;
+      --y: 493;
+      --w: 44.5;
+      --h: 35.5;
+      --tone: var(--color-plum);
+
+      border-block-end: var(--stroke) solid var(--tone);
+      border-inline-end: var(--stroke) solid var(--tone);
+      border-end-end-radius: calc(16 * var(--u));
+    }
+
+    &[data-limb="ledge-west-arm"] {
+      --x: 991.5;
+      --y: 531;
+      --w: 58.5;
+      --h: 56.5;
+      --tone: var(--color-plum);
+
+      border-block-end: var(--stroke) solid var(--tone);
+      border-inline-start: var(--stroke) solid var(--tone);
+      border-end-start-radius: calc(20 * var(--u));
+    }
+
+    &[data-limb="ledge-east-arm"] {
+      --x: 1071;
+      --y: 568;
+      --w: 72.5;
+      --h: 47.5;
+      --tone: var(--color-plum);
+
+      border-block-end: var(--stroke) solid var(--tone);
+      border-inline-end: var(--stroke) solid var(--tone);
+      border-end-end-radius: calc(20 * var(--u));
+    }
+  }
+
+  .bole {
+    --x: 1050;
+    --y: 381;
+    --w: 21;
+    --h: 328;
+
+    border-radius: calc(11 * var(--u));
+    background: linear-gradient(to bottom, var(--color-mauve) 15%, var(--color-plum) 18%);
+  }
+}
