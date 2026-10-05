@@ -1163,3 +1163,4 @@
 |1167| [Circular Nav](https://github.com/xml12333/HTML_CSS_JS/tree/main/1167.Circular%20Nav)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1167.Circular%20Nav/)|
 |1168| [Anchor Nav](https://github.com/xml12333/HTML_CSS_JS/tree/main/1168.Anchor%20Nav)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1168.Anchor%20Nav/)|
 |1169| [Autumn Lake](https://github.com/xml12333/HTML_CSS_JS/tree/main/1169.Autumn%20Lake)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1169.Autumn%20Lake/)|
+|1170| [Line2NodeMaterial](https://github.com/xml12333/HTML_CSS_JS/tree/main/1170.Line2NodeMaterial)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1170.Line2NodeMaterial/)|
