@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>3D Data cards / menu. GSAP</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap"
+    rel="stylesheet" />
+
+  <div class="grain"></div>
+
+  <!-- ============ POSTER (HERO) ============ -->
+  <section class="poster">
+    <div class="top-divider" id="topDiv">
+      <span class="line"></span>
+      <span class="dot"></span>
+      <span class="line"></span>
+    </div>
+
+    <!-- Decorative arcs on the left -->
+    <svg class="arcs" viewBox="0 0 1600 1600" id="arcs">
+      <circle class="arc" cx="0" cy="800" r="780" />
+      <circle class="arc" cx="0" cy="800" r="900" />
+      <circle class="arc" cx="0" cy="800" r="1020" />
+      <circle class="arc" cx="0" cy="800" r="1140" />
+      <circle class="arc" cx="0" cy="800" r="1260" />
+    </svg>
+
+    <div class="pills" id="pills">
+
+      <!-- Pill 1: SITE -->
+      <div class="pill">
+        <div class="dark-tile label-tile">
+          <span class="lbl">Site</span>
+        </div>
+        <div class="dark-tile tools-tile">
+          <span class="t">Deepseek R1</span>
+          <span class="t">Gemini</span>
+          <span class="t">Claude</span>
+          <span class="t">Perplexity</span>
+          <span class="t">ChatGPT</span>
+        </div>
+      </div>
+
+      <!-- Pill 2: GERADOR DE LOGO -->
+      <div class="pill">
+        <div class="dark-tile label-tile">
+          <span class="lbl">Gerador<br />de Logo</span>
+        </div>
+        <div class="dark-tile tools-tile">
+          <span class="t">Pencil</span>
+          <span class="t">Adcopy</span>
+          <span class="t">Drotruel</span>
+          <span class="t">AI-Ads</span>
+          <span class="t">Simplified</span>
+        </div>
+      </div>
+
+      <!-- Pill 3: UI/UX -->
+      <div class="pill">
+        <div class="dark-tile label-tile">
+          <span class="lbl">UI/UX</span>
+        </div>
+        <div class="dark-tile tools-tile">
+          <span class="t">Dora</span>
+          <span class="t">10Web</span>
+          <span class="t">Durable</span>
+          <span class="t">LandingSite</span>
+          <span class="t">Viz AI</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="reinvent" id="reinvent">
+      R&nbsp;E&nbsp;I&nbsp;N&nbsp;V&nbsp;E&nbsp;N&nbsp;T<span
+        class="gap"></span>Y&nbsp;O&nbsp;U&nbsp;R&nbsp;S&nbsp;E&nbsp;L&nbsp;F
+    </div>
+  </section>
+
+  <!-- ============ SECTION 2: FEATURED TOOLS ============ -->
+  <section class="featured">
+    <div class="featured-head">
+      <div>
+        <div class="eyebrow">15 Tools · Three Stacks · One Workflow</div>
+        <h2>The new <em>operating system</em><br />for the curious.</h2>
+      </div>
+      <p>A handpicked breakdown of the tools we reach for daily — split by what they're good at, and what they let you
+        ship faster.</p>
+    </div>
+
+    <div class="featured-grid" id="featuredGrid">
+
+      <!-- SITE category -->
+      <article class="f-card">
+        <div class="f-card-top">
+          <div class="f-mini">C</div>
+          <span class="f-tag">Site · LLM</span>
+        </div>
+        <h3>Claude</h3>
+        <p>Long-form reasoning, careful writing, and large-context document work. Our default for nuanced thinking, not
+          just answers.</p>
+        <div class="url">claude.ai
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <line x1="7" y1="17" x2="17" y2="7" />
+            <polyline points="7 7 17 7 17 17" />
+          </svg>
+        </div>
+      </article>
+
+      <article class="f-card">
+        <div class="f-card-top">
+          <div class="f-mini">P</div>
+          <span class="f-tag">Site · Search</span>
+        </div>
+        <h3>Perplexity</h3>
+        <p>Search that cites its sources and writes you a summary. Use it for research where provenance matters more
+          than vibes.</p>
+        <div class="url">perplexity.ai
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <line x1="7" y1="17" x2="17" y2="7" />
+            <polyline points="7 7 17 7 17 17" />
+          </svg>
+        </div>
+      </article>
+
+      <!-- LOGO category -->
+      <article class="f-card">
+        <div class="f-card-top">
+          <div class="f-mini">P</div>
+          <span class="f-tag">Logo · Brand</span>
+        </div>
+        <h3>Pencil</h3>
+        <p>Generates ad creative and identity systems from a few prompts. Great for client pitches where you need 12
+          directions by tomorrow.</p>
+        <div class="url">pencil.ai
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <line x1="7" y1="17" x2="17" y2="7" />
+            <polyline points="7 7 17 7 17 17" />
+          </svg>
+        </div>
+      </article>
+
+      <article class="f-card">
+        <div class="f-card-top">
+          <div class="f-mini">A</div>
+          <span class="f-tag">Logo · Copy</span>
+        </div>
+        <h3>AdCopy</h3>
+        <p>Headline + tagline generation tuned for performance copy. Drop in a product and get angles you actually want
+          to test.</p>
+        <div class="url">adcopy.ai
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <line x1="7" y1="17" x2="17" y2="7" />
+            <polyline points="7 7 17 7 17 17" />
+          </svg>
+        </div>
+      </article>
+
+      <!-- UI/UX category -->
+      <article class="f-card">
+        <div class="f-card-top">
+          <div class="f-mini">D</div>
+          <span class="f-tag">UI/UX · Sites</span>
+        </div>
+        <h3>Dora</h3>
+        <p>3D animated websites without writing a line of code. The kind of frontend that used to take a team — built in
+          a weekend.</p>
+        <div class="url">dora.run
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <line x1="7" y1="17" x2="17" y2="7" />
+            <polyline points="7 7 17 7 17 17" />
+          </svg>
+        </div>
+      </article>
+
+      <article class="f-card">
+        <div class="f-card-top">
+          <div class="f-mini">D</div>
+          <span class="f-tag">UI/UX · Landing</span>
+        </div>
+        <h3>Durable</h3>
+        <p>Spins up a working business site in under a minute. Good for validation pages, MVPs, and "let me prove this
+          idea" weekends.</p>
+        <div class="url">durable.co
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <line x1="7" y1="17" x2="17" y2="7" />
+            <polyline points="7 7 17 7 17 17" />
+          </svg>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ SECTION 3: REINVENT CTA ============ -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <div class="cta-tag">
+        R&nbsp;E&nbsp;I&nbsp;N&nbsp;V&nbsp;E&nbsp;N&nbsp;T&nbsp;&nbsp;Y&nbsp;O&nbsp;U&nbsp;R&nbsp;S&nbsp;E&nbsp;L&nbsp;F
+      </div>
+      <h2>Stop reading lists.<br /><em>Start building.</em></h2>
+      <div class="cta-stats">
+        <div class="cta-stat">
+          <div class="num" data-count="15"><span>0</span></div>
+          <div class="lbl">Tools curated</div>
+        </div>
+        <div class="cta-stat">
+          <div class="num" data-count="3"><span>0</span></div>
+          <div class="lbl">Stacks ready</div>
+        </div>
+        <div class="cta-stat">
+          <div class="num" data-count="0"><span>0</span><small>excuses</small></div>
+          <div class="lbl">Reasons to wait</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="./js/script.js"></script>
+
+</body>
+
+</html>
