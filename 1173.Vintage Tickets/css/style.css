@@ -1,0 +1,755 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Bebas+Neue&family=Diplomata+SC&family=Holtwood+One+SC&family=IBM+Plex+Mono:wght@500&family=Rye&family=Sancreek&family=Stardos+Stencil:wght@700&family=Ultra&display=swap');
+ 
+:root {
+  --sunburst: #34495a;
+  --sunburst-ray: #3b5063;
+  --shadow: #1d2832;
+  --ink: #4a3a33;
+  --ink-soft: #8c7a6b;
+  --blue: #34608c;
+  --red: #c4443a;
+}
+ 
+* {
+  box-sizing: border-box;
+}
+ 
+body {
+  margin: 0;
+  background: repeating-conic-gradient(var(--sunburst-ray) 0 6deg, var(--sunburst) 6deg 12deg) fixed;
+  color: var(--ink);
+  font-family: 'Bebas Neue', sans-serif;
+}
+ 
+.sheet {
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: repeat(2, 372px);
+  place-content: center;
+  gap: 28px 36px;
+  padding: 2.5rem 1rem;
+  filter: drop-shadow(7px 7px 0 var(--shadow));
+}
+ 
+ 
+.ticket {
+  --grain: color-mix(in oklab, var(--paper), var(--ink) 7%);
+  display: grid;
+  grid-template-columns: 52px 1fr 52px;
+  height: 170px;
+  background: repeating-linear-gradient(90deg, transparent 0 3px, var(--grain) 3px 4px), var(--paper);
+  mask-image: linear-gradient(#000 0 0), radial-gradient(circle 3px, #000 90%, transparent);
+  mask-size: 100% 100%, 8px 14px;
+  mask-position: 0 0, calc(100% - 48px) 7px;
+  mask-repeat: no-repeat, repeat-y;
+  mask-composite: subtract, add;
+}
+ 
+.ticket-khaki { --paper: #d8c795; }
+.ticket-rose { --paper: #dcbcae; }
+.ticket-slate { --paper: #c5d0d6; }
+.ticket-sage { --paper: #c9d0ab; }
+.ticket-peach { --paper: #edc796; }
+.ticket-teal { --paper: #a8cfcf; }
+.ticket-mint { --paper: #cfd9bc; }
+.ticket-ochre { --paper: #d7c18d; }
+ 
+.edge-small-scallop {
+  mask-image: linear-gradient(#000 0 0), radial-gradient(circle 5px, #000 95%, transparent), radial-gradient(circle 5px, #000 95%, transparent), radial-gradient(circle 3px, #000 90%, transparent);
+  mask-size: 100% 100%, 12px 14px, 12px 14px, 8px 14px;
+  mask-position: 0 0, -6px 0, calc(100% + 6px) 0, calc(100% - 48px) 7px;
+  mask-repeat: no-repeat, repeat-y, repeat-y, repeat-y;
+  mask-composite: subtract, add, add, add;
+}
+ 
+.edge-large-scallop {
+  mask-image: linear-gradient(#000 0 0), radial-gradient(circle 10px, #000 96%, transparent), radial-gradient(circle 10px, #000 96%, transparent), radial-gradient(circle 3px, #000 90%, transparent);
+  mask-size: 100% 100%, 20px 28.33px, 20px 28.33px, 8px 14px;
+  mask-position: 0 0, -10px 0, calc(100% + 10px) 0, calc(100% - 48px) 7px;
+  mask-repeat: no-repeat, repeat-y, repeat-y, repeat-y;
+  mask-composite: subtract, add, add, add;
+}
+ 
+.edge-zigzag {
+  mask-image: linear-gradient(#000 0 0), conic-gradient(from 240deg at 100% 50%, #000 60deg, transparent 0), conic-gradient(from 60deg at 0 50%, #000 60deg, transparent 0), radial-gradient(circle 3px, #000 90%, transparent);
+  mask-size: 100% 100%, 8px 9.24px, 8px 9.24px, 8px 14px;
+  mask-position: 0 0, 0 0, 100% 0, calc(100% - 48px) 7px;
+  mask-repeat: no-repeat, repeat-y, repeat-y, repeat-y;
+  mask-composite: subtract, add, add, add;
+}
+ 
+.edge-side-notch {
+  mask-image: linear-gradient(#000 0 0), radial-gradient(circle 14px at 0 50%, #000 96%, transparent), radial-gradient(circle 14px at 100% 50%, #000 96%, transparent), radial-gradient(circle 3px, #000 90%, transparent);
+  mask-size: 100% 100%, 100% 100%, 100% 100%, 8px 14px;
+  mask-position: 0 0, 0 0, 0 0, calc(100% - 48px) 7px;
+  mask-repeat: no-repeat, no-repeat, no-repeat, repeat-y;
+  mask-composite: subtract, add, add, add;
+}
+ 
+.edge-round-corners {
+  mask-image: linear-gradient(#000 0 0), radial-gradient(circle 14px at 0 0, #000 96%, transparent), radial-gradient(circle 14px at 0 100%, #000 96%, transparent), radial-gradient(circle 14px at 100% 0, #000 96%, transparent), radial-gradient(circle 14px at 100% 100%, #000 96%, transparent), radial-gradient(circle 3px, #000 90%, transparent);
+  mask-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 8px 14px;
+  mask-position: 0 0, 0 0, 0 0, 0 0, 0 0, calc(100% - 48px) 7px;
+  mask-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat-y;
+  mask-composite: subtract, add, add, add, add, add;
+}
+ 
+.edge-perforated {
+  mask-image: linear-gradient(#000 0 0), radial-gradient(circle 4px, #000 92%, transparent), radial-gradient(circle 4px, #000 92%, transparent), radial-gradient(circle 4px, #000 92%, transparent), radial-gradient(circle 4px, #000 92%, transparent), radial-gradient(circle 3px, #000 90%, transparent);
+  mask-size: 100% 100%, 12px 12px, 12px 12px, 12px 12.14px, 12px 12.14px, 8px 14px;
+  mask-position: 0 0, 0 -6px, 0 calc(100% + 6px), -6px 0, calc(100% + 6px) 0, calc(100% - 48px) 7px;
+  mask-repeat: no-repeat, repeat-x, repeat-x, repeat-y, repeat-y, repeat-y;
+  mask-composite: subtract, add, add, add, add, add;
+}
+ 
+.edge-square-corners {
+  clip-path: polygon(12px 0, calc(100% - 12px) 0, calc(100% - 12px) 12px, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 12px calc(100% - 12px), 0 calc(100% - 12px), 0 12px, 12px 12px);
+}
+ 
+.edge-clipped-corners {
+  clip-path: polygon(14px 0, calc(100% - 14px) 0, 100% 14px, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0 calc(100% - 14px), 0 14px);
+}
+ 
+.stub {
+  display: grid;
+  place-items: center;
+}
+ 
+.stub-left {
+  border-right: 2px dashed var(--ink-soft);
+}
+ 
+.stub-text {
+  writing-mode: vertical-rl;
+  font-size: 1.05rem;
+  letter-spacing: 0.18em;
+  line-height: 1;
+}
+ 
+.stub-left .stub-text {
+  rotate: 180deg;
+}
+ 
+.stub-text,
+.ticket-body {
+  mask-image:
+    radial-gradient(circle 0.6px, transparent 90%, #000),
+    radial-gradient(circle 0.5px, transparent 90%, #000),
+    radial-gradient(circle 0.8px, transparent 90%, #000);
+  mask-size: 29px 23px, 37px 31px, 53px 47px;
+  mask-position: 0 0, 5px 7px, 11px 3px;
+  mask-composite: intersect;
+}
+ 
+.stub-serial {
+  color: var(--red);
+}
+ 
+.ticket-body {
+  display: grid;
+  padding: 12px 14px;
+  text-align: center;
+}
+ 
+.framed {
+  margin: 9px 8px;
+  padding: 8px 12px;
+  border: 1px solid var(--ink-soft);
+  outline: 1px solid var(--ink-soft);
+  outline-offset: -5px;
+}
+ 
+.misregistered {
+  text-shadow: 1.2px 0.8px 0 color-mix(in oklab, var(--red) 40%, var(--paper));
+}
+ 
+.display {
+  font-family: 'Rye', serif;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+ 
+.label {
+  line-height: 1;
+  letter-spacing: 0.06em;
+}
+ 
+.ticket-khaki .display {
+  font-family: 'Holtwood One SC', serif;
+  letter-spacing: 0;
+}
+ 
+.ticket-slate .display {
+  font-family: 'Ultra', serif;
+  letter-spacing: 0.02em;
+}
+ 
+.ticket-slate .label {
+  font-family: 'Diplomata SC', serif;
+  letter-spacing: 0.08em;
+}
+ 
+.ticket-sage .display {
+  font-family: 'Sancreek', serif;
+  letter-spacing: 0.02em;
+}
+ 
+.ticket-peach .display {
+  font-family: 'Alfa Slab One', serif;
+  letter-spacing: 0.08em;
+}
+ 
+.ticket-teal .display {
+  font-family: 'Ultra', serif;
+  letter-spacing: 0.02em;
+}
+ 
+.ticket-mint .display {
+  font-family: 'Abril Fatface', serif;
+  letter-spacing: 0.04em;
+}
+ 
+.ticket-ochre .display {
+  font-family: 'Stardos Stencil', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+ 
+.ticket-sage .label {
+  font-family: 'Rye', serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+ 
+.print {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+ 
+.print-blue {
+  color: var(--blue);
+}
+ 
+.print-red {
+  color: var(--red);
+}
+ 
+.tent {
+  --stripe: 9deg;
+  position: relative;
+  display: block;
+  width: 5em;
+  height: 5em;
+}
+ 
+.tent-fine-stripes {
+  --stripe: 6deg;
+}
+ 
+.tent-wide {
+  width: 6.5em;
+}
+ 
+.tent-flag {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 1px);
+  width: 2px;
+  height: 1em;
+  background: var(--ink);
+}
+ 
+.tent-flag::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 2px;
+  width: 0.75em;
+  height: 0.45em;
+  background: var(--red);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+ 
+.tent-roof {
+  position: absolute;
+  top: 0.9em;
+  left: 0;
+  right: 0;
+  height: 2em;
+  background: repeating-conic-gradient(from calc(180deg - var(--stripe) / 2) at 50% 0, var(--ink) 0 var(--stripe), transparent var(--stripe) calc(var(--stripe) * 2));
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+ 
+.tent-valance {
+  position: absolute;
+  top: 2.9em;
+  left: 0;
+  right: 0;
+  height: 0.3em;
+  background: radial-gradient(circle 0.25em at 50% 0, var(--ink) 96%, transparent) 0 0 / 0.5em 0.3em repeat-x;
+}
+ 
+.tent-body {
+  position: absolute;
+  top: 3.15em;
+  left: 50%;
+  bottom: 0;
+  width: 4.5em;
+  translate: -50% 0;
+  background: repeating-linear-gradient(90deg, var(--ink-soft) 0 0.5em, transparent 0.5em 1em);
+}
+ 
+.tent-wide .tent-body {
+  width: 5.5em;
+}
+ 
+.tent-flag-forked .tent-flag::after {
+  width: 0.85em;
+  clip-path: polygon(0 0, 100% 0, 70% 50%, 100% 100%, 0 100%);
+}
+ 
+.tent-flag-square .tent-flag::after {
+  width: 0.8em;
+  height: 0.5em;
+  clip-path: none;
+}
+ 
+.tent-flag-blue .tent-flag::after,
+.tent-flag-blue .tent-pennant::after {
+  background: var(--blue);
+}
+ 
+.tent-pennant {
+  position: absolute;
+  top: 2.15em;
+  width: 1px;
+  height: 0.8em;
+  background: var(--ink);
+}
+ 
+.tent-pennant::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 0.55em;
+  height: 0.34em;
+  background: var(--red);
+}
+ 
+.tent-pennant-left {
+  left: 0.25em;
+}
+ 
+.tent-pennant-left::after {
+  right: 1px;
+  clip-path: polygon(100% 0, 0 50%, 100% 100%);
+}
+ 
+.tent-pennant-right {
+  right: 0.25em;
+}
+ 
+.tent-pennant-right::after {
+  left: 1px;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+ 
+.barbell {
+  position: relative;
+  width: 72px;
+  height: 32px;
+}
+ 
+.barbell-bar {
+  position: absolute;
+  top: 14px;
+  left: 8px;
+  right: 8px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--ink);
+}
+ 
+.barbell-weight {
+  position: absolute;
+  top: 0;
+  width: 28px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--ink);
+}
+ 
+.barbell-weight-left {
+  left: 0;
+}
+ 
+.barbell-weight-right {
+  right: 0;
+}
+ 
+.tent-door {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 1.5em;
+  height: 1.5em;
+  translate: -50% 0;
+  border-radius: 0.75em 0.75em 0 0;
+  background: var(--ink);
+}
+ 
+.star {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background: currentColor;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+ 
+.bunting {
+  display: block;
+  height: 12px;
+  border-top: 2px solid var(--ink);
+  background: conic-gradient(from -24deg at 50% 100%, var(--ink) 48deg, transparent 0) 0 0 / 14px 12px repeat-x;
+}
+ 
+.bunting-forked {
+  position: relative;
+  height: 13px;
+  background: none;
+}
+ 
+.bunting-forked::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--ink);
+  mask-image:
+    linear-gradient(90deg, #000 0 9px, transparent 9px),
+    conic-gradient(from 150deg at 4.5px 60%, transparent 60deg, #000 0);
+  mask-size: 15px 100%;
+  mask-composite: intersect;
+}
+ 
+.bunting-scalloped {
+  height: 10px;
+  background: radial-gradient(circle 6px at 50% 0, var(--ink) 95%, transparent) 0 0 / 15px 10px repeat-x;
+}
+ 
+.banner {
+  padding: 5px 26px 4px;
+  background: var(--ink);
+  color: var(--paper);
+  clip-path: polygon(0 0, 100% 0, 93% 50%, 100% 100%, 0 100%, 7% 50%);
+}
+ 
+.body-title-tent {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  text-align: left;
+}
+ 
+.body-title-tent .display {
+  font-size: 2.1rem;
+}
+ 
+.body-title-tent .label {
+  font-size: 1.9rem;
+}
+ 
+.body-title-tent .tent {
+  font-size: 12px;
+}
+ 
+.body-marquee {
+  justify-items: center;
+  align-content: space-between;
+}
+ 
+.star-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+}
+ 
+.star-row::before,
+.star-row::after {
+  content: '';
+  width: 26px;
+  height: 1px;
+  background: var(--ink-soft);
+}
+ 
+.marquee {
+  display: grid;
+  gap: 1px;
+  width: 170px;
+  padding: 8px 10px 7px;
+  box-shadow: inset 0 0 0 2px var(--ink), inset 0 0 0 4px var(--paper), inset 0 0 0 5px var(--ink);
+}
+ 
+.marquee .label {
+  font-size: 0.9rem;
+}
+ 
+.marquee .display {
+  font-size: 1.7rem;
+}
+ 
+.body-marquee .bunting {
+  width: 170px;
+}
+ 
+.body-badge {
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 1fr auto;
+  align-items: center;
+  column-gap: 6px;
+  padding-bottom: 8px;
+}
+ 
+.body-badge .print {
+  font-size: 0.7rem;
+}
+ 
+.body-badge .label {
+  grid-column: 1 / -1;
+  font-size: 0.62rem;
+  white-space: nowrap;
+}
+ 
+.body-badge .print:first-child {
+  text-align: left;
+}
+ 
+.body-badge .print:last-child {
+  text-align: right;
+}
+ 
+.badge {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 104px;
+  height: 104px;
+}
+ 
+.badge-burst,
+.badge-burst::before,
+.badge-burst::after {
+  position: absolute;
+  inset: 14px;
+  background: var(--ink);
+}
+ 
+.badge-burst::before,
+.badge-burst::after {
+  content: '';
+  inset: 0;
+}
+ 
+.badge-burst::before {
+  rotate: 30deg;
+}
+ 
+.badge-burst::after {
+  rotate: 60deg;
+}
+ 
+.badge-face {
+  position: relative;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 2px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--paper);
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--ink);
+  border: 2px dotted var(--ink-soft);
+  font-size: 8px;
+}
+ 
+.badge-face .display {
+  font-size: 0.8rem;
+}
+ 
+.body-stacked {
+  grid-template-rows: auto auto auto auto 1fr;
+  justify-items: center;
+  padding-bottom: 6px;
+}
+ 
+.print-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+ 
+.body-stacked .tent {
+  font-size: 8px;
+  margin-top: 2px;
+}
+ 
+.body-stacked .label {
+  font-size: 1rem;
+}
+ 
+.body-stacked .display {
+  font-size: 1.9rem;
+}
+ 
+.body-stacked .bunting {
+  align-self: end;
+  width: 100%;
+}
+ 
+.body-banner {
+  justify-items: center;
+  align-content: space-between;
+  padding-top: 8px;
+}
+ 
+.body-banner .bunting {
+  width: 100%;
+}
+ 
+.body-banner .tent {
+  font-size: 8px;
+}
+ 
+.tent-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 10px;
+}
+ 
+.body-banner .banner {
+  font-size: 1.25rem;
+  margin-top: -4px;
+}
+ 
+.body-banner .label {
+  font-size: 1.3rem;
+}
+ 
+.banner-footer {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: end;
+  width: 100%;
+}
+ 
+.banner-footer .print:first-child {
+  text-align: left;
+}
+ 
+.banner-footer .print:last-child {
+  text-align: right;
+}
+ 
+.body-big-top {
+  justify-items: center;
+  align-content: space-between;
+}
+ 
+.body-big-top .tent {
+  font-size: 8px;
+  margin-top: -6px;
+}
+ 
+.big-top-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+}
+ 
+.body-big-top .display {
+  font-size: 1.85rem;
+}
+ 
+.body-big-top .bunting {
+  width: 70%;
+}
+ 
+.body-letter-discs {
+  justify-items: center;
+  align-content: space-between;
+}
+ 
+.body-letter-discs .label {
+  font-size: 1rem;
+  letter-spacing: 0.35em;
+}
+ 
+.letter-row {
+  display: flex;
+  gap: 5px;
+}
+ 
+.letter-row .display {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--ink);
+  box-shadow: 0 0 0 2px var(--paper), 0 0 0 3px var(--ink);
+  color: var(--paper);
+  font-size: 1.3rem;
+  letter-spacing: 0;
+}
+ 
+.letter-row .display:nth-child(even) {
+  translate: 0 5px;
+}
+ 
+.body-seating {
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: auto auto auto;
+  align-items: center;
+  column-gap: 6px;
+}
+ 
+.body-seating .print:first-child {
+  text-align: left;
+}
+ 
+.body-seating .print:nth-child(3) {
+  text-align: right;
+}
+ 
+.body-seating .display {
+  grid-column: 1 / -1;
+  font-size: 1.85rem;
+}
+ 
+.body-seating .print-red {
+  grid-column: 1 / -1;
+}
+ 
+@media (max-width: 840px) {
+  .sheet {
+    zoom: 0.9;
+  }
+}
+ 
+@media (max-width: 680px) {
+  .sheet {
+    grid-template-columns: 372px;
+    zoom: 1;
+  }
+}
+ 
+@media (max-width: 400px) {
+  .sheet {
+    zoom: 0.85;
+  }
+}
