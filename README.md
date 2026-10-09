@@ -1167,3 +1167,4 @@
 |1171| [3D Data Cards](https://github.com/xml12333/HTML_CSS_JS/tree/main/1171.3D%20Data%20Cards)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1171.3D%20Data%20Cards/)|
 |1172| [Metro Map](https://github.com/xml12333/HTML_CSS_JS/tree/main/1172.Metro%20Map)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1172.Metro%20Map/)|
 |1173| [Vintage Tickets](https://github.com/xml12333/HTML_CSS_JS/tree/main/1173.Vintage%20Tickets)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1173.Vintage%20Tickets/)|
+|1174| [Morph Gallery](https://github.com/xml12333/HTML_CSS_JS/tree/main/1174.Morph%20Gallery)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1174.Morph%20Gallery/)|
