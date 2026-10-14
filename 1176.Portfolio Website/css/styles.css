@@ -312,7 +312,34 @@ img {
   color: var(--white-color);
 }
 /*=============== BUTTON ===============*/
-
+.button{
+  background: var(--first-color);
+  color: var(--white-color);
+  font-weight: var(--font-semi-bold);
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  border-radius: 4rem;
+  transition: background-color 0.4s, box-shadow 0.4s;
+}
+.button div{
+  width: 40px;
+  height: 40px;
+  background-color: var(--white-color);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+.button i{
+  color: var(--first-color);
+  font-weight: initial;
+  font-size: 1.5rem;
+}
+.button:hover{
+  background-color: var(--first-color-alt);
+  box-shadow: 0 8px 24px hsla(41, 54%, 55%, 0.3);
+}
 /*=============== ABOUT SECTION ===============*/
 
 /*=============== CASE SECTION ===============*/
