@@ -28,7 +28,14 @@ const linkAction = () =>{
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
 /*=============== CHANGE HEADER STYLES ===============*/
-
+const scrollHeader = () => {
+  const header = document.getElementById("header");
+  // When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag
+  this.scrollY >= 50
+    ? header.classList.add("scroll-header")
+    : header.classList.remove("scroll-header");
+};
+window.addEventListener("scroll", scrollHeader);
 
 /*=============== SWIPER CASES ===============*/
 

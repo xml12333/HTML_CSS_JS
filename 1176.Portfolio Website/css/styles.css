@@ -244,7 +244,13 @@ img {
 }
 
 /* Change header styles */
-
+.scroll-header {
+  background-color: var(--body-color);
+  box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.1);
+}
+.scroll-header :is(.nav__logo, .nav__toggle) {
+  color: var(--title-color);
+}
 /* Active link */
 
 /*=============== HOME SECTION ===============*/
@@ -298,13 +304,13 @@ img {
   width: 340px;
   mask-image: linear-gradient(to bottom, hsl(0, 0%, 0%) 80%, transparent 95%);
 }
-.home__stamp{
+.home__stamp {
   position: absolute;
   top: 4rem;
   right: 1rem;
   width: 70px;
 }
-.home__name{
+.home__name {
   position: absolute;
   bottom: -0.75rem;
   justify-self: center;
@@ -312,7 +318,7 @@ img {
   color: var(--white-color);
 }
 /*=============== BUTTON ===============*/
-.button{
+.button {
   background: var(--first-color);
   color: var(--white-color);
   font-weight: var(--font-semi-bold);
@@ -321,9 +327,11 @@ img {
   column-gap: 0.5rem;
   padding: 0.5rem 1rem 0.5rem 0.5rem;
   border-radius: 4rem;
-  transition: background-color 0.4s, box-shadow 0.4s;
+  transition:
+    background-color 0.4s,
+    box-shadow 0.4s;
 }
-.button div{
+.button div {
   width: 40px;
   height: 40px;
   background-color: var(--white-color);
@@ -331,16 +339,29 @@ img {
   display: grid;
   place-items: center;
 }
-.button i{
+.button i {
   color: var(--first-color);
   font-weight: initial;
   font-size: 1.5rem;
 }
-.button:hover{
+.button:hover {
   background-color: var(--first-color-alt);
   box-shadow: 0 8px 24px hsla(41, 54%, 55%, 0.3);
 }
 /*=============== ABOUT SECTION ===============*/
+.about__data {
+  text-align: center;
+}
+.about__description {
+  font: var(--font-semi-bold) var(--h2-font-size) var(--second-font);
+  color: var(--title-color);
+  margin-bottom: 3rem;
+}
+.about__description span {
+  color: var(--first-color);
+  font-style: var(--font-italic);
+  font-size: var(--h1-font-size);
+}
 
 /*=============== CASE SECTION ===============*/
 
