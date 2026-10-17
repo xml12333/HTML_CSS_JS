@@ -364,7 +364,32 @@ img {
 }
 
 /*=============== CASE SECTION ===============*/
-
+.case__container{
+  position:relative;
+  row-gap:3rem;
+}
+.case__card{
+  position:relative;
+  width: 300px;
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  overflow:hidden;
+  display: grid;
+  grid-template-rows: max-content;
+}
+.case__img,
+.case__gradient{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  hight: 100%;
+}
+.case__img{
+  object-fit:cover;
+  object-position:center;
+  z-indez: 1;
+}
 /* Swiper class */
 
 /* STUDY PAGES */
