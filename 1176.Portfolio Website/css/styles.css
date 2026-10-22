@@ -551,7 +551,8 @@ img {
   margin-bottom: 1.5rem;
 }
 
-.study__content, .study__area {
+.study__content,
+.study__area {
   padding-inline: 1rem;
 }
 
@@ -702,7 +703,9 @@ img {
   .study__area .button {
     justify-self: flex-start;
   }
-  .study__key-list, .study__status-box, .study__specs {
+  .study__key-list,
+  .study__status-box,
+  .study__specs {
     padding: 2rem;
     border-radius: 1rem;
   }
@@ -715,6 +718,49 @@ img {
 }
 
 /*=============== PROCESS SECTION ===============*/
+.process__container {
+  row-gap: 3rem;
+  margin-top: 2rem;
+}
+.process__img {
+  width: 280px;
+  justify-self: center;
+}
+.process__card {
+  display: flex;
+  column-gap: 0.5rem;
+  background-color: var(--container-color);
+  box-shadow: 0 4px 24px hsla(0, 0%, 0%, 0.15);
+  padding: 0.75rem 0.75rem 1rem;
+  border-radius: 1.25rem;
+  cursor: default;
+  transition:
+    background-color 0.4s,
+    box-shadow 0.4s;
+}
+.process__number {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--gray-color);
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  font: var(--font-semi-bold) var(--h2-font-size) var(--second-font);
+  color: var(--title-color);
+}
+.process__title {
+  font-size: var(--h2-font-size);
+  margin-bottom: 0.25rem 1rem;
+}
+.prcess__content:has(.process__card:hover) .process__card {
+  background-color: var(--body-color);
+  box-shadow: none;
+}
+.process__content:has(.process__card:hover) .process__card:hover {
+  background-color: var(--container-color);
+  box-shadow: 0 4px 24px hsla(0, 0%, 0%, 0.15);
+}
 
 /*=============== SERVICES SECTION ===============*/
 
