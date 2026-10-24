@@ -763,7 +763,124 @@ img {
 }
 
 /*=============== SERVICES SECTION ===============*/
-
+.services {
+  position: relative;
+  margin-top: 3rem;
+}
+.services__bg,
+.services__shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.services__bg {
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+.services__shadow {
+  background-color: hsla(35, 50%, 8%, 0.85);
+  box-shadow:
+    inset 0 -96px 48px -40px var(--body-color),
+    inset 0 96px 48px -40px var(--body-color);
+  z-index: 5;
+}
+.services .section__header {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding-top: 2rem;
+}
+.services :is(.section__subtitle, .section__title) {
+  color: var(--white-color);
+}
+.services__container {
+  position: relative;
+  z-index: 10;
+  padding-block: 3rem 7rem;
+}
+.services__card {
+  background-color: hsla(0, 0%, 100%, 0.1);
+  backdrop-filter: blur(16px);
+  padding: 1rem;
+  border-radius: 1.25rem;
+  border: 1px solid var(--gray-color);
+  display: grid;
+  row-gap: 1rem;
+  transition: background-color 0.4s;
+}
+.services__number {
+  font: var(--font-italic) var(--font-semi-bold) var(--big-font-size)
+    var(--second-font);
+  color: var(--white-color);
+  transition: color 0.4s;
+}
+.services__title {
+  font-size: var(--h2-font-size);
+  color: var(--white-color);
+  transition: color 0.4s;
+}
+.services__status {
+  display: flex;
+  column-gap: 0.5rem;
+  align-items: center;
+}
+.services__text {
+  background-color: var(--white-color);
+  color: var(--title-color);
+  padding: 0.25rem 0.5rem;
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-semi-bold);
+  text-transform: uppercase;
+  border-radius: 2rem;
+  transition:
+    background-color 0.4s,
+    color 0.4s;
+}
+.services__circle {
+  width: 16px;
+  height: 16px;
+  background-color: var(--white-color);
+  border-radius: 50%;
+  transition: background-color 0.4s;
+}
+.services__description {
+  color: var(--white-color);
+  margin-bottom: 1.25rem;
+  transition: color 0.4s;
+}
+.services__button {
+  width: 40px;
+  height: 40px;
+  background-color: var(--white-color);
+  color: var(--first-color);
+  font-size: 1.75rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  transition:
+    background-color 0.4s,
+    color 0.4s,
+    box-shadow 0.4s;
+}
+.services__button:hover {
+  box-shadow: 0 8px 24px hsla(41, 54%, 55%, 0.3);
+}
+.services__card:hover {
+  background-color: var(--container-color);
+}
+.services__card:hover :is(.services__number, .services__title) {
+  color: var(--title-color);
+}
+.services__card:hover :is(.services__circle, .services__text, .services__button){
+  background-color: var(--first-color);
+  color: var(--white-color);
+}
+.services__card:hover .services__description{
+  color: var(--text-color);
+}
 /* SERVICES PAGES */
 
 /* SERVICE PAGES BREAKPOINTS */
