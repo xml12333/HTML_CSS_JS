@@ -874,11 +874,12 @@ img {
 .services__card:hover :is(.services__number, .services__title) {
   color: var(--title-color);
 }
-.services__card:hover :is(.services__circle, .services__text, .services__button){
+.services__card:hover
+  :is(.services__circle, .services__text, .services__button) {
   background-color: var(--first-color);
   color: var(--white-color);
 }
-.services__card:hover .services__description{
+.services__card:hover .services__description {
   color: var(--text-color);
 }
 /* SERVICES PAGES */
@@ -1040,7 +1041,8 @@ img {
   .service__card-description {
     font-size: var(--normal-font-size);
   }
-  .service__corp, .service__scope {
+  .service__corp,
+  .service__scope {
     padding: 2rem;
   }
   :is(.service__corp, .service__scope) .service__subtitle {
@@ -1052,13 +1054,87 @@ img {
 }
 
 /*=============== QUESTIONS SECTION ===============*/
-
+.questions__container {
+  row-gap: 3rem;
+  margin-top: 2rem;
+}
+.questions__data {
+  text-align: center;
+}
+.questions__img {
+  width: 100px;
+  border-radius: 50%;
+  margin-inline: auto;
+}
+.questions__title {
+  font-size: var(--h2-font-size);
+  margin-block: 0.5rem;
+}
+.questions__descriptions {
+  margin-bottom: 2rem;
+}
+.questions__content {
+  display: grid;
+  row-gap: 1rem;
+}
+.questions__card {
+  background-color: var(--container-color);
+  box-shadow: 0 4px 24px hsla(0, 0%, 0%, 0.15);
+  border: 1px solid var(--gray-color);
+  border-radius: 1rem;
+}
+.questions__button {
+  width: 100%;
+  padding: 1rem 0.5rem 1.5rem 1rem;
+  display: flex;
+  column-gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  text-align: initial;
+  cursor: pointer;
+}
+.questions__name {
+  font-size: var(--h2-font-size);
+}
+.questions__arrow {
+  width: 32px;
+  height: 32px;
+  background-color: var(--container-color);
+  border: 1px solid var(--gray-color);
+  border-radius: 50%;
+  font-size: 1.75rem;
+  flex-shrink: 1.75rem;
+  display: grid;
+  place-items: center;
+  transition:
+    rotate 0.4s,
+    background-color 0.4s,
+    color 0.4s;
+}
 /* Hide text */
-
+.questions__text {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding-inline: 1rem;
+  transition:
+    max-height 0.4s,
+    opacity 0.4s,
+    padding-bottom 0.4s;
+}
 /* Show text */
-
+.questions-open .questions__text {
+  max-height: 500px; /* If you have more elements, increase the height */
+  opacity: 1;
+  padding-bottom: 1.5rem;
+}
 /* Rotate icon */
-
+.questions-open .questions__arrow{
+  rotate: -180deg;
+  background-color: var(--first-color);
+  color: var(--second-color);
+  border-color: var(--first-color);
+}
 /*=============== CLIENTS SECTION ===============*/
 
 /* Swiper class */

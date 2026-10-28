@@ -70,7 +70,25 @@ const swiperCase = new Swiper('.case__swiper', {
 
 
 /*=============== QUESTIONS FAQS ===============*/
+const questionsCards = document.querySelectorAll('.questions__card'),
+      questionsButtons = document.querySelectorAll('.questions__button')
 
+questionsButtons.forEach(button => {
+   button.addEventListener('click', () => {
+      const currentCard = button.closest('.questions__card'), // Get the class of the clicked button and ⬇
+            isOpen = currentCard.classList.contains('questions-open') // Checks if the card is already open (returns true or false)
+
+      // Close all other services data
+      questionsCards.forEach(card => {
+         card.classList.replace('questions-open', 'questions-close')
+      })
+
+      // If the clicked card was closed, it opens it.
+      if(!isOpen){
+         currentCard.classList.replace('questions-close', 'questions-open')
+      }
+   })
+})
 
 /*=============== SWIPER CLIENTS ===============*/
 
