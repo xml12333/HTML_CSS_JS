@@ -91,7 +91,23 @@ questionsButtons.forEach(button => {
 })
 
 /*=============== SWIPER CLIENTS ===============*/
+const swiperClients = new Swiper('.clients__swiper', {
+   loop: true,
+   grabCursor: true,
+   slidesPerView: 'auto',
+   centeredSlides: 'auto',
+   spaceBetween: 16,
+   speed: 600,
 
+   navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+   },
+   autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+   },
+})
 
 /*=============== CONTACT EMAIL JS ===============*/
 
