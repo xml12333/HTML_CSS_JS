@@ -622,7 +622,51 @@
 
       <!--==================== CONTACT SECTION ====================-->
       <section class="contact section" id="contact">
-
+         <div class="section__header container">
+            <div>
+               <span class="section__subtitle">
+                  <div></div>
+                  CONTACT ME
+               </span>
+               <h2 class="section__title">
+                  Start Your <br>
+                  <span>Case Today</span>
+               </h2>
+            </div>
+         </div>
+         <div class="contact__container container grid">
+            <form action="" class="contact__form grid" id="contact-form">
+               <div class="contact__group">
+                  <input type="text" name="user_name" required autocomplete="name" placeholder='Your Name'
+                     class="contact__input" id="name">
+                  <label for="name" class="contact__label"></label>
+               </div>
+               <div class="contact__group">
+                  <input type="email" name="user_email" required autocomplete="email" placeholder='Your Email'
+                     class="contact__input" id="email">
+                  <label for="email" class="contact__label"></label>
+               </div>
+               <div class="contact__group">
+                  <textarea name="user_message" id="message" required placeholder="Message: (legal service & phone)"
+                     class="contact__input contact__area"></textarea>
+                  <label for="message" class="contact__label"></label>
+               </div>
+               <button type="submit" class="contact__button button">
+                  <div>
+                     <i class="ri-arrow-right-up-long-line"></i>
+                  </div>
+                  <span>Send Message</span>
+               </button>
+            </form>
+            <div class="contact__map">
+               <!-- Insert your location into Google Maps (https://www.google.com/maps) -->
+               <!-- Click Share -> Embed Map -> Copy HTML -->
+               <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317716.6062331985!2d-0.4312231339148631!3d51.528607044512746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2z0JvQvtC90LTQvtC9LCDQktC10LvQuNC60L7QsdGA0LjRgtCw0L3QuNGP!5e0!3m2!1sru!2spl!4v1793515084983!5m2!1sru!2spl"
+                  width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                  referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+         </div>
       </section>
    </main>
 
