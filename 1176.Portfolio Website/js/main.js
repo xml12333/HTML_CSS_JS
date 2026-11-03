@@ -110,6 +110,40 @@ const swiperClients = new Swiper('.clients__swiper', {
 })
 
 /*=============== CONTACT EMAIL JS ===============*/
+const contactForm = document.getElementById('contact-form'),
+      contactMessage = document.getElementById('contact-message')
+
+const sendEmail = async (e) => {
+   // Prevent the page from reloading
+   e.preventDefault() 
+
+   /*
+      The code for sending emails is a sample test.
+
+      Create your account at https://www.emailjs.com/ 
+      and follow the instructions in the video and images 
+      to send emails with your account.
+   */
+   
+   try {
+      // serviceID - templateID - #form - publicKey
+      await emailjs.sendForm('service_8ii265v', 'template_85g6ftk', '#contact-form', 'VQaq6RG_bXgUd7BNm')
+
+      // Show sent message
+      contactMessage.textContent = 'Message sent successfully ✅'
+      
+      // Clear input fields
+      contactForm.reset()
+   } catch (error) {
+      // Show error message
+      contactMessage.textContent = 'Message not sent (service error) ❌'
+      console.log(error)
+   } finally {
+      // Remove message after five seconds
+      setTimeout(() => contactMessage.textContent = '', 5000)
+   }
+}
+contactForm.addEventListener('submit', sendEmail)
 
 
 /*=============== CURRENT YEAR OF THE FOOTER ===============*/ 
