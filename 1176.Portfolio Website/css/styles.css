@@ -252,7 +252,9 @@ img {
   color: var(--title-color);
 }
 /* Active link */
-
+.active-link {
+  color: var(--first-color);
+}
 /*=============== HOME SECTION ===============*/
 .home {
   position: relative;
@@ -1459,8 +1461,41 @@ img {
 }
 /*=============== BREAKPOINTS ===============*/
 /* For small devices <> */
+@media (width <= 340px) {
+  .home__name {
+    font-size: 3rem;
+    text-align: center;
+    bottom: 0;
+  }
+  .footer__content {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* For medium devices <> */
+@media (width >= 540px) {
+  .home__container,
+  .about__container,
+  .process__container,
+  .services__container,
+  .questions__container,
+  .contact__container{
+    grid-template-columns: 400px;
+    justify-content: center;
+  }
+  .section__description{
+    max-width: 400px;
+    margin-inline: auto;
+  }
+}
+
+@media (width >= 968px) {
+  .case__swiper,
+  .clients__swiper{
+    width: 950px;
+  }
+}
+
 @media (width >= 768px) {
   .nav__menu {
     width: 50%;
