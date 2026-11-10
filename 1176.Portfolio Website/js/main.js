@@ -186,3 +186,37 @@ window.addEventListener('scroll', scrollActive)
 
 
 /*=============== SCROLL REVEAL ===============*/
+const sr = ScrollReveal({
+   origin: 'top',
+   distance: '100px',
+   duration: 2000,
+   delay: 300,
+   // reset: true, // Animations repeat
+})
+
+sr.reveal(`.home__data > *`, {interval: 200})
+sr.reveal(`.home__image`, {delay: 600, origin: 'bottom'})
+sr.reveal(`.home__name`, {delay: 900, origin: 'bottom'})
+
+sr.reveal(`.about .section__subtitle`)
+sr.reveal(`.about__description`, {delay: 600})
+sr.reveal(`.about .button`, {delay: 900})
+
+sr.reveal(`.section__header`)
+sr.reveal(`.case__swiper`, {delay: 600})
+sr.reveal(`.case .swiper-button-next, .swiper-button-prev`, {delay: 900})
+
+sr.reveal(`.process__img`, {delay: 600})
+sr.reveal(`.process__card`, {delay: 900, interval: 200})
+
+sr.reveal(`.services__card`, {delay: 600, interval: 200})
+
+sr.reveal(`.questions__data`, {delay: 600})
+sr.reveal(`.questions__card`, {delay: 900, interval: 200})
+
+sr.reveal(`.clients__swiper`, {delay: 600})
+
+sr.reveal(`.contact__form`, {delay: 600})
+sr.reveal(`.contact__map`, {delay: 900})
+
+sr.reveal(`.footer__container`)
