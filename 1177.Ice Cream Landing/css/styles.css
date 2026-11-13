@@ -7,12 +7,21 @@
 
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --green-color-gradient: linear-gradient(135deg, hsl(138, 37%, 42%) 0%,
-                                                  hsl(138, 37%, 55%) 100%);
-  --brown-color-gradient: linear-gradient(135deg, hsl(16, 48%, 45%) 0%,
-                                                  hsl(16, 55%, 60%) 100%);
-  --blue-color-gradient: linear-gradient(135deg, hsl(200, 57%, 45%) 0%,
-                                                 hsl(200, 57%, 65%) 100%);
+  --green-color-gradient: linear-gradient(
+    135deg,
+    hsl(138, 37%, 42%) 0%,
+    hsl(138, 37%, 55%) 100%
+  );
+  --brown-color-gradient: linear-gradient(
+    135deg,
+    hsl(16, 48%, 45%) 0%,
+    hsl(16, 55%, 60%) 100%
+  );
+  --blue-color-gradient: linear-gradient(
+    135deg,
+    hsl(200, 57%, 45%) 0%,
+    hsl(200, 57%, 65%) 100%
+  );
   --cream-color: hsl(43, 96%, 88%);
   --white-color: hsl(0, 0%, 100%);
   --black-color: hsl(0, 0%, 0%);
@@ -84,8 +93,10 @@ img {
   width: 100%;
   top: 0;
   left: 0;
-  background: var(--black-color);
-  transition: background-color 0.4s, box-shadow 0.4s;
+  background: transparent;
+  transition:
+    background-color 0.4s,
+    box-shadow 0.4s;
   z-index: 100;
 }
 
@@ -109,7 +120,7 @@ img {
   column-gap: 0.5rem;
 }
 
-.nav__action, 
+.nav__action,
 .nav__toggle {
   font-size: 1.5rem;
   color: var(--white-color);
@@ -183,20 +194,128 @@ img {
 }
 
 /*=============== HOME ===============*/
-
-
+.home {
+  position: relative;
+}
+.home__bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s;
+}
+.home__green {
+  background: var(--green-color-gradient);
+}
+.home__brown {
+  background: var(--brown-color-gradient);
+}
+.home__blue {
+  background: var(--blue-color-gradient);
+}
+.home__container {
+  position: relative;
+  min-height: 100dvh;
+  padding-block: 4.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+}
+.home__img {
+  width: 200px;
+  margin-inline: auto;
+  /* filter: blur(4px);
+  transition: filter 0.8s; */
+}
+.home__data {
+  position: relative;
+  text-align: center;
+  margin-block: 1rem 3rem;
+  z-index: 5;
+}
+.home__title {
+  font: 400 var(--biggest-font-size) var(--second-font);
+  color: var(--white-color);
+  text-transform: uppercase;
+  line-height: 100%;
+  margin-bottom: 1rem;
+}
+.home__description {
+  color: var(--white-color);
+  margin-bottom: 2rem;
+}
+.home__buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.home__button {
+  background-color: var(--cream-color);
+  color: var(--black-color);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1rem 1.25rem;
+  border-radius: 4rem;
+  box-shadow: 2px 4px 0 var(--black-color);
+  transition:
+    box-shadow 0.4s,
+    translate 0.4s;
+}
+.home__button:hover {
+  box-shadow: 0 0 0 var(--black-color);
+  color: var(--white-color);
+}
+.home__wave {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 723px);
+  width: 1150px;
+  max-width: initial;
+}
+.home__buttom {
+  position: relative;
+  margin-top: auto;
+  display: grid;
+  row-gap: 2rem;
+  z-index: 5;
+}
+.home__reviews {
+  position: relative;
+  padding-top: 5.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.75rem;
+}
+.home__people {
+  display: flex;
+}
+.home__person {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--cream-color);
+}
+.home__person + .home__person {
+  margin-left: -0.75rem;
+}
+.home__reviews-title {
+  font-size: var(--normal-font-size);
+  font-weight: 600;
+}
+.home__reviews-description {
+  font-size: var(--small-font-size);
+}
 /* Active background */
-
-
+.active-bg {
+  opacity: 1;
+}
 /* Swiper class */
-
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices <> */
 
-
 /* For medium devices <> */
-
 
 /* For large devices <> */
 @media (width >= 1150px) {
@@ -207,7 +326,7 @@ img {
   .nav {
     height: calc(var(--header-height) + 2rem);
   }
-  .nav__toggle, 
+  .nav__toggle,
   .nav__close {
     display: none;
   }
