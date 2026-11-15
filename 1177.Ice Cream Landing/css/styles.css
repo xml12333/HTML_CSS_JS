@@ -222,8 +222,8 @@ img {
 .home__img {
   width: 200px;
   margin-inline: auto;
-  /* filter: blur(4px);
-  transition: filter 0.8s; */
+  filter: blur(4px);
+  transition: filter 0.8s;
 }
 .home__data {
   position: relative;
@@ -311,7 +311,38 @@ img {
   opacity: 1;
 }
 /* Swiper class */
-
+.home .home__swiper,
+.home .swiper-slide {
+  width: 100%;
+  overflow: initial;
+}
+.home__arrows {
+  position: absolute;
+  top: 1.25rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  column-gap: 1rem;
+}
+.home :is(.swiper-button-prev, .swiper-button-next)::after {
+  display: none;
+}
+.home :is(.swiper-button-prev, .swiper-button-next) {
+  position: initial;
+  margin: initial;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--black-color);
+  border-radius: 50%;
+  color: var(--black-color);
+  font-size: 1.5rem;
+}
+.home
+  :is(.swiper-slide-active, .swiper-slide-duplicate-active, .swiper-slide-prev)
+  .home__img {
+  filter: blur(0);
+}
 /*=============== BREAKPOINTS ===============*/
 /* For small devices <> */
 
