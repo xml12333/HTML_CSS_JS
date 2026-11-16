@@ -345,9 +345,31 @@ img {
 }
 /*=============== BREAKPOINTS ===============*/
 /* For small devices <> */
-
+@media (width <= 340px) {
+  .home__img {
+    width: 170px;
+  }
+  .home__title {
+    font-size: 2.5rem;
+  }
+}
 /* For medium devices <> */
-
+@media (width >= 548px) {
+  .home__img {
+    width: 240px;
+  }
+  .home__data {
+    width: 460px;
+    margin-inline: auto;
+  }
+}
+@media (width >= 768px) {
+  .home__wave {
+    width: 2000px;
+    height: 201px;
+    left: calc(50% - 1257px);
+  }
+}
 /* For large devices <> */
 @media (width >= 1150px) {
   .container {
@@ -374,6 +396,61 @@ img {
   .nav__action {
     font-size: 2rem;
   }
+  .home__container{
+    position: initial;
+    padding-block: 7.5rem 3rem;
+    display: grid;
+    grid-template-columns: 440px 380px 1fr;
+    grid-template-rows: 1fr max-content;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .home .home__swiper{
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .home__img{
+    width: 380px;
+    filter: blur(6px);
+  }
+  .home__data{
+    grid-column: 1;
+    grid-row: 1;
+    width: initial;
+    margin: 0;
+    text-align: initial;
+  }
+  .home__description{
+    padding-right: 3.5rem;
+    margin-bottom: 3rem;
+  }
+  .home__buttons{
+    justify-content: initial;
+  }
+  .home__wave{
+    width: 100%;
+    height: initial;
+    left: 0;
+  }
+  .home__buttom{
+    grid-column: 1/-1;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .home__arrows{
+    position: initial;
+  }
+  .home__reviews{
+    padding: 0;
+  }
 }
 
 /* For taller devices <> */
+@media (width >= 1536px) and (height >= 864px) {
+  .home__container{
+    height: 100dvh;
+  }
+  
+}
