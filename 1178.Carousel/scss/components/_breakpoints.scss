@@ -1,0 +1,42 @@
+/*=============== BREAKPOINTS ===============*/
+/* For small devices <> */
+@media (width <= 330px){
+   .card{
+      &__content{
+         width: 250px;
+      }
+      & .swiper{
+         height: 187px;
+      }
+   }
+}
+
+/* For large devices <> */
+@media (width >= 1150px){
+   .card{
+      box-shadow: inset 0 0 200px hsla(23, 56%, 51%, .5);
+
+      &::before{
+         width: 640px;
+         height: 640px;
+         filter: blur(200px);
+      }
+      &__content{
+         width: 560px;
+         padding: 2rem;
+         border-radius: .75rem;
+         filter: blur(10px);
+      }
+      &__controls{
+         bottom: 3rem;
+      }
+   }
+
+   /* Swiper class */
+   .card .swiper{
+      height: 420px;
+   }
+   .card__article.swiper-slide-active .card__content{
+      box-shadow: 0 32px 64px hsla(0, 0%, 0%, .5);
+   }
+}

@@ -1,0 +1,110 @@
+/*=============== CARD ===============*/
+.card{
+   position: relative;
+   height: 100dvh;
+   display: grid;
+   align-items: center;
+   overflow: hidden;
+   box-shadow: inset 0 0 90px hsla(23, 56%, 51%, .5);
+
+   &::before{
+      content: '';
+      position: absolute;
+      inset: 0;
+      width: 320px;
+      height: 320px;
+      margin: auto;
+      background-color: var(--first-color);
+      border-radius: 50%;
+      opacity: .2;
+      filter: blur(100px);
+   }
+   &__article{
+      display: grid;
+      place-items: center;
+   }
+   &__content{
+      width: 296px;
+      height: 100%;
+      background: var(--gradient-color);
+      border-radius: .5rem;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      rotate: 15deg;
+      filter: blur(5px);
+      transition: filter .8s, box-shadow .8s;
+   }
+   &__title{
+      font: 400 var(--h1-font-size) var(--second-font);
+      color: var(--title-color);
+   }
+   &__subtitle{
+      font: italic 400 var(--h3-font-size) var(--second-font);
+   }
+   &__footer{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+   }
+   &__logo{
+      font: 600 var(--smaller-font-size) var(--body-font);
+      color: var(--title-color);
+   }
+   &__number{
+      font: 200 var(--biggest-font-size) var(--body-font);
+      color: var(--title-color);
+   }
+   &__controls{
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 1.5rem;
+      z-index: 10;
+   }
+   &__button{
+      width: 48px;
+      height: 48px;
+      background-color: var(--container-color);
+      border: 1px solid var(--text-color-light);
+      border-radius: 50%;
+      color: var(--title-color);
+      font-size: 1.25rem;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: border-color .4s;
+
+      &:hover{
+         border-color: var(--text-color);
+      }
+   }
+   &__pagination{
+      width: initial;
+      font: 500 var(--small-font-size) var(--body-font);
+      color: var(--text-color);
+   }
+}
+
+/* ===== Swiper class ===== */
+.card .swiper{
+   width: 100%;
+   height: 222px;
+   overflow: visible;
+}
+
+.card .swiper-slide{
+   overflow: visible;
+   transition-property: transform, opacity, z-index;
+}
+
+/* Active card */
+.card__article.swiper-slide-active .card__content{
+   filter: blur(0px);
+   box-shadow: 0 24px 48px hsla(0, 0%, 0%, .5);
+}

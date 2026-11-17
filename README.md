@@ -1171,3 +1171,4 @@
 |1175| [3D CSS Saturn](https://github.com/xml12333/HTML_CSS_JS/tree/main/1175.3D%20CSS%20Saturn)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1175.3D%20CSS%20Saturn/)|
 |1176| [Portfolio Website](https://github.com/xml12333/HTML_CSS_JS/tree/main/1176.Portfolio%20Website)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1176.Portfolio%20Website/)|
 |1177| [Ice Cream Landing](https://github.com/xml12333/HTML_CSS_JS/tree/main/1177.Ice%20Cream%20Landing)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1177.Ice%20Cream%20Landing/)|
+|1178| [Carousel](https://github.com/xml12333/HTML_CSS_JS/tree/main/1178.Carousel)| [Demo](https://nikt.com.ua/projects/htmlCssJs/1178.Carousel/)|

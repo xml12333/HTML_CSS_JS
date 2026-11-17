@@ -1,0 +1,220 @@
+/*=============== GOOGLE FONTS - Insert link for typography ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Poppins:wght@200;400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(23, 56%, 51%);
+  --gradient-color: linear-gradient(180deg,
+                    hsl(20, 18%, 3%) 0%,
+                    hsl(20, 45%, 9%) 30%,
+                    hsl(23, 56%, 51%) 72%,
+                    hsl(26, 67%, 73%) 100%);
+  --title-color: hsl(26, 30%, 95%);
+  --text-color: hsl(23, 11%, 69%);
+  --text-color-light: hsl(20, 7%, 41%);
+  --body-color: hsl(20, 18%, 3%);
+  --container-color: hsl(15, 20%, 8%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --second-font: "Instrument Serif", serif;
+  --biggest-font-size: 2.5rem;
+  --h1-font-size: 1.5rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+}
+
+/*========== Responsive typography ==========*/
+@media (width >= 1150px) {
+  :root {
+    --biggest-font-size: 5rem;
+    --h1-font-size: 3.5rem;
+    --h3-font-size: 2.5rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+/*=============== CARD ===============*/
+.card {
+  position: relative;
+  height: 100dvh;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: inset 0 0 90px hsla(23, 56%, 51%, 0.5);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 320px;
+  height: 320px;
+  margin: auto;
+  background-color: var(--first-color);
+  border-radius: 50%;
+  opacity: 0.2;
+  filter: blur(100px);
+}
+
+.card__article {
+  display: grid;
+  place-items: center;
+}
+
+.card__content {
+  width: 296px;
+  height: 100%;
+  background: var(--gradient-color);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  rotate: 15deg;
+  filter: blur(5px);
+  transition: filter 0.8s, box-shadow 0.8s;
+}
+
+.card__title {
+  font: 400 var(--h1-font-size) var(--second-font);
+  color: var(--title-color);
+}
+
+.card__subtitle {
+  font: italic 400 var(--h3-font-size) var(--second-font);
+}
+
+.card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.card__logo {
+  font: 600 var(--smaller-font-size) var(--body-font);
+  color: var(--title-color);
+}
+
+.card__number {
+  font: 200 var(--biggest-font-size) var(--body-font);
+  color: var(--title-color);
+}
+
+.card__controls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1.5rem;
+  z-index: 10;
+}
+
+.card__button {
+  width: 48px;
+  height: 48px;
+  background-color: var(--container-color);
+  border: 1px solid var(--text-color-light);
+  border-radius: 50%;
+  color: var(--title-color);
+  font-size: 1.25rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: border-color 0.4s;
+}
+
+.card__button:hover {
+  border-color: var(--text-color);
+}
+
+.card__pagination {
+  width: initial;
+  font: 500 var(--small-font-size) var(--body-font);
+  color: var(--text-color);
+}
+
+/* ===== Swiper class ===== */
+.card .swiper {
+  width: 100%;
+  height: 222px;
+  overflow: visible;
+}
+
+.card .swiper-slide {
+  overflow: visible;
+  transition-property: transform, opacity, z-index;
+}
+
+/* Active card */
+.card__article.swiper-slide-active .card__content {
+  filter: blur(0px);
+  box-shadow: 0 24px 48px hsla(0, 0%, 0%, 0.5);
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices <> */
+@media (width <= 330px) {
+  .card__content {
+    width: 250px;
+  }
+  .card .swiper {
+    height: 187px;
+  }
+}
+
+/* For large devices <> */
+@media (width >= 1150px) {
+  .card {
+    box-shadow: inset 0 0 200px hsla(23, 56%, 51%, 0.5);
+  }
+  .card::before {
+    width: 640px;
+    height: 640px;
+    filter: blur(200px);
+  }
+  .card__content {
+    width: 560px;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    filter: blur(10px);
+  }
+  .card__controls {
+    bottom: 3rem;
+  }
+  /* Swiper class */
+  .card .swiper {
+    height: 420px;
+  }
+  .card__article.swiper-slide-active .card__content {
+    box-shadow: 0 32px 64px hsla(0, 0%, 0%, 0.5);
+  }
+}

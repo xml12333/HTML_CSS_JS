@@ -1,0 +1,43 @@
+/*=============== GOOGLE FONTS - Insert link for typography ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Poppins:wght@200;400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root{
+   /*========== Colors ==========*/
+   /*Color mode HSL(hue, saturation, lightness)*/
+   --first-color: hsl(23, 56%, 51%);
+   --gradient-color: linear-gradient(180deg,
+                     hsl(20, 18%, 3%) 0%,
+                     hsl(20, 45%, 9%) 30%,
+                     hsl(23, 56%, 51%) 72%,
+                     hsl(26, 67%, 73%) 100%);
+   --title-color: hsl(26, 30%, 95%);
+   --text-color: hsl(23, 11%, 69%);
+   --text-color-light: hsl(20, 7%, 41%);
+   --body-color: hsl(20, 18%, 3%);
+   --container-color: hsl(15, 20%, 8%);
+
+   /*========== Font and typography ==========*/
+   /*.5rem = 8px | 1rem = 16px ...*/
+   --body-font: "Poppins", sans-serif;
+   --second-font: "Instrument Serif", serif;
+
+   --biggest-font-size: 2.5rem;
+   --h1-font-size: 1.5rem;
+   --h3-font-size: 1rem;
+   --normal-font-size: 0.938rem;
+   --small-font-size: 0.813rem;
+   --smaller-font-size: 0.75rem;
+}
+
+/*========== Responsive typography ==========*/
+:root{
+   @media (width >= 1150px){
+      --biggest-font-size: 5rem;
+      --h1-font-size: 3.5rem;
+      --h3-font-size: 2.5rem;
+      --normal-font-size: 1rem;
+      --small-font-size: 0.875rem;
+      --smaller-font-size: 0.813rem;
+   }
+}
