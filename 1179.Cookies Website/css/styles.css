@@ -86,7 +86,10 @@ button {
   outline: none;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   color: var(--title-color);
   font-family: var(--second-font);
   font-weight: var(--font-regular);
@@ -171,7 +174,8 @@ img {
   font-size: 1.5rem;
 }
 
-.nav__toggle, .nav__close {
+.nav__toggle,
+.nav__close {
   font-size: 1.5rem;
   color: var(--title-color);
   cursor: pointer;
@@ -254,7 +258,9 @@ img {
   place-items: center;
   font-size: 1.25rem;
   color: var(--first-color);
-  transition: background-color 0.4s, color 0.4s;
+  transition:
+    background-color 0.4s,
+    color 0.4s;
 }
 
 .nav__social-link:hover {
@@ -274,46 +280,141 @@ img {
 
 /* Change header styles */
 
-
 /* Active link */
 
-
 /*=============== HOME SECTION ===============*/
+.home__container {
+  padding-top: 0.5rem;
+  row-gap: 3rem;
+}
+.home__data {
+  text-align: center;
+}
+.home__rating {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  background-color: var(--first-color-lighten);
+  color: var(--title-color);
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-medium);
+  padding: 0.5rem 1rem;
+  border-radius: 4rem;
+  margin-bottom: 1rem;
+}
+.home__rating i {
+  font-size: 1.25rem;
+  color: var(--first-color-light);
+}
+.home__title {
+  font-size: var(--biggest-font-size);
+  margin-bottom: 2rem;
+}
+.home__title span {
+  color: var(--first-color);
+}
+.home__description {
+  margin-bottom: 2rem;
+}
+.home__buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
 
-
+.home__image {
+  position: relative;
+  justify-self: center;
+}
+.home__bag {
+  position: relative;
+  width: 280px;
+  pointer-events: none;
+  filter: drop-shadow(8px 16px 28px hsla(38, 60%, 32%, 0.3));
+}
+.home__cookie {
+  position: absolute;
+  width: 120px;
+  pointer-events: none;
+}
+.home__cookie-1 {
+  bottom: 5rem;
+  left: 0.75rem;
+}
+.home__cookie-2 {
+  bottom: 4.5rem;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+}
+.home__cookie-3 {
+  bottom: 5rem;
+  right: 0.5rem;
+}
+.home__cookie-4 {
+  bottom: 0.5rem;
+  left: 1.75rem;
+}
+.home__cookie-5 {
+  bottom: 1rem;
+  right: 1.75rem;
+}
 /*=============== BUTTON ===============*/
-
+.button {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  background-color: var(--first-color);
+  color: var(--first-color-lighten);
+  font-weight: var(--font-semi-bold);
+  padding: 1rem 1.5rem;
+  border-radius: 4rem;
+  transition:
+    background-color 0.4s,
+    color 0.4s;
+}
+.button i {
+  font-size: 1.25rem;
+  font-weight: initial;
+  transition: transform 0.4s;
+}
+.buttno:hover {
+  background-color: var(--first-color-alt);
+}
+.button:hover .ri-arrow-right-line {
+  transform: translateX(0.5rem);
+}
+.button-ghost {
+  background-color: transparent;
+  color: var(--first-color);
+  border: 2px solid var(--first-color);
+}
+.button-ghost:hover {
+  background-color: var(--first-color);
+  color: var(--first-color-lighten);
+}
 
 /*=============== FEATURED SECTION ===============*/
 
-
 /*=============== ABOUT SECTION ===============*/
-
 
 /*=============== PRODUCTS SECTION ===============*/
 
-
 /*=============== CONTACT SECTION ===============*/
-
 
 /*=============== FOOTER ===============*/
 
-
 /*=============== SCROLL BAR ===============*/
-
 
 /*=============== SCROLL UP ===============*/
 
-
 /* Show Scroll Up */
-
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices <> */
 
-
 /* For medium devices <> */
-
 
 /* For large devices <> */
 @media (width >= 1150px) {
@@ -331,9 +432,9 @@ img {
   .nav__logo {
     font-size: var(--h2-font-size);
   }
-  .nav__toggle, 
-  .nav__close, 
-  .nav__menu .nav__logo, 
+  .nav__toggle,
+  .nav__close,
+  .nav__menu .nav__logo,
   .nav__data {
     display: none;
   }
