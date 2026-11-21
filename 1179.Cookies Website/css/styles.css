@@ -279,7 +279,9 @@ img {
 }
 
 /* Change header styles */
-
+.scroll-header{
+  box-shadow: 0 2px 16px hsla(38, 60%, 15%, 0.1);
+}
 /* Active link */
 
 /*=============== HOME SECTION ===============*/
