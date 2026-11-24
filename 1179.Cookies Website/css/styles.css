@@ -454,7 +454,45 @@ img {
   cursor: pointer;
 }
 /*=============== ABOUT SECTION ===============*/
-
+.about__container {
+  row-gap: 3rem;
+}
+.about__img {
+  border-radius: 1.5rem;
+}
+.about__data :is(.section__subtitle, .section__title) {
+  text-align: initial;
+}
+.about__description {
+  margin-bottom: 1.5rem;
+}
+.about__features {
+  display: grid;
+  row-gap: 1rem;
+  margin-bottom: 3rem;
+}
+.about__feature {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+.about__feature-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background-color: var(--first-color-lighten);
+  color: var(--first-color);
+  border-radius: 1rem;
+  display: grid;
+  place-items: center;
+}
+.about__feature-title {
+  font-size: var(--h3-font-size);
+  margin-bottom: 0.5rem;
+}
+.about__feature-description {
+  font-size: var(--small-font-size);
+}
 /*=============== PRODUCTS SECTION ===============*/
 
 /*=============== CONTACT SECTION ===============*/
